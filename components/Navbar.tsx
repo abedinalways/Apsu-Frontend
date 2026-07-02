@@ -8,11 +8,11 @@ import { HiOutlineMenu, HiX } from "react-icons/hi";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
-  { en: "Home", slug: "/" },
-  { en: "Apartment", slug: "#" },
-  { en: "Hotel", slug: "#" },
-  { en: "Tours", slug: "#" },
-  { en: "Contact Us", slug: "#" },
+  { name: "Home", path: "/" },
+  { name: "Apartment", path: "/apartments" },
+  { name: "Hotel", path: "/hotels" },
+  { name: "Tours", path: "/tours" },
+  { name: "Contact Us", path: "/contact" },
 ];
 
 export default function Navbar() {
@@ -32,14 +32,14 @@ export default function Navbar() {
         <nav className="hidden md:flex space-x-6 text-base">
           {menuItems.map((item) => (
             <Link
-              key={item.slug}
-              href={item.slug}
+              key={item.path}
+              href={item.path}
               className={cn(
                 "hover:text-secondaryColor transition",
-                pathname === item.slug ? "text-secondaryColor" : "text-white",
+                pathname === item.path ? "text-secondaryColor" : "text-white",
               )}
             >
-              {item.en}
+              {item.name}
             </Link>
           ))}
         </nav>
@@ -92,15 +92,15 @@ export default function Navbar() {
 
           {menuItems.map((item) => (
             <Link
-              key={item.slug}
-              href={item.slug}
+              key={item.path}
+              href={item.path}
               className={cn(
                 "block text-base py-2",
-                pathname === item.slug ? "text-secondaryColor" : "text-white",
+                pathname === item.path ? "text-secondaryColor" : "text-white",
               )}
               onClick={() => setMenuOpen(false)}
             >
-              {item.en}
+              {item.name}
             </Link>
           ))}
           <div className="flex items-center justify-between">
