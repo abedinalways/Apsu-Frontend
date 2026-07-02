@@ -1,12 +1,15 @@
+
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { HiOutlineMenu, HiX } from "react-icons/hi";
+import { HiOutlineMenu, HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
+import Image from "next/image";
+import { Button } from "./ui/button";
+import { FaRegCircleXmark } from "react-icons/fa6";
 
 const menuItems = [
   { name: "Weight Loss", path: "/weight-loss" },
@@ -40,7 +43,7 @@ export default function Navbar() {
       >
         <div className="flex w-full justify-between xl:grid xl:grid-cols-4 items-center max-w-330 mx-auto h-15 bg-background rounded-full px-3 md:pr-1.5 md:pl-6 shadow-[0_4px_24.5px_0_rgba(0,0,0,0.09)]">
           {/* Left: Logo */}
-          <h2 className=" text-3xl font-semibold tracking-wide">Apsu</h2>
+          <Image src="/logo.png" alt="apsu" height={32} width={87}/>
 
           {/* Desktop Menu */}
           <nav className="hidden  xl:col-span-2 justify-center lg:flex space-x-6 text-base">
@@ -71,7 +74,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(!menuOpen)}
               className="text-black text-2xl flex items-center lg:hidden"
             >
-              {menuOpen ? <HiX /> : <HiOutlineMenu />}
+              {menuOpen ? <FaRegCircleXmark className="size-8" /> : < HiOutlineMenuAlt3 className="size-8"/>}
             </button>
           </div>
         </div>

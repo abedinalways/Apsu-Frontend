@@ -3,11 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-.container {
-  max-width: 1342px;
-  padding: 0 16px;
-  margin: 0 auto;
-}
 @theme inline {
   --color-primaryColor: var(--primaryColor);
   --color-secondaryColor: var(--secondaryColor);
