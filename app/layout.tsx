@@ -1,10 +1,14 @@
 import { AppConfig } from "@/config/app.config";
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google';
+import { Work_Sans } from "next/font/google";
 import "./globals.css";
- 
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({ subsets: ['latin'] })
+
+const workSans = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-work-sans",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: AppConfig().app.name,
   description: AppConfig().app.slogan,
@@ -17,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className}`}>{children}</body>
+      <body className={workSans.className}>{children}</body>
     </html>
   );
 }

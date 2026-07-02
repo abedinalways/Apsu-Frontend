@@ -63,7 +63,7 @@
 }
 
 :root {
-  --primaryColor: #0b1466;
+  --primaryColor: #102B1C;
   --secondaryColor: #d6ae29;
   --blackColor: #070707;
   --whiteColor: #fff;
@@ -74,13 +74,13 @@
   --descriptionColor: #4a4c56;
   /* ========== */
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #FAF9F4;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary:  #102B1C;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -108,7 +108,7 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: #FAF9F4;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -173,4 +173,17 @@ input:checked ~ .checkmark {
   cursor: pointer;
 
   border-radius: 50%;
+}
+
+.container {
+  @apply max-w-330 mx-auto px-4 xl:px-0;
+}
+.padding-default {
+  @apply py-15 lg:py-20 xl:py-25;
+}
+.padding-default-top {
+  @apply pt-15 lg:pt-20 xl:pt-25;
+}
+.padding-default-bottom {
+  @apply pb-15 lg:pb-20 xl:pb-25;
 }

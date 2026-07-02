@@ -2,16 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 const menuItems = [
-  { name: "Home", path: "/" },
-  { name: "Apartment", path: "/apartments" },
-  { name: "Hotel", path: "/hotels" },
-  { name: "Tours", path: "/tours" },
+  { name: "Weight Loss", path: "/weight-loss" },
+  { name: "Birth Control", path: "/birth-control" },
+  { name: "Sleep", path: "/sleep" },
   { name: "Contact Us", path: "/contact" },
 ];
 
@@ -19,24 +19,36 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // Change after scrolling 50px
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="bg-primaryColor py-4 px-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <header>
+      {/* navbar */}
+      <div
+        className={`flex w-full justify-between xl:grid xl:grid-cols-4 items-center max-w-330 mx-auto h-15 bg-background rounded-full border px-3 md:pr-1.5 md:pl-6 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out ${scrolled ? "top-7.5" : "top-15"}`}
+      >
         {/* Left: Logo */}
-        <h2 className="text-white text-3xl font-semibold tracking-wide">
-          LOGO
-        </h2>
+        <h2 className=" text-3xl font-semibold tracking-wide">Apsu</h2>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-6 text-base">
+        <nav className="hidden  xl:col-span-2 justify-center lg:flex space-x-6 text-base">
           {menuItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
               className={cn(
-                "hover:text-secondaryColor transition",
-                pathname === item.path ? "text-secondaryColor" : "text-white",
+                "  text-lg transition",
+                pathname === item.path ? "text-secondaryColor" : "text-black",
               )}
             >
               {item.name}
@@ -45,38 +57,33 @@ export default function Navbar() {
         </nav>
 
         {/* Right: Language, Auth Buttons */}
-        <div className="hidden md:flex items-center space-x-[14px]">
-          {/* Language Dropdown */}
-          <Link href="/login" className="text-white text-base">
-            Login
-          </Link>
-          <Link
-            href="/registration"
-            className="bg-secondaryColor text-blackColor font-medium cursor-pointer  text-base px-4 py-2 rounded-[8px]"
-          >
-            Sign up
-          </Link>
-        </div>
+        <div className=" md:flex justify-end items-center gap-4">
+          <div className="hidden md:flex justify-end gap-4 items-center ">
+            <Button className="text-lg">Get started</Button>
+            <Button variant="outline" className="text-lg">
+              Login
+            </Button>
+          </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-white text-2xl"
+            className="text-black text-2xl flex items-center lg:hidden"
           >
             {menuOpen ? <HiX /> : <HiOutlineMenu />}
           </button>
         </div>
+
+        {/* Mobile Menu Toggle */}
       </div>
 
       {/* Mobile Menu Content */}
       <div
         className={cn(
-          "md:hidden fixed top-0 right-0 w-full bg-blackColor/20 backdrop-blur-xs h-screen    space-y-3 z-50 transform transition-transform duration-300 ease-in-out",
+          "lg:hidden fixed top-0 right-0 w-full bg-blackColor/20 backdrop-blur-xs h-screen    space-y-3 z-50 transform transition-transform duration-300 ease-in-out",
           menuOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
-        <div className="w-[80%]  absolute top-0 p-4 right-0 h-full bg-primaryColor max-w-[320px]">
+        <div className="w-full  absolute top-0 p-4 right-0 h-full bg-primaryColor md:max-w-[320px]">
           <div className="flex w-full justify-between items-center mb-2">
             <h2 className="text-white text-2xl font-semibold tracking-wide">
               LOGO
@@ -120,7 +127,6 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-
       </div>
     </header>
   );
