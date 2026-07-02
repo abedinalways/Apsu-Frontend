@@ -36,9 +36,9 @@ export default function Navbar() {
       {/* navbar */}
 
       <div
-        className={` border w-full px-5 xl:px-0 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out ${scrolled ? "top-5 lg:top-7.5" : "top-5 lg:top-15"}`}
+        className={` w-full px-5 xl:px-0 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out  ${scrolled ? "top-5 lg:top-7.5" : "top-5 lg:top-15"}`}
       >
-        <div className="flex w-full justify-between xl:grid xl:grid-cols-4 items-center max-w-330 mx-auto h-15 bg-background rounded-full px-3 md:pr-1.5 md:pl-6">
+        <div className="flex w-full justify-between xl:grid xl:grid-cols-4 items-center max-w-330 mx-auto h-15 bg-background rounded-full px-3 md:pr-1.5 md:pl-6 shadow-[0_4px_24.5px_0_rgba(0,0,0,0.09)]">
           {/* Left: Logo */}
           <h2 className=" text-3xl font-semibold tracking-wide">Apsu</h2>
 
