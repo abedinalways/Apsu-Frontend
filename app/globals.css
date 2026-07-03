@@ -173,6 +173,9 @@ input:checked ~ .checkmark {
 .container {
   @apply max-w-330 mx-auto px-4 xl:px-0;
 }
+.container2{
+  @apply max-w-360 mx-auto px-4 md:px-6 lg:px-8
+}
 .padding-default {
   @apply py-15 lg:py-20 xl:py-25;
 }
