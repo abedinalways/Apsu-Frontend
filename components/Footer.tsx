@@ -145,6 +145,11 @@ export default function Footer() {
           </div>
           <p>© 2026 APSU. All rights reserved.</p>
         </div>
+        {/* section 4 */}
+        <div className=" relative">
+          <div className="h-1/2 w-full bg-linear-to-t from-primary/80 to-transparent absolute bottom-0 z-10"></div>
+          <Image src="/footer-img.png" alt="footer image" width={1376} height={318} />
+        </div>
       </div>
     </footer>
   );
