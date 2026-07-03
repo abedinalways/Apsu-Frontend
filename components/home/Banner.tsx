@@ -52,9 +52,9 @@ export const Banner = () => {
           <LanguageCarousel direction="right" />
         </div>
         {/* medicine cards */}
-        <div className="mt-9 lg:mt-13 grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 pb-4 lg:pb-7 lg:px-7">
-          {medicineData.map((data) => (
-            <MedicineCard key={data.for} data={data}></MedicineCard>
+        <div className="mt-9 lg:mt-13 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pb-4 lg:pb-7 lg:px-7 w-full">
+          {medicineData.map((data, idx) => (
+            <MedicineCard key={data.for} data={data} idx={idx}></MedicineCard>
           ))}
         </div>
       </div>
