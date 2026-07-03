@@ -2,8 +2,11 @@ import { Stethoscope, Truck } from "lucide-react";
 import { IoEarthOutline } from "react-icons/io5";
 import ButtonGroup from "../ui/ButtonGroup";
 import LanguageCarousel from "./LanguageCarousel";
+import MedicineCard from "./MedicineCards";
+import { medicineData } from "@/public/demoData/medicineData";
 
-const Banner = () => {
+
+export const Banner = () => {
   return (
     <div className="p-3 xl:p-0">
       <div className="mt-0 lg:mt-8 max-w-[1384px] min-h-screen bg-white flex flex-col items-center mx-auto rounded-4xl pt-31 lg:pt-50 ">
@@ -47,6 +50,12 @@ const Banner = () => {
           <div className="w-20 lg:w-30 h-full bg-linear-to-l from-white to-transparent absolute z-10 right-0"></div>
           <LanguageCarousel />
           <LanguageCarousel direction="right" />
+        </div>
+        {/* medicine cards */}
+        <div className="mt-9 lg:mt-13 grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 pb-4 lg:pb-7 lg:px-7">
+          {medicineData.map((data) => (
+            <MedicineCard key={data.for} data={data}></MedicineCard>
+          ))}
         </div>
       </div>
     </div>
