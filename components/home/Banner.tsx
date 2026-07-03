@@ -1,6 +1,7 @@
 import { Stethoscope, Truck } from "lucide-react";
-import React from "react";
 import { IoEarthOutline } from "react-icons/io5";
+import ButtonGroup from "../ui/ButtonGroup";
+import LanguageCarousel from "./LanguageCarousel";
 
 const Banner = () => {
   return (
@@ -31,6 +32,22 @@ const Banner = () => {
           Healthcare that{" "}
           <span className="text-[#00774D]">speaks your language.</span>
         </h1>
+        {/* subtitle */}
+        <p className="text-center lg:text-xl mt-4 max-w-100 xl:max-w-150 xl:flex xl:flex-col">
+          <span> Care in the language you think in.</span>
+          <span> US-licensed physicians, AI translates your consultation.</span>
+        </p>
+        {/* cta button */}
+        <div className="mt-6">
+          <ButtonGroup>Start a free consultation</ButtonGroup>
+        </div>
+        {/* language carousel  */}
+        <div className="mt-6 lg:mt-8 space-y-4 relative">
+          <div className="w-20 lg:w-30 h-full bg-linear-to-r from-white to-transparent absolute z-10 left-0"></div>
+          <div className="w-20 lg:w-30 h-full bg-linear-to-l from-white to-transparent absolute z-10 right-0"></div>
+          <LanguageCarousel />
+          <LanguageCarousel direction="right" />
+        </div>
       </div>
     </div>
   );
