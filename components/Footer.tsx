@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className="bg-primary text-[#FAF9F4]">
       <div className="container2 pt-30">
         {/* section 1 */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-6 gap-5 xl:gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-6 gap-5 xl:gap-0">
           {/* logo and description */}
           <div className=" lg:col-span-2 xl:col-span-3">
             <Image src="/footer-logo.png" alt="apsu" width={228} height={83} />
@@ -78,6 +78,25 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+        {/* section 2 */}
+        <div className="text-lg pt-13 pb-8 border-b">
+          <p>
+            The information on this site is for general educational purposes and
+            is not medical advice. Apsu is a technology platform; medical care
+            is provided by independent, licensed providers, and pharmacy
+            services by licensed pharmacies, who decide whether treatment is
+            appropriate. Payment does not guarantee a prescription. Apsu offers
+            compounded GLP-1 medication, which is prepared by licensed U.S.
+            compounding pharmacies and is not approved or evaluated by the FDA.
+            Apsu does not manufacture medication, and product appearance may
+            differ from images shown. Results vary and are not guaranteed. If
+            this is an emergency, call 911.
+          </p>
+          <p className="pt-4">
+            By using our services, you agree to our{" "}
+            <Link href="/terms" className="hover:underline"> Terms & Conditions.</Link>
+          </p>
         </div>
       </div>
     </footer>
