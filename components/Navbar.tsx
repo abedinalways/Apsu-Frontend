@@ -97,10 +97,11 @@ export default function Navbar() {
               <Image src="/logo.png" alt="apsu" height={32} width={87} />
               <button
                 aria-label="close-menu"
-                className="absolute top-4 right-4 z-10 "
+                className=" z-10 "
                 onClick={() => setMenuOpen(false)}
               >
-                <CircleX className="size-7 text-secondary" />
+                
+                <CircleX className="size-8 text-secondary" />
               </button>
             </div>
             <div className="flex flex-col justify-center items-center text-xl font-medium text-secondary gap-5">
