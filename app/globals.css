@@ -6,7 +6,11 @@
 ------------------------------- */
 @custom-variant dark (&:is(.dark *));
 
-
+.container {
+  max-width: 1342px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
 @theme inline {
   /* -------- Core brand colors -------- */
   --color-primary-50: #ecf9f1;
@@ -178,47 +182,26 @@
    Light Theme (default)
 ------------------------------- */
 :root {
-  --w: #fff;
-  --b: #070707;
-  --card-gradient: #eafff3;
-
-  /* Backgrounds */
-  --background-white: #fff;
-  --background-off-white: #faf9f4;
-  --background-black: #070707;
-  --background-disabled: #f8fafb;
-  --background-normal: #f6f8fa;
-  --background-hover: #eceff3;
-  --background-pressed: #dfe1e7;
-  --background-loud: #0d0d12;
-
-  /* Semantic aliases */
-  --heading-text-1: var(--color-primary-800);
-  --heading-text-2: var(--color-secondary-charcol-900);
-  --sub-heading-text: var(--color-secondary-charcol-700);
-  --button-text: var(--color-background-white);
-  --base-off-white: var(--color-background-off-white);
-  --base-white: var(--color-background-white);
-  --label-text: var(--color-secondary-mint-600);
-  --border-mint: var(--color-primary-100);
-  --disable-text: var(--color-secondary-charcol-500);
-  --highlighted-text: var(--color-secondary-mint-600);
-  --border-purple: #ffc0ff;
-  --border-blue: #83f2ec;
-  --selected-border: var(--color-primary-500);
-  --active-border: var(--color-primary-200);
-  --intake-hover: var(--color-primary-50);
-
-  /* Tailwind core variables (kept for shadcn/ui compatibility) */
+  --primaryColor: #0b1466;
+  --secondaryColor: #d6ae29;
+  --blackColor: #070707;
+  --whiteColor: #fff;
+  --ratingColor: #ffc52e;
+  --headerColor: #040815;
+  --grayColor1: #777980;
+  --bgColor: rgba(243, 243, 244, 0.5);
+  --descriptionColor: #4a4c56;
+  /* ========== */
+  --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: #102b1c;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: #111111;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -247,15 +230,15 @@
    Dark Theme
 ------------------------------- */
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: #faf9f4;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: #102b1c;
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: #111111;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
