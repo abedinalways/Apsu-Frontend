@@ -1,129 +1,155 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaLocationDot,
-  FaPhone,
-  FaXTwitter,
-  FaYoutube,
-} from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
-const quickLinks = [
-  { name: "Home", slug: "/" },
-  { name: "Tours", slug: "/tours" },
-  { name: "Cruises", slug: "/cruises" },
-  { name: "Packages", slug: "/packages" },
-  { name: "Reservations", slug: "/reservations" },
-  { name: "Blog", slug: "/blog" },
-  { name: "About", slug: "/Linkbout" },
-  { name: "Contact Us", slug: "/contact" },
+import { FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FiFacebook } from "react-icons/fi";
+import { SlSocialLinkedin } from "react-icons/sl";
+const ProductsLinks = [
+  { href: "/weight-loss", label: "Weight Loss" },
+  { href: "/birth-control", label: "Birth Control" },
+  { href: "/sleep", label: "Sleep" },
+];
+const CompanyLinks = [
+  { href: "/about", label: "About Apsu" },
+  { href: "/blogs", label: "Blogs" },
+  { href: "/faqs", label: "FAQs" },
+  { href: "/contact", label: "Contact Us" },
+];
+const LegalLinks = [
+  { href: "/terms", label: "Terms" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/info", label: "Medication Safety Information" },
+];
+
+export const socialLinks = [
+  {
+    href: "https://x.com/your_username",
+    Icon: FaXTwitter,
+    label: "X (Twitter)",
+  },
+  {
+    href: "https://www.facebook.com/your_page",
+    Icon: FiFacebook,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/your_username",
+    Icon: FaInstagram,
+    label: "Instagram",
+  },
+  {
+    href: "https://www.linkedin.com/company/your-company",
+    Icon: SlSocialLinkedin,
+    label: "LinkedIn",
+  },
 ];
 export default function Footer() {
   return (
-    <footer className="bg-primaryColor px-4">
-      <div className=" text-white py-12 ">
-<div className=" container grid grid-cols-1 md:grid-cols-12 gap-10">
-        {/* Column 1: Logo & Newsletter */}
-        <div className=" md:col-span-6 lg:col-span-4">
-          <div className=" w-[328px]">
-            <h2 className="text-5xl font-bold mb-8">LOGO</h2>
-            <p className="text-base leading-[150%] mb-6">
-              Explore the world with us! Find inspiration, plan adventures, and
-              make unforgettable memories every journey.
+    <footer className="bg-primary text-[#FAF9F4]">
+      <div className="container2 pt-30">
+        {/* section 1 */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-6 ">
+          {/* logo and description */}
+          <div className=" lg:col-span-2 xl:col-span-3">
+            <Image src="/footer-logo.png" alt="apsu" width={228} height={83} />
+            <p className="text-lg max-w-100">
+              American medicine, in the language you think in.{" "}
             </p>
-            <div className="relative">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="px-4 py-3 text-base rounded-l-md rounded-[8px] border border-[#EDFAFF]/50 bg-[#EDFAFF]/10 text-[#D2D2D5] w-full  focus:outline-none"
-              />
-              <button className=" absolute top-1/2 -translate-1/2 -right-13  bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 text-base leading-[150%] rounded-md font-medium">
-                Sign Up →
-              </button>
-            </div>
+          </div>
+          {/* Products */}
+          <div className="space-y-4 pt-10 lg:pt-0">
+            <h4 className="text-lg">Products</h4>
+            <ul className="flex flex-col gap-3">
+              {ProductsLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="block w-full hover:text-[#BED5C9] transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Company */}
+          <div className="space-y-4 pt-6 lg:pt-0">
+            <h4 className="text-lg">Company</h4>
+            <ul className="flex flex-col gap-3">
+              {CompanyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="block w-full hover:text-[#BED5C9] transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Legal */}
+          <div className="space-y-4 pt-6 lg:pt-0">
+            <h4 className="text-lg">Legal</h4>
+            <ul className="flex flex-col gap-3">
+              {LegalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="block w-full hover:text-[#BED5C9] transition-colors xl:whitespace-nowrap"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-
-        {/* Column 2: Quick Links */}
-        <div className="md:col-span-3 lg:col-span-2">
-          <h3 className="text-lg font-semibold mb-4">Quick Link</h3>
-          <ul className="space-y-3 text-base leading-[150%]">
-            {quickLinks.map(({ name, slug }) => (
-              <li key={slug}>
-                <Link href={slug} className="hover:text-yellow-400">
-                  {name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* section 2 */}
+        <div className="text-lg pt-8 lg:pt-13 pb-8 border-b">
+          <p>
+            The information on this site is for general educational purposes and
+            is not medical advice. Apsu is a technology platform; medical care
+            is provided by independent, licensed providers, and pharmacy
+            services by licensed pharmacies, who decide whether treatment is
+            appropriate. Payment does not guarantee a prescription. Apsu offers
+            compounded GLP-1 medication, which is prepared by licensed U.S.
+            compounding pharmacies and is not approved or evaluated by the FDA.
+            Apsu does not manufacture medication, and product appearance may
+            differ from images shown. Results vary and are not guaranteed. If
+            this is an emergency, call 911.
+          </p>
+          <p className="pt-6 lg:pt-4">
+            By using our services, you agree to our{" "}
+            <Link href="/terms" className="hover:underline">
+              {" "}
+              Terms & Conditions.
+            </Link>
+          </p>
         </div>
-        {/* Column 3: Contact Info */}
-        <div className="md:col-span-3 lg:col-span-3">
-          <h3 className="text-lg font-semibold mb-4">Contact</h3>
-          <ul className="space-y-4 text-base leading-[150%]">
-            <li className=" flex gap-3 items-center">
-              <FaPhone />
-              <Link href="tel:602-774-4735" className="hover:text-yellow-400">
-                602-774-4735
-              </Link>
-            </li>
-            <li className=" flex gap-3 items-center">
-              <IoMdMail />
-              <Link
-                href="mailto:hello@travelinfo.com"
-                className="hover:text-yellow-400"
+        {/* section 3 */}
+        <div className="pt-8 pb-14 lg:pb-30 flex flex-col gap-10 lg:flex-row justify-between items-start lg:items-center">
+          <div className="flex gap-2">
+            {socialLinks.map(({ href, Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="size-9 rounded-full bg-[#173A26] hover:bg-[#FAF9F4] hover:text-secondary transition-all duration-200 flex items-center justify-center"
               >
-                hello@travelinfo.com
-              </Link>
-            </li>
-            <li className=" flex gap-3 items-start ">
-              <FaLocationDot className="mt-1" /> 12 Victoria Road Barnsley,
-              South Yorkshire S70 2BB
-            </li>
-          </ul>
-        </div>
-
-        {/* Column 4: Social Icons */}
-        <div className="md:col-span-6 lg:col-span-3">
-          <h3 className="text-lg font-semibold mb-4">Follow Us on</h3>
-          <div className="flex space-x-4">
-            <Link
-              href="#"
-              className="bg-white text-[#000F75] rounded-full p-2 hover:bg-yellow-400"
-            >
-              <FaFacebookF className="text-blackColor" />
-            </Link>
-            <Link
-              href="#"
-              className="bg-white text-[#000F75] rounded-full p-2 hover:bg-yellow-400"
-            >
-              <FaYoutube className="text-blackColor" />
-            </Link>
-            <Link
-              href="#"
-              className="bg-white text-[#000F75] rounded-full p-2 hover:bg-yellow-400"
-            >
-              <FaLinkedinIn className="text-blackColor" />
-            </Link>
-            <Link
-              href="#"
-              className="bg-white text-[#000F75] rounded-full p-2 hover:bg-yellow-400"
-            >
-              <FaXTwitter className="text-blackColor" />
-            </Link>
+                <Icon className="size-5" />
+              </a>
+            ))}
           </div>
+          <p>© 2026 APSU. All rights reserved.</p>
         </div>
-      </div>
-      </div>
-      
-
-      {/* Footer Bottom */}
-      <div className=" container">
-
-      <div className="border-t border-grayColor1 pb-6 pt-4 text-center text-base leading-[150%] text-[#A5A5AB]">
-        Copyright © 2024 All rights reserved
-      </div>
+        {/* section 4 */}
+        <div className=" relative">
+          <div className="h-1/2 w-full bg-linear-to-t from-primary/80 to-transparent absolute bottom-0 z-10"></div>
+          <Image src="/footer-img.png" alt="footer image" width={1376} height={318} />
+        </div>
       </div>
     </footer>
   );

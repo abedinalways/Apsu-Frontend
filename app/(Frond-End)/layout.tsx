@@ -1,17 +1,17 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "react-datepicker/dist/react-datepicker.css";
-import "swiper/css";
-import "swiper/css/navigation";
 export default function FrontEndLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="flex flex-col w-full min-h-screen ">
       <Navbar />
+      <main className="flex-1">
       {children}
+      </main>
       <Footer />
     </div>
   );
