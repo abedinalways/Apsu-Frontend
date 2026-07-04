@@ -39,7 +39,7 @@ export default function Navbar() {
       {/* navbar */}
 
       <div
-        className={`z-999 w-full px-5 xl:px-0 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out  ${scrolled ? "top-5 lg:top-7.5" : "top-5 lg:top-15"}`}
+        className={`z-998 w-full px-5 xl:px-0 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out  ${scrolled ? "top-5 lg:top-7.5" : "top-5 lg:top-15"}`}
       >
         <div className="flex w-full justify-between xl:grid xl:grid-cols-4 items-center max-w-330 mx-auto h-15 bg-background rounded-full px-3 md:pr-1.5 md:pl-6 shadow-[0_4px_24.5px_0_rgba(0,0,0,0.09)]">
           {/* Left: Logo */}
@@ -87,7 +87,7 @@ export default function Navbar() {
       {/* Mobile Menu Content */}
       <div
         className={cn(
-          "lg:hidden fixed top-0 right-0 w-full bg-blackColor/20 backdrop-blur-xs h-screen space-y-3 z-50 transform transition-transform duration-300 ease-in-out",
+          "lg:hidden fixed top-0 right-0 w-full bg-blackColor/20 backdrop-blur-xs h-screen space-y-3  transform transition-transform duration-300 ease-in-out z-999",
           menuOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
