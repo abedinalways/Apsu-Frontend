@@ -7,7 +7,7 @@ import BannerMedicineCards from "./BannerMedicineCards";
 export const Banner = () => {
   return (
     <div className="p-3 xl:p-0">
-      <div className="mt-0 lg:mt-8 max-w-[1384px] min-h-screen bg-white flex flex-col items-center mx-auto rounded-4xl pt-31 lg:pt-50 ">
+      <div className="mt-0 lg:mt-8 max-w-[1384px] min-h-screen bg-white  flex flex-col items-center mx-auto rounded-4xl pt-31 lg:pt-50 ">
         {/* info */}
         <div className="text-[#21AC88] h-fit flex items-center flex-col-reverse lg:flex-row justify-center gap-2 lg:gap-6 ">
           <div className="flex items-center flex-wrap justify-center gap-2 lg:gap-6">
