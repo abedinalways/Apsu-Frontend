@@ -1,8 +1,16 @@
+import AssessmentNavbar from "@/components/Assessment/AssessmentNavbar";
 import Loader from "@/components/reusable/Loader";
 import React, { Suspense } from "react";
 
 function AssessmentLayout({ children }: { children: React.ReactNode }) {
-  return <Suspense fallback={<Loader />}>{children}</Suspense>;
+  return (
+    <Suspense fallback={<Loader />}>
+      <div>
+        <AssessmentNavbar />
+      </div>
+      {children}
+    </Suspense>
+  );
 }
 
 export default AssessmentLayout;

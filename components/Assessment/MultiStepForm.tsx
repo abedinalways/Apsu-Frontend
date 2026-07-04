@@ -92,7 +92,7 @@ export default function MultiStepForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 bg-white min-h-screen flex flex-col justify-between">
+    <div className="max-w-md mx-auto p-4 mt-4 bg-white max-h-screen flex flex-col justify-between">
       <div>
         {/* Dynamic header / progress bar logic */}
         {step < 8 && (
@@ -119,14 +119,14 @@ export default function MultiStepForm() {
         <Form {...form}>
           {/* Form wrapper handles programmatic intercept */}
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-             {step === 1 && <StepOne />}
-             {step === 2 && <StepTwo />}
-             {step === 3 && <StepThree />}
-             {step === 4 && <StepFour />}
-             {step === 5 && <StepFive />}
-             {step === 6 && <StepSix />}
-             {step === 7 && <StepSeven />}
-             {step === 8 && <StepEight />}
+            {step === 1 && <StepOne />}
+            {step === 2 && <StepTwo />}
+            {step === 3 && <StepThree />}
+            {step === 4 && <StepFour />}
+            {step === 5 && <StepFive />}
+            {step === 6 && <StepSix />}
+            {step === 7 && <StepSeven />}
+            {step === 8 && <StepEight />}
           </form>
         </Form>
       </div>
