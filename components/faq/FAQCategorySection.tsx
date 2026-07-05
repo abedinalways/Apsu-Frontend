@@ -1,21 +1,25 @@
-import { FAQAccordionItem } from './FAQAccordionItem';
 import type { FAQCategory } from '@/types/faq';
 
-interface FAQCategorySectionProps {
+import { Accordion } from '@/components/ui/accordion';
+
+import { FAQAccordion } from './FAQAccordion';
+
+interface Props {
   category: FAQCategory;
 }
 
-export function FAQCategorySection({ category }: FAQCategorySectionProps) {
+export function FAQCategorySection({ category }: Props) {
   return (
-    <div id={category.id} className="flex scroll-mt-24 flex-col gap-4">
-      <h2 className="text-lg font-semibold text-primary-800 md:text-xl">
+    <section id={category.id} className="scroll-mt-28 space-y-5">
+      <h2 className="text-2xl font-semibold text-primary-800">
         {category.title}
       </h2>
-      <div className="flex flex-col gap-3">
+
+      <Accordion type="single" collapsible className="space-y-4">
         {category.items.map(item => (
-          <FAQAccordionItem key={item.id} item={item} />
+          <FAQAccordion key={item.id} item={item} />
         ))}
-      </div>
-    </div>
+      </Accordion>
+    </section>
   );
 }

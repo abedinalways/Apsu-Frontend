@@ -4,6 +4,9 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import type { FAQCategory } from '@/types/faq';
+import { ArrowRightIcon } from 'lucide-react';
+import ArrowIcon from '../icons/ArrowIcon';
+import ContactCard from './ContactCard';
 
 interface FAQSidebarProps {
   topics: Pick<FAQCategory, 'id' | 'title'>[];
@@ -50,7 +53,7 @@ export function FAQSidebar({ topics }: FAQSidebarProps) {
   };
 
   return (
-    <aside className="hidden w-64 shrink-0 flex-col gap-8 py-12 lg:flex font-[work_sans]">
+    <aside className="shrink-0 flex-col gap-8 mt-10 md:mt-0 lg:flex lg:py-12 lg:w-91 font-[work_sans]">
       <div className="flex flex-col gap-3">
         <span className="md:text-2xl text-lg font-semibold uppercase tracking-wide text-[#111]">
           All Topics
@@ -74,20 +77,9 @@ export function FAQSidebar({ topics }: FAQSidebarProps) {
           })}
         </nav>
       </div>
-
-      <div className="flex flex-col items-start gap-3 rounded-[16px] bg-[#fff] p-5 shadow-[0_4px_22px_0_rgba(2,29,23,0.06)]">
-        <p className="md:text-2xl text-lg font-medium text-[#111]">
-          Still have a question?
-        </p>
-        <p className="md:text-lg text-md leading-[160%] text-secondary-charcol-700">
-          If you didn&apos;t find your answer, feel free to reach out.
-        </p>
-        <button
-          type="button"
-          className="rounded-full bg-primary-800 px-5 py-2 text-xs font-medium text-white transition-colors hover:bg-primary-900"
-        >
-          Contact Us
-        </button>
+      <hr className="" />
+      <div className="hidden lg:block">
+        <ContactCard />
       </div>
     </aside>
   );

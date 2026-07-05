@@ -326,3 +326,7 @@ input:checked ~ .checkmark {
   cursor: pointer;
   border-radius: 50%;
 }
+
+.faq_footer_bg{
+  background: linear-gradient(175deg, #102b1c 0.37%, #d8efe4 100%);
+}
