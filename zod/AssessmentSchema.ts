@@ -67,6 +67,25 @@ export const formSchema = z
       },
     ),
 
+    // Step 4: Goal Life style Activity Step Three
+    weightLossMethods: requiredString()
+      .min(5, "Please tell us more about methods applied."),
+    weightLossMotivation: requiredString()
+      .min(5, "Please share what motivates your weight loss journey."),
+    weightLossBarriers: requiredString()
+      .min(5, "Please describe the barrier in brief."),
+
+    // Step 4: Goal Life style Activity Step Four
+    lifestyleDescription: z.enum(
+      ["sedentary", "light", "moderate", "extreme"],
+      {
+        required_error: requiredMessage,
+      },
+    ),
+    eatingRestrictions: requiredString()
+      .min(3, "Please describe your eating restrictions."),
+    sleepHours: requiredString(),
+
     // Step 5: Eligibility Check Step One
     nicotineUsage: z.enum(
       [
@@ -82,9 +101,7 @@ export const formSchema = z
       },
     ),
     // Step 5: Eligibility Check Step Two
-    nicotineProductTypes: z
-      .array(z.string())
-      .min(1, requiredMessage),
+    nicotineProductTypes: z.array(z.string()).min(1, requiredMessage),
 
     // Step 5: Eligibility Check Step Three
     smokingFrequency: z.enum(
@@ -101,14 +118,10 @@ export const formSchema = z
     }),
 
     // Step 5: Eligibility Check Step Five
-    autoimmuneConditions: z
-      .array(z.string())
-      .min(1, requiredMessage),
+    autoimmuneConditions: z.array(z.string()).min(1, requiredMessage),
 
     // Step 5: Eligibility Check Step Six
-    currentMedications: z
-      .array(z.string())
-      .min(1, requiredMessage),
+    currentMedications: z.array(z.string()).min(1, requiredMessage),
 
     // Step 5: Eligibility Check Step Seven
     medicalTeamConcerns: requiredString(),

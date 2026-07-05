@@ -12,6 +12,8 @@ import HealthHistoryStepTwo from "@/components/Assessment/form/HealthHistoryStep
 import HealthHistoryStepThree from "@/components/Assessment/form/HealthHistoryStepThree";
 import GoalLifestyleActivityStepOne from "@/components/Assessment/form/GoalLifestyleActivityStepOne";
 import GoalLifestyleActivityStepTwo from "@/components/Assessment/form/GoalLifestyleActivityStepTwo";
+import GoalLifestyleActivityStepThree from "@/components/Assessment/form/GoalLifestyleActivityStepThree";
+import GoalLifestyleActivityStepFour from "@/components/Assessment/form/GoalLifestyleActivityStepFour";
 import EligibilityCheckStepOne from "@/components/Assessment/form/EligibilityCheckStepOne";
 import EligibilityCheckStepTwo from "@/components/Assessment/form/EligibilityCheckStepTwo";
 import EligibilityCheckStepThree from "@/components/Assessment/form/EligibilityCheckStepThree";
@@ -61,6 +63,12 @@ export default function MultiStepForm() {
       medicalConditions: [],
       weightLossGoal: undefined,
       triedLosingWeightBefore: undefined,
+      weightLossMethods: "",
+      weightLossMotivation: "",
+      weightLossBarriers: "",
+      lifestyleDescription: undefined,
+      eatingRestrictions: "",
+      sleepHours: "",
       nicotineUsage: undefined,
       nicotineProductTypes: [],
       smokingFrequency: undefined,
@@ -106,10 +114,14 @@ export default function MultiStepForm() {
       }
     }
     if (step === 4) {
-      fieldsToValidate =
-        goalLifestyleStep === 0
-          ? ["weightLossGoal"]
-          : ["triedLosingWeightBefore"];
+      const goalLifestyleFields: Array<Array<keyof FormData>> = [
+        ["weightLossGoal"],
+        ["triedLosingWeightBefore"],
+        ["weightLossMethods", "weightLossMotivation", "weightLossBarriers"],
+        ["lifestyleDescription", "eatingRestrictions", "sleepHours"],
+      ];
+
+      fieldsToValidate = goalLifestyleFields[goalLifestyleStep] || [];
     }
     if (step === 5) {
       const eligibilityFields: Array<Array<keyof FormData>> = [
@@ -135,7 +147,7 @@ export default function MultiStepForm() {
       return;
     }
 
-    if (step === 4 && goalLifestyleStep < 1) {
+    if (step === 4 && goalLifestyleStep < 3) {
       setGoalLifestyleStep((prev) => prev + 1);
       return;
     }
@@ -169,7 +181,7 @@ export default function MultiStepForm() {
     }
 
     if (step === 5) {
-      setGoalLifestyleStep(1);
+      setGoalLifestyleStep(3);
     }
 
     if (step === 6) {
@@ -242,6 +254,12 @@ export default function MultiStepForm() {
             )}
             {step === 4 && goalLifestyleStep === 1 && (
               <GoalLifestyleActivityStepTwo />
+            )}
+            {step === 4 && goalLifestyleStep === 2 && (
+              <GoalLifestyleActivityStepThree />
+            )}
+            {step === 4 && goalLifestyleStep === 3 && (
+              <GoalLifestyleActivityStepFour />
             )}
             {step === 5 && eligibilityStep === 0 && <EligibilityCheckStepOne />}
             {step === 5 && eligibilityStep === 1 && <EligibilityCheckStepTwo />}
