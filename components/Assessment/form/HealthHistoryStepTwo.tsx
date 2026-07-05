@@ -7,8 +7,8 @@ import {
   FormControl,
   FormMessage,
 } from "@/components/ui/form";
-import { Checkbox } from "@/components/ui/checkbox";
 import { FormData } from "@/zod/AssessmentSchema";
+import { Check } from "lucide-react";
 // import { FormData } from "./schema";
 
 const CONDITION_OPTIONS = [
@@ -68,28 +68,38 @@ export default function HealthHistoryStepTwo() {
                   const isChecked = selectedConditions.includes(option.id);
 
                   return (
-                    <button
+                    <div
                       key={option.id}
-                      type="button"
+                      role="checkbox"
+                      tabIndex={0}
+                      aria-checked={isChecked}
                       onClick={() => handleToggle(option.id, !isChecked)}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          event.preventDefault();
+                          handleToggle(option.id, !isChecked);
+                        }
+                      }}
                       className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all ${
                         isChecked
                           ? "border-emerald-700 bg-emerald-50/20 shadow-sm"
                           : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
                       }`}
                     >
-                      <Checkbox
-                        id={option.id}
-                        checked={isChecked}
-                        onCheckedChange={(checked) =>
-                          handleToggle(option.id, !!checked)
-                        }
-                        className="h-5 w-5 rounded border-gray-300 data-[state=checked]:bg-[#0B251A] data-[state=checked]:border-[#0B251A]"
-                      />
+                      <span
+                        aria-hidden="true"
+                        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-all ${
+                          isChecked
+                            ? "border-[#0B251A] bg-[#0B251A] text-white"
+                            : "border-gray-300 bg-white text-transparent"
+                        }`}
+                      >
+                        <Check className="h-3.5 w-3.5" />
+                      </span>
                       <span className="text-sm font-medium text-gray-800">
                         {option.label}
                       </span>
-                    </button>
+                    </div>
                   );
                 })}
               </div>

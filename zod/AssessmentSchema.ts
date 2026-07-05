@@ -1,42 +1,170 @@
 import * as z from "zod";
 
-export const formSchema = z.object({
-  // Steps 1-6 placeholder schemas from before
-  goal: z.enum(["weight-loss", "birth-control", "sleep"]),
-  firstName: z.string().min(1),
-  lastName: z.string().min(1),
-  dob: z.string().min(1),
-  gender: z.enum(["male", "female", "intersex"]),
-  residence: z.string().min(1),
+const requiredMessage = "This field is required";
 
-  // Step 3: Health History Step One
-  unitSystem: z.enum(["imperial", "metric"]).default("imperial"),
-  heightFt: z.coerce.number().min(1, "This field is required"),
-  heightIn: z.coerce.number().min(0).max(11),
-  heightCm: z.coerce.number().min(30, "This field is required"),
-  weightLbs: z.coerce.number().min(1, "This field is required"),
-  weightKgs: z.coerce.number().min(1, "This field is required"),
+const requiredString = (message = requiredMessage) =>
+  z.string({ required_error: message }).min(1, message);
 
-  // Step 3: Health History Step Two
-  medicalConditions: z
-    .array(z.string())
-    .min(1, "Please select at least one option."),
+const requiredNumber = (
+  message = requiredMessage,
+  min?: number,
+  max?: number,
+) => {
+  let numberSchema = z.coerce.number({
+    required_error: message,
+    invalid_type_error: message,
+  });
 
-  // Step 7: Schedule Consultation
-  consultationDate: z.string().min(1, "Please select a consultation date"),
-  consultationTime: z.string().min(1, "Please select a preferred slot"),
-  timezone: z.string().default("America/Los_Angeles"),
+  if (min !== undefined) {
+    numberSchema = numberSchema.min(min, message);
+  }
 
-  // Step 8: Self Checkout
-  cardName: z.string().min(1, "Name on card is required"),
-  cardNumber: z.string().min(16, "Enter a valid card number").max(19),
-  cardExpiry: z
-    .string()
-    .regex(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/, "Use MM/YY format"),
-  cardCvv: z.string().min(3, "CVV is required").max(4),
-  agreeTerms: z.literal(true, {
-    errorMap: () => ({ message: "You must accept the terms and conditions" }),
-  }),
-});
+  if (max !== undefined) {
+    numberSchema = numberSchema.max(max);
+  }
+
+  return z.preprocess(
+    (value) => (value === "" || value === undefined ? undefined : value),
+    numberSchema,
+  );
+};
+
+export const formSchema = z
+  .object({
+    // Steps 1-6 placeholder schemas from before
+    goal: z.enum(["weight-loss", "birth-control", "sleep"], {
+      required_error: requiredMessage,
+    }),
+    firstName: requiredString(),
+    lastName: requiredString(),
+    dob: requiredString(),
+    gender: z.enum(["male", "female", "intersex"], {
+      required_error: requiredMessage,
+    }),
+    residence: requiredString(),
+
+    // Step 3: Health History Step One
+    unitSystem: z.enum(["imperial", "metric"]).default("imperial"),
+    heightFt: requiredNumber(requiredMessage, 1).optional(),
+    heightIn: requiredNumber(requiredMessage, 0, 11).optional(),
+    heightCm: requiredNumber(requiredMessage, 30).optional(),
+    weightLbs: requiredNumber(requiredMessage, 1).optional(),
+    weightKgs: requiredNumber(requiredMessage, 1).optional(),
+
+    // Step 3: Health History Step Two
+    medicalConditions: z.array(z.string()).min(1, requiredMessage),
+
+    // Step 4: Goal Life style Activity Step One
+    weightLossGoal: z.enum(["under-20", "20-50", "50-plus", "not-sure"], {
+      required_error: requiredMessage,
+    }),
+
+    // Step 4: Goal Life style Activity Step Two
+    triedLosingWeightBefore: z.enum(
+      ["never", "few-times", "couldnt-maintain", "many-times"],
+      {
+        required_error: requiredMessage,
+      },
+    ),
+
+    // Step 5: Eligibility Check Step One
+    nicotineUsage: z.enum(
+      [
+        "every-day",
+        "few-times-week",
+        "few-times-month",
+        "quit-smoking",
+        "other-nicotine",
+        "never-used",
+      ],
+      {
+        required_error: requiredMessage,
+      },
+    ),
+    // Step 5: Eligibility Check Step Two
+    nicotineProductTypes: z
+      .array(z.string())
+      .min(1, requiredMessage),
+
+    // Step 5: Eligibility Check Step Three
+    smokingFrequency: z.enum(
+      ["never", "occasionally", "daily", "stopped-last-month"],
+      {
+        required_error: requiredMessage,
+      },
+    ),
+
+    // Step 5: Eligibility Check Step Four
+    bloodPressureValue: z.string().optional(),
+    monitoredForHighBP: z.enum(["yes", "no"], {
+      required_error: requiredMessage,
+    }),
+
+    // Step 5: Eligibility Check Step Five
+    autoimmuneConditions: z
+      .array(z.string())
+      .min(1, requiredMessage),
+
+    // Step 5: Eligibility Check Step Six
+    currentMedications: z
+      .array(z.string())
+      .min(1, requiredMessage),
+
+    // Step 5: Eligibility Check Step Seven
+    medicalTeamConcerns: requiredString(),
+
+    // Step 5: Eligibility Check Step Eight
+    isCurrentlyPregnant: z.enum(["yes", "no", "not-sure"], {
+      required_error: requiredMessage,
+    }),
+
+    // Step 6: Treatment Plan Step One
+    treatmentPlan: z
+      .enum(["1-month", "3-months", "6-months", "12-months"])
+      .default("3-months"),
+
+    // Step 7: Schedule Consultation
+    consultationDate: requiredString(),
+    consultationTime: requiredString(),
+    timezone: z.string().default("America/Los_Angeles"),
+
+    // Step 8: Self Checkout
+    cardName: requiredString(),
+    cardNumber: requiredString().min(16, "Enter a valid card number").max(19),
+    cardExpiry: z
+      .string()
+      .min(1, requiredMessage)
+      .regex(/^(0[1-9]|1[0-2])\/?([0-9]{2})$/, "Use MM/YY format"),
+    cardCvv: requiredString().min(3, "CVV is required").max(4),
+    agreeTerms: z.literal(true, {
+      errorMap: () => ({ message: "You must accept the terms and conditions" }),
+    }),
+  })
+  .superRefine((data, ctx) => {
+    const requireNumber = (
+      field: "heightFt" | "heightIn" | "heightCm" | "weightLbs" | "weightKgs",
+      min = 1,
+    ) => {
+      const value = data[field];
+
+      if (value === undefined || Number.isNaN(value) || value < min) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: requiredMessage,
+          path: [field],
+        });
+      }
+    };
+
+    if (data.unitSystem === "imperial") {
+      requireNumber("heightFt");
+      requireNumber("heightIn", 0);
+      requireNumber("weightLbs");
+      return;
+    }
+
+    requireNumber("heightCm");
+    requireNumber("weightKgs");
+  });
 
 export type FormData = z.infer<typeof formSchema>;
