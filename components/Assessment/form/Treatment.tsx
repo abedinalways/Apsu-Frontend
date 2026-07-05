@@ -10,7 +10,7 @@ import {
 import { Heart, Moon } from "lucide-react";
 import { FormData } from "@/zod/AssessmentSchema";
 
-export default function StepOne() {
+export default function Treatment() {
   const { control, watch, setValue } = useFormContext<FormData>();
   const currentGoal = watch("goal");
 

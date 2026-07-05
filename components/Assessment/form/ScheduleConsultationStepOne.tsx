@@ -11,7 +11,7 @@ import {
 import { Globe } from "lucide-react";
 import { FormData } from "@/zod/AssessmentSchema";
 
-export default function StepSeven() {
+export default function ScheduleConsultationStepOne() {
   const { control, watch, setValue } = useFormContext<FormData>();
   const activeTime = watch("consultationTime");
 

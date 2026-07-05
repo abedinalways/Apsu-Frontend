@@ -5,17 +5,27 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
 import { FormData, formSchema } from "@/zod/AssessmentSchema";
-import StepOne from "@/components/Assessment/form/StepOne";
-import StepTwo from "@/components/Assessment/form/StepTwo";
-import StepThree from "@/components/Assessment/form/StepThree";
-import StepFour from "@/components/Assessment/form/StepFour";
-import StepFive from "@/components/Assessment/form/StepFive";
-import StepSix from "@/components/Assessment/form/StepSix";
-import StepSeven from "@/components/Assessment/form/StepSeven";
-import StepEight from "@/components/Assessment/form/StepEight";
-// import { formSchema, FormData } from "./schema";
+import Treatment from "@/components/Assessment/form/Treatment";
+import GeneralInformation from "@/components/Assessment/form/GeneralInformation";
+import HealthHistoryStepOne from "@/components/Assessment/form/HealthHistoryStepOne ";
+import GoalLifestyleActivityStepOne from "@/components/Assessment/form/GoalLifestyleActivityStepOne";
+import EligibilityCheckStepOne from "@/components/Assessment/form/EligibilityCheckStepOne";
+import TreatmentPlanStepOne from "@/components/Assessment/form/TreatmentPlanStepOne";
+import ScheduleConsultationStepOne from "@/components/Assessment/form/ScheduleConsultationStepOne";
+import CheckoutPaymentStepOne from "@/components/Assessment/form/CheckoutPaymentStepOne";
 
 const TOTAL_STEPS = 8;
+
+const STEP_LABELS = [
+  "Treatment",
+  "General information",
+  "Health History",
+  "(Goal, lifestyle, activity)",
+  "Eligibility Check",
+  "Eligibility",
+  "Checkout & Payment",
+  "Checkout & Payment",
+];
 
 export default function MultiStepForm() {
   const [step, setStep] = useState(1);
@@ -29,6 +39,12 @@ export default function MultiStepForm() {
       dob: "",
       gender: undefined,
       residence: "",
+      unitSystem: "imperial",
+      heightFt: undefined,
+      heightIn: undefined,
+      heightCm: undefined,
+      weightLbs: undefined,
+      weightKgs: undefined,
       consultationDate: "",
       consultationTime: "",
       timezone: "America/Los_Angeles",
@@ -54,8 +70,11 @@ export default function MultiStepForm() {
         "gender",
         "residence",
       ];
-    // Add specific validation triggers for intermediate steps 3-6 if needed:
-    // if (step === 3) fieldsToValidate = [...]
+    if (step === 3)
+      fieldsToValidate =
+        form.getValues("unitSystem") === "imperial"
+          ? ["heightFt", "heightIn", "weightLbs"]
+          : ["heightCm", "weightKgs"];
     if (step === 7) fieldsToValidate = ["consultationDate", "consultationTime"];
 
     const isValid = await form.trigger(fieldsToValidate);
@@ -95,10 +114,10 @@ export default function MultiStepForm() {
     <div className="max-w-md mx-auto p-4 mt-4 bg-white max-h-screen flex flex-col justify-between">
       <div>
         {/* Dynamic header / progress bar logic */}
-        {step < 8 && (
+        {step <= TOTAL_STEPS && (
           <div className="mb-6">
             <div className="flex justify-between text-xs text-muted-foreground mb-2">
-              <span>Progress Tracking</span>
+              <span>{STEP_LABELS[step - 1]}</span>
               <span>
                 Step {step} of {TOTAL_STEPS}
               </span>
@@ -119,14 +138,14 @@ export default function MultiStepForm() {
         <Form {...form}>
           {/* Form wrapper handles programmatic intercept */}
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            {step === 1 && <StepOne />}
-            {step === 2 && <StepTwo />}
-            {step === 3 && <StepThree />}
-            {step === 4 && <StepFour />}
-            {step === 5 && <StepFive />}
-            {step === 6 && <StepSix />}
-            {step === 7 && <StepSeven />}
-            {step === 8 && <StepEight />}
+            {step === 1 && <Treatment />}
+            {step === 2 && <GeneralInformation />}
+            {step === 3 && <HealthHistoryStepOne />}
+            {step === 4 && <GoalLifestyleActivityStepOne />}
+            {step === 5 && <EligibilityCheckStepOne />}
+            {step === 6 && <TreatmentPlanStepOne />}
+            {step === 7 && <ScheduleConsultationStepOne />}
+            {step === 8 && <CheckoutPaymentStepOne />}
           </form>
         </Form>
       </div>

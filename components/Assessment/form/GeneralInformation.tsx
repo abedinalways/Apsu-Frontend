@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/select";
 import { FormData } from "@/zod/AssessmentSchema";
 
-export default function StepTwo() {
+export default function GeneralInformation() {
   const { control, watch, setValue } = useFormContext<FormData>();
   const currentGender = watch("gender");
 

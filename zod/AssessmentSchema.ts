@@ -9,6 +9,19 @@ export const formSchema = z.object({
   gender: z.enum(["male", "female", "intersex"]),
   residence: z.string().min(1),
 
+  // Step 3: Health History Step One
+  unitSystem: z.enum(["imperial", "metric"]).default("imperial"),
+  heightFt: z.coerce.number().min(1, "This field is required"),
+  heightIn: z.coerce.number().min(0).max(11),
+  heightCm: z.coerce.number().min(30, "This field is required"),
+  weightLbs: z.coerce.number().min(1, "This field is required"),
+  weightKgs: z.coerce.number().min(1, "This field is required"),
+
+  // Step 3: Health History Step Two
+  medicalConditions: z
+    .array(z.string())
+    .min(1, "Please select at least one option."),
+
   // Step 7: Schedule Consultation
   consultationDate: z.string().min(1, "Please select a consultation date"),
   consultationTime: z.string().min(1, "Please select a preferred slot"),

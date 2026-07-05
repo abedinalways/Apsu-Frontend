@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 
-export default function StepEight() {
+export default function CheckoutPaymentStepOne() {
   const { control } = useFormContext();
 
   return (
