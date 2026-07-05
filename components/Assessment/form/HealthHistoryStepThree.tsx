@@ -4,102 +4,135 @@ import { useFormContext } from "react-hook-form";
 import {
   FormField,
   FormItem,
+  FormLabel,
   FormControl,
   FormMessage,
 } from "@/components/ui/form";
+import { Textarea } from "@/components/ui/textarea";
+import { X } from "lucide-react";
 import { FormData } from "@/zod/AssessmentSchema";
-import { Check } from "lucide-react";
 
-const CONDITION_OPTIONS = [
-  { id: "dialysis", label: "Undergoing dialysis" },
-  { id: "heart-failure", label: "Heart failure" },
-  { id: "eating-disorder", label: "Anorexia or bulimia" },
-  { id: "transplant", label: "Organ transplant" },
-  { id: "liver-failure", label: "Liver failure" },
-  { id: "none", label: "None" },
+const SIDE_EFFECT_OPTIONS = [
+  "Vomiting",
+  "Nausea",
+  "Diarrhea",
+  "Fatigue",
+  "Decreased appetite",
+  "None",
 ];
 
 export default function HealthHistoryStepThree() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const selectedConditions = watch("medicalConditions") || ["none"];
+  const activeSideEffects = watch("selectedSideEffects") || [];
 
-  const handleToggle = (id: string, checked: boolean) => {
-    let updatedConditions = [...selectedConditions];
+  const handleToggleSideEffect = (effect: string) => {
+    let updatedEffects = [...activeSideEffects];
 
-    if (id === "none") {
-      updatedConditions = checked ? ["none"] : [];
+    if (effect === "None") {
+      // "None" option clears all selected symptoms
+      updatedEffects = ["None"];
     } else {
-      if (checked) {
-        updatedConditions = updatedConditions.filter((item) => item !== "none");
-        updatedConditions.push(id);
+      // Remove "None" if a symptom is selected
+      updatedEffects = updatedEffects.filter((item) => item !== "None");
+
+      if (updatedEffects.includes(effect)) {
+        updatedEffects = updatedEffects.filter((item) => item !== effect);
       } else {
-        updatedConditions = updatedConditions.filter((item) => item !== id);
+        updatedEffects.push(effect);
       }
     }
 
-    setValue("medicalConditions", updatedConditions, { shouldValidate: true });
+    setValue("selectedSideEffects", updatedEffects, { shouldValidate: true });
   };
+
+  // Helper to split options into selected (dark badges) and unselected (outlined pills) arrays
+  const selectedList = SIDE_EFFECT_OPTIONS.filter((item) =>
+    activeSideEffects.includes(item),
+  );
+  const unselectedList = SIDE_EFFECT_OPTIONS.filter(
+    (item) => !activeSideEffects.includes(item),
+  );
 
   return (
     <div className="space-y-6">
-      {/* Header Block exactly as rendered in Screenshot 2026-07-05 091734.png */}
+      {/* Step Description Headers from Screenshot 2026-07-05 121717.png */}
       <div>
         <h2 className="text-xl font-bold text-[#0B251A] tracking-tight leading-snug">
-          Have you ever been treated for or diagnosed with any of the following
-          medical conditions?
+          Do you faced any side effects during your medication?
         </h2>
         <p className="text-xs text-muted-foreground mt-1.5">
           Please select all that apply.
         </p>
       </div>
 
-      {/* Checkbox Rows */}
       <FormField
         control={control}
-        name="medicalConditions"
+        name="selectedSideEffects"
         render={() => (
-          <FormItem className="space-y-3">
+          <FormItem className="space-y-4">
             <FormControl>
-              <div className="grid gap-3">
-                {CONDITION_OPTIONS.map((option) => {
-                  const isChecked = selectedConditions.includes(option.id);
-
-                  return (
-                    <div
-                      key={option.id}
-                      role="checkbox"
-                      tabIndex={0}
-                      aria-checked={isChecked}
-                      onClick={() => handleToggle(option.id, !isChecked)}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter" || event.key === " ") {
-                          event.preventDefault();
-                          handleToggle(option.id, !isChecked);
-                        }
-                      }}
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all ${
-                        isChecked
-                          ? "border-emerald-800 bg-[#E2FBF0]/15 shadow-sm"
-                          : "border-gray-100 bg-[#FAF9F6]/40 hover:bg-[#FAF9F6]"
-                      }`}
-                    >
-                      <span
-                        aria-hidden="true"
-                        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-all ${
-                          isChecked
-                            ? "border-[#0B251A] bg-[#0B251A] text-white"
-                            : "border-gray-300 bg-white text-transparent"
-                        }`}
+              <div className="space-y-4">
+                {/* Outlined unselected pills container row */}
+                {unselectedList.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {unselectedList.map((effect) => (
+                      <button
+                        key={effect}
+                        type="button"
+                        onClick={() => handleToggleSideEffect(effect)}
+                        className="px-4 py-2 rounded-full border border-emerald-800/40 bg-white text-xs font-medium text-emerald-900 hover:bg-emerald-50/40 transition-all active:scale-95"
                       >
-                        <Check className="h-3.5 w-3.5" />
-                      </span>
-                      <span className="text-sm font-medium text-gray-800">
-                        {option.label}
-                      </span>
-                    </div>
-                  );
-                })}
+                        {effect}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {/* Subfield Label section */}
+                <FormLabel className="text-xs font-bold text-gray-900 flex items-center gap-0.5 pt-2">
+                  Describe any side effects you have experienced:{" "}
+                  <span className="text-red-500 font-serif text-sm">*</span>
+                </FormLabel>
+
+                {/* Active dark badge layout area matching Screenshot 2026-07-05 121744.png */}
+                {selectedList.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pt-0.5">
+                    {selectedList.map((effect) => (
+                      <div
+                        key={effect}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#0B251A] text-white text-xs font-medium shadow-sm"
+                      >
+                        <span>{effect}</span>
+                        <button
+                          type="button"
+                          onClick={() => handleToggleSideEffect(effect)}
+                          className="p-0.5 rounded-full hover:bg-white/20 transition-colors"
+                        >
+                          <X className="h-3 w-3" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
+      {/* Narrative input box for custom textual details */}
+      <FormField
+        control={control}
+        name="sideEffectsAdditionalDetails"
+        render={({ field }) => (
+          <FormItem>
+            <FormControl>
+              <Textarea
+                {...field}
+                placeholder="add any additional details here..."
+                className="min-h-[110px] resize-none rounded-2xl border-gray-200 bg-[#FAF9F6]/30 text-sm focus-visible:ring-emerald-700 placeholder:text-gray-400 p-4 w-full"
+              />
             </FormControl>
             <FormMessage />
           </FormItem>

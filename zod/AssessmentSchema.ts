@@ -54,6 +54,18 @@ export const formSchema = z
     // Step 3: Health History Step Two
     medicalConditions: z.array(z.string()).min(1, requiredMessage),
 
+    // Step 3: Health History Step Three
+    selectedSideEffects: z
+      .array(z.string())
+      .min(1, requiredMessage),
+    sideEffectsAdditionalDetails: requiredString()
+      .min(5, "Please describe the side effects you have experienced."),
+
+    // Step 3: Health History Step Four
+    knownAllergies: z
+      .array(z.string())
+      .min(1, requiredMessage),
+
     // Step 4: Goal Life style Activity Step One
     weightLossGoal: z.enum(["under-20", "20-50", "50-plus", "not-sure"], {
       required_error: requiredMessage,
@@ -68,12 +80,18 @@ export const formSchema = z
     ),
 
     // Step 4: Goal Life style Activity Step Three
-    weightLossMethods: requiredString()
-      .min(5, "Please tell us more about methods applied."),
-    weightLossMotivation: requiredString()
-      .min(5, "Please share what motivates your weight loss journey."),
-    weightLossBarriers: requiredString()
-      .min(5, "Please describe the barrier in brief."),
+    weightLossMethods: requiredString().min(
+      5,
+      "Please tell us more about methods applied.",
+    ),
+    weightLossMotivation: requiredString().min(
+      5,
+      "Please share what motivates your weight loss journey.",
+    ),
+    weightLossBarriers: requiredString().min(
+      5,
+      "Please describe the barrier in brief.",
+    ),
 
     // Step 4: Goal Life style Activity Step Four
     lifestyleDescription: z.enum(
@@ -82,8 +100,10 @@ export const formSchema = z
         required_error: requiredMessage,
       },
     ),
-    eatingRestrictions: requiredString()
-      .min(3, "Please describe your eating restrictions."),
+    eatingRestrictions: requiredString().min(
+      3,
+      "Please describe your eating restrictions.",
+    ),
     sleepHours: requiredString(),
 
     // Step 5: Eligibility Check Step One

@@ -25,6 +25,7 @@ import EligibilityCheckStepEight from "@/components/Assessment/form/EligibilityC
 import TreatmentPlanStepOne from "@/components/Assessment/form/TreatmentPlanStepOne";
 import ScheduleConsultationStepOne from "@/components/Assessment/form/ScheduleConsultationStepOne";
 import CheckoutPaymentStepOne from "@/components/Assessment/form/CheckoutPaymentStepOne";
+import HealthHistoryStepFour from "@/components/Assessment/form/HealthHistoryStepFour";
 
 const TOTAL_STEPS = 8;
 
@@ -61,6 +62,9 @@ export default function MultiStepForm() {
       weightLbs: undefined,
       weightKgs: undefined,
       medicalConditions: [],
+      selectedSideEffects: [],
+      sideEffectsAdditionalDetails: "",
+      knownAllergies: [],
       weightLossGoal: undefined,
       triedLosingWeightBefore: undefined,
       weightLossMethods: "",
@@ -109,8 +113,15 @@ export default function MultiStepForm() {
           form.getValues("unitSystem") === "imperial"
             ? ["heightFt", "heightIn", "weightLbs"]
             : ["heightCm", "weightKgs"];
-      } else {
+      } else if (healthHistoryStep === 1) {
         fieldsToValidate = ["medicalConditions"];
+      } else if (healthHistoryStep === 2) {
+        fieldsToValidate = [
+          "selectedSideEffects",
+          "sideEffectsAdditionalDetails",
+        ];
+      } else {
+        fieldsToValidate = ["knownAllergies"];
       }
     }
     if (step === 4) {
@@ -142,7 +153,7 @@ export default function MultiStepForm() {
     const isValid = await form.trigger(fieldsToValidate);
     if (!isValid) return;
 
-    if (step === 3 && healthHistoryStep < 2) {
+    if (step === 3 && healthHistoryStep < 3) {
       setHealthHistoryStep((prev) => prev + 1);
       return;
     }
@@ -177,7 +188,7 @@ export default function MultiStepForm() {
     }
 
     if (step === 4) {
-      setHealthHistoryStep(2);
+      setHealthHistoryStep(3);
     }
 
     if (step === 5) {
@@ -249,6 +260,7 @@ export default function MultiStepForm() {
             {step === 3 && healthHistoryStep === 2 && (
               <HealthHistoryStepThree />
             )}
+            {step === 3 && healthHistoryStep === 3 && <HealthHistoryStepFour />}
             {step === 4 && goalLifestyleStep === 0 && (
               <GoalLifestyleActivityStepOne />
             )}
