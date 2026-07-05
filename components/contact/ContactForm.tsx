@@ -36,16 +36,18 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="rounded-3xl bg-white p-8 shadow-lg">
+    <div className="rounded-2xl sm:rounded-3xl bg-white py-4 px-6 shadow-lg">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
           <ContactFormFields control={form.control} />
 
-          <div className="flex items-center justify-center">
-            <Button text="Submit Request" href="/submit" />
-          </div>
-          <div className="flex items-center justify-end pt-4">
-            <ContactFooterInfo />
+            <div className="w-full mx-auto flex justify-center">
+              <Button text="Submit Request" href="/submit" />
+            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-end gap-4 pt-2">
+            <div className="w-full sm:w-auto order-2 sm:order-1">
+              <ContactFooterInfo />
+            </div>
           </div>
         </form>
       </Form>

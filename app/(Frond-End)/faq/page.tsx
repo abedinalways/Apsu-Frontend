@@ -15,14 +15,14 @@ export default function FaqPage() {
 
   return (
     <>
-    <div className="FAQ-container">
+    <div className="FAQ-container px-4 sm:px-6 md:px-8">
       <FAQHero />
-      <div className="grid lg:grid-cols-[800px_1fr] gap-12 justify-center mt-6 mb-6">
-        <aside className=" w-full mx-auto flex flex-col lg:items-center" >
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] xl:grid-cols-[364px_1fr] gap-8 lg:gap-12 justify-self-center mt-6 lg:mt-8 mb-6 ">
+        <aside className="w-full mx-auto flex flex-col lg:items-center" >
           <FAQSidebar topics={topics} />
         </aside>
 
-        <main className=" mt-10">
+        <main className="mt-6 lg:mt-10">
           <FAQList />
 
           <div className="mt-6 lg:hidden">

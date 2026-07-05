@@ -31,8 +31,8 @@ export function FAQAccordion({ item }: Props) {
         className="
           group
 
-          px-6
-          py-5
+          px-4 sm:px-6
+          py-4 sm:py-5
 
           hover:no-underline
 
@@ -40,16 +40,15 @@ export function FAQAccordion({ item }: Props) {
           data-[state=open]:text-white
         "
       >
-        <span className="text-left text-xl font-medium leading-8">
+        <span className="text-left text-base sm:text-lg md:text-xl font-medium leading-6 sm:leading-8">
           {item.question}
         </span>
 
         <span
           className="
-            ml-5
+            ml-3 sm:ml-5
             flex
-            h-10
-            w-10
+            h-8 w-8 sm:h-10 sm:w-10
             shrink-0
             items-center
             justify-center
@@ -59,8 +58,7 @@ export function FAQAccordion({ item }: Props) {
         >
           <ChevronDown
             className="
-              h-5
-              w-5
+              h-4 w-4 sm:h-5 sm:w-5
 
               text-[#586E60]
 
@@ -81,11 +79,11 @@ export function FAQAccordion({ item }: Props) {
 
           bg-white
 
-          px-6
-          py-6
+          px-4 sm:px-6
+          py-4 sm:py-6
 
-          text-base
-          leading-8
+          text-sm sm:text-base
+          leading-6 sm:leading-8
           text-[#555]
         "
       >

@@ -7,7 +7,7 @@ export default function ContactHero() {
         from you.
       </h1>
 
-      <p className="mx-auto mt-5 max-w-md text-[#3b3b3c] text-[20px] md:text-[16px] text-center">
+      <p className="mx-auto mt-5 max-w-md text-[#3b3b3c] text-base sm:text-lg md:text-base text-center">
         Accessible healthcare insights for every language and every journey.
       </p>
     </section>

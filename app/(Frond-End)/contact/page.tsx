@@ -6,7 +6,7 @@ import FAQFooter from '@/components/faq/FAQFooter';
 export default function ContactPage() {
   return (
     <>
-      <main className="lg:custom-container pt-50 ">
+      <main className=" pt-50">
         <ContactHero />
 
         <div className=" overflow-x-hidden">

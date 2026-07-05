@@ -39,20 +39,22 @@ export default function Navbar() {
       {/* navbar */}
 
       <div
-        className={`z-998 w-full px-5 xl:px-0 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out  ${scrolled ? "top-5 lg:top-7.5" : "top-5 lg:top-15"}`}
+        className={`z-998 w-full px-4 sm:px-5 xl:px-0 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out  ${scrolled ? "top-4 sm:top-5 lg:top-7.5" : "top-4 sm:top-5 lg:top-15"}`}
       >
-        <div className="flex w-full justify-between xl:grid xl:grid-cols-4 items-center max-w-330 mx-auto h-15 bg-background rounded-full px-3 md:pr-1.5 md:pl-6 shadow-[0_4px_24.5px_0_rgba(0,0,0,0.09)]">
+        <div className="flex w-full justify-between xl:grid xl:grid-cols-4 items-center max-w-7xl mx-auto h-14 sm:h-15 bg-background rounded-full px-3 sm:px-4 md:pr-1.5 md:pl-6 shadow-[0_4px_24.5px_0_rgba(0,0,0,0.09)]">
           {/* Left: Logo */}
-          <Image src="/logo.png" alt="apsu" height={32} width={87} />
+          <Link href="/" className="flex items-center">
+            <Image src="/logo.png" alt="apsu" height={32} width={87} className="h-7 sm:h-8 w-auto" />
+          </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden  xl:col-span-2 justify-center lg:flex space-x-6 text-base">
+          <nav className="hidden xl:col-span-2 justify-center lg:flex space-x-6 text-base">
             {menuItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
                 className={cn(
-                  "  text-lg transition",
+                  "text-lg transition",
                   pathname === item.path ? "text-secondaryColor" : "text-black",
                 )}
               >
@@ -62,7 +64,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right: Language, Auth Buttons */}
-          <div className=" md:flex justify-end items-center gap-4">
+          <div className="md:flex justify-end items-center gap-4">
             <div className="hidden md:flex justify-end gap-4 items-center ">
               <Button className="text-lg">Get started</Button>
               <Button variant="outline" className="text-lg">

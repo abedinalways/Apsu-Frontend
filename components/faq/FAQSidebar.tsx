@@ -53,12 +53,12 @@ export function FAQSidebar({ topics }: FAQSidebarProps) {
   };
 
   return (
-    <aside className="shrink-0 flex-col gap-8 mt-10 md:mt-0 lg:flex lg:py-12 lg:w-91 font-[work_sans]">
+    <aside className="shrink-0 flex-col gap-6 sm:gap-8 mt-8 sm:mt-10 md:mt-0 lg:flex lg:py-12 w-full font-[work_sans]">
       <div className="flex flex-col gap-3">
-        <span className="md:text-2xl text-lg font-semibold uppercase tracking-wide text-[#111]">
+        <span className="text-lg sm:text-xl md:text-2xl font-semibold uppercase tracking-wide text-[#111]">
           All Topics
         </span>
-        <nav className="flex flex-col gap-2 md:text-lg text-md">
+        <nav className="flex flex-col gap-2 text-base sm:text-lg">
           {topics.map(topic => {
             const isActive = activeId === topic.id;
 
@@ -67,7 +67,7 @@ export function FAQSidebar({ topics }: FAQSidebarProps) {
                 key={topic.id}
                 href={`#${topic.id}`}
                 onClick={() => handleLinkClick(topic.id)}
-                className={`rounded-md px-2 py-1 transition-colors font-medium ${
+                className={`rounded-md px-2 py-1.5 sm:py-1 transition-colors font-medium ${
                   isActive ? 'text-[#00774d]' : 'text-[#6c6c6c]'
                 }`}
               >
