@@ -18,14 +18,14 @@ const ReusableTextarea = ({
   return (
     <div className="space-y-1.5">
       {label && (
-        <Label className="text-sm text-headerColor font-medium">
+        <Label className="text-[16px] text-headerColor font-medium">
           {label}
         </Label>
       )}
 
       <Textarea
         placeholder={placeholder}
-        className={`min-h-[80px] ${className || ""}`}
+        className={`min-h-[80px] ${className || ""} placeholder:text-[16px]`}
         {...props}
       />
 

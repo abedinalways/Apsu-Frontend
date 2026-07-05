@@ -1,0 +1,67 @@
+import TextareaField from '@/components/reusable/form/TextareaField';
+import InputField from '../reusable/InputFiled/InputField';
+
+interface Props {
+  control: any;
+}
+
+export default function ContactFormFields({ control }: Props) {
+  return (
+    
+    <div className="space-y-6">
+      
+      <div className="space-y-2">
+        <label className="text-[17px] font-medium text-black block">
+          Full Name
+        </label>
+        <div className="grid gap-4 md:grid-cols-2">
+          <InputField
+            control={control}
+            name="firstName"
+            label="" 
+            placeholder="First name"
+          />
+          <InputField
+            control={control}
+            name="lastName"
+            label=""
+            placeholder="Last name"
+          />
+        </div>
+      </div>
+
+      
+      <div className="grid gap-4 md:grid-cols-2">
+        <InputField
+          control={control}
+          name="email"
+          label="Email"
+          placeholder="Enter email address"
+        />
+
+        <InputField
+          control={control}
+          name="phone"
+          label="Phone"
+          placeholder="Enter phone number"
+        />
+      </div>
+
+      
+      <InputField
+        control={control}
+        name="subject"
+        label="Subject"
+        placeholder="Ex: Weight loss"
+      />
+
+      
+      <TextareaField
+        control={control}
+        name="message"
+        label="Message"
+        placeholder="Write your message here......."
+      />
+    </div>
+  );
+}

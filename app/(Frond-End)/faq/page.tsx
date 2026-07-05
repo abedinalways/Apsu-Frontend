@@ -14,9 +14,10 @@ export default function FaqPage() {
   }));
 
   return (
+    <>
     <div className="FAQ-container">
       <FAQHero />
-      <div className="grid lg:grid-cols-[400px_1fr] gap-12 justify-center mt-6 mb-6">
+      <div className="grid lg:grid-cols-[800px_1fr] gap-12 justify-center mt-6 mb-6">
         <aside className=" w-full mx-auto flex flex-col lg:items-center" >
           <FAQSidebar topics={topics} />
         </aside>
@@ -29,7 +30,8 @@ export default function FaqPage() {
           </div>
         </main>
       </div>
-      <FAQFooter/>
     </div>
+      <FAQFooter/>
+    </>
   );
 }

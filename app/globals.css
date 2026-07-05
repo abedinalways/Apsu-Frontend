@@ -279,19 +279,19 @@
    Utility Classes (custom)
 ------------------------------- */
 @utility container {
-  max-width: 1376px;
+  min-width: 1376px;
   padding: 0 16px;
   margin: 0 auto;
 }
 
 @utility custom-container {
-  max-width: 1320px;
+  min-width: 1376px;
   margin: 0 auto;
 }
 
 .FAQ-container{
   width: 100%;
-  max-width: 1480px;
+  min-width: 1480px;
   margin-inline: auto;
   border-radius: 24px;
   padding: 28px 28px 120px;
@@ -329,4 +329,23 @@ input:checked ~ .checkmark {
 
 .faq_footer_bg{
   background: linear-gradient(175deg, #102b1c 0.37%, #d8efe4 100%);
+}
+
+.decorative-accent {
+  background: linear-gradient(
+    95deg, 
+    rgba(182, 199, 188, 0.5) 0%, 
+    rgba(45, 66, 49, 0.85) 100%
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hero-container {
+  border-radius: 48px 48px 0 0;
+  padding: 32px 32px 120px;
+  min-width: 1440px;
+  height: 402px;
+  background: #fff;
 }
