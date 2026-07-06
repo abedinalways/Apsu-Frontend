@@ -43,7 +43,7 @@ export default function GeneralInformation() {
                 <Input
                   placeholder="First Name"
                   {...field}
-                  className="bg-[#FAF9F4] h-10"
+                  className="bg-[#FAF9F4] h-11"
                 />
               </FormControl>
               <FormMessage />
@@ -62,7 +62,7 @@ export default function GeneralInformation() {
                 <Input
                   placeholder="Last Name"
                   {...field}
-                  className="bg-[#FAF9F4] h-10"
+                  className="bg-[#FAF9F4] h-11"
                 />
               </FormControl>
               <FormMessage />
@@ -83,7 +83,7 @@ export default function GeneralInformation() {
               <Input
                 type="date"
                 {...field}
-                className="bg-[#FAF9F4] h-10 text-muted-foreground pr-10"
+                className="bg-[#FAF9F4] h-11 flex flex-col text-muted-foreground pt-2"
               />
             </FormControl>
             <FormMessage />
@@ -108,7 +108,7 @@ export default function GeneralInformation() {
                     onClick={() =>
                       setValue("gender", g, { shouldValidate: true })
                     }
-                    className={`py-3 px-4 rounded-xl border text-sm capitalize transition-all h-10  ${
+                    className={`py-3 px-4 rounded-xl border text-sm capitalize transition-all h-11  ${
                       currentGender === g
                         ? "border-[#AFC1B6] bg-[#AFC1B6]/10 text-[#0B251A]"
                         : "border-gray-200 bg-[#FAF9F4] hover:bg-[#FAF9F4]/50"
@@ -134,7 +134,7 @@ export default function GeneralInformation() {
             </FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <SelectTrigger className="bg-[#FAF9F4] h-10 w-full">
+                <SelectTrigger className="bg-[#FAF9F4] h-11! w-full">
                   <SelectValue placeholder="Select your state name" />
                 </SelectTrigger>
               </FormControl>

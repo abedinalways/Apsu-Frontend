@@ -10,6 +10,9 @@ import {
 import CustomImage from "@/components/reusable/CustomImage";
 import { FormData } from "@/zod/AssessmentSchema";
 import Image from "next/image";
+import BirthControlIcons from "@/components/icons/BirthControlIcons";
+import SleepIcons from "@/components/icons/SleepIcons";
+import WeightLossIcons from "@/components/icons/WeightLossIcons";
 
 export default function Treatment() {
   const { control, watch, setValue } = useFormContext<FormData>();
@@ -20,19 +23,19 @@ export default function Treatment() {
       id: "weight-loss",
       title: "Weight Loss",
       description: "GLP-1 and metabolic support, guided by a physician.",
-      icon: "/images/Treatment1.png",
+      icon: <WeightLossIcons />,
     },
     {
       id: "birth-control",
       title: "Birth Control",
       description: "Pills, patches, rings - delivered discreetly each month.",
-      icon: "/images/Treatment2.png",
+      icon: <BirthControlIcons />,
     },
     {
       id: "sleep",
       title: "Sleep",
       description: "Personalized plans for falling and staying asleep.",
-      icon: "/images/Treatment3.png",
+      icon: <SleepIcons />,
     },
   ] as const;
 
@@ -60,7 +63,7 @@ export default function Treatment() {
                       }
                       className={`flex items-center justify-between p-4 rounded-xl border text-left transition-all ${
                         isSelected
-                          ? "border-[#ECF9F1] bg-[#ECF9F1]/10 shadow-sm"
+                          ? "border-[#ECF9F1] bg-[#ECF9F1]"
                           : "border-gray-100 bg-[#FAF9F4] hover:bg-[#FAF9F4]/50"
                       }`}
                     >
@@ -72,13 +75,14 @@ export default function Treatment() {
                           {option.description}
                         </p>
                       </div>
-                      <div className="p-2 bg-white rounded-full relative w-10 h-10">
-                        <Image
+                      <div className="">
+                        {/* <Image
                           src={option.icon}
                           alt={option.title}
                           fill
                           className="w-6 h-6 object-contain"
-                        />
+                        /> */}
+                        {option.icon}
                       </div>
                     </button>
                   );
