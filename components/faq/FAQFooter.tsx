@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 export default function FAQFooter() {
   return (
-    <div className="hero-container mx-auto py-4">
-      <div className="relative lg:py-6 py-8 overflow-x-hidden custom-container">
+    <div className=" mx-auto py-4">
+      <div className="relative lg:py-6 py-8 overflow-x-hidden hero-container">
         <div className="faq_footer_bg rounded-[16px] md:py-8 flex flex-col justify-between  px-6 py-20">
           <h2 className="text-[#fff] md:text-[48px] text-[32px] font-medium leading-[124%]  mb-4">
             Healthcare that speaks <br />
