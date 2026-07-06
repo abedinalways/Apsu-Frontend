@@ -7,8 +7,9 @@ import {
   FormControl,
   FormMessage,
 } from "@/components/ui/form";
-import { Heart, Moon } from "lucide-react";
+import CustomImage from "@/components/reusable/CustomImage";
 import { FormData } from "@/zod/AssessmentSchema";
+import Image from "next/image";
 
 export default function Treatment() {
   const { control, watch, setValue } = useFormContext<FormData>();
@@ -19,25 +20,25 @@ export default function Treatment() {
       id: "weight-loss",
       title: "Weight Loss",
       description: "GLP-1 and metabolic support, guided by a physician.",
-      icon: <Heart className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/Treatment1.png",
     },
     {
       id: "birth-control",
       title: "Birth Control",
       description: "Pills, patches, rings - delivered discreetly each month.",
-      icon: <span className="text-xl">🌸</span>,
+      icon: "/images/Treatment2.png",
     },
     {
       id: "sleep",
       title: "Sleep",
       description: "Personalized plans for falling and staying asleep.",
-      icon: <Moon className="w-6 h-6 text-emerald-600" />,
+      icon: "/images/Treatment3.png",
     },
   ] as const;
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-semibold text-center text-gray-800">
+      <h2 className="text-xl font-semibold text-gray-800">
         What would you like help with today?
       </h2>
 
@@ -59,11 +60,11 @@ export default function Treatment() {
                       }
                       className={`flex items-center justify-between p-4 rounded-xl border text-left transition-all ${
                         isSelected
-                          ? "border-emerald-600 bg-emerald-50/40 shadow-sm"
-                          : "border-gray-100 bg-gray-50/50 hover:bg-gray-50"
+                          ? "border-[#ECF9F1] bg-[#ECF9F1]/10 shadow-sm"
+                          : "border-gray-100 bg-[#FAF9F4] hover:bg-[#FAF9F4]/50"
                       }`}
                     >
-                      <div className="space-y-1 pr-4">
+                      <div className="space-y-3 pr-4">
                         <p className="font-medium text-gray-900">
                           {option.title}
                         </p>
@@ -71,8 +72,13 @@ export default function Treatment() {
                           {option.description}
                         </p>
                       </div>
-                      <div className="p-2 bg-white rounded-full border shadow-sm">
-                        {option.icon}
+                      <div className="p-2 bg-white rounded-full relative w-10 h-10">
+                        <Image
+                          src={option.icon}
+                          alt={option.title}
+                          fill
+                          className="w-6 h-6 object-contain"
+                        />
                       </div>
                     </button>
                   );

@@ -41,7 +41,7 @@ export default function EligibilityCheckStepFour() {
               <Textarea
                 {...field}
                 placeholder="eg-Normal- Both numbers less than 129/80"
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-emerald-600 placeholder:text-gray-400"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-[#AFC1B6] placeholder:text-gray-400"
               />
             </FormControl>
             <FormMessage />
@@ -71,14 +71,14 @@ export default function EligibilityCheckStepFour() {
                   }
                   className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all ${
                     isMonitored === "yes"
-                      ? "border-emerald-700 bg-emerald-50/20 shadow-sm"
+                       ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
                       : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
                   }`}
                 >
                   <div
-                    className={`h-4 w-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
+                      className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                       isMonitored === "yes"
-                        ? "border-emerald-800 bg-[#0B251A]"
+                         ? "border-[#AFC1B6] bg-[#0B251A]"
                         : "border-gray-400 bg-white"
                     }`}
                   >
@@ -99,14 +99,14 @@ export default function EligibilityCheckStepFour() {
                   }
                   className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all ${
                     isMonitored === "no"
-                      ? "border-emerald-700 bg-emerald-50/20 shadow-sm"
+                       ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
                       : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
                   }`}
                 >
                   <div
-                    className={`h-4 w-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
+                      className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                       isMonitored === "no"
-                        ? "border-emerald-800 bg-[#0B251A]"
+                         ? "border-[#AFC1B6] bg-[#0B251A]"
                         : "border-gray-400 bg-white"
                     }`}
                   >

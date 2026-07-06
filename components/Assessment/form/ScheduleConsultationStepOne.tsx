@@ -119,23 +119,23 @@ export default function ScheduleConsultationStepOne() {
                   <div className="p-4 border border-gray-100 rounded-3xl bg-white shadow-sm">
                     {/* Header controls matching image_0de666.png perfectly */}
                     <div className="flex items-center justify-center gap-4 mb-4">
-                      <button
-                        type="button"
-                        onClick={handlePrevMonth}
-                        className="h-8 w-8 rounded-full border border-gray-100 bg-[#FAF9F6] flex items-center justify-center hover:bg-gray-50 transition-colors"
-                      >
-                        <ChevronLeft className="h-4 w-4 text-gray-600" />
-                      </button>
-                      <span className="text-sm font-semibold text-gray-800 min-w-[100px] text-center">
-                        {monthLabel}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={handleNextMonth}
-                        className="h-8 w-8 rounded-full bg-[#FAF9F6] hover:bg-gray-50 flex items-center justify-center hover:opacity-90 transition-opacity"
-                      >
-                        <ChevronRight className="h-4 w-4 text-gray-600" />
-                      </button>
+                       <button
+                         type="button"
+                         onClick={handlePrevMonth}
+                         className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] flex items-center justify-center hover:bg-gray-50 transition-colors"
+                       >
+                         <ChevronLeft className="h-4 w-4 text-gray-600" />
+                       </button>
+                       <span className="text-sm font-semibold text-gray-800 min-w-[100px] text-center">
+                         {monthLabel}
+                       </span>
+                       <button
+                         type="button"
+                         onClick={handleNextMonth}
+                         className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] hover:bg-gray-50 flex items-center justify-center hover:opacity-90 transition-opacity"
+                       >
+                         <ChevronRight className="h-4 w-4 text-gray-600" />
+                       </button>
                     </div>
 
                     {/* Calendar Table Grid */}
@@ -163,11 +163,11 @@ export default function ScheduleConsultationStepOne() {
                             key={`day-${day}`}
                             type="button"
                             onClick={() => handleDateSelect(day)}
-                            className={`h-8 w-8 rounded-full mx-auto flex items-center justify-center font-medium text-xs transition-all ${
+                            className={`h-10 w-10 rounded-full mx-auto flex items-center justify-center font-medium text-xs transition-all ${
                               isSelected
-                                ? "bg-[#0B251A] text-white font-bold scale-105 shadow-sm"
-                                : isToday
-                                  ? "bg-[#E2FBF0] text-gray-900 hover:bg-emerald-200"
+                                   ? "bg-[#AFC1B6] text-white font-bold scale-105 shadow-sm"
+                                   : isToday
+                                     ? "bg-[#E2FBF0] text-gray-900 hover:bg-[#AFC1B6]"
                                   : "text-gray-700 hover:bg-gray-50"
                             }`}
                           >
@@ -209,7 +209,7 @@ export default function ScheduleConsultationStepOne() {
                           }
                           className={`w-full py-2.5 text-center rounded-full text-xs font-medium border transition-all ${
                             isSelected
-                              ? "bg-[#0B251A] text-white border-transparent"
+                              ? "bg-[#AFC1B6] text-white border-transparent"
                               : "border-gray-400 text-gray-800 hover:bg-gray-50 bg-white"
                           }`}
                         >
@@ -254,7 +254,7 @@ export default function ScheduleConsultationStepOne() {
                       onClick={() =>
                         setValue("timezone", tz, { shouldValidate: true })
                       }
-                      className="text-xs cursor-pointer focus:bg-emerald-50 focus:text-emerald-900"
+                       className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-[#0B251A]"
                     >
                       {tz}
                     </DropdownMenuItem>

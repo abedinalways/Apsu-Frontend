@@ -5,10 +5,10 @@ import React, { Suspense } from "react";
 function AssessmentLayout({ children }: { children: React.ReactNode }) {
   return (
     <Suspense fallback={<Loader />}>
-      <div>
+      <div className="bg-[#FFFFFF]">
         <AssessmentNavbar />
+        {children}
       </div>
-      {children}
     </Suspense>
   );
 }

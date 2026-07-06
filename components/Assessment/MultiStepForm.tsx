@@ -7,7 +7,7 @@ import { Form } from "@/components/ui/form";
 import { FormData, formSchema } from "@/zod/AssessmentSchema";
 import Treatment from "@/components/Assessment/form/Treatment";
 import GeneralInformation from "@/components/Assessment/form/GeneralInformation";
-import HealthHistoryStepOne from "@/components/Assessment/form/HealthHistoryStepOne ";
+import HealthHistoryStepOne from "@/components/Assessment/form/HealthHistoryStepOne";
 import HealthHistoryStepTwo from "@/components/Assessment/form/HealthHistoryStepTwo";
 import HealthHistoryStepThree from "@/components/Assessment/form/HealthHistoryStepThree";
 import GoalLifestyleActivityStepOne from "@/components/Assessment/form/GoalLifestyleActivityStepOne";
@@ -92,6 +92,7 @@ export default function MultiStepForm() {
       agreeTerms: true,
     },
     mode: "onChange",
+    shouldUnregister: false,
   });
 
   // Validates current step before allowing progression
@@ -204,30 +205,16 @@ export default function MultiStepForm() {
 
   // This fires ONLY when Step 8 inputs pass validation upon clicking 'Place order'
   const onSubmit = (data: FormData) => {
-    console.log("🚀 Complete Onboarding Data Captured:", data);
-    /* Expected Output Format in Console:
-      {
-        goal: "weight-loss",
-        firstName: "Maria",
-        lastName: "Olivo",
-        dob: "1995-04-12",
-        gender: "female",
-        residence: "california",
-        consultationDate: "2026-07-16",
-        consultationTime: "09:30 AM",
-        timezone: "America/Los_Angeles",
-        cardName: "Maria Olivo",
-        cardNumber: "4111222233334444",
-        cardExpiry: "12/29",
-        cardCvv: "123",
-        agreeTerms: true
-      }
-    */
+    console.log("=======data========");
+    console.log(data);
+
+    // Send data to backend API
+    // Example: await submitAssessmentForm(data);
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 mt-4 bg-white max-h-screen flex flex-col justify-between">
-      <div>
+    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-[#FFFFFF] max-h-screen flex flex-col">
+      <div className="flex-1 overflow-y-auto">
         {/* Dynamic header / progress bar logic */}
         {step <= TOTAL_STEPS && (
           <div className="mb-6">
@@ -242,7 +229,7 @@ export default function MultiStepForm() {
                 <div
                   key={i}
                   className={`h-full flex-1 rounded-full transition-all duration-300 ${
-                    i + 1 <= step ? "bg-emerald-800" : "bg-gray-100"
+                    i + 1 <= step ? "bg-emerald-800" : "bg-gray-300"
                   }`}
                 />
               ))}
@@ -299,13 +286,12 @@ export default function MultiStepForm() {
       </div>
 
       {/* Global Form Footer Trigger buttons */}
-      <div className="flex flex-col gap-3 pt-6 border-t mt-6">
+      <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF]">
         {step === TOTAL_STEPS ? (
           <button
-            type="button"
-            // Explicitly invokes submit configuration from step view
+            type="submit"
             onClick={form.handleSubmit(onSubmit)}
-            className="w-full py-3 bg-[#0B251A] hover:bg-opacity-90 text-white rounded-full font-medium text-sm transition-all"
+            className="w-full py-3 bg-[#0B251A] hover:bg-opacity-90 text-white rounded-full font-medium text-sm transition-all cursor-pointer"
           >
             Place order
           </button>
@@ -315,14 +301,14 @@ export default function MultiStepForm() {
               type="button"
               onClick={prevStep}
               disabled={step === 1}
-              className="px-6 py-2.5 border rounded-full text-sm font-medium hover:bg-gray-50 disabled:opacity-30"
+              className="px-6 py-3 border rounded-full text-sm font-medium hover:bg-gray-50 disabled:opacity-30"
             >
               &lt; Back
             </button>
             <button
               type="button"
               onClick={nextStep}
-              className="px-6 py-2.5 bg-[#0B251A] text-white rounded-full text-sm font-medium"
+              className="px-6 py-3 bg-[#0B251A] text-white rounded-full text-sm font-medium"
             >
               Continue &gt;
             </button>

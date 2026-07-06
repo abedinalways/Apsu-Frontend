@@ -16,7 +16,7 @@ export default function CheckoutPaymentStepOne() {
 
   return (
     <div className="space-y-4">
-      <div className="bg-[#E2FBF0] p-4 rounded-xl flex justify-between items-center border border-emerald-100">
+       <div className="bg-[#E2FBF0] p-4 rounded-xl flex justify-between items-center border border-[#AFC1B6]">
         <div>
           <h4 className="font-bold text-gray-900 text-sm">
             Weight loss - 3 months
@@ -75,7 +75,7 @@ export default function CheckoutPaymentStepOne() {
                 <Input
                   placeholder="Enter your card name"
                   {...field}
-                  className="bg-gray-50/40 h-9 text-xs"
+                  className="bg-gray-50/40 h-11 text-xs"
                 />
               </FormControl>
               <FormMessage />
@@ -95,7 +95,7 @@ export default function CheckoutPaymentStepOne() {
                 <Input
                   placeholder="Enter your card number"
                   {...field}
-                  className="bg-gray-50/40 h-9 text-xs"
+                  className="bg-gray-50/40 h-11 text-xs"
                 />
               </FormControl>
               <FormMessage />
@@ -103,7 +103,7 @@ export default function CheckoutPaymentStepOne() {
           )}
         />
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <FormField
             control={control}
             name="cardExpiry"
@@ -116,7 +116,7 @@ export default function CheckoutPaymentStepOne() {
                   <Input
                     placeholder="MM / YY"
                     {...field}
-                    className="bg-gray-50/40 h-9 text-xs text-center"
+                    className="bg-gray-50/40 h-11 text-xs text-center"
                   />
                 </FormControl>
                 <FormMessage />
@@ -135,7 +135,7 @@ export default function CheckoutPaymentStepOne() {
                   <Input
                     placeholder="123"
                     {...field}
-                    className="bg-gray-50/40 h-9 text-xs text-center"
+                    className="bg-gray-50/40 h-11 text-xs text-center"
                   />
                 </FormControl>
                 <FormMessage />
@@ -149,7 +149,7 @@ export default function CheckoutPaymentStepOne() {
         Your personal data will be used to process your order, support your
         experience throughout this website, and for other purposes described in
         our{" "}
-        <span className="text-emerald-700 underline cursor-pointer">
+        <span className="text-[#0B251A] underline cursor-pointer">
           privacy policy
         </span>
         .
@@ -170,7 +170,7 @@ export default function CheckoutPaymentStepOne() {
             <div className="space-y-1 leading-none">
               <FormLabel className="text-[11px] text-muted-foreground">
                 I have read and agree to the website{" "}
-                <span className="text-red-400 underline cursor-pointer">
+                <span className="text-[#0B251A] underline cursor-pointer">
                   terms and conditions*
                 </span>
               </FormLabel>

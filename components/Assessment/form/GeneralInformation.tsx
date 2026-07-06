@@ -26,11 +26,11 @@ export default function GeneralInformation() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-semibold text-center text-gray-800">
+      <h2 className="text-xl font-semibold text-gray-800">
         Tell us about yourself first!
       </h2>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <FormField
           control={control}
           name="firstName"
@@ -43,7 +43,7 @@ export default function GeneralInformation() {
                 <Input
                   placeholder="First Name"
                   {...field}
-                  className="bg-gray-50/50"
+                  className="bg-[#FAF9F4] h-10"
                 />
               </FormControl>
               <FormMessage />
@@ -62,7 +62,7 @@ export default function GeneralInformation() {
                 <Input
                   placeholder="Last Name"
                   {...field}
-                  className="bg-gray-50/50"
+                  className="bg-[#FAF9F4] h-10"
                 />
               </FormControl>
               <FormMessage />
@@ -83,7 +83,7 @@ export default function GeneralInformation() {
               <Input
                 type="date"
                 {...field}
-                className="bg-gray-50/50 text-muted-foreground"
+                className="bg-[#FAF9F4] h-10 text-muted-foreground pr-10"
               />
             </FormControl>
             <FormMessage />
@@ -108,10 +108,10 @@ export default function GeneralInformation() {
                     onClick={() =>
                       setValue("gender", g, { shouldValidate: true })
                     }
-                    className={`py-3 px-4 rounded-xl border text-sm capitalize transition-all ${
+                    className={`py-3 px-4 rounded-xl border text-sm capitalize transition-all h-10  ${
                       currentGender === g
-                        ? "border-emerald-600 bg-emerald-50/40 text-emerald-900"
-                        : "border-gray-200 bg-white hover:bg-gray-50"
+                        ? "border-[#AFC1B6] bg-[#AFC1B6]/10 text-[#0B251A]"
+                        : "border-gray-200 bg-[#FAF9F4] hover:bg-[#FAF9F4]/50"
                     }`}
                   >
                     {g}
@@ -134,7 +134,7 @@ export default function GeneralInformation() {
             </FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <SelectTrigger className="bg-gray-50/50">
+                <SelectTrigger className="bg-[#FAF9F4] h-10 w-full">
                   <SelectValue placeholder="Select your state name" />
                 </SelectTrigger>
               </FormControl>

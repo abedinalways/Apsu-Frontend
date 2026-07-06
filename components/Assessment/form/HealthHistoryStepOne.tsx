@@ -33,10 +33,10 @@ export default function HealthHistoryStepOne() {
         <button
           type="button"
           onClick={() => setValue("unitSystem", "imperial")}
-          className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all ${
+          className={`px-4 py-1.5 text-xs font-semibold rounded-full border transition-all ${
             unitSystem === "imperial"
-              ? "bg-[#0B251A] text-white"
-              : "text-gray-600 hover:text-gray-900"
+              ? "border-[#AFC1B6] bg-[#AFC1B6] text-white"
+              : "border-gray-200 text-gray-600 hover:text-gray-900"
           }`}
         >
           ft / lbs
@@ -44,10 +44,10 @@ export default function HealthHistoryStepOne() {
         <button
           type="button"
           onClick={() => setValue("unitSystem", "metric")}
-          className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all ${
+          className={`px-4 py-1.5 text-xs font-semibold rounded-full border transition-all ${
             unitSystem === "metric"
-              ? "bg-[#0B251A] text-white"
-              : "text-gray-600 hover:text-gray-900"
+              ? "border-[#AFC1B6] bg-[#AFC1B6] text-white"
+              : "border-gray-200 text-gray-600 hover:text-gray-900"
           }`}
         >
           cm / kgs
@@ -71,7 +71,7 @@ export default function HealthHistoryStepOne() {
                       <Input
                         type="number"
                         {...field}
-                        className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-emerald-600 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                       <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                         <div className="flex gap-1">
@@ -102,7 +102,7 @@ export default function HealthHistoryStepOne() {
                       <Input
                         type="number"
                         {...field}
-                        className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-emerald-600 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                       />
                       <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                         <div className="flex gap-1">
@@ -134,7 +134,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-emerald-600 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
@@ -170,7 +170,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-emerald-600 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
@@ -202,7 +202,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-emerald-600 rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">

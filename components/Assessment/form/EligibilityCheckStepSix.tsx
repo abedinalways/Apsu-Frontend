@@ -103,7 +103,7 @@ export default function EligibilityCheckStepSix() {
                     onFocus={() => setShowSuggestions(true)}
                     placeholder="Search your medication name"
                     disabled={hasNoneSelected}
-                    className="pl-11 pr-4 py-6 rounded-2xl border-none bg-[#FAF9F6] text-sm focus-visible:ring-1 focus-visible:ring-emerald-700 placeholder:text-gray-400 w-full"
+                    className="pl-11 pr-4 py-2 h-11 rounded-2xl border-none bg-[#FAF9F6] text-sm focus-visible:ring-1 focus-visible:ring-[#AFC1B6] placeholder:text-gray-400 w-full"
                   />
 
                   {/* Dynamic suggestions drop list dropdown portal container */}
@@ -126,7 +126,7 @@ export default function EligibilityCheckStepSix() {
                           onClick={() =>
                             handleAddMedication(searchQuery.trim())
                           }
-                          className="w-full text-left px-4 py-3 text-xs font-semibold text-emerald-800 hover:bg-emerald-50/40 transition-colors"
+                          className="w-full text-left px-4 py-3 text-xs font-semibold text-[#0B251A] hover:bg-[#AFC1B6]/10 transition-colors"
                         >
                           Add missing: &ldquo;{searchQuery}&rdquo;
                         </button>
@@ -165,7 +165,7 @@ export default function EligibilityCheckStepSix() {
                   onClick={handleClearAllMeds}
                   className={`w-full py-4 text-center rounded-2xl border text-sm font-medium transition-all ${
                     hasNoneSelected
-                      ? "border-emerald-700 bg-emerald-50/20 text-[#0B251A] font-semibold"
+                       ? "border-[#AFC1B6] bg-[#AFC1B6]/10 font-semibold"
                       : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6] text-gray-700"
                   }`}
                 >

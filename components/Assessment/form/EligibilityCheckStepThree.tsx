@@ -54,7 +54,7 @@ export default function EligibilityCheckStepThree() {
                       }
                       className={`w-full p-4 text-left rounded-2xl border transition-all ${
                         isSelected
-                          ? "border-emerald-700 bg-emerald-50/20 shadow-sm"
+                           ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
                           : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
                       }`}
                     >

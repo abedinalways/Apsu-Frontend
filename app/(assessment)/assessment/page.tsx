@@ -3,7 +3,7 @@ import React from "react";
 
 export default function AssessmentPage() {
   return (
-    <div>
+    <div className="bg-[#FFFFFF] min-h-screen">
       <MultiStepForm />
     </div>
   );

@@ -71,7 +71,7 @@ export default function GoalLifestyleActivityStepFour() {
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>
             <FormControl>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {LIFESTYLE_OPTIONS.map((option) => {
                   const isSelected = activeLifestyle === option.id;
                   return (
@@ -85,7 +85,7 @@ export default function GoalLifestyleActivityStepFour() {
                       }
                       className={`py-3.5 px-1 rounded-xl border text-xs font-medium text-center transition-all truncate ${
                         isSelected
-                          ? "border-emerald-700 bg-emerald-50/20 text-[#0B251A] font-bold shadow-sm"
+                           ? "border-[#AFC1B6] bg-[#AFC1B6]/10 font-bold shadow-sm"
                           : "border-gray-100 bg-[#FAF9F6]/50 text-gray-600 hover:bg-[#FAF9F6]"
                       }`}
                     >
@@ -114,7 +114,7 @@ export default function GoalLifestyleActivityStepFour() {
               <Textarea
                 {...field}
                 placeholder="Tell us more.."
-                className="min-h-[90px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-emerald-700 placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-[#AFC1B6] placeholder:text-gray-400 p-3"
               />
             </FormControl>
             <div className="flex flex-wrap gap-1.5 pt-0.5">
@@ -123,7 +123,7 @@ export default function GoalLifestyleActivityStepFour() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag(tag)}
-                  className="px-3 py-1 rounded-full border border-emerald-800/40 text-[11px] font-medium text-emerald-900 bg-white hover:bg-emerald-50/50 active:scale-95 transition-all"
+                   className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[#0B251A] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all"
                 >
                   {tag}
                 </button>
@@ -148,7 +148,7 @@ export default function GoalLifestyleActivityStepFour() {
               <Textarea
                 {...field}
                 placeholder="eg.8hr"
-                className="min-h-[48px] h-12 resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-emerald-700 placeholder:text-gray-400 p-3 overflow-hidden"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-[#AFC1B6] placeholder:text-gray-400 p-3 overflow-hidden"
               />
             </FormControl>
             <FormMessage />
