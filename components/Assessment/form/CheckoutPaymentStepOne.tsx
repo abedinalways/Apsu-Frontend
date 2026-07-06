@@ -10,31 +10,42 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import Image from "next/image";
+import VisaCardIcons from "@/components/icons/VisaCardIcons";
+import MsCardIcons from "@/components/icons/MsCardIcons";
+import MXCardIcons from "@/components/icons/MXCardIcons";
 
 export default function CheckoutPaymentStepOne() {
   const { control } = useFormContext();
-
+  const cardIcons = [VisaCardIcons, MsCardIcons, MXCardIcons];
   return (
     <div className="space-y-4">
-       <div className="bg-[#E2FBF0] p-4 rounded-xl flex justify-between items-center border border-[#AFC1B6]">
-        <div>
+      <div className="bg-[#C9FFEB] rounded-xl flex justify-between">
+        <div className="space-y-3 p-4">
           <h4 className="font-bold text-gray-900 text-sm">
             Weight loss - 3 months
           </h4>
           <p className="text-emerald-700 font-extrabold text-lg mt-1">$717</p>
           <p className="text-[10px] text-muted-foreground">$239/month</p>
         </div>
-        <div className="w-16 h-12 bg-white/60 rounded border flex items-center justify-center text-[10px] text-muted-foreground">
-          Vial/Med
+        <div className="w-32 h-32 flex items-center justify-center">
+          <Image
+            src="/images/payments1.png"
+            alt="Payment"
+            width={200}
+            height={200}
+            className="object-cover"
+          />
         </div>
       </div>
 
-      <div className="bg-gray-50/50 rounded-2xl p-4 border border-gray-100 space-y-3 text-xs">
+      <div className="bg-[#FAF9F4] rounded-2xl p-4 space-y-3 text-xs">
         <h3 className="font-bold text-sm text-gray-800 mb-1">Order Summary</h3>
         <div className="flex justify-between text-gray-600">
           <span>Subtotal</span>
           <span className="font-semibold text-gray-900">$450.00</span>
         </div>
+        <hr className="border" />
         <div className="flex justify-between text-gray-600 items-center">
           <span>
             Shipping fee{" "}
@@ -44,141 +55,147 @@ export default function CheckoutPaymentStepOne() {
           </span>
           <span className="font-semibold text-gray-900">$0.00</span>
         </div>
+        <hr className="border" />
         <div className="flex justify-between text-gray-600">
           <span>Consultation fee</span>
           <span className="font-semibold text-gray-900">$0.00</span>
         </div>
-        <hr className="border-dashed" />
+        <hr className="border" />
         <div className="flex justify-between font-bold text-sm text-gray-900 pt-1">
           <span>Total</span>
           <span>$450.00</span>
         </div>
-      </div>
-
-      <div className="bg-white border rounded-2xl p-4 space-y-4 shadow-sm">
+        <hr className="border" />
         <div className="flex justify-between items-center">
           <span className="text-xs font-bold text-gray-800">Self Checkout</span>
-          <div className="flex gap-1 text-[10px] font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded">
-            VISA / MC / AMEX
+          <div className="flex items-center gap-2">
+            {cardIcons.map((Icon, index) => (
+              <div
+                key={index}
+                className="flex h-10 w-14 items-center justify-center rounded-md border border-border bg-white"
+              >
+                <Icon />
+              </div>
+            ))}
           </div>
         </div>
-
-        <FormField
-          control={control}
-          name="cardName"
-          render={({ field }) => (
-            <FormItem className="space-y-1">
-              <FormLabel className="text-[11px] font-medium text-gray-700">
-                Name on Card *
-              </FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Enter your card name"
-                  {...field}
-                  className="bg-gray-50/40 h-11 text-xs"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={control}
-          name="cardNumber"
-          render={({ field }) => (
-            <FormItem className="space-y-1">
-              <FormLabel className="text-[11px] font-medium text-gray-700">
-                Card Number *
-              </FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Enter your card number"
-                  {...field}
-                  className="bg-gray-50/40 h-11 text-xs"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="bg-white border rounded-2xl p-4 space-y-4 shadow-sm">
           <FormField
             control={control}
-            name="cardExpiry"
+            name="cardName"
             render={({ field }) => (
               <FormItem className="space-y-1">
                 <FormLabel className="text-[11px] font-medium text-gray-700">
-                  Expiry Date *
+                  Name on Card <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="MM / YY"
+                    placeholder="Enter your card name"
                     {...field}
-                    className="bg-gray-50/40 h-11 text-xs text-center"
+                    className="bg-[#FAF9F4] h-10"
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+
           <FormField
             control={control}
-            name="cardCvv"
+            name="cardNumber"
             render={({ field }) => (
               <FormItem className="space-y-1">
                 <FormLabel className="text-[11px] font-medium text-gray-700">
-                  CVV *
+                  Card Number <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="123"
+                    placeholder="Enter your card number"
                     {...field}
-                    className="bg-gray-50/40 h-11 text-xs text-center"
+                    className="bg-[#FAF9F4] h-10"
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <FormField
+              control={control}
+              name="cardExpiry"
+              render={({ field }) => (
+                <FormItem className="space-y-1">
+                  <FormLabel className="text-[11px] font-medium text-gray-700">
+                    Expiry Date <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="MM / YY"
+                      {...field}
+                      className="bg-[#FAF9F4] h-10 text-center"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={control}
+              name="cardCvv"
+              render={({ field }) => (
+                <FormItem className="space-y-1">
+                  <FormLabel className="text-[11px] font-medium text-gray-700">
+                    CVV <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="123"
+                      {...field}
+                      className="bg-[#FAF9F4] h-10 text-center"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
         </div>
+        <p className="text-[10px] text-muted-foreground leading-relaxed">
+          Your personal data will be used to process your order, support your
+          experience throughout this website, and for other purposes described
+          in our{" "}
+          <span className="text-[#0B251A] underline cursor-pointer">
+            privacy policy
+          </span>
+          .
+        </p>
+
+        <FormField
+          control={control}
+          name="agreeTerms"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-2 space-y-0 pt-1">
+              <FormControl>
+                <Checkbox
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                  className="mt-0.5"
+                />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel className="text-[11px] text-muted-foreground">
+                  I have read and agree to the website{" "}
+                  <span className="text-[#0B251A] underline cursor-pointer">
+                    terms and conditions<span className="text-red-500">*</span>
+                  </span>
+                </FormLabel>
+                <FormMessage />
+              </div>
+            </FormItem>
+          )}
+        />
       </div>
-
-      <p className="text-[10px] text-muted-foreground leading-relaxed">
-        Your personal data will be used to process your order, support your
-        experience throughout this website, and for other purposes described in
-        our{" "}
-        <span className="text-[#0B251A] underline cursor-pointer">
-          privacy policy
-        </span>
-        .
-      </p>
-
-      <FormField
-        control={control}
-        name="agreeTerms"
-        render={({ field }) => (
-          <FormItem className="flex flex-row items-start space-x-2 space-y-0 pt-1">
-            <FormControl>
-              <Checkbox
-                checked={field.value}
-                onCheckedChange={field.onChange}
-                className="mt-0.5"
-              />
-            </FormControl>
-            <div className="space-y-1 leading-none">
-              <FormLabel className="text-[11px] text-muted-foreground">
-                I have read and agree to the website{" "}
-                <span className="text-[#0B251A] underline cursor-pointer">
-                  terms and conditions*
-                </span>
-              </FormLabel>
-              <FormMessage />
-            </div>
-          </FormItem>
-        )}
-      />
     </div>
   );
 }
