@@ -1,9 +1,9 @@
-
+import Banner from "@/components/home/Banner";
 
 export default function Home() {
   return (
-    <div className=" flex justify-center items-center h-screen ">
-      home page
+    <div>
+      <Banner />
     </div>
   );
 }
