@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import { FaArrowRight } from "react-icons/fa6";
+import WhiteCustomButton from "../reusable/button/WhiteCustomButton";
 
 const MedicineCard = ({ data, idx }: { data: MedicineData; idx:number }) => {
   return (
@@ -16,14 +17,9 @@ const MedicineCard = ({ data, idx }: { data: MedicineData; idx:number }) => {
             {data.info}
           </h4>
         </div>
-        <Button className="h-12 mt-10 lg:text-lg pl-8 pr-2 group w-fit">
-          See plans
-          <span className="size-7 rounded-full bg-white text-secondary flex items-center justify-center">
-            <FaArrowRight className="group-hover:-rotate-45 transition-all duration-200" />
-          </span>
-        </Button>
+        <WhiteCustomButton type="button" text="See Plans"/>
       </div>
-        <Image className="w-2/5 pt-10" src={data.image} alt={data.info} width={166} height={316} />
+        <Image className="w-2/5 pt-16" src={data.image} alt={data.info} width={166} height={316} />
     </div>
   );
 };

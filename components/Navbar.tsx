@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { HiOutlineMenu, HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { Button } from "./ui/button";
-import { FaRegCircleXmark } from "react-icons/fa6";
 import { CircleX } from "lucide-react";
+import Image from "next/image";
+import { FaRegCircleXmark } from "react-icons/fa6";
+import { Button } from "./ui/button";
 
 const menuItems = [
   { name: "Weight Loss", path: "/weight-loss" },
@@ -41,10 +41,16 @@ export default function Navbar() {
       <div
         className={`z-998 w-full px-4 sm:px-5 xl:px-0 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out  ${scrolled ? "top-4 sm:top-5 lg:top-7.5" : "top-4 sm:top-5 lg:top-15"}`}
       >
-        <div className="flex w-full justify-between xl:grid xl:grid-cols-4 items-center max-w-7xl mx-auto h-14 sm:h-15 bg-background rounded-full px-3 sm:px-4 md:pr-1.5 md:pl-6 shadow-[0_4px_24.5px_0_rgba(0,0,0,0.09)]">
+        <div className="flex w-full justify-between xl:grid xl:grid-cols-4 items-center container mx-auto h-14 sm:h-15 bg-bgColor rounded-full px-3  sm:px-4 md:pr-1.5 md:pl-6 shadow-[0_4px_24.5px_0_rgba(0,0,0,0.09)]">
           {/* Left: Logo */}
           <Link href="/" className="flex items-center">
-            <Image src="/logo.png" alt="apsu" height={32} width={87} className="h-7 sm:h-8 w-auto" />
+            <Image
+              src="/logo.png"
+              alt="apsu"
+              height={32}
+              width={87}
+              className="h-7 sm:h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Menu */}
@@ -102,7 +108,6 @@ export default function Navbar() {
                 className=" z-10 "
                 onClick={() => setMenuOpen(false)}
               >
-                
                 <CircleX className="size-8 text-secondary" />
               </button>
             </div>
@@ -127,7 +132,10 @@ export default function Navbar() {
               <Button variant="outline" className="text-lg w-full">
                 Login
               </Button>
-                            <Button variant="outline" className="text-lg w-full  text-red-600 border-red-600">
+              <Button
+                variant="outline"
+                className="text-lg w-full  text-red-600 border-red-600"
+              >
                 Logout
               </Button>
             </div>

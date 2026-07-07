@@ -29,12 +29,12 @@ export const Banner = () => {
           </p>
         </div>
         {/* title */}
-        <h1 className="text-primary font-medium text-4xl md:text-5xl lg:text-6xl xl:text-7xl md:max-w-150 lg:max-w-180 max-w-218 text-center mt-4">
+        <h1 className="text-primary font-medium text-4xl md:text-5xl lg:text-6xl xl:text-7xl md:max-w-150 lg:max-w-210 max-w-218 text-center mt-4">
           Healthcare that{" "}
           <span className="text-[#00774D]">speaks your language.</span>
         </h1>
         {/* subtitle */}
-        <p className="text-center lg:text-xl mt-4 max-w-100 xl:max-w-150 xl:flex xl:flex-col">
+        <p className="text-center text-descriptionColor lg:text-xl mt-4 max-w-100 xl:max-w-150 xl:flex xl:flex-col">
           <span> Care in the language you think in.</span>
           <span> US-licensed physicians, AI translates your consultation.</span>
         </p>
