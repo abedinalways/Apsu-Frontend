@@ -364,3 +364,9 @@ input:checked ~ .checkmark {
                 15px 20px 7px 0 rgba(0, 0, 0, 0);
   }
 }
+
+html{
+
+scroll-behavior:smooth;
+
+}
