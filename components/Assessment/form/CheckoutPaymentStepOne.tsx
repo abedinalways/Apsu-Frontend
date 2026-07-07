@@ -92,7 +92,7 @@ export default function CheckoutPaymentStepOne() {
                   <Input
                     placeholder="Enter your card name"
                     {...field}
-                    className="bg-[#FAF9F4] h-10"
+                    className="bg-[#FAF9F4] h-11"
                   />
                 </FormControl>
                 <FormMessage />
@@ -112,7 +112,7 @@ export default function CheckoutPaymentStepOne() {
                   <Input
                     placeholder="Enter your card number"
                     {...field}
-                    className="bg-[#FAF9F4] h-10"
+                    className="bg-[#FAF9F4] h-11"
                   />
                 </FormControl>
                 <FormMessage />
@@ -133,7 +133,7 @@ export default function CheckoutPaymentStepOne() {
                     <Input
                       placeholder="MM / YY"
                       {...field}
-                      className="bg-[#FAF9F4] h-10 text-center"
+                      className="bg-[#FAF9F4] h-11 text-center"
                     />
                   </FormControl>
                   <FormMessage />
@@ -152,7 +152,7 @@ export default function CheckoutPaymentStepOne() {
                     <Input
                       placeholder="123"
                       {...field}
-                      className="bg-[#FAF9F4] h-10 text-center"
+                      className="bg-[#FAF9F4] h-11 text-center"
                     />
                   </FormControl>
                   <FormMessage />
