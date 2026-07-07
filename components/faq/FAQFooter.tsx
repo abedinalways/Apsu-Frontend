@@ -1,5 +1,5 @@
-import React from 'react'
-import Button from '../reusable/button/Button';
+import React from 'react';
+import Button from '../reusable/button/ReusableButton';
 import Image from 'next/image';
 
 export default function FAQFooter() {

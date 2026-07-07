@@ -14,7 +14,7 @@ interface ButtonWithArrowProps {
   onClick?: () => void;
 }
 
-export default function Button({
+export default function ReusableButton({
   text,
   href,
   width = 'w-fit',

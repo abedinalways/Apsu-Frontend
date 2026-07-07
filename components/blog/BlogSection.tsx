@@ -2,15 +2,14 @@
 
 import { useMemo, useState } from 'react';
 
-
-
 import BlogGrid from './BlogGrid';
 import BlogToolbar from './BlogToolbar';
 
-import Button from '../reusable/button/Button';
+
 
 import { blogCategories } from '@/types/blogCategories';
 import { blogsData } from '@/lib/data/blogsData';
+import ReusableButton from '../reusable/button/ReusableButton';
 
 const INITIAL_VISIBLE = 4;
 
@@ -51,7 +50,7 @@ export default function BlogSection() {
   };
 
   return (
-    <section className="space-y-10 " >
+    <section className="space-y-10 ">
       <BlogToolbar
         categories={blogCategories}
         activeCategory={activeCategory}
@@ -59,12 +58,12 @@ export default function BlogSection() {
         onCategoryChange={handleCategory}
         onSearchChange={handleSearch}
       />
-      
+
       <BlogGrid blogs={visibleBlogs} />
 
       {hasMore && (
         <div className="flex justify-center mt-4 cursor-pointer ">
-          <Button
+          <ReusableButton
             text="See More"
             onClick={() => setVisibleCount(prev => prev + 4)}
           />
