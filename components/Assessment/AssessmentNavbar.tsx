@@ -4,6 +4,7 @@ import React from "react";
 import { Globe } from "lucide-react";
 import SelecteInputField from "@/components/reusable/InputFiled/SelecteInputField";
 import Image from "next/image";
+import Link from "next/link";
 
 type LanguageOption = { value: string; label: string };
 
@@ -21,10 +22,13 @@ export default function AssessmentNavbar() {
 
   return (
     <header className="w-full bg-[#FAF9F6] border-b border-gray-100 px-6 py-4 flex items-center justify-between">
-      <div className="flex items-center">
-        {/* Left: Logo */}
-        <Image src="/logo.png" alt="apsu" height={32} width={87} />
-      </div>
+      <Link href={"/"}>
+        {" "}
+        <div className="flex items-center">
+          {/* Left: Logo */}
+          <Image src="/logo.png" alt="apsu" height={32} width={87} />
+        </div>
+      </Link>
 
       <div className="w-40">
         <SelecteInputField

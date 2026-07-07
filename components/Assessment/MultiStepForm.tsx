@@ -224,7 +224,7 @@ export default function MultiStepForm() {
                 Step {step} of {TOTAL_STEPS}
               </span>
             </div>
-            <div className="w-full bg-secondary h-1.5 rounded-full flex gap-1">
+            <div className="w-full h-1.5 rounded-full flex gap-1">
               {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
                 <div
                   key={i}
