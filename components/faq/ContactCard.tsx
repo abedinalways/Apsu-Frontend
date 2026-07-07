@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import ArrowIcon from '../icons/ArrowIcon';
-import Button from '../reusable/button/Button';
+import Button from '../reusable/button/ReusableButton';
 
 export default function ContactCard() {
   return (

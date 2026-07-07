@@ -11,8 +11,8 @@ const ProductsLinks = [
 ];
 const CompanyLinks = [
   { href: "/about", label: "About Apsu" },
-  { href: "/blogs", label: "Blogs" },
-  { href: "/faqs", label: "FAQs" },
+  { href: "/blog", label: "Blogs" },
+  { href: "/faq", label: "FAQs" },
   { href: "/contact", label: "Contact Us" },
 ];
 const LegalLinks = [
