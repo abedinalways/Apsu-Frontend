@@ -30,7 +30,7 @@ export default function TargetDashboardPage() {
   const executeRouting = () => {
     setModalOpen(false);
     if (selectedFlow === "sleep") router.push("/sleep");
-    if (selectedFlow === "weight") router.push("/weight");
+    if (selectedFlow === "weight") router.push("/assessment/weight-loss");
   };
 
   return (

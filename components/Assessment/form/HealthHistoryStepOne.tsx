@@ -13,120 +13,146 @@ import { ChevronUp, ChevronDown } from "lucide-react";
 import { FormData } from "@/zod/AssessmentSchema";
 
 export default function HealthHistoryStepOne() {
-  const { control, watch, setValue } = useFormContext<FormData>();
+  const { control, watch, formState } = useFormContext<FormData>();
   const unitSystem = watch("unitSystem") || "imperial";
 
   return (
     <div className="space-y-6">
       {/* Title & Subtitle */}
       <div>
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight">
+        <h2 className="text-[20px] font-semibold text-[#102b1c] tracking-tight">
           We've got you! What's your starting point?
         </h2>
-        <p className="text-xs text-muted-foreground mt-1.5">
+        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
           This will help to calculate your BMI to check your eligibility.
         </p>
       </div>
 
       {/* Custom Unit Selector Toggle Pill */}
-      <div className="inline-flex p-1 bg-white border border-gray-200 rounded-full max-w-fit">
-        <button
-          type="button"
-          onClick={() => setValue("unitSystem", "imperial")}
-          className={`px-4 py-1.5 text-xs font-semibold rounded-full border transition-all ${
-            unitSystem === "imperial"
-              ? "border-[#AFC1B6] bg-[#AFC1B6] text-white"
-              : "border-gray-200 text-gray-600 hover:text-gray-900"
-          }`}
-        >
-          ft / lbs
-        </button>
-        <button
-          type="button"
-          onClick={() => setValue("unitSystem", "metric")}
-          className={`px-4 py-1.5 text-xs font-semibold rounded-full border transition-all ${
-            unitSystem === "metric"
-              ? "border-[#AFC1B6] bg-[#AFC1B6] text-white"
-              : "border-gray-200 text-gray-600 hover:text-gray-900"
-          }`}
-        >
-          cm / kgs
-        </button>
-      </div>
-
+      <FormField
+        control={control}
+        name="unitSystem"
+        render={({ field }) => (
+          <FormItem>
+            <FormControl>
+              <div className="inline-flex gap-1 p-1 bg-[#FAF9F4] border border-gray-200 rounded-md max-w-fit">
+                <button
+                  type="button"
+                  onClick={() => field.onChange("imperial")}
+                  className={`px-4 py-1.5 text-[12px] font-semibold rounded-md border transition-all cursor-pointer ${
+                    field.value === "imperial"
+                      ? "border-[#102b1c] bg-[#102b1c] text-white"
+                      : "border-gray-100 text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  ft / lbs
+                </button>
+                <button
+                  type="button"
+                  onClick={() => field.onChange("metric")}
+                  className={`px-4 py-1.5 text-xs font-semibold rounded-md border transition-all cursor-pointer ${
+                    field.value === "metric"
+                      ? "border-[#102b1c] bg-[#102b1c] text-white"
+                      : "border-gray-100 text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  cm / kgs
+                </button>
+              </div>
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
       {/* Height Fields */}
       <div className="space-y-2">
         {unitSystem === "imperial" ? (
-          <div className="grid grid-cols-2 gap-4">
-            <FormField
-              control={control}
-              name="heightFt"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-xs font-bold text-gray-900">
-                    Your Height <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <div className="relative flex items-center">
-                      <Input
-                        type="number"
-                        {...field}
-                        className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                      />
-                      <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
-                        <div className="flex gap-1">
-                          {" "}
-                          <div className="flex flex-col text-[8px] text-gray-400">
-                            <ChevronUp className="h-2 w-2" />
-                            <ChevronDown className="h-2 w-2" />
+          <>
+            <div className="grid grid-cols-2 gap-4">
+              <FormField
+                control={control}
+                name="heightFt"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-[14px] text-[#111]">
+                      Your Height <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <div className="relative flex items-center">
+                        <Input
+                          type="number"
+                          {...field}
+                          className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        />
+                        <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
+                          <div className="flex gap-1">
+                            {" "}
+                            <div className="flex flex-col text-[8px] text-gray-400">
+                              <ChevronUp className="h-2 w-2" />
+                              <ChevronDown className="h-2 w-2" />
+                            </div>
+                            <span>ft</span>
                           </div>
-                          <span>ft</span>
                         </div>
                       </div>
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={control}
-              name="heightIn"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-xs font-bold text-gray-900">
-                    Height (in)
-                  </FormLabel>
-                  <FormControl>
-                    <div className="relative flex items-center">
-                      <Input
-                        type="number"
-                        {...field}
-                        className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                      />
-                      <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
-                        <div className="flex gap-1">
-                          <div className="flex flex-col text-[8px] text-gray-400">
-                            <ChevronUp className="h-2 w-2" />
-                            <ChevronDown className="h-2 w-2" />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={control}
+                name="heightIn"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-[14px] text-[#111]">
+                      Height (in) <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <div className="relative flex items-center">
+                        <Input
+                          type="number"
+                          {...field}
+                          className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        />
+                        <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
+                          <div className="flex gap-1">
+                            <div className="flex flex-col text-[8px] text-gray-400">
+                              <ChevronUp className="h-2 w-2" />
+                              <ChevronDown className="h-2 w-2" />
+                            </div>
+                            <span>in</span>
                           </div>
-                          <span>in</span>
                         </div>
                       </div>
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="">
+              {(formState.errors.heightFt || formState.errors.heightIn) && (
+                <div className="grid grid-cols-2 gap-4">
+                  {formState.errors.heightFt && (
+                    <p className="text-sm text-red-500">
+                      {formState.errors.heightFt.message as string}
+                    </p>
+                  )}
+                  {formState.errors.heightIn && (
+                    <p className="text-sm text-red-500">
+                      {formState.errors.heightIn.message as string}
+                    </p>
+                  )}
+                </div>
               )}
-            />
-          </div>
+            </div>
+          </>
         ) : (
           <FormField
             control={control}
             name="heightCm"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-xs font-bold text-gray-900">
+                <FormLabel className="text-[14px] text-[#111]">
                   Your Height <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
@@ -134,7 +160,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
@@ -162,7 +188,7 @@ export default function HealthHistoryStepOne() {
             name="weightLbs"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-xs font-bold text-gray-900">
+                <FormLabel className="text-[14px] text-[#111]">
                   Your Current Weight <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
@@ -170,7 +196,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
@@ -194,7 +220,7 @@ export default function HealthHistoryStepOne() {
             name="weightKgs"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-xs font-bold text-gray-900">
+                <FormLabel className="text-[14px] text-[#111]">
                   Your Current Weight <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
@@ -202,7 +228,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-gray-50/40 pr-12 h-11 text-sm border-gray-200 focus-visible:ring-[#AFC1B6] rounded-xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
