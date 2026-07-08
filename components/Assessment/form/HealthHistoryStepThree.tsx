@@ -57,10 +57,10 @@ export default function HealthHistoryStepThree() {
     <div className="space-y-6">
       {/* Step Description Headers from Screenshot 2026-07-05 121717.png */}
       <div>
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight leading-snug">
+        <h2 className="text-[20px] font-semibold text-[#102b1c]">
           Do you faced any side effects during your medication?
         </h2>
-        <p className="text-xs text-muted-foreground mt-1.5">
+        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
           Please select all that apply.
         </p>
       </div>
@@ -89,9 +89,9 @@ export default function HealthHistoryStepThree() {
                 )}
 
                 {/* Subfield Label section */}
-                <FormLabel className="text-xs font-bold text-gray-900 flex items-center gap-0.5 pt-2">
+                <FormLabel className="text-[14px] font-semibold text-[#111] flex items-center gap-0.5 pt-2">
                   Describe any side effects you have experienced:{" "}
-                  <span className="text-red-500 font-serif text-sm">*</span>
+                  <span className="text-red-500">*</span>
                 </FormLabel>
 
                 {/* Active dark badge layout area matching Screenshot 2026-07-05 121744.png */}
@@ -131,7 +131,7 @@ export default function HealthHistoryStepThree() {
               <Textarea
                 {...field}
                 placeholder="add any additional details here..."
-                className="min-h-[110px] resize-none rounded-2xl border-gray-200 bg-[#FAF9F6]/30 text-sm focus-visible:ring-emerald-700 placeholder:text-gray-400 p-4 w-full"
+                className="min-h-[110px] resize-none rounded-2xl text-sm placeholder:text-gray-400 p-4 w-full bg-[#FAF9F4] border-[#FAF9F4]  h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] "
               />
             </FormControl>
             <FormMessage />
