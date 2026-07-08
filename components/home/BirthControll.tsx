@@ -4,9 +4,9 @@ import Image from "next/image";
 import WhiteCustomButton from "../reusable/button/WhiteCustomButton";
 function BirthControll() {
   const points = [
-    "Same-day doctor visits and prescriptions",
-    "Dosage personalized",
-    "Shipped from licensed USA pharmacies",
+    "Prescribed online, delivered to your door",
+    "Automatic refills, delivered",
+    "Plain, discreet packaging",
   ];
   return (
     <div>
