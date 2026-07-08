@@ -130,6 +130,7 @@
   --color-blackColor: #070707;
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
+  --color-greenBgColor: rgba(188, 255, 230, 0.8);
   --color-ratingColor: #ffc52e;
   --color-headerColor: var(--color-secondary-charcol-900);
   --color-grayColor1: var(--color-gray-black-100);
@@ -138,7 +139,7 @@
   --color-orengeColor: #ff6a55;
   --color-blueColor: #0068ef;
   --color-bgColor: var(--color-background-off-white);
-  --color-descriptionColor: var(--color-secondary-charcol-700);
+  --color-descriptionColor: #3b3b3c;
 
   /* -------- Tailwind core theme overrides (kept for compatibility) -------- */
   --radius-sm: calc(var(--radius) - 4px);
@@ -183,7 +184,7 @@
    Light Theme (default)
 ------------------------------- */
 :root {
-  --primaryColor: #102B1C;
+  --primaryColor: #102b1c;
   --secondaryColor: #d6ae29;
   --blackColor: #070707;
   --whiteColor: #fff;
@@ -366,8 +367,6 @@ input:checked ~ .checkmark {
   }
 }
 
-html{
-
-scroll-behavior:smooth;
-
+html {
+  scroll-behavior: smooth;
 }
