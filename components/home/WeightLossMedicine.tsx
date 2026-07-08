@@ -31,11 +31,11 @@ function WeightLossMedicine() {
             height={600}
             className="w-full h-full object-cover"
           />
-          <h3 className="text-2xl md:text-[32px] py-5 lg:py-8 border-b  w-full  font-medium">
+          <h3 className="text-2xl lg:text-[32px] py-5 lg:py-8 border-b  w-full  font-medium">
             {item.title}
           </h3>
-          <div className="flex items-center justify-between w-full mt-4">
-            <p className="text-lg text-blackColor md:text-2xl font-medium">
+          <div className="flex flex-col lg:flex-row items-center gap-2 justify-between w-full mt-4">
+            <p className="text-lg text-blackColor lg:text-2xl font-medium">
               From <span className="text-2xl md:text-3xl">${item.price}</span>
               /month
             </p>
