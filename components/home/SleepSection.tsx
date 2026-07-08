@@ -2,6 +2,7 @@ import weightImg from "@/public/images/work/Sleep2 1.png";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import WhiteCustomButton from "../reusable/button/WhiteCustomButton";
+import ProfileStatusCards from "./ProfileStatusCards";
 function SleepSection() {
   const points = [
     "Non-controlled, non-habit-forming options",
@@ -12,7 +13,7 @@ function SleepSection() {
   return (
     <div>
       <div className="xl:py-27 lg:py-15 pt-4 relative px-3 md:px-6 mt-30 lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-additional-blue rounded-2xl lg:rounded-4xl">
-        <div className="relative w-full mt-2 lg:mt-0">
+        <div className="relative flex h-full items-end w-full mt-2 lg:mt-0">
           <div className="lg:absolute flex justify-center  lg:-top-21.5 xl:-top-43.75 lg:left-2 left-4 ">
             <Image
               src={weightImg}
@@ -22,6 +23,9 @@ function SleepSection() {
               className="w-[448px] xl:w-[552.5px]"
             />
           </div>
+          <div className="z-30 absolute bottom-6 left-1/2 transform -translate-x-1/2 w-full ">
+            <ProfileStatusCards />
+          </div>
         </div>
         <div>
           <div className="">
@@ -29,7 +33,7 @@ function SleepSection() {
               Sleep
             </h3>
             <p className="text-descriptionColor text-sm md:text-base leading-relaxed mb-6 ">
-              Real rest without the dependency. <br/> Non-habit-forming
+              Real rest without the dependency. <br /> Non-habit-forming
               Physician-prescribed For sensitive sleepers
             </p>
             {/* Bullet Points */}
