@@ -36,8 +36,7 @@ export default function TextareaField({
             <Textarea
               {...field}
               placeholder={placeholder}
-             
-              className="h-28 sm:h-32 rounded-2xl border-[#dce6e1] bg-[#f7f9f8] p-4 text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm sm:placeholder:text-[16px] resize-none focus-visible:border-[#b2c7bc] focus-visible:ring-0 focus-visible:ring-offset-0 transition-colors"
+              className="h-28 sm:h-32 rounded-2xl border-[#b8d9c6] bg-[#faf9f4] p-4 text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm sm:placeholder:text-[16px] resize-none focus-visible:border-[#b2c7bc] focus-visible:ring-0 focus-visible:ring-offset-0 transition-colors"
             />
           </FormControl>
 
