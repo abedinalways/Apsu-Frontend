@@ -1,10 +1,58 @@
-import MultiStepForm from "@/components/Assessment/MultiStepForm";
-import React from "react";
+// import MultiStepForm from "@/components/Assessment/MultiStepForm";
+// import React from "react";
 
-export default function AssessmentPage() {
+// export default function AssessmentPage() {
+//   return (
+//     <div className="bg-[#FFFFFF] min-h-screen">
+//       <MultiStepForm />
+//     </div>
+//   );
+// }
+
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import GetStartModal from "@/components/Assessment/modal/GetStartModal";
+
+export default function TargetDashboardPage() {
+  const router = useRouter();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedFlow, setSelectedFlow] = useState<"sleep" | "weight" | null>(
+    null,
+  );
+
+  const triggerModal = (flow: "sleep" | "weight") => {
+    setSelectedFlow(flow);
+    setModalOpen(true);
+  };
+
+  const executeRouting = () => {
+    setModalOpen(false);
+    if (selectedFlow === "sleep") router.push("/sleep");
+    if (selectedFlow === "weight") router.push("/weight");
+  };
+
   return (
-    <div className="bg-[#FFFFFF] min-h-screen">
-      <MultiStepForm />
+    <div className="p-8 space-x-4">
+      <button
+        onClick={() => triggerModal("sleep")}
+        className="border p-2 rounded"
+      >
+        Sleep Button
+      </button>
+      <button
+        onClick={() => triggerModal("weight")}
+        className="border p-2 rounded bg-black text-white"
+      >
+        Weight Button
+      </button>
+
+      <GetStartModal
+        isOpen={modalOpen}
+        onOpenChange={setModalOpen}
+        onGetStarted={executeRouting}
+      />
     </div>
   );
 }
