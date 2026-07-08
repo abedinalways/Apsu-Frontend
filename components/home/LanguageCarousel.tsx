@@ -26,7 +26,7 @@ const LanguageCarousel = ({
         {languages.map((language) => (
           <div
             key={language.name}
-            className={`mx-3 lg:mx-4 flex h-11  items-center justify-center rounded-full border px-4 py-2 lg:py-3 lg:px-8 text-sm lg:text-lg transition-colors ${
+            className={`md:mx-3 mx-1 lg:mx-4 flex   items-center justify-center rounded-full border px-4 py-2 lg:py-3 lg:px-8 text-sm lg:text-lg transition-colors ${
               language.active
                 ? "border-[#B8D9C6] bg-[#B8D9C6] text-secondary"
                 : "border-[#B4D7CC] bg-[#FAF9F4] text-[#585D5A]"
