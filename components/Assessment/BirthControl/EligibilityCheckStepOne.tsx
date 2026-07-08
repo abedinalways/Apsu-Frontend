@@ -61,7 +61,7 @@ export default function EligibilityCheckStepOne() {
                       }
                       className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all ${
                         isSelected
-                           ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
+                          ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
                           : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
                       }`}
                     >
@@ -69,7 +69,7 @@ export default function EligibilityCheckStepOne() {
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                             ? "border-[#AFC1B6] bg-[#0B251A]"
+                            ? "border-[#AFC1B6] bg-[#0B251A]"
                             : "border-gray-400 bg-white"
                         }`}
                       >
