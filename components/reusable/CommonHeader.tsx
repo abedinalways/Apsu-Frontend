@@ -9,7 +9,7 @@ function CommonHeader({
 }) {
   return (
     <div className="max-w-3xl  mx-auto w-full">
-      <h1 className="text-base text-greenColor mb-3">{sectionName}</h1>
+      <h4 className="text-base text-greenColor mb-3">{sectionName}</h4>
       <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium text-primaryColor">
         {title}
       </h2>

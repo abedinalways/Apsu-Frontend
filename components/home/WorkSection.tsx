@@ -1,4 +1,5 @@
 import CommonHeader from "../reusable/CommonHeader";
+import WeightLoss from "./WeightLoss";
 import WorkAddSection from "./WorkAddSection";
 import WorkList from "./WorkList";
 
@@ -8,16 +9,21 @@ function WorkSection() {
       <div>
         <WorkAddSection />
       </div>
-      <div className="lg:my-20 my-14 md:my-18">
-        <div className="container text-center">
-          <CommonHeader
-            sectionName="HOW IT WORKS"
-            title="Real physicians, AI-amplified."
-            description="Two layers working together — each doing what they do best."
-          />
+      <div className="container ">
+        <div className="lg:my-20 my-14 md:my-18 ">
+          <div className="text-center">
+            <CommonHeader
+              sectionName="HOW IT WORKS"
+              title="Real physicians, AI-amplified."
+              description="Two layers working together — each doing what they do best."
+            />
+          </div>
+          <div>
+            <WorkList />
+          </div>
         </div>
         <div>
-          <WorkList />
+          <WeightLoss />
         </div>
       </div>
     </div>
