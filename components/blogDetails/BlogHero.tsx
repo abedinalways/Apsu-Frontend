@@ -1,5 +1,6 @@
 import { BLOG_SIDEBAR_WIDTH } from '@/lib/blogLayout';
 import { BlogMeta } from '@/types/blogDetails';
+import BlogBreadcrumb from './BlogBreadcrumb';
 
 interface Props {
   blog: BlogMeta;
@@ -9,7 +10,7 @@ export default function BlogHero({ blog }: Props) {
   return (
     <section className="flex flex-start items-center pt-20 pb-12 md:pt-34 md:pb-12" >
       <div className="max-w-[24rem]">
-       
+       <BlogBreadcrumb blog={blog} />
         {/* Hero Content */}
         <div className="flex-1 min-w-0">
           

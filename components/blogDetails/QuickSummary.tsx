@@ -57,7 +57,7 @@ export default function QuickSummary({ summary }: Props) {
 
                     ${
                       isActive
-                        ? 'bg-[#EAF8F2] text-[#008C5E]'
+                        ? ' text-[#008C5E]'
                         : 'text-[#606060] hover:bg-[#F8F8F8]'
                     }
                   `}

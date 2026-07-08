@@ -3,6 +3,7 @@ import BlogLayout from './BlogLayout';
 import { BlogMeta } from '@/types/blogDetails';
 import ReadingProgress from './ReadingProgress';
 import BlogSidebar from './BlogSidebar';
+import BlogBreadcrumb from './BlogBreadcrumb';
 
 interface Props {
   blog: BlogMeta;
@@ -13,6 +14,7 @@ export default function BlogDetailsPage({ blog }: Props) {
     <div className="custom-container py-10 lg:py-14">
       <ReadingProgress />
       <div className="w-full h-full">
+     
         <BlogHero blog={blog} />
       </div>
         <div

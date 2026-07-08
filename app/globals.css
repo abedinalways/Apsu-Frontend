@@ -214,7 +214,7 @@ input:checked ~ .checkmark {
   border-radius: 48px 48px 0 0;
   padding: 24px 24px 0;
   width: 100%;
-  height: 402px;
+  height: full;
   overflow-y: hidden;
   margin-bottom: 0px;
   background: #fff;

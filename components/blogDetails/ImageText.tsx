@@ -1,65 +1,88 @@
 import Image from 'next/image';
-import { BlogContentBlock } from '@/types/blogDetails';
+import { BoltIcon } from '../icons/CheckIcon';
 
-type Props = Partial<BlogContentBlock>;
+
+interface ImageTextProps {
+  image?: string;
+  alt?: string;
+  description?: string;
+  bullets?: string[];
+  layout?: 'left' | 'right';
+  imageRatio?: 'portrait' | 'wide';
+}
+
+function VisualBlock({
+  image,
+  alt,
+  imageRatio = 'portrait',
+}: Pick<ImageTextProps, 'image' | 'alt' | 'imageRatio'>) {
+  if (!image) return null;
+
+  return (
+    <div
+      className={`relative w-full md:-top-24 overflow-hidden rounded-[12px] ${
+        imageRatio === 'wide' ? 'aspect-[16/16]' : 'aspect-[5/5]'
+      }`}
+    >
+      <Image
+        src={image}
+        alt={alt ?? ''}
+        fill
+        className="object-contain w-full h-full " 
+        // sizes="(min-width: 768px) 45vw, 100vw"
+      />
+    </div>
+  );
+}
 
 export default function ImageText({
   image,
   alt,
-  title,
   description,
-  layout = 'left',
-}: Props) {
-  if (!image) return null;
+  bullets,
+  layout = 'right',
+  imageRatio = 'portrait',
+}: ImageTextProps) {
+  const visual = (
+    <VisualBlock image={image} alt={alt} imageRatio={imageRatio} />
+  );
 
-  return (
-    <section
-      className={`
-        grid
-        items-center
-        gap-8
-        lg:grid-cols-2
-
-        ${layout === 'right' ? '' : 'lg:[&>*:first-child]:order-2'}
-      `}
-    >
-      <div>
-        <Image
-          src={image}
-          alt={alt || ''}
-          width={650}
-          height={500}
-          className="
-            w-full
-            rounded-[24px]
-            object-cover
-          "
-        />
-      </div>
-
-      <div>
-        <h3
-          className="
-            text-[34px]
-            font-medium
-            leading-tight
-            text-[#202020]
-          "
-        >
-          {title}
-        </h3>
-
-        <p
-          className="
-            mt-5
-            text-[18px]
-            leading-[190%]
-            text-[#555]
-          "
-        >
+  const text = (
+    <div className="space-y-4">
+      {description && (
+        <p className="text-[0.98rem] leading-relaxed text-[#3b3b3c] ">
           {description}
         </p>
-      </div>
-    </section>
+      )}
+      {bullets?.length ? (
+        <ul className="space-y-3">
+          {bullets.map(item => (
+            <li
+              key={item}
+              className="flex items-start gap-3 text-[0.95rem] text-[#3B3A35] "
+            >
+              <BoltIcon />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
+  );
+
+  return (
+    <div className="grid items-start gap-8 md:grid-cols-2">
+      {layout === 'left' ? (
+        <>
+          {visual}
+          {text}
+        </>
+      ) : (
+        <>
+          {text}
+          {visual}
+        </>
+      )}
+    </div>
   );
 }
