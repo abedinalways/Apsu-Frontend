@@ -55,7 +55,7 @@ export default function GoalLifestyleActivityStepFour() {
     <div className="space-y-6">
       {/* Title Header Section from Screenshot 2026-07-05 120521.png */}
       <div>
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight leading-snug">
+        <h2 className="text-[20px] font-semibold text-[#102b1c]">
           Tell us a bit about your lifestyle management.
         </h2>
       </div>
@@ -66,7 +66,7 @@ export default function GoalLifestyleActivityStepFour() {
         name="lifestyleDescription"
         render={() => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-xs font-semibold text-gray-800 flex items-center gap-0.5">
+            <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
               How would you describe your lifestyle?{" "}
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>
@@ -83,9 +83,9 @@ export default function GoalLifestyleActivityStepFour() {
                           shouldValidate: true,
                         })
                       }
-                      className={`py-3.5 px-1 rounded-xl border text-xs font-medium text-center transition-all truncate ${
+                      className={`py-3.5 px-1 rounded-xl border text-[14px] text-[#111] font-medium text-center transition-all truncate h-14! ${
                         isSelected
-                           ? "border-[#AFC1B6] bg-[#AFC1B6]/10 font-bold shadow-sm"
+                          ? "border-[#AFC1B6] bg-[#AFC1B6]/10 font-bold shadow-sm"
                           : "border-gray-100 bg-[#FAF9F6]/50 text-gray-600 hover:bg-[#FAF9F6]"
                       }`}
                     >
@@ -106,7 +106,7 @@ export default function GoalLifestyleActivityStepFour() {
         name="eatingRestrictions"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-xs font-semibold text-gray-800 flex items-center gap-0.5">
+            <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
               Do you have any eating restrictions?{" "}
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>
@@ -123,7 +123,7 @@ export default function GoalLifestyleActivityStepFour() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag(tag)}
-                   className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[#0B251A] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all"
+                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[#0B251A] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all"
                 >
                   {tag}
                 </button>
@@ -140,7 +140,7 @@ export default function GoalLifestyleActivityStepFour() {
         name="sleepHours"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-xs font-semibold text-gray-800 flex items-center gap-0.5">
+            <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
               How many hours of sleep do you typically get per night?{" "}
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>

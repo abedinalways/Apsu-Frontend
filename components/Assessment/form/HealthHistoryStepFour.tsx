@@ -45,10 +45,10 @@ export default function HealthHistoryStepFour() {
     <div className="space-y-6">
       {/* Description header matching text from Screenshot 2026-07-05 122224.png */}
       <div>
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight leading-snug">
+        <h2 className="text-[20px] font-semibold text-[#102b1c]">
           Do you have any allergies?
         </h2>
-        <p className="text-xs text-muted-foreground mt-1.5">
+        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
           Please select all that apply.
         </p>
       </div>
@@ -77,17 +77,17 @@ export default function HealthHistoryStepFour() {
                           handleToggleAllergy(option.id, !isChecked);
                         }
                       }}
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all ${
+                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c] bg-[#FAF9F4] cursor-pointer  ${
                         isChecked
-                           ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
-                          : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
+                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          : "border-gray-200"
                       }`}
                     >
                       <span
                         aria-hidden="true"
                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-all ${
                           isChecked
-                             ? "border-[#AFC1B6] bg-[#0B251A] text-white"
+                            ? "border-[#AFC1B6] bg-[#0B251A] text-white"
                             : "border-gray-300 bg-white text-transparent"
                         }`}
                       >

@@ -19,10 +19,10 @@ export default function EligibilityCheckStepFour() {
     <div className="space-y-6">
       {/* Step Header Title Area */}
       <div>
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight leading-snug">
+        <h2 className="text-[20px] font-semibold text-[#102b1c]">
           Blood pressure monitoring
         </h2>
-        <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
           This will help your physician to provide the right medications for
           you.
         </p>
@@ -34,14 +34,14 @@ export default function EligibilityCheckStepFour() {
         name="bloodPressureValue"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-xs font-bold text-gray-900 tracking-wide">
+            <FormLabel className="text-[14px] font-semibold text-[#111] tracking-wide">
               Do you know your BP? If yes, please write it below:
             </FormLabel>
             <FormControl>
               <Textarea
                 {...field}
                 placeholder="eg-Normal- Both numbers less than 129/80"
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-[#AFC1B6] placeholder:text-gray-400"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 placeholder:text-gray-400 bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]"
               />
             </FormControl>
             <FormMessage />
@@ -55,7 +55,7 @@ export default function EligibilityCheckStepFour() {
         name="monitoredForHighBP"
         render={() => (
           <FormItem className="space-y-3">
-            <FormLabel className="text-xs font-bold text-gray-900 tracking-wide flex items-center gap-0.5">
+            <FormLabel className="text-[14px] font-semibold text-[#111] tracking-wide flex items-center gap-0.5">
               Are you currently being monitored for high blood pressure?{" "}
               <span className="text-red-500 font-serif text-sm">*</span>
             </FormLabel>
@@ -69,16 +69,16 @@ export default function EligibilityCheckStepFour() {
                       shouldValidate: true,
                     })
                   }
-                  className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all ${
+                  className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all bg-[#FAF9F4] h-14! cursor-pointer text-[16px] text-[#6c6c6c] ${
                     isMonitored === "yes"
-                       ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
-                      : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
+                      ? "border-[#AFC1B6] text-[#0B251A]"
+                      : "border-gray-200"
                   }`}
                 >
                   <div
-                      className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
+                    className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                       isMonitored === "yes"
-                         ? "border-[#AFC1B6] bg-[#0B251A]"
+                        ? "border-[#AFC1B6] bg-[#0B251A]"
                         : "border-gray-400 bg-white"
                     }`}
                   >
@@ -97,16 +97,16 @@ export default function EligibilityCheckStepFour() {
                       shouldValidate: true,
                     })
                   }
-                  className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all ${
+                  className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all bg-[#FAF9F4] h-14! cursor-pointer text-[16px] text-[#6c6c6c] ${
                     isMonitored === "no"
-                       ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
-                      : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
+                      ? "border-[#AFC1B6] text-[#0B251A]"
+                      : "border-gray-200"
                   }`}
                 >
                   <div
-                      className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
+                    className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                       isMonitored === "no"
-                         ? "border-[#AFC1B6] bg-[#0B251A]"
+                        ? "border-[#AFC1B6] bg-[#0B251A]"
                         : "border-gray-400 bg-white"
                     }`}
                   >

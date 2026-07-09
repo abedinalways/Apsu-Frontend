@@ -9,56 +9,52 @@ import {
 } from "@/components/ui/form";
 import { FormData } from "@/zod/AssessmentSchema";
 
-const SMOKING_OPTIONS = [
-  { id: "never", label: "Never" },
-  { id: "occasionally", label: "Occasionally" },
-  { id: "daily", label: "Daily" },
-  { id: "stopped-last-month", label: "Stopped from last month" },
+const PREGNANCY_OPTIONS = [
+  { id: "yes", label: "Yes" },
+  { id: "no", label: "No" },
+  { id: "not-sure", label: "Not Sure" },
 ] as const;
 
-export default function EligibilityCheckStepThree() {
+export default function EligibilityCheckStepEight() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const selectedFrequency = watch("smokingFrequency");
+  const currentSelection = watch("isCurrentlyPregnant");
 
   return (
     <div className="space-y-6">
-      {/* Header text matching Screenshot 2026-07-05 111411.png */}
+      {/* Title block from Screenshot 2026-07-05 113852.png */}
       <div>
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight leading-snug">
-          Do you currently smoke?
+        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+          Are you currently pregnant?
         </h2>
-        <p className="text-xs text-muted-foreground mt-1.5">
-          This affects which options are safest for you.
-        </p>
       </div>
 
       {/* Stacked Selection List */}
       <FormField
         control={control}
-        name="smokingFrequency"
+        name="isCurrentlyPregnant"
         render={() => (
           <FormItem className="space-y-3">
             <FormControl>
               <div className="flex flex-col gap-3">
-                {SMOKING_OPTIONS.map((option) => {
-                  const isSelected = selectedFrequency === option.id;
+                {PREGNANCY_OPTIONS.map((option) => {
+                  const isSelected = currentSelection === option.id;
 
                   return (
                     <button
                       key={option.id}
                       type="button"
                       onClick={() =>
-                        setValue("smokingFrequency", option.id, {
+                        setValue("isCurrentlyPregnant", option.id, {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 text-left rounded-2xl border transition-all ${
+                      className={`w-full p-4 text-left transition-all bg-[#FAF9F4] h-14! rounded-xl border text-[16px] text-[#6c6c6c] cursor-pointer ${
                         isSelected
-                           ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
-                          : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
+                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          : "border-gray-200"
                       }`}
                     >
-                      <span className="text-sm font-medium text-gray-700">
+                      <span className="text-sm font-medium">
                         {option.label}
                       </span>
                     </button>

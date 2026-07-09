@@ -55,21 +55,31 @@ export const formSchema = z
     medicalConditions: z.array(z.string()).min(1, requiredMessage),
 
     // Step 3: Health History Step Three
-    selectedSideEffects: z
-      .array(z.string())
-      .min(1, requiredMessage),
-    sideEffectsAdditionalDetails: requiredString()
-      .min(5, "Please describe the side effects you have experienced."),
+    selectedSideEffects: z.array(z.string()).min(1, requiredMessage),
+    sideEffectsAdditionalDetails: requiredString().min(
+      5,
+      "Please describe the side effects you have experienced.",
+    ),
 
     // Step 3: Health History Step Four
-    knownAllergies: z
-      .array(z.string())
-      .min(1, requiredMessage),
+    knownAllergies: z.array(z.string()).min(1, requiredMessage),
 
     // Step 4: Goal Life style Activity Step One
-    weightLossGoal: z.enum(["under-20", "20-50", "50-plus", "not-sure"], {
-      required_error: requiredMessage,
-    }),
+    weightLossGoal: z.enum(
+      [
+        "under-20",
+        "20-50",
+        "50-plus",
+        "not-sure",
+        "rarely",
+        "sometimes",
+        "most-nights",
+        "every-night",
+      ],
+      {
+        required_error: requiredMessage,
+      },
+    ),
 
     // Step 4: Goal Life style Activity Step Two
     triedLosingWeightBefore: z.enum(
@@ -80,18 +90,9 @@ export const formSchema = z
     ),
 
     // Step 4: Goal Life style Activity Step Three
-    weightLossMethods: requiredString().min(
-      5,
-      "Please tell us more about methods applied.",
-    ),
-    weightLossMotivation: requiredString().min(
-      5,
-      "Please share what motivates your weight loss journey.",
-    ),
-    weightLossBarriers: requiredString().min(
-      5,
-      "Please describe the barrier in brief.",
-    ),
+    weightLossMethods: z.string().optional(),
+    weightLossMotivation: z.string().optional(),
+    weightLossBarriers: z.string().optional(),
 
     // Step 4: Goal Life style Activity Step Four
     lifestyleDescription: z.enum(
@@ -150,6 +151,45 @@ export const formSchema = z
     isCurrentlyPregnant: z.enum(["yes", "no", "not-sure"], {
       required_error: requiredMessage,
     }),
+
+    // Add this field validation to your central form Schema definition
+    email: z
+      .string()
+      .min(1, "Email is required.")
+      .email("Please enter a valid email address."),
+
+    // Add this field to your central formSchema definition if validation/confirmation is required
+    reviewAcknowledged: z.boolean().refine((val) => val === true, {
+      message: "You must review and acknowledge the terms before continuing.",
+    }),
+
+    // Add these layout rules to your validation schema object block
+    shippingAddress: z.string().min(5, "Address is required."),
+    shippingState: z.string().min(1, "State is required."),
+    shippingCity: z.string().min(1, "City is required."),
+    shippingCountry: z.string().min(1, "Country is required."),
+    shippingPostalCode: z.string().min(3, "Postal code is required."),
+    billingSameAsShipping: z.boolean().default(true),
+    receivePromotions: z.boolean().default(false),
+
+    // Sleep Eligibility Check Step
+    dailyEffects: z.array(z.string()).default([]),
+    sleepRatingCategory: z.string().optional(),
+
+    wakeUpFrequency: z.string().optional(),
+    fallBackAsleep: z.string().optional(),
+    screenTimeBeforeBed: z.string().optional(),
+
+    pastSleepTreatments: z.array(z.string()).default([]),
+
+    diagnosedConditions: z.array(z.string()).default([]),
+    takesSleepMedication: z.string().optional(),
+    heavySnoringOrApnea: z.string().optional(),
+    pregnantOrBreastfeeding: z.string().optional(),
+
+    //Birth Control Goal Lifestyle Activity Step
+    birthControlGoals: z.array(z.string()).default([]),
+    preferredMethod: z.string().optional(),
 
     // Step 6: Treatment Plan Step One
     treatmentPlan: z
