@@ -28,11 +28,11 @@ export default function EligibilityCheckStepOne() {
   return (
     <div className="space-y-6">
       {/* Title & Description block from Screenshot 2026-07-05 110413.png */}
-      <div className="space-y-2">
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight leading-snug">
+      <div>
+        <h2 className="text-[20px] font-semibold text-[#102b1c]">
           Do you currently use nicotine-containing products?
         </h2>
-        <p className="text-xs text-muted-foreground leading-relaxed">
+        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
           This includes cigarettes, e-cigarettes/vape, pipe tobacco, chewing
           tobacco/snuff, cigars, nicotine patch, nicotine gum, nicotine inhaler,
           and nicotine lozenges.
@@ -59,10 +59,10 @@ export default function EligibilityCheckStepOne() {
                           shouldValidate: true,
                         })
                       }
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all ${
+                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
-                          : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
+                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          : "border-gray-200"
                       }`}
                     >
                       {/* Outer circular radio container button accent */}

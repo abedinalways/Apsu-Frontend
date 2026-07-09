@@ -80,7 +80,7 @@ export default function HealthHistoryStepTwo() {
                           handleToggle(option.id, !isChecked);
                         }
                       }}
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! bg-[#FAF9F4] text-[16px] text-[#6c6c6c]  ${
+                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! bg-[#FAF9F4] cursor-pointer text-[16px] text-[#6c6c6c]  ${
                         isChecked
                           ? "border-[#AFC1B6] text-[#0B251A]"
                           : "border-gray-200"

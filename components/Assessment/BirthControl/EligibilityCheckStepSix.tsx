@@ -69,12 +69,12 @@ export default function EligibilityCheckStepSix() {
   return (
     <div className="space-y-6">
       {/* Step description headers matching Screenshot 2026-07-05 113111.png */}
-      <div className="space-y-2">
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight leading-snug">
+      <div>
+        <h2 className="text-[20px] font-semibold text-[#102b1c]">
           Are you currently taking any medications every day, even if only for a
           short time? Please do not include birth control.
         </h2>
-        <p className="text-xs text-muted-foreground leading-relaxed">
+        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
           To help us respond to your request quickly and accurately, please
           select all the medications you take - either regularly or as needed.
           This includes prescriptions, over-the-counter medications, vitamins,
@@ -92,7 +92,7 @@ export default function EligibilityCheckStepSix() {
               <div className="space-y-4">
                 {/* Combobox Search Field Container */}
                 <div className="relative">
-                  <Search className="absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+                  <Search className="absolute left-4 top-5 h-4 w-4 text-gray-400" />
                   <Input
                     type="text"
                     value={searchQuery}
@@ -103,7 +103,7 @@ export default function EligibilityCheckStepSix() {
                     onFocus={() => setShowSuggestions(true)}
                     placeholder="Search your medication name"
                     disabled={hasNoneSelected}
-                    className="pl-11 pr-4 py-2 h-11 rounded-2xl border-none bg-[#FAF9F6] text-sm focus-visible:ring-1 focus-visible:ring-[#AFC1B6] placeholder:text-gray-400 w-full"
+                    className="pl-11 pr-4 py-2 rounded-2xl border-none text-sm w-full bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]"
                   />
 
                   {/* Dynamic suggestions drop list dropdown portal container */}
@@ -163,10 +163,10 @@ export default function EligibilityCheckStepSix() {
                 <button
                   type="button"
                   onClick={handleClearAllMeds}
-                  className={`w-full py-4 text-center rounded-2xl border text-sm font-medium transition-all ${
+                  className={`w-full py-4 text-center text-sm font-medium transition-all bg-[#FAF9F4] h-14! rounded-xl border text-[16px] text-[#6c6c6c] ${
                     hasNoneSelected
-                      ? "border-[#AFC1B6] bg-[#AFC1B6]/10 font-semibold"
-                      : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6] text-gray-700"
+                      ? "border-[#AFC1B6] text-[#0B251A]"
+                      : "border-gray-200"
                   }`}
                 >
                   I don&apos;t have any

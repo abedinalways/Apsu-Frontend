@@ -5,37 +5,37 @@ import { Resolver, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
 import { FormData, formSchema } from "@/zod/AssessmentSchema";
-import Treatment from "@/components/Assessment/form/Treatment";
-import GeneralInformation from "@/components/Assessment/form/GeneralInformation";
-import HealthHistoryStepOne from "@/components/Assessment/form/HealthHistoryStepOne";
-import HealthHistoryStepTwo from "@/components/Assessment/form/HealthHistoryStepTwo";
-import HealthHistoryStepThree from "@/components/Assessment/form/HealthHistoryStepThree";
-import GoalLifestyleActivityStepOne from "@/components/Assessment/form/GoalLifestyleActivityStepOne";
-import GoalLifestyleActivityStepTwo from "@/components/Assessment/WeightLoss/GoalLifestyleActivityStepTwo";
-import GoalLifestyleActivityStepThree from "@/components/Assessment/WeightLoss/GoalLifestyleActivityStepThree";
-import GoalLifestyleActivityStepFour from "@/components/Assessment/WeightLoss/GoalLifestyleActivityStepFour";
-import EligibilityCheckStepOne from "@/components/Assessment/BirthControl/EligibilityCheckStepOne";
-import EligibilityCheckStepTwo from "@/components/Assessment/BirthControl/EligibilityCheckStepTwo";
-import EligibilityCheckStepThree from "@/components/Assessment/BirthControl/EligibilityCheckStepThree";
-import EligibilityCheckStepFour from "@/components/Assessment/BirthControl/EligibilityCheckStepFour";
-import EligibilityCheckStepFive from "@/components/Assessment/BirthControl/EligibilityCheckStepFive";
-import EligibilityCheckStepSix from "@/components/Assessment/BirthControl/EligibilityCheckStepSix";
-import EligibilityCheckStepSeven from "@/components/Assessment/BirthControl/EligibilityCheckStepSeven";
-import EligibilityCheckStepEight from "@/components/Assessment/BirthControl/EligibilityCheckStepEight";
-import TreatmentPlanStepOne from "@/components/Assessment/form/TreatmentPlanStepOne";
-import ScheduleConsultationStepOne from "@/components/Assessment/form/ScheduleConsultationStepOne";
-import CheckoutPaymentStepOne from "@/components/Assessment/form/CheckoutPaymentStepOne";
-import HealthHistoryStepFour from "@/components/Assessment/form/HealthHistoryStepFour";
+import GeneralInformation from "../form/GeneralInformation";
+import HealthHistoryStepOne from "../form/HealthHistoryStepOne";
+import HealthHistoryStepTwo from "../form/HealthHistoryStepTwo";
+import HealthHistoryStepThree from "../form/HealthHistoryStepThree";
+import HealthHistoryStepFour from "../form/HealthHistoryStepFour";
+import GoalLifestyleActivityStepOne from "./GoalLifestyleActivityStepOne";
+import GoalLifestyleActivityStepTwo from "./GoalLifestyleActivityStepTwo";
+import EligibilityCheckStepOne from "./EligibilityCheckStepOne";
+import EligibilityCheckStepTwo from "./EligibilityCheckStepTwo";
+import EligibilityCheckStepThree from "./EligibilityCheckStepThree";
+import EligibilityCheckStepFour from "./EligibilityCheckStepFour";
+import EligibilityCheckStepFive from "./EligibilityCheckStepFive";
+import EligibilityCheckStepSix from "./EligibilityCheckStepSix";
+import EligibilityCheckStepSeven from "./EligibilityCheckStepSeven";
+import EligibilityCheckStepEight from "./EligibilityCheckStepEight";
+import EligibilityStepOne from "../form/EligibilityStepOne";
+import EligibilityStepTwo from "../form/EligibilityStepTwo";
+import EligibilityStepThree from "../form/EligibilityStepThree";
+import TreatmentPlanStepOne from "../form/TreatmentPlanStepOne";
+import ScheduleConsultationStepOne from "../form/ScheduleConsultationStepOne";
+import CheckoutPaymentStepOne from "../form/CheckoutPaymentStepOne";
 
 const TOTAL_STEPS = 8;
 
 const STEP_LABELS = [
-  "Treatment",
   "General information",
   "Health History",
-  "(Goal, lifestyle, activity)",
+  "Goal, Lifestyle, Activity",
   "Eligibility Check",
   "Eligibility",
+  "Treatment Plan",
   "Schedule Consultation",
   "Checkout & Payment",
 ];
@@ -44,12 +44,13 @@ export default function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [healthHistoryStep, setHealthHistoryStep] = useState(0);
   const [goalLifestyleStep, setGoalLifestyleStep] = useState(0);
+  const [eligibilityCheckStep, setEligibilityCheckStep] = useState(0);
   const [eligibilityStep, setEligibilityStep] = useState(0);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema) as Resolver<FormData>,
     defaultValues: {
-      goal: undefined,
+      goal: "birth-control",
       firstName: "",
       lastName: "",
       dob: "",
@@ -82,6 +83,17 @@ export default function MultiStepForm() {
       currentMedications: [],
       medicalTeamConcerns: "",
       isCurrentlyPregnant: undefined,
+      birthControlGoals: [],
+      preferredMethod: undefined,
+      email: "",
+      reviewAcknowledged: false,
+      shippingAddress: "",
+      shippingState: "",
+      shippingCity: "",
+      shippingCountry: "",
+      shippingPostalCode: "",
+      billingSameAsShipping: true,
+      receivePromotions: false,
       consultationDate: "",
       consultationTime: "",
       timezone: "America/Los_Angeles",
@@ -99,8 +111,7 @@ export default function MultiStepForm() {
   const nextStep = async () => {
     let fieldsToValidate: Array<keyof FormData> = [];
 
-    if (step === 1) fieldsToValidate = ["goal"];
-    if (step === 2)
+    if (step === 1)
       fieldsToValidate = [
         "firstName",
         "lastName",
@@ -108,7 +119,7 @@ export default function MultiStepForm() {
         "gender",
         "residence",
       ];
-    if (step === 3) {
+    if (step === 2) {
       if (healthHistoryStep === 0) {
         fieldsToValidate =
           form.getValues("unitSystem") === "imperial"
@@ -125,18 +136,16 @@ export default function MultiStepForm() {
         fieldsToValidate = ["knownAllergies"];
       }
     }
-    if (step === 4) {
+    if (step === 3) {
       const goalLifestyleFields: Array<Array<keyof FormData>> = [
-        ["weightLossGoal"],
-        ["triedLosingWeightBefore"],
-        ["weightLossMethods", "weightLossMotivation", "weightLossBarriers"],
-        ["lifestyleDescription", "eatingRestrictions", "sleepHours"],
+        ["birthControlGoals"],
+        ["preferredMethod"],
       ];
 
       fieldsToValidate = goalLifestyleFields[goalLifestyleStep] || [];
     }
-    if (step === 5) {
-      const eligibilityFields: Array<Array<keyof FormData>> = [
+    if (step === 4) {
+      const eligibilityCheckFields: Array<Array<keyof FormData>> = [
         ["nicotineUsage"],
         ["nicotineProductTypes"],
         ["smokingFrequency"],
@@ -147,24 +156,45 @@ export default function MultiStepForm() {
         ["isCurrentlyPregnant"],
       ];
 
+      fieldsToValidate = eligibilityCheckFields[eligibilityCheckStep] || [];
+    }
+    if (step === 5) {
+      const eligibilityFields: Array<Array<keyof FormData>> = [
+        ["reviewAcknowledged"],
+        ["email"],
+        [
+          "shippingAddress",
+          "shippingState",
+          "shippingCity",
+          "shippingCountry",
+          "shippingPostalCode",
+        ],
+      ];
+
       fieldsToValidate = eligibilityFields[eligibilityStep] || [];
     }
+    if (step === 6) fieldsToValidate = ["treatmentPlan"];
     if (step === 7) fieldsToValidate = ["consultationDate", "consultationTime"];
 
     const isValid = await form.trigger(fieldsToValidate);
     if (!isValid) return;
 
-    if (step === 3 && healthHistoryStep < 3) {
+    if (step === 2 && healthHistoryStep < 3) {
       setHealthHistoryStep((prev) => prev + 1);
       return;
     }
 
-    if (step === 4 && goalLifestyleStep < 3) {
+    if (step === 3 && goalLifestyleStep < 1) {
       setGoalLifestyleStep((prev) => prev + 1);
       return;
     }
 
-    if (step === 5 && eligibilityStep < 7) {
+    if (step === 4 && eligibilityCheckStep < 7) {
+      setEligibilityCheckStep((prev) => prev + 1);
+      return;
+    }
+
+    if (step === 5 && eligibilityStep < 2) {
       setEligibilityStep((prev) => prev + 1);
       return;
     }
@@ -173,13 +203,18 @@ export default function MultiStepForm() {
   };
 
   const prevStep = () => {
-    if (step === 3 && healthHistoryStep > 0) {
+    if (step === 2 && healthHistoryStep > 0) {
       setHealthHistoryStep((prev) => prev - 1);
       return;
     }
 
-    if (step === 4 && goalLifestyleStep > 0) {
+    if (step === 3 && goalLifestyleStep > 0) {
       setGoalLifestyleStep((prev) => prev - 1);
+      return;
+    }
+
+    if (step === 4 && eligibilityCheckStep > 0) {
+      setEligibilityCheckStep((prev) => prev - 1);
       return;
     }
 
@@ -189,15 +224,15 @@ export default function MultiStepForm() {
     }
 
     if (step === 4) {
-      setHealthHistoryStep(3);
+      setGoalLifestyleStep(1);
     }
 
     if (step === 5) {
-      setGoalLifestyleStep(3);
+      setEligibilityCheckStep(7);
     }
 
     if (step === 6) {
-      setEligibilityStep(7);
+      setEligibilityStep(2);
     }
 
     setStep((prev) => Math.max(prev - 1, 1));
@@ -240,44 +275,46 @@ export default function MultiStepForm() {
         <Form {...form}>
           {/* Form wrapper handles programmatic intercept */}
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            {step === 1 && <Treatment />}
-            {step === 2 && <GeneralInformation />}
-            {step === 3 && healthHistoryStep === 0 && <HealthHistoryStepOne />}
-            {step === 3 && healthHistoryStep === 1 && <HealthHistoryStepTwo />}
-            {step === 3 && healthHistoryStep === 2 && (
+            {step === 1 && <GeneralInformation />}
+            {step === 2 && healthHistoryStep === 0 && <HealthHistoryStepOne />}
+            {step === 2 && healthHistoryStep === 1 && <HealthHistoryStepTwo />}
+            {step === 2 && healthHistoryStep === 2 && (
               <HealthHistoryStepThree />
             )}
-            {step === 3 && healthHistoryStep === 3 && <HealthHistoryStepFour />}
-            {step === 4 && goalLifestyleStep === 0 && (
+            {step === 2 && healthHistoryStep === 3 && <HealthHistoryStepFour />}
+            {step === 3 && goalLifestyleStep === 0 && (
               <GoalLifestyleActivityStepOne />
             )}
-            {step === 4 && goalLifestyleStep === 1 && (
+            {step === 3 && goalLifestyleStep === 1 && (
               <GoalLifestyleActivityStepTwo />
             )}
-            {step === 4 && goalLifestyleStep === 2 && (
-              <GoalLifestyleActivityStepThree />
+            {step === 4 && eligibilityCheckStep === 0 && (
+              <EligibilityCheckStepOne />
             )}
-            {step === 4 && goalLifestyleStep === 3 && (
-              <GoalLifestyleActivityStepFour />
+            {step === 4 && eligibilityCheckStep === 1 && (
+              <EligibilityCheckStepTwo />
             )}
-            {step === 5 && eligibilityStep === 0 && <EligibilityCheckStepOne />}
-            {step === 5 && eligibilityStep === 1 && <EligibilityCheckStepTwo />}
-            {step === 5 && eligibilityStep === 2 && (
+            {step === 4 && eligibilityCheckStep === 2 && (
               <EligibilityCheckStepThree />
             )}
-            {step === 5 && eligibilityStep === 3 && (
+            {step === 4 && eligibilityCheckStep === 3 && (
               <EligibilityCheckStepFour />
             )}
-            {step === 5 && eligibilityStep === 4 && (
+            {step === 4 && eligibilityCheckStep === 4 && (
               <EligibilityCheckStepFive />
             )}
-            {step === 5 && eligibilityStep === 5 && <EligibilityCheckStepSix />}
-            {step === 5 && eligibilityStep === 6 && (
+            {step === 4 && eligibilityCheckStep === 5 && (
+              <EligibilityCheckStepSix />
+            )}
+            {step === 4 && eligibilityCheckStep === 6 && (
               <EligibilityCheckStepSeven />
             )}
-            {step === 5 && eligibilityStep === 7 && (
+            {step === 4 && eligibilityCheckStep === 7 && (
               <EligibilityCheckStepEight />
             )}
+            {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
+            {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
+            {step === 5 && eligibilityStep === 2 && <EligibilityStepThree />}
             {step === 6 && <TreatmentPlanStepOne />}
             {step === 7 && <ScheduleConsultationStepOne />}
             {step === 8 && <CheckoutPaymentStepOne />}

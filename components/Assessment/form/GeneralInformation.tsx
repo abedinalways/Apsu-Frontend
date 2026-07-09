@@ -138,7 +138,7 @@ export default function GeneralInformation() {
             </FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <SelectTrigger className="bg-[#FAF9F4] h-14! w-full text-[16px] text-[#6c6c6c]">
+                <SelectTrigger className="bg-[#FAF9F4] h-14! w-full text-[16px] text-[#6c6c6c] cursor-pointer">
                   <SelectValue placeholder="Select your state name" />
                 </SelectTrigger>
               </FormControl>
