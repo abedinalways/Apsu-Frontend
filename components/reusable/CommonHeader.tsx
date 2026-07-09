@@ -2,10 +2,12 @@ function CommonHeader({
   sectionName,
   title,
   description,
+  isSmall = false,
 }: {
   sectionName: string;
   title: string;
   description: string;
+  isSmall?: boolean;
 }) {
   return (
     <div className="max-w-3xl  mx-auto w-full">
@@ -13,9 +15,15 @@ function CommonHeader({
       <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium text-primaryColor">
         {title}
       </h2>
-      <p className="text-lg md:text-xl md:px-50 text-descriptionColor mt-3">
-        {description}
-      </p>
+      {isSmall ? (
+        <p className="text-lg md:text-xl  text-descriptionColor mt-3">
+          {description}
+        </p>
+      ) : (
+        <p className="text-lg md:text-xl md:px-50 text-descriptionColor mt-3">
+          {description}
+        </p>
+      )}
     </div>
   );
 }
