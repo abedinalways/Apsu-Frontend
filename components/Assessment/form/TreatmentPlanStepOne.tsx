@@ -8,6 +8,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { FormData } from "@/zod/AssessmentSchema";
+import Image from "next/image";
 // import { FormData } from "./schema";
 
 interface PlanOption {
@@ -68,31 +69,25 @@ export default function TreatmentPlanStepOne() {
   const selectedPlan = watch("treatmentPlan") || "3-months";
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       {/* Visual Header Banner matching Screenshot 2026-07-05 104917.png */}
       <div className="relative overflow-hidden rounded-2xl bg-[#D2FDEB] p-5 flex items-center justify-between">
         <div className="space-y-1 max-w-[70%] z-10">
-          <h2 className="text-base font-bold text-[#0B251A] tracking-tight">
+          <h2 className="text-[20px] font-semibold text-[#102b1c]">
             Choose a plan that fits you.
           </h2>
-          <p className="text-xs text-[#0B251A]/80 leading-relaxed font-medium">
+          <p className="text-[14px] text-[#111]">
             Select the duration that works best for your goals. Longer plans
             offer greater savings.
           </p>
         </div>
-        {/* Mocking the prescription vials visual representation on the right */}
-        <div className="absolute right-2 bottom-0 top-0 flex items-center justify-center opacity-80 pointer-events-none w-24">
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="w-8 h-14 bg-white/90 border border-gray-300 rounded-md rotate-[-12deg] translate-x-2 translate-y-1 shadow-sm relative flex flex-col justify-between p-1">
-              <div className="h-2 bg-emerald-700/40 rounded-sm w-full" />
-              <div className="h-1 bg-gray-200 w-full my-1" />
-            </div>
-            <div className="w-8 h-14 bg-white border border-gray-200 rounded-md rotate-[8deg] shadow-md relative flex flex-col justify-between p-1">
-              <div className="h-2 bg-emerald-800 rounded-sm w-full" />
-              <div className="h-1 bg-gray-200 w-full my-1" />
-            </div>
-          </div>
-        </div>
+        <Image
+          src="/images/payments1.png"
+          alt="Prescription vials"
+          width={96}
+          height={96}
+          className="absolute right-2 bottom-0 top-0 m-auto h-full w-auto object-contain opacity-80 pointer-events-none"
+        />
       </div>
 
       {/* Plan Option Row List */}
@@ -115,23 +110,23 @@ export default function TreatmentPlanStepOne() {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 rounded-2xl border text-left flex items-start justify-between transition-all relative ${
+                      className={`w-full p-4 rounded-2xl border text-left flex items-start justify-between transition-all relative bg-[#FAF9F4] cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] bg-white ring-1 ring-[#AFC1B6] shadow-sm"
-                          : "border-gray-100 bg-[#FAF9F6]/60 hover:bg-[#FAF9F6]"
+                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          : "border-gray-200"
                       }`}
                     >
-                      <div className="flex gap-3 items-start">
+                      <div className="flex items-center justify-center gap-3 ">
                         {/* Radio circle element indicator */}
                         <div
                           className={`h-5 w-5 rounded-full border flex items-center justify-center mt-0.5 shrink-0 transition-colors ${
                             isSelected
-                              ? "border-[#AFC1B6] bg-[#AFC1B6]"
-                              : "border-gray-400 bg-white"
+                              ? "border-[#AFC1B6] bg-[#0B251A]"
+                              : "border-gray-200 bg-white"
                           }`}
                         >
                           {isSelected && (
-                            <div className="h-2.5 w-2.5 rounded-full bg-[#AFC1B6]" />
+                            <div className="h-2.5 w-2.5 rounded-full bg-[#FAF9F4]" />
                           )}
                         </div>
 
@@ -146,8 +141,8 @@ export default function TreatmentPlanStepOne() {
                           <div
                             className={`inline-block px-2 py-0.5 text-[10px] font-semibold rounded-full ${
                               plan.badgeVariant === "save"
-                                ? "bg-[#D2FDEB] text-emerald-800"
-                                : "bg-gray-200/60 text-gray-600"
+                                ? "border-[#AFC1B6] text-[#0B251A]"
+                                : "border-gray-200"
                             }`}
                           >
                             {plan.badge}
