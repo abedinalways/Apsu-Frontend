@@ -18,11 +18,11 @@ import GetStartModal from "@/components/Assessment/modal/GetStartModal";
 export default function AssessmentPage() {
   const router = useRouter();
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedFlow, setSelectedFlow] = useState<"sleep" | "weight" | null>(
-    null,
-  );
+  const [selectedFlow, setSelectedFlow] = useState<
+    "sleep" | "weight" | "birth" | null
+  >(null);
 
-  const triggerModal = (flow: "sleep" | "weight") => {
+  const triggerModal = (flow: "sleep" | "weight" | "birth") => {
     setSelectedFlow(flow);
     setModalOpen(true);
   };
@@ -31,6 +31,7 @@ export default function AssessmentPage() {
     setModalOpen(false);
     if (selectedFlow === "sleep") router.push("/assessment/sleep");
     if (selectedFlow === "weight") router.push("/assessment/weight-loss");
+    if (selectedFlow === "birth") router.push("/assessment/birth-control");
   };
 
   return (
@@ -46,6 +47,12 @@ export default function AssessmentPage() {
         className="border p-2 rounded bg-black text-white"
       >
         Weight Button
+      </button>
+      <button
+        onClick={() => triggerModal("birth")}
+        className="border p-2 rounded bg-black text-white"
+      >
+        Birth Control
       </button>
 
       <GetStartModal

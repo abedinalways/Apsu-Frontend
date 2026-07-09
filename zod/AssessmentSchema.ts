@@ -65,18 +65,21 @@ export const formSchema = z
     knownAllergies: z.array(z.string()).min(1, requiredMessage),
 
     // Step 4: Goal Life style Activity Step One
-    weightLossGoal: z.enum([
-      "under-20",
-      "20-50",
-      "50-plus",
-      "not-sure",
-      "rarely",
-      "sometimes",
-      "most-nights",
-      "every-night",
-    ], {
-      required_error: requiredMessage,
-    }),
+    weightLossGoal: z.enum(
+      [
+        "under-20",
+        "20-50",
+        "50-plus",
+        "not-sure",
+        "rarely",
+        "sometimes",
+        "most-nights",
+        "every-night",
+      ],
+      {
+        required_error: requiredMessage,
+      },
+    ),
 
     // Step 4: Goal Life style Activity Step Two
     triedLosingWeightBefore: z.enum(
@@ -183,6 +186,10 @@ export const formSchema = z
     takesSleepMedication: z.string().optional(),
     heavySnoringOrApnea: z.string().optional(),
     pregnantOrBreastfeeding: z.string().optional(),
+
+    //Birth Control Goal Lifestyle Activity Step
+    birthControlGoals: z.array(z.string()).default([]),
+    preferredMethod: z.string().optional(),
 
     // Step 6: Treatment Plan Step One
     treatmentPlan: z
