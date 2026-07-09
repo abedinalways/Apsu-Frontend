@@ -82,7 +82,7 @@ export default function HealthHistoryStepOne() {
                         <Input
                           type="number"
                           {...field}
-                          className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                           <div className="flex gap-1">
@@ -112,7 +112,7 @@ export default function HealthHistoryStepOne() {
                         <Input
                           type="number"
                           {...field}
-                          className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                           <div className="flex gap-1">
@@ -160,7 +160,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
@@ -196,7 +196,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
@@ -228,7 +228,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">

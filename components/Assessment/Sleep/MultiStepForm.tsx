@@ -10,9 +10,6 @@ import HealthHistoryStepOne from "@/components/Assessment/form/HealthHistoryStep
 import HealthHistoryStepTwo from "@/components/Assessment/form/HealthHistoryStepTwo";
 import HealthHistoryStepThree from "@/components/Assessment/form/HealthHistoryStepThree";
 import HealthHistoryStepFour from "@/components/Assessment/form/HealthHistoryStepFour";
-// import GoalLifestyleActivityStepOne from "@/components/Assessment/Sleep/GoalLifestyleActivityStepOne";
-// import GoalLifestyleActivityStepTwo from "@/components/Assessment/Sleep/GoalLifestyleActivityStepTwo";
-// import EligibilityCheckStepOne from "@/components/Assessment/Sleep/EligibilityCheckStepOne";
 import TreatmentPlanStepOne from "@/components/Assessment/form/TreatmentPlanStepOne";
 import ScheduleConsultationStepOne from "@/components/Assessment/form/ScheduleConsultationStepOne";
 import CheckoutPaymentStepOne from "@/components/Assessment/form/CheckoutPaymentStepOne";

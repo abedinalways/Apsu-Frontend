@@ -44,7 +44,7 @@ export default function GeneralInformation() {
                 <Input
                   placeholder="First Name"
                   {...field}
-                  className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px]"
+                  className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px]"
                 />
               </FormControl>
               <FormMessage />
@@ -63,7 +63,7 @@ export default function GeneralInformation() {
                 <Input
                   placeholder="Last Name"
                   {...field}
-                  className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                  className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                 />
               </FormControl>
               <FormMessage />
@@ -84,7 +84,7 @@ export default function GeneralInformation() {
               <Input
                 type="date"
                 {...field}
-                className="bg-[#FAF9F4] h-11 text-[16px] text-[#6c6c6c] flex flex-col pt-2 focus-visible:ring-[1px]"
+                className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] flex flex-col pt-4 focus-visible:ring-[1px]"
               />
             </FormControl>
             <FormMessage />
@@ -109,7 +109,7 @@ export default function GeneralInformation() {
                 {genders.map((g) => (
                   <div
                     key={g}
-                    className={`flex items-center justify-center gap-2 bg-[#FAF9F4] h-11 rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full ${
+                    className={`flex items-center justify-center gap-2 bg-[#FAF9F4] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full ${
                       currentGender === g
                         ? "border-[#AFC1B6] text-[#0B251A]"
                         : "border-gray-200"
@@ -138,7 +138,7 @@ export default function GeneralInformation() {
             </FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <SelectTrigger className="bg-[#FAF9F4] h-11! w-full text-[16px] text-[#6c6c6c]">
+                <SelectTrigger className="bg-[#FAF9F4] h-14! w-full text-[16px] text-[#6c6c6c]">
                   <SelectValue placeholder="Select your state name" />
                 </SelectTrigger>
               </FormControl>
