@@ -83,10 +83,10 @@ export default function GoalLifestyleActivityStepFour() {
                           shouldValidate: true,
                         })
                       }
-                      className={`py-3.5 px-1 rounded-xl border text-[14px] text-[#111] font-medium text-center transition-all truncate h-14! ${
+                      className={`py-3.5 px-1 rounded-xl border text-[14px] text-[#111] font-medium text-center transition-all truncate h-14! bg-[#FAF9F4]  cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] bg-[#AFC1B6]/10 font-bold shadow-sm"
-                          : "border-gray-100 bg-[#FAF9F6]/50 text-gray-600 hover:bg-[#FAF9F6]"
+                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          : "border-gray-200"
                       }`}
                     >
                       {option.label}
@@ -114,7 +114,7 @@ export default function GoalLifestyleActivityStepFour() {
               <Textarea
                 {...field}
                 placeholder="Tell us more.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-[#AFC1B6] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F4]  text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
               />
             </FormControl>
             <div className="flex flex-wrap gap-1.5 pt-0.5">
@@ -148,7 +148,7 @@ export default function GoalLifestyleActivityStepFour() {
               <Textarea
                 {...field}
                 placeholder="eg.8hr"
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-[#AFC1B6] placeholder:text-gray-400 p-3 overflow-hidden"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F4] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3 overflow-hidden"
               />
             </FormControl>
             <FormMessage />
