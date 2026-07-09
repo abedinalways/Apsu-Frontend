@@ -37,7 +37,7 @@ export default function Assessment() {
       title: "Birth Control",
       description: "Pills, patches, rings - delivered discreetly each month.",
       icon: <BirthControlIcons />,
-      href: "/assessment/birth-control",
+      href: "/assessment/birth",
     },
     {
       id: "sleep",
