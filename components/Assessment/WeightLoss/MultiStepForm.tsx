@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Resolver, useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
 import { FormData, formSchema } from "@/zod/AssessmentSchema";
@@ -37,6 +38,7 @@ const STEP_LABELS = [
 
 export default function MultiStepForm() {
   const [step, setStep] = useState(1);
+  const router = useRouter();
   const [healthHistoryStep, setHealthHistoryStep] = useState(0);
   const [goalLifestyleStep, setGoalLifestyleStep] = useState(0);
   const [eligibilityStep, setEligibilityStep] = useState(0);
@@ -181,6 +183,11 @@ export default function MultiStepForm() {
   };
 
   const prevStep = () => {
+    if (step === 1) {
+      router.push("/assessment");
+      return;
+    }
+
     if (step === 2 && healthHistoryStep > 0) {
       setHealthHistoryStep((prev) => prev - 1);
       return;
@@ -293,15 +300,15 @@ export default function MultiStepForm() {
             <button
               type="button"
               onClick={prevStep}
-              disabled={step === 1}
-              className="px-6 py-3 border rounded-full text-sm font-medium hover:bg-gray-50 disabled:opacity-30"
+              disabled={step === 0}
+              className="px-6 py-3 border rounded-full text-sm font-medium hover:bg-gray-50 disabled:opacity-30 cursor-pointer"
             >
               &lt; Back
             </button>
             <button
               type="button"
               onClick={nextStep}
-              className="px-6 py-3 bg-[#0B251A] text-white rounded-full text-sm font-medium"
+              className="px-6 py-3 bg-[#0B251A] text-white rounded-full text-sm font-medium cursor-pointer"
             >
               Continue &gt;
             </button>

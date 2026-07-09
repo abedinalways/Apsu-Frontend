@@ -52,10 +52,10 @@ export default function EligibilityCheckStepOne() {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 text-left  rounded-2xl border transition-all h-14!  ${
+                      className={`w-full p-4 text-left  rounded-2xl border transition-all h-14! bg-[#FAF9F4] cursor-pointer  ${
                         isSelected
-                          ? "border-[#AFC1B6] bg-[#AFC1B6]/10"
-                          : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
+                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          : "border-gray-200"
                       }`}
                     >
                       <span className="text-[14px] text-[#111]">

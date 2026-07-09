@@ -56,7 +56,7 @@ export default function GoalLifestyleActivityStepThree() {
               <Textarea
                 {...field}
                 placeholder="Tell us more.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F4] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
               />
             </FormControl>
             {/* Quick selection pill tags */}
@@ -66,7 +66,7 @@ export default function GoalLifestyleActivityStepThree() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag("weightLossMethods", tag)}
-                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[#0B251A] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all"
+                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[#0B251A] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>
@@ -91,7 +91,7 @@ export default function GoalLifestyleActivityStepThree() {
               <Textarea
                 {...field}
                 placeholder="Tell us more.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F4] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
               />
             </FormControl>
             {/* Quick selection pill tags */}
@@ -101,7 +101,7 @@ export default function GoalLifestyleActivityStepThree() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag("weightLossMotivation", tag)}
-                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[#0B251A] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all"
+                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[#0B251A] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>
@@ -126,7 +126,7 @@ export default function GoalLifestyleActivityStepThree() {
               <Textarea
                 {...field}
                 placeholder="Describe in brief.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F6]/40 text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F4] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
               />
             </FormControl>
             <FormMessage />
