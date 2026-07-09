@@ -1,15 +1,17 @@
-import { BlogContentBlock } from '@/types/blogDetails';
+interface ParagraphProps {
+  content?: string;
+  emphasis?: boolean;
+}
 
-type Props = Partial<BlogContentBlock>;
-
-export default function Paragraph({ content }: Props) {
+export default function Paragraph({ content, emphasis }: ParagraphProps) {
+  if (!content) return null;
   return (
     <p
-      className="
-        text-[18px]
-        leading-[190%]
-        text-[#565656]
-      "
+      className={
+        emphasis
+          ? 'text-[1.13rem] font-normal text-[#3b3b3c] md:-mt-30'
+          : 'text-[1.13rem] font-normal leading-relaxed text-[#3b3b3c]'
+      }
     >
       {content}
     </p>

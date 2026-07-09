@@ -43,7 +43,7 @@ export default function BlogArticle({ blog }: Props) {
 
       {/* Content */}
 
-      <div className="mt-10 space-y-10">
+      <div className="mt-10 space-y-10 font-[Work_Sans]">
         {blog.content.map(section => (
           <BlogRenderer key={section.id} section={section} />
         ))}
