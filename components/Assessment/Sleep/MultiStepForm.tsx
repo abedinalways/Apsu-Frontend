@@ -16,8 +16,14 @@ import CheckoutPaymentStepOne from "@/components/Assessment/form/CheckoutPayment
 import GoalLifestyleActivityStepOne from "./GoalLifestyleActivityStepOne";
 import GoalLifestyleActivityStepTwo from "./GoalLifestyleActivityStepTwo";
 import EligibilityCheckStepOne from "./EligibilityCheckStepOne";
+import EligibilityCheckStepTwo from "./EligibilityCheckStepTwo";
+import EligibilityCheckStepThree from "./EligibilityCheckStepThree";
+import EligibilityCheckStepFour from "./EligibilityCheckStepFour";
+import EligibilityStepOne from "../form/EligibilityStepOne";
+import EligibilityStepTwo from "../form/EligibilityStepTwo";
+import EligibilityStepThree from "../form/EligibilityStepThree";
 
-const TOTAL_STEPS = 7;
+const TOTAL_STEPS = 8;
 
 const STEP_LABELS = [
   "General information",
@@ -25,6 +31,7 @@ const STEP_LABELS = [
   "(Goal, lifestyle, activity)",
   "Eligibility Check",
   "Eligibility",
+  "Treatment Plan",
   "Schedule Consultation",
   "Checkout & Payment",
 ];
@@ -33,6 +40,7 @@ export default function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [healthHistoryStep, setHealthHistoryStep] = useState(0);
   const [goalLifestyleStep, setGoalLifestyleStep] = useState(0);
+  const [eligibilityCheckStep, setEligibilityCheckStep] = useState(0);
   const [eligibilityStep, setEligibilityStep] = useState(0);
 
   const form = useForm<FormData>({
@@ -71,6 +79,25 @@ export default function MultiStepForm() {
       currentMedications: [],
       medicalTeamConcerns: "",
       isCurrentlyPregnant: undefined,
+      dailyEffects: [],
+      sleepRatingCategory: undefined,
+      wakeUpFrequency: undefined,
+      fallBackAsleep: undefined,
+      screenTimeBeforeBed: undefined,
+      pastSleepTreatments: [],
+      diagnosedConditions: [],
+      takesSleepMedication: undefined,
+      heavySnoringOrApnea: undefined,
+      pregnantOrBreastfeeding: undefined,
+      email: "",
+      reviewAcknowledged: false,
+      shippingAddress: "",
+      shippingState: "",
+      shippingCity: "",
+      shippingCountry: "",
+      shippingPostalCode: "",
+      billingSameAsShipping: true,
+      receivePromotions: false,
       consultationDate: "",
       consultationTime: "",
       timezone: "America/Los_Angeles",
@@ -114,14 +141,40 @@ export default function MultiStepForm() {
     }
     if (step === 3) {
       const goalLifestyleFields: Array<Array<keyof FormData>> = [
-        ["lifestyleDescription", "eatingRestrictions", "sleepHours"],
+        ["weightLossGoal"],
+        ["dailyEffects", "sleepRatingCategory"],
       ];
       fieldsToValidate = goalLifestyleFields[goalLifestyleStep] || [];
     }
     if (step === 4) {
-      fieldsToValidate = ["nicotineUsage"];
+      const eligibilityCheckFields: Array<Array<keyof FormData>> = [
+        ["wakeUpFrequency", "fallBackAsleep", "screenTimeBeforeBed"],
+        ["pastSleepTreatments"],
+        ["diagnosedConditions"],
+        [
+          "takesSleepMedication",
+          "heavySnoringOrApnea",
+          "pregnantOrBreastfeeding",
+        ],
+      ];
+      fieldsToValidate = eligibilityCheckFields[eligibilityCheckStep] || [];
     }
-    if (step === 6) fieldsToValidate = ["consultationDate", "consultationTime"];
+    if (step === 5) {
+      const eligibilityFields: Array<Array<keyof FormData>> = [
+        ["reviewAcknowledged"],
+        ["email"],
+        [
+          "shippingAddress",
+          "shippingState",
+          "shippingCity",
+          "shippingCountry",
+          "shippingPostalCode",
+        ],
+      ];
+      fieldsToValidate = eligibilityFields[eligibilityStep] || [];
+    }
+    if (step === 6) fieldsToValidate = ["treatmentPlan"];
+    if (step === 7) fieldsToValidate = ["consultationDate", "consultationTime"];
 
     const isValid = await form.trigger(fieldsToValidate);
     if (!isValid) return;
@@ -133,6 +186,16 @@ export default function MultiStepForm() {
 
     if (step === 3 && goalLifestyleStep < 1) {
       setGoalLifestyleStep((prev) => prev + 1);
+      return;
+    }
+
+    if (step === 4 && eligibilityCheckStep < 3) {
+      setEligibilityCheckStep((prev) => prev + 1);
+      return;
+    }
+
+    if (step === 5 && eligibilityStep < 2) {
+      setEligibilityStep((prev) => prev + 1);
       return;
     }
 
@@ -150,8 +213,26 @@ export default function MultiStepForm() {
       return;
     }
 
-    if (step === 3) {
-      setHealthHistoryStep(3);
+    if (step === 4 && eligibilityCheckStep > 0) {
+      setEligibilityCheckStep((prev) => prev - 1);
+      return;
+    }
+
+    if (step === 5 && eligibilityStep > 0) {
+      setEligibilityStep((prev) => prev - 1);
+      return;
+    }
+
+    if (step === 4) {
+      setGoalLifestyleStep(1);
+    }
+
+    if (step === 5) {
+      setEligibilityCheckStep(3);
+    }
+
+    if (step === 6) {
+      setEligibilityStep(2);
     }
 
     setStep((prev) => Math.max(prev - 1, 1));
@@ -201,10 +282,24 @@ export default function MultiStepForm() {
             {step === 3 && goalLifestyleStep === 1 && (
               <GoalLifestyleActivityStepTwo />
             )}
-            {step === 4 && eligibilityStep === 0 && <EligibilityCheckStepOne />}
-            {step === 5 && <TreatmentPlanStepOne />}
-            {step === 6 && <ScheduleConsultationStepOne />}
-            {step === 7 && <CheckoutPaymentStepOne />}
+            {step === 4 && eligibilityCheckStep === 0 && (
+              <EligibilityCheckStepOne />
+            )}
+            {step === 4 && eligibilityCheckStep === 1 && (
+              <EligibilityCheckStepTwo />
+            )}
+            {step === 4 && eligibilityCheckStep === 2 && (
+              <EligibilityCheckStepThree />
+            )}
+            {step === 4 && eligibilityCheckStep === 3 && (
+              <EligibilityCheckStepFour />
+            )}
+            {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
+            {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
+            {step === 5 && eligibilityStep === 2 && <EligibilityStepThree />}
+            {step === 6 && <TreatmentPlanStepOne />}
+            {step === 7 && <ScheduleConsultationStepOne />}
+            {step === 8 && <CheckoutPaymentStepOne />}
           </form>
         </Form>
       </div>
