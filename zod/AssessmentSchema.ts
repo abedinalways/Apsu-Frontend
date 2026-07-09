@@ -65,7 +65,16 @@ export const formSchema = z
     knownAllergies: z.array(z.string()).min(1, requiredMessage),
 
     // Step 4: Goal Life style Activity Step One
-    weightLossGoal: z.enum(["under-20", "20-50", "50-plus", "not-sure"], {
+    weightLossGoal: z.enum([
+      "under-20",
+      "20-50",
+      "50-plus",
+      "not-sure",
+      "rarely",
+      "sometimes",
+      "most-nights",
+      "every-night",
+    ], {
       required_error: requiredMessage,
     }),
 
@@ -78,18 +87,9 @@ export const formSchema = z
     ),
 
     // Step 4: Goal Life style Activity Step Three
-    weightLossMethods: requiredString().min(
-      5,
-      "Please tell us more about methods applied.",
-    ),
-    weightLossMotivation: requiredString().min(
-      5,
-      "Please share what motivates your weight loss journey.",
-    ),
-    weightLossBarriers: requiredString().min(
-      5,
-      "Please describe the barrier in brief.",
-    ),
+    weightLossMethods: z.string().optional(),
+    weightLossMotivation: z.string().optional(),
+    weightLossBarriers: z.string().optional(),
 
     // Step 4: Goal Life style Activity Step Four
     lifestyleDescription: z.enum(
@@ -168,6 +168,21 @@ export const formSchema = z
     shippingPostalCode: z.string().min(3, "Postal code is required."),
     billingSameAsShipping: z.boolean().default(true),
     receivePromotions: z.boolean().default(false),
+
+    // Sleep Eligibility Check Step
+    dailyEffects: z.array(z.string()).default([]),
+    sleepRatingCategory: z.string().optional(),
+
+    wakeUpFrequency: z.string().optional(),
+    fallBackAsleep: z.string().optional(),
+    screenTimeBeforeBed: z.string().optional(),
+
+    pastSleepTreatments: z.array(z.string()).default([]),
+
+    diagnosedConditions: z.array(z.string()).default([]),
+    takesSleepMedication: z.string().optional(),
+    heavySnoringOrApnea: z.string().optional(),
+    pregnantOrBreastfeeding: z.string().optional(),
 
     // Step 6: Treatment Plan Step One
     treatmentPlan: z

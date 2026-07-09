@@ -77,10 +77,10 @@ export default function HealthHistoryStepFour() {
                           handleToggleAllergy(option.id, !isChecked);
                         }
                       }}
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c]  ${
+                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c] bg-[#FAF9F4] cursor-pointer  ${
                         isChecked
-                          ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
-                          : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
+                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          : "border-gray-200"
                       }`}
                     >
                       <span
