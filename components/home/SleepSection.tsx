@@ -14,7 +14,7 @@ function SleepSection() {
     <div>
       <div className="xl:py-27 lg:py-15 pt-4 relative px-3 md:px-6 mt-30 lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-additional-blue rounded-2xl lg:rounded-4xl">
         <div className="relative flex h-full items-end w-full mt-2 lg:mt-0">
-          <div className="lg:absolute flex justify-center  lg:-top-21.5 xl:-top-43.75 lg:left-2 left-4 ">
+          <div className="lg:absolute flex justify-center w-full  lg:-top-21.5 xl:-top-43.75 lg:left-2 left-4 ">
             <Image
               src={weightImg}
               alt="Weight Loss"
@@ -51,7 +51,7 @@ function SleepSection() {
               ))}
             </ul>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 pb-6 lg:pb-0">
             <div className="mb-4">
               <p className="text-lg text-blackColor md:text-2xl font-medium">
                 From <span className="text-2xl md:text-3xl">$20</span>
