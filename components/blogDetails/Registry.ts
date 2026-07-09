@@ -1,11 +1,16 @@
-import BulletList from "./BulletList";
-import Divider from "./Divider";
-import Heading from "./Heading";
-import HeroImage from "./HeroImage";
-import ImageText from "./ImageText";
-import NumberList from "./NumberList";
-import Paragraph from "./Paragraph";
-import BlogQuote from "./Quote";
+import BulletList from './BulletList';
+import Callout from './Callout';
+
+import Divider from './Divider';
+import Heading from './Heading';
+import HeroImage from './HeroImage';
+import IconGrid from './IconGrid';
+
+import ImageText from './ImageText';
+import NumberList from './NumberList';
+import Paragraph from './Paragraph';
+import BlogQuote from './Quote';
+import Steps from './Steps';
 
 
 export const BLOG_COMPONENTS = {
@@ -17,4 +22,7 @@ export const BLOG_COMPONENTS = {
   imageText: ImageText,
   quote: BlogQuote,
   divider: Divider,
+  callout: Callout,
+  steps: Steps,
+  iconGrid: IconGrid,
 };

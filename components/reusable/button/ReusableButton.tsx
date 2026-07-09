@@ -23,7 +23,7 @@ export default function ReusableButton({
   onClick,
 }: ButtonWithArrowProps) {
   const buttonClasses = cn(
-    'inline-flex items-center group justify-center rounded-full bg-primary-800 px-4 sm:px-8 py-4 text-base sm:text-lg font-medium text-white transition-all duration-300 hover:bg-primary-900 hover:scale-[1.02] active:scale-[0.98] z-100',
+    'inline-flex items-center justify-center rounded-full bg-primary px-4 sm:px-8 py-4 text-base sm:text-lg font-medium text-white transition-all duration-300 hover:bg-primary-900 hover:scale-[1.02] active:scale-[0.98] z-100',
     width,
     className,
   );

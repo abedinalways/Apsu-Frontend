@@ -7,7 +7,7 @@ export function FAQHero() {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20 md:py-28 bg-[#fff] rounded-[24px] shadow-md">
+    <section className="flex flex-col items-center justify-center px-4 sm:px-6 py-12 md:py-40 bg-[#fff] rounded-[24px] shadow-md">
       <div className="flex flex-col items-center gap-4 sm:gap-6 text-center">
         {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[72px] font-medium leading-[110%] text-primary-800">
