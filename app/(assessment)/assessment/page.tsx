@@ -29,7 +29,7 @@ export default function AssessmentPage() {
 
   const executeRouting = () => {
     setModalOpen(false);
-    if (selectedFlow === "sleep") router.push("/sleep");
+    if (selectedFlow === "sleep") router.push("/assessment/sleep");
     if (selectedFlow === "weight") router.push("/assessment/weight-loss");
   };
 

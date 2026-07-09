@@ -24,7 +24,7 @@ export default function GoalLifestyleActivityStepTwo() {
     <div className="space-y-6">
       {/* Question Header matching Screenshot 2026-07-05 093221.png */}
       <div>
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight">
+        <h2 className="text-[20px] font-semibold text-[#102b1c]">
           Have you tried losing weight before?
         </h2>
       </div>
@@ -49,7 +49,7 @@ export default function GoalLifestyleActivityStepTwo() {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 text-left rounded-2xl border transition-all  ${
+                      className={`w-full p-4 text-left rounded-2xl border transition-all h-14!  ${
                         isSelected
                           ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
                           : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"

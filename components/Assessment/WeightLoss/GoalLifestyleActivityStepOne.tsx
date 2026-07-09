@@ -53,7 +53,7 @@ export default function GoalLifestyleActivityStepOne() {
                           shouldValidate: true,
                         })
                       }
-                      className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all h-11! text-[16px] text-[#6c6c6c] ${
+                      className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c] ${
                         isSelected
                           ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
                           : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"

@@ -5,7 +5,6 @@ import { Resolver, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
 import { FormData, formSchema } from "@/zod/AssessmentSchema";
-import Treatment from "@/components/Assessment/form/Treatment";
 import GeneralInformation from "@/components/Assessment/form/GeneralInformation";
 import HealthHistoryStepOne from "@/components/Assessment/form/HealthHistoryStepOne";
 import HealthHistoryStepTwo from "@/components/Assessment/form/HealthHistoryStepTwo";
@@ -26,12 +25,12 @@ import GoalLifestyleActivityStepFour from "./GoalLifestyleActivityStepFour";
 const TOTAL_STEPS = 8;
 
 const STEP_LABELS = [
-  // "Treatment",
   "General information",
   "Health History",
   "(Goal, lifestyle, activity)",
   "Eligibility Check",
   "Eligibility",
+  "Treatment Plan",
   "Schedule Consultation",
   "Checkout & Payment",
 ];
@@ -45,7 +44,7 @@ export default function MultiStepForm() {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema) as Resolver<FormData>,
     defaultValues: {
-      goal: undefined,
+      goal: "weight-loss",
       firstName: "",
       lastName: "",
       dob: "",
@@ -78,6 +77,15 @@ export default function MultiStepForm() {
       currentMedications: [],
       medicalTeamConcerns: "",
       isCurrentlyPregnant: undefined,
+      email: "",
+      reviewAcknowledged: false,
+      shippingAddress: "",
+      shippingState: "",
+      shippingCity: "",
+      shippingCountry: "",
+      shippingPostalCode: "",
+      billingSameAsShipping: true,
+      receivePromotions: false,
       consultationDate: "",
       consultationTime: "",
       timezone: "America/Los_Angeles",
@@ -95,8 +103,7 @@ export default function MultiStepForm() {
   const nextStep = async () => {
     let fieldsToValidate: Array<keyof FormData> = [];
 
-    if (step === 1) fieldsToValidate = ["goal"];
-    if (step === 2)
+    if (step === 1)
       fieldsToValidate = [
         "firstName",
         "lastName",
@@ -104,7 +111,7 @@ export default function MultiStepForm() {
         "gender",
         "residence",
       ];
-    if (step === 3) {
+    if (step === 2) {
       if (healthHistoryStep === 0) {
         fieldsToValidate =
           form.getValues("unitSystem") === "imperial"
@@ -122,6 +129,9 @@ export default function MultiStepForm() {
       }
     }
     if (step === 4) {
+      fieldsToValidate = ["triedLosingWeightBefore"];
+    }
+    if (step === 3) {
       const goalLifestyleFields: Array<Array<keyof FormData>> = [
         ["weightLossGoal"],
         ["triedLosingWeightBefore"],
@@ -133,34 +143,36 @@ export default function MultiStepForm() {
     }
     if (step === 5) {
       const eligibilityFields: Array<Array<keyof FormData>> = [
-        ["nicotineUsage"],
-        ["nicotineProductTypes"],
-        ["smokingFrequency"],
-        ["monitoredForHighBP"],
-        ["autoimmuneConditions"],
-        ["currentMedications"],
-        ["medicalTeamConcerns"],
-        ["isCurrentlyPregnant"],
+        ["reviewAcknowledged"],
+        ["email"],
+        [
+          "shippingAddress",
+          "shippingState",
+          "shippingCity",
+          "shippingCountry",
+          "shippingPostalCode",
+        ],
       ];
 
       fieldsToValidate = eligibilityFields[eligibilityStep] || [];
     }
+    if (step === 6) fieldsToValidate = ["treatmentPlan"];
     if (step === 7) fieldsToValidate = ["consultationDate", "consultationTime"];
 
     const isValid = await form.trigger(fieldsToValidate);
     if (!isValid) return;
 
-    if (step === 3 && healthHistoryStep < 3) {
+    if (step === 2 && healthHistoryStep < 3) {
       setHealthHistoryStep((prev) => prev + 1);
       return;
     }
 
-    if (step === 4 && goalLifestyleStep < 3) {
+    if (step === 3 && goalLifestyleStep < 3) {
       setGoalLifestyleStep((prev) => prev + 1);
       return;
     }
 
-    if (step === 5 && eligibilityStep < 7) {
+    if (step === 5 && eligibilityStep < 2) {
       setEligibilityStep((prev) => prev + 1);
       return;
     }
@@ -169,12 +181,12 @@ export default function MultiStepForm() {
   };
 
   const prevStep = () => {
-    if (step === 3 && healthHistoryStep > 0) {
+    if (step === 2 && healthHistoryStep > 0) {
       setHealthHistoryStep((prev) => prev - 1);
       return;
     }
 
-    if (step === 4 && goalLifestyleStep > 0) {
+    if (step === 3 && goalLifestyleStep > 0) {
       setGoalLifestyleStep((prev) => prev - 1);
       return;
     }
@@ -184,16 +196,16 @@ export default function MultiStepForm() {
       return;
     }
 
-    if (step === 4) {
+    if (step === 3) {
       setHealthHistoryStep(3);
     }
 
-    if (step === 5) {
+    if (step === 4) {
       setGoalLifestyleStep(3);
     }
 
     if (step === 6) {
-      setEligibilityStep(7);
+      setEligibilityStep(2);
     }
 
     setStep((prev) => Math.max(prev - 1, 1));
@@ -236,7 +248,6 @@ export default function MultiStepForm() {
         <Form {...form}>
           {/* Form wrapper handles programmatic intercept */}
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            {/* {step === 1 && <Treatment />} */}
             {step === 1 && <GeneralInformation />}
             {step === 2 && healthHistoryStep === 0 && <HealthHistoryStepOne />}
             {step === 2 && healthHistoryStep === 1 && <HealthHistoryStepTwo />}

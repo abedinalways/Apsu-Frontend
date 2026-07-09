@@ -55,16 +55,14 @@ export const formSchema = z
     medicalConditions: z.array(z.string()).min(1, requiredMessage),
 
     // Step 3: Health History Step Three
-    selectedSideEffects: z
-      .array(z.string())
-      .min(1, requiredMessage),
-    sideEffectsAdditionalDetails: requiredString()
-      .min(5, "Please describe the side effects you have experienced."),
+    selectedSideEffects: z.array(z.string()).min(1, requiredMessage),
+    sideEffectsAdditionalDetails: requiredString().min(
+      5,
+      "Please describe the side effects you have experienced.",
+    ),
 
     // Step 3: Health History Step Four
-    knownAllergies: z
-      .array(z.string())
-      .min(1, requiredMessage),
+    knownAllergies: z.array(z.string()).min(1, requiredMessage),
 
     // Step 4: Goal Life style Activity Step One
     weightLossGoal: z.enum(["under-20", "20-50", "50-plus", "not-sure"], {
@@ -150,6 +148,26 @@ export const formSchema = z
     isCurrentlyPregnant: z.enum(["yes", "no", "not-sure"], {
       required_error: requiredMessage,
     }),
+
+    // Add this field validation to your central form Schema definition
+    email: z
+      .string()
+      .min(1, "Email is required.")
+      .email("Please enter a valid email address."),
+
+    // Add this field to your central formSchema definition if validation/confirmation is required
+    reviewAcknowledged: z.boolean().refine((val) => val === true, {
+      message: "You must review and acknowledge the terms before continuing.",
+    }),
+
+    // Add these layout rules to your validation schema object block
+    shippingAddress: z.string().min(5, "Address is required."),
+    shippingState: z.string().min(1, "State is required."),
+    shippingCity: z.string().min(1, "City is required."),
+    shippingCountry: z.string().min(1, "Country is required."),
+    shippingPostalCode: z.string().min(3, "Postal code is required."),
+    billingSameAsShipping: z.boolean().default(true),
+    receivePromotions: z.boolean().default(false),
 
     // Step 6: Treatment Plan Step One
     treatmentPlan: z
