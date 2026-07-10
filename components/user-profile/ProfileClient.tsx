@@ -28,16 +28,16 @@ export default function ProfileClient() {
   return (
     <div className="space-y-6 font-[Work_Sans] w-full">
       {/* 1. Profile Header Card */}
-      <div className="bg-white border border-[#EBEAE4] rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 relative">
-        <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#1A3020] flex items-center justify-center text-white text-2xl md:text-3xl font-semibold shrink-0">
+      <div className="bg-white border border-[#cddcd3] rounded-[16px] p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 relative ">
+        <div className="w-24 h-24 md:w-40 md:h-40 md:absolute md:top-6 md:left-4 rounded-full bg-[#102b1c] top-10 flex items-center justify-center text-white text-2xl md:text-3xl font-semibold shrink-0">
           MO
         </div>
 
-        <div className="flex-1 text-center md:text-left space-y-3 mt-2">
-          <h1 className="text-2xl md:text-3xl font-semibold text-[#142C1E]">
+        <div className="text-center md:w-full md:mx-auto  space-y-3 mt-2 ">
+          <h1 className="text-2xl md:text-[32px]  font-medium text-[#142C1E] text-start md:ml-60">
             Maria Olives
           </h1>
-          <div className="flex flex-col md:flex-row flex-wrap justify-center md:justify-start items-center gap-3 md:gap-5 text-sm text-gray-500">
+          <div className="flex flex-col md:flex-row flex-wrap justify-center  items-center gap-3 md:gap-5 text-sm text-gray-500">
             <span className="flex items-center gap-1.5">
               <Mail className="w-4 h-4 opacity-70" /> maria@example.com
             </span>
@@ -59,7 +59,7 @@ export default function ProfileClient() {
       </div>
 
       {/* 2. Upcoming Consultation Card */}
-      <div className="bg-white border border-[#EBEAE4] rounded-[24px] p-6 max-w-md w-full space-y-4">
+      <div className="bg-white border border-[#EBEAE4] rounded-[24px] p-6 max-w-md w-full space-y-4 mt-12">
         <p className="text-xs font-bold tracking-wider text-[#2D6A4F] uppercase">
           Upcoming Consultation
         </p>
