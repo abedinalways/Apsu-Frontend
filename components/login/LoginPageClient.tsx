@@ -4,15 +4,27 @@ import { useState } from 'react';
 import Image from 'next/image';
 import EmailVerificationForm from './EmailVerificationForm';
 import CreatePasswordForm from './CreatePasswordForm';
+import EnterCodeForm from './EnterCodeForm';
+import SetNewPasswordForm from './SetNewPasswordForm';
+import ForgotPasswordForm from './ForgotPasswordForm';
+import SignInForm from './SignInForm';
+
+
+type AuthStep =
+  | 'verify-email'
+  | 'create-password'
+  | 'sign-in'
+  | 'forgot-password'
+  | 'enter-code'
+  | 'set-new-password';
 
 export default function LoginPageClient() {
-  const [step, setStep] = useState<'verify-email' | 'create-password'>(
-    'verify-email',
-  );
+  const [step, setStep] = useState<AuthStep>('verify-email');
   const [userEmail, setUserEmail] = useState<string>('');
 
   const handleEmailSubmitted = (email: string) => {
     setUserEmail(email);
+   
     setStep('create-password');
   };
 
@@ -42,19 +54,50 @@ export default function LoginPageClient() {
       </div>
 
       {/* Right Column: Dynamic Form Area */}
-      <div className="flex flex-col justify-center px-6 py-12 sm:px-12 md:px-16 lg:px-20 bg-white">
-        {/* Mobile Logo Only */}
+      <div className="flex flex-col justify-center px-6 py-12 sm:px-12 md:px-16 lg:px-20 bg-white relative">
+        {/* Mobile Logo */}
         <div className="md:hidden mb-8">
           <span className="text-2xl font-bold text-[#142C1E]">Apsu</span>
         </div>
 
-        {step === 'verify-email' ? (
+        {step === 'verify-email' && (
           <EmailVerificationForm onNext={handleEmailSubmitted} />
-        ) : (
+        )}
+
+        {step === 'create-password' && (
           <CreatePasswordForm
             email={userEmail}
             onBack={() => setStep('verify-email')}
           />
+        )}
+
+        {step === 'sign-in' && (
+          <SignInForm
+            onForgotPassword={() => setStep('forgot-password')}
+            onCheckEligibility={() => setStep('verify-email')}
+          />
+        )}
+
+        {step === 'forgot-password' && (
+          <ForgotPasswordForm
+            onNext={email => {
+              setUserEmail(email);
+              setStep('enter-code');
+            }}
+            onBack={() => setStep('sign-in')}
+          />
+        )}
+
+        {step === 'enter-code' && (
+          <EnterCodeForm
+            email={userEmail}
+            onNext={() => setStep('set-new-password')}
+            onResend={() => console.log('OTP Resent')}
+          />
+        )}
+
+        {step === 'set-new-password' && (
+          <SetNewPasswordForm onSuccess={() => setStep('sign-in')} />
         )}
       </div>
     </div>

@@ -1,0 +1,139 @@
+'use client';
+
+import { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { Mail, Phone, MapPin, Edit3, Video } from 'lucide-react';
+import EmptyTabState from './EmptyTabState';
+import EditProfileModal from './EditProfileModal';
+
+
+const TABS = [
+  { id: 'my-treatments', label: 'My Treatments' },
+  { id: 'consultations', label: 'Consultations' },
+  { id: 'order-details', label: 'Order Details' },
+  { id: 'prescriptions', label: 'Prescriptions' },
+];
+
+export default function ProfileClient() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const activeTab = searchParams.get('tab') || 'my-treatments';
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleTabChange = (tabId: string) => {
+    router.push(`/profile?tab=${tabId}`, { scroll: false });
+  };
+
+  return (
+    <div className="space-y-6 font-[Work_Sans] w-full">
+      {/* 1. Profile Header Card */}
+      <div className="bg-white border border-[#EBEAE4] rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 relative">
+        <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#1A3020] flex items-center justify-center text-white text-2xl md:text-3xl font-semibold shrink-0">
+          MO
+        </div>
+
+        <div className="flex-1 text-center md:text-left space-y-3 mt-2">
+          <h1 className="text-2xl md:text-3xl font-semibold text-[#142C1E]">
+            Maria Olives
+          </h1>
+          <div className="flex flex-col md:flex-row flex-wrap justify-center md:justify-start items-center gap-3 md:gap-5 text-sm text-gray-500">
+            <span className="flex items-center gap-1.5">
+              <Mail className="w-4 h-4 opacity-70" /> maria@example.com
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Phone className="w-4 h-4 opacity-70" /> (555)-XXX-XXXX
+            </span>
+            <span className="flex items-center gap-1.5">
+              <MapPin className="w-4 h-4 opacity-70" /> Jakarta, Indonesia
+            </span>
+          </div>
+        </div>
+
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="md:absolute md:top-8 md:right-8 flex items-center gap-2 px-4 py-2 border border-[#EBEAE4] rounded-full text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors shadow-sm"
+        >
+          <Edit3 className="w-3.5 h-3.5" /> Edit
+        </button>
+      </div>
+
+      {/* 2. Upcoming Consultation Card */}
+      <div className="bg-white border border-[#EBEAE4] rounded-[24px] p-6 max-w-md w-full space-y-4">
+        <p className="text-xs font-bold tracking-wider text-[#2D6A4F] uppercase">
+          Upcoming Consultation
+        </p>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h3 className="text-xl font-bold text-gray-900">Jul 20, 2026</h3>
+            <p className="text-sm text-gray-500 mt-0.5">
+              02:00 PM EST, Dr. Robert
+            </p>
+          </div>
+          <button className="bg-[#142C1E] hover:bg-[#1c3d2a] text-white text-sm font-medium h-11 px-5 rounded-full flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
+            <Video className="w-4 h-4" /> Join Call
+          </button>
+        </div>
+      </div>
+
+      {/* 3. Tab Container & Content Area */}
+      <div className="bg-white border border-[#EBEAE4] rounded-[24px] overflow-hidden">
+        {/* Navigation Tabs */}
+        <div className="px-4 py-4 md:px-8 border-b border-[#F4F3EF] flex justify-center md:justify-start">
+          <div className="flex flex-wrap md:flex-nowrap justify-center gap-2 bg-[#FAF9F5] md:bg-transparent p-2 md:p-0 rounded-2xl">
+            {TABS.map(tab => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabChange(tab.id)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                    isActive
+                      ? 'bg-[#A3C9A8] text-[#142C1E] shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-[#F4F3EF]'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Dynamic Inner Tab View */}
+        <div className="p-8 min-h-[320px] flex flex-col items-center justify-center text-center">
+          {activeTab === 'my-treatments' && (
+            <EmptyTabState
+              message="No active treatment yet."
+              subMessage="Your treatment is currently under physician review. Once approved, your prescribed medication will appear here."
+            />
+          )}
+          {activeTab === 'consultations' && (
+            <EmptyTabState
+              message="No previous consultations."
+              subMessage="History of your completed and upcoming medical visits will be listed here."
+            />
+          )}
+          {activeTab === 'order-details' && (
+            <EmptyTabState
+              message="No orders placed yet."
+              subMessage="Track your prescription shipments and delivery status right here."
+            />
+          )}
+          {activeTab === 'prescriptions' && (
+            <EmptyTabState
+              message="No active prescriptions found."
+              subMessage="Once our medical panel approves your request, authorized details will be available."
+            />
+          )}
+        </div>
+      </div>
+
+      {/* Profile Edit Modal Injection */}
+      <EditProfileModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </div>
+  );
+}

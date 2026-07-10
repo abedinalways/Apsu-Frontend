@@ -54,11 +54,11 @@ export default function LoginForm() {
     <div className="flex items-center justify-center h-screen bg-white  w-full">
       <div className="w-full max-w-md ">
         {currentStep === 'email' ? (
-          <EmailVerificationForm onEmailVerified={handleEmailVerified} />
+          <EmailVerificationForm onNext={handleEmailVerified} />
         ) : (
           <PasswordCreationForm
             email={email}
-            onPasswordCreated={handlePasswordCreated}
+            onBack={handlePasswordCreated}
           />
         )}
       </div>
