@@ -3,6 +3,7 @@ import AboutCareWork from "@/components/about/AboutCareWork";
 import AboutExist from "@/components/about/AboutExist";
 import AboutHero from "@/components/about/AboutHero";
 import AboutHonestlyPart from "@/components/about/AboutHonestlyPart";
+import AboutMedicinePart from "@/components/about/AboutMedicinePart";
 
 function page() {
   return (
@@ -13,6 +14,7 @@ function page() {
         <AboutExist />
         <AboutHonestlyPart />
         <AboutCareWork />
+        <AboutMedicinePart />
       </div>
     </div>
   );
