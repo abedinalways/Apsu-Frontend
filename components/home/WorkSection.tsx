@@ -1,5 +1,6 @@
 import CommonHeader from "../reusable/CommonHeader";
 import BirthControll from "./BirthControll";
+import CheckEligibilitySection from "./CheckEligibilitySection";
 import SleepSection from "./SleepSection";
 import WeightLoss from "./WeightLoss";
 import WeightLossMedicine from "./WeightLossMedicine";
@@ -25,11 +26,13 @@ function WorkSection() {
             <WorkList />
           </div>
         </div>
+
         <div>
           <WeightLoss />
         </div>
         <div>
           <WeightLossMedicine />
+          <CheckEligibilitySection />
           <BirthControll />
           <SleepSection />
         </div>

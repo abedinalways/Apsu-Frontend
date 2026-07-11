@@ -125,3 +125,20 @@ export function HeadphonesIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+export function ShortIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="11"
+      height="18"
+      viewBox="0 0 11 18"
+      fill="none"
+      className={className}
+    >
+      <path
+        d="M0.290931 5.31449L4.30582 0.5535C4.92882 -0.1845 6.07103 -0.1845 6.69303 0.5535L10.7079 5.31449C11.3829 6.11449 10.8099 7.33353 9.75993 7.33353H1.23893C0.188929 7.33353 -0.383069 6.11449 0.290931 5.31449ZM9.7609 10.6675H1.23991C0.189906 10.6675 -0.383092 11.8866 0.291908 12.6866L4.3068 17.4475C4.9298 18.1855 6.07201 18.1855 6.69401 17.4475L10.7089 12.6866C11.3829 11.8856 10.8109 10.6675 9.7609 10.6675Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}

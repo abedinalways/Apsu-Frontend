@@ -38,7 +38,7 @@
 .container {
   width: 100%;
   max-width: 1342px;
-  padding: 0 16px;
+  margin: 0 16px;
   margin: 0 auto;
 }
 @theme inline {
