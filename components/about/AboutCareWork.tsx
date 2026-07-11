@@ -58,52 +58,54 @@ function AboutCareWork() {
   ];
 
   return (
-    <div className="container bg-white p-4 lg:p-6 font-sans rounded-xl lg:rounded-2xl text-primaryColor">
-      <div className="">
-        <div className="text-center mb-10 lg:mb-16">
-          <CommonHeader
-            sectionName="HOW CAREWORKS"
-            title="From your words to your door only in 4 steps."
-          />
-        </div>
+    <div className="container">
+      <div className=" bg-white my-14 lg:my-30 p-4 lg:p-6 font-sans rounded-xl lg:rounded-2xl text-primaryColor">
+        <div className="">
+          <div className="text-center mb-10 lg:mb-16">
+            <CommonHeader
+              sectionName="HOW CAREWORKS"
+              title="From your words to your door only in 4 steps."
+            />
+          </div>
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={24}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            1024: { slidesPerView: 1 },
-            1280: { slidesPerView: 1 },
-          }}
-          loop={true}
-          speed={1000}
-          autoplay={{
-            delay: 300000,
-            disableOnInteraction: false,
-          }}
-          modules={[Navigation, Autoplay, Pagination]}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-          className="w-full"
-        >
-          {sliderData.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <CareCard slide={slide} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="flex justify-start gap-3 mt-8 lg:mt-12">
-          <button
-            onClick={() => swiperRef.current?.slidePrev()}
-            className="w-10 h-10 rounded-full border-2 cursor-pointer border-primaryColor flex items-center justify-center hover:bg-primaryColor hover:text-white transition-colors duration-200"
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={24}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              1024: { slidesPerView: 1 },
+              1280: { slidesPerView: 1 },
+            }}
+            loop={true}
+            speed={1000}
+            autoplay={{
+              delay: 300000,
+              disableOnInteraction: false,
+            }}
+            modules={[Navigation, Autoplay, Pagination]}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            className="w-full"
           >
-            <ArrowLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={() => swiperRef.current?.slideNext()}
-            className="w-10 h-10 rounded-full border-2 cursor-pointer border-primaryColor flex items-center justify-center hover:bg-primaryColor hover:text-white transition-colors duration-200"
-          >
-            <ArrowRight className="w-5 h-5" />
-          </button>
+            {sliderData.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                <CareCard slide={slide} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="flex justify-start gap-3 mt-8 lg:mt-12">
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="w-10 h-10 rounded-full border-2 cursor-pointer border-primaryColor flex items-center justify-center hover:bg-primaryColor hover:text-white transition-colors duration-200"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => swiperRef.current?.slideNext()}
+              className="w-10 h-10 rounded-full border-2 cursor-pointer border-primaryColor flex items-center justify-center hover:bg-primaryColor hover:text-white transition-colors duration-200"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
