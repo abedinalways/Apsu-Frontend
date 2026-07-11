@@ -39,7 +39,7 @@ export default function Navbar() {
       {/* navbar */}
 
       <div
-        className={`z-998 w-full px-4 sm:px-5 xl:px-0 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out  ${scrolled ? "top-4 sm:top-5 lg:top-7.5" : "top-4 sm:top-5 lg:top-15"}`}
+        className={`z-998 w-full px-4 sm:px-5 xl:px-0 fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-in-out  ${scrolled ? "top-4 sm:top-5 lg:top-7.5" : `top-4 sm:top-5 ${pathname == "/" ? "lg:top-15" : "lg:top-7.5"}`}`}
       >
         <div className="flex w-full justify-between xl:grid xl:grid-cols-4 items-center container mx-auto h-14 sm:h-15 bg-bgColor rounded-full px-3  sm:px-4 md:pr-1.5 md:pl-6 shadow-[0_4px_24.5px_0_rgba(0,0,0,0.09)]">
           {/* Left: Logo */}
