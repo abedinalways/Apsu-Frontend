@@ -4,7 +4,7 @@ import PrimaryButton from "../reusable/button/PrimaryButton";
 
 function AboutHero() {
   return (
-    <div>
+    <div className="pb-14 lg:pb-30">
       <div className="container">
         <div className=" grid grid-cols-1 lg:grid-cols-2 pt-28 md:pt-40 pb-8 md:pb-12 space-y-3">
           <div>

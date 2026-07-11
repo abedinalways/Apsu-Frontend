@@ -45,6 +45,7 @@
   --color-primaryColor: var(--primaryColor); /* used as --primaryColor */
   --color-secondaryColor: var(--color-secondary-charcol-900);
   --color-blackColor: #070707;
+  --color-borderColor: #CDDCD3;
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
   --color-greenBgColor: rgba(188, 255, 230, 0.8);

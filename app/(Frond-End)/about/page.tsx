@@ -1,3 +1,4 @@
+import AboutApsu from "@/components/about/AboutApsu";
 import AboutHero from "@/components/about/AboutHero";
 
 function page() {
@@ -5,6 +6,7 @@ function page() {
     <div>
       <div>
         <AboutHero />
+        <AboutApsu />
       </div>
     </div>
   );

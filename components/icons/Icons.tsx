@@ -142,3 +142,112 @@ export function ShortIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+export function WaterIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="13"
+      height="15"
+      viewBox="0 0 13 15"
+      fill="none"
+      className={className}
+    >
+      <path
+        d="M0.5 8.28533C0.5 5.49591 2.88719 2.73938 4.56275 1.14815C5.47273 0.283952 6.8606 0.283952 7.7706 1.14815C9.44613 2.73938 11.8333 5.49591 11.8333 8.28533C11.8333 11.0203 9.68747 13.8333 6.16667 13.8333C2.64585 13.8333 0.5 11.0203 0.5 8.28533Z"
+        stroke="currentColor"
+      />
+      <path
+        d="M1.16699 7.37187C2.14341 7.0442 4.09472 6.93825 6.48979 8.39569C8.88033 9.85032 10.8443 9.33227 11.8337 8.70899"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function SourceIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      className={className}
+    >
+      <path
+        d="M4.38833 4.82532C6.39305 5.17875 7.58787 5.91804 8 6.34246C8.41213 5.91804 9.60693 5.17875 11.6117 4.82532C12.6273 4.64628 13.1351 4.55676 13.5675 4.89988C14 5.24302 14 5.80021 14 6.91462V10.9195C14 11.9385 14 12.4479 13.7225 12.766C13.4449 13.0841 12.8338 13.1918 11.6117 13.4073C10.5222 13.5994 9.67193 13.9054 9.05647 14.2129C8.451 14.5155 8.1482 14.6668 8 14.6668C7.8518 14.6668 7.549 14.5155 6.94353 14.2129C6.32807 13.9054 5.4778 13.5994 4.38833 13.4073C3.16619 13.1918 2.55512 13.0841 2.27756 12.766C2 12.4479 2 11.9385 2 10.9195V6.91462C2 5.80021 2 5.24302 2.43247 4.89988C2.86494 4.55676 3.37274 4.64628 4.38833 4.82532Z"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M8 6V14.6667" stroke="currentColor" strokeLinejoin="round" />
+      <path
+        d="M5.66699 2.03921C6.34123 1.59214 7.13959 1.3335 7.99539 1.3335C8.85533 1.3335 9.65733 1.59468 10.3337 2.04577M9.08179 3.66683C8.76173 3.47366 8.39079 3.36322 7.99539 3.36322C7.60419 3.36322 7.23699 3.47132 6.91926 3.66068"
+        stroke="currentColor"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+export function LightIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      className={className}
+    >
+      <g clip-path="url(#clip0_6211_12500)">
+        <path
+          d="M4.05991 9.99984C3.80764 9.43277 3.66699 8.8019 3.66699 8.1371C3.66699 5.66806 5.60709 3.6665 8.00033 3.6665C10.3936 3.6665 12.3337 5.66806 12.3337 8.1371C12.3337 8.8019 12.193 9.43277 11.9407 9.99984"
+          stroke="currentColor"
+          strokeLinecap="round"
+        />
+        <path
+          d="M8 1.33325V1.99992"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M14.6667 8H14"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M1.99967 8H1.33301"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12.7136 3.28589L12.2422 3.7573"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M3.75754 3.75778L3.28613 3.28638"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M9.67741 12.8709C10.3509 12.653 10.6211 12.0365 10.6971 11.4163C10.7198 11.2311 10.5673 11.0774 10.3807 11.0774L5.65059 11.0775C5.45752 11.0775 5.30247 11.2414 5.32552 11.4331C5.39995 12.052 5.58783 12.5041 6.30165 12.8709M9.67741 12.8709C9.67741 12.8709 6.41917 12.8709 6.30165 12.8709M9.67741 12.8709C9.59641 14.1675 9.22187 14.6811 8.00387 14.6667C6.70107 14.6907 6.40138 14.056 6.30165 12.8709"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_6211_12500">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
