@@ -14,6 +14,7 @@ import TreatmentCard from './TreatmentCard';
 import ConsultationCard from './ConsultationCard';
 import ConsultationTabContainer from './ConsultationTabContainer';
 import OrderDetailsTab from './OrderDetailsTab';
+import PrescriptionsTab from './PrescriptionsTab';
 
 
 const TABS = [
@@ -44,6 +45,7 @@ export default function ProfileClient() {
     date: 'Tue, Jul 20',
   };
   const hasOrders = true;
+  const hasPrescriptions = true;
   const router = useRouter();
   const searchParams = useSearchParams();
   const activeTab = searchParams.get('tab') || 'my-treatments';
@@ -160,12 +162,15 @@ export default function ProfileClient() {
                 subMessage="Track your prescription shipments and delivery status right here."
               />
             ))}
-          {activeTab === 'prescriptions' && (
-            <EmptyTabState
-              message="No active prescriptions found."
-              subMessage="Once our medical panel approves your request, authorized details will be available."
-            />
-          )}
+          {activeTab === 'prescriptions' &&
+            (hasPrescriptions ? (
+              <PrescriptionsTab />
+            ) : (
+              <EmptyTabState
+                message="No active prescriptions found."
+                subMessage="Once our medical panel approves your request, authorized details will be available."
+              />
+            ))}
         </div>
       </div>
 

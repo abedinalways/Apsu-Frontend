@@ -1,0 +1,202 @@
+'use client';
+
+import { CalendarDays, MoreVertical, Pill, Syringe } from 'lucide-react';
+import { useState } from 'react';
+import PrescriptionMenu from './PrescriptionMenu';
+import PrescriptionDetailsModal, {
+  type PrescriptionDetailsData,
+} from './PrescriptionDetailsModal';
+
+interface PrescriptionData {
+  id: string;
+  treatmentName: string;
+  treatmentSub: string;
+  duration: string;
+  status: 'Approved' | 'Pending';
+  type: 'pill' | 'injection';
+}
+
+export default function PrescriptionsTab() {
+  const prescriptions: PrescriptionData[] = [
+    {
+      id: '1',
+      treatmentName: 'Semaglutide Injection',
+      treatmentSub: 'Weight Loss Treatment',
+      duration: '6 Months Plan',
+      status: 'Approved',
+      type: 'injection',
+    },
+    {
+      id: '2',
+      treatmentName: 'Wegovy',
+      treatmentSub: 'Weight Loss Treatment',
+      duration: '6 Months Plan',
+      status: 'Approved',
+      type: 'pill',
+    },
+  ];
+
+  const [openMenuId, setOpenMenuId] = useState<string | null>(null);
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+  const [selectedPrescription, setSelectedPrescription] =
+    useState<PrescriptionDetailsData | null>(null);
+
+  const handleMenuClick = (id: string) => {
+    setOpenMenuId(prev => (prev === id ? null : id));
+  };
+
+  const handleViewDetails = (item: PrescriptionData) => {
+    setSelectedPrescription({
+      ...item,
+      dosage:
+        item.type === 'injection'
+          ? '0.5 mg weekly injection'
+          : '1 tablet daily',
+      prescribedId: `RX-APSU-10024${item.id}`,
+      issueDate: 'Jul 27, 2026',
+      startDate: 'Jul 27, 2026',
+      expiryDate: 'Jul 27, 2026',
+      morning: '0',
+      afternoon: '1, before meal',
+      evening: '1, before meal',
+      doctorName: 'Dr. Robert Wilson',
+      doctorTitle: 'Licensed Physician, US',
+      approvalNote:
+        'Your prescription has been reviewed and approved by your physician.',
+    });
+    setIsDetailsOpen(true);
+    setOpenMenuId(null);
+  };
+
+  return (
+    <section className="w-full font-[Work_Sans]">
+      <div className="mb-6 md:mb-8">
+        <h2 className="text-2xl md:text-[32px] font-semibold text-[#142C1E]">
+          Prescriptions
+        </h2>
+
+        <p className="mt-2 text-sm md:text-base text-[#666666]">
+          Approved by APSU physicians.
+        </p>
+      </div>
+
+      <div className="space-y-4 md:space-y-5">
+        {prescriptions.map(item => (
+          <div
+            key={item.id}
+            className="group rounded-[24px] border border-[#D8E6DE] bg-white p-4 md:p-6 transition-all duration-300 hover:border-[#C8DBD0] hover:shadow-lg"
+          >
+            {/* Desktop */}
+            <div className="hidden md:flex items-start justify-between gap-4">
+              <div className="flex flex-1 items-start gap-4">
+                <div className="flex h-14 w-14 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-[#14311F] text-white">
+                  {item.type === 'injection' ? (
+                    <Syringe className="h-6 w-6 md:h-7 md:w-7" />
+                  ) : (
+                    <Pill className="h-6 w-6 md:h-7 md:w-7" />
+                  )}
+                </div>
+
+                <div className="min-w-0 flex-1">
+                  <div className="flex gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+                    <h3 className="text-md md:text-lg font-semibold leading-tight text-[#142C1E]">
+                      {item.treatmentName}
+                    </h3>
+
+                    <span className="w-fit rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-3 py-1 text-xs font-medium text-[#21A45A]">
+                      {item.status}
+                    </span>
+                  </div>
+
+                  <p className="mt-2 text-sm text-[#666666] flex items-start">
+                    {item.treatmentSub}
+                  </p>
+
+                  <div className="mt-4 flex items-center gap-2 text-[#767676]">
+                    <CalendarDays className="h-4 w-4 md:h-5 md:w-5" />
+                    <span className="text-sm">{item.duration}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <button
+                  onClick={() => handleMenuClick(item.id)}
+                  className="flex h-10 w-10 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-[#142C1E]"
+                >
+                  <MoreVertical className="h-5 w-5" />
+                </button>
+
+                <PrescriptionMenu
+                  open={openMenuId === item.id}
+                  onClose={() => setOpenMenuId(null)}
+                  onViewDetails={() => handleViewDetails(item)}
+                  onTrackOrder={() => console.log('Track Order')}
+                />
+              </div>
+            </div>
+
+            {/* Mobile */}
+            <div className="flex md:hidden items-start gap-3">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#14311F] text-white">
+                {item.type === 'injection' ? (
+                  <Syringe className="h-5 w-5" />
+                ) : (
+                  <Pill className="h-5 w-5" />
+                )}
+              </div>
+
+              <div className="min-w-0 flex-1">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <span className="flex items-start rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-3 py-1 text-xs font-medium text-[#21A45A] w-fit">
+                      {item.status}
+                    </span>
+
+                    <h3 className="mt-3 text-base font-semibold leading-tight text-[#142C1E] flex items-start">
+                      {item.treatmentName}
+                    </h3>
+
+                    <p className="mt-2 text-sm text-[#666666] flex items-start">
+                      {item.treatmentSub}
+                    </p>
+
+                    <div className="mt-4 flex items-center gap-2 text-[#767676]">
+                      <CalendarDays className="h-4 w-4" />
+                      <span className="text-sm">{item.duration}</span>
+                    </div>
+                  </div>
+
+                  <div className="relative">
+                    <button
+                      onClick={() => handleMenuClick(item.id)}
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-[#142C1E]"
+                    >
+                      <MoreVertical className="h-5 w-5" />
+                    </button>
+
+                    <PrescriptionMenu
+                      open={openMenuId === item.id}
+                      onClose={() => setOpenMenuId(null)}
+                      onViewDetails={() => handleViewDetails(item)}
+                      onTrackOrder={() => console.log('Track Order')}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <PrescriptionDetailsModal
+        open={isDetailsOpen}
+        onClose={() => {
+          setIsDetailsOpen(false);
+          setSelectedPrescription(null);
+        }}
+        data={selectedPrescription}
+      />
+    </section>
+  );
+}
