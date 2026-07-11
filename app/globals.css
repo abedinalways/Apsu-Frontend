@@ -402,3 +402,11 @@ input:checked ~ .checkmark {
 html {
   scroll-behavior: smooth;
 }
+
+.tab-bg{
+  background: rgba(232, 243, 237, 0.92);
+}
+
+.shadow{
+  box-shadow: 0 4px 22px 0 rgba(2, 29, 23, 0.08)
+}

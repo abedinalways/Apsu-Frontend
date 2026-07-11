@@ -5,6 +5,15 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Mail, Phone, MapPin, Edit3, Video } from 'lucide-react';
 import EmptyTabState from './EmptyTabState';
 import EditProfileModal from './EditProfileModal';
+import EditIcon from '../icons/EditIcon';
+import MessageIcon from '../icons/MessageIcon';
+import CallIcon from '../icons/CallIcon';
+import LocationIcon from '../icons/LocationIcon';
+import VideoCallIcon from '../icons/VideoCallIcon';
+import TreatmentCard from './TreatmentCard';
+import ConsultationCard from './ConsultationCard';
+import ConsultationTabContainer from './ConsultationTabContainer';
+import OrderDetailsTab from './OrderDetailsTab';
 
 
 const TABS = [
@@ -15,6 +24,26 @@ const TABS = [
 ];
 
 export default function ProfileClient() {
+  const activeTreatment = {
+    title: 'Weight Loss Program',
+    planDuration: '12 months plan',
+    status: 'Active',
+    medication: 'Semaglutide 0.5mg',
+    startDate: 'Jan 15, 2025',
+    duration: '6 Months',
+    renewalDate: 'Jul 15, 2025',
+    progressPercentage: 33,
+  };
+
+  const activeConsultation = {
+    doctorName: 'Dr. Robert',
+    specialty: 'Nutritionist',
+    program: 'Weight Loss Program',
+    status: 'Scheduled',
+    time: '02:00 PM EST',
+    date: 'Tue, Jul 20',
+  };
+  const hasOrders = true;
   const router = useRouter();
   const searchParams = useSearchParams();
   const activeTab = searchParams.get('tab') || 'my-treatments';
@@ -37,15 +66,15 @@ export default function ProfileClient() {
           <h1 className="text-2xl md:text-[32px]  font-medium text-[#142C1E] text-start md:ml-60">
             Maria Olives
           </h1>
-          <div className="flex flex-col md:flex-row flex-wrap justify-center  items-center gap-3 md:gap-5 text-sm text-gray-500">
+          <div className="flex flex-col md:flex-row flex-wrap justify-center  items-center gap-3 md:gap-5 text-[14px] text-gray-500">
             <span className="flex items-center gap-1.5">
-              <Mail className="w-4 h-4 opacity-70" /> maria@example.com
+              <MessageIcon /> maria@example.com
             </span>
             <span className="flex items-center gap-1.5">
-              <Phone className="w-4 h-4 opacity-70" /> (555)-XXX-XXXX
+              <CallIcon /> (555)-XXX-XXXX
             </span>
             <span className="flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 opacity-70" /> Jakarta, Indonesia
+              <LocationIcon /> Jakarta, Indonesia
             </span>
           </div>
         </div>
@@ -54,24 +83,26 @@ export default function ProfileClient() {
           onClick={() => setIsModalOpen(true)}
           className="md:absolute md:top-8 md:right-8 flex items-center gap-2 px-4 py-2 border border-[#EBEAE4] rounded-full text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors shadow-sm"
         >
-          <Edit3 className="w-3.5 h-3.5" /> Edit
+          <EditIcon /> Edit
         </button>
       </div>
 
       {/* 2. Upcoming Consultation Card */}
       <div className="bg-white border border-[#EBEAE4] rounded-[24px] p-6 max-w-md w-full space-y-4 mt-12">
-        <p className="text-xs font-bold tracking-wider text-[#2D6A4F] uppercase">
+        <p className="text-sm md:text-[16px] font-normal tracking-wider text-[#00774d] uppercase">
           Upcoming Consultation
         </p>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h3 className="text-xl font-bold text-gray-900">Jul 20, 2026</h3>
-            <p className="text-sm text-gray-500 mt-0.5">
+            <h3 className="text-xl md:text-[24px] font-bold text-[#102b1c]">
+              Jul 20, 2026
+            </h3>
+            <p className="text-md md:text-[16px] text-[#3b3b3c] mt-0.5">
               02:00 PM EST, Dr. Robert
             </p>
           </div>
-          <button className="bg-[#142C1E] hover:bg-[#1c3d2a] text-white text-sm font-medium h-11 px-5 rounded-full flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
-            <Video className="w-4 h-4" /> Join Call
+          <button className="bg-[#102b1c] hover:bg-[#1c3d2a] text-white text-sm font-medium h-11 px-5 rounded-full flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
+            <VideoCallIcon /> Join Call
           </button>
         </div>
       </div>
@@ -80,7 +111,7 @@ export default function ProfileClient() {
       <div className="bg-white border border-[#EBEAE4] rounded-[24px] overflow-hidden">
         {/* Navigation Tabs */}
         <div className="px-4 py-4 md:px-8 border-b border-[#F4F3EF] flex justify-center md:justify-start">
-          <div className="flex flex-wrap md:flex-nowrap justify-center gap-2 bg-[#FAF9F5] md:bg-transparent p-2 md:p-0 rounded-2xl">
+          <div className="bg-transparent lg:bg-[#E8F3ED] flex flex-wrap md:flex-nowrap mx-auto justify-center gap-2  p-2 md:p-2 rounded-full">
             {TABS.map(tab => {
               const isActive = activeTab === tab.id;
               return (
@@ -102,24 +133,33 @@ export default function ProfileClient() {
 
         {/* Dynamic Inner Tab View */}
         <div className="p-8 min-h-[320px] flex flex-col items-center justify-center text-center">
-          {activeTab === 'my-treatments' && (
-            <EmptyTabState
-              message="No active treatment yet."
-              subMessage="Your treatment is currently under physician review. Once approved, your prescribed medication will appear here."
-            />
-          )}
-          {activeTab === 'consultations' && (
-            <EmptyTabState
-              message="No previous consultations."
-              subMessage="History of your completed and upcoming medical visits will be listed here."
-            />
-          )}
-          {activeTab === 'order-details' && (
-            <EmptyTabState
-              message="No orders placed yet."
-              subMessage="Track your prescription shipments and delivery status right here."
-            />
-          )}
+          {activeTab === 'my-treatments' &&
+            (activeTreatment ? (
+              <TreatmentCard data={activeTreatment} />
+            ) : (
+              <EmptyTabState
+                message="No active treatment yet."
+                subMessage="Your treatment is currently under physician review. Once approved, your prescribed medication will appear here."
+              />
+            ))}
+          {activeTab === 'consultations' &&
+            (activeConsultation ? (
+              <ConsultationTabContainer />
+            ) : (
+              <EmptyTabState
+                message="No previous consultations."
+                subMessage="History of your completed and upcoming medical visits will be listed here."
+              />
+            ))}
+          {activeTab === 'order-details' &&
+            (hasOrders ? (
+              <OrderDetailsTab />
+            ) : (
+              <EmptyTabState
+                message="No orders placed yet."
+                subMessage="Track your prescription shipments and delivery status right here."
+              />
+            ))}
           {activeTab === 'prescriptions' && (
             <EmptyTabState
               message="No active prescriptions found."
