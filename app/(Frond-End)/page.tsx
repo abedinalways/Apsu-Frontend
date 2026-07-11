@@ -13,7 +13,6 @@ export default function Home() {
       <ScheduleSlider />
       <SuccessStories />
       <HomeFAQ />
-
       <FAQFooter />
     </div>
   );

@@ -1,4 +1,5 @@
 import AboutApsu from "@/components/about/AboutApsu";
+import AboutExist from "@/components/about/AboutExist";
 import AboutHero from "@/components/about/AboutHero";
 
 function page() {
@@ -7,6 +8,7 @@ function page() {
       <div>
         <AboutHero />
         <AboutApsu />
+        <AboutExist />
       </div>
     </div>
   );
