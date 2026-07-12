@@ -4,7 +4,7 @@ import PrimaryButton from "../reusable/button/PrimaryButton";
 export default function FAQFooter() {
   return (
     <div className=" pt-14 lg:pt-0">
-      <div className="   bg-whiteColor rounded-t-4xl mx-auto px-4  pb-30">
+      <div className="   bg-whiteColor rounded-t-4xl mx-auto px-4  pb-22">
         <div className="max-w-[1376px] mx-auto  md:py-8 py-6  ">
           <div className="faq_footer_bg relative rounded-[16px]  md:py-8 flex flex-col justify-between px-6 py-6  ">
             <h2 className="text-[#fff] text-[48px]  font-medium leading-[124%]  text-center md:text-start mb-4">
