@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 @theme {
   --color-border: var(--border);
   --color-background: var(--background);
@@ -39,10 +38,27 @@
 .container {
   width: 100%;
   max-width: 1342px;
-  padding: 0 16px;
+  margin: 0 16px;
   margin: 0 auto;
 }
-
+@theme inline {
+  --color-primaryColor: var(--primaryColor); /* used as --primaryColor */
+  --color-secondaryColor: var(--color-secondary-charcol-900);
+  --color-blackColor: #070707;
+  --color-borderColor: #CDDCD3;
+  --color-whiteColor: #ffffff;
+  --color-greenColor: #00774d;
+  --color-greenBgColor: rgba(188, 255, 230, 0.8);
+  --color-ratingColor: #ffc52e;
+  --color-headerColor: var(--color-secondary-charcol-900);
+  --color-grayColor1: var(--color-gray-black-100);
+  --color-redColor: #e12626;
+  --color-checkBoxColor: #17c13c;
+  --color-orengeColor: #ff6a55;
+  --color-blueColor: #0068ef;
+  --color-bgColor: #faf9f4;
+  --color-descriptionColor: #3b3b3c;
+}
 /* ------------------------------
    Light Theme (default)
 ------------------------------- */
