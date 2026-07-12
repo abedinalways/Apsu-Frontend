@@ -29,7 +29,7 @@ export default function PrimaryButton({
 
   const content = (
     <>
-      <span>{text}</span>
+      <span className="text-nowrap">{text}</span>
 
       <span className="size-7 rounded-full  text-secondary flex items-center justify-center bg-whiteColor">
         <ArrowIcon className="group-hover:-rotate-45 transition-all duration-200  text-primaryColor" />

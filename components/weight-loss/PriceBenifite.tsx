@@ -38,13 +38,15 @@ function ProgramPricingSection() {
             </h2>
 
             {/* Float Button over the price card */}
-            <div className="absolute w-full -bottom-6 left-1/2 transform -translate-x-1/2">
-              <PrimaryButton text="Check your eligibility" />
+            <div className="absolute w-full md:w-auto  -bottom-6 left-1/2 transform -translate-x-1/2">
+              <div className="w-full ">
+                <PrimaryButton text="Check your eligibility" />
+              </div>
             </div>
           </div>
 
           {/* Menu / Accordion Wrapper */}
-          <div className="w-full space-y-4 ">
+          <div className="w-full space-y-4 mt-4 xl:mt-0 ">
             {/* How It Works Header Line */}
             <div className="border-y pt-2 border-gray-200 pb-3 flex items-center justify-between cursor-pointer group">
               <span className="text-xs md:text-sm font-semibold text-[#585E5A] group-hover:text-[#0C2417] underline transition-colors">
