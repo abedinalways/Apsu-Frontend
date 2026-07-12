@@ -5,6 +5,7 @@ import ProgramPricingSection from "@/components/weight-loss/PriceBenifite";
 import YourOption from "@/components/weight-loss/YourOption";
 import { Stethoscope, Truck } from "lucide-react";
 import { IoEarthOutline } from "react-icons/io5";
+import SleepBreak from "@/components/Sleep/SleepBreak";
 
 export interface FeatureItem {
   id: number;
@@ -31,15 +32,15 @@ export default function SleepPage() {
     },
   ];
   return (
-    <div>
+    <div className="mt-42">
       <CommonHero
         features={featuresData}
-        title="Weight Loss Solutions"
-        subtitle="Personalized Care for Your Journey"
-        description="GLP-1 medications are prescription treatments that help regulate appetite and blood sugar levels. By helping you feel fuller for longer and reducing hunger, they may support weight loss when combined with healthy lifestyle changes. A licensed provider can help determine whether a GLP-1 medication is appropriate for your individual needs."
+        title="Find your way back to deep sleep."
+        subtitle=""
+        description="Non-habit-forming, non-controlled sleep treatment. Complete your visit in the language you think in."
       />
-      {/* <ProgramPricingSection /> */}
-      <YourOption />
+      <ProgramPricingSection />
+      <SleepBreak />
     </div>
   );
 }
