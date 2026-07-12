@@ -1,8 +1,10 @@
 import { CapsulIcon } from "@/components/icons/Icons";
 import CommonHero from "@/components/weight-loss/CommonHero";
 import ProgramPricingSection from "@/components/weight-loss/PriceBenifite";
+import WeightLosFAQsection from "@/components/weight-loss/WeightLosFAQsection";
+import WeightLossQuestion from "@/components/weight-loss/WeightLossQuestion";
 import YourOption from "@/components/weight-loss/YourOption";
-import { Stethoscope, Truck } from "lucide-react";
+import { Stethoscope } from "lucide-react";
 import React from "react";
 import { IoEarthOutline } from "react-icons/io5";
 export interface FeatureItem {
@@ -17,7 +19,7 @@ function page() {
       text: "Compound GLP-1",
       icon: CapsulIcon,
     },
-    
+
     {
       id: 3,
       text: "US-licensed physicians",
@@ -39,6 +41,8 @@ function page() {
       />
       <ProgramPricingSection />
       <YourOption />
+      <WeightLossQuestion />
+      <WeightLosFAQsection/>
     </div>
   );
 }
