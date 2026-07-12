@@ -4,6 +4,7 @@ import AboutExist from "@/components/about/AboutExist";
 import AboutHero from "@/components/about/AboutHero";
 import AboutHonestlyPart from "@/components/about/AboutHonestlyPart";
 import AboutMedicinePart from "@/components/about/AboutMedicinePart";
+import AboutPrinciples from "@/components/about/AboutPrinciples";
 
 function page() {
   return (
@@ -15,6 +16,7 @@ function page() {
         <AboutHonestlyPart />
         <AboutCareWork />
         <AboutMedicinePart />
+        <AboutPrinciples />
       </div>
     </div>
   );
