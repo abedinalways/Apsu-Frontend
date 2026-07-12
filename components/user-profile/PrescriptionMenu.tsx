@@ -1,8 +1,7 @@
 'use client';
 
 import { ClipboardList, Eye } from 'lucide-react';
-import { useEffect, useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
 
 interface PrescriptionMenuProps {
   open: boolean;
@@ -19,40 +18,6 @@ export default function PrescriptionMenu({
 }: PrescriptionMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    if (!menuRef.current) return;
-
-    if (open) {
-      gsap.killTweensOf(menuRef.current);
-
-      gsap.set(menuRef.current, {
-        opacity: 0,
-        y: -12,
-        scale: 0.96,
-        pointerEvents: 'auto',
-      });
-
-      gsap.to(menuRef.current, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.25,
-        ease: 'power3.out',
-      });
-    } else {
-      gsap.killTweensOf(menuRef.current);
-
-      gsap.to(menuRef.current, {
-        opacity: 0,
-        y: -12,
-        scale: 0.96,
-        duration: 0.18,
-        ease: 'power2.in',
-        pointerEvents: 'none',
-      });
-    }
-  }, [open]);
-
   useEffect(() => {
     if (!open) return;
 
@@ -63,46 +28,50 @@ export default function PrescriptionMenu({
     };
 
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
+      if (e.key === 'Escape') onClose();
     };
 
-    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('click', handleOutsideClick);
     document.addEventListener('keydown', handleEscape);
 
     return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('click', handleOutsideClick);
       document.removeEventListener('keydown', handleEscape);
     };
   }, [open, onClose]);
 
+  if (!open) return null;
+
   return (
     <div
       ref={menuRef}
-      className={`absolute right-0 top-14 z-50 w-64 origin-top-right rounded-[28px] border border-[#D7E5DC] bg-white p-4 shadow-[0_20px_60px_rgba(20,44,30,0.12)] ${
-        open ? 'block' : 'hidden'
-      }`}
+      className="absolute right-0 top-14 z-50 w-40 origin-top-right rounded-[12px] border border-[#D7E5DC] bg-white p-2 shadow-[0_20px_60px_rgba(20,44,30,0.12)]"
     >
       <button
-        onClick={() => {
+        type="button"
+        onClick={e => {
+          e.preventDefault();
+          e.stopPropagation();
           onViewDetails();
           onClose();
         }}
-        className="flex w-full items-center gap-4 rounded-2xl bg-[#EEF8F2] px-6 py-5 text-left text-lg font-medium text-[#142C1E] transition-colors duration-200 hover:bg-[#E6F4EC]"
+        className="flex w-full items-center gap-3 rounded-[8px] bg-[#EEF8F2] px-3 py-2 text-left text-xs font-medium text-[#142C1E] transition-colors duration-200 hover:bg-[#E6F4EC]"
       >
-        <Eye className="h-5 w-5" />
+        <Eye className="h-4 w-4 shrink-0" />
         <span>View Details</span>
       </button>
 
       <button
-        onClick={() => {
+        type="button"
+        onClick={e => {
+          e.preventDefault();
+          e.stopPropagation();
           onTrackOrder();
           onClose();
         }}
-        className="mt-2 flex w-full items-center gap-4 rounded-2xl px-6 py-5 text-left text-lg font-medium text-[#142C1E] transition-colors duration-200 hover:bg-[#F4F7F5]"
+        className="mt-1 flex w-full items-center gap-3 rounded-[8px] px-3 py-2 text-left text-xs font-medium text-[#142C1E] transition-colors duration-200 hover:bg-[#F7FAF8]"
       >
-        <ClipboardList className="h-5 w-5" />
+        <ClipboardList className="h-4 w-4 shrink-0" />
         <span>Track Order</span>
       </button>
     </div>

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Mail, Phone, MapPin, Edit3, Video } from 'lucide-react';
 import EmptyTabState from './EmptyTabState';
 import EditProfileModal from './EditProfileModal';
 import EditIcon from '../icons/EditIcon';
@@ -11,11 +10,10 @@ import CallIcon from '../icons/CallIcon';
 import LocationIcon from '../icons/LocationIcon';
 import VideoCallIcon from '../icons/VideoCallIcon';
 import TreatmentCard from './TreatmentCard';
-import ConsultationCard from './ConsultationCard';
+import NotApprovedTreatment from './NotApprovedTreatment';
 import ConsultationTabContainer from './ConsultationTabContainer';
 import OrderDetailsTab from './OrderDetailsTab';
 import PrescriptionsTab from './PrescriptionsTab';
-
 
 const TABS = [
   { id: 'my-treatments', label: 'My Treatments' },
@@ -25,6 +23,12 @@ const TABS = [
 ];
 
 export default function ProfileClient() {
+  const [treatmentState, setTreatmentState] = useState<
+    'approved' | 'not-approved' | 'empty'
+  >('not-approved');
+  const hasOrders = true;
+  const hasPrescriptions = true;
+
   const activeTreatment = {
     title: 'Weight Loss Program',
     planDuration: '12 months plan',
@@ -36,16 +40,6 @@ export default function ProfileClient() {
     progressPercentage: 33,
   };
 
-  const activeConsultation = {
-    doctorName: 'Dr. Robert',
-    specialty: 'Nutritionist',
-    program: 'Weight Loss Program',
-    status: 'Scheduled',
-    time: '02:00 PM EST',
-    date: 'Tue, Jul 20',
-  };
-  const hasOrders = true;
-  const hasPrescriptions = true;
   const router = useRouter();
   const searchParams = useSearchParams();
   const activeTab = searchParams.get('tab') || 'my-treatments';
@@ -58,17 +52,16 @@ export default function ProfileClient() {
 
   return (
     <div className="space-y-6 font-[Work_Sans] w-full">
-      {/* 1. Profile Header Card */}
-      <div className="bg-white border border-[#cddcd3] rounded-[16px] p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 relative ">
+      <div className="bg-white border border-[#cddcd3] rounded-[16px] p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 relative">
         <div className="w-24 h-24 md:w-40 md:h-40 md:absolute md:top-6 md:left-4 rounded-full bg-[#102b1c] top-10 flex items-center justify-center text-white text-2xl md:text-3xl font-semibold shrink-0">
           MO
         </div>
 
-        <div className="text-center md:w-full md:mx-auto  space-y-3 mt-2 ">
-          <h1 className="text-2xl md:text-[32px]  font-medium text-[#142C1E] text-start md:ml-60">
+        <div className="text-center md:w-full md:mx-auto space-y-3 mt-2">
+          <h1 className="text-2xl md:text-[32px] font-medium text-[#142C1E] text-start md:ml-60">
             Maria Olives
           </h1>
-          <div className="flex flex-col md:flex-row flex-wrap justify-center  items-center gap-3 md:gap-5 text-[14px] text-gray-500">
+          <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-3 md:gap-5 text-[14px] text-gray-500">
             <span className="flex items-center gap-1.5">
               <MessageIcon /> maria@example.com
             </span>
@@ -89,7 +82,6 @@ export default function ProfileClient() {
         </button>
       </div>
 
-      {/* 2. Upcoming Consultation Card */}
       <div className="bg-white border border-[#EBEAE4] rounded-[24px] p-6 max-w-md w-full space-y-4 mt-12">
         <p className="text-sm md:text-[16px] font-normal tracking-wider text-[#00774d] uppercase">
           Upcoming Consultation
@@ -109,22 +101,16 @@ export default function ProfileClient() {
         </div>
       </div>
 
-      {/* 3. Tab Container & Content Area */}
       <div className="bg-white border border-[#EBEAE4] rounded-[24px] overflow-hidden">
-        {/* Navigation Tabs */}
         <div className="px-4 py-4 md:px-8 border-b border-[#F4F3EF] flex justify-center md:justify-start">
-          <div className="bg-transparent lg:bg-[#E8F3ED] flex flex-wrap md:flex-nowrap mx-auto justify-center gap-2  p-2 md:p-2 rounded-full">
+          <div className="bg-transparent lg:bg-[#E8F3ED] flex flex-wrap md:flex-nowrap mx-auto justify-center gap-2 p-2 md:p-2 rounded-full">
             {TABS.map(tab => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => handleTabChange(tab.id)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
-                    isActive
-                      ? 'bg-[#A3C9A8] text-[#142C1E] shadow-sm'
-                      : 'text-gray-600 hover:text-gray-900 hover:bg-[#F4F3EF]'
-                  }`}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-[#142C1E] shadow-sm' : 'text-gray-600 hover:text-gray-900 hover:bg-[#F4F3EF]'}`}
                 >
                   {tab.label}
                 </button>
@@ -133,26 +119,31 @@ export default function ProfileClient() {
           </div>
         </div>
 
-        {/* Dynamic Inner Tab View */}
-        <div className="p-8 min-h-[320px] flex flex-col items-center justify-center text-center">
-          {activeTab === 'my-treatments' &&
-            (activeTreatment ? (
-              <TreatmentCard data={activeTreatment} />
-            ) : (
-              <EmptyTabState
-                message="No active treatment yet."
-                subMessage="Your treatment is currently under physician review. Once approved, your prescribed medication will appear here."
-              />
-            ))}
-          {activeTab === 'consultations' &&
-            (activeConsultation ? (
-              <ConsultationTabContainer />
-            ) : (
-              <EmptyTabState
-                message="No previous consultations."
-                subMessage="History of your completed and upcoming medical visits will be listed here."
-              />
-            ))}
+        <div className="p-8 min-h-[320px] flex flex-col items-center justify-center">
+          {activeTab === 'my-treatments' && (
+            <>
+              {treatmentState === 'approved' && (
+                <TreatmentCard data={activeTreatment} />
+              )}
+
+              {treatmentState === 'not-approved' && (
+                <NotApprovedTreatment
+                  onViewOrder={() => handleTabChange('order-details')}
+                  onStartAssessment={() => router.push('/assessment')}
+                />
+              )}
+
+              {treatmentState === 'empty' && (
+                <EmptyTabState
+                  message="No active treatment yet."
+                  subMessage="Your treatment details and timelines will be listed here once active."
+                />
+              )}
+            </>
+          )}
+
+          {activeTab === 'consultations' && <ConsultationTabContainer />}
+
           {activeTab === 'order-details' &&
             (hasOrders ? (
               <OrderDetailsTab />
@@ -162,6 +153,7 @@ export default function ProfileClient() {
                 subMessage="Track your prescription shipments and delivery status right here."
               />
             ))}
+
           {activeTab === 'prescriptions' &&
             (hasPrescriptions ? (
               <PrescriptionsTab />
@@ -174,7 +166,6 @@ export default function ProfileClient() {
         </div>
       </div>
 
-      {/* Profile Edit Modal Injection */}
       <EditProfileModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
