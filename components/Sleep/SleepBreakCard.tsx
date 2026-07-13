@@ -2,7 +2,7 @@ import React from "react";
 import image1 from "@/public/images/sleep/sleep1.png";
 import image2 from "@/public/images/sleep/sleep2.png";
 import image3 from "@/public/images/sleep/sleep3.png";
-import { Instagram, Linkedin, Star, Twitter } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin, Star, Twitter } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import Arrow from "../icons/Arrow";
 interface SleepBreakCardItem {
@@ -63,7 +63,10 @@ export default function SleepBreakCard() {
               <div className="flex items-end justify-between transition-all duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
                 <div>
                   <h4 className="text-blackColor font-semibold text-lg md:text-xl flex items-center gap-1">
-                    <Arrow /> Matched to a
+                    <div className="w-5 h-5 bg-[#0C2417] rounded-full flex items-center justify-center text-white">
+                      <ArrowRight className="w-3 h-3 stroke-[3]" />
+                    </div>{" "}
+                    Matched to a
                   </h4>
                   <p className="text-descriptionColor text-sm md:text-base">
                     non-habit-forming option

@@ -13,9 +13,8 @@ export default function WhyApsuSleepSection() {
           isSmall
         />
       </div>
-      <div>
-        <WhyApsuSleepSectionCard />
-      </div>
+
+      <WhyApsuSleepSectionCard />
     </div>
   );
 }
