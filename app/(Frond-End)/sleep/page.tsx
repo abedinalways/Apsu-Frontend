@@ -7,6 +7,8 @@ import { IoEarthOutline } from "react-icons/io5";
 import SleepBreak from "@/components/Sleep/SleepBreak";
 import HowItWorks from "@/components/Sleep/HowItWorks";
 import PricingSection from "@/components/Sleep/PricingSection";
+import FAQFooter from "@/components/faq/FAQFooter";
+import WhyApsuSleepSection from "@/components/birth-control/WhyApsuSleepSection";
 
 export interface FeatureItem {
   id: number;
@@ -42,8 +44,10 @@ export default function SleepPage() {
       />
       <ProgramPricingSection />
       <SleepBreak />
-      <HowItWorks />
       <PricingSection />
+      <WhyApsuSleepSection />
+      <HowItWorks />
+      <FAQFooter />
     </div>
   );
 }
