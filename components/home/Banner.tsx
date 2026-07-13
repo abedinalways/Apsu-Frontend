@@ -41,7 +41,6 @@ export const Banner = () => {
         {/* cta button */}
         <div className="mt-6">
           <ButtonGroup>Start a free consultation</ButtonGroup>
-          
         </div>
         {/* language carousel  */}
         <div className="mt-6 lg:mt-8 space-y-4 relative">
