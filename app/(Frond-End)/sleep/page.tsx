@@ -2,10 +2,10 @@ import React from "react";
 import { CapsulIcon } from "@/components/icons/Icons";
 import CommonHero from "@/components/weight-loss/CommonHero";
 import ProgramPricingSection from "@/components/weight-loss/PriceBenifite";
-import YourOption from "@/components/weight-loss/YourOption";
 import { Stethoscope, Truck } from "lucide-react";
 import { IoEarthOutline } from "react-icons/io5";
 import SleepBreak from "@/components/Sleep/SleepBreak";
+import HowItWorks from "@/components/Sleep/HowItWorks";
 
 export interface FeatureItem {
   id: number;
@@ -41,6 +41,7 @@ export default function SleepPage() {
       />
       <ProgramPricingSection />
       <SleepBreak />
+      <HowItWorks />
     </div>
   );
 }
