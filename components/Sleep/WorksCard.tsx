@@ -61,7 +61,7 @@ export default function WorksCard() {
   const activeData = WORKS_STEPS[activeIndex] || WORKS_STEPS[0];
 
   return (
-    <div className="lg:mt-8 pt-12 lg:pt-14">
+    <div className="pt-8 lg:pt-12">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
         {/* Left Side: Dynamic Image Display */}
         <div className="relative w-full aspect-[4/5] md:aspect-[3/4] max-h-[600px] rounded-[2rem] overflow-hidden shadow-2xl">

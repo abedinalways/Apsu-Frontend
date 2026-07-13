@@ -9,7 +9,7 @@ function WeightLossQuestion() {
         <CommonHeader
           sectionName="WHY APSU"
           title="Ask the question you've been afraid to mistranslate."
-          description="Starting a GLP-1 means real questions — about side effects, dosing, what's normal. With APSU you ask them in your own words. Our AI carries the conversation both ways; your physician makes every medical call."
+          description="Birth control comes with private, specific questions — and they're hard to ask in a second language. With APSU you ask them in the language you think in. Our AI carries the conversation both ways; your physician makes every medical call."
           isSmall
         />
       </div>
