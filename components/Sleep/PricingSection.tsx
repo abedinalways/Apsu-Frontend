@@ -8,7 +8,7 @@ export default function PricingSection() {
   };
 
   return (
-    <main className="w-full">
+    <main className="w-full my-10 md:my-14 lg:my-20">
       <PricingCardSection
         bgImageUrl="/images/sleep/pricing-bg-3.png"
         title="Affordable plan for every lifestyle"

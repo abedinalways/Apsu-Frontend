@@ -1,4 +1,8 @@
+import PricingSection from "@/components/birth-control/PricingSection";
+import QuickCheckSection from "@/components/birth-control/QuickCheckSection";
+import WeightLossQuestion from "@/components/birth-control/WeightLossQuestion";
 import { ApprovedIcon, GlobalIcon } from "@/components/icons/Icons";
+import HowItWorks from "@/components/Sleep/HowItWorks";
 import BirthOption from "@/components/weight-loss/BirthOption";
 import CommonHero from "@/components/weight-loss/CommonHero";
 import ProgramPricingSection from "@/components/weight-loss/PriceBenifite";
@@ -37,6 +41,10 @@ function page() {
       />
       <ProgramPricingSection />
       <BirthOption />
+      <PricingSection />
+      <HowItWorks />
+      <WeightLossQuestion />
+      <QuickCheckSection />
     </div>
   );
 }
