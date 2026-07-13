@@ -9,7 +9,8 @@ export type ContentType =
   | 'divider'
   | 'callout'
   | 'steps'
-  | 'iconGrid';
+  | 'iconGrid'
+  | 'table';
 
 export interface StepItem {
   title: string;
@@ -36,6 +37,10 @@ export interface BlogContentBlock {
   layout?: 'left' | 'right';
 
   steps?: StepItem[];
+  tableData?: {
+    headers: string[];
+    rows: string[][];
+  };
 }
 
 export interface BlogSummaryItem {
