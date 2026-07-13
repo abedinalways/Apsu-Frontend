@@ -33,19 +33,19 @@ export const blogDetails: BlogMeta[] = [
         id: 'intro-1',
         type: 'paragraph',
         content:
-          'Weight management is rarely as simple as eating less and exercising more.',
+          'Semaglutide is a GLP-1 receptor agonist. GLP-1 is a hormone involved in blood sugar regulation and appetite signaling. In weight-management use, the goal is not simply to make someone eat less for a few days; the medication is part of a longer treatment plan that usually includes nutrition changes, physical activity, and follow-up monitoring.',
       },
       {
         id: 'intro-2',
         type: 'paragraph',
         content:
-          'For many people, factors such as hormones, metabolism, appetite regulation, genetics, stress, and underlying health conditions can make losing weight significantly more challenging.',
+          'Semaglutide works mainly through the GLP-1 pathway, while tirzepatide works through both the GIP and GLP-1 pathways. GLP-1 (glucagon-like peptide-1) is a hormone your body releases after eating. It signals fullness, slows stomach emptying, and helps regulate blood sugar. GIP is another post-meal hormone that also supports blood sugar control. Tirzepatide acts on both pathways, which may be one reason it has shown larger average weight-loss results in some studies.',
       },
       {
         id: 'intro-3',
         type: 'paragraph',
         content:
-          'In recent years, GLP-1 medications have emerged as one of the most discussed treatment options for weight management. While these medications are not suitable for everyone, they may help certain individuals achieve and maintain meaningful weight loss when combined with healthy lifestyle changes.',
+          'In clinical trials, both medications were associated with meaningful average weight loss when used with diet and physical activity. Tirzepatide has shown larger average weight-loss numbers in some trials, but that does not automatically mean it is the better choice for every person.',
       },
       {
         id: 'intro-4',
@@ -59,30 +59,24 @@ export const blogDetails: BlogMeta[] = [
       {
         id: 'what-is-glp1',
         type: 'heading',
-        content: 'What Are GLP-1 Medications?',
+        content: 'What is Semaglutide?',
       },
       {
         id: 'glp1-feature',
         type: 'imageText',
         layout: 'right',
         imageRatio: 'wide',
-        image: '/images/blogDetails/img02.png',
+        image: '/images/blogDetails/1233.png',
         alt: 'Diagram showing how GLP-1 medications work',
         description:
-          'GLP-1 stands for "Glucagon-Like Peptide-1," a hormone that is naturally produced in the body after eating. This hormone plays several important roles:',
-        bullets: [
-          'Helps regulate appetite.',
-          'Slows stomach emptying.',
-          'Supports healthy blood sugar control.',
-          'Promotes feelings of fullness after meals.',
-        ],
+          'Semaglutide is a GLP-1 receptor agonist. GLP-1 is a hormone involved in blood sugar regulation and appetite signaling. In weight-management use, the goal is not simply to make someone eat less for a few days; the medication is part of a longer treatment plan that usually includes nutrition changes, physical activity, and follow-up monitoring.',
       },
       {
         id: 'glp1-summary',
         type: 'paragraph',
         emphasis: true,
         content:
-          'GLP-1 medications are designed to mimic these natural effects, helping some patients manage hunger and reduce calorie intake more effectively.',
+          'The FDA-approved semaglutide injection for chronic weight management is indicated as an addition to a reduced-calorie diet and increased physical activity for adults with obesity or adults with overweight and at least one weight-related condition. The original FDA label describes a weekly injection dose-escalation schedule starting at 0.25 mg and increasing gradually to a 2.4 mg maintenance dose [1].',
       },
 
       // ---------- Who May Be Eligible ----------
