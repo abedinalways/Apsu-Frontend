@@ -6,30 +6,36 @@ function WeightLosFAQsection() {
   const items = [
     {
       id: "states-available",
-      question: "What birth control do you offer?",
+      question: "What is compounded GLP-1 medication?",
       answer: "We are currently able to serve GLP-1 programs in all 50 states.",
     },
     {
       id: "languages-supported",
-      question: "What's the difference between the pill and the shot?",
+      question: "Do I need insurance?",
       answer:
         "Our platform supports multiple languages including English, Español, Tiếng Việt, Tagalog and more to ensure clear communication.",
     },
     {
       id: "insurance-required",
-      question: "Can I get a pill with lighter or fewer periods?",
+      question: "How does language support work?",
       answer:
         "No insurance is needed. Apsu is a direct-pay service, so there are no insurance forms, prior authorizations, or surprise bills to navigate.",
     },
     {
       id: "compounded-medication",
-      question: "Does birth control protect against STIs?",
+      question: "What if I'm not eligible?",
       answer:
         "Compounded medications are custom-made drugs mixed by a licensed pharmacy to match a patient's specific needs when standard commercially manufactured options aren't suitable or available.",
     },
     {
       id: "guaranteed-prescription",
-      question: "How does language support work?",
+      question: "Is the medication injected?",
+      answer:
+        "No. A licensed provider decides whether a medication is safe and appropriate for you based on the information you share. If a provider determines that treatment isn't right for you, you won't be charged for medication.",
+    },
+    {
+      id: "still-questions",
+      question: "Still have questions?",
       answer:
         "No. A licensed provider decides whether a medication is safe and appropriate for you based on the information you share. If a provider determines that treatment isn't right for you, you won't be charged for medication.",
     },

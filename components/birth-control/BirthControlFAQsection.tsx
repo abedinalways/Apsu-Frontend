@@ -2,33 +2,33 @@ import { FAQAccordion } from "../faq/FAQAccordion";
 import PrimaryButton from "../reusable/button/PrimaryButton";
 import { Accordion } from "../ui/accordion";
 
-function WeightLosFAQsection() {
+function BirthControlFAQsection() {
   const items = [
     {
       id: "states-available",
-      question: "Is the medication habit-forming?",
+      question: "What birth control do you offer?",
       answer: "We are currently able to serve GLP-1 programs in all 50 states.",
     },
     {
       id: "languages-supported",
-      question: "What kind of medication will I get?",
+      question: "What's the difference between the pill and the shot?",
       answer:
         "Our platform supports multiple languages including English, Español, Tiếng Việt, Tagalog and more to ensure clear communication.",
     },
     {
       id: "insurance-required",
-      question: "Will I feel groggy the next day?",
+      question: "Can I get a pill with lighter or fewer periods?",
       answer:
         "No insurance is needed. Apsu is a direct-pay service, so there are no insurance forms, prior authorizations, or surprise bills to navigate.",
     },
     {
       id: "compounded-medication",
-      question: "Do I need insurance?",
+      question: "Does birth control protect against STIs?",
       answer:
         "Compounded medications are custom-made drugs mixed by a licensed pharmacy to match a patient's specific needs when standard commercially manufactured options aren't suitable or available.",
     },
     {
-      id: "How does language support work?",
+      id: "guaranteed-prescription",
       question: "How does language support work?",
       answer:
         "No. A licensed provider decides whether a medication is safe and appropriate for you based on the information you share. If a provider determines that treatment isn't right for you, you won't be charged for medication.",
@@ -69,4 +69,4 @@ function WeightLosFAQsection() {
   );
 }
 
-export default WeightLosFAQsection;
+export default BirthControlFAQsection;

@@ -9,9 +9,9 @@ import HowItWorks from "@/components/Sleep/HowItWorks";
 import PricingSection from "@/components/Sleep/PricingSection";
 import FAQFooter from "@/components/faq/FAQFooter";
 import WhyApsuSleepSection from "@/components/birth-control/WhyApsuSleepSection";
-import WeightLossQuestion from "@/components/Sleep/WeightLossQuestion";
 import QuickCheckSection from "@/components/Sleep/QuickCheckSection";
-import WeightLosFAQsection from "@/components/Sleep/WeightLosFAQsection";
+import SleepFAQsection from "@/components/Sleep/SleepFAQsection";
+import SleepQuestion from "@/components/Sleep/SleepQuestion";
 
 export interface FeatureItem {
   id: number;
@@ -50,9 +50,9 @@ export default function SleepPage() {
       <PricingSection />
       <WhyApsuSleepSection />
       <HowItWorks />
-      <WeightLossQuestion />
+      <SleepQuestion />
       <QuickCheckSection />
-      <WeightLosFAQsection />
+      <SleepFAQsection />
       <FAQFooter />
     </div>
   );
