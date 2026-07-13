@@ -23,7 +23,7 @@ export default function MedicationSection({
   data,
 }: MedicationSectionProps) {
   return (
-    <div className={`  lg:mt-8  pt-12 lg:pt-14`}>
+    <div className={`lg:mt-8  pt-12 lg:pt-14`}>
       <div className="">
         {/* --- Grid Items Layout --- */}
         <div className="space-y-8 md:space-y-6">

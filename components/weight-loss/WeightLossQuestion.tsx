@@ -4,7 +4,7 @@ import CommonHeader from "../reusable/CommonHeader";
 
 function WeightLossQuestion() {
   return (
-    <div className="container grid py-14 md:py-18 lg:py-30 grid-cols-2 lg:grid-cols-2 gap-4 xl:gap-6">
+    <div className="container grid py-14 md:py-18 lg:py-30 grid-cols-1 lg:grid-cols-2 gap-4 xl:gap-6">
       <div className="max-w-xl">
         <CommonHeader
           sectionName="WHY APSU"

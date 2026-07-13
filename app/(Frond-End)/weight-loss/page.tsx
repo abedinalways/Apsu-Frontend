@@ -1,6 +1,8 @@
 import { CapsulIcon } from "@/components/icons/Icons";
+import HowItWorks from "@/components/Sleep/HowItWorks";
 import CommonHero from "@/components/weight-loss/CommonHero";
 import ProgramPricingSection from "@/components/weight-loss/PriceBenifite";
+import PricingSection from "@/components/weight-loss/PricingSection";
 import WeightLosFAQsection from "@/components/weight-loss/WeightLosFAQsection";
 import WeightLossQuestion from "@/components/weight-loss/WeightLossQuestion";
 import YourOption from "@/components/weight-loss/YourOption";
@@ -41,8 +43,10 @@ function page() {
       />
       <ProgramPricingSection />
       <YourOption />
+      <PricingSection />
+      <HowItWorks />
       <WeightLossQuestion />
-      <WeightLosFAQsection/>
+      <WeightLosFAQsection />
     </div>
   );
 }
