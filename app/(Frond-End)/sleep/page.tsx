@@ -6,6 +6,7 @@ import { Stethoscope, Truck } from "lucide-react";
 import { IoEarthOutline } from "react-icons/io5";
 import SleepBreak from "@/components/Sleep/SleepBreak";
 import HowItWorks from "@/components/Sleep/HowItWorks";
+import PricingSection from "@/components/Sleep/PricingSection";
 
 export interface FeatureItem {
   id: number;
@@ -32,7 +33,7 @@ export default function SleepPage() {
     },
   ];
   return (
-    <div className="mt-42">
+    <div>
       <CommonHero
         features={featuresData}
         title="Find your way back to deep sleep."
@@ -42,6 +43,7 @@ export default function SleepPage() {
       <ProgramPricingSection />
       <SleepBreak />
       <HowItWorks />
+      <PricingSection />
     </div>
   );
 }
