@@ -1,11 +1,13 @@
 import PricingSection from "@/components/birth-control/PricingSection";
 import QuickCheckSection from "@/components/birth-control/QuickCheckSection";
 import WeightLossQuestion from "@/components/birth-control/WeightLossQuestion";
+import FAQFooter from "@/components/faq/FAQFooter";
 import { ApprovedIcon, GlobalIcon } from "@/components/icons/Icons";
 import HowItWorks from "@/components/Sleep/HowItWorks";
 import BirthOption from "@/components/weight-loss/BirthOption";
 import CommonHero from "@/components/weight-loss/CommonHero";
 import ProgramPricingSection from "@/components/weight-loss/PriceBenifite";
+import WeightLosFAQsection from "@/components/weight-loss/WeightLosFAQsection";
 import { Stethoscope } from "lucide-react";
 import React from "react";
 export interface FeatureItem {
@@ -45,6 +47,8 @@ function page() {
       <HowItWorks />
       <WeightLossQuestion />
       <QuickCheckSection />
+      <WeightLosFAQsection />
+      <FAQFooter />
     </div>
   );
 }

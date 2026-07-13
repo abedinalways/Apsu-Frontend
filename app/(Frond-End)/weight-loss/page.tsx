@@ -1,3 +1,4 @@
+import FAQFooter from "@/components/faq/FAQFooter";
 import { CapsulIcon } from "@/components/icons/Icons";
 import HowItWorks from "@/components/Sleep/HowItWorks";
 import CommonHero from "@/components/weight-loss/CommonHero";
@@ -47,6 +48,7 @@ function page() {
       <HowItWorks />
       <WeightLossQuestion />
       <WeightLosFAQsection />
+      <FAQFooter />
     </div>
   );
 }
