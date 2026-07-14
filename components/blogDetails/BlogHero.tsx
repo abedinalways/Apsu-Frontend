@@ -9,7 +9,7 @@ interface Props {
 export default function BlogHero({ blog }: Props) {
   return (
     <section className="flex flex-start items-center pt-20 pb-12 md:pt-34 md:pb-12" >
-      <div className="max-w-[24rem]">
+      <div className="">
        <BlogBreadcrumb blog={blog} />
         {/* Hero Content */}
         <div className="flex-1 min-w-0">
@@ -53,7 +53,9 @@ export default function BlogHero({ blog }: Props) {
                 {blog.category}
               </span>
 
-              <span className="h-[5px] w-[5px] rounded-full bg-[#C7C7C7]" />
+            <span className="text-green-300" >
+              |
+              </span>
 
               <span className="text-[#666666]">{blog.readTime}</span>
             </div>

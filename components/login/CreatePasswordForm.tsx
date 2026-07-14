@@ -16,6 +16,9 @@ import {
   PasswordFormValues,
 } from '@/lib/validations/authSchema';
 import { EyeIcon } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
+import { toast } from 'sonner';
 
 interface CreatePasswordFormProps {
   email: string;
@@ -28,14 +31,34 @@ export default function CreatePasswordForm({
 }: CreatePasswordFormProps) {
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const router = useRouter();
+  const { createPassword } = useAuth();
 
   const form = useForm<PasswordFormValues>({
     resolver: zodResolver(passwordSchema),
     defaultValues: { password: '', confirmPassword: '' },
   });
 
-  const onSubmit = (values: PasswordFormValues) => {
-    console.log('Password Data for API:', email, values);
+  const onSubmit = async (values: PasswordFormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      const result = await createPassword(email, values.password);
+      
+      if (result.success) {
+        toast.success('Account created successfully! Please sign in.');
+        // Go back to sign in form
+        onBack();
+      } else {
+        toast.error(result.error || 'Failed to create account. Please try again.');
+      }
+    } catch (error) {
+      toast.error('An unexpected error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -153,9 +176,10 @@ export default function CreatePasswordForm({
 
           <button
             type="submit"
-            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm"
+            disabled={isSubmitting}
+            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Continue to Log In
+            {isSubmitting ? 'Creating Account...' : 'Continue to Sign In'}
           </button>
         </form>
       </Form>

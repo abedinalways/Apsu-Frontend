@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { toast } from 'sonner';
 
 interface EnterCodeFormProps {
   email: string;
@@ -14,6 +15,7 @@ export default function EnterCodeForm({
   onResend,
 }: EnterCodeFormProps) {
   const [code, setCode] = useState<string[]>(new Array(6).fill(''));
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const inputsRef = useRef<HTMLInputElement[]>([]);
 
   const handleChange = (value: string, index: number) => {
@@ -36,9 +38,40 @@ export default function EnterCodeForm({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    onNext();
+    setIsSubmitting(true);
+    
+    try {
+      // Demo: Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      const codeString = code.join('');
+      
+      // Demo: Validate code (in production, backend validates)
+      if (codeString !== '123456') {
+        toast.error('Invalid or expired code. Please try again.');
+        return;
+      }
+      
+      toast.success('Code verified successfully!');
+      onNext();
+    } catch (error) {
+      toast.error('Verification failed. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleResend = async () => {
+    try {
+      // Demo: Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 800));
+      toast.success('New code sent! Please check your email.');
+      onResend();
+    } catch (error) {
+      toast.error('Failed to resend code. Please try again.');
+    }
   };
 
   return (
@@ -78,9 +111,10 @@ export default function EnterCodeForm({
 
         <button
           type="submit"
-          className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 text-sm"
+          disabled={isSubmitting}
+          className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Verify
+          {isSubmitting ? 'Verifying...' : 'Verify'}
         </button>
       </form>
 
@@ -88,7 +122,7 @@ export default function EnterCodeForm({
         <p className="text-xs text-gray-500">
           Didn't receive code?{' '}
           <button
-            onClick={onResend}
+            onClick={handleResend}
             className="text-emerald-700 font-medium hover:underline"
           >
             Resend

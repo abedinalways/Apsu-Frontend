@@ -1,12 +1,13 @@
 {
   "id": 1,
   "slug": "understanding-glp1",
-  "title": "Understanding GLP-1 Medications: What Patients Should Know",
+  "title": "Semaglutide vs. Tirzepatide: What's the Difference?",
   "category": "Weight Loss",
   "author": "Absu Health",
   "date": "20 Jan 2026",
   "readTime": "5 mins read",
   "heroImage": "/images/blogDetails/122.png",
+  "href": "/blog/understanding-glp1",
   "summary": [
     { "id": "what-is-glp1", "title": "What is Semaglutide?" },
     { "id": "eligibility", "title": "What is tirzepatide?" },
@@ -15,7 +16,13 @@
       "title": "How do the study results compare?"
     },
     { "id": "side-effects", "title": "Main similarities" },
-    { "id": "oversight", "title": "Why Physician Oversight Matters" }
+    { "id": "key-differences-heading", "title": "Main Differences" },
+    { "id": "candidate-heading", "title": "Who might be a candidate?" },
+    {
+      "id": "Where compounded GLP-1 medications may fit",
+      "title": "Where compounded GLP-1 medications may fit"
+    },
+    { "id": "Safety overview", "title": "Safety overview" }
   ],
   "content": [
     {
@@ -233,6 +240,38 @@
       "id": "Safety overview-6",
       "type": "paragraph",
       "content": "Contact your clinician promptly for severe abdominal pain, repeated vomiting, allergic-reaction symptoms, mood changes, pregnancy, or upcoming surgery."
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "FDA prescribing information for semaglutide 2.4 mg injection for chronic weight management",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/215256s000lbl.pdf"
+    },
+    {
+      "id": "source-2",
+      "title": "FDA prescribing information for tirzepatide injection for chronic weight management",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/217806s000lbl.pdf"
+    },
+    {
+      "id": "source-3",
+      "title": "FDA approval announcement for tirzepatide injection for chronic weight management",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-new-medication-chronic-weight-management"
+    },
+    {
+      "id": "source-4",
+      "title": "FDA approval announcement for semaglutide cardiovascular-risk indication",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-reduce-risk-serious-heart-problems-specifically-adults-obesity-or"
+    },
+    {
+      "id": "source-5",
+      "title": "FDA: Concerns with unapproved GLP-1 drugs used for weight loss",
+      "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss"
+    },
+    {
+      "id": "source-6",
+      "title": "CDC National Diabetes Prevention Program eligibility",
+      "url": "https://www.cdc.gov/diabetes/prevention/program-eligibility.html"
     }
   ]
 }

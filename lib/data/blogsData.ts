@@ -10,7 +10,7 @@ export const blogsData: Blog[] = [
     title: 'Understanding GLP-1 Medications: What Patients Should Know',
     description:
       'GLP-1 treatments have gained attention for weight management. Understand how they work and what factors physicians consider before prescribing them.',
-    href: '/blog/glp-1-medications',
+    href: '/blog/understanding-glp1',
   },
 
   {

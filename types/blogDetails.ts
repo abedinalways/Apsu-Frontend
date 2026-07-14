@@ -1,3 +1,9 @@
+export interface SourceItem {
+  id: string;
+  title: string;
+  url: string;
+}
+
 export type ContentType =
   | 'heading'
   | 'paragraph'
@@ -59,4 +65,5 @@ export interface BlogMeta {
   heroImage: string;
   summary: BlogSummaryItem[];
   content: BlogContentBlock[];
+  sources?: SourceItem[];
 }

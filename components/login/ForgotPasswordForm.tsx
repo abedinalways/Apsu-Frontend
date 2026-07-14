@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form } from '@/components/ui/form';
 import InputField from '@/components/reusable/InputFiled/InputField';
+import { toast } from 'sonner';
 
 interface ForgotPasswordFormProps {
   onNext: (email: string) => void;
@@ -13,10 +15,23 @@ export default function ForgotPasswordForm({
   onNext,
   onBack,
 }: ForgotPasswordFormProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm({ defaultValues: { email: '' } });
 
-  const onSubmit = (values: { email: string }) => {
-    onNext(values.email);
+  const onSubmit = async (values: { email: string }) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Demo: Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      toast.success('Reset code sent! Please check your email.');
+      onNext(values.email);
+    } catch (error) {
+      toast.error('Failed to send reset code. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -41,9 +56,10 @@ export default function ForgotPasswordForm({
 
           <button
             type="submit"
-            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm"
+            disabled={isSubmitting}
+            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send Code
+            {isSubmitting ? 'Sending...' : 'Send Code'}
           </button>
         </form>
       </Form>

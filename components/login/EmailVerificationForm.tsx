@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Form } from '@/components/ui/form';
 import InputField from '@/components/reusable/InputFiled/InputField';
 import { emailSchema, EmailFormValues } from '@/lib/validations/authSchema';
+import { toast } from 'sonner';
 
 interface EmailVerificationFormProps {
   onNext: (email: string) => void;
@@ -19,6 +20,8 @@ export default function EmailVerificationForm({
   });
 
   const onSubmit = (values: EmailFormValues) => {
+    // Demo: Email verification is instant (in production, send verification email)
+    toast.success('Email verified! Please create your password.');
     onNext(values.email);
   };
 

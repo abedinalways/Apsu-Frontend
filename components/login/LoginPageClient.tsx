@@ -67,7 +67,7 @@ export default function LoginPageClient() {
         {step === 'create-password' && (
           <CreatePasswordForm
             email={userEmail}
-            onBack={() => setStep('verify-email')}
+            onBack={() => setStep('sign-in')}
           />
         )}
 

@@ -11,6 +11,21 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Eye, EyeOff } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
+import { toast } from 'sonner';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const setPasswordSchema = z.object({
+  password: z.string().min(8, 'Password must be at least 8 characters'),
+  confirmPassword: z.string(),
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "Passwords don't match",
+  path: ["confirmPassword"],
+});
+
+type SetPasswordFormValues = z.infer<typeof setPasswordSchema>;
 
 interface SetNewPasswordFormProps {
   onSuccess: () => void;
@@ -21,13 +36,32 @@ export default function SetNewPasswordForm({
 }: SetNewPasswordFormProps) {
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
-  const form = useForm({
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const router = useRouter();
+  const { login } = useAuth();
+
+  const form = useForm<SetPasswordFormValues>({
+    resolver: zodResolver(setPasswordSchema),
     defaultValues: { password: '', confirmPassword: '' },
   });
 
-  const onSubmit = (values: any) => {
-    console.log('New password configuration:', values);
-    onSuccess();
+  const onSubmit = async (values: SetPasswordFormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Demo: Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast.success('Password reset successful! Please sign in.');
+      
+      // Redirect to sign in
+      onSuccess();
+    } catch (error) {
+      toast.error('Failed to reset password. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -113,9 +147,10 @@ export default function SetNewPasswordForm({
 
           <button
             type="submit"
-            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm"
+            disabled={isSubmitting}
+            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit
+            {isSubmitting ? 'Resetting...' : 'Reset Password'}
           </button>
         </form>
       </Form>

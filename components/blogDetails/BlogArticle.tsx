@@ -1,6 +1,7 @@
 import { BlogMeta } from '@/types/blogDetails';
 import Image from 'next/image';
 import BlogRenderer from './BlogRenderer';
+import Sources from './Sources';
 
 
 interface Props {
@@ -52,6 +53,7 @@ export default function BlogArticle({ blog }: Props) {
           return (
             <div key={section.id} className={index === 0 ? '' : spacingClass}>
               <BlogRenderer section={section} />
+              
             </div>
           );
         })}

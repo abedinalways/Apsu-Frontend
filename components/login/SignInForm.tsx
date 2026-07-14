@@ -14,6 +14,9 @@ import {
 import InputField from '@/components/reusable/InputFiled/InputField';
 import { Eye, EyeOff } from 'lucide-react';
 import * as z from 'zod';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
+import { toast } from 'sonner';
 
 const signInSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -32,14 +35,33 @@ export default function SignInForm({
   onCheckEligibility,
 }: SignInFormProps) {
   const [showPass, setShowPass] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const router = useRouter();
+  const { login } = useAuth();
 
   const form = useForm<SignInFormValues>({
     resolver: zodResolver(signInSchema),
     defaultValues: { email: '', password: '' },
   });
 
-  const onSubmit = (values: SignInFormValues) => {
-    console.log('Login submitted:', values);
+  const onSubmit = async (values: SignInFormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      const result = await login(values.email, values.password);
+      
+      if (result.success) {
+        toast.success('Welcome back! Login successful.');
+        router.push('/profile');
+      } else {
+        toast.error(result.error || 'Login failed. Please try again.');
+      }
+    } catch (error) {
+      toast.error('An unexpected error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -114,9 +136,10 @@ export default function SignInForm({
 
           <button
             type="submit"
-            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm"
+            disabled={isSubmitting}
+            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Sign In
+            {isSubmitting ? 'Signing In...' : 'Sign In'}
           </button>
         </form>
       </Form>

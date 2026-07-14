@@ -1,12 +1,12 @@
 # Blog Data Structure
 
-এই ফোল্ডারে সব blog data JSON ফাইল হিসেবে সংরক্ষিত আছে।
+This folder contains all blog data stored as JSON files.
 
-## 📝 নতুন Blog যোগ করার নিয়ম
+## 📝 Adding a New Blog Post
 
-১. **নতুন JSON ফাইল তৈরি করুন** (যেমন: `my-new-blog.json`)
+### 1. **Create a new JSON file** (e.g., `my-new-blog.json`)
 
-২. **নিচের structure follow করুন:**
+### 2. **Follow the structure below:**
 
 ```json
 {
@@ -39,7 +39,7 @@
 
 ## 🎯 Content Block Types
 
-### 1. **heading** - শিরোনাম
+### 1. **heading** - Section Heading
 ```json
 {
   "id": "unique-id",
@@ -48,7 +48,7 @@
 }
 ```
 
-### 2. **paragraph** - প্যারাগ্রাফ
+### 2. **paragraph** - Paragraph Text
 ```json
 {
   "id": "unique-id",
@@ -58,7 +58,7 @@
 }
 ```
 
-### 3. **imageText** - ছবি + টেক্সট
+### 3. **imageText** - Image with Text
 ```json
 {
   "id": "unique-id",
@@ -76,7 +76,7 @@
 }
 ```
 
-### 4. **steps** - স্টেপ লিস্ট
+### 4. **steps** - Step List
 ```json
 {
   "id": "unique-id",
@@ -94,7 +94,7 @@
 }
 ```
 
-### 5. **bullet** - বুলেট লিস্ট
+### 5. **bullet** - Bullet List
 ```json
 {
   "id": "unique-id",
@@ -107,7 +107,7 @@
 }
 ```
 
-### 6. **quote** - কোট
+### 6. **quote** - Quote Block
 ```json
 {
   "id": "unique-id",
@@ -116,7 +116,7 @@
 }
 ```
 
-### 7. **divider** - বিভাজক লাইন
+### 7. **divider** - Divider Line
 ```json
 {
   "id": "unique-id",
@@ -124,24 +124,107 @@
 }
 ```
 
-## 💡 Tips
+### 8. **number** - Numbered List
+```json
+{
+  "id": "unique-id",
+  "type": "number",
+  "items": [
+    "First item",
+    "Second item",
+    "Third item"
+  ]
+}
+```
 
-- প্রতিটি block এর `id` unique হতে হবে
-- `slug` unique হতে হবে (URL-এ use হবে)
-- Content array-এ blocks যেকোনো order এ add করতে পারেন
-- Image path `/images/blogDetails/` থেকে শুরু হবে
-- Backend ready হলে শুধু `BlogService.enableRealData()` কল করুন
+### 9. **iconGrid** - Icon Grid
+```json
+{
+  "id": "unique-id",
+  "type": "iconGrid",
+  "items": [
+    {
+      "icon": "IconName",
+      "title": "Feature Title",
+      "description": "Feature description..."
+    }
+  ]
+}
+```
+
+### 10. **table** - Comparison Table
+```json
+{
+  "id": "unique-id",
+  "type": "table",
+  "tableData": {
+    "headers": ["Column 1", "Column 2", "Column 3"],
+    "rows": [
+      ["Row 1, Col 1", "Row 1, Col 2", "Row 1, Col 3"],
+      ["Row 2, Col 1", "Row 2, Col 2", "Row 2, Col 3"]
+    ]
+  }
+}
+```
+
+## 💡 Best Practices
+
+- Each block must have a unique `id`
+- The `slug` must be unique (used in URLs)
+- Content blocks can be arranged in any order within the content array
+- Image paths must start with `/images/blogDetails/`
+- Ensure all required fields are populated for each block type
+- Use descriptive IDs for better maintainability
 
 ## 🔄 Backend Integration
 
-Backend API ready হলে:
+When the backend API is ready:
 
 ```typescript
-// lib/services/blog.service.ts এ change করুন
+// Update in lib/services/blog.service.ts
 private static useMockData = false; // Change to false
 
-// অথবা
+// Or use the method
 BlogService.enableRealData();
 ```
 
-তারপর API থেকে data automatically load হবে।
+The system will automatically load data from the API endpoint.
+
+## 📋 Required Fields Checklist
+
+When creating a new blog post, ensure you have:
+
+- [ ] Unique `id` (number)
+- [ ] Unique `slug` (string, URL-friendly)
+- [ ] `title` (string)
+- [ ] `category` (string)
+- [ ] `author` (string)
+- [ ] `date` (string, format: "20 Jan 2026")
+- [ ] `readTime` (string, e.g., "5 mins read")
+- [ ] `heroImage` (string, image path)
+- [ ] `summary` (array of objects with `id` and `title`)
+- [ ] `content` (array of content blocks)
+
+## 🔗 Adding Blog to Blog List
+
+After creating the JSON file, add the blog entry to `lib/data/blogsData.ts`:
+
+```typescript
+{
+  id: 1,
+  image: '/images/blog/img04.png',
+  category: 'Weight Loss',
+  date: '20 Jan 2026',
+  readTime: '5 min read',
+  title: 'Your Blog Title',
+  description: 'Brief description for the blog card...',
+  href: '/blog/your-blog-slug',
+},
+```
+
+## 📍 File Locations
+
+- **Blog Data Files**: `lib/data/blogs/*.json`
+- **Blog List Data**: `lib/data/blogsData.ts`
+- **Blog Types**: `types/blogDetails.ts`
+- **Blog Components**: `components/blogDetails/`
