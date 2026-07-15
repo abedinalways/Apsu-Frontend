@@ -8,6 +8,7 @@ import EnterCodeForm from './EnterCodeForm';
 import SetNewPasswordForm from './SetNewPasswordForm';
 import ForgotPasswordForm from './ForgotPasswordForm';
 import SignInForm from './SignInForm';
+import APSU from '../icons/APSU';
 
 
 type AuthStep =
@@ -56,8 +57,8 @@ export default function LoginPageClient() {
       {/* Right Column: Dynamic Form Area */}
       <div className="flex flex-col justify-center px-6 py-12 sm:px-12 md:px-16 lg:px-20 bg-white relative">
         {/* Mobile Logo */}
-        <div className="md:hidden mb-8">
-          <span className="text-2xl font-bold text-[#142C1E]">Apsu</span>
+        <div className="lg:hidden mb-8">
+          <APSU/>
         </div>
 
         {step === 'verify-email' && (

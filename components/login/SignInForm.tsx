@@ -17,6 +17,7 @@ import * as z from 'zod';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
+import APSU from '../icons/APSU';
 
 const signInSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -66,17 +67,15 @@ export default function SignInForm({
 
   return (
     <div className="w-full max-w-sm mx-auto space-y-6 font-[Work_Sans]">
-      <div className="hidden md:block mb-2">
-        <span className="text-3xl font-bold text-[#142C1E] tracking-tight">
-          Apsu
-        </span>
-      </div>
+      {/* <div className="block md:hidden  mb-2">
+        <APSU/>
+      </div> */}
 
       <div className="space-y-2">
-        <h2 className="text-2xl md:text-[32px] font-semibold text-gray-900 tracking-tight">
+        <h2 className="text-2xl md:text-[28px] font-medium text-gray-900 tracking-tight ">
           Welcome Back
         </h2>
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <p className="text-sm md:text-[1rem] text-gray-500 leading-relaxed">
           Access your treatments, prescriptions, consultations, and order
           updates.
         </p>

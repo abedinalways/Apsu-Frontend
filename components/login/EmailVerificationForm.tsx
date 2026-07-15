@@ -28,9 +28,7 @@ export default function EmailVerificationForm({
   return (
     <div className="w-full max-w-sm mx-auto space-y-6">
       <div className="hidden md:block mb-6">
-        <span className="text-3xl font-bold text-[#142C1E] tracking-tight">
-          Apsu
-        </span>
+        
       </div>
 
       <div className="space-y-2">
