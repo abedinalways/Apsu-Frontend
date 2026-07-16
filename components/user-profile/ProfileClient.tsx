@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
 import EmptyTabState from './EmptyTabState';
 import EditProfileModal from './EditProfileModal';
 import EditIcon from '../icons/EditIcon';
@@ -43,6 +44,7 @@ export default function ProfileClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const activeTab = searchParams.get('tab') || 'my-treatments';
+  const { user, isLoading: isAuthLoading } = useAuth();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -50,20 +52,49 @@ export default function ProfileClient() {
     router.push(`/profile?tab=${tabId}`, { scroll: false });
   };
 
+  // Derive user display info from auth context
+  const userName = user?.name || user?.email?.split('@')[0] || 'User';
+  const userEmail = user?.email || '';
+  const userInitials = userName
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2) || 'US';
+
+  // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!isAuthLoading && !user) {
+      router.replace('/login?redirect=%2Fprofile');
+    }
+  }, [user, isAuthLoading, router]);
+
+  if (isAuthLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="text-gray-500">Loading profile...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return null; // Will redirect via useEffect
+  }
+
   return (
     <div className="space-y-6 font-[Work_Sans] w-full">
       <div className="bg-white border border-[#cddcd3] rounded-[16px] p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 relative">
         <div className="w-24 h-24 md:w-40 md:h-40 md:absolute md:top-6 md:left-4 rounded-full bg-[#102b1c] top-10 flex items-center justify-center text-white text-2xl md:text-3xl font-semibold shrink-0">
-          MO
+          {userInitials}
         </div>
 
         <div className="text-center md:w-full md:mx-auto space-y-3 mt-2">
           <h1 className="text-2xl md:text-[32px] font-medium text-[#142C1E] text-start md:ml-60">
-            Maria Olives
+            {userName}
           </h1>
           <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-3 md:gap-5 text-[14px] text-gray-500">
             <span className="flex items-center gap-1.5">
-              <MessageIcon /> maria@example.com
+              <MessageIcon /> {userEmail}
             </span>
             <span className="flex items-center gap-1.5">
               <CallIcon /> (555)-XXX-XXXX

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu, HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 
@@ -23,6 +23,7 @@ const menuItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const { user, isAuthenticated, logout } = useAuth();
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,6 +44,8 @@ export default function Navbar() {
     logout();
     toast.success('Logged out successfully');
     setProfileDropdownOpen(false);
+    router.push('/');
+    router.refresh();
   };
 
   return (

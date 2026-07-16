@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Image from 'next/image';
 import EmailVerificationForm from './EmailVerificationForm';
 import CreatePasswordForm from './CreatePasswordForm';
@@ -20,13 +20,21 @@ type AuthStep =
   | 'set-new-password';
 
 export default function LoginPageClient() {
-  const [step, setStep] = useState<AuthStep>('verify-email');
+  // Default to sign-in for existing users.
+  // New users reach create-password via "Check your eligibility" link in SignInForm.
+  const [step, setStep] = useState<AuthStep>('sign-in');
   const [userEmail, setUserEmail] = useState<string>('');
 
+  // New user → go to create password
   const handleEmailSubmitted = (email: string) => {
     setUserEmail(email);
-   
     setStep('create-password');
+  };
+
+  // Existing user → go to sign in
+  const handleExistingUser = (email: string) => {
+    setUserEmail(email);
+    setStep('sign-in');
   };
 
   return (
@@ -62,7 +70,10 @@ export default function LoginPageClient() {
         </div>
 
         {step === 'verify-email' && (
-          <EmailVerificationForm onNext={handleEmailSubmitted} />
+          <EmailVerificationForm
+            onNext={handleEmailSubmitted}
+            onExistingUser={handleExistingUser}
+          />
         )}
 
         {step === 'create-password' && (
@@ -73,10 +84,12 @@ export default function LoginPageClient() {
         )}
 
         {step === 'sign-in' && (
-          <SignInForm
-            onForgotPassword={() => setStep('forgot-password')}
-            onCheckEligibility={() => setStep('verify-email')}
-          />
+          <Suspense fallback={null}>
+            <SignInForm
+              onForgotPassword={() => setStep('forgot-password')}
+              onCheckEligibility={() => setStep('verify-email')}
+            />
+          </Suspense>
         )}
 
         {step === 'forgot-password' && (

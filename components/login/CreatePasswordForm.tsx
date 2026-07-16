@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -16,7 +17,6 @@ import {
   PasswordFormValues,
 } from '@/lib/validations/authSchema';
 import { EyeIcon } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
 
@@ -32,7 +32,7 @@ export default function CreatePasswordForm({
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const router = useRouter();
   const { createPassword } = useAuth();
 
@@ -43,14 +43,13 @@ export default function CreatePasswordForm({
 
   const onSubmit = async (values: PasswordFormValues) => {
     setIsSubmitting(true);
-    
+
     try {
       const result = await createPassword(email, values.password);
-      
+
       if (result.success) {
-        toast.success('Account created successfully! Please sign in.');
-        // Go back to sign in form
-        onBack();
+        toast.success('Account created successfully! Welcome to APSU.');
+        router.push('/profile');
       } else {
         toast.error(result.error || 'Failed to create account. Please try again.');
       }
@@ -63,8 +62,6 @@ export default function CreatePasswordForm({
 
   return (
     <div className="w-full max-w-sm mx-auto space-y-6 font-[Work_Sans]">
-      
-
       <div className="space-y-2">
         <h2 className="text-2xl md:text-[32px] font-semibold text-gray-900 tracking-tight">
           Create Your Password
@@ -101,7 +98,7 @@ export default function CreatePasswordForm({
                   >
                     {showPass ? (
                       <span className="text-xs font-semibold bg-gray-100 px-1.5 py-0.5 rounded text-gray-500">
-                       <EyeIcon/>
+                        <EyeIcon />
                       </span>
                     ) : (
                       <svg
@@ -150,7 +147,7 @@ export default function CreatePasswordForm({
                   >
                     {showConfirmPass ? (
                       <span className="text-xs font-semibold bg-gray-100 px-1.5 py-0.5 rounded text-gray-500">
-                        <EyeIcon/>
+                        <EyeIcon />
                       </span>
                     ) : (
                       <svg

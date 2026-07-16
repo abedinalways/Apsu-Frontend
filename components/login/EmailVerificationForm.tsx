@@ -1,28 +1,49 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form } from '@/components/ui/form';
 import InputField from '@/components/reusable/InputFiled/InputField';
 import { emailSchema, EmailFormValues } from '@/lib/validations/authSchema';
+import { authService } from '@/lib/services/auth.service';
 import { toast } from 'sonner';
 
 interface EmailVerificationFormProps {
   onNext: (email: string) => void;
+  onExistingUser: (email: string) => void;
 }
 
 export default function EmailVerificationForm({
   onNext,
+  onExistingUser,
 }: EmailVerificationFormProps) {
+  const [isChecking, setIsChecking] = useState(false);
   const form = useForm<EmailFormValues>({
     resolver: zodResolver(emailSchema),
     defaultValues: { email: '' },
   });
 
-  const onSubmit = (values: EmailFormValues) => {
-    // Demo: Email verification is instant (in production, send verification email)
-    toast.success('Email verified! Please create your password.');
-    onNext(values.email);
+  const onSubmit = async (values: EmailFormValues) => {
+    setIsChecking(true);
+    try {
+      // Check if user already exists
+      const existingUser = authService.doesUserExist(values.email);
+      
+      if (existingUser) {
+        // Existing user → go to sign in
+        toast.success('Welcome back! Please sign in.');
+        onExistingUser(values.email);
+      } else {
+        // New user → send verification email
+        toast.success('Email verified! Please create your password.');
+        onNext(values.email);
+      }
+    } catch (error) {
+      toast.error('Something went wrong. Please try again.');
+    } finally {
+      setIsChecking(false);
+    }
   };
 
   return (
@@ -52,9 +73,10 @@ export default function EmailVerificationForm({
 
           <button
             type="submit"
-            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm"
+            disabled={isChecking}
+            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Verify Email
+            {isChecking ? 'Checking...' : 'Verify Email'}
           </button>
         </form>
       </Form>

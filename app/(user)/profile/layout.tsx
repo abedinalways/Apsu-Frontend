@@ -1,6 +1,4 @@
 import Navbar from "@/components/Navbar";
-import { TwScreenSize } from "@/lib/TwScreenSize";
-import { Toaster } from "sonner";
 
 export default function ProfileLayout({
   children,
@@ -12,7 +10,6 @@ export default function ProfileLayout({
     <Navbar />
       <main className="flex-1">
         {children}
-        <Toaster/>
     </main>
   </div>
 )}

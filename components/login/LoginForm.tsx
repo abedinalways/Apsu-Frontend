@@ -54,7 +54,13 @@ export default function LoginForm() {
     <div className="flex items-center justify-center h-screen bg-white  w-full">
       <div className="w-full max-w-md ">
         {currentStep === 'email' ? (
-          <EmailVerificationForm onNext={handleEmailVerified} />
+          <EmailVerificationForm
+            onNext={handleEmailVerified}
+            onExistingUser={(email) => {
+              setEmail(email);
+              setCurrentStep('password');
+            }}
+          />
         ) : (
           <PasswordCreationForm
             email={email}
