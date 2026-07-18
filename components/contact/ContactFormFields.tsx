@@ -7,8 +7,8 @@ interface Props {
 
 export default function ContactFormFields({ control }: Props) {
   return (
-    <div className="space-y-6">
-      <div className="space-y-3">
+    <div className="space-y-3">
+      <div className="">
         <label className="text-base sm:text-[17px] font-medium text-black block">
           Full Name
         </label>
