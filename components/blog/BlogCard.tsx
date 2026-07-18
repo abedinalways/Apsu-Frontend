@@ -39,15 +39,15 @@ export default function BlogCard({ blog }: BlogCardProps) {
 
       {/* Content */}
 
-      <div className="p-4 rounded-2xl bg-white">
+      <div className="p-4 rounded-2xl bg-white md:h-[250px]">
         {/* Top */}
 
         <div className="mb-3 flex items-center justify-between gap-3">
-          <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#008C5E]">
+          <span className="text-[16px] font-medium uppercase tracking-[0.22em] text-[#008C5E]">
             {category}
           </span>
 
-          <span className="text-xs text-[#7D7D7D] whitespace-nowrap">
+          <span className="text-sm text-[#7D7D7D] whitespace-nowrap">
             {date} • {readTime}
           </span>
         </div>
@@ -57,7 +57,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
         <h3
           className="
           line-clamp-2
-          text-[20px]
+          text-[18px]
           font-medium
           leading-[140%]
           text-[#292B2A]
@@ -72,7 +72,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
           className="
           mt-3
           line-clamp-3
-          text-[15px]
+          text-[16px]
           leading-[170%]
           text-[#666]
         "

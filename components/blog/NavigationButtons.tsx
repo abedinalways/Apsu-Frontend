@@ -37,7 +37,7 @@ export default function NavigationButtons({
         disabled:opacity-40
       "
       >
-        <ArrowLeft size={20} />
+        <ArrowLeft size={16} />
       </button>
 
       <button
@@ -60,7 +60,7 @@ export default function NavigationButtons({
         disabled:opacity-40
       "
       >
-        <ArrowRight size={20} />
+        <ArrowRight size={16} />
       </button>
     </div>
   );

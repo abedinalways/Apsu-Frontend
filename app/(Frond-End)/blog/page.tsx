@@ -10,7 +10,7 @@ import React from 'react'
 export default function BlogPage() {
   return (
     <>
-      <main className=" pt-50">
+      <main className="pt-30 md:pt-50 ">
         <BlogHero />
 
         <div className=" overflow-x-hidden">
@@ -20,7 +20,7 @@ export default function BlogPage() {
         <section className="mt-24 overflow-x-hidden">
           <BlogSection />
         </section>
-        <div className="mt-32">
+        <div className="mt-32 custom-container">
           <RecommendedCarousel />
         </div>
         <div className="mb-30" />

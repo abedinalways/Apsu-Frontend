@@ -3,21 +3,21 @@ import Arrow from '../icons/Arrow';
 
 export default function BlogQuoteCard() {
   return (
-    <div className="decorative-accent rounded-[24px] p-3">
-      <div className="bg-white rounded-[20px] h-full p-6 flex flex-col justify-between">
+    <div className="decorative-accent rounded-[16px] md:rounded-[32px]  p-3">
+      <div className="bg-white rounded-[16px] h-full md:p-6 p-4 flex flex-col justify-between">
         {/* Top */}
-        <div className="flex items-start justify-between gap-4">
-          <span className="text-[11px] uppercase tracking-[0.24em] text-[#0A8A61] font-medium">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <span className="text-[16px] uppercase tracking-[0.13em] text-[#0A8A61] font-normal">
             Multilingual Care
           </span>
 
-          <span className="text-[13px] text-[#6B7280] whitespace-nowrap">
+          <span className="text-[16px] text-[#6B7280] whitespace-nowrap">
             20 Jan 2026 • 5 min read
           </span>
         </div>
 
         {/* Title */}
-        <h3 className="mt-4 text-[22px] leading-[136%] font-medium text-[#292B2A]">
+        <h3 className="mt-4 text-[20px] md:text-[28px] leading-[116%] font-medium text-[#292B2A]">
           Why Healthcare Should Speak Your Language
         </h3>
 

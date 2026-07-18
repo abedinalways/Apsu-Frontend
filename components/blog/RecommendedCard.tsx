@@ -96,13 +96,10 @@ export default function RecommendedCard({ blog }: RecommendedCardProps) {
         max-w-[340px] 
         overflow-hidden
         rounded-t-[12px] 
-        rounded-b-[16px]
-        bg-[#faf9f4] 
-        shadow-card-soft
-        transition-all
-        duration-300
-        hover:-translate-y-2
-        hover:shadow-[0_24px_60px_rgba(0,0,0,.12)]
+        rounded-b-[12px]
+        shadow-custom
+
+      
       "
     >
       {/* Image Container */}
@@ -115,7 +112,7 @@ export default function RecommendedCard({ blog }: RecommendedCardProps) {
         />
       </div>
 
-      <div className="p-5">
+      <div className="p-5 ">
         <div className="mb-4 flex items-center justify-between gap-2">
           <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#008C5E]">
             {blog.category}
