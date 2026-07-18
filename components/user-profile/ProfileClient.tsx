@@ -141,7 +141,7 @@ export default function ProfileClient() {
                 <button
                   key={tab.id}
                   onClick={() => handleTabChange(tab.id)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-[#142C1E] shadow-sm' : 'text-gray-600 hover:text-gray-900 hover:bg-[#F4F3EF]'}`}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-[#142C1E] shadow-sm cursor-pointer' : 'text-gray-600 hover:text-gray-900 hover:bg-[#F4F3EF] cursor-pointer'}`}
                 >
                   {tab.label}
                 </button>
@@ -150,7 +150,7 @@ export default function ProfileClient() {
           </div>
         </div>
 
-        <div className="p-8 min-h-[320px] flex flex-col items-center justify-center">
+        <div className="p-3 md:p-8 min-h-[320px] flex flex-col items-center justify-center ">
           {activeTab === 'my-treatments' && (
             <>
               {treatmentState === 'approved' && (
