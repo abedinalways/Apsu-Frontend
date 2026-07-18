@@ -14,6 +14,7 @@ interface Props {
   name: string;
   label: string;
   placeholder: string;
+  type?: React.HTMLInputTypeAttribute;
 }
 
 export default function InputField({
@@ -21,6 +22,7 @@ export default function InputField({
   name,
   label,
   placeholder,
+  type,
 }: Props) {
   return (
     <FormField
@@ -35,6 +37,7 @@ export default function InputField({
           <FormControl>
             <Input
               {...field}
+              type={type}
               placeholder={placeholder}
               className="h-[48px] md:h-[56px]  px-[14px] py-[8px] rounded-[12px] border-[#b8d9c6] bg-[#faf9f4] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm sm:placeholder:text-[16px] focus-visible:border-[#b8d9c6] focus-visible:ring-0 focus-visible:ring-offset-0 transition-colors"
             />

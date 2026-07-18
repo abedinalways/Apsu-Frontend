@@ -10,7 +10,7 @@ export const blogData: Blog[] = [
     title: 'What to Expect During Your First Weight Loss Consultation',
     description:
       'Discover how online weight loss consultations work and how treatment plans are tailored to your needs.',
-    href: '/blog/weight-loss',
+    href: '/blog/understanding-glp1',
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const blogData: Blog[] = [
     title: "A Beginner's Guide to Modern Birth Control Options",
     description:
       'Understand your birth control options and what factors influence the best choice.',
-    href: '/blog/birth-control',
+    href: '/blog/understanding-glp1',
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ export const blogData: Blog[] = [
     title: "7 Common Reasons You're Not Getting Quality Sleep",
     description:
       'Discover common causes of poor sleep and simple ways to improve your nightly routine.',
-    href: '/blog/sleep',
+    href: '/blog/understanding-glp1',
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ export const blogData: Blog[] = [
     title: 'How Online Healthcare Is Making Treatment More Accessible',
     description:
       'Telehealth is changing the way people connect with healthcare providers. Learn how virtual care offers convenience, privacy, and faster access to treatment.',
-    href: '/blog/online-healthcare',
+    href: '/blog/understanding-glp1',
   },
 
   {
@@ -55,7 +55,7 @@ export const blogData: Blog[] = [
     title: "Women's Preventive Care Checklist",
     description:
       'Regular screenings and preventive care help detect issues early and improve long-term health outcomes.',
-    href: '/blog/womens-preventive-care',
+    href: '/blog/understanding-glp1',
   },
 
   {
@@ -67,6 +67,6 @@ export const blogData: Blog[] = [
     title: 'Choosing the Right Birth Control Method',
     description:
       'Explore common birth control options and learn what factors healthcare providers consider when recommending treatment.',
-    href: '/blog/birth-control-guide',
+    href: '/blog/understanding-glp1',
   },
 ];

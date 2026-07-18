@@ -48,9 +48,9 @@ export default function ImageText({
   );
 
   const text = (
-    <div className="space-y-4">
+    <div className="space-y-4 md:space-y-0">
       {description && (
-        <p className="text-[0.98rem] leading-relaxed text-[#3b3b3c] ">
+        <p className="text-[1.13rem] leading-relaxed text-[#3b3b3c] ">
           {description}
         </p>
       )}

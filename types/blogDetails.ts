@@ -1,3 +1,9 @@
+export interface SourceItem {
+  id: string;
+  title: string;
+  url: string;
+}
+
 export type ContentType =
   | 'heading'
   | 'paragraph'
@@ -9,7 +15,8 @@ export type ContentType =
   | 'divider'
   | 'callout'
   | 'steps'
-  | 'iconGrid';
+  | 'iconGrid'
+  | 'table';
 
 export interface StepItem {
   title: string;
@@ -36,6 +43,10 @@ export interface BlogContentBlock {
   layout?: 'left' | 'right';
 
   steps?: StepItem[];
+  tableData?: {
+    headers: string[];
+    rows: string[][];
+  };
 }
 
 export interface BlogSummaryItem {
@@ -54,4 +65,5 @@ export interface BlogMeta {
   heroImage: string;
   summary: BlogSummaryItem[];
   content: BlogContentBlock[];
+  sources?: SourceItem[];
 }
