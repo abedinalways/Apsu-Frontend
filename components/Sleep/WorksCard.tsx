@@ -1,17 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { cn } from "@/lib/utils";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import {
+  ArrowRight,
   ClipboardList,
-  UserCheck,
+  Headphones,
   Stethoscope,
   Truck,
-  Headphones,
-  ArrowRight,
+  UserCheck,
 } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+import { HeadphonesIcon, TruckIcon } from "../icons/Icons";
 
 const WORKS_STEPS = [
   {
@@ -43,14 +44,14 @@ const WORKS_STEPS = [
     description:
       "Delivered discreetly, with ongoing check-ins and dose support.",
     image: "/images/sleep/work4.png",
-    icon: Truck,
+    icon: TruckIcon,
   },
   {
     id: "step-5",
     title: "24/7 ongoing support",
     description: "Refills, dose check-ins anytime.",
     image: "/images/sleep/work5.png",
-    icon: Headphones,
+    icon: HeadphonesIcon,
   },
 ];
 
@@ -119,7 +120,7 @@ export default function WorksCard() {
                   className={cn(
                     "relative flex flex-col justify-center transition-all duration-300 w-full overflow-hidden",
                     isOpen
-                      ? "bg-[#FAF9F4] rounded-[1.25rem] p-4 shadow-lg"
+                      ? "bg-bgColor rounded-[1.25rem] p-4 shadow-lg"
                       : "bg-transparent p-4 hover:bg-white/5 rounded-[1.25rem]",
                   )}
                 >
@@ -130,8 +131,8 @@ export default function WorksCard() {
                         className={cn(
                           "flex items-center justify-center h-12 w-12 rounded-full transition-all duration-300 shrink-0",
                           isOpen
-                            ? "bg-[#112a1c] text-white shadow-sm"
-                            : "bg-[#B8D9C6] text-[#112a1c]",
+                            ? "bg-primaryColor text-white shadow-sm"
+                            : "bg-[#CDDCD3] text-whiteColor",
                         )}
                       >
                         <StepIcon
@@ -145,7 +146,7 @@ export default function WorksCard() {
                         <span
                           className={cn(
                             "text-lg font-semibold transition-colors duration-300",
-                            isOpen ? "text-[#112a1c]" : "text-[#3a5847]",
+                            isOpen ? "text-primaryColor" : "text-[#3a5847]",
                           )}
                         >
                           {step.title}

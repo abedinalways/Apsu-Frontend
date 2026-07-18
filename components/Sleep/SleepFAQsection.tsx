@@ -38,7 +38,7 @@ function SleepFAQsection() {
     <section className="xl:pb-27 lg:pb-15   relative  ">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="col-span-5 lg:pr-8">
+          <div className="md:col-span-5 lg:pr-8">
             <h2 className="text-3xl md:text-4xl lg:text-[52px] pb-4 font-medium text-primaryColor">
               Frequently Asked Questions
             </h2>
@@ -56,7 +56,7 @@ function SleepFAQsection() {
               </div>
             </div>
           </div>
-          <div className="col-span-7">
+          <div className="md:col-span-7">
             <Accordion type="single" collapsible className="space-y-4">
               {items.map((item) => (
                 <FAQAccordion key={item.id} item={item} />

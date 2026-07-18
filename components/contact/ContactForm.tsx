@@ -1,33 +1,32 @@
-'use client';
+"use client";
 
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 
-import { zodResolver } from '@hookform/resolvers/zod';
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Form } from '@/components/ui/form';
+import { Form } from "@/components/ui/form";
 
 import {
   ContactFormValues,
   contactSchema,
-} from '@/lib/validations/contactSchema';
+} from "@/lib/validations/contactSchema";
 
-import ContactFormFields from './ContactFormFields';
-import ContactFooterInfo from './ContactFooterInfo';
+import ContactFooterInfo from "./ContactFooterInfo";
+import ContactFormFields from "./ContactFormFields";
 
-import ButtonWithArrow from '@/components/reusable/button/ReusableButton';
-import Button from '@/components/reusable/button/ReusableButton';
+import PrimaryButton from "../reusable/button/PrimaryButton";
 
 export default function ContactForm() {
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
 
     defaultValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
     },
   });
 
@@ -45,7 +44,7 @@ export default function ContactForm() {
           <ContactFormFields control={form.control} />
 
           <div className="w-full mx-auto flex justify-center py-4">
-            <Button text="Submit Request" href="/submit" />
+            <PrimaryButton text="Submit Request" type="submit" />
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-end gap-4 pt-2">
             <div className="w-full sm:w-auto order-2 sm:order-1">

@@ -1,13 +1,8 @@
-import React from "react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
-import {
-  UserCheck,
-  Stethoscope,
-  FileText,
-  Truck,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight, Stethoscope, UserCheck } from "lucide-react";
+import Image from "next/image";
+import React from "react";
+import { CapsulIcon, TruckIcon } from "../icons/Icons";
 
 export interface PricingFeature {
   label: string;
@@ -45,8 +40,8 @@ export interface PricingCardSectionProps {
 const defaultFeatures: PricingFeature[] = [
   { label: "Eligibility check", icon: UserCheck },
   { label: "Physician consult", icon: Stethoscope },
-  { label: "Prescription", icon: FileText },
-  { label: "Shipping", icon: Truck },
+  { label: "Prescription", icon: CapsulIcon },
+  { label: "Shipping", icon: TruckIcon },
 ];
 
 export default function PricingCardSection({
@@ -68,7 +63,7 @@ export default function PricingCardSection({
   return (
     <section
       className={cn(
-        "relative w-full min-h-[800px] flex items-center py-12 md:py-20 px-4 md:px-12 lg:px-24 overflow-hidden",
+        "relative w-full min-h-[800px] flex items-center py-12 md:py-20   overflow-hidden",
         className,
       )}
     >
@@ -78,7 +73,7 @@ export default function PricingCardSection({
           src={bgImageUrl}
           alt={bgImageAlt}
           fill
-          className="object-fill"
+          className="lg:object-fill object-cover "
           priority
         />
         {/* <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent" /> */}
@@ -99,23 +94,25 @@ export default function PricingCardSection({
         </div>
 
         {/* Right Side: Care Plan Floating White Card Surface block */}
-        <div className="md:col-span-6 bg-white rounded-3xl p-6 md:p-8 shadow-2xl max-w-md w-full justify-self-center md:justify-self-end text-zinc-900">
-          <h3 className="text-xl font-bold text-[#0B251A] mb-2">{planName}</h3>
+        <div className="md:col-span-6 bg-white rounded-3xl p-6 md:p-8 shadow-2xl max-w-md w-full justify-self-center md:justify-self-end text-headerColor">
+          <h3 className="text-xl font-medium md:text-2xl text-primaryColor mb-2">
+            {planName}
+          </h3>
 
-          <p className="text-xs md:text-sm text-zinc-500 font-medium leading-relaxed mb-6">
+          <p className="text-base md:text-lg text-descriptionColor leading-[160%] mb-6">
             {planDescription}
           </p>
 
           {/* Pricing Highlight Embedded Banner */}
-          <div className="bg-[#FAF9F6] rounded-2xl p-5 mb-6 space-y-2">
-            <p className="text-xs font-semibold text-[#0B251A] tracking-tight">
+          <div className="bg-bgColor rounded-2xl p-5 mb-6 space-y-2">
+            <p className="text-base md:text-lg lg:text-xl font-semibold text-primaryColor tracking-tight">
               {priceLabel}
             </p>
-            <div className="flex items-baseline text-[#0F5A3E]">
-              <span className="text-3xl md:text-4xl font-bold tracking-tight">
+            <div className="flex items-baseline text-greenColor">
+              <span className="text-3xl md:text-4xl lg:text-5xl font-medium ">
                 {priceAmount}
               </span>
-              <span className="text-sm font-semibold ml-0.5 text-zinc-600">
+              <span className="text-base md:text-lg font-semibold ml-0.5">
                 {pricePeriod}
               </span>
             </div>
@@ -123,10 +120,10 @@ export default function PricingCardSection({
             {/* Action CTA Submission Button component frame */}
             <button
               onClick={onButtonClick}
-              className="w-full mt-3 bg-[#102B1C] hover:bg-[#102B1C]/70 transition-all text-white rounded-full py-3 px-5 text-xs font-bold flex items-center justify-between shadow-md group"
+              className="w-full mt-3 bg-primaryColor hover:bg-primaryColor/70 transition-all text-white rounded-full py-3 px-4 lg:px-5 text-xs md:text-base font-medium flex items-center justify-between shadow-md group"
             >
               <span>{buttonText}</span>
-              <div className="bg-white text-[#0B251A] rounded-full p-1 group-hover:translate-x-0.5 transition-transform">
+              <div className="bg-white text-primaryColor rounded-full p-1 group-hover:translate-x-0.5 transition-transform">
                 <ArrowRight className="h-3.5 w-3.5" strokeWidth={3} />
               </div>
             </button>
@@ -134,7 +131,7 @@ export default function PricingCardSection({
 
           {/* Checklist Feature Section Container */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold text-zinc-800 tracking-wide">
+            <h4 className="text-md md:text-base font-medium text-zinc-800 tracking-wide">
               {featuresTitle}
             </h4>
 
@@ -144,11 +141,11 @@ export default function PricingCardSection({
                 return (
                   <li
                     key={idx}
-                    className="flex items-center gap-3 text-xs font-medium text-zinc-600"
+                    className="flex items-center gap-3 text-md md:text-base  text-descriptionColor"
                   >
                     {IconComponent ? (
                       <IconComponent
-                        className="h-4 w-4 text-zinc-500 shrink-0"
+                        className="h-4 w-4 text-blackColor shrink-0"
                         strokeWidth={2}
                       />
                     ) : (

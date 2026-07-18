@@ -1,6 +1,7 @@
 import { BlogMeta } from '@/types/blogDetails';
 import Image from 'next/image';
 import BlogRenderer from './BlogRenderer';
+import Sources from './Sources';
 
 
 interface Props {
@@ -43,10 +44,19 @@ export default function BlogArticle({ blog }: Props) {
 
       {/* Content */}
 
-      <div className="mt-10 space-y-10 font-[Work_Sans]">
-        {blog.content.map(section => (
-          <BlogRenderer key={section.id} section={section} />
-        ))}
+      <div className="mt-10 font-[Work_Sans]">
+        {blog.content.map((section, index) => {
+          // Add extra spacing after imageText blocks to prevent overlap
+          const isAfterImageText = index > 0 && blog.content[index - 1].type === 'imageText';
+          const spacingClass = isAfterImageText ? 'mt-2' : 'mt-10';
+          
+          return (
+            <div key={section.id} className={index === 0 ? '' : spacingClass}>
+              <BlogRenderer section={section} />
+              
+            </div>
+          );
+        })}
       </div>
     </article>
   );
