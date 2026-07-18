@@ -6,13 +6,13 @@ import FAQFooter from '@/components/faq/FAQFooter';
 export default function ContactPage() {
   return (
     <>
-      <main className=" pt-50">
+      <main className="pt-30 md:pt-50">
         <ContactHero />
 
         <div className=" overflow-x-hidden">
           <ContactContent />
         </div>
-        <div className="mb-30" />
+        <div className="mb-14 md:mb-30" />
       </main>
       <FAQFooter />
     </>

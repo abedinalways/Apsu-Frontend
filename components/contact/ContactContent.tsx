@@ -16,7 +16,9 @@ export default function ContactContent() {
     >
       <ContactImageCard />
 
-      <ContactForm />
+      <div className=' h-full'>
+        <ContactForm />
+      </div>
     </section>
   );
 }
