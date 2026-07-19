@@ -6,7 +6,7 @@ export default function BlogQuoteCard() {
     <div className="decorative-accent rounded-[16px] md:rounded-[32px]  p-3">
       <div className="bg-white rounded-[16px] h-full md:p-6 p-4 flex flex-col justify-between">
         {/* Top */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           <span className="text-[16px] uppercase tracking-[0.13em] text-[#0A8A61] font-normal">
             Multilingual Care
           </span>
