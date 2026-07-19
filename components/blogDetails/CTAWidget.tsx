@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { X } from 'lucide-react';
 import ThumbnailIcon from '../icons/TumbnailIcon';
 import ReusableButton from '../reusable/button/ReusableButton';
+import PrimaryButton from '../reusable/button/PrimaryButton';
 
 export default function CTAWidget() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -52,8 +53,8 @@ export default function CTAWidget() {
           Start your journey today
         </h4>
 
-        <div className="max-h-fit pt-4">
-          <ReusableButton
+        <div className="max-h-fit pt-4 flex items-center justify-center">
+          <PrimaryButton
             text="Get Started with APSU"
             href="/"
             className="whitespace-nowrap"

@@ -20,7 +20,7 @@ export default function BlogContent() {
         <BlogImageCard />
       </div>
 
-      <div className="flex flex-col justify-between gap-6 w-full h-full">
+      <div className="flex flex-col gap-4  justify-between w-full h-full">
         {featuredBlogs.map(blog => (
           <BlogContentCard key={blog.id} {...blog} />
         ))}
