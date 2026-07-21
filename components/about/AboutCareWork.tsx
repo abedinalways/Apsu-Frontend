@@ -63,7 +63,7 @@ function AboutCareWork() {
         <div className="">
           <div className="text-center mb-10 lg:mb-16">
             <CommonHeader
-              sectionName="HOW CAREWORKS"
+              sectionName="HOW CARE WORKS"
               title="From your words to your door only in 4 steps."
             />
           </div>
