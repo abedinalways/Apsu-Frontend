@@ -17,7 +17,7 @@ function AboutExist() {
     },
   ];
   return (
-    <section className="xl:py-27 lg:py-15  pt-14 relative  ">
+    <section className="xl:py-27 lg:py-15  py-14 relative  ">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className=" lg:pr-8">

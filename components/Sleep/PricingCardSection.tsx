@@ -63,7 +63,7 @@ export default function PricingCardSection({
   return (
     <section
       className={cn(
-        "relative w-full min-h-[800px] flex items-center py-12 md:py-20   overflow-hidden",
+        "relative w-full min-h-200  flex items-center py-12 md:py-20   overflow-hidden",
         className,
       )}
     >
@@ -73,7 +73,7 @@ export default function PricingCardSection({
           src={bgImageUrl}
           alt={bgImageAlt}
           fill
-          className="lg:object-fill object-cover "
+          className="object-cover "
           priority
         />
         {/* <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent" /> */}

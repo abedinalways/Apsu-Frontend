@@ -1,14 +1,14 @@
+import koteImage from "@/public/images/about/kote.png";
 import Image from "next/image";
 import { HiArrowLongDown } from "react-icons/hi2";
 import { LightIcon, SourceIcon, WaterIcon } from "../icons/Icons";
-import koteImage from "@/public/images/about/kote.png"
 function AboutApsu() {
   return (
     <div>
       <div className="container bg-whiteColor rounded-xl lg:rounded-2xl p-4 lg:p-6">
         <div className="text-center">
           <h4 className="text-base text-greenColor mb-3">THE NAME</h4>
-          <p className="text-base md:text-lg max-w-[872px] mx-auto text-descriptionColor">
+          <p className="text-base md:text-lg max-w-218 mx-auto text-descriptionColor">
             Long before clinics, before pharmacies, before the word “medicine”
             existed in any language we'd recognize, the Sumerians had a word for
             the source of all life.
@@ -103,9 +103,16 @@ function AboutApsu() {
           </p>
 
           <div className="mt-8 lg:mt-12 max-w-[872px] mx-auto">
-            <div className=" flex items-start gap-0.5 md:gap-2">
-            <Image src={koteImage} alt="Kote" width={64} height={64} className="h-auto w-auto"/>
-              <h2 className="text-3xl md:text-4xl lg:text-[40px] leading-[110%] font-medium tracking-tight">
+            <div className="  ">
+              <Image
+                src={koteImage}
+                alt="Kote"
+                width={64}
+                height={64}
+                className="lg:h-auto  h-10 inline-block  -mt-5 -ml-5 w-auto"
+              />
+              <h2 className="text-3xl inline md:text-4xl lg:text-[40px] leading-[110%] font-medium tracking-tight">
+                {" "}
                 <span className="text-greenColor font-semibold">
                   Water and Knowledge.
                 </span>{" "}

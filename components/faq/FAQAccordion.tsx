@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import type { FAQItem } from '@/types/faq';
+import type { FAQItem } from "@/types/faq";
 
 import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from "@/components/ui/accordion";
 
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from "lucide-react";
 
 interface Props {
   item: FAQItem;
@@ -30,7 +30,7 @@ export function FAQAccordion({ item }: Props) {
       <AccordionTrigger
         className="
           group
-
+          cursor-pointer
           px-4 sm:px-6
           py-4 sm:py-5
 

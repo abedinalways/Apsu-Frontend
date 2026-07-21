@@ -47,7 +47,7 @@ function HomeFAQ() {
             />
           </div>
           <div className="col-span-7">
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-4 ">
               {items.map((item) => (
                 <FAQAccordion key={item.id} item={item} />
               ))}
