@@ -8,7 +8,7 @@ function AboutApsu() {
       <div className="container bg-whiteColor rounded-xl lg:rounded-2xl p-4 lg:p-6">
         <div className="text-center">
           <h4 className="text-base text-greenColor mb-3">THE NAME</h4>
-          <p className="text-base md:text-lg max-w-[872px] mx-auto text-descriptionColor">
+          <p className="text-base md:text-lg max-w-218 mx-auto text-descriptionColor">
             Long before clinics, before pharmacies, before the word “medicine”
             existed in any language we'd recognize, the Sumerians had a word for
             the source of all life.

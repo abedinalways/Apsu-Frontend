@@ -1,4 +1,8 @@
 "use client";
+import mobile1 from "@/public/images/about/mobile1.png";
+import mobile2 from "@/public/images/about/mobile2.png";
+import mobile3 from "@/public/images/about/mobile3.png";
+import mobile4 from "@/public/images/about/mobile4.png";
 import care1 from "@/public/images/about/care1.png";
 import care2 from "@/public/images/about/care2.png";
 import care3 from "@/public/images/about/care3.png";
@@ -18,6 +22,7 @@ export interface SlideItem {
   title: string;
   description: string;
   mainImage: string | StaticImageData;
+  mobileImage: string | StaticImageData;
 }
 
 function AboutCareWork() {
@@ -30,6 +35,7 @@ function AboutCareWork() {
       title: "Choose your program",
       description: "Weight loss, birth control, or sleep — pick what you need.",
       mainImage: care1,
+      mobileImage: mobile1,
     },
     {
       id: 2,
@@ -38,6 +44,7 @@ function AboutCareWork() {
       description:
         "Complete your intake in the language you think in. We translate it for your physician.",
       mainImage: care2,
+      mobileImage: mobile2,
     },
     {
       id: 3,
@@ -46,6 +53,7 @@ function AboutCareWork() {
       description:
         "A U.S.-licensed doctor evaluates, follows up, and prescribes only when it's clinically appropriate.",
       mainImage: care3,
+      mobileImage: mobile3,
     },
     {
       id: 4,
@@ -54,6 +62,7 @@ function AboutCareWork() {
       description:
         "Delivered to your door in discreet packaging. Cash-pay, no insurance needed.",
       mainImage: care4,
+      mobileImage: mobile4,
     },
   ];
 
