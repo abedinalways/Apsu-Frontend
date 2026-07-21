@@ -52,7 +52,7 @@ function BirthControll() {
               alt="Weight Loss"
               width={700}
               height={500}
-              className="w-[324px] xl:w-[392.5px]"
+              className="md:w-81 w-45 xl:w-[392.5px]"
             />
           </div>
         </div>
