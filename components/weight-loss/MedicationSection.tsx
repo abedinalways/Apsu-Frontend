@@ -80,7 +80,7 @@ export default function MedicationSection({
                     <button className="bg-white hover:bg-gray-50 text-[#0C2417] px-4 py-2 rounded-full border border-gray-100 flex items-center gap-2 text-xs md:text-sm font-semibold transition-all shadow-[0_2px_8px_rgba(0,0,0,0.04)] cursor-pointer max-w-fit">
                       Check eligibility
                       <div className="w-5 h-5 bg-[#0C2417] rounded-full flex items-center justify-center text-white">
-                        <ArrowRight className="w-3 h-3 stroke-[3]" />
+                        <ArrowRight className="w-3 h-3 stroke-3" />
                       </div>
                     </button>
                   </div>
