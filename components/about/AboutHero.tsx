@@ -7,9 +7,9 @@ function AboutHero() {
     <div className="pb-14 lg:pb-30">
       <div className="container">
         <div className=" grid grid-cols-1 lg:grid-cols-2 pt-28 md:pt-40 gap-4 pb-8 md:pb-12 space-y-3">
-          <div>
+          <div className="text-center lg:text-start">
             <h4 className="text-base text-greenColor mb-3">ABOUT US</h4>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-[72px] leading-[110%] font-medium tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-[72px] leading-[110%] font-medium tracking-tight">
               Care{" "}
               <span className="text-greenColor font-semibold">
                 shouldn't get lost
@@ -17,7 +17,7 @@ function AboutHero() {
               in translation.
             </h2>
           </div>
-          <div className="space-y-6 flex flex-col items-center lg:items-start">
+          <div className="space-y-6 text-center lg:text-start flex flex-col items-center lg:items-start">
             <p className="text-descriptionColor text-base md:text-xl tracking-wide">
               APSU is American telehealth built for the tens of millions of
               people who live, work, and raise families here in a language other
@@ -33,7 +33,7 @@ function AboutHero() {
             alt="About Us"
             width={2000}
             height={1000}
-            className="w-full h-full rounded-xl md:rounded-2xl  lg:rounded-[56px] overflow-hidden"
+            className="w-full h-full rounded-2xl  lg:rounded-[56px] overflow-hidden"
           />
         </div>
       </div>

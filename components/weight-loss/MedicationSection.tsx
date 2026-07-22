@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import WhiteCustomButton from "../reusable/button/WhiteCustomButton";
 
 export interface MedicationItem {
   id: number;
@@ -35,7 +36,7 @@ export default function MedicationSection({
                 className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch"
               >
                 <div
-                  className={`${sectionBgColor} rounded-2xl p-4 md:p-6 lg:p-8 flex flex-col justify-between shadow-[0_2px_8px_rgba(2,31,24,0.02)] min-h-[380px] ${
+                  className={`${sectionBgColor} rounded-2xl p-4 md:p-6 lg:p-8 flex flex-col justify-between shadow-[0_2px_8px_rgba(2,31,24,0.02)] min-h-95 ${
                     isEven ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
@@ -46,7 +47,7 @@ export default function MedicationSection({
                     <h3 className="text-3xl md:text-4xl lg:text-[52px] font-semibold tracking-tight text-primaryColor">
                       {item.name}
                     </h3>
-                    <p className="text-base  text-descriptionColor !mt-1">
+                    <p className="text-base  text-descriptionColor mt-1!">
                       {item.brandInfo}
                     </p>
 
@@ -58,7 +59,7 @@ export default function MedicationSection({
                           className="flex items-start gap-3 text-lg md:text-xl text-headerColor/90 leading-relaxed"
                         >
                           <div className="mt-2 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-greenColor text-white">
-                            <Check className="h-2.5 w-2.5 stroke-[3]" />
+                            <Check className="h-2.5 w-2.5 stroke-3" />
                           </div>
                           <span>{feature}</span>
                         </li>
@@ -77,12 +78,10 @@ export default function MedicationSection({
                         /mo
                       </span>
                     </h4>
-                    <button className="bg-white hover:bg-gray-50 text-[#0C2417] px-4 py-2 rounded-full border border-gray-100 flex items-center gap-2 text-xs md:text-sm font-semibold transition-all shadow-[0_2px_8px_rgba(0,0,0,0.04)] cursor-pointer max-w-fit">
-                      Check eligibility
-                      <div className="w-5 h-5 bg-[#0C2417] rounded-full flex items-center justify-center text-white">
-                        <ArrowRight className="w-3 h-3 stroke-3" />
-                      </div>
-                    </button>
+                    <WhiteCustomButton
+                      text="Check eligibility"
+                      className="w-full md:w-auto"
+                    />
                   </div>
                 </div>
 
