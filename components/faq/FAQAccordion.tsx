@@ -21,7 +21,7 @@ export function FAQAccordion({ item }: Props) {
       className="
         overflow-hidden
         rounded-2xl
-        border
+        border  hover:bg-[#586E60] hover:text-whiteColor transition-all
         border-[#E7E2D9]
         bg-white
         shadow-[0_6px_18px_rgba(0,0,0,.04)]
