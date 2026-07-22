@@ -1,6 +1,7 @@
 import React from 'react';
 import ArrowIcon from '../icons/ArrowIcon';
 import Button from '../reusable/button/ReusableButton';
+import PrimaryButton from '../reusable/button/PrimaryButton';
 
 export default function ContactCard() {
   return (
@@ -11,7 +12,7 @@ export default function ContactCard() {
       <p className="text-base sm:text-lg leading-[160%] text-secondary-charcol-700">
         If you didn't find your answer, feel free to reach out.
       </p>
-      <Button text="Contact Us" href="/contact" />
+      <PrimaryButton text='Contact Us' href='/contact'/>
     </div>
   );
 }

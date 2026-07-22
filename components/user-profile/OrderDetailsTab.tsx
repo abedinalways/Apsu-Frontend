@@ -81,7 +81,7 @@ export default function OrderDetailsTab() {
         </p>
       </div>
 
-      <div className="w-full overflow-x-auto rounded-[12px] mt-6 border border-[#EBEAE4] bg-white">
+      <div className="w-full overflow-x-auto rounded-[12px] mt-6 border border-[#EBEAE4] bg-white ">
         <table className="w-full border-collapse text-left min-w-[750px]">
           <thead>
             <tr className="bg-[#ecf9f1] text-[#102b1c] font-medium text-sm">
@@ -115,7 +115,7 @@ export default function OrderDetailsTab() {
                 </td>
                 <td className="p-4">
                   <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${order.status === 'Not Approved' ? 'text-[#EF4444] border border-[#FEE2E2] bg-[#FEF2F2]' : 'text-[#bb4e02] border border-[#fde99f] bg-[#FFF9EC]'}`}
+                    className={`md:px-3 py-1 rounded-full   line-clamp-none md:line-clamp-2 w-fit text-center md:text-start  text-xs font-medium ${order.status === 'Not Approved' ? 'text-[#EF4444] border border-[#FEE2E2] bg-[#FEF2F2]' : 'text-[#bb4e02] border border-[#fde99f] bg-[#FFF9EC]'}`}
                   >
                     {order.status}
                   </span>

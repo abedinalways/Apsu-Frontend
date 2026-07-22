@@ -70,7 +70,7 @@ export default function RecommendedCarousel() {
     useRecommendedCarousel(emblaApi);
 
   return (
-    <section ref={sectionRef} className="rounded-[32px] bg-white p-8  mx-10">
+    <section ref={sectionRef} className="rounded-[32px] bg-white p-8 ">
       <RecommendedHeader
         prevDisabled={prevDisabled}
         nextDisabled={nextDisabled}
@@ -79,7 +79,7 @@ export default function RecommendedCarousel() {
       />
 
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-6">
+        <div className="flex gap-6 p-3">
           {recommendedBlogs.map(blog => (
             <div
               key={blog.id}

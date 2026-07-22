@@ -45,7 +45,7 @@
   --color-primaryColor: var(--primaryColor); /* used as --primaryColor */
   --color-secondaryColor: var(--color-secondary-charcol-900);
   --color-blackColor: #070707;
-  --color-borderColor: #CDDCD3;
+  --color-borderColor: #cddcd3;
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
   --color-greenBgColor: rgba(188, 255, 230, 0.8);
@@ -252,16 +252,17 @@ html {
   scroll-behavior: smooth;
 }
 
-.tab-bg{
+.tab-bg {
   background: rgba(232, 243, 237, 0.92);
 }
 
-.shadow{
-  box-shadow: 0 4px 22px 0 rgba(2, 29, 23, 0.08)
+.shadow {
+  box-shadow: 0 4px 22px 0 rgba(2, 29, 23, 0.08);
 }
 
 @keyframes ripple {
-  0%, 100% {
+  0%,
+  100% {
     scale: 1;
     opacity: 1;
   }
@@ -279,4 +280,12 @@ html {
 }
 .animate-ripple-3 {
   animation: ripple 3s ease-in-out infinite 1s;
+}
+.shadow-custom {
+  box-shadow:
+    1px 1px 10px 0 rgba(0, 0, 0, 0.1),
+    2px 3px 4px 0 rgba(0, 0, 0, 0.09),
+    5px 7px 5px 0 rgba(0, 0, 0, 0.05),
+    9px 13px 6px 0 rgba(0, 0, 0, 0.01),
+    15px 20px 7px 0 rgba(0, 0, 0, 0);
 }

@@ -10,6 +10,7 @@ import BlogToolbar from './BlogToolbar';
 import { blogCategories } from '@/types/blogCategories';
 import { blogsData } from '@/lib/data/blogsData';
 import ReusableButton from '../reusable/button/ReusableButton';
+import PrimaryButton from '../reusable/button/PrimaryButton';
 
 const INITIAL_VISIBLE = 4;
 
@@ -63,7 +64,7 @@ export default function BlogSection() {
 
       {hasMore && (
         <div className="flex justify-center mt-4 cursor-pointer ">
-          <ReusableButton
+          <PrimaryButton
             text="See More"
             onClick={() => setVisibleCount(prev => prev + 4)}
           />
