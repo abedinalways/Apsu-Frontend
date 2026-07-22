@@ -1,4 +1,5 @@
 import WeightImage from "@/public/images/WeightLossQuestion-3.png";
+import WeightMobile from "@/public/images/sleep-mobile.png";
 import Image from "next/image";
 import CommonHeader from "../reusable/CommonHeader";
 
@@ -19,7 +20,14 @@ function SleepQuestion() {
           alt="Weight Loss"
           width={800}
           height={600}
-          className="w-full h-full"
+          className="w-full h-full lg:block hidden"
+        />
+        <Image
+          src={WeightMobile}
+          alt="Weight Loss"
+          width={800}
+          height={600}
+          className="w-full h-full lg:hidden"
         />
       </div>
     </div>

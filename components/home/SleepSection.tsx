@@ -12,8 +12,8 @@ function SleepSection() {
   ];
   return (
     <div>
-      <div className="xl:py-27 lg:py-15 pt-4 relative px-3 md:px-6 mt-30 lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-[#D0FFFD] rounded-2xl lg:rounded-4xl">
-        <div className="relative flex h-full items-end w-full mt-2 lg:mt-0">
+      <div className="xl:py-27 lg:py-15 pt-4 gap-4 relative px-3 md:px-6 mt-30 lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-[#D0FFFD] rounded-2xl lg:rounded-4xl">
+        <div className="relative flex h-full items-end order-2 lg:order-1 w-full mt-2 lg:mt-0">
           <div className="lg:absolute flex justify-center w-full  lg:-top-21.5 xl:-top-43.75 lg:left-2 left-4 ">
             <Image
               src={weightImg}
@@ -27,7 +27,7 @@ function SleepSection() {
             <ProfileStatusCards />
           </div>
         </div>
-        <div>
+        <div className="order-1 lg:order-2">
           <div className="">
             <h3 className="text-3xl md:text-4xl max-w-153 leading-[124%] xl:text-[52px] font-medium tracking-tight mb-5">
               Sleep
@@ -58,7 +58,12 @@ function SleepSection() {
                 /month
               </p>
             </div>
-            <WhiteCustomButton text="Start your sleep consult" />
+            <div className="flex justify-center md:justify-start w-full">
+              <WhiteCustomButton
+                text="Start your sleep consult"
+                className=" w-full md:w-auto"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -37,12 +37,15 @@ function SleepFAQsection() {
   return (
     <section className="xl:pb-27 lg:pb-15   relative  ">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-5 lg:pr-8">
-            <h2 className="text-3xl md:text-4xl lg:text-[52px] pb-4 font-medium text-primaryColor">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <h2 className="text-3xl md:text-4xl lg:hidden lg:text-[52px] border-b border-borderColor pb-4 font-medium text-primaryColor">
+            Frequently Asked Questions
+          </h2>
+          <div className="lg:col-span-5 order-2 lg:order-1 lg:pr-8">
+            <h2 className="text-3xl hidden lg:block md:text-4xl lg:text-[52px] border-b border-borderColor pb-4 font-medium text-primaryColor">
               Frequently Asked Questions
             </h2>
-            <div className="pt-6 border-t border-borderColor">
+            <div className="pt-6 text-center lg:text-start ">
               <div className="bg-white shadow-lg p-4 md:p-6 rounded-xl md:rounded-2xl">
                 <h4 className="text-lg md:text-xl lg:text-2xl font-medium text-headerColor">
                   Still have questions?
@@ -56,7 +59,7 @@ function SleepFAQsection() {
               </div>
             </div>
           </div>
-          <div className="md:col-span-7">
+          <div className="lg:col-span-7 order-1 lg:order-2">
             <Accordion type="single" collapsible className="space-y-4">
               {items.map((item) => (
                 <FAQAccordion key={item.id} item={item} />

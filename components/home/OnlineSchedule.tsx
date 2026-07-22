@@ -48,12 +48,6 @@ const ScheduleSlider = () => {
       image: image4,
       isDarkText: true,
     },
-    {
-      id: 5,
-      title: "Access to FDA-approved Medication Options",
-      image: image2,
-      isDarkText: false,
-    },
   ];
 
   return (

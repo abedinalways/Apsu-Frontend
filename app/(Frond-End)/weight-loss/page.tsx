@@ -38,8 +38,8 @@ function page() {
     <div>
       <CommonHero
         features={featuresData}
-        title="Weight Loss Solutions"
-        subtitle="Personalized Care for Your Journey"
+        title="Lose weight with GLP-1"
+        subtitle="Explained in your language."
         description="GLP-1 medications are prescription treatments that help regulate appetite and blood sugar levels. By helping you feel fuller for longer and reducing hunger, they may support weight loss when combined with healthy lifestyle changes. A licensed provider can help determine whether a GLP-1 medication is appropriate for your individual needs."
       />
       <ProgramPricingSection />

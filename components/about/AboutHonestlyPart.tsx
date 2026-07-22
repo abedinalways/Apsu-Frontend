@@ -1,4 +1,5 @@
 import honestyImg from "@/public/images/about/Frame 2147240890.jpg";
+import mobileImg from "@/public/images/about/aboutmobile.png";
 import { Clock, Stethoscope } from "lucide-react"; // আপনার প্রজেক্টের সঠিক আইকন ব্যবহার করুন
 import Image from "next/image";
 import { GlobalIcon } from "../icons/Icons";
@@ -29,11 +30,21 @@ function AboutHonestlyPart() {
     <div className="relative w-full min-h-305 md:min-h-200 lg:min-h-225 f overflow-hidden  py-16 md:py-24 px-4 md:px-0 lg:px-8">
       {/* --- BACKGROUND IMAGE USING NEXT/IMAGE --- */}
       <Image
+        src={mobileImg}
+        alt="About Honestly Background"
+        width={2500}
+        height={1000}
+        className="w-full h-full  absolute top-0 left-0 z-0 md:hidden"
+        style={{
+          objectPosition: `${30}% ${10}%`,
+        }}
+      />
+      <Image
         src={honestyImg}
         alt="About Honestly Background"
         width={2500}
         height={1000}
-        className=" w-full h-full object-cover absolute top-0 left-0 z-0"
+        className="w-full h-full object-cover absolute top-0 left-0 z-0 hidden md:block"
         style={{
           objectPosition: `${30}% ${10}%`,
         }}

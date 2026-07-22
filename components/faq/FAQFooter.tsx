@@ -3,11 +3,11 @@ import PrimaryButton from "../reusable/button/PrimaryButton";
 
 export default function FAQFooter() {
   return (
-    <div className=" pt-14 lg:pt-0">
-      <div className="   bg-whiteColor rounded-t-4xl mx-auto px-4 pb-5 md:pb-10 lg:pb-22">
-        <div className="max-w-[1376px] mx-auto  md:pt-8 pt-6  ">
-          <div className="faq_footer_bg relative rounded-[16px]  md:py-8 flex flex-col justify-between px-6 py-6  ">
-            <h2 className="text-[#fff] text-[48px]  font-medium leading-[124%]  text-center md:text-start mb-4">
+    <div className="pt-14 lg:pt-0">
+      <div className="  bg-whiteColor rounded-t-4xl mx-auto px-4 pb-5 md:pb-8 lg:pb-18">
+        <div className="max-w-344 mx-auto  md:pt-8 lg:pt-14 pt-6  ">
+          <div className="faq_footer_bg relative rounded-2xl  md:py-8 flex flex-col justify-between px-6 py-6  ">
+            <h2 className="text-white text-[48px]  font-medium leading-[124%]  text-center md:text-start mb-4">
               Healthcare that speaks <br />
               your language
             </h2>
@@ -21,11 +21,11 @@ export default function FAQFooter() {
                 <PrimaryButton text="Start a free consultation" type="button" />
               </div>
             </div>
-            <div className="absolute max-w-[823px] h-62.5  bottom-0 left-1/2 -translate-x-1/2 w-full ">
+            <div className="absolute max-w-205.75 h-62.5  bottom-0 left-1/2 -translate-x-1/2 w-full ">
               <Image
                 width={823}
                 height={250}
-                className="rounded-[16px] w-full h-full object-contain"
+                className="rounded-2xl w-full h-full object-contain"
                 src="/images/faq/footer.png"
                 alt="Healthcare illustration"
               />

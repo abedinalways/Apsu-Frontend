@@ -42,7 +42,12 @@ function BirthControll() {
                 /month
               </p>
             </div>
-            <WhiteCustomButton text="Start your birth control consult" />
+            <div className="w-full ">
+              <WhiteCustomButton
+                text="Start your birth control consult"
+                className="w-full md:w-auto"
+              />
+            </div>
           </div>
         </div>
         <div className="relative w-full mt-2 lg:mt-0">

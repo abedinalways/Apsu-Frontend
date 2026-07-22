@@ -57,13 +57,9 @@ const SuccessStories = () => {
   ];
   const swiperRef = useRef<any>(null);
   const [currentIndex, setCurrentIndex] = useState(1);
-  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [activeCard, setActiveCard] = useState<number | null>(2);
   const goNext = () => swiperRef.current?.slideNext();
   const goPrev = () => swiperRef.current?.slidePrev();
-
-  const toggleCard = (id: number) => {
-    setActiveCard((prev) => (prev === id ? null : id));
-  };
   return (
     <section className="mt-10 lg:mt-20">
       <div className="container">
@@ -120,12 +116,14 @@ const SuccessStories = () => {
               {stories.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div
-                    className={`group relative flex flex-col bg-bgColor shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl p-4 md:p-6 min-h-100  lg:min-h-132.5 justify-between overflow-hidden cursor-pointer transition-all duration-300 border border-[#F5F4EE]`}
-                    onClick={() => toggleCard(item.id)}
+                    className="group relative flex flex-col bg-bgColor shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl p-4 md:p-6 min-h-100  lg:min-h-132.5 justify-between overflow-hidden cursor-pointer transition-all duration-300 border border-[#F5F4EE]"
+                    onMouseEnter={() => setActiveCard(item.id)}
+                    onMouseLeave={() => setActiveCard(2)}
+                    onClick={() => setActiveCard((prev) => (prev === item.id ? 2 : item.id))}
                   >
                     {/* --- NORMAL CONTENT STATE --- */}
 
-                    <div className={`flex flex-col gap-5 transition-all duration-300 group-hover:opacity-0 group-hover:pointer-events-none ${activeCard === item.id ? "opacity-0 pointer-events-none" : ""}`}>
+                    <div className={`flex flex-col gap-5 transition-all duration-300 ${activeCard === item.id ? "opacity-0 pointer-events-none" : ""}`}>
                       <h3 className="text-greenColor text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">
                         {item.category}
                       </h3>
@@ -147,7 +145,7 @@ const SuccessStories = () => {
                     </div>
 
                     {/* Normal State Footer */}
-                    <div className={`flex items-end justify-between transition-all duration-300 group-hover:opacity-0 group-hover:pointer-events-none ${activeCard === item.id ? "opacity-0 pointer-events-none" : ""}`}>
+                    <div className={`flex items-end justify-between transition-all duration-300 ${activeCard === item.id ? "opacity-0 pointer-events-none" : ""}`}>
                       <div>
                         <h4 className="text-blackColor font-semibold text-lg md:text-xl">
                           {item.name}
@@ -172,7 +170,7 @@ const SuccessStories = () => {
 
                     {/* --- HOVER IMAGE STATE --- */}
 
-                    <div className={`absolute -inset-6 md:-inset-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl overflow-hidden ${activeCard === item.id ? "opacity-100" : ""}`}>
+                    <div className={`absolute -inset-6 md:-inset-8 transition-opacity duration-500 rounded-2xl overflow-hidden ${activeCard === item.id ? "opacity-100" : "opacity-0"}`}>
                       <Image
                         src={item.image}
                         alt=""
@@ -184,8 +182,8 @@ const SuccessStories = () => {
                       <div className="absolute inset-0 bg-linear-to-t from-primaryColor via-primaryColor/10 to-transparent pointer-events-none rounded-2xl" />
 
                       {/* Hover Content */}
-                      <div className="absolute bottom-3 w-full   flex flex-col justify-end p-10 md:p-12">
-                        <div className={`flex items-end justify-between text-white w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ${activeCard === item.id ? "translate-y-0" : ""}`}>
+                      <div className="absolute bottom-3 w-full flex flex-col justify-end p-10 md:p-12">
+                        <div className={`flex items-end justify-between text-white w-full transition-transform duration-500 ${activeCard === item.id ? "translate-y-0" : "translate-y-4"}`}>
                           <div>
                             <h4 className="font-semibold text-lg md:text-xl text-white">
                               {item.name}

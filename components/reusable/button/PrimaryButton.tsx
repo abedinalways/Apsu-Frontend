@@ -22,7 +22,7 @@ export default function PrimaryButton({
   onClick,
 }: ButtonWithArrowProps) {
   const buttonClasses = cn(
-    "h-12  text-sm md:text-base lg:text-lg  pl-8 pr-2 cursor-pointer font-medium group w-fit bg-primaryColor text-white rounded-full flex items-center justify-center gap-2  hover:shadow-md transition-all duration-300",
+    "h-12  text-base md:text-base lg:text-lg  pl-8 pr-2 cursor-pointer font-medium group w-fit bg-primaryColor text-white rounded-full flex items-center justify-center gap-2  hover:shadow-md transition-all duration-300",
     width,
     className,
   );

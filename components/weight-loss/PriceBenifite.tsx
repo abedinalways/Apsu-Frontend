@@ -21,12 +21,12 @@ function ProgramPricingSection() {
   ];
 
   return (
-    <div className="  py-16 md:py-24 font-sans text-primaryColor">
+    <div className="  pb-14 pt-6 md:py-24 font-sans text-primaryColor">
       <div className="container grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* ================= LEFT COLUMN: INFO & BENEFITS ================= */}
         <div className="flex flex-col lg:col-span-5 justify-between w-full space-y-6">
           {/* Top Price Card */}
-          <div className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_4px_12px_0_rgba(2,31,24,0.04)] border border-borderColor relative  flex flex-col justify-center">
+          <div className="bg-white rounded-2xl hidden p-6 md:p-8 shadow-[0_4px_12px_0_rgba(2,31,24,0.04)] border border-borderColor relative  lg:flex flex-col justify-center">
             <span className="text-gray-500 text-sm md:text-base font-medium mb-3">
               Starts from
             </span>
@@ -39,7 +39,7 @@ function ProgramPricingSection() {
 
             {/* Float Button over the price card */}
             <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center md:w-auto">
-              <PrimaryButton text="Check eligibility" />
+              <PrimaryButton text="Check your eligibility" />
             </div>
           </div>
 
@@ -92,7 +92,7 @@ function ProgramPricingSection() {
         </div>
 
         {/* ================= RIGHT COLUMN: PRODUCT GAUGE ================= */}
-        <div className="relative w-full lg:col-span-7 rounded-3xl overflow-hidden ] shadow-[0_4px_12px_0_rgba(2,31,24,0.03)] flex items-center justify-center ">
+        <div className="relative w-full lg:col-span-7 rounded-3xl overflow-hidden ] xl:shadow-[0_4px_12px_0_rgba(2,31,24,0.03)] flex items-center justify-center ">
           <div className="relative w-full h-full ">
             <Image
               src={tirzepatideImg}
