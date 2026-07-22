@@ -77,7 +77,7 @@ export function FAQSidebar({ topics }: FAQSidebarProps) {
           })}
         </nav>
       </div>
-      <hr className="" />
+      <hr className="bg-[#cddcd3]" />
       <div className="hidden lg:block">
         <ContactCard />
       </div>

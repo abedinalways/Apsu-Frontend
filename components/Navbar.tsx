@@ -74,8 +74,10 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 className={cn(
-                  'text-lg transition',
-                  pathname === item.path ? 'text-secondaryColor' : 'text-black',
+                  'relative text-lg transition-colors duration-300 hover:text-[#00774d]',
+                  pathname === item.path
+                    ? 'text-[#00774d] font-medium'
+                    : 'text-black',
                 )}
               >
                 {item.name}
@@ -187,8 +189,10 @@ export default function Navbar() {
                   key={item.path}
                   href={item.path}
                   className={cn(
-                    '',
-                    pathname === item.path ? 'text-[#00774D]' : '',
+                    'transition-colors duration-300 hover:text-[#00774d]',
+                    pathname === item.path
+                      ? 'text-[#00774d] font-medium'
+                      : 'text-secondary',
                   )}
                   onClick={() => setMenuOpen(false)}
                 >
