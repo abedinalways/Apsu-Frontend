@@ -12,7 +12,7 @@ export default function BlogQuoteCard() {
           </span>
 
           <span className="text-[16px] text-[#6B7280] whitespace-nowrap">
-            20 Jan 2026 • 5 min read
+            5 min read
           </span>
         </div>
 

@@ -83,16 +83,16 @@ export default function ProfileClient() {
 
   return (
     <div className="space-y-6 font-[Work_Sans] w-full">
-      <div className="bg-white border border-[#cddcd3] rounded-[16px] p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 relative">
+      <div className="bg-white border border-[#cddcd3] rounded-[16px] p-6 md:p-8 flex flex-col lg:flex-row items-center md:items-end  gap-4 md:gap-2 relative">
         <div className="w-24 h-24 md:w-40 md:h-40 md:absolute md:top-6 md:left-4 rounded-full bg-[#102b1c] top-10 flex items-center justify-center text-white text-2xl md:text-3xl font-semibold shrink-0">
           {userInitials}
         </div>
 
-        <div className="text-center md:w-full md:mx-auto space-y-3 mt-2">
-          <h1 className="text-2xl md:text-[32px] font-medium text-[#142C1E] text-start md:ml-60">
+        <div className="text-center w-fit md:w-full md:mx-auto space-y-3 mt-2 ">
+          <h1 className="text-2xl md:text-[32px] font-medium text-[#142C1E] text-center md:text-start md:ml-60 ">
             {userName}
           </h1>
-          <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-3 md:gap-5 text-[14px] text-gray-500">
+          <div className="lg:flex flex-wrap space-y-2 md:space-y-3 lg:space-y-0  lg:gap-4 text-[14px] text-gray-500  w-fit mx-auto">
             <span className="flex items-center gap-1.5">
               <MessageIcon /> {userEmail}
             </span>
@@ -107,7 +107,7 @@ export default function ProfileClient() {
 
         <button
           onClick={() => setIsModalOpen(true)}
-          className="md:absolute md:top-8 md:right-8 flex items-center gap-2 px-4 py-2 border border-[#EBEAE4] rounded-full text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors shadow-sm"
+          className="md:absolute md:top-20 md:right-8 flex items-end gap-2 px-4 py-2 border border-[#EBEAE4] rounded-full text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors shadow-sm"
         >
           <EditIcon /> Edit
         </button>
@@ -141,7 +141,7 @@ export default function ProfileClient() {
                 <button
                   key={tab.id}
                   onClick={() => handleTabChange(tab.id)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-[#142C1E] shadow-sm cursor-pointer' : 'text-gray-600 hover:text-gray-900 hover:bg-[#F4F3EF] cursor-pointer'}`}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-[#142C1E] shadow-sm cursor-pointer' : 'text-gray-600 bg-white border-[#B8D9C6] hover:text-gray-900 hover:bg-[#F4F3EF] cursor-pointer'}`}
                 >
                   {tab.label}
                 </button>
