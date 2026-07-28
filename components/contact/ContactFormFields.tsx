@@ -12,44 +12,54 @@ export default function ContactFormFields({ control }: Props) {
         <label className="text-base sm:text-[17px] font-medium text-black block">
           Full Name
         </label>
-        <div className="grid gap-3 sm:gap-4 grid-cols-2">
-          <InputField
-            control={control}
-            name="firstName"
-            label=""
-            placeholder="First name"
-          />
-          <InputField
-            control={control}
-            name="lastName"
-            label=""
-            placeholder="Last name"
-          />
+        <div className="grid gap-4 sm:gap-4 grid-cols-2">
+          <div>
+            <InputField
+              control={control}
+              name="firstName"
+              label=""
+              placeholder="First name"
+            />
+          </div>
+          <div>
+            <InputField
+              control={control}
+              name="lastName"
+              label=""
+              placeholder="Last name"
+            />
+          </div>
         </div>
       </div>
 
       <div className="grid gap-4 sm:gap-4 grid-cols-1 sm:grid-cols-2">
-        <InputField
-          control={control}
-          name="email"
-          label="Email"
-          placeholder="Enter email address"
-        />
+        <div className="relative">
+          <InputField
+            control={control}
+            name="email"
+            label="Email"
+            placeholder="Enter email address"
+          />
+        </div>
 
-        <InputField
-          control={control}
-          name="phone"
-          label="Phone"
-          placeholder="Enter phone number"
-        />
+        <div className="relative">
+          <InputField
+            control={control}
+            name="phone"
+            label="Phone"
+            placeholder="Enter phone number"
+          />
+        </div>
       </div>
 
-      <InputField
-        control={control}
-        name="subject"
-        label="Subject"
-        placeholder="Ex: Weight loss"
-      />
+      <div className="relative max-w-2xl">
+        <InputField
+          control={control}
+          name="subject"
+          label="Subject"
+          placeholder="Ex: Weight loss"
+        />
+      </div>
 
       <TextareaField
         control={control}
