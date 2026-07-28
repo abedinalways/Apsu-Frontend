@@ -19,7 +19,7 @@ function AboutExist() {
   return (
     <section className="xl:py-27 lg:py-15  py-14 relative  ">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-6">
           <div className=" lg:pr-8">
             <div className="max-w-3xl  mx-auto w-full">
               <h4 className="text-base text-greenColor mb-3">WHY WE EXIST</h4>

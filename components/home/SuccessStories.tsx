@@ -1,5 +1,8 @@
 "use client";
-import image1 from "@/public/images/work/success.jpg";
+
+import image1 from "@/public/images/work/Our-Success-Stories-1 (Maria R).jpg";
+import image2 from "@/public/images/work/success.jpg";
+import image3 from "@/public/images/work/Our-Success-Stories-1-(David-L).jpg";
 import {
   ArrowLeft,
   ArrowRight,
@@ -42,7 +45,7 @@ const SuccessStories = () => {
         "The service exceeded my expectations. Having direct communication with professionals without language barriers changed everything.",
       name: "David L.",
       location: "Queens, NY",
-      image: image1,
+      image: image2,
     },
     {
       id: 3,
@@ -52,7 +55,7 @@ const SuccessStories = () => {
         "Private, simple, and in my language the whole way through. It made getting care feel normal again.",
       name: "An N.",
       location: "San Jose, CA",
-      image: image1,
+      image: image3,
     },
   ];
   const swiperRef = useRef<any>(null);
