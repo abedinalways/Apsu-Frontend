@@ -4,7 +4,7 @@ function CommonHeader({
   description,
   isSmall = false,
 }: {
-  sectionName: string;
+  sectionName?: string;
   title: string;
   description?: string;
   isSmall?: boolean;

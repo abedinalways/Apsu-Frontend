@@ -1,10 +1,12 @@
-import React from "react";
 import CommonHeader from "../reusable/CommonHeader";
 import WorksCard from "./WorksCard";
 
 export default function HowItWorks() {
   return (
-    <div className="bg-white container rounded-2xl lg:rounded-4xl  p-4 md:p-6">
+    <div
+      id="Works"
+      className="bg-white container rounded-2xl lg:rounded-4xl  p-4 md:p-6"
+    >
       <div className="text-center">
         <CommonHeader
           sectionName="How it works"

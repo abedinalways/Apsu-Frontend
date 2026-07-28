@@ -1,12 +1,12 @@
 "use client";
+import care1 from "@/public/images/about/care1.png";
+import care3 from "@/public/images/about/care3.png";
+import care4 from "@/public/images/about/care4.png";
+import care2 from "@/public/images/about/Frame 184.png";
 import mobile1 from "@/public/images/about/mobile1.png";
 import mobile2 from "@/public/images/about/mobile2.png";
 import mobile3 from "@/public/images/about/mobile3.png";
 import mobile4 from "@/public/images/about/mobile4.png";
-import care1 from "@/public/images/about/care1.png";
-import care2 from "@/public/images/about/care2.png";
-import care3 from "@/public/images/about/care3.png";
-import care4 from "@/public/images/about/care4.png";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { StaticImageData } from "next/image";
 import { useRef } from "react";

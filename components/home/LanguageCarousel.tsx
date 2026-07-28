@@ -1,4 +1,3 @@
-import React from "react";
 import Marquee from "react-fast-marquee";
 
 const LanguageCarousel = ({
@@ -7,22 +6,24 @@ const LanguageCarousel = ({
   direction?: "left" | "right" | "up" | "down";
 }) => {
   const languages = [
-    { name: "Español", active: false },
+    { name: "Español", active: true },
     { name: "Tiếng Việt", active: false },
     { name: "한국어", active: false },
-    { name: "Tagalog", active: false },
+    { name: "Tagalog", active: true },
     { name: "English", active: false },
     { name: "中文", active: true },
     { name: "Français", active: false },
-    { name: "Português", active: true },
+    { name: "Português", active: false },
     { name: "हिन्दी", active: false },
     { name: "Русский", active: false },
     { name: "العربية", active: false },
   ];
   return (
-    <div >
-      
-      <Marquee direction={direction} className="max-w-84 md:max-w-186 lg:max-w-250 xl:max-w-270">
+    <div>
+      <Marquee
+        direction={direction}
+        className="max-w-84 md:max-w-186 lg:max-w-250 xl:max-w-270"
+      >
         {languages.map((language) => (
           <div
             key={language.name}

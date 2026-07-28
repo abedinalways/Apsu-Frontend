@@ -47,9 +47,9 @@ function ProgramPricingSection() {
           <div className="w-full space-y-4 mt-4 xl:mt-0 ">
             {/* How It Works Header Line */}
             <div className="border-y pt-2 border-gray-200 pb-3 flex items-center justify-between cursor-pointer group">
-              <span className="text-xs md:text-sm font-semibold text-[#585E5A] group-hover:text-[#0C2417] underline transition-colors">
+              <a href="#Works" className="text-xs md:text-sm font-semibold text-[#585E5A] group-hover:text-[#0C2417] underline transition-colors">
                 How It Works
-              </span>
+              </a>
             </div>
 
             {/* Program Benefits Accordion */}

@@ -7,7 +7,7 @@ function HomeFAQ() {
     {
       id: "states-available",
       question: "What states do you serve in GLP-1 programs?",
-      answer: "We are currently able to serve GLP-1 programs in all 50 states.",
+      answer: "We currently serve GLP-1 programs in all 50 states.",
     },
     {
       id: "languages-supported",
@@ -42,7 +42,7 @@ function HomeFAQ() {
             <CommonHeader
               title="Frequently Asked Questions"
               description="Have more questions? Our care team is here to help in your language."
-              sectionName="FAQs"
+              // sectionName="FAQs"
               isSmall={true}
             />
           </div>
