@@ -49,7 +49,7 @@ function AboutExist() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="flex flex-col bg-white shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.06)] rounded-2xl p-8 md:p-10 justify-between min-h-[220px] border border-[#CDDCD3]"
+                  className="flex flex-col bg-white shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl p-8 md:p-10 justify-between min-h-55 border border-[#CDDCD3]"
                 >
                   <div>
                     {/* Big Bold Stat Value */}
@@ -71,7 +71,7 @@ function AboutExist() {
             </div>
 
             {/* Bottom Description Content */}
-            <div className="text-center  max-w-[1010px] mx-auto px-4">
+            <div className="text-center  max-w-252.5 mx-auto px-4">
               <p className="text-base md:text-lg  text-descriptionColor mt-3">
                 We started APSU because the people most likely to skip care are
                 often the ones who simply couldn't navigate it in English. So we
