@@ -1,11 +1,10 @@
 import BulletList from './BulletList';
 import Callout from './Callout';
-
+import ComparisonTable from './ComparisonTable';
 import Divider from './Divider';
 import Heading from './Heading';
 import HeroImage from './HeroImage';
 import IconGrid from './IconGrid';
-
 import ImageText from './ImageText';
 import NumberList from './NumberList';
 import Paragraph from './Paragraph';
@@ -25,4 +24,5 @@ export const BLOG_COMPONENTS = {
   callout: Callout,
   steps: Steps,
   iconGrid: IconGrid,
+  table: ComparisonTable,
 };

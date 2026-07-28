@@ -46,7 +46,7 @@ function BirthOption() {
 
   return (
     <div className="bg-white container rounded-2xl lg:rounded-4xl  p-4 md:p-6">
-      <div className="max-w-[800px] text-center  mx-auto w-full">
+      <div className="max-w-200 text-center  mx-auto w-full">
         <h4 className="text-base text-greenColor mb-3">YOUR OPTIONS</h4>
         <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium text-primaryColor">
           Two ways to take control.

@@ -3,19 +3,19 @@ import { Blog } from '@/types/blog';
 export const blogsData: Blog[] = [
   {
     id: 1,
-    image: '/images/blog/img04.png',
+    image: '/images/blog/img26.png',
     category: 'Weight Loss',
     date: '20 Jan 2026',
     readTime: '5 min read',
     title: 'Understanding GLP-1 Medications: What Patients Should Know',
     description:
       'GLP-1 treatments have gained attention for weight management. Understand how they work and what factors physicians consider before prescribing them.',
-    href: '/blog/glp-1-medications',
+    href: '/blog/understanding-glp1',
   },
 
   {
     id: 2,
-    image: '/images/blog/img05.png',
+    image: '/images/blog/img25.jpg',
     category: 'Sleep',
     date: '20 Jan 2026',
     readTime: '5 min read',
@@ -27,7 +27,7 @@ export const blogsData: Blog[] = [
 
   {
     id: 3,
-    image: '/images/blog/img06.png',
+    image: '/images/blog/img36.png',
     category: 'Health',
     date: '20 Jan 2026',
     readTime: '5 min read',
@@ -39,7 +39,7 @@ export const blogsData: Blog[] = [
 
   {
     id: 4,
-    image: '/images/blog/img07.png',
+    image: '/images/blog/img30.jpg',
     category: 'Telehealth',
     date: '20 Jan 2026',
     readTime: '5 min read',
@@ -51,7 +51,7 @@ export const blogsData: Blog[] = [
 
   {
     id: 5,
-    image: '/images/blog/img02.png',
+    image: '/images/blog/img29.jpg',
     category: "Women's Health",
     date: '21 Jan 2026',
     readTime: '6 min read',
@@ -63,7 +63,7 @@ export const blogsData: Blog[] = [
 
   {
     id: 6,
-    image: '/images/blog/img03.png',
+    image: '/images/blog/img27.jpg',
     category: 'Birth Control',
     date: '22 Jan 2026',
     readTime: '4 min read',

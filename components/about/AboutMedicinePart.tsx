@@ -6,7 +6,7 @@ function AboutMedicinePart() {
       <div className=" lg:pr-8">
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4 items-center   w-full">
           <div>
-            <h4 className="text-base text-greenColor mb-3">WHY WE EXIST</h4>
+            <h4 className="text-base text-greenColor mb-3">WHAT WE TREAT</h4>
 
             <h2 className="text-3xl md:text-4xl max-w-[500px] lg:text-[40px] font-medium text-primaryColor">
               Focused programs.{" "}

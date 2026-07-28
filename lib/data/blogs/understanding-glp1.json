@@ -1,0 +1,277 @@
+{
+  "id": 1,
+  "slug": "understanding-glp1",
+  "title": "Semaglutide vs. Tirzepatide: What's the Difference?",
+  "category": "Weight Loss",
+  "author": "Absu Health",
+  "date": "20 Jan 2026",
+  "readTime": "5 mins read",
+  "heroImage": "/images/blogDetails/122.png",
+  "href": "/blog/understanding-glp1",
+  "summary": [
+    { "id": "what-is-glp1", "title": "What is Semaglutide?" },
+    { "id": "eligibility", "title": "What is tirzepatide?" },
+    {
+      "id": "consultation",
+      "title": "How do the study results compare?"
+    },
+    { "id": "side-effects", "title": "Main similarities" },
+    { "id": "key-differences-heading", "title": "Main Differences" },
+    { "id": "candidate-heading", "title": "Who might be a candidate?" },
+    {
+      "id": "Where compounded GLP-1 medications may fit",
+      "title": "Where compounded GLP-1 medications may fit"
+    },
+    { "id": "Safety overview", "title": "Safety overview" }
+  ],
+  "content": [
+    {
+      "id": "intro-heading",
+      "type": "heading",
+      "content": "Introduction"
+    },
+    {
+      "id": "intro-1",
+      "type": "paragraph",
+      "content": "GLP-1 medications have become one of the most talked-about topics in weight management. You may have seen different medication or brand names online, and it can be hard to tell what is actually different and what is just branding. The two medication names people usually compare are semaglutide and tirzepatide. They are related, but they are not the same drug. Both may affect appetite, fullness, digestion, and blood sugar. Both require a medical evaluation. Neither should be treated like a supplement, a quick fix, or a cosmetic product."
+    },
+    {
+      "id": "intro-2",
+      "type": "paragraph",
+      "content": "Semaglutide works mainly through the GLP-1 pathway, while tirzepatide works through both the GIP and GLP-1 pathways. GLP-1 (glucagon-like peptide-1) is a hormone your body releases after eating. It signals fullness, slows stomach emptying, and helps regulate blood sugar. GIP is another post-meal hormone that also supports blood sugar control. Tirzepatide acts on both pathways, which may be one reason it has shown larger average weight-loss results in some studies."
+    },
+    {
+      "id": "intro-3",
+      "type": "paragraph",
+      "content": "In clinical trials, both medications were associated with meaningful average weight loss when used with diet and physical activity. Tirzepatide has shown larger average weight-loss numbers in some trials, but that does not automatically mean it is the better choice for every person."
+    },
+
+    {
+      "id": "what-is-glp1",
+      "type": "heading",
+      "content": "What is Semaglutide?"
+    },
+    {
+      "id": "glp1-feature",
+      "type": "imageText",
+      "layout": "right",
+      "imageRatio": "wide",
+      "image": "/images/blogDetails/1233.png",
+      "alt": "Diagram showing how GLP-1 medications work",
+      "description": "Semaglutide is a GLP-1 receptor agonist. GLP-1 is a hormone involved in blood sugar regulation and appetite signaling. In weight-management use, the goal is not simply to make someone eat less for a few days; the medication is part of a longer treatment plan that usually includes nutrition changes, physical activity, and follow-up monitoring."
+    },
+    {
+      "id": "glp1-summary",
+      "type": "paragraph",
+      "emphasis": true,
+      "content": "The FDA-approved semaglutide injection for chronic weight management is indicated as an addition to a reduced-calorie diet and increased physical activity for adults with obesity or adults with overweight and at least one weight-related condition. The original FDA label describes a weekly injection dose-escalation schedule starting at 0.25 mg and increasing gradually to a 2.4 mg maintenance dose [1]."
+    },
+    {
+      "id": "glp1-note",
+      "type": "paragraph",
+      "content": "A practical point: not all semaglutide products are used in the same way. Even when products contain semaglutide, their approved uses, dosage forms, and dosing schedules may differ. A patient should not assume that one semaglutide product can be swapped for another without a clinician's direction."
+    },
+    {
+      "id": "eligibility",
+      "type": "heading",
+      "layout": "right",
+      "content": "What is tirzepatide?"
+    },
+    {
+      "id": "eligibility-feature",
+      "type": "imageText",
+      "layout": "left",
+      "image": "/images/blogDetails/1244.png",
+      "alt": "Woman exercising outdoors",
+      "description": "Tirzepatide works on two incretin pathways: GIP and GLP-1. The FDA-approved tirzepatide injection for chronic weight management is indicated for adults with obesity or adults with overweight and at least one weight-related condition. Tirzepatide is also used in other FDA-approved products for type 2 diabetes treatment [2,3]."
+    },
+    {
+      "id": "eligibility-note",
+      "type": "paragraph",
+      "emphasis": true,
+      "content": "For weight-management use, tirzepatide is used together with a reduced-calorie diet and increased physical activity. The FDA label describes a starting injection dose of 2.5 mg once weekly for 4 weeks, followed by 5 mg once weekly. The dose may be increased gradually, usually in 2.5 mg increments after at least 4 weeks on the current dose, with 5 mg, 10 mg, or 15 mg used as maintenance doses for weight management [2]."
+    },
+    {
+      "id": "tirzepatide-safety",
+      "type": "paragraph",
+      "content": "One extra safety point is especially relevant for many young women: tirzepatide can delay gastric emptying and may affect the absorption of oral medications. The FDA label advises females using oral contraceptives to switch to a non-oral contraceptive method or add a barrier method for 4 weeks after starting tirzepatide and for 4 weeks after each dose increase [2]."
+    },
+    {
+      "id": "consultation",
+      "type": "heading",
+      "content": "How do the study results compare?"
+    },
+    {
+      "id": "consultation-intro",
+      "type": "paragraph",
+      "content": "In FDA-reviewed studies, semaglutide injection was associated with average weight loss in the low-to-mid teens as a percentage of body weight, depending on the study population and treatment setting. Tirzepatide injection showed larger average weight-loss numbers in some FDA-reviewed studies, especially at higher maintenance doses [1,2]."
+    },
+    {
+      "id": "consultation-intro-2",
+      "type": "paragraph",
+      "content": "However, these studies were not identical. They had different designs, durations, patient populations, diabetes status, dose schedules, and lifestyle programs. It is fair to say tirzepatide has shown larger average weight-loss numbers in some studies. It is not fair to say it is automatically safer, better tolerated, or the right option for every person. Important context for compounded GLP-1 medications: The study results above come from FDA-reviewed clinical studies of FDA-approved products. Compounded semaglutide or tirzepatide has not been separately reviewed by the FDA for safety, effectiveness, or quality before marketing. That does not mean compounded treatment is never appropriate, but it does mean patients should not assume the exact same study results will apply to every compounded formulation, dose, or individual treatment plan. The safest approach is to use these medications only with proper medical screening, clear dosing instructions, pharmacy oversight, and follow-up monitoring."
+    },
+    {
+      "id": "side-effects",
+      "type": "heading",
+      "content": "Main similarities"
+    },
+    {
+      "id": "side-effects-intro",
+      "type": "paragraph",
+      "content": "Both medications are prescription-only treatments, not supplements. They work partly by slowing gastric emptying, so food leaves the stomach more slowly, and they share a similar side-effect profile: gastrointestinal symptoms such as nausea, vomiting, diarrhea, constipation, abdominal pain, indigestion, reflux, and burping are common. This is part of why the labels call for gradual dose escalation rather than starting at a higher dose [1,2]."
+    },
+    {
+      "id": "side-effects-intro-2",
+      "type": "paragraph",
+      "content": "Their labels also carry a boxed warning about thyroid C-cell tumors observed in rodents, and neither is recommended for people with a personal or family history of medullary thyroid carcinoma or Multiple Endocrine Neoplasia syndrome type 2 [1,2]."
+    },
+    {
+      "id": "side-effects-intro-3",
+      "type": "paragraph",
+      "content": "Beyond that, both prescribing information notes warnings or precautions for pancreatitis, gallbladder problems, kidney injury related to dehydration or volume depletion, low blood sugar when used with insulin or secretagogues, diabetic retinopathy in people with type 2 diabetes, hypersensitivity reactions, and mood changes, depression, or suicidal thoughts or behavior [1,2,4]."
+    },
+    {
+      "id": "key-differences-heading",
+      "type": "heading",
+      "content": "Main Differences"
+    },
+    {
+      "id": "key-differences-1",
+      "type": "paragraph",
+      "content": "Both medications are prescription-only treatments, not supplements. They work partly by slowing gastric emptying, so food leaves the stomach more slowly, and they share a similar side-effect profile: gastrointestinal symptoms such as nausea, vomiting, diarrhea, constipation, abdominal pain, indigestion, reflux, and burping are common. This is part of why the labels call for gradual dose escalation rather than starting at a higher dose [1,2]."
+    },
+    {
+      "id": "key-differences-2",
+      "type": "paragraph",
+      "content": "Beyond that, both prescribing information notes warnings or precautions for pancreatitis, gallbladder problems, kidney injury related to dehydration or volume depletion, low blood sugar when used with insulin or insulin secretagogues, diabetic retinopathy in people with type 2 diabetes, hypersensitivity reactions, and mood changes, depression, or suicidal thoughts or behavior [1,2,4]."
+    },
+    {
+      "id": "comparison-table",
+      "type": "table",
+      "tableData": {
+        "headers": ["Feature", "Semaglutide", "Tirzepatide"],
+        "rows": [
+          [
+            "Mechanism",
+            "GLP-1 receptor agonist (single pathway).",
+            "Activates both GIP and GLP-1 receptors (dual pathway)."
+          ],
+          [
+            "Weight-loss results",
+            "Clinically meaningful average weight loss.",
+            "Dual-pathway design may produce larger average weight-loss results in some studies; clinical decision still depends on the patient."
+          ],
+          ["Starting dose", "0.25 mg once weekly.", "2.5 mg once weekly."],
+          [
+            "Dose escalatione",
+            "Gradually increased to a 2.4 mg once-weekly maintenance dose.",
+            "Increased to 5 mg once weekly, with possible escalation to higher maintenance doses if clinically appropriate and tolerated."
+          ],
+          [
+            "Oral-contraceptive warning",
+            "Also delays gastric emptying and may affect oral medications, but no specific contraception instruction in the FDA label.",
+            "FDA label includes a specific contraception instruction after initiation and each dose escalation."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "candidate-heading",
+      "type": "heading",
+      "content": "Who might be a candidate?"
+    },
+    {
+      "id": "candidate-1",
+      "type": "paragraph",
+      "content": "For FDA-approved chronic weight-management use, the labels focus on adults with obesity, or adults with overweight and at least one weight-related condition. In practical terms, many clinicians evaluate body mass index, metabolic risk factors, current medications, past medical history, eating patterns, pregnancy plans, and whether the patient can commit to follow-up care [1,2,3]."
+    },
+    {
+      "id": "candidate-2",
+      "type": "paragraph",
+      "content": "It is important not to oversimplify this into 'only very visibly overweight people should care' or 'anyone who wants to lose a few pounds can use it.' Many Asian patients can develop metabolic risk at lower BMI levels than non-Asian populations. For example, CDC-recognized Diabetes Prevention Program eligibility uses BMI 23 or higher for Asian American adults, compared with 25 or higher for others. That is a prevention-program threshold, not a GLP-1 prescribing rule. It is best used as a reason to discuss metabolic health earlier, not as a promise of medication eligibility [6]."
+    },
+    {
+      "id": "Where compounded GLP-1 medications may fit",
+      "type": "heading",
+      "content": "Where compounded GLP-1 medications may fit"
+    },
+    {
+      "id": "Where compounded GLP-1 medications may fit-1",
+      "type": "paragraph",
+      "content": "Compounded GLP-1 medications may be considered when a licensed clinician determines that a patient’s needs cannot be met by an FDA-approved option or when an FDA-approved medication is not commercially available. For some patients, a compounded prescription may offer a more accessible or flexible treatment pathway, especially when care is coordinated through a clinician and a state-licensed pharmacy."
+    },
+    {
+      "id": "Where compounded GLP-1 medications may fit-2",
+      "type": "paragraph",
+      "content": "If you'd like to explore whether this is appropriate for you, Apsu can connect you with a licensed clinician for an online intake and eligibility review. (链接到减肥药产品页)"
+    },
+    {
+      "id": "Safety overview",
+      "type": "heading",
+      "content": "Safety overview"
+    },
+    {
+      "id": "Safety overview-1",
+      "type": "paragraph",
+      "content": "Like all prescription medications, semaglutide and tirzepatide carry risks. This is a general overview only . The full safety information belongs with your clinician and in the FDA prescribing information."
+    },
+    {
+      "id": "Safety overview-2",
+      "type": "paragraph",
+      "content": "Most common: gastrointestinal effects like nausea, vomiting, diarrhea, and constipation, which is why doses are increased gradually."
+    },
+    {
+      "id": "Safety overview-3",
+      "type": "paragraph",
+      "content": "Boxed warning: both carry the FDA's most serious warning, about thyroid C-cell tumors in animal studies; not for people with a personal or family history of medullary thyroid carcinoma or MEN 2."
+    },
+    {
+      "id": "Safety overview-4",
+      "type": "paragraph",
+      "content": "Other warnings: pancreatitis, gallbladder, kidney, low blood sugar (with certain diabetes medications), and mood changes — all things your clinician will screen for."
+    },
+    {
+      "id": "Safety overview-5",
+      "type": "paragraph",
+      "content": "Pregnancy and birth control: both may cause fetal harm and should be stopped around pregnancy; tirzepatide can also reduce the effectiveness of oral contraceptives (see above)."
+    },
+    {
+      "id": "Safety overview-6",
+      "type": "paragraph",
+      "content": "Contact your clinician promptly for severe abdominal pain, repeated vomiting, allergic-reaction symptoms, mood changes, pregnancy, or upcoming surgery."
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "FDA prescribing information for semaglutide 2.4 mg injection for chronic weight management",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/215256s000lbl.pdf"
+    },
+    {
+      "id": "source-2",
+      "title": "FDA prescribing information for tirzepatide injection for chronic weight management",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/217806s000lbl.pdf"
+    },
+    {
+      "id": "source-3",
+      "title": "FDA approval announcement for tirzepatide injection for chronic weight management",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-new-medication-chronic-weight-management"
+    },
+    {
+      "id": "source-4",
+      "title": "FDA approval announcement for semaglutide cardiovascular-risk indication",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-reduce-risk-serious-heart-problems-specifically-adults-obesity-or"
+    },
+    {
+      "id": "source-5",
+      "title": "FDA: Concerns with unapproved GLP-1 drugs used for weight loss",
+      "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss"
+    },
+    {
+      "id": "source-6",
+      "title": "CDC National Diabetes Prevention Program eligibility",
+      "url": "https://www.cdc.gov/diabetes/prevention/program-eligibility.html"
+    }
+  ]
+}

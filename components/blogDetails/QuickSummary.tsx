@@ -33,7 +33,6 @@ export default function QuickSummary({ summary }: Props) {
       >
         Quick Summary
       </h3>
-      <h2 className="text-[#00774d] text-[18px] font-medium leading-[160%] mt-2">Introduction</h2>
       {/* Summary List */}
       <nav className="mt-6">
         <ul className="space-y-2 ">

@@ -26,7 +26,6 @@ function WorkSection() {
             <WorkList />
           </div>
         </div>
-
         <div>
           <WeightLoss />
         </div>

@@ -1,49 +1,71 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { FaInstagram, FaXTwitter } from "react-icons/fa6";
-import { FiFacebook } from "react-icons/fi";
-import { SlSocialLinkedin } from "react-icons/sl";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
+import { FiFacebook } from 'react-icons/fi';
+import { SlSocialLinkedin } from 'react-icons/sl';
 const ProductsLinks = [
-  { href: "/weight-loss", label: "Weight Loss" },
-  { href: "/birth-control", label: "Birth Control" },
-  { href: "/sleep", label: "Sleep" },
+  { href: '/weight-loss', label: 'Weight Loss' },
+  { href: '/birth-control', label: 'Birth Control' },
+  { href: '/sleep', label: 'Sleep' },
 ];
 const CompanyLinks = [
-  { href: "/about", label: "About Apsu" },
-  { href: "/blog", label: "Blogs" },
-  { href: "/faq", label: "FAQs" },
-  { href: "/contact", label: "Contact Us" },
+  { href: '/about', label: 'About Apsu' },
+  { href: '/blog', label: 'Blogs' },
+  { href: '/faq', label: 'FAQs' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 const LegalLinks = [
-  { href: "/terms", label: "Terms" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/info", label: "Medication Safety Information" },
+  { href: '/terms', label: 'Terms' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/info', label: 'Medication Safety Information' },
 ];
 
 export const socialLinks = [
   {
-    href: "https://x.com/your_username",
+    href: 'https://x.com/your_username',
     Icon: FaXTwitter,
-    label: "X (Twitter)",
+    label: 'X (Twitter)',
   },
   {
-    href: "https://www.facebook.com/your_page",
+    href: 'https://www.facebook.com/your_page',
     Icon: FiFacebook,
-    label: "Facebook",
+    label: 'Facebook',
   },
   {
-    href: "https://www.instagram.com/your_username",
+    href: 'https://www.instagram.com/your_username',
     Icon: FaInstagram,
-    label: "Instagram",
+    label: 'Instagram',
   },
   {
-    href: "https://www.linkedin.com/company/your-company",
+    href: 'https://www.linkedin.com/company/your-company',
     Icon: SlSocialLinkedin,
-    label: "LinkedIn",
+    label: 'LinkedIn',
   },
 ];
 export default function Footer() {
+  const imgRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = imgRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <footer className="bg-primary text-[#FAF9F4] pt-30">
       <div className="container ">
@@ -52,15 +74,15 @@ export default function Footer() {
           {/* logo and description */}
           <div className=" lg:col-span-2 xl:col-span-3">
             <Image src="/footer-logo.png" alt="apsu" width={228} height={83} />
-            <p className="text-lg max-w-100">
-              American medicine, in the language you think in.{' '}
+            <p className="text-lg mt-4 max-w-100">
+              American medicine, in the language you think in.{" "}
             </p>
           </div>
           {/* Products */}
           <div className="space-y-4 pt-10 lg:pt-0">
-            <h4 className="text-lg">Products</h4>
+            <h4 className="text-lg font-medium">Products</h4>
             <ul className="flex flex-col gap-3">
-              {ProductsLinks.map(link => (
+              {ProductsLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -74,9 +96,9 @@ export default function Footer() {
           </div>
           {/* Company */}
           <div className="space-y-4 pt-6 lg:pt-0">
-            <h4 className="text-lg">Company</h4>
+            <h4 className="text-lg font-medium">Company</h4>
             <ul className="flex flex-col gap-3">
-              {CompanyLinks.map(link => (
+              {CompanyLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -90,9 +112,9 @@ export default function Footer() {
           </div>
           {/* Legal */}
           <div className="space-y-4 pt-6 lg:pt-0">
-            <h4 className="text-lg">Legal</h4>
+            <h4 className="text-lg font-medium">Legal</h4>
             <ul className="flex flex-col gap-3">
-              {LegalLinks.map(link => (
+              {LegalLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -120,9 +142,9 @@ export default function Footer() {
             this is an emergency, call 911.
           </p>
           <p className="pt-6 lg:pt-4">
-            By using our services, you agree to our{' '}
+            By using our services, you agree to our{" "}
             <Link href="/terms" className="hover:underline">
-              {' '}
+              {" "}
               Terms & Conditions.
             </Link>
           </p>
@@ -146,13 +168,19 @@ export default function Footer() {
           <p>© 2026 APSU. All rights reserved.</p>
         </div>
         {/* section 4 */}
-        <div className=" relative">
-          <div className="h-1/2 w-full bg-linear-to-t from-primary/80 to-transparent absolute bottom-0 z-10"></div>
+        <div
+          ref={imgRef}
+          className={`relative transition-all duration-1500 ease-out ${
+            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}
+        >
+          <div className=" h-2/3 w-full absolute bottom-0 bg-linear-to-t  from-[#102B1C] to-transparent"></div>
           <Image
             src="/footer-img.png"
             alt="footer image"
             width={1376}
             height={318}
+            className="z-200"
           />
         </div>
       </div>

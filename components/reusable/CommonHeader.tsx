@@ -4,7 +4,7 @@ function CommonHeader({
   description,
   isSmall = false,
 }: {
-  sectionName: string;
+  sectionName?: string;
   title: string;
   description?: string;
   isSmall?: boolean;
@@ -16,11 +16,11 @@ function CommonHeader({
         {title}
       </h2>
       {description && isSmall ? (
-        <p className="text-lg md:text-xl  text-descriptionColor mt-3">
+        <p className="text-lg md:text-xl leading-[160%] text-descriptionColor mt-3">
           {description}
         </p>
       ) : (
-        <p className="text-lg md:text-xl md:px-50 text-descriptionColor mt-3">
+        <p className="text-lg md:text-xl leading-[160%] md:px-50 text-descriptionColor mt-3">
           {description}
         </p>
       )}

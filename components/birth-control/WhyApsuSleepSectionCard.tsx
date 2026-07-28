@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import WhyApsuSleepIcons from "../icons/WhyApsuSleepIcons";
 
 const TRUST_ITEMS = [
@@ -32,16 +31,16 @@ export default function WhyApsuSleepSectionCard() {
           <div key={item.id} className="flex flex-col space-y-4">
             {/* Heading row with inline brand icon */}
             <div className="flex items-center gap-3">
-              <div className="text-[#006C47] shrink-0">
-                <WhyApsuSleepIcons className="h-[22px] w-[22px]" />
+              <div className="text-greenColor shrink-0">
+                <WhyApsuSleepIcons className="h-5.5 w-5.5" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-[#006C47] tracking-tight leading-none">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-greenColor tracking-tight leading-none">
                 {item.title}
               </h3>
             </div>
 
             {/* Description matching exact font size, line-height, and lack of left indentation */}
-            <p className="text-zinc-800 text-sm md:text-[16px] font-normal leading-relaxed md:leading-[1.7] tracking-wide">
+            <p className="text-descriptionColor text-base md:text-lg font-normal leading-[160%] tracking-wide">
               {item.description}
             </p>
           </div>

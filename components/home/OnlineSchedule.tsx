@@ -3,14 +3,12 @@ import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import image1 from "@/public/images/schedule/Content.png";
-import image2 from "@/public/images/schedule/Content2.png";
+import image2 from "@/public/images/schedule/Sourced-from-licensed-US-V2.jpg";
 import image4 from "@/public/images/schedule/delivery-male-with-mask-packages.jpg";
 import image3 from "@/public/images/schedule/team_doctor_nurse_preparing_prescription_paper_patient_annual_checkup.png";
 import { ArrowLeft, ArrowRight } from "lucide-react"; // বা আপনার প্রোজেক্টের যেকোনো অ্যারো আইকন
 // Swiper styles ইমপোর্ট করতে ভুলবেন না
-import { StaticImageData } from "next/image";
-import "swiper/css";
-import "swiper/css/navigation";
+import Image, { StaticImageData } from "next/image";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 interface SlideItem {
   id: number;
@@ -30,17 +28,17 @@ const ScheduleSlider = () => {
       id: 1,
       title: "24/7 Provider Support",
       image: image1,
-      isDarkText: true,
+      isDarkText: false,
     },
     {
       id: 2,
       title: "Easy Manager Treatment",
       image: image3,
-      isDarkText: false,
+      isDarkText: true,
     },
     {
       id: 3,
-      title: "Access to FDA-approved Medication Options",
+      title: "Sourced from licensed U.S. pharmacies",
       image: image2,
       isDarkText: true,
     },
@@ -48,12 +46,6 @@ const ScheduleSlider = () => {
       id: 4,
       title: "Free Delivery & Shipping",
       image: image4,
-      isDarkText: false,
-    },
-    {
-      id: 5,
-      title: "Access to FDA-approved Medication Options",
-      image: image2,
       isDarkText: true,
     },
   ];
@@ -106,18 +98,22 @@ const ScheduleSlider = () => {
         >
           {sliderData.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <div
-                className="relative flex flex-col items-center bg-white shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.06)] rounded-2xl overflow-hidden aspect-3/5   w-full p-6 md:p-8 justify-start text-center"
-                style={{
-                  backgroundImage: `url(${typeof slide.image === "string" ? slide.image : slide.image.src})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div className="absolute inset-0 bg-black/30" />
-                <h3 className="relative text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-[116%]  z-10 text-white">
-                  {slide.title}
-                </h3>
+              <div className="relative flex items-end h-127.5  md:h-155.5  bg-white shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl overflow-hidden w-full justify-start text-center">
+                <Image
+                  src={slide?.image}
+                  alt={slide.title}
+                  width={600}
+                  height={600}
+                  className="w-full object-cover flex items-end h-full"
+                />
+
+                <div className={`absolute top-0 w-full h-full  left-0  `}>
+                  <h3
+                    className={`relative ${slide?.isDarkText && "bg-linear-to-b  from-[#102B1C] to-transparent pb-8 text-white"} text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight p-4 lg:px-10 lg:p-6 leading-[116%]  z-10 `}
+                  >
+                    {slide.title}
+                  </h3>
+                </div>
               </div>
             </SwiperSlide>
           ))}

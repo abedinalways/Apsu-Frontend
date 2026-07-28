@@ -33,10 +33,10 @@ const WorkList = () => {
   ];
 
   return (
-    <div className="bg-bgColor  py-6 md:py-9 lg:py-12 font-sans text-primaryColor">
+    <div className="bg-bgColor max-w-275 mx-auto  py-6 md:py-9 lg:py-12 font-sans text-primaryColor">
       <div className="">
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6  ">
           {cards.map((card) => (
             <div
               key={card.number}
@@ -49,7 +49,7 @@ const WorkList = () => {
 
               {/* Card Content */}
               <div className="mt-10">
-                <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
+                <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6 md:mb-8">
                   {card.title}
                 </h3>
                 <p className="text-[#585E5A] text-sm md:text-base leading-relaxed mb-6 max-w-sm">

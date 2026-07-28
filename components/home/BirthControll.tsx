@@ -10,11 +10,11 @@ function BirthControll() {
   ];
   return (
     <div>
-      <div className="xl:py-27 lg:py-15 pt-4 relative px-3 md:px-6 mt-30 lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-[#FFDEFF] rounded-2xl lg:rounded-4xl">
+      <div className="xl:py-27 lg:py-15 pt-4 relative px-3 md:px-6 mt-12 lg:mt-30  lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-[#FFDEFF] rounded-2xl lg:rounded-4xl">
         <div>
           <div className="">
-            <h3 className="text-3xl md:text-4xl max-w-[612px] leading-[124%] xl:text-[52px] font-medium tracking-tight mb-5">
-              Birth control, without the waiting room.
+            <h3 className="text-3xl md:text-4xl max-w-153 leading-[124%] xl:text-[52px] font-medium tracking-tight mb-5">
+              Birth Control, Without the Waiting Room.
             </h3>
             <p className="text-descriptionColor text-sm md:text-base leading-relaxed mb-6 ">
               Choose the method that fits your life. A US-licensed physician
@@ -28,7 +28,7 @@ function BirthControll() {
                   className="flex items-start gap-3 text-sm md:text-base "
                 >
                   <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-greenColor text-white">
-                    <Check className="h-3 w-3 stroke-[3]" />
+                    <Check className="h-3 w-3 stroke-3" />
                   </div>
                   <span className="text-descriptionColor">{point}</span>
                 </li>
@@ -42,7 +42,12 @@ function BirthControll() {
                 /month
               </p>
             </div>
-            <WhiteCustomButton text="Start your birth control consult" />
+            <div className="w-full ">
+              <WhiteCustomButton
+                text="Start your birth control consult"
+                className="w-full md:w-auto"
+              />
+            </div>
           </div>
         </div>
         <div className="relative w-full mt-2 lg:mt-0">
@@ -52,7 +57,7 @@ function BirthControll() {
               alt="Weight Loss"
               width={700}
               height={500}
-              className="w-[324px] xl:w-[392.5px]"
+              className="md:w-81 w-45 xl:w-[392.5px]"
             />
           </div>
         </div>

@@ -12,24 +12,24 @@ function SleepSection() {
   ];
   return (
     <div>
-      <div className="xl:py-27 lg:py-15 pt-4 relative px-3 md:px-6 mt-30 lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-additional-blue rounded-2xl lg:rounded-4xl">
-        <div className="relative flex h-full items-end w-full mt-2 lg:mt-0">
+      <div className="xl:py-27 lg:py-15 pt-4 gap-4 relative px-3 md:px-6 mt-12 lg:mt-30 lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-[#D0FFFD] rounded-2xl lg:rounded-4xl">
+        <div className="relative flex h-full items-end order-2 lg:order-1 w-full mt-2 lg:mt-0">
           <div className="lg:absolute flex justify-center w-full  lg:-top-21.5 xl:-top-43.75 lg:left-2 left-4 ">
             <Image
               src={weightImg}
               alt="Weight Loss"
               width={700}
               height={500}
-              className="w-[448px] xl:w-[552.5px]"
+              className="w-md xl:w-[552.5px]"
             />
           </div>
           <div className="z-30 absolute bottom-6 left-1/2 transform -translate-x-1/2 w-full ">
             <ProfileStatusCards />
           </div>
         </div>
-        <div>
+        <div className="order-1 lg:order-2">
           <div className="">
-            <h3 className="text-3xl md:text-4xl max-w-[612px] leading-[124%] xl:text-[52px] font-medium tracking-tight mb-5">
+            <h3 className="text-3xl md:text-4xl max-w-153 leading-[124%] xl:text-[52px] font-medium tracking-tight mb-5">
               Sleep
             </h3>
             <p className="text-descriptionColor text-sm md:text-base leading-relaxed mb-6 ">
@@ -44,7 +44,7 @@ function SleepSection() {
                   className="flex items-start gap-3 text-sm md:text-base "
                 >
                   <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-greenColor text-white">
-                    <Check className="h-3 w-3 stroke-[3]" />
+                    <Check className="h-3 w-3 stroke-3" />
                   </div>
                   <span className="text-descriptionColor">{point}</span>
                 </li>
@@ -58,7 +58,12 @@ function SleepSection() {
                 /month
               </p>
             </div>
-            <WhiteCustomButton text="Start your sleep consult" />
+            <div className="flex justify-center md:justify-start w-full">
+              <WhiteCustomButton
+                text="Start your sleep consult"
+                className=" w-full md:w-auto"
+              />
+            </div>
           </div>
         </div>
       </div>

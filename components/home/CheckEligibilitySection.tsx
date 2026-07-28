@@ -27,17 +27,18 @@ export default function CheckEligibilitySection() {
 
   return (
     <div
-      className="relative w-full  rounded-3xl overflow-hidden flex items-center justify-center"
+      className="relative w-full p-3 md:py-6 lg:p-4  rounded-3xl! overflow-hidden flex items-center justify-center"
       style={{
         backgroundImage: `url('${image.src}')`,
-        backgroundSize: "103%",
+        backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         width: "100%",
+        height: "100%",
       }}
     >
       <form onSubmit={handleSubmit(onSubmit)} className=" ">
-        <div className="relative z-10 w-full lg:p-10 items-end  grid grid-cols-1 lg:grid-cols-2 gap-6 ">
+        <div className="relative z-10 w-full xl:p-10   items-end  grid grid-cols-1 lg:grid-cols-2 gap-6 ">
           {/* Left Card: Check Your Eligibility */}
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex flex-col justify-between">
             <div>
@@ -318,7 +319,7 @@ export default function CheckEligibilitySection() {
               {/* Gradient BMI Range Bar */}
               <div className="w-full space-y-2">
                 <div className="w-full h-2 rounded-full bg-gradient-to-r from-[#3B82F6] via-[#10B981] via-[#F59E0B] to-[#EF4444]" />
-                <div className="grid grid-cols-4 text-[10px] md:text-[11px] text-gray-500 text-center font-medium pt-1">
+                <div className="flex justify-between items-center text-[10px] md:text-[11px] text-gray-500 text-center font-medium pt-1">
                   <span>Underweight &lt;18.5</span>
                   <span>Healthy Weight 18.5 - 24.9</span>
                   <span>Overweight 25.0 - 29.9</span>

@@ -23,11 +23,18 @@ function CareCard({ slide }: { slide: SlideItem }) {
         {/* Right Side: Image with White Overlay Capsules */}
         <div className="md:col-span-3 relative  rounded-2xl overflow-hidden ">
           <Image
+            src={slide.mobileImage}
+            alt={slide.title}
+            width={1000}
+            height={600}
+            className="object-cover h-auto md:hidden"
+          />
+          <Image
             src={slide.mainImage}
             alt={slide.title}
             width={1000}
             height={600}
-            className="object-cover h-auto"
+            className="object-cover h-auto hidden md:block"
           />
         </div>
       </div>

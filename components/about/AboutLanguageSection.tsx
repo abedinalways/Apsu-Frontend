@@ -2,7 +2,7 @@ import LanguageCarousel from "../home/LanguageCarousel";
 
 function AboutLanguageSection() {
   return (
-    <div className="container py-14 lg:py-30">
+    <div className="container pt-12 lg:py-30">
       <div className="text-center">
         <h2 className="text-3xl md:text-4xl  lg:text-[40px] xl:text-[52px] font-medium text-primaryColor">
           Care in{" "}

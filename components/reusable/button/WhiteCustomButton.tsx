@@ -22,19 +22,19 @@ export default function WhiteCustomButton({
   onClick,
 }: ButtonWithArrowProps) {
   const buttonClasses = cn(
-    "h-12  lg:text-lg  pl-8 pr-2 cursor-pointer font-medium group w-fit bg-whiteColor text-secondary rounded-full flex items-center justify-center gap-2 hover:bg-[#F5F5F5] hover:shadow-md transition-all duration-300",
+    "h-12  text-base md:text-base lg:text-lg  pl-5 pr-2 cursor-pointer font-medium group w-fit bg-whiteColor text-secondary rounded-full flex items-center justify-between gap-2 hover:bg-[#F5F5F5] hover:shadow-md transition-all duration-300",
     width,
     className,
   );
 
   const content = (
-    <>
+     <div className='flex gap-2.5 md:gap-3 items-center' >
       <span>{text}</span>
 
       <span className="size-7 rounded-full  text-secondary flex items-center justify-center bg-black">
         <ArrowIcon className="group-hover:-rotate-45 transition-all duration-200  text-whiteColor" />
       </span>
-    </>
+    </div>
   );
 
   if (href) {

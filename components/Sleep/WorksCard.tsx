@@ -1,17 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { cn } from "@/lib/utils";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import {
-  ClipboardList,
-  UserCheck,
-  Stethoscope,
-  Truck,
-  Headphones,
   ArrowRight,
+  ClipboardList,
+  Stethoscope,
+  UserCheck,
 } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+import { HeadphonesIcon, TruckIcon } from "../icons/Icons";
 
 const WORKS_STEPS = [
   {
@@ -43,14 +42,14 @@ const WORKS_STEPS = [
     description:
       "Delivered discreetly, with ongoing check-ins and dose support.",
     image: "/images/sleep/work4.png",
-    icon: Truck,
+    icon: TruckIcon,
   },
   {
     id: "step-5",
     title: "24/7 ongoing support",
     description: "Refills, dose check-ins anytime.",
     image: "/images/sleep/work5.png",
-    icon: Headphones,
+    icon: HeadphonesIcon,
   },
 ];
 
@@ -64,7 +63,7 @@ export default function WorksCard() {
     <div className="pt-8 lg:pt-12">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
         {/* Left Side: Dynamic Image Display */}
-        <div className="relative w-full aspect-[4/5] md:aspect-[3/4] max-h-[600px] rounded-[2rem] overflow-hidden shadow-2xl">
+        <div className="relative w-full aspect-[3/2.25] md:aspect-[3/4] max-h-150 rounded-2xl overflow-hidden shadow-2xl">
           <Image
             src={activeData.image}
             alt={activeData.title}
@@ -87,10 +86,10 @@ export default function WorksCard() {
         {/* Right Side: Accordion Steps List */}
         <div className="relative py-4 pl-0 md:pl-8">
           {/* Vertical Timeline Track Container */}
-          <div className="absolute left-0 top-6 bottom-6 w-px bg-[#CDDCD3] hidden md:block">
+          <div className="absolute left-0 top-6 bottom-6 w-px bg-borderColor hidden md:block">
             {/* Active Highlight Line moving based on active index */}
             <div
-              className="absolute w-[2px] -left-[0.5px] bg-[#102B1C] transition-all duration-300 rounded-full"
+              className="absolute w-0.5 left-[-0.5px] bg-[#102B1C] transition-all duration-300 rounded-full"
               style={{
                 // Splits the total track space dynamically into 5 segment intervals
                 height: "20%",
@@ -119,7 +118,7 @@ export default function WorksCard() {
                   className={cn(
                     "relative flex flex-col justify-center transition-all duration-300 w-full overflow-hidden",
                     isOpen
-                      ? "bg-[#FAF9F4] rounded-[1.25rem] p-4 shadow-lg"
+                      ? "bg-bgColor rounded-[1.25rem] p-4 shadow-lg"
                       : "bg-transparent p-4 hover:bg-white/5 rounded-[1.25rem]",
                   )}
                 >
@@ -130,12 +129,12 @@ export default function WorksCard() {
                         className={cn(
                           "flex items-center justify-center h-12 w-12 rounded-full transition-all duration-300 shrink-0",
                           isOpen
-                            ? "bg-[#112a1c] text-white shadow-sm"
-                            : "bg-[#B8D9C6] text-[#112a1c]",
+                            ? "bg-primaryColor text-white shadow-sm"
+                            : "bg-borderColor text-whiteColor",
                         )}
                       >
                         <StepIcon
-                          className="h-[22px] w-[22px]"
+                          className="h-5.5 w-5.5"
                           strokeWidth={2.5}
                         />
                       </div>
@@ -145,7 +144,7 @@ export default function WorksCard() {
                         <span
                           className={cn(
                             "text-lg font-semibold transition-colors duration-300",
-                            isOpen ? "text-[#112a1c]" : "text-[#3a5847]",
+                            isOpen ? "text-primaryColor" : "text-[#3a5847]",
                           )}
                         >
                           {step.title}
