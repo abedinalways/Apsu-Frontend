@@ -247,11 +247,10 @@ export default function MultiStepForm() {
 
   // This fires ONLY when Step 8 inputs pass validation upon clicking 'Place order'
   const onSubmit = (data: FormData) => {
-    console.log("=======data========");
-    console.log(data);
+    console.log("click==========", data);
 
-    // Send data to backend API
-    // Example: await submitAssessmentForm(data);
+    sessionStorage.setItem("assessmentFormData", JSON.stringify(data));
+    router.push("/assessment/payment-success");
   };
 
   return (
@@ -334,7 +333,6 @@ export default function MultiStepForm() {
         {step === TOTAL_STEPS ? (
           <button
             type="submit"
-            onClick={form.handleSubmit(onSubmit)}
             className="w-full py-3 bg-[#0B251A] hover:bg-opacity-90 text-white rounded-full font-medium text-sm transition-all cursor-pointer"
           >
             Place order
