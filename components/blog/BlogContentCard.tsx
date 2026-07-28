@@ -36,7 +36,7 @@ export default function BlogContentCard({
           </p>
 
           <p className="text-[14px] leading-[160%] font-medium text-[#6c6c6c]">
-            {date} • {readTime}
+             {readTime}
           </p>
         </div>
 
