@@ -31,7 +31,7 @@ export default function GeneralInformation() {
         Tell us about yourself first!
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-start auto-rows-auto">
         <FormField
           control={control}
           name="firstName"
