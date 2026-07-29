@@ -245,37 +245,49 @@ export default function MultiStepForm() {
     setStep((prev) => Math.max(prev - 1, 1));
   };
 
-  const onSubmit = (data: FormData) => {
+  const handlePlaceOrder = async () => {
+    const step8Fields = [
+      "cardName",
+      "cardNumber",
+      "cardExpiry",
+      "cardCvv",
+      "agreeTerms",
+    ] as const;
+    const isValid = await form.trigger(step8Fields);
+    if (!isValid) return;
+
+    const data = form.getValues();
     console.log("=======data========");
     console.log(data);
+    router.push("/assessment/payment-success");
   };
 
   return (
     <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-[#FFFFFF] max-h-screen flex flex-col">
-      <div className="flex-1 overflow-y-auto">
-        {step <= TOTAL_STEPS && (
-          <div className="mb-6">
-            <div className="flex justify-between text-xs text-muted-foreground mb-2">
-              <span>{STEP_LABELS[step - 1]}</span>
-              <span>
-                Step {step} of {TOTAL_STEPS}
-              </span>
-            </div>
-            <div className="w-full h-1.5 rounded-full flex gap-1">
-              {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
-                <div
-                  key={i}
-                  className={`h-full flex-1 rounded-full transition-all duration-300 ${
-                    i + 1 <= step ? "bg-emerald-800" : "bg-gray-300"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        )}
+      <Form {...form}>
+        <form className="space-y-6">
+          <div className="flex-1 overflow-y-auto">
+            {step <= TOTAL_STEPS && (
+              <div className="mb-6">
+                <div className="flex justify-between text-xs text-muted-foreground mb-2">
+                  <span>{STEP_LABELS[step - 1]}</span>
+                  <span>
+                    Step {step} of {TOTAL_STEPS}
+                  </span>
+                </div>
+                <div className="w-full h-1.5 rounded-full flex gap-1">
+                  {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
+                    <div
+                      key={i}
+                      className={`h-full flex-1 rounded-full transition-all duration-300 ${
+                        i + 1 <= step ? "bg-emerald-800" : "bg-gray-300"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
 
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             {step === 1 && <GeneralInformation />}
             {step === 2 && healthHistoryStep === 0 && <HealthHistoryStepOne />}
             {step === 2 && healthHistoryStep === 1 && <HealthHistoryStepTwo />}
@@ -307,39 +319,40 @@ export default function MultiStepForm() {
             {step === 6 && <TreatmentPlanStepOne />}
             {step === 7 && <ScheduleConsultationStepOne />}
             {step === 8 && <CheckoutPaymentStepOne />}
-          </form>
-        </Form>
-      </div>
-
-      <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF]">
-        {step === TOTAL_STEPS ? (
-          <button
-            type="submit"
-            onClick={form.handleSubmit(onSubmit)}
-            className="w-full py-3 bg-[#0B251A] hover:bg-opacity-90 text-white rounded-full font-medium text-sm transition-all cursor-pointer"
-          >
-            Place order
-          </button>
-        ) : (
-          <div className="flex justify-between items-center w-full">
-            <button
-              type="button"
-              onClick={prevStep}
-              disabled={step === 0}
-              className="px-6 py-3 border rounded-full text-sm font-medium hover:bg-gray-50 disabled:opacity-30 cursor-pointer"
-            >
-              &lt; Back
-            </button>
-            <button
-              type="button"
-              onClick={nextStep}
-              className="px-6 py-3 bg-[#0B251A] text-white rounded-full text-sm font-medium cursor-pointer"
-            >
-              Continue &gt;
-            </button>
           </div>
-        )}
-      </div>
+
+          {/* Global Form Footer Trigger buttons */}
+          <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF]">
+            {step === TOTAL_STEPS ? (
+              <button
+                type="button"
+                onClick={handlePlaceOrder}
+                className="w-full py-3 bg-[#0B251A] hover:bg-opacity-90 text-white rounded-full font-medium text-sm transition-all cursor-pointer"
+              >
+                Place order
+              </button>
+            ) : (
+              <div className="flex justify-between items-center w-full">
+                <button
+                  type="button"
+                  onClick={prevStep}
+                  disabled={step === 0}
+                  className="px-6 py-3 border rounded-full text-sm font-medium hover:bg-gray-50 disabled:opacity-30 cursor-pointer"
+                >
+                  &lt; Back
+                </button>
+                <button
+                  type="button"
+                  onClick={nextStep}
+                  className="px-6 py-3 bg-[#0B251A] text-white rounded-full text-sm font-medium cursor-pointer"
+                >
+                  Continue &gt;
+                </button>
+              </div>
+            )}
+          </div>
+        </form>
+      </Form>
     </div>
   );
 }
