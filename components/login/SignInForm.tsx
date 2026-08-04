@@ -7,12 +7,10 @@ import { toast } from 'sonner';
 
 interface SignInFormProps {
   onForgotPassword: () => void;
-  onCheckEligibility: () => void;
 }
 
 export default function SignInForm({
   onForgotPassword,
-  onCheckEligibility,
 }: SignInFormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -125,19 +123,6 @@ export default function SignInForm({
           {isSubmitting ? 'Signing In...' : 'Sign In'}
         </button>
       </form>
-
-      <div className="text-center pt-2">
-        <p className="text-xs text-gray-500">
-          Don't have an account?{' '}
-          <button
-            type="button"
-            onClick={onCheckEligibility}
-            className="text-[#142C1E] font-medium hover:underline"
-          >
-            Check your eligibility
-          </button>
-        </p>
-      </div>
     </div>
   );
 }

@@ -1,7 +1,5 @@
 'use client';
 
-import { Check } from 'lucide-react';
-
 interface OrderStepperProps {
   steps: string[];
   currentStep: number;
@@ -61,7 +59,7 @@ export default function OrderStepper({
 
                     ${
                       completed
-                        ? 'bg-[#5A6561] border-[#E8F3ED]'
+                        ? 'bg-[#219653] border-[#E8F3ED]'
                         : active
                           ? 'bg-[#FCBE15] border-[#E8F3ED]'
                           : 'bg-[#5A6561] border-[#E8F3ED]'
@@ -69,10 +67,7 @@ export default function OrderStepper({
                   `}
                   >
                     {completed && (
-                      <Check
-                        className="h-3.5 w-3.5 text-white"
-                        strokeWidth={3}
-                      />
+                      <span className="relative h-2 w-2 rounded-full bg-white" />
                     )}
 
                     {active && (
@@ -156,7 +151,7 @@ export default function OrderStepper({
 
                   ${
                     completed
-                      ? 'bg-[#5A6561] border-[#E8F3ED]'
+                      ? 'bg-[#219653] border-[#E8F3ED]'
                       : active
                         ? 'bg-[#FCBE15] border-[#E8F3ED] scale-110'
                         : 'bg-[#5A6561] border-[#E8F3ED]'
@@ -164,7 +159,7 @@ export default function OrderStepper({
                 `}
                 >
                   {completed && (
-                    <Check className="h-5 w-5 text-white" strokeWidth={3} />
+                    <span className="relative h-3 w-3 rounded-full bg-white" />
                   )}
 
                   {active && (

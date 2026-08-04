@@ -120,45 +120,49 @@ export default function CheckoutPaymentStepOne() {
             )}
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <FormField
-              control={control}
-              name="cardExpiry"
-              render={({ field }) => (
-                <FormItem className="space-y-1">
-                  <FormLabel className="text-[11px] font-medium text-gray-700">
-                    Expiry Date <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="MM / YY"
-                      {...field}
-                      className="bg-[#FAF9F4] h-11 text-center"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={control}
-              name="cardCvv"
-              render={({ field }) => (
-                <FormItem className="space-y-1">
-                  <FormLabel className="text-[11px] font-medium text-gray-700">
-                    CVV <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="123"
-                      {...field}
-                      className="bg-[#FAF9F4] h-11 text-center"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-start auto-rows-auto">
+            <div className="min-w-0">
+              <FormField
+                control={control}
+                name="cardExpiry"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col gap-1">
+                    <FormLabel className="text-[14px] text-[#111]">
+                      Expiry Date <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="MM / YY"
+                        {...field}
+                        className="bg-[#FAF9F4] h-11 text-center"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="min-w-0">
+              <FormField
+                control={control}
+                name="cardCvv"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col gap-1">
+                    <FormLabel className="text-[14px] text-[#111]">
+                      CVV <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="123"
+                        {...field}
+                        className="bg-[#FAF9F4] h-11 text-center"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
           </div>
         </div>
         <p className="text-[10px] text-muted-foreground leading-relaxed">
