@@ -153,11 +153,11 @@ export default function ProfileClient() {
         <div className="p-3 md:p-8 min-h-[320px] flex flex-col items-center justify-center ">
           {activeTab === 'my-treatments' && (
             <>
-              {treatmentState === 'approved' && (
+              {treatmentState === 'not-approved' && (
                 <TreatmentCard data={activeTreatment} />
               )}
 
-              {treatmentState === 'not-approved' && (
+              {treatmentState === 'approved' && (
                 <NotApprovedTreatment
                   onViewOrder={() => handleTabChange('order-details')}
                   onStartAssessment={() => router.push('/assessment')}
