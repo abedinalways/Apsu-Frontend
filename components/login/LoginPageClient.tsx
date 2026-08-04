@@ -2,8 +2,6 @@
 
 import { useState, Suspense } from 'react';
 import Image from 'next/image';
-import EmailVerificationForm from './EmailVerificationForm';
-import CreatePasswordForm from './CreatePasswordForm';
 import EnterCodeForm from './EnterCodeForm';
 import SetNewPasswordForm from './SetNewPasswordForm';
 import ForgotPasswordForm from './ForgotPasswordForm';
@@ -12,8 +10,6 @@ import APSU from '../icons/APSU';
 
 
 type AuthStep =
-  | 'verify-email'
-  | 'create-password'
   | 'sign-in'
   | 'forgot-password'
   | 'enter-code'
@@ -21,21 +17,8 @@ type AuthStep =
 
 export default function LoginPageClient() {
   // Default to sign-in for existing users.
-  // New users reach create-password via "Check your eligibility" link in SignInForm.
   const [step, setStep] = useState<AuthStep>('sign-in');
   const [userEmail, setUserEmail] = useState<string>('');
-
-  // New user → go to create password
-  const handleEmailSubmitted = (email: string) => {
-    setUserEmail(email);
-    setStep('create-password');
-  };
-
-  // Existing user → go to sign in
-  const handleExistingUser = (email: string) => {
-    setUserEmail(email);
-    setStep('sign-in');
-  };
 
   return (
     <div className="w-full min-h-screen bg-white md:rounded-[32px] overflow-hidden shadow-sm grid grid-cols-1 md:grid-cols-2">
@@ -69,25 +52,10 @@ export default function LoginPageClient() {
           <APSU/>
         </div>
 
-        {step === 'verify-email' && (
-          <EmailVerificationForm
-            onNext={handleEmailSubmitted}
-            onExistingUser={handleExistingUser}
-          />
-        )}
-
-        {step === 'create-password' && (
-          <CreatePasswordForm
-            email={userEmail}
-            onBack={() => setStep('sign-in')}
-          />
-        )}
-
         {step === 'sign-in' && (
           <Suspense fallback={null}>
             <SignInForm
               onForgotPassword={() => setStep('forgot-password')}
-              onCheckEligibility={() => setStep('verify-email')}
             />
           </Suspense>
         )}

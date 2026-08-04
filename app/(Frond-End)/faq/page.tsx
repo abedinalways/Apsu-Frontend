@@ -15,8 +15,8 @@ export default function FaqPage() {
     <>
       <div className="FAQ-container px-4 sm:px-6 md:px-8">
         <FAQHero />
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] xl:grid-cols-[364px_1fr] gap-8 lg:gap-12 justify-self-center mt-6 lg:mt-8 mb-6 ">
-          <aside className="w-full mx-auto flex flex-col lg:items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] xl:grid-cols-[364px_1fr] gap-8 lg:gap-12 justify-self-center mt-6 lg:mt-8 mb-6 relative">
+          <aside className="w-full mx-auto flex flex-col lg:items-center lg:h-fit lg:justify-start  lg:sticky lg:top-30">
             <FAQSidebar topics={topics} />
           </aside>
 

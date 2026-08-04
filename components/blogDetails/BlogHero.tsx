@@ -15,7 +15,7 @@ export default function BlogHero({ blog }: Props) {
         <div className="flex-1 min-w-0">
           
             {/* Updated Date */}
-            <p
+            {/* <p
               className="
                 text-[12px]
                 uppercase
@@ -24,7 +24,7 @@ export default function BlogHero({ blog }: Props) {
               "
             >
               LAST UPDATED ON {blog.date.toUpperCase()}
-            </p>
+            </p> */}
 
             {/* Title */}
             <h1

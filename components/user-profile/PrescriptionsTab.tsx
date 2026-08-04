@@ -4,6 +4,7 @@ import { CalendarDays, MoreVertical, Pill, Syringe } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import PrescriptionMenu from './PrescriptionMenu';
 import PrescriptionDetailsModal from './PrescriptionDetailsModal';
+import PrescriptionTrackOrderModal from './PrescriptionTrackOrderModal';
 
 interface PrescriptionData {
   id: string;
@@ -57,6 +58,8 @@ export default function PrescriptionsTab() {
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState<ModalData | null>(null);
+  const [showTrackModal, setShowTrackModal] = useState(false);
+  const [trackModalData, setTrackModalData] = useState<PrescriptionData | null>(null);
 
   const handleMenuClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
@@ -93,6 +96,17 @@ export default function PrescriptionsTab() {
     setModalData(null);
   };
 
+  const openTrackModal = (item: PrescriptionData) => {
+    setTrackModalData(item);
+    setShowTrackModal(true);
+    setOpenMenuId(null);
+  };
+
+  const closeTrackModal = () => {
+    setShowTrackModal(false);
+    setTrackModalData(null);
+  };
+
   useEffect(() => {
     if (showModal) {
       document.body.style.overflow = 'hidden';
@@ -103,6 +117,17 @@ export default function PrescriptionsTab() {
       document.body.style.overflow = '';
     };
   }, [showModal]);
+
+  useEffect(() => {
+    if (showTrackModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showTrackModal]);
 
   return (
     <section className="w-full font-[Work_Sans]">
@@ -160,7 +185,7 @@ export default function PrescriptionsTab() {
                     open={openMenuId === item.id}
                     onClose={() => setOpenMenuId(null)}
                     onViewDetails={() => openDetailsModal(item)}
-                    onTrackOrder={() => console.log('Track Order:', item.id)}
+                    onTrackOrder={() => openTrackModal(item)}
                   />
                 </div>
               </div>
@@ -202,7 +227,7 @@ export default function PrescriptionsTab() {
                       open={openMenuId === item.id}
                       onClose={() => setOpenMenuId(null)}
                       onViewDetails={() => openDetailsModal(item)}
-                      onTrackOrder={() => console.log('Track Order:', item.id)}
+                      onTrackOrder={() => openTrackModal(item)}
                     />
                   </div>
                 </div>
@@ -217,6 +242,14 @@ export default function PrescriptionsTab() {
           open={showModal}
           onClose={closeModal}
           data={modalData}
+        />
+      )}
+
+      {showTrackModal && trackModalData && (
+        <PrescriptionTrackOrderModal
+          open={showTrackModal}
+          onClose={closeTrackModal}
+          data={trackModalData}
         />
       )}
     </section>
