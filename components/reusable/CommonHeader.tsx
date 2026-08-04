@@ -10,7 +10,7 @@ function CommonHeader({
   isSmall?: boolean;
 }) {
   return (
-    <div className="max-w-[800px]  mx-auto w-full">
+    <div className="max-w-200 mx-auto w-full">
       <h4 className="text-base text-greenColor mb-3">{sectionName}</h4>
       <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium text-primaryColor">
         {title}

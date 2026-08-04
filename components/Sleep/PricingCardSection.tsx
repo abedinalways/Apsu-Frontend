@@ -80,7 +80,7 @@ export default function PricingCardSection({
       </div>
 
       {/* Main Structural Content Grid Box Layout */}
-      <div className="relative z-10 w-full container grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+      <div className="relative z-10 w-full container grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 lg:gap-12">
         {/* Left Side: Header Copy Content Wrapper block */}
         <div className="md:col-span-6 text-white space-y-3.5 max-w-md">
           {tagline && (
@@ -94,7 +94,7 @@ export default function PricingCardSection({
         </div>
 
         {/* Right Side: Care Plan Floating White Card Surface block */}
-        <div className="md:col-span-6 bg-white rounded-3xl p-6 md:p-8 shadow-2xl max-w-md w-full justify-self-center md:justify-self-end text-headerColor">
+        <div className="md:col-span-6 bg-white rounded-3xl p-6 md:p-3 lg:p-8 shadow-2xl max-w-md w-full justify-self-center md:justify-self-end text-headerColor">
           <h3 className="text-xl font-medium md:text-2xl text-primaryColor mb-2">
             {planName}
           </h3>
@@ -104,7 +104,7 @@ export default function PricingCardSection({
           </p>
 
           {/* Pricing Highlight Embedded Banner */}
-          <div className="bg-bgColor rounded-2xl p-5 mb-6 space-y-2">
+          <div className="bg-bgColor rounded-2xl p-4 md:p-3 lg:p-5 mb-6 space-y-2">
             <p className="text-base md:text-lg lg:text-xl font-semibold text-primaryColor tracking-tight">
               {priceLabel}
             </p>

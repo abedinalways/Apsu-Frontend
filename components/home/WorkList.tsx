@@ -64,7 +64,7 @@ const WorkList = () => {
                       className="flex items-start gap-3 text-sm md:text-base "
                     >
                       <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-greenColor text-white">
-                        <Check className="h-3 w-3 stroke-[3]" />
+                        <Check className="h-3 w-3 stroke-3" />
                       </div>
                       <span className="text-[#3B3B3C]">{point}</span>
                     </li>

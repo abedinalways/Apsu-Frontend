@@ -33,7 +33,7 @@ function SleepSection() {
               Sleep
             </h3>
             <p className="text-descriptionColor text-sm md:text-base leading-relaxed mb-6 ">
-              Real rest without the dependency. <br /> Non-habit-forming
+              Real Rest, Without the Dependency. <br /> Non-habit-forming
               Physician-prescribed For sensitive sleepers
             </p>
             {/* Bullet Points */}
