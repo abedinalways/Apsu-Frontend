@@ -6,6 +6,7 @@ import InjectionIcon from '../icons/injectionIcon';
 import OrderStepper from './OrderStepper';
 import BoxIcon from '../icons/BoxIcon';
 import NotApprovedOrderModal from './NotApprovedOrderModal';
+import ShippedOrderModal from './ShippedOrderModal';
 
 interface OrderData {
   orderId: string;
@@ -70,6 +71,17 @@ export default function OrderDetailsTab() {
       status: 'Not Approved',
       progressStep: 1,
     },
+    {
+      orderId: 'RX-APSU-100248',
+      treatmentName: 'Semaglutide Injection',
+      treatmentSub: 'Weight Loss Treatment',
+      plan: '6 Month',
+      orderDate: 'Jul 27, 2026',
+      paymentStatus: 'Paid',
+      totalPrice: '$200',
+      status: 'Shipped',
+      progressStep: 4,
+    },
   ];
 
   return (
@@ -115,7 +127,7 @@ export default function OrderDetailsTab() {
                 </td>
                 <td className="p-4">
                   <span
-                    className={`md:px-3 py-1 rounded-full   line-clamp-none md:line-clamp-2 w-fit text-center md:text-start  text-xs font-medium ${order.status === 'Not Approved' ? 'text-[#EF4444] border border-[#FEE2E2] bg-[#FEF2F2]' : 'text-[#bb4e02] border border-[#fde99f] bg-[#FFF9EC]'}`}
+                    className={`md:px-3 py-1 rounded-full   line-clamp-none md:line-clamp-2 w-fit text-center md:text-start  text-xs font-medium ${order.status === 'Shipped' ? 'text-[#006aab] border border-[##b6e6ff] bg-[#eff9ff]' : order.status === 'Not Approved' ? 'text-[#EF4444] border border-[#FEE2E2] bg-[#FEF2F2]' : 'text-[#bb4e02] border border-[#fde99f] bg-[#FFF9EC]'}`}
                   >
                     {order.status}
                   </span>
@@ -155,6 +167,8 @@ export default function OrderDetailsTab() {
 
             {selectedOrder.status === 'Not Approved' ? (
               <NotApprovedOrderModal order={selectedOrder} />
+            ) : selectedOrder.status === 'Shipped' ? (
+              <ShippedOrderModal order={selectedOrder} />
             ) : (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
