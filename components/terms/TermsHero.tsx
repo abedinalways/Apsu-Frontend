@@ -2,11 +2,11 @@
 
 export function TermsHero() {
   return (
-    <section className="flex flex-col  justify-start mb-4 max-w-3xl">
-      <div className="flex flex-col  gap-2  max-w-4xl">
+    <section className="flex flex-col justify-start mb-4 max-w-3xl">
+      <div className="flex flex-col gap-2 max-w-4xl">
         {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[110%] text-[#102b1c]">
-          Medications Safety Information
+          Terms of Service
         </h1>
 
         {/* Last Updated */}
@@ -15,18 +15,16 @@ export function TermsHero() {
         </p>
         <hr className="py-6" />
         <p className="py-4">
-          Please read this carefully. This page is a general summary of safety
-          information for the medications offered through Apsu. It does not
-          contain all possible information, is not medical advice, and does not
-          replace the guidance of your provider or pharmacist or the official
-          prescribing information for your medication. Always read the materials
-          your provider and pharmacy give you.
+          Please read this carefully. This page outlines the terms and conditions
+          for using Apsu's services. It does not constitute legal advice,
+          and does not replace the guidance of a qualified legal professional.
+          Always review the full terms document provided by your provider.
         </p>
 
         <p className="mb-14">
-          If you think you may be having a medical emergency, call 911 or go to
-          the nearest emergency room. If you are in emotional distress or
-          crisis, call or text 988 (the Suicide & Crisis Lifeline).
+          If you have questions about these terms, please contact our support
+          team. We are here to help clarify any concerns you may have about
+          our services.
         </p>
       </div>
     </section>
