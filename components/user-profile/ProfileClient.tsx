@@ -12,13 +12,14 @@ import LocationIcon from '../icons/LocationIcon';
 import VideoCallIcon from '../icons/VideoCallIcon';
 import TreatmentCard from './TreatmentCard';
 import NotApprovedTreatment from './NotApprovedTreatment';
-import ConsultationTabContainer from './ConsultationTabContainer';
+import MessageTabContainer from './MessageTabContainer';
 import OrderDetailsTab from './OrderDetailsTab';
 import PrescriptionsTab from './PrescriptionsTab';
+import { MessagingProvider } from '@/contexts/MessagingContext';
 
 const TABS = [
   { id: 'my-treatments', label: 'My Treatments' },
-  { id: 'consultations', label: 'Consultations' },
+  { id: 'messages', label: 'Messages' },
   { id: 'order-details', label: 'Order Details' },
   { id: 'prescriptions', label: 'Prescriptions' },
 ];
@@ -113,22 +114,20 @@ export default function ProfileClient() {
         </button>
       </div>
 
-      <div className="bg-white border border-[#EBEAE4] rounded-[24px] p-6 max-w-md w-full space-y-4 mt-12">
+      <div className="bg-white border border-[#EBEAE4] rounded-[16px] p-6 max-w-md w-full space-y-4 mt-12">
         <p className="text-sm md:text-[16px] font-normal tracking-wider text-[#00774d] uppercase">
-          Upcoming Consultation
+          ACTIVE TRAETMENT
         </p>
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex flex-col  gap-4">
           <div>
-            <h3 className="text-xl md:text-[24px] font-bold text-[#102b1c]">
-              Jul 20, 2026
+            <h3 className="text-xl md:text-[24px] font-medium text-[#102B1C]">
+              Weight Loss Program
             </h3>
-            <p className="text-md md:text-[16px] text-[#3b3b3c] mt-0.5">
-              02:00 PM EST, Dr. Robert
-            </p>
           </div>
-          <button className="bg-[#102b1c] hover:bg-[#1c3d2a] text-white text-sm font-medium h-11 px-5 rounded-full flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
-            <VideoCallIcon /> Join Call
-          </button>
+          <h4 className="text-sm md:text-[16px] font-normal tracking-wider text-[#00774d] ">
+            12 months plan
+          </h4>
+            
         </div>
       </div>
 
@@ -173,7 +172,11 @@ export default function ProfileClient() {
             </>
           )}
 
-          {activeTab === 'consultations' && <ConsultationTabContainer />}
+          {activeTab === 'messages' && (
+            <MessagingProvider>
+              <MessageTabContainer />
+            </MessagingProvider>
+          )}
 
           {activeTab === 'order-details' &&
             (hasOrders ? (
