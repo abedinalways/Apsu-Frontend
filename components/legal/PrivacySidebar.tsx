@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import type { TermsSection } from '@/lib/data/termsData';
+import type { PrivacySection } from '@/lib/data/privacyData';
 
-interface TermsSidebarProps {
-  sections: Pick<TermsSection, 'id' | 'title' | 'sidebarTitle' | 'serial'>[];
+interface PrivacySidebarProps {
+  sections: Pick<PrivacySection, 'id' | 'title' | 'sidebarTitle' | 'serial'>[];
 }
 
-export function TermsSidebar({ sections }: TermsSidebarProps) {
+export function PrivacySidebar({ sections }: PrivacySidebarProps) {
   const [activeId, setActiveId] = useState<string>('');
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
@@ -48,8 +48,8 @@ export function TermsSidebar({ sections }: TermsSidebarProps) {
   return (
     <aside className="shrink-0 flex-col gap-6 sm:gap-8 mt-8 sm:mt-10 md:mt-0 lg:flex lg:py-12 w-full font-[work_sans] shadow rounded-[16px] bg-white border border-[#cddcd3] p-8">
       <div className="flex flex-col gap-3">
-        <span className="text-lg sm:text-xl md:text-2xl font-semibold uppercase tracking-wide text-[#111]">
-          All Sections
+        <span className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide text-[#111]">
+          All Policy
         </span>
         <nav className="flex flex-col gap-2 text-base sm:text-lg">
           {sections.map(section => {
