@@ -30,11 +30,10 @@ function SleepSection() {
         <div className="order-1 lg:order-2">
           <div className="">
             <h3 className="text-3xl md:text-4xl max-w-153 leading-[124%] xl:text-[52px] font-medium tracking-tight mb-5">
-              Sleep
+              Real Rest, Without the Dependency.
             </h3>
             <p className="text-descriptionColor text-sm md:text-base leading-relaxed mb-6 ">
-              Real Rest, Without the Dependency. <br /> Non-habit-forming
-              Physician-prescribed For sensitive sleepers
+              Non-habit-forming Physician-prescribed For sensitive sleepers
             </p>
             {/* Bullet Points */}
             <ul className="space-y-2 ">
