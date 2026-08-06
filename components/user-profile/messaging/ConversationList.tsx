@@ -1,6 +1,6 @@
 'use client';
 
-import { formatConversationTimestamp } from '@/lib/messagingUtils';
+
 import ConversationListItem from './ConversationListItem';
 import type { Conversation } from '@/types/messaging';
 

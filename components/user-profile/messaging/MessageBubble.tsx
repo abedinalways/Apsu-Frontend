@@ -30,17 +30,17 @@ export default function MessageBubble({ message, isNew }: MessageBubbleProps) {
         isNew && 'animate-slide-up',
       )}
     >
-      <div className="max-w-[85%] sm:max-w-[70%]">
+      <div className="max-w-[85%] sm:max-w-[70%] min-w-0">
         {!isUser && <div className="flex items-start gap-2 mb-1"></div>}
         <div
           className={cn(
-            'rounded-[20px] px-4 py-3 text-sm leading-6',
+            'rounded-[20px] px-3 py-2.5 text-xs sm:text-sm leading-5 sm:leading-6',
             isUser
               ? 'bg-[#E8F5E9] text-[#142C1E] rounded-tr-sm'
               : 'bg-[#FAF9F4] border border-[#E5E7EB] text-[#142C1E] rounded-tl-sm',
           )}
         >
-          <p>{message.body}</p>
+          <p className="break-words whitespace-pre-wrap">{message.body}</p>
           {message.attachment && (
             <div className="mt-2">
               {message.attachment.type === 'image' ? (
@@ -72,7 +72,12 @@ export default function MessageBubble({ message, isNew }: MessageBubbleProps) {
             </div>
           )}
         </div>
-        <div className="mt-1 flex items-center gap-1 text-[11px] text-gray-400">
+        <div
+          className={cn(
+            'mt-1 flex items-center gap-1 text-[11px] text-gray-400',
+            isUser && 'justify-end',
+          )}
+        >
           <span>
             {new Date(message.createdAt).toLocaleTimeString([], {
               hour: '2-digit',
@@ -80,7 +85,11 @@ export default function MessageBubble({ message, isNew }: MessageBubbleProps) {
             })}
           </span>
           {isUser && (
-            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-3 h-3 text-[#10B981]"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
             </svg>
           )}

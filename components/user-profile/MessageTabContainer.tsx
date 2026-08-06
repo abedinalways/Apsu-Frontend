@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Search } from 'lucide-react';
+import { Search, ArrowLeft } from 'lucide-react';
 import { useMessaging } from '@/contexts/MessagingContext';
 import MessageBubble from './messaging/MessageBubble';
-
-import useMessagingEffect from '@/hooks/useMessaging';
 import ConversationList from './messaging/ConversationList';
 import MessageComposer from './messaging/MessageComposer';
+import MessageEmptyState from './MessageEmptyState';
+import useMessagingEffect from '@/hooks/useMessaging';
 
 export default function MessageTabContainer() {
   const {
@@ -21,10 +21,12 @@ export default function MessageTabContainer() {
     sendMessage,
     updateDraft,
     updateSearch,
+    startCareTeamConversation,
   } = useMessaging();
 
   const [isHydrated, setIsHydrated] = useState(false);
   const [newMessageIds, setNewMessageIds] = useState<Set<string>>(new Set());
+  const [showChat, setShowChat] = useState(false);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const prevMessagesLengthRef = useRef(0);
 
@@ -66,6 +68,15 @@ export default function MessageTabContainer() {
     prevMessagesLengthRef.current = currentLength;
   }, [activeMessages.length, isHydrated, activeConversation]);
 
+  const handleConversationSelect = (conversationId: string) => {
+    selectConversation(conversationId);
+    setShowChat(true);
+  };
+
+  const handleBackToList = () => {
+    setShowChat(false);
+  };
+
   if (!isHydrated) {
     return (
       <div className="flex items-center justify-center h-[400px]">
@@ -74,10 +85,18 @@ export default function MessageTabContainer() {
     );
   }
 
+  if (totalConversations === 0) {
+    return (
+      <div className="w-full flex items-center justify-center min-h-[360px] bg-white rounded-[24px]">
+        <MessageEmptyState onMessageCareTeam={startCareTeamConversation} />
+      </div>
+    );
+  }
+
   return (
-    <div className="w-full h-[600px] flex rounded-[16px] border border-[#EBEAE4] overflow-hidden bg-white font-[Work_Sans]">
-      {/* Sidebar */}
-      <div className="w-full md:w-80 border-r border-[#EBEAE4] flex flex-col bg-white">
+    <div className="w-full h-[550px] sm:h-[600px] flex rounded-[12px] border border-[#EBEAE4] overflow-hidden bg-white max-w-full">
+      {/* Sidebar - Conversation List */}
+      <div className={`${showChat ? 'hidden md:flex' : 'flex'} w-full md:w-80 border-r border-[#EBEAE4] flex-col bg-white min-w-0`}>
         <div className="p-4 border-b border-[#F4F3EF]">
           <h2 className="text-lg font-semibold text-[#142C1E] mb-3">Messages</h2>
           <div className="relative">
@@ -87,55 +106,62 @@ export default function MessageTabContainer() {
               value={searchQuery}
               onChange={(e) => updateSearch(e.target.value)}
               placeholder="Search messages"
-              className="w-full pl-9 pr-4 py-2 rounded-[12px] border border-[#EBEAE4] bg-white text-[16px] focus:outline-none focus:border-[#A3C9A8]"
+              className="w-full pl-9 pr-4 py-2 rounded-[12px] border border-[#EBEAE4] bg-[#FAF9F5] text-[14px] focus:outline-none focus:border-[#A3C9A8]"
             />
           </div>
         </div>
         <ConversationList
           conversations={filteredConversations}
           activeConversationId={activeConversation?.id || null}
-          onSelectConversation={selectConversation}
+          onSelectConversation={handleConversationSelect}
         />
       </div>
 
       {/* Chat Panel */}
-      <div className="hidden md:flex flex-1 flex-col bg-white">
+      <div className={`${showChat ? 'flex' : 'hidden md:flex'} flex-1 flex-col bg-white min-w-0 w-full`}>
         {activeConversation ? (
           <>
-            <div className="px-6 py-4 border-b border-[#F4F3EF]">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="relative">
+            <div className="px-3 py-3 sm:px-4 sm:py-4 border-b border-[#F4F3EF] shrink-0">
+              <div className="flex items-center justify-between gap-2 min-w-0">
+                <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                  {/* Back button for mobile */}
+                  <button
+                    onClick={handleBackToList}
+                    className="md:hidden p-1.5 -ml-1 hover:bg-gray-100 rounded-full shrink-0"
+                    aria-label="Back to conversations"
+                  >
+                    <ArrowLeft className="w-5 h-5 text-gray-700" />
+                  </button>
+                  <div className="relative shrink-0">
                     <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-semibold"
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold"
                       style={{ backgroundColor: activeConversation.avatarColor }}
                     >
                       {activeConversation.initials}
                     </div>
-                    <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#4b8a75] rounded-full border-2 border-white" />
+                    <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#10B981] rounded-full border-2 border-white" />
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-semibold text-[#69ae86]">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <h3 className="font-semibold text-[#142C1E] text-sm sm:text-base truncate">
                         {activeConversation.participantName}
                       </h3>
-                      
                     </div>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500 truncate">
                       We typically reply within a few hours
                     </p>
                   </div>
                 </div>
-                <button className="p-2 hover:bg-gray-100 rounded-full">
-                  <Search className="w-6 h-6 text-gray-500" />
+                <button className="p-2 hover:bg-gray-100 rounded-full shrink-0">
+                  <Search className="w-4 h-4 text-gray-500" />
                 </button>
               </div>
             </div>
             <div 
               ref={messagesContainerRef}
-              className="flex-1 overflow-y-auto p-6 space-y-4"
+              className="flex-1 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-6 space-y-3 sm:space-y-4 min-w-0"
             >
-              <div className="text-center text-xs text-gray-400 py-2">
+              <div className="text-center text-xs text-gray-400 py-1 sm:py-2">
                 Today, Jul 20, 2026
               </div>
               {activeMessages.map((message) => (
@@ -151,10 +177,8 @@ export default function MessageTabContainer() {
             />
           </>
         ) : (
-          <div className="flex-1 flex items-center justify-center">
-            <div className="text-center">
-              <p className="text-gray-500">Select a conversation to start messaging</p>
-            </div>
+          <div className="hidden md:flex flex-1 items-center justify-center p-4">
+            <MessageEmptyState onMessageCareTeam={startCareTeamConversation} />
           </div>
         )}
       </div>

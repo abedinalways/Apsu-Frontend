@@ -61,6 +61,7 @@ interface MessagingContextType extends MessagingState {
   updateDraft: (value: string) => void;
   updateSearch: (value: string) => void;
   receiveMessage: (conversationId: string, body: string, senderName: string) => void;
+  startCareTeamConversation: () => void;
 }
 
 const MessagingContext = createContext<MessagingContextType | undefined>(undefined);
@@ -117,6 +118,37 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
           prev.conversationIds,
           conversationId,
         ),
+      };
+    });
+  };
+
+  const startCareTeamConversation = () => {
+    setState((prev) => {
+      if (prev.conversationsById['care-team-1']) {
+        return {
+          ...prev,
+          activeConversationId: 'care-team-1',
+        };
+      }
+      const newConv: Conversation = {
+        id: 'care-team-1',
+        participantName: 'Care Team',
+        participantRole: 'Apsu Support',
+        avatarColor: '#142C1E',
+        initials: 'CT',
+        unreadCount: 0,
+        online: true,
+        typing: false,
+        lastMessageAt: new Date().toISOString(),
+        lastMessagePreview: 'Started conversation',
+      };
+      return {
+        ...prev,
+        activeConversationId: 'care-team-1',
+        conversationIds: ['care-team-1', ...prev.conversationIds],
+        conversationsById: { ...prev.conversationsById, 'care-team-1': newConv },
+        messagesByConversationId: { ...prev.messagesByConversationId, 'care-team-1': [] },
+        draftsByConversationId: { ...prev.draftsByConversationId, 'care-team-1': '' },
       };
     });
   };
@@ -246,6 +278,7 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
         updateDraft,
         updateSearch,
         receiveMessage,
+        startCareTeamConversation,
       }}
     >
       {children}
