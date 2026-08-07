@@ -24,7 +24,7 @@ import EligibilityStepOne from "../form/EligibilityStepOne";
 import EligibilityStepTwo from "../form/EligibilityStepTwo";
 import EligibilityStepThree from "../form/EligibilityStepThree";
 
-const TOTAL_STEPS = 8;
+const TOTAL_STEPS = 7;
 
 const STEP_LABELS = [
   "General information",
@@ -33,7 +33,6 @@ const STEP_LABELS = [
   "Eligibility Check",
   "Eligibility",
   "Treatment Plan",
-  "Schedule Consultation",
   "Checkout & Payment",
 ];
 
@@ -176,7 +175,6 @@ export default function MultiStepForm() {
       fieldsToValidate = eligibilityFields[eligibilityStep] || [];
     }
     if (step === 6) fieldsToValidate = ["treatmentPlan"];
-    if (step === 7) fieldsToValidate = ["consultationDate", "consultationTime"];
 
     const isValid = await form.trigger(fieldsToValidate);
     if (!isValid) return;
@@ -317,8 +315,8 @@ export default function MultiStepForm() {
             {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
             {step === 5 && eligibilityStep === 2 && <EligibilityStepThree />}
             {step === 6 && <TreatmentPlanStepOne />}
-            {step === 7 && <ScheduleConsultationStepOne />}
-            {step === 8 && <CheckoutPaymentStepOne />}
+            {/* {step === 7 && <ScheduleConsultationStepOne />} */}
+            {step === 7 && <CheckoutPaymentStepOne />}
           </div>
 
           {/* Global Form Footer Trigger buttons */}
