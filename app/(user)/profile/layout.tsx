@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import MedicalChatbot from "@/components/profile/MedicalChatbot";
+
 
 export default function ProfileLayout({
   children,
@@ -11,5 +13,6 @@ export default function ProfileLayout({
       <main className="flex-1">
         {children}
     </main>
+    <MedicalChatbot />
   </div>
 )}
