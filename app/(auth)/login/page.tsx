@@ -3,7 +3,7 @@ import LoginPageClient from "@/components/login/LoginPageClient";
 
 export const metadata = {
   title: 'Login | Apsu',
-  description: 'Access your treatments and care center.',
+  description: 'Access your treatments and care center',
 };
 
 export default function LoginPage() {
