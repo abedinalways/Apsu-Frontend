@@ -21,6 +21,7 @@ import EligibilityCheckStepFive from "./EligibilityCheckStepFive";
 import EligibilityCheckStepSix from "./EligibilityCheckStepSix";
 import EligibilityCheckStepSeven from "./EligibilityCheckStepSeven";
 import EligibilityCheckStepEight from "./EligibilityCheckStepEight";
+import CommonEligibilityCheckStepOne from "../form/CommonEligibilityCheckStepOne";
 import EligibilityStepOne from "../form/EligibilityStepOne";
 import EligibilityStepTwo from "../form/EligibilityStepTwo";
 import EligibilityStepThree from "../form/EligibilityStepThree";
@@ -159,6 +160,7 @@ export default function MultiStepForm() {
         ["currentMedications"],
         ["medicalTeamConcerns"],
         ["isCurrentlyPregnant"],
+        [],
       ];
 
       fieldsToValidate = eligibilityCheckFields[eligibilityCheckStep] || [];
@@ -195,7 +197,7 @@ export default function MultiStepForm() {
       return;
     }
 
-    if (step === 4 && eligibilityCheckStep < 7) {
+    if (step === 4 && eligibilityCheckStep < 8) {
       setEligibilityCheckStep((prev) => prev + 1);
       return;
     }
@@ -239,7 +241,7 @@ export default function MultiStepForm() {
     }
 
     if (step === 5) {
-      setEligibilityCheckStep(7);
+      setEligibilityCheckStep(8);
     }
 
     if (step === 6) {
@@ -329,11 +331,14 @@ export default function MultiStepForm() {
             {step === 4 && eligibilityCheckStep === 7 && (
               <EligibilityCheckStepEight />
             )}
-             {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
-             {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
-             {step === 5 && eligibilityStep === 2 && <EligibilityStepFour />}
-             {step === 5 && eligibilityStep === 3 && <EligibilityStepFive />}
-             {step === 5 && eligibilityStep === 4 && <EligibilityStepThree />}
+            {step === 4 && eligibilityCheckStep === 8 && (
+              <CommonEligibilityCheckStepOne />
+            )}
+            {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
+            {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
+            {step === 5 && eligibilityStep === 2 && <EligibilityStepFour />}
+            {step === 5 && eligibilityStep === 3 && <EligibilityStepFive />}
+            {step === 5 && eligibilityStep === 4 && <EligibilityStepThree />}
             {step === 6 && <TreatmentPlanStepOne />}
             {/* {step === 7 && <ScheduleConsultationStepOne />} */}
             {step === 7 && <CheckoutPaymentStepOne />}

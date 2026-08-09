@@ -20,6 +20,7 @@ import EligibilityCheckStepOne from "./EligibilityCheckStepOne";
 import EligibilityCheckStepTwo from "./EligibilityCheckStepTwo";
 import EligibilityCheckStepThree from "./EligibilityCheckStepThree";
 import EligibilityCheckStepFour from "./EligibilityCheckStepFour";
+import CommonEligibilityCheckStepOne from "../form/CommonEligibilityCheckStepOne";
 import EligibilityStepOne from "../form/EligibilityStepOne";
 import EligibilityStepTwo from "../form/EligibilityStepTwo";
 import EligibilityStepThree from "../form/EligibilityStepThree";
@@ -161,6 +162,7 @@ export default function MultiStepForm() {
           "heavySnoringOrApnea",
           "pregnantOrBreastfeeding",
         ],
+        [],
       ];
       fieldsToValidate = eligibilityCheckFields[eligibilityCheckStep] || [];
     }
@@ -195,7 +197,7 @@ export default function MultiStepForm() {
       return;
     }
 
-    if (step === 4 && eligibilityCheckStep < 3) {
+    if (step === 4 && eligibilityCheckStep < 4) {
       setEligibilityCheckStep((prev) => prev + 1);
       return;
     }
@@ -239,7 +241,7 @@ export default function MultiStepForm() {
     }
 
     if (step === 5) {
-      setEligibilityCheckStep(3);
+      setEligibilityCheckStep(4);
     }
 
     if (step === 6) {
@@ -314,10 +316,13 @@ export default function MultiStepForm() {
             {step === 4 && eligibilityCheckStep === 2 && (
               <EligibilityCheckStepThree />
             )}
-            {step === 4 && eligibilityCheckStep === 3 && (
-              <EligibilityCheckStepFour />
-            )}
-            {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
+             {step === 4 && eligibilityCheckStep === 3 && (
+               <EligibilityCheckStepFour />
+             )}
+             {step === 4 && eligibilityCheckStep === 4 && (
+               <CommonEligibilityCheckStepOne />
+             )}
+             {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
             {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
             {step === 5 && eligibilityStep === 2 && <EligibilityStepFour />}
             {step === 5 && eligibilityStep === 3 && <EligibilityStepFive />}
