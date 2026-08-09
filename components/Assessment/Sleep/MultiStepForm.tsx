@@ -333,7 +333,7 @@ export default function MultiStepForm() {
           </div>
 
           {/* Global Form Footer Trigger buttons */}
-          <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF]">
+          <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF] pb-10">
             {step === TOTAL_STEPS ? (
               <button
                 type="button"
@@ -343,7 +343,7 @@ export default function MultiStepForm() {
                 Place order
               </button>
             ) : (
-              <div className="flex justify-between items-center w-full pb-10">
+              <div className="flex justify-between items-center w-full ">
                 <button
                   type="button"
                   onClick={prevStep}
