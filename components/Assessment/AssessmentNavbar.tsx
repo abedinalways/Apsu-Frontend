@@ -21,23 +21,25 @@ export default function AssessmentNavbar() {
     languages.find((l) => l.value === language)?.label ?? "Select Language";
 
   return (
-    <header className="w-full bg-[#FAF9F6] border-b border-gray-100 px-6 py-4 flex items-center justify-between">
-      <Link href={"/"}>
-        {" "}
-        <div className="flex items-center">
-          {/* Left: Logo */}
-          <Image src="/logo.png" alt="apsu" height={32} width={87} />
-        </div>
-      </Link>
+    <header className="w-full bg-[#FAF9F6] border-b border-gray-100 px-6 py-4 ">
+      <div className="container mx-auto flex items-center justify-between">
+        <Link href={"/"}>
+          {" "}
+          <div className="flex items-center">
+            {/* Left: Logo */}
+            <Image src="/logo.png" alt="apsu" height={32} width={87} />
+          </div>
+        </Link>
 
-      <div className="w-40">
-        <SelecteInputField
-          value={language}
-          onValueChange={setLanguage}
-          options={languages}
-          placeholder="Select Language"
-          className=""
-        />
+        <div className="w-40">
+          <SelecteInputField
+            value={language}
+            onValueChange={setLanguage}
+            options={languages}
+            placeholder="Select Language"
+            className=""
+          />
+        </div>
       </div>
     </header>
   );
