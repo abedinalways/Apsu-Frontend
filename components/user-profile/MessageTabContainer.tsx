@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Search, ArrowLeft } from 'lucide-react';
+import { Search, ArrowLeft, Languages } from 'lucide-react';
 import { useMessaging } from '@/contexts/MessagingContext';
 import MessageBubble from './messaging/MessageBubble';
 import ConversationList from './messaging/ConversationList';
@@ -27,6 +27,8 @@ export default function MessageTabContainer() {
   const [isHydrated, setIsHydrated] = useState(false);
   const [newMessageIds, setNewMessageIds] = useState<Set<string>>(new Set());
   const [showChat, setShowChat] = useState(false);
+  const [userLanguage, setUserLanguage] = useState('Spanish');
+  const [showTranslation, setShowTranslation] = useState<Set<string>>(new Set());
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const prevMessagesLengthRef = useRef(0);
 
@@ -75,6 +77,18 @@ export default function MessageTabContainer() {
 
   const handleBackToList = () => {
     setShowChat(false);
+  };
+
+  const toggleTranslation = (messageId: string) => {
+    setShowTranslation(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(messageId)) {
+        newSet.delete(messageId);
+      } else {
+        newSet.add(messageId);
+      }
+      return newSet;
+    });
   };
 
   if (!isHydrated) {
@@ -152,9 +166,26 @@ export default function MessageTabContainer() {
                     </p>
                   </div>
                 </div>
-                <button className="p-2 hover:bg-gray-100 rounded-full shrink-0">
-                  <Search className="w-4 h-4 text-gray-500" />
-                </button>
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg px-2 py-1">
+                    <Languages className="w-3.5 h-3.5 text-gray-600" />
+                    <select
+                      value={userLanguage}
+                      onChange={(e) => setUserLanguage(e.target.value)}
+                      className="bg-transparent text-xs text-gray-700 outline-none cursor-pointer"
+                    >
+                      <option value="Korean">Korean</option>
+                      <option value="Spanish">Spanish</option>
+                      <option value="French">French</option>
+                      <option value="German">German</option>
+                      <option value="Japanese">Japanese</option>
+                      <option value="Chinese">Chinese</option>
+                    </select>
+                  </div>
+                  <button className="p-2 hover:bg-gray-100 rounded-full shrink-0">
+                    <Search className="w-4 h-4 text-gray-500" />
+                  </button>
+                </div>
               </div>
             </div>
             <div 
@@ -165,10 +196,13 @@ export default function MessageTabContainer() {
                 Today, Jul 20, 2026
               </div>
               {activeMessages.map((message) => (
-                <MessageBubble 
-                  key={message.id} 
+                <MessageBubble
+                  key={message.id}
                   message={message}
                   isNew={newMessageIds.has(message.id)}
+                  showTranslation={showTranslation.has(message.id)}
+                  onToggleTranslation={() => toggleTranslation(message.id)}
+                  userLanguage={userLanguage}
                 />
               ))}
             </div>
