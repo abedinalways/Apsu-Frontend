@@ -33,14 +33,14 @@ function SleepSection() {
               Real Rest, Without the Dependency.
             </h3>
             <p className="text-descriptionColor text-sm md:text-base leading-relaxed mb-6 ">
-              Non-habit-forming Physician-prescribed For sensitive sleepers
+              Non-habit-forming Physician-prescribed For sensitive sleepers.
             </p>
             {/* Bullet Points */}
             <ul className="space-y-2 ">
               {points.map((point, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-3 text-sm md:text-base "
+                  className="flex items-start gap-3 text-sm md:text-base"
                 >
                   <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-greenColor text-white">
                     <Check className="h-3 w-3 stroke-3" />
@@ -60,7 +60,7 @@ function SleepSection() {
             <div className="flex justify-center md:justify-start w-full">
               <WhiteCustomButton
                 text="Start your sleep consult"
-                className=" w-full md:w-auto"
+                className="w-full md:w-auto"
               />
             </div>
           </div>
