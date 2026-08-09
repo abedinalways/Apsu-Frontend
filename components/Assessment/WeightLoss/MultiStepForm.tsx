@@ -15,9 +15,12 @@ import ScheduleConsultationStepOne from "@/components/Assessment/form/ScheduleCo
 import CheckoutPaymentStepOne from "@/components/Assessment/form/CheckoutPaymentStepOne";
 import HealthHistoryStepFour from "@/components/Assessment/form/HealthHistoryStepFour";
 import EligibilityStepOne from "../form/EligibilityStepOne";
-import EligibilityStepThree from "../form/EligibilityStepThree";
 import EligibilityStepTwo from "../form/EligibilityStepTwo";
+import EligibilityStepThree from "../form/EligibilityStepThree";
+import EligibilityStepFour from "../form/EligibilityStepFour";
+import EligibilityStepFive from "../form/EligibilityStepFive";
 import EligibilityCheckStepOne from "./EligibilityCheckStepOne";
+import CommonEligibilityCheckStepOne from "../form/CommonEligibilityCheckStepOne";
 import GoalLifestyleActivityStepOne from "./GoalLifestyleActivityStepOne";
 import GoalLifestyleActivityStepTwo from "./GoalLifestyleActivityStepTwo";
 import GoalLifestyleActivityStepThree from "./GoalLifestyleActivityStepThree";
@@ -40,6 +43,7 @@ export default function MultiStepForm() {
   const router = useRouter();
   const [healthHistoryStep, setHealthHistoryStep] = useState(0);
   const [goalLifestyleStep, setGoalLifestyleStep] = useState(0);
+  const [eligibilityCheckStep, setEligibilityCheckStep] = useState(0);
   const [eligibilityStep, setEligibilityStep] = useState(0);
 
   const form = useForm<FormData>({
@@ -95,6 +99,8 @@ export default function MultiStepForm() {
       cardExpiry: "",
       cardCvv: "",
       agreeTerms: true,
+      attachments: [],
+      videoAttachments: [],
     },
     mode: "onChange",
     shouldUnregister: false,
@@ -130,7 +136,12 @@ export default function MultiStepForm() {
       }
     }
     if (step === 4) {
-      fieldsToValidate = ["triedLosingWeightBefore"];
+      const eligibilityCheckFields: Array<Array<keyof FormData>> = [
+        ["triedLosingWeightBefore"],
+        [],
+      ];
+
+      fieldsToValidate = eligibilityCheckFields[eligibilityCheckStep] || [];
     }
     if (step === 3) {
       const goalLifestyleFields: Array<Array<keyof FormData>> = [
@@ -146,6 +157,8 @@ export default function MultiStepForm() {
       const eligibilityFields: Array<Array<keyof FormData>> = [
         ["reviewAcknowledged"],
         ["email"],
+        [],
+        [],
         [
           "shippingAddress",
           "shippingState",
@@ -172,7 +185,12 @@ export default function MultiStepForm() {
       return;
     }
 
-    if (step === 5 && eligibilityStep < 2) {
+    if (step === 4 && eligibilityCheckStep < 1) {
+      setEligibilityCheckStep((prev) => prev + 1);
+      return;
+    }
+
+    if (step === 5 && eligibilityStep < 4) {
       setEligibilityStep((prev) => prev + 1);
       return;
     }
@@ -196,6 +214,11 @@ export default function MultiStepForm() {
       return;
     }
 
+    if (step === 4 && eligibilityCheckStep > 0) {
+      setEligibilityCheckStep((prev) => prev - 1);
+      return;
+    }
+
     if (step === 5 && eligibilityStep > 0) {
       setEligibilityStep((prev) => prev - 1);
       return;
@@ -209,8 +232,12 @@ export default function MultiStepForm() {
       setGoalLifestyleStep(3);
     }
 
+    if (step === 5) {
+      setEligibilityCheckStep(1);
+    }
+
     if (step === 6) {
-      setEligibilityStep(2);
+      setEligibilityStep(4);
     }
 
     setStep((prev) => Math.max(prev - 1, 1));
@@ -279,10 +306,17 @@ export default function MultiStepForm() {
             {step === 3 && goalLifestyleStep === 3 && (
               <GoalLifestyleActivityStepFour />
             )}
-            {step === 4 && <EligibilityCheckStepOne />}
-            {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
-            {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
-            {step === 5 && eligibilityStep === 2 && <EligibilityStepThree />}
+             {step === 4 && eligibilityCheckStep === 0 && (
+               <EligibilityCheckStepOne />
+             )}
+             {step === 4 && eligibilityCheckStep === 1 && (
+               <CommonEligibilityCheckStepOne />
+             )}
+              {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
+             {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
+             {step === 5 && eligibilityStep === 2 && <EligibilityStepFour />}
+             {step === 5 && eligibilityStep === 3 && <EligibilityStepFive />}
+             {step === 5 && eligibilityStep === 4 && <EligibilityStepThree />}
             {step === 6 && <TreatmentPlanStepOne />}
             {/* {step === 7 && <ScheduleConsultationStepOne />} */}
             {step === 7 && <CheckoutPaymentStepOne />}
