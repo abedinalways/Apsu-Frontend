@@ -63,9 +63,7 @@ export default function Assessment() {
                 }`}
               >
                 <div className="space-y-3 pr-4">
-                  <p className="font-medium text-gray-900">
-                    {option.title}
-                  </p>
+                  <p className="font-medium text-gray-900">{option.title}</p>
                   <p className="text-xs text-muted-foreground">
                     {option.description}
                   </p>

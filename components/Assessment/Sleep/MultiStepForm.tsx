@@ -316,13 +316,13 @@ export default function MultiStepForm() {
             {step === 4 && eligibilityCheckStep === 2 && (
               <EligibilityCheckStepThree />
             )}
-             {step === 4 && eligibilityCheckStep === 3 && (
-               <EligibilityCheckStepFour />
-             )}
-             {step === 4 && eligibilityCheckStep === 4 && (
-               <CommonEligibilityCheckStepOne />
-             )}
-             {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
+            {step === 4 && eligibilityCheckStep === 3 && (
+              <EligibilityCheckStepFour />
+            )}
+            {step === 4 && eligibilityCheckStep === 4 && (
+              <CommonEligibilityCheckStepOne />
+            )}
+            {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
             {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
             {step === 5 && eligibilityStep === 2 && <EligibilityStepFour />}
             {step === 5 && eligibilityStep === 3 && <EligibilityStepFive />}
@@ -343,7 +343,7 @@ export default function MultiStepForm() {
                 Place order
               </button>
             ) : (
-              <div className="flex justify-between items-center w-full">
+              <div className="flex justify-between items-center w-full pb-10">
                 <button
                   type="button"
                   onClick={prevStep}

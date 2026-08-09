@@ -355,7 +355,7 @@ export default function MultiStepForm() {
                 Place order
               </button>
             ) : (
-              <div className="flex justify-between items-center w-full">
+              <div className="flex justify-between items-center w-full pb-10">
                 <button
                   type="button"
                   onClick={prevStep}

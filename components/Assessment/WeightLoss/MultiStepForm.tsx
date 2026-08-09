@@ -306,17 +306,17 @@ export default function MultiStepForm() {
             {step === 3 && goalLifestyleStep === 3 && (
               <GoalLifestyleActivityStepFour />
             )}
-             {step === 4 && eligibilityCheckStep === 0 && (
-               <EligibilityCheckStepOne />
-             )}
-             {step === 4 && eligibilityCheckStep === 1 && (
-               <CommonEligibilityCheckStepOne />
-             )}
-              {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
-             {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
-             {step === 5 && eligibilityStep === 2 && <EligibilityStepFour />}
-             {step === 5 && eligibilityStep === 3 && <EligibilityStepFive />}
-             {step === 5 && eligibilityStep === 4 && <EligibilityStepThree />}
+            {step === 4 && eligibilityCheckStep === 0 && (
+              <EligibilityCheckStepOne />
+            )}
+            {step === 4 && eligibilityCheckStep === 1 && (
+              <CommonEligibilityCheckStepOne />
+            )}
+            {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
+            {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
+            {step === 5 && eligibilityStep === 2 && <EligibilityStepFour />}
+            {step === 5 && eligibilityStep === 3 && <EligibilityStepFive />}
+            {step === 5 && eligibilityStep === 4 && <EligibilityStepThree />}
             {step === 6 && <TreatmentPlanStepOne />}
             {/* {step === 7 && <ScheduleConsultationStepOne />} */}
             {step === 7 && <CheckoutPaymentStepOne />}
@@ -333,7 +333,7 @@ export default function MultiStepForm() {
                 Place order
               </button>
             ) : (
-              <div className="flex justify-between items-center w-full">
+              <div className="flex justify-between items-center w-full pb-10">
                 <button
                   type="button"
                   onClick={prevStep}
