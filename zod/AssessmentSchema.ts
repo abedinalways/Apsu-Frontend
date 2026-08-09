@@ -212,6 +212,28 @@ export const formSchema = z
     agreeTerms: z.literal(true, {
       errorMap: () => ({ message: "You must accept the terms and conditions" }),
     }),
+
+    attachments: z
+      .array(
+        z.object({
+          id: z.string().optional(),
+          name: z.string(),
+          size: z.string(),
+          type: z.string(),
+        }),
+      )
+      .default([]),
+
+    videoAttachments: z
+      .array(
+        z.object({
+          id: z.string().optional(),
+          name: z.string(),
+          size: z.string(),
+          type: z.string(),
+        }),
+      )
+      .default([]),
   })
   .superRefine((data, ctx) => {
     const requireNumber = (

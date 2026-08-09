@@ -23,6 +23,8 @@ import EligibilityCheckStepFour from "./EligibilityCheckStepFour";
 import EligibilityStepOne from "../form/EligibilityStepOne";
 import EligibilityStepTwo from "../form/EligibilityStepTwo";
 import EligibilityStepThree from "../form/EligibilityStepThree";
+import EligibilityStepFour from "../form/EligibilityStepFour";
+import EligibilityStepFive from "../form/EligibilityStepFive";
 
 const TOTAL_STEPS = 7;
 
@@ -107,6 +109,8 @@ export default function MultiStepForm() {
       cardExpiry: "",
       cardCvv: "",
       agreeTerms: true,
+      attachments: [],
+      videoAttachments: [],
     },
     mode: "onChange",
     shouldUnregister: false,
@@ -164,6 +168,8 @@ export default function MultiStepForm() {
       const eligibilityFields: Array<Array<keyof FormData>> = [
         ["reviewAcknowledged"],
         ["email"],
+        [],
+        [],
         [
           "shippingAddress",
           "shippingState",
@@ -194,7 +200,7 @@ export default function MultiStepForm() {
       return;
     }
 
-    if (step === 5 && eligibilityStep < 2) {
+    if (step === 5 && eligibilityStep < 4) {
       setEligibilityStep((prev) => prev + 1);
       return;
     }
@@ -237,7 +243,7 @@ export default function MultiStepForm() {
     }
 
     if (step === 6) {
-      setEligibilityStep(2);
+      setEligibilityStep(4);
     }
 
     setStep((prev) => Math.max(prev - 1, 1));
@@ -313,7 +319,9 @@ export default function MultiStepForm() {
             )}
             {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
             {step === 5 && eligibilityStep === 1 && <EligibilityStepTwo />}
-            {step === 5 && eligibilityStep === 2 && <EligibilityStepThree />}
+            {step === 5 && eligibilityStep === 2 && <EligibilityStepFour />}
+            {step === 5 && eligibilityStep === 3 && <EligibilityStepFive />}
+            {step === 5 && eligibilityStep === 4 && <EligibilityStepThree />}
             {step === 6 && <TreatmentPlanStepOne />}
             {/* {step === 7 && <ScheduleConsultationStepOne />} */}
             {step === 7 && <CheckoutPaymentStepOne />}
