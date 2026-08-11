@@ -30,10 +30,10 @@ export default function CheckoutPaymentStepOne() {
         </div>
         <div className="w-32 h-32 flex items-center justify-center">
           <Image
-            src="/images/payments1.png"
+            src="/images/PaymentSuccess.png"
             alt="Payment"
-            width={200}
-            height={200}
+            width={400}
+            height={400}
             className="object-cover"
           />
         </div>
