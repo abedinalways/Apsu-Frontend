@@ -325,13 +325,23 @@ export default function MultiStepForm() {
           {/* Global Form Footer Trigger buttons */}
           <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF] pb-10">
             {step === TOTAL_STEPS ? (
-              <button
-                type="button"
-                onClick={handlePlaceOrder}
-                className="w-full py-3 bg-[#0B251A] hover:bg-opacity-90 text-white rounded-full font-medium text-sm transition-all cursor-pointer"
-              >
-                Place order
-              </button>
+              <div className="flex justify-between items-center w-full">
+                <button
+                  type="button"
+                  onClick={prevStep}
+                  // disabled={step === 0}
+                  className="px-6 py-3 border rounded-full text-sm font-medium hover:bg-gray-50 disabled:opacity-30 cursor-pointer"
+                >
+                  &lt; Back
+                </button>
+                <button
+                  type="button"
+                  onClick={handlePlaceOrder}
+                  className="px-6 py-3 bg-[#0B251A] text-white rounded-full text-sm font-medium cursor-pointer"
+                >
+                  Place order
+                </button>
+              </div>
             ) : (
               <div className="flex justify-between items-center w-full ">
                 <button
