@@ -3,6 +3,7 @@ import FAQFooter from '@/components/faq/FAQFooter';
 import { InfoHero } from '@/components/legal/InfoHero';
 import { InfoList } from '@/components/legal/InfoList';
 import { infoData } from '@/lib/data/infoData';
+import GoToTopButton from '@/components/legal/GoToTopButton';
 
 export default function InfoPage() {
   const sections = infoData.map(section => ({
@@ -15,7 +16,13 @@ export default function InfoPage() {
   return (
     <>
       <div className="terms-container px-4 sm:px-6 md:px-8 mt-30">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_364px] gap-8 lg:gap-16 justify-self-center mt-6 lg:mt-8 mb-6 relative">
+        <div className="grid grid-cols-1 md:grid-cols-[364px_1fr] gap-8 lg:gap-16 justify-self-center mt-6 lg:mt-8 mb-6 relative">
+          <aside className="w-full mx-auto flex flex-col lg:items-center lg:h-fit lg:justify-start mt-24 lg:sticky lg:top-42 md:*:order-2 order-1">
+            <div className="w-full md:hidden ">
+              <InfoHero />
+            </div>
+            <InfoSidebar sections={sections} />
+          </aside>
           <main className="mt-6 lg:mt-20 md:order-1 order-2">
             <div className="w-full md:hidden mt-6 block">
               <p className="py-4 ">
@@ -40,17 +47,12 @@ export default function InfoPage() {
             </div>
             <InfoList />
           </main>
-          <aside className="w-full mx-auto flex flex-col lg:items-center lg:h-fit lg:justify-start lg:sticky lg:top-42 md:*:order-2 order-1">
-            <div className="w-full md:hidden ">
-              <InfoHero />
-            </div>
-            <InfoSidebar sections={sections} />
-          </aside>
         </div>
       </div>
       <div>
         <FAQFooter />
       </div>
+      <GoToTopButton/>
     </>
   );
 }
