@@ -22,17 +22,14 @@ export default function ConversationListItem({
         isActive ? 'bg-[#E9F4EE]' : 'hover:bg-gray-50'
       }`}
     >
-      {/* Avatar with green dot for online */}
-      <div className="relative shrink-0">
+      {/* Avatar */}
+      <div className="shrink-0">
         <div
           className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[14px] font-semibold"
           style={{ backgroundColor: conversation.avatarColor }}
         >
           {conversation.initials}
         </div>
-        {conversation.online && (
-          <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#587362] rounded-full border-1 border-white" />
-        )}
       </div>
 
       {/* Content */}
