@@ -61,7 +61,7 @@ export default function EligibilityCheckStepOne() {
                       }
                       className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                           : "border-gray-200"
                       }`}
                     >
