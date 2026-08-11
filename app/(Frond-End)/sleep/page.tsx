@@ -12,7 +12,7 @@ import WhyApsuSleepSection from "@/components/birth-control/WhyApsuSleepSection"
 import QuickCheckSection from "@/components/Sleep/QuickCheckSection";
 import SleepFAQsection from "@/components/Sleep/SleepFAQsection";
 import SleepQuestion from "@/components/Sleep/SleepQuestion";
-
+import tirzepatideImg from "@/public/images/banner/Medicine.png";
 export interface FeatureItem {
   id: number;
   text: string;
@@ -37,6 +37,13 @@ export default function SleepPage() {
       icon: IoEarthOutline,
     },
   ];
+   const benefits = [
+    "Prescribed by U.S. board-certified physicians",
+    "No insurance needed",
+    "Pay only if prescribed",
+    "Physician consult cost $0",
+    "Shipping cost $0",
+  ];
   return (
     <div>
       <CommonHero
@@ -45,7 +52,7 @@ export default function SleepPage() {
         subtitle=""
         description="Non-habit-forming, non-controlled sleep treatment. Complete your visit in the language you think in."
       />
-      <ProgramPricingSection />
+      <ProgramPricingSection img={tirzepatideImg} benefits={benefits} />
       <SleepBreak />
       <PricingSection />
       <WhyApsuSleepSection />
