@@ -1,8 +1,10 @@
 import { FeatureItem } from "@/app/(Frond-End)/weight-loss/page";
 import PrimaryButton from "../reusable/button/PrimaryButton";
+import { StaticImageData } from "next/image";
 
 interface CommonHeroProps {
   features: FeatureItem[];
+  image?: string | StaticImageData
   title: string;
   subtitle?: string;
   description: string;
@@ -10,6 +12,7 @@ interface CommonHeroProps {
 
 function CommonHero({
   features,
+  image,
   title,
   subtitle,
   description,

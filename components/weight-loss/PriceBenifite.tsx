@@ -1,24 +1,16 @@
 "use client";
 
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
-import tirzepatideImg from "@/public/images/banner/Medicine.png";
+
 import PrimaryButton from "../reusable/button/PrimaryButton";
 
-function ProgramPricingSection() {
+function ProgramPricingSection({ img, benefits }: { img: string | StaticImageData; benefits: string[] }) {
   const [isBenefitsOpen, setIsBenefitsOpen] = useState(true);
 
-  const benefits = [
-    "Compounded in the U.S.A",
-    "Prescribed by U.S. board-certified physicians",
-    "2 minute eligibility check",
-    "No insurance needed",
-    "Pay only if prescribed",
-    "Physician consult cost $0",
-    "Shipping cost $0",
-  ];
+ 
 
   return (
     <div className="  pb-14 pt-6 md:py-24 font-sans text-primaryColor">
@@ -95,7 +87,7 @@ function ProgramPricingSection() {
         <div className="relative w-full lg:col-span-7 rounded-3xl overflow-hidden ] xl:shadow-[0_4px_12px_0_rgba(2,31,24,0.03)] flex items-center justify-center ">
           <div className="relative w-full h-full ">
             <Image
-              src={tirzepatideImg}
+              src={img}
               alt="Tirzepatide Weight Loss Program Vials"
               width={700}
               height={700}
