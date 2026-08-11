@@ -283,11 +283,20 @@ export default function MultiStepForm() {
                 </div>
                 <div className="w-full h-1.5 rounded-full flex gap-1">
                   {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
-                    <div
+                    <button
                       key={i}
+                      type="button"
+                      onClick={() => {
+                        setStep(i + 1);
+                        setHealthHistoryStep(0);
+                        setGoalLifestyleStep(0);
+                        setEligibilityCheckStep(0);
+                        setEligibilityStep(0);
+                      }}
                       className={`h-full flex-1 rounded-full transition-all duration-300 ${
                         i + 1 <= step ? "bg-emerald-800" : "bg-gray-300"
-                      }`}
+                      } cursor-pointer`}
+                      aria-label={`Go to step ${i + 1}`}
                     />
                   ))}
                 </div>
