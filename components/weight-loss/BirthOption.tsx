@@ -1,4 +1,5 @@
-import { default as tirzepatideVial } from "@/public/images/banner/medic.png";
+import  image1  from "@/public/images/birth-controll/birth1.png";
+import  image2  from "@/public/images/birth-controll/birth2.png";
 import { StaticImageData } from "next/image";
 import MedicationSection from "./MedicationSection";
 export interface MedicationItem {
@@ -26,7 +27,7 @@ function BirthOption() {
       ],
       price: "$20",
       perDuration: "/mo",
-      image: tirzepatideVial,
+      image: image1,
     },
     {
       id: 2,
@@ -40,7 +41,7 @@ function BirthOption() {
       ],
       price: "$20",
       perDuration: "/ 3mo",
-      image: tirzepatideVial,
+      image: image2,
     },
   ];
 
