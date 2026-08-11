@@ -46,17 +46,25 @@ export default function MessageComposer({ onSend }: MessageComposerProps) {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      const newAttachment: MessageAttachment = {
-        id: `att-${Date.now()}`,
-        type: file.type.startsWith('image/') ? 'image' : 'document',
-        url: reader.result as string,
-        name: file.name,
-      };
-      setAttachment(newAttachment);
+    // Limit file size to 5MB
+    const maxSize = 5 * 1024 * 1024;
+    if (file.size > maxSize) {
+      alert('File size must be less than 5MB');
+      e.target.value = '';
+      return;
+    }
+
+    // Use object URL for all files - instant and no freezing
+    const objectUrl = URL.createObjectURL(file);
+    const newAttachment: MessageAttachment = {
+      id: `att-${Date.now()}`,
+      type: file.type.startsWith('image/') ? 'image' : 'document',
+      url: objectUrl,
+      name: file.name,
     };
-    reader.readAsDataURL(file);
+    
+    setAttachment(newAttachment);
+    e.target.value = '';
   }, []);
 
   const handleCameraClick = useCallback(() => {

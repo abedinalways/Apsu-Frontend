@@ -1,8 +1,19 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Search, ArrowLeft, Languages, Menu, X, StepBackIcon, StepForward, StepForwardIcon } from 'lucide-react';
+import {
+  Search,
+  ArrowLeft,
+  Languages,
+  Menu,
+  X,
+  StepBackIcon,
+  StepForward,
+  StepForwardIcon,
+} from 'lucide-react';
 import { useMessaging } from '@/contexts/MessagingContext';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import MessageBubble from './messaging/MessageBubble';
 import ConversationList from './messaging/ConversationList';
 import MessageComposer from './messaging/MessageComposer';
@@ -31,9 +42,38 @@ export default function MessageTabContainer() {
   const [showAllTranslations, setShowAllTranslations] = useState(false);
   const [showSidebar, setShowSidebar] = useState(true);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const sidebarRef = useRef<HTMLDivElement>(null);
   const prevMessagesLengthRef = useRef(0);
 
   useMessagingEffect();
+
+  // Sidebar animation logic
+  useGSAP(() => {
+    if (!sidebarRef.current) return;
+
+    const isLargeScreen = window.innerWidth >= 1024;
+
+    if (showSidebar) {
+      gsap.to(sidebarRef.current, {
+        width: isLargeScreen ? 320 : '100%',
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+        ease: 'expo.out',
+        display: 'flex',
+        clearProps: 'transform',
+      });
+    } else {
+      gsap.to(sidebarRef.current, {
+        width: isLargeScreen ? 0 : '100%',
+        opacity: 0,
+        x: isLargeScreen ? -30 : 0,
+        duration: 0.5,
+        ease: 'expo.inOut',
+        display: isLargeScreen ? 'none' : 'none',
+      });
+    }
+  }, [showSidebar]);
 
   useEffect(() => {
     setIsHydrated(true);
@@ -80,7 +120,6 @@ export default function MessageTabContainer() {
     setShowChat(false);
   };
 
-
   if (!isHydrated) {
     return (
       <div className="flex items-center justify-center h-[400px]">
@@ -112,7 +151,8 @@ export default function MessageTabContainer() {
 
       {/* Sidebar - Conversation List */}
       <div
-        className={`${showChat ? 'hidden md:flex' : 'flex md:flex'} ${showSidebar ? 'lg:flex' : 'lg:hidden'} w-full md:w-80 border-r border-[#EBEAE4] flex-col bg-white min-w-0 relative`}
+        ref={sidebarRef}
+        className={`${showChat ? 'hidden md:flex' : 'flex md:flex'} w-full md:w-80 border-r border-[#EBEAE4] flex-col bg-white min-w-0 relative overflow-hidden`}
       >
         <div className="p-4 border-b border-[#F4F3EF]">
           <div className="flex items-center justify-between mb-3">
@@ -154,7 +194,7 @@ export default function MessageTabContainer() {
 
       {/* Chat Panel */}
       <div
-        className={`${showChat ? 'flex' : 'hidden md:flex'} ${!showSidebar ? 'lg:w-full lg:max-w-full' : ''} flex-1 flex-col bg-white min-w-0 w-full`}
+        className={`${showChat ? 'flex' : 'hidden md:flex'} ${!showSidebar ? 'lg:w-full lg:max-w-full' : ''} flex-1 flex-col bg-white min-w-0  w-full `}
       >
         {!showChat && (
           <div className="md:hidden p-4 border-b border-[#F4F3EF]">
@@ -210,7 +250,7 @@ export default function MessageTabContainer() {
                   >
                     <Menu className="w-4 h-4 text-gray-700" />
                   </button> */}
-                  <div className='md:flex block space-y-2 md:space-y-0'>
+                  <div className="md:flex gap-2 block space-y-2 md:space-y-0">
                     <div className="flex  items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg px-2 py-1">
                       <Languages className="w-3 h-3 text-gray-600" />
                       <select
