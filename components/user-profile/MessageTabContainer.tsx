@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Search, ArrowLeft, Languages } from 'lucide-react';
+import { Search, ArrowLeft, Languages, Menu, X, StepBackIcon, StepForward, StepForwardIcon } from 'lucide-react';
 import { useMessaging } from '@/contexts/MessagingContext';
 import MessageBubble from './messaging/MessageBubble';
 import ConversationList from './messaging/ConversationList';
@@ -28,7 +28,8 @@ export default function MessageTabContainer() {
   const [newMessageIds, setNewMessageIds] = useState<Set<string>>(new Set());
   const [showChat, setShowChat] = useState(false);
   const [userLanguage, setUserLanguage] = useState('Spanish');
-  const [showTranslation, setShowTranslation] = useState<Set<string>>(new Set());
+  const [showAllTranslations, setShowAllTranslations] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const prevMessagesLengthRef = useRef(0);
 
@@ -79,17 +80,6 @@ export default function MessageTabContainer() {
     setShowChat(false);
   };
 
-  const toggleTranslation = (messageId: string) => {
-    setShowTranslation(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(messageId)) {
-        newSet.delete(messageId);
-      } else {
-        newSet.add(messageId);
-      }
-      return newSet;
-    });
-  };
 
   if (!isHydrated) {
     return (
@@ -108,17 +98,48 @@ export default function MessageTabContainer() {
   }
 
   return (
-    <div className="w-full h-[550px] sm:h-[600px] flex rounded-[12px] border border-[#EBEAE4] overflow-hidden bg-white max-w-full">
+    <div className="w-full h-[550px] sm:h-[600px] flex rounded-[12px] border border-[#EBEAE4] overflow-hidden bg-white max-w-full relative mx-2">
+      {/* Sidebar Toggle Button (Desktop) */}
+      {!showSidebar && (
+        <button
+          onClick={() => setShowSidebar(true)}
+          className="hidden lg:block md:absolute md:top-9 left-2 -translate-y-1/2 z-40 bg-[#142C1E] text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
+          aria-label="Show sidebar"
+        >
+          <StepBackIcon className="w-4 h-4" />
+        </button>
+      )}
+
       {/* Sidebar - Conversation List */}
-      <div className={`${showChat ? 'hidden md:flex' : 'flex'} w-full md:w-80 border-r border-[#EBEAE4] flex-col bg-white min-w-0`}>
+      <div
+        className={`${showChat ? 'hidden md:flex' : 'flex md:flex'} ${showSidebar ? 'lg:flex' : 'lg:hidden'} w-full md:w-80 border-r border-[#EBEAE4] flex-col bg-white min-w-0 relative`}
+      >
         <div className="p-4 border-b border-[#F4F3EF]">
-          <h2 className="text-lg font-semibold text-[#142C1E] mb-3">Messages</h2>
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-lg font-semibold text-[#142C1E]">Messages</h2>
+            <div className="flex items-center gap-1">
+              <button
+                onClick={handleBackToList}
+                className="p-1.5 hover:bg-gray-100 rounded-full transition-colors md:hidden"
+                aria-label="Close messages"
+              >
+                <X className="w-5 h-5 text-gray-700" />
+              </button>
+              <button
+                onClick={() => setShowSidebar(false)}
+                className="hidden lg:block  bg-[#142C1E] text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
+                aria-label="Hide sidebar"
+              >
+                <StepForwardIcon className="w-4 h-4 text-white" />
+              </button>
+            </div>
+          </div>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => updateSearch(e.target.value)}
+              onChange={e => updateSearch(e.target.value)}
               placeholder="Search messages"
               className="w-full pl-9 pr-4 py-2 rounded-[12px] border border-[#EBEAE4] bg-[#FAF9F5] text-[14px] focus:outline-none focus:border-[#A3C9A8]"
             />
@@ -132,7 +153,21 @@ export default function MessageTabContainer() {
       </div>
 
       {/* Chat Panel */}
-      <div className={`${showChat ? 'flex' : 'hidden md:flex'} flex-1 flex-col bg-white min-w-0 w-full`}>
+      <div
+        className={`${showChat ? 'flex' : 'hidden md:flex'} ${!showSidebar ? 'lg:w-full lg:max-w-full' : ''} flex-1 flex-col bg-white min-w-0 w-full`}
+      >
+        {!showChat && (
+          <div className="md:hidden p-4 border-b border-[#F4F3EF]">
+            <button
+              onClick={() => setShowChat(true)}
+              className="w-full flex items-center justify-center gap-2 bg-[#142C1E] text-white py-3 rounded-[12px] hover:bg-[#1e3a2a] transition-colors"
+            >
+              <span className="text-sm font-medium">
+                Select a conversation to start chatting
+              </span>
+            </button>
+          </div>
+        )}
         {activeConversation ? (
           <>
             <div className="px-3 py-3 sm:px-4 sm:py-4 border-b border-[#F4F3EF] shrink-0">
@@ -146,16 +181,17 @@ export default function MessageTabContainer() {
                   >
                     <ArrowLeft className="w-5 h-5 text-gray-700" />
                   </button>
-                  <div className="relative shrink-0">
+                  <div className="shrink-0 md:ml-10">
                     <div
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold"
-                      style={{ backgroundColor: activeConversation.avatarColor }}
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold "
+                      style={{
+                        backgroundColor: activeConversation.avatarColor,
+                      }}
                     >
                       {activeConversation.initials}
                     </div>
-                    <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#10B981] rounded-full border-2 border-white" />
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 ">
                     <div className="flex items-center gap-2 min-w-0">
                       <h3 className="font-semibold text-[#142C1E] text-sm sm:text-base truncate">
                         {activeConversation.participantName}
@@ -167,20 +203,45 @@ export default function MessageTabContainer() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg px-2 py-1">
-                    <Languages className="w-3.5 h-3.5 text-gray-600" />
-                    <select
-                      value={userLanguage}
-                      onChange={(e) => setUserLanguage(e.target.value)}
-                      className="bg-transparent text-xs text-gray-700 outline-none cursor-pointer"
+                  {/* <button
+                    onClick={handleBackToList}
+                    className="md:hidden p-2 hover:bg-gray-100 rounded-full shrink-0"
+                    aria-label="Show conversation list"
+                  >
+                    <Menu className="w-4 h-4 text-gray-700" />
+                  </button> */}
+                  <div className='md:flex block space-y-2 md:space-y-0'>
+                    <div className="flex  items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg px-2 py-1">
+                      <Languages className="w-3 h-3 text-gray-600" />
+                      <select
+                        value={userLanguage}
+                        onChange={e => setUserLanguage(e.target.value)}
+                        className="bg-transparent text-xs text-gray-700 outline-none cursor-pointer"
+                      >
+                        <option value="Korean">Korean</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Chinese">Chinese</option>
+                      </select>
+                    </div>
+                    <button
+                      onClick={() =>
+                        setShowAllTranslations(!showAllTranslations)
+                      }
+                      className="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg px-2 py-1 hover:bg-gray-100 transition-colors cursor-pointer"
+                      title={
+                        showAllTranslations
+                          ? 'Hide all translations'
+                          : 'Show all translations'
+                      }
                     >
-                      <option value="Korean">Korean</option>
-                      <option value="Spanish">Spanish</option>
-                      <option value="French">French</option>
-                      <option value="German">German</option>
-                      <option value="Japanese">Japanese</option>
-                      <option value="Chinese">Chinese</option>
-                    </select>
+                      <Languages className="w-3 h-3 text-gray-600" />
+                      <span className="text-xs text-gray-700 font-medium">
+                        {showAllTranslations ? 'Hide' : 'Translate'}
+                      </span>
+                    </button>
                   </div>
                   <button className="p-2 hover:bg-gray-100 rounded-full shrink-0">
                     <Search className="w-4 h-4 text-gray-500" />
@@ -188,27 +249,24 @@ export default function MessageTabContainer() {
                 </div>
               </div>
             </div>
-            <div 
+            <div
               ref={messagesContainerRef}
               className="flex-1 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-6 space-y-3 sm:space-y-4 min-w-0"
             >
               <div className="text-center text-xs text-gray-400 py-1 sm:py-2">
                 Today, Jul 20, 2026
               </div>
-              {activeMessages.map((message) => (
+              {activeMessages.map(message => (
                 <MessageBubble
                   key={message.id}
                   message={message}
                   isNew={newMessageIds.has(message.id)}
-                  showTranslation={showTranslation.has(message.id)}
-                  onToggleTranslation={() => toggleTranslation(message.id)}
+                  showTranslation={showAllTranslations}
                   userLanguage={userLanguage}
                 />
               ))}
             </div>
-            <MessageComposer
-              onSend={sendMessage}
-            />
+            <MessageComposer onSend={sendMessage} />
           </>
         ) : (
           <div className="hidden md:flex flex-1 items-center justify-center p-4">

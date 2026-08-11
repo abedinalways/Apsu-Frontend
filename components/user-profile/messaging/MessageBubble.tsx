@@ -9,17 +9,12 @@ type MessageBubbleProps = {
   message: Message;
   isNew?: boolean;
   showTranslation?: boolean;
-  onToggleTranslation?: () => void;
   userLanguage?: string;
 };
 
-export default function MessageBubble({ message, isNew, showTranslation, onToggleTranslation, userLanguage }: MessageBubbleProps) {
+export default function MessageBubble({ message, isNew, showTranslation, userLanguage }: MessageBubbleProps) {
   const isUser = message.sender === 'user';
   const isSystem = message.sender === 'system';
-  const [internalShowTranslation, setInternalShowTranslation] = useState(false);
-  
-  const shouldShowTranslation = showTranslation ?? internalShowTranslation;
-  const handleToggle = onToggleTranslation ?? (() => setInternalShowTranslation(prev => !prev));
 
   if (isSystem) {
     return (
@@ -41,7 +36,7 @@ export default function MessageBubble({ message, isNew, showTranslation, onToggl
         isNew && 'animate-slide-up',
       )}
     >
-      <div className="max-w-[85%] sm:max-w-[70%] min-w-0">
+      <div className="max-w-[85%] sm:max-w-[70%] min-w-0 ">
         {!isUser && <div className="flex items-start gap-2 mb-1"></div>}
         <div
           className={cn(
@@ -85,7 +80,7 @@ export default function MessageBubble({ message, isNew, showTranslation, onToggl
         </div>
 
         {/* Translation section */}
-        {shouldShowTranslation && (
+        {showTranslation && (
           <div className="mt-2 space-y-2">
             <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3">
               <p className="text-xs text-gray-500 mb-1.5 font-medium">
@@ -112,25 +107,8 @@ export default function MessageBubble({ message, isNew, showTranslation, onToggl
               minute: '2-digit',
             })}
           </span>
-          {isUser && (
-            <svg
-              className="w-3 h-3 text-[#10B981]"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-            </svg>
-          )}
         </div>
 
-        {/* Translation toggle button */}
-        <button
-          onClick={handleToggle}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#A3C9A8] bg-white hover:bg-[#E8F3ED] text-[11px] font-semibold text-[#102b1c] transition-all cursor-pointer mt-2 hover:shadow-sm"
-        >
-          <Languages className="w-3.5 h-3.5" />
-          {shouldShowTranslation ? 'Hide Translation' : 'Translate'}
-        </button>
       </div>
     </div>
   );
