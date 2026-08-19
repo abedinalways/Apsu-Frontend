@@ -15,13 +15,13 @@ export const medicineData = [
   {
     for: "BIRTH CONTROL",
     info: "Prescription birth control, delivered discreetly",
-    image: "/images/banner/tirzepatide.png",
+    image: "/images/banner/birth-imag.png",
     url: "/assessment/birth",
   },
   {
     for: "SLEEP",
     info: "Non-habit-forming formulations for sensitive sleepers",
-    image: "/images/banner/tirzepatide.png",
+    image: "/images/banner/sleep.png",
     url: "/assessment/sleep",
   },
 ];
