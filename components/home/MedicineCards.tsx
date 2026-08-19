@@ -5,7 +5,7 @@ import WhiteCustomButton from "../reusable/button/WhiteCustomButton";
 const MedicineCard = ({ data, idx }: { data: MedicineData; idx: number }) => {
   return (
     <div
-      className={`flex p-3 md:p-4 lg:p-6 pb-0! ${idx === 0 ? "bg-[#C9FFEB]" : idx === 1 ? "bg-[#FFDEFF]" : "bg-[#D0FFFD]"}  rounded-2xl`}
+      className={`flex p-3 h-full md:p-4 lg:p-6 justify-between  pb-0! ${idx === 0 ? "bg-[#C9FFEB]" : idx === 1 ? "pr-0! bg-[#FFDEFF]" : "bg-[#D0FFFD]"}  rounded-2xl`}
     >
       <div className=" max-w-53 lg:max-w-58 flex flex-col justify-between pb-3 md:pb-4 lg:pb-6">
         <div>
@@ -19,7 +19,7 @@ const MedicineCard = ({ data, idx }: { data: MedicineData; idx: number }) => {
         <WhiteCustomButton href={data.url} text="See Plans" />
       </div>
       <Image
-        className="w-2/5 pt-16"
+        className={` ${idx == 1 ? "w-[44%]" : "w-2/5"} pt-16`}
         src={data.image}
         alt={data.info}
         width={166}
