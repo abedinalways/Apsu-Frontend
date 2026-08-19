@@ -6,6 +6,10 @@ import { FormData } from "@/zod/AssessmentSchema";
 import { ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { ShortIcon } from "../icons/Icons";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function CheckEligibilitySection() {
   const { register, watch, setValue, handleSubmit } = useForm<FormData>({
@@ -24,6 +28,29 @@ export default function CheckEligibilitySection() {
   const onSubmit = (data: FormData) => {
     console.log(data);
   };
+   gsap.registerPlugin(useGSAP, ScrollTrigger);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      });
+
+      tl.from(".medicine-card", {
+        opacity: 0,
+        y: 60,
+        scale: 0.9,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: 0.12,
+      });
+    },
+    { scope: sectionRef },
+  );
 
   return (
     <div
@@ -38,9 +65,9 @@ export default function CheckEligibilitySection() {
       }}
     >
       <form onSubmit={handleSubmit(onSubmit)} className=" ">
-        <div className="relative z-10 w-full xl:p-10   items-end  grid grid-cols-1 lg:grid-cols-2 gap-6 ">
+        <div ref={sectionRef} className="relative z-10 w-full xl:p-10   items-end  grid grid-cols-1 lg:grid-cols-2 gap-6 ">
           {/* Left Card: Check Your Eligibility */}
-          <div className="bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex flex-col justify-between">
+          <div className="medicine-card bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex flex-col justify-between">
             <div>
               {/* Top Subtitle & BMI label */}
               <div className="flex justify-between items-center mb-3">
@@ -273,7 +300,7 @@ export default function CheckEligibilitySection() {
           </div>
 
           {/* Right Card: BMI Score & Details */}
-          <div className="bg-white rounded-3xl hidden lg:block h-fit p-4 lg:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] ">
+          <div className="medicine-card bg-white rounded-3xl hidden lg:block h-fit p-4 lg:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] ">
             <div className="flex flex-col items-center gap-4 lg-6 justify-center ">
               {/* Circular Gauge / Score Simulation */}
               <div className="flex w-52 h-52 justify-center items-center  rounded-full border-2 border-dashed">
@@ -318,7 +345,7 @@ export default function CheckEligibilitySection() {
 
               {/* Gradient BMI Range Bar */}
               <div className="w-full space-y-2">
-                <div className="w-full h-2 rounded-full bg-gradient-to-r from-[#3B82F6] via-[#10B981] via-[#F59E0B] to-[#EF4444]" />
+                <div className="w-full h-2 rounded-full bg-linear-to-r from-[#3B82F6] via-[#10B981] via-[#F59E0B] to-[#EF4444]" />
                 <div className="flex justify-between items-center text-[10px] md:text-[11px] text-gray-500 text-center font-medium pt-1">
                   <span>Underweight &lt;18.5</span>
                   <span>Healthy Weight 18.5 - 24.9</span>

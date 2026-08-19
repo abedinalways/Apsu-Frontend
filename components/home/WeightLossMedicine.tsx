@@ -1,5 +1,10 @@
+"use client";
 import MedicineImg from "@/public/images/work/medicine.png";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { useRef } from "react";
 import PrimaryButton from "../reusable/button/PrimaryButton";
 function WeightLossMedicine() {
   const data = [
@@ -16,13 +21,39 @@ function WeightLossMedicine() {
       price: 200,
     },
   ];
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      });
+
+      tl.from(".medicine-card", {
+        opacity: 0,
+        y: 60,
+        scale: 0.9,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: 0.12,
+      });
+    },
+    { scope: sectionRef },
+  );
 
   return (
-    <div className="grid grid-cols-1 gap-6 my-8 md:grid-cols-2">
+    <div
+      ref={sectionRef}
+      className="grid grid-cols-1 gap-6 my-8 md:grid-cols-2"
+    >
       {data.map((item) => (
         <div
           key={item.id}
-          className="flex flex-col p-4 bg-whiteColor shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.06)] rounded-2xl items-center justify-center gap-2"
+          className="medicine-card flex flex-col p-4 bg-whiteColor shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl items-center justify-center gap-2"
         >
           <Image
             src={item.image}
