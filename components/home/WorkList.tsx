@@ -1,5 +1,9 @@
+"use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check } from "lucide-react";
-
+import { useRef } from "react";
 interface CardItem {
   number: string;
   title: string;
@@ -31,16 +35,42 @@ const WorkList = () => {
       ],
     },
   ];
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      });
+
+      tl.from(".medicine-card", {
+        opacity: 0,
+        y: 60,
+        scale: 0.9,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: 0.12,
+      });
+    },
+    { scope: sectionRef },
+  );
 
   return (
     <div className="bg-bgColor max-w-275 mx-auto  py-6 md:py-9 lg:py-12 font-sans text-primaryColor">
       <div className="">
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6  ">
+        <div
+          ref={sectionRef}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6  "
+        >
           {cards.map((card) => (
             <div
               key={card.number}
-              className="bg-white rounded-2xl px-4 md:px-6 py-6 md:py-10 shadow-[0_4px_20px_rgba(0,0,0,0.02)] h-full "
+              className="medicine-card bg-white rounded-2xl px-4 md:px-6 py-6 md:py-10 shadow-[0_4px_20px_rgba(0,0,0,0.02)] h-full "
             >
               {/* Top Right Number */}
               <div className=" text-[52px] lg:text-[80px] leading-[100%] text-end  text-[#21AC8847]">
@@ -66,7 +96,7 @@ const WorkList = () => {
                       <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-greenColor text-white">
                         <Check className="h-3 w-3 stroke-3" />
                       </div>
-                      <span className="text-[#3B3B3C]">{point}</span>
+                      <span className="text-descriptionColor">{point}</span>
                     </li>
                   ))}
                 </ul>
