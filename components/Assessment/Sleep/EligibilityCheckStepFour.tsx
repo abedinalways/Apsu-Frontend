@@ -66,7 +66,7 @@ export default function EligibilityCheckStepFour() {
                         className={cn(
                           "flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[#FAF9F4] h-14!",
                           isSelected
-                            ? "border-[#AFC1B6] text-[#0B251A]"
+                            ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                             : "border-gray-200",
                         )}
                       >
@@ -110,7 +110,7 @@ export default function EligibilityCheckStepFour() {
                         className={cn(
                           "flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[#FAF9F4] h-14!",
                           isSelected
-                            ? "border-[#AFC1B6] text-[#0B251A]"
+                            ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                             : "border-gray-200",
                         )}
                       >
@@ -154,7 +154,7 @@ export default function EligibilityCheckStepFour() {
                         className={cn(
                           "flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[#FAF9F4] h-14!",
                           isSelected
-                            ? "border-[#AFC1B6] text-[#0B251A]"
+                            ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                             : "border-gray-200",
                         )}
                       >

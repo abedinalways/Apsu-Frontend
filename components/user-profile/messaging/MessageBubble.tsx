@@ -2,24 +2,21 @@
 
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Languages } from 'lucide-react';
+import { Languages, X, Download } from 'lucide-react';
 import type { Message } from '@/types/messaging';
+import Image from 'next/image';
 
 type MessageBubbleProps = {
   message: Message;
   isNew?: boolean;
   showTranslation?: boolean;
-  onToggleTranslation?: () => void;
   userLanguage?: string;
 };
 
-export default function MessageBubble({ message, isNew, showTranslation, onToggleTranslation, userLanguage }: MessageBubbleProps) {
+export default function MessageBubble({ message, isNew, showTranslation, userLanguage }: MessageBubbleProps) {
   const isUser = message.sender === 'user';
   const isSystem = message.sender === 'system';
-  const [internalShowTranslation, setInternalShowTranslation] = useState(false);
-  
-  const shouldShowTranslation = showTranslation ?? internalShowTranslation;
-  const handleToggle = onToggleTranslation ?? (() => setInternalShowTranslation(prev => !prev));
+  const [showImagePreview, setShowImagePreview] = useState(false);
 
   if (isSystem) {
     return (
@@ -41,7 +38,7 @@ export default function MessageBubble({ message, isNew, showTranslation, onToggl
         isNew && 'animate-slide-up',
       )}
     >
-      <div className="max-w-[85%] sm:max-w-[70%] min-w-0">
+      <div className="max-w-[85%] sm:max-w-[70%] min-w-0 ">
         {!isUser && <div className="flex items-start gap-2 mb-1"></div>}
         <div
           className={cn(
@@ -55,13 +52,22 @@ export default function MessageBubble({ message, isNew, showTranslation, onToggl
           {message.attachment && (
             <div className="mt-2">
               {message.attachment.type === 'image' ? (
-                <img
-                  src={message.attachment.url}
-                  alt={message.attachment.name}
-                  className="rounded-lg max-w-full h-auto"
-                />
+                <div className="relative inline-block">
+                  <Image
+                    src={message.attachment.url}
+                    width={240}
+                    height={240}
+                    alt={message.attachment.name}
+                    className="rounded-lg max-w-full h-auto cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={() => setShowImagePreview(true)}
+                  />
+                </div>
               ) : (
-                <div className="flex items-center gap-2 rounded-lg border border-[#E5E7EB] bg-white p-2">
+                <a
+                  href={message.attachment.url}
+                  download={message.attachment.name}
+                  className="flex items-center gap-2 rounded-lg border border-[#E5E7EB] bg-white p-2 hover:bg-gray-50 transition-colors cursor-pointer"
+                >
                   <svg
                     className="h-5 w-5 text-gray-500"
                     fill="none"
@@ -75,17 +81,44 @@ export default function MessageBubble({ message, isNew, showTranslation, onToggl
                       d="M9 12h6m-6 4h6m2 5H7a2 0 01-2-2V5a2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 0 01-2 2z"
                     />
                   </svg>
-                  <span className="text-xs text-[#142C1E]">
+                  <span className="text-xs text-[#142C1E] flex-1">
                     {message.attachment.name}
                   </span>
-                </div>
+                  <Download className="w-4 h-4 text-gray-500" />
+                </a>
               )}
             </div>
           )}
         </div>
 
+        {/* Image Preview Modal */}
+        {showImagePreview && message.attachment?.type === 'image' && (
+          <div
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+            onClick={() => setShowImagePreview(false)}
+          >
+            <div className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center">
+              <button
+                onClick={() => setShowImagePreview(false)}
+                className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors z-10"
+                aria-label="Close preview"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              <Image
+                src={message.attachment.url}
+                alt={message.attachment.name}
+                width={340}
+                height={340}
+                className="max-w-full max-h-full object-contain rounded-lg"
+                onClick={e => e.stopPropagation()}
+              />
+            </div>
+          </div>
+        )}
+
         {/* Translation section */}
-        {shouldShowTranslation && (
+        {showTranslation && (
           <div className="mt-2 space-y-2">
             <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3">
               <p className="text-xs text-gray-500 mb-1.5 font-medium">
@@ -112,25 +145,7 @@ export default function MessageBubble({ message, isNew, showTranslation, onToggl
               minute: '2-digit',
             })}
           </span>
-          {isUser && (
-            <svg
-              className="w-3 h-3 text-[#10B981]"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-            </svg>
-          )}
         </div>
-
-        {/* Translation toggle button */}
-        <button
-          onClick={handleToggle}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#A3C9A8] bg-white hover:bg-[#E8F3ED] text-[11px] font-semibold text-[#102b1c] transition-all cursor-pointer mt-2 hover:shadow-sm"
-        >
-          <Languages className="w-3.5 h-3.5" />
-          {shouldShowTranslation ? 'Hide Translation' : 'Translate'}
-        </button>
       </div>
     </div>
   );

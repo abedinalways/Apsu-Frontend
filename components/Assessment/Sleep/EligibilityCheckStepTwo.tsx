@@ -70,7 +70,7 @@ export default function EligibilityCheckStepTwo() {
                         className={cn(
                           "flex items-center space-x-3.5 p-4  select-none  gap-2 bg-[#FAF9F4] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer",
                           isChecked
-                            ? "border-[#AFC1B6] text-[#0B251A]"
+                            ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                             : "border-gray-200",
                         )}
                       >

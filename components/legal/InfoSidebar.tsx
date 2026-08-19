@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import type { InfoSection } from '@/lib/data/infoData';
 
 interface TermsSidebarProps {
@@ -43,6 +42,19 @@ export function InfoSidebar({ sections }: TermsSidebarProps) {
     setTimeout(() => {
       setIsClicked(false);
     }, 800);
+
+    // Smooth scroll to section
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 100; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
@@ -55,14 +67,13 @@ export function InfoSidebar({ sections }: TermsSidebarProps) {
           {sections.map(section => {
             const isActive = activeId === section.id;
             return (
-              <Link
+              <button
                 key={section.id}
-                href={`#${section.id}`}
                 onClick={() => handleLinkClick(section.id)}
-                className={`rounded-md px-2 py-1.5 text-[16px] text-start sm:py-1 transition-colors font-medium ${isActive ? 'text-[#00774d]' : 'text-[#6c6c6c]'}`}
+                className={`rounded-md px-2 py-1.5 text-[16px] text-start sm:py-1 transition-colors font-medium ${isActive ? 'text-[#00774d]' : 'text-[#6c6c6c]'} hover:bg-gray-50`}
               >
                 {section.serial}. {section.sidebarTitle || section.title}
-              </Link>
+              </button>
             );
           })}
         </nav>

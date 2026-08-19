@@ -71,7 +71,7 @@ export default function EligibilityCheckStepFour() {
                   }
                   className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all bg-[#FAF9F4] h-14! cursor-pointer text-[16px] text-[#6c6c6c] ${
                     isMonitored === "yes"
-                      ? "border-[#AFC1B6] text-[#0B251A]"
+                      ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                       : "border-gray-200"
                   }`}
                 >
@@ -99,7 +99,7 @@ export default function EligibilityCheckStepFour() {
                   }
                   className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all bg-[#FAF9F4] h-14! cursor-pointer text-[16px] text-[#6c6c6c] ${
                     isMonitored === "no"
-                      ? "border-[#AFC1B6] text-[#0B251A]"
+                      ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                       : "border-gray-200"
                   }`}
                 >

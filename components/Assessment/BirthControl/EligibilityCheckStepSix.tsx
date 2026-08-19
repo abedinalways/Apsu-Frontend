@@ -165,7 +165,7 @@ export default function EligibilityCheckStepSix() {
                   onClick={handleClearAllMeds}
                   className={`w-full py-4 text-center text-sm font-medium transition-all bg-[#FAF9F4] h-14! rounded-xl border text-[16px] text-[#6c6c6c] ${
                     hasNoneSelected
-                      ? "border-[#AFC1B6] text-[#0B251A]"
+                      ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                       : "border-gray-200"
                   }`}
                 >

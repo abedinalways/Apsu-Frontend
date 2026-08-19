@@ -85,7 +85,7 @@ export default function GoalLifestyleActivityStepFour() {
                       }
                       className={`py-3.5 px-1 rounded-xl border text-[14px] text-[#111] font-medium text-center transition-all truncate h-14! bg-[#FAF9F4]  cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                           : "border-gray-200"
                       }`}
                     >

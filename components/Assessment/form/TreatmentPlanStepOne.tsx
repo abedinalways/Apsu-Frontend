@@ -112,7 +112,7 @@ export default function TreatmentPlanStepOne() {
                       }
                       className={`w-full p-4 rounded-2xl border text-left flex items-start justify-between transition-all relative bg-[#FAF9F4] cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] text-[#0B251A]"
+                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
                           : "border-gray-200"
                       }`}
                     >
