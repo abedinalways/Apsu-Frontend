@@ -31,7 +31,7 @@ export const Banner = () => {
         {/* title */}
         <h1 className="text-primary font-medium text-4xl md:text-5xl lg:text-6xl xl:text-7xl md:max-w-150 lg:max-w-210 max-w-218 text-center mt-8">
           Healthcare that{" "}
-          <span className="text-[#00774D]">speaks your language.</span>
+          <span className="text-greenColor">speaks your language.</span>
         </h1>
         {/* subtitle */}
         <p className="text-center text-descriptionColor lg:text-xl mt-8 max-w-100 xl:max-w-150 xl:flex xl:flex-col">

@@ -26,7 +26,7 @@ function WeightLoss() {
                   className="flex items-start gap-3 text-sm md:text-base "
                 >
                   <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-greenColor text-white">
-                    <Check className="h-3 w-3 stroke-[3]" />
+                    <Check className="h-3 w-3 stroke-3" />
                   </div>
                   <span className="text-descriptionColor">{point}</span>
                 </li>
@@ -44,7 +44,7 @@ function WeightLoss() {
               alt="Weight Loss"
               width={700}
               height={500}
-              className="w-[639px]"
+              className="w-159.75"
             />
           </div>
         </div>
