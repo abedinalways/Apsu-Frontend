@@ -1,10 +1,13 @@
 import BlogImageCard from './BlogImageCard';
 import BlogContentCard from './BlogContentCard';
-import { blogData } from '@/lib/data/blogData';
+import type { Blog } from '@/types/blog';
 
 
-export default function BlogContent() {
-  const featuredBlogs = blogData.slice(0, 3);
+interface BlogContentProps {
+  featuredBlogs: Blog[];
+}
+
+export default function BlogContent({ featuredBlogs }: BlogContentProps) {
   return (
     <section
       className="

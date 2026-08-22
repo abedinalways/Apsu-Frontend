@@ -5,16 +5,18 @@ import { useMemo, useState } from 'react';
 import BlogGrid from './BlogGrid';
 import BlogToolbar from './BlogToolbar';
 
-
-
 import { blogCategories } from '@/types/blogCategories';
-import { blogsData } from '@/lib/data/blogsData';
+import type { Blog } from '@/types/blog';
 import ReusableButton from '../reusable/button/ReusableButton';
 import PrimaryButton from '../reusable/button/PrimaryButton';
 
 const INITIAL_VISIBLE = 4;
 
-export default function BlogSection() {
+interface BlogSectionProps {
+  initialBlogs: Blog[];
+}
+
+export default function BlogSection({ initialBlogs }: BlogSectionProps) {
   const [activeCategory, setActiveCategory] = useState('All Post');
 
   const [search, setSearch] = useState('');
@@ -22,7 +24,7 @@ export default function BlogSection() {
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
 
   const filteredBlogs = useMemo(() => {
-    return blogsData.filter(blog => {
+    return initialBlogs.filter(blog => {
       const matchCategory =
         activeCategory === 'All Post' || blog.category === activeCategory;
 
@@ -34,7 +36,7 @@ export default function BlogSection() {
 
       return matchCategory && matchSearch;
     });
-  }, [activeCategory, search]);
+  }, [activeCategory, search, initialBlogs]);
 
   const visibleBlogs = filteredBlogs.slice(0, visibleCount);
 

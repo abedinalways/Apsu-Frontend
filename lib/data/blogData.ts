@@ -1,6 +1,6 @@
 import { Blog } from '@/types/blog';
 
-export const blogData: Blog[] = [
+export const blogData = [
   {
     id: 1,
     image: '/images/blog/img21.png',
