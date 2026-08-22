@@ -17,7 +17,7 @@ export default function EligibilityCheckStepSeven() {
     <div className="space-y-6">
       {/* Question Header text from Screenshot 2026-07-05 113401.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           Please share any concerns or questions you have for the medical team
           below.
         </h2>
@@ -33,7 +33,7 @@ export default function EligibilityCheckStepSeven() {
               <Textarea
                 {...field}
                 placeholder="Describe your concerns if you have any..."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200  text-sm placeholder:text-gray-400 w-full p-4 bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200  text-sm placeholder:text-gray-400 w-full p-4 bg-[background] h-14! text-[16px] text-text-secondary focus-visible:ring-[1px]"
               />
             </FormControl>
             <FormMessage />

@@ -20,7 +20,7 @@
 //   const cardIcons = [VisaCardIcons, MsCardIcons, MXCardIcons];
 //   return (
 //     <div className="space-y-4">
-//       <div className="bg-[#C9FFEB] rounded-xl flex justify-between">
+//       <div className="bg-bg-green-100 rounded-xl flex justify-between">
 //         <div className="space-y-3 p-4">
 //           <h4 className="font-bold text-gray-900 text-sm">
 //             Weight loss - 3 months
@@ -127,7 +127,7 @@
 //                 name="cardExpiry"
 //                 render={({ field }) => (
 //                   <FormItem className="flex flex-col gap-1">
-//                     <FormLabel className="text-[14px] text-[#111]">
+//                     <FormLabel className="text-[14px] text-ink">
 //                       Expiry Date <span className="text-red-500">*</span>
 //                     </FormLabel>
 //                     <FormControl>
@@ -148,7 +148,7 @@
 //                 name="cardCvv"
 //                 render={({ field }) => (
 //                   <FormItem className="flex flex-col gap-1">
-//                     <FormLabel className="text-[14px] text-[#111]">
+//                     <FormLabel className="text-[14px] text-ink">
 //                       CVV <span className="text-red-500">*</span>
 //                     </FormLabel>
 //                     <FormControl>
@@ -231,7 +231,7 @@ export default function CheckoutPaymentStepOne() {
   return (
     <div className="space-y-4">
       {/* Product Banner */}
-      <div className="bg-[#C9FFEB] rounded-xl flex justify-between">
+      <div className="bg-bg-green-100 rounded-xl flex justify-between">
         <div className="space-y-3 p-4">
           <h4 className="font-bold text-gray-900 text-sm">
             Weight loss - 3 months
@@ -306,7 +306,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 space-y-4 bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'card'
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-border-light border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -428,7 +428,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'paypal'
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-border-light border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -447,7 +447,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'venmo'
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-border-light border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -466,7 +466,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'bank'
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-border-light border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >

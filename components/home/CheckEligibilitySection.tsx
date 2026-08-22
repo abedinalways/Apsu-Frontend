@@ -83,7 +83,7 @@ export default function CheckEligibilitySection() {
               <h2 className="text-[22px] md:text-[26px] font-bold text-primaryColor tracking-tight leading-tight mb-2">
                 Could a GLP-1 program be right for you?
               </h2>
-              <p className="text-[13px] text-[#585E5A] mb-6">
+              <p className="text-[13px] text-text-muted mb-6">
                 Enter your height and weight below
               </p>
               <div className="lg:hidden flex justify-center pb-4">
@@ -98,7 +98,7 @@ export default function CheckEligibilitySection() {
                         cy="60"
                         r="50"
                         fill="none"
-                        stroke="#e5e7eb"
+                        stroke="currentColor"
                         strokeWidth="6"
                         strokeDasharray="4 4"
                       />
@@ -160,54 +160,54 @@ export default function CheckEligibilitySection() {
                 {unitSystem === "imperial" ? (
                   <div className="grid grid-cols-2  lg:grid-cols-3 gap-3">
                     <div>
-                      <label className="text-sm md:text-base text-[#585E5A]">
+                      <label className="text-sm md:text-base text-text-muted">
                         Height
                       </label>
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
                           {...register("heightFt")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-bg-surface h-12 text-[14px] text-ink rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
                           <div className="flex items-center gap-1">
-                            <ShortIcon className="text-[#758C7D] w-4 h-4" />
+                            <ShortIcon className="text-text-secondary w-4 h-4" />
                             <p>ft</p>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div>
-                      <label className="text-sm md:text-base text-[#585E5A] select-none">
+                      <label className="text-sm md:text-base text-text-muted select-none">
                         in
                       </label>
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
                           {...register("heightIn")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-bg-surface h-12 text-[14px] text-ink rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
                           <div className="flex items-center gap-1">
-                            <ShortIcon className="text-[#758C7D] w-4 h-4" />
+                            <ShortIcon className="text-text-secondary w-4 h-4" />
                             <p>in</p>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="col-span-2 lg:col-span-1">
-                      <label className="text-sm md:text-base text-[#585E5A]">
+                      <label className="text-sm md:text-base text-text-muted">
                         Weight
                       </label>
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
                           {...register("weightLbs")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-bg-surface h-12 text-[14px] text-ink rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
                           <div className="flex items-center gap-1">
-                            <ShortIcon className="text-[#758C7D] w-4 h-4" />
+                            <ShortIcon className="text-text-secondary w-4 h-4" />
                             <p>lbs</p>
                           </div>
                         </div>
@@ -217,36 +217,36 @@ export default function CheckEligibilitySection() {
                 ) : (
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="text-sm md:text-base text-[#585E5A]">
+                      <label className="text-sm md:text-base text-text-muted">
                         Height (cm)
                       </label>
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
                           {...register("heightCm")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-bg-surface h-12 text-[14px] text-ink rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
                           <div className="flex items-center gap-1">
-                            <ShortIcon className="text-[#758C7D] w-4 h-4" />
+                            <ShortIcon className="text-text-secondary w-4 h-4" />
                             <p>cm</p>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div>
-                      <label className="text-sm md:text-base text-[#585E5A]">
+                      <label className="text-sm md:text-base text-text-muted">
                         Weight (kgs)
                       </label>
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
                           {...register("weightKgs")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-bg-surface h-12 text-[14px] text-ink rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
                           <div className="flex items-center gap-1">
-                            <ShortIcon className="text-[#758C7D] w-4 h-4" />
+                            <ShortIcon className="text-text-secondary w-4 h-4" />
                             <p>kgs</p>
                           </div>
                         </div>
@@ -258,7 +258,7 @@ export default function CheckEligibilitySection() {
 
               {/* Sex / Gender Selection - Radio Buttons */}
               <div className="mb-6">
-                <label className="text-sm md:text-base text-[#585E5A] block mb-2">
+                <label className="text-sm md:text-base text-text-muted block mb-2">
                   Sex
                 </label>
                 <div className="flex gap-4">
@@ -314,7 +314,7 @@ export default function CheckEligibilitySection() {
                       cy="60"
                       r="50"
                       fill="none"
-                      stroke="#e5e7eb"
+                      stroke="currentColor"
                       strokeWidth="6"
                       strokeDasharray="4 4"
                     />
@@ -345,7 +345,7 @@ export default function CheckEligibilitySection() {
 
               {/* Gradient BMI Range Bar */}
               <div className="w-full space-y-2">
-                <div className="w-full h-2 rounded-full bg-linear-to-r from-[#3B82F6] via-[#10B981] via-[#F59E0B] to-[#EF4444]" />
+                <div className="w-full h-2 rounded-full bg-linear-to-r from-[#3B82F6] via-[#10B981] via-[#F59E0B] to-error" />
                 <div className="flex justify-between items-center text-[10px] md:text-[11px] text-gray-500 text-center font-medium pt-1">
                   <span>Underweight &lt;18.5</span>
                   <span>Healthy Weight 18.5 - 24.9</span>

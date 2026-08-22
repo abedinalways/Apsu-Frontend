@@ -37,7 +37,7 @@ export default function PrescriptionTrackOrderModal({
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="bg-white rounded-[12px] max-w-4xl w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-[#EBEAE4] max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-[12px] max-w-4xl w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-border max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute top-5 right-5 text-gray-400 hover:text-gray-600 p-1 rounded-full border border-gray-100 hover:bg-gray-50 transition-colors"
@@ -56,7 +56,7 @@ export default function PrescriptionTrackOrderModal({
           <div className="grid grid-cols-1 gap-4">
             <div className="order-1 rounded-[12px] p-4 flex flex-col justify-between space-y-4 shadow">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 p-2 rounded-full bg-[#102b1c] flex items-center justify-center text-[#A3C9A8] shrink-0">
+                <div className="w-10 h-10 p-2 rounded-full bg-brand flex items-center justify-center text-brand-light shrink-0">
                   {data.type === 'injection' ? (
                     <SyringeIcon />
                   ) : (
@@ -68,11 +68,11 @@ export default function PrescriptionTrackOrderModal({
                     <h4 className="font-semibold text-base md:text-[18px] text-gray-900">
                       {data.treatmentName}
                     </h4>
-                    <span className="px-2 py-0.5 rounded-full text-[12px] font-medium text-[#D2942A] border border-[#FCEFCE] bg-[#FFF9EC]">
+                    <span className="px-2 py-0.5 rounded-full text-[12px] font-medium text-warning border border-bg-warning bg-bg-warning">
                       {data.status}
                     </span>
                   </div>
-                  <p className="text-xs md:text-[14px] text-[#219653] font-medium mt-0.5">
+                  <p className="text-xs md:text-[14px] text-success-dark font-medium mt-0.5">
                     {data.treatmentSub}
                   </p>
                 </div>
@@ -99,7 +99,7 @@ export default function PrescriptionTrackOrderModal({
                   <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
                     Status
                   </p>
-                  <p className="text-sm font-medium text-[#219653] whitespace-nowrap">
+                  <p className="text-sm font-medium text-success-dark whitespace-nowrap">
                     {data.status}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export default function PrescriptionTrackOrderModal({
             </h5>
             <div className="space-y-5">
               <div className="flex justify-between items-center border-b border-gray-100 pb-3">
-                <span className="text-sm text-[#6c6c6c] font-light">
+                <span className="text-sm text-text-secondary font-light">
                   Tracking Number
                 </span>
                 <span className="text-sm font-medium text-gray-900">
@@ -134,7 +134,7 @@ export default function PrescriptionTrackOrderModal({
                 </span>
               </div>
               <div className="flex justify-between items-center border-b border-gray-100 pb-3">
-                <span className="text-sm text-[#6c6c6c] font-light">
+                <span className="text-sm text-text-secondary font-light">
                   Carrier
                 </span>
                 <span className="text-sm font-medium text-gray-900">
@@ -142,7 +142,7 @@ export default function PrescriptionTrackOrderModal({
                 </span>
               </div>
               <div className="flex justify-between items-center border-b border-gray-100 pb-3">
-                <span className="text-sm text-[#6c6c6c] font-light">
+                <span className="text-sm text-text-secondary font-light">
                   Estimated Delivery
                 </span>
                 <span className="text-sm font-medium text-gray-900">
@@ -150,7 +150,7 @@ export default function PrescriptionTrackOrderModal({
                 </span>
               </div>
               <div className="pt-2">
-                <p className="text-sm text-[#6c6c6c] font-light mb-2">
+                <p className="text-sm text-text-secondary font-light mb-2">
                   Shipping Address
                 </p>
                 <p className="text-sm font-medium text-gray-900 leading-relaxed">
@@ -162,11 +162,11 @@ export default function PrescriptionTrackOrderModal({
           </div>
         </div>
 
-        <div className="bg-[#fffaea] border border-[#FCEFCE] rounded-[16px] p-4 text-left shadow">
-          <h4 className="text-sm md:text-[16px] font-medium text-[#102b1c] mb-1">
+        <div className="bg-bg-yellow-50 border border-bg-warning rounded-[16px] p-4 text-left shadow">
+          <h4 className="text-sm md:text-[16px] font-medium text-brand mb-1">
             Prescription Shipped
           </h4>
-          <p className="text-xs md:text-[14px] text-[#6c6c6c] font-normal leading-[160%]">
+          <p className="text-xs md:text-[14px] text-text-secondary font-normal leading-[160%]">
             Your prescription has been shipped and is on its way. You'll receive
             a notification once it's delivered.
           </p>

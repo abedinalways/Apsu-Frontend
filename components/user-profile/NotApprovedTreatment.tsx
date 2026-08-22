@@ -19,7 +19,7 @@ export default function NotApprovedTreatment({
       </div>
 
       {/* Main Messages */}
-      <h3 className="text-lg font-medium text-[#6c6c6c] tracking-tight">
+      <h3 className="text-lg font-medium text-text-secondary tracking-tight">
         Treatment not Approved
       </h3>
       <p className="text-sm text-[#6c6c6b]/80 font-light mt-3 leading-[160%] max-w-md italic">
@@ -32,13 +32,13 @@ export default function NotApprovedTreatment({
       <div className="flex items-center gap-4 mt-8 w-full justify-center">
         <button
           onClick={onViewOrder}
-          className="h-11 px-6 border border-[#102b1c] rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors bg-white min-w-[140px]"
+          className="h-11 px-6 border border-brand rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors bg-white min-w-[140px]"
         >
           View Order
         </button>
         <button
           onClick={onStartAssessment}
-          className="h-11 px-6 bg-[#102b1c] hover:bg-[#1c3d2a] text-white text-sm font-medium rounded-full transition-colors min-w-[180px]"
+          className="h-11 px-6 bg-brand hover:bg-brand-hover text-white text-sm font-medium rounded-full transition-colors min-w-[180px]"
         >
           Start New Assessment
         </button>

@@ -45,7 +45,7 @@ export default function SleepBreakCard() {
           {stories.map((item) => (
             <div
               key={item.id}
-              className="group relative flex flex-col bg-[#D0FFFD] shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.06)] rounded-2xl p-4 md:p-6 min-h-[400px]  lg:min-h-[431px] justify-between overflow-hidden cursor-pointer transition-all duration-300 border border-[#F5F4EE]"
+              className="group relative flex flex-col bg-bg-cyan-100 shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.06)] rounded-2xl p-4 md:p-6 min-h-[400px]  lg:min-h-[431px] justify-between overflow-hidden cursor-pointer transition-all duration-300 border border-bg-bg-surface"
             >
               {/* --- NORMAL CONTENT STATE --- */}
 

@@ -143,8 +143,8 @@ export default function ProfileClient() {
 
   return (
     <div className="space-y-6 font-[Work_Sans] w-full">
-      <div className="bg-white border border-[#cddcd3] rounded-[16px] p-6 md:p-8 flex flex-col lg:flex-row items-center md:items-end  gap-4 md:gap-2 relative">
-        <div className="w-24 h-24 md:w-40 md:h-40 md:absolute md:top-6 md:left-4 rounded-full bg-[#102b1c] top-10 flex items-center justify-center text-white text-2xl md:text-3xl font-semibold shrink-0">
+      <div className="bg-white border border-borderColor rounded-[16px] p-6 md:p-8 flex flex-col lg:flex-row items-center md:items-end  gap-4 md:gap-2 relative">
+        <div className="w-24 h-24 md:w-40 md:h-40 md:absolute md:top-6 md:left-4 rounded-full bg-brand top-10 flex items-center justify-center text-white text-2xl md:text-3xl font-semibold shrink-0">
           {userInitials}
         </div>
 
@@ -167,19 +167,19 @@ export default function ProfileClient() {
 
         <button
           onClick={() => setIsModalOpen(true)}
-          className="md:absolute md:top-20 md:right-8 flex items-end gap-2 px-4 py-2 border border-[#EBEAE4] rounded-full text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors shadow-sm"
+          className="md:absolute md:top-20 md:right-8 flex items-end gap-2 px-4 py-2 border border-border rounded-full text-xs font-medium text-gray-700 hover:bg-gray-50 transition-colors shadow-sm"
         >
           <EditIcon /> Edit
         </button>
       </div>
 
-      <div className="bg-white border border-[#EBEAE4] rounded-[16px] p-6 max-w-md w-full space-y-4 mt-12">
+      <div className="bg-white border border-border rounded-[16px] p-6 max-w-md w-full space-y-4 mt-12">
         <p className="text-sm md:text-[16px] font-normal tracking-wider text-primary uppercase">
           ACTIVE TRAETMENT
         </p>
         <div className="flex flex-col  gap-4">
           <div>
-            <h3 className="text-xl md:text-[24px] font-medium text-[#102B1C]">
+            <h3 className="text-xl md:text-[24px] font-medium text-brand">
               {activeTreatment.title}
             </h3>
           </div>
@@ -189,16 +189,16 @@ export default function ProfileClient() {
         </div>
       </div>
 
-      <div className="bg-white border border-[#EBEAE4] rounded-[24px] overflow-hidden">
-        <div className="px-4 py-4 md:px-8 border-b border-[#F4F3EF] flex justify-center md:justify-start">
-          <div className="bg-transparent lg:bg-[#E8F3ED] flex flex-wrap md:flex-nowrap mx-auto justify-center gap-2 p-2 md:p-2 rounded-full">
+      <div className="bg-white border border-border rounded-[24px] overflow-hidden">
+        <div className="px-4 py-4 md:px-8 border-b border-border flex justify-center md:justify-start">
+          <div className="bg-transparent lg:bg-brand-surface flex flex-wrap md:flex-nowrap mx-auto justify-center gap-2 p-2 md:p-2 rounded-full">
             {TABS.map(tab => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => handleTabChange(tab.id)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-secondary-text shadow-sm cursor-pointer' : 'text-gray-600 bg-white border-[#B8D9C6] hover:text-gray-900 hover:bg-[#F4F3EF] cursor-pointer'}`}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-brand-light text-secondary-text shadow-sm cursor-pointer' : 'text-gray-600 bg-white border-border-focus hover:text-gray-900 hover:bg-border cursor-pointer'}`}
                 >
                   {tab.label}
                 </button>

@@ -23,7 +23,7 @@ export default function EligibilityCheckStepEight() {
     <div className="space-y-6">
       {/* Title block from Screenshot 2026-07-05 113852.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           Are you currently pregnant?
         </h2>
       </div>
@@ -48,9 +48,9 @@ export default function EligibilityCheckStepEight() {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 text-left transition-all bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] cursor-pointer ${
+                      className={`w-full p-4 text-left transition-all bg-[background] h-14! rounded-xl border text-[16px] text-text-secondary cursor-pointer ${
                         isSelected
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-border-light border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >

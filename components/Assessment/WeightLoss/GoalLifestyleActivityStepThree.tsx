@@ -37,7 +37,7 @@ export default function GoalLifestyleActivityStepThree() {
     <div className="space-y-6">
       {/* Step Header matching Screenshot 2026-07-05 120126.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           Share your challenges and motivations.
         </h2>
       </div>
@@ -48,7 +48,7 @@ export default function GoalLifestyleActivityStepThree() {
         name="weightLossMethods"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
+            <FormLabel className="text-[14px] text-ink flex items-center gap-0.5">
               What method do you applied for loosing your weight?{' '}
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>
@@ -66,7 +66,7 @@ export default function GoalLifestyleActivityStepThree() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag('weightLossMethods', tag)}
-                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-secondary-bg bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
+                  className="px-3 py-1 rounded-full border border-border-light text-[11px] font-medium text-secondary-bg bg-white hover:bg-border-light/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>
@@ -83,7 +83,7 @@ export default function GoalLifestyleActivityStepThree() {
         name="weightLossMotivation"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
+            <FormLabel className="text-[14px] text-ink flex items-center gap-0.5">
               What&apos;s your primary motivation for loosing weight?{' '}
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>
@@ -101,7 +101,7 @@ export default function GoalLifestyleActivityStepThree() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag('weightLossMotivation', tag)}
-                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-secondary-bg bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
+                  className="px-3 py-1 rounded-full border border-border-light text-[11px] font-medium text-secondary-bg bg-white hover:bg-border-light/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>
@@ -118,7 +118,7 @@ export default function GoalLifestyleActivityStepThree() {
         name="weightLossBarriers"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
+            <FormLabel className="text-[14px] text-ink flex items-center gap-0.5">
               What barrier do you think affect most on you weight loss journey?{' '}
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>

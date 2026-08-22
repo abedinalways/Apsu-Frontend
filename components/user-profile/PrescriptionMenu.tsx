@@ -69,7 +69,7 @@ export default function PrescriptionMenu({
           onTrackOrder();
           onClose();
         }}
-        className="mt-1 flex w-full items-center gap-3 rounded-[8px] px-3 py-2 text-left text-xs font-medium text-secondary-text transition-colors duration-200 hover:bg-[#F7FAF8]"
+        className="mt-1 flex w-full items-center gap-3 rounded-[8px] px-3 py-2 text-left text-xs font-medium text-secondary-text transition-colors duration-200 hover:bg-bg-surface"
       >
         <ClipboardList className="h-4 w-4 shrink-0" />
         <span>Track Order</span>

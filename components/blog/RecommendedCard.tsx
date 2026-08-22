@@ -40,16 +40,16 @@
 
 //       <div className="p-4 bg-[background]">
 //         <div className="mb-3 flex items-center justify-between gap-2">
-//           <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#008C5E]">
+//           <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-success">
 //             {blog.category}
 //           </span>
 
-//           <span className="text-[10px] text-[#7B7B7B] whitespace-nowrap">
+//           <span className="text-[10px] text-text-muted whitespace-nowrap">
 //             {blog.date} • {blog.readTime}
 //           </span>
 //         </div>
 
-//         <h3 className="line-clamp-2 text-[18px] leading-[140%] font-medium text-[#292B2A]">
+//         <h3 className="line-clamp-2 text-[18px] leading-[140%] font-medium text-text-primary">
 //           {blog.title}
 //         </h3>
 
@@ -60,7 +60,7 @@
 //             inline-flex
 //             items-center
 //             gap-2
-//             text-[#008C5E]
+//             text-success
 //             font-medium
 //             transition-all
 //             duration-300
@@ -113,15 +113,15 @@ export default function RecommendedCard({ blog }: RecommendedCardProps) {
 
       <div className="p-5 ">
         <div className="mb-4 flex items-center justify-between gap-2">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#008C5E]">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-success">
             {blog.category}
           </span>
 
-          <span className="text-[11px] text-[#7B7B7B] whitespace-nowrap">
+          <span className="text-[11px] text-text-muted whitespace-nowrap">
             {blog.date} • {blog.readTime}
           </span>
         </div>
-        <h3 className="line-clamp-2 text-[20px] leading-[135%] font-medium text-[#292B2A] mb-5">
+        <h3 className="line-clamp-2 text-[20px] leading-[135%] font-medium text-text-primary mb-5">
           {blog.title}
         </h3>
         <Link
@@ -130,7 +130,7 @@ export default function RecommendedCard({ blog }: RecommendedCardProps) {
             inline-flex
             items-center
             gap-2
-            text-[#008C5E]
+            text-success
             font-medium
             transition-all
             duration-300

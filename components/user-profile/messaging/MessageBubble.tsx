@@ -50,7 +50,7 @@ export default function MessageBubble({
             'rounded-[20px] px-3 py-2.5 text-xs sm:text-sm leading-5 sm:leading-6',
             isUser
               ? 'bg-[#E8F5E9] text-secondary-text rounded-tr-sm'
-              : 'bg-[background] border border-[#E5E7EB] text-secondary-text rounded-tl-sm',
+              : 'bg-[background] border border-border-light text-secondary-text rounded-tl-sm',
           )}
         >
           <p className="break-words whitespace-pre-wrap">{message.body}</p>
@@ -71,7 +71,7 @@ export default function MessageBubble({
                 <a
                   href={message.attachment.url}
                   download={message.attachment.name}
-                  className="flex items-center gap-2 rounded-lg border border-[#E5E7EB] bg-white p-2 hover:bg-gray-50 transition-colors cursor-pointer"
+                  className="flex items-center gap-2 rounded-lg border border-border-light bg-white p-2 hover:bg-gray-50 transition-colors cursor-pointer"
                 >
                   <svg
                     className="h-5 w-5 text-gray-500"

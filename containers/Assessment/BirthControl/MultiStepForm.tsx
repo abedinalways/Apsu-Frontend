@@ -268,7 +268,7 @@ export default function MultiStepForm() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-[#FFFFFF] max-h-screen flex flex-col">
+    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-white max-h-screen flex flex-col">
       <Form {...form}>
         <form className="flex flex-col h-full">
           <div className="flex-1 overflow-y-auto space-y-6">
@@ -354,7 +354,7 @@ export default function MultiStepForm() {
           </div>
 
           {/* Global Form Footer Trigger buttons */}
-          <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF] pb-10">
+          <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-white pb-10">
             {step === TOTAL_STEPS ? (
               <div className="flex justify-between items-center w-full">
                 <button

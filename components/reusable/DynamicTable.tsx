@@ -68,7 +68,7 @@ export default function DynamicTable({
                 ))}
                 {(onView || onDelete) && (
                   <th>
-                    <div className="px-4 border border-red-600  rounded-2xl py-3 text-sm font-medium text-[#4a4c56] border-b  bg-neutral-50">
+                    <div className="px-4 border border-red-600  rounded-2xl py-3 text-sm font-medium text-text-muted border-b  bg-neutral-50">
                       Action
                     </div>
                   </th>
@@ -80,7 +80,7 @@ export default function DynamicTable({
                 <tr>
                   <td
                     colSpan={columns.length + (onView || onDelete ? 1 : 0)}
-                    className="px-4 py-10 text-center text-[#4a4c56] text-sm"
+                    className="px-4 py-10 text-center text-text-muted text-sm"
                   >
                     <Loader />
                   </td>
@@ -92,7 +92,7 @@ export default function DynamicTable({
                       <td
                         key={idx}
                         style={{ width: col.width || "auto" }}
-                        className="px-4 py-3 text-sm text-[#4a4c56]"
+                        className="px-4 py-3 text-sm text-text-muted"
                       >
                         {col.formatter
                           ? col.formatter(
@@ -107,7 +107,7 @@ export default function DynamicTable({
                       <td className="px-4 py-3 flex gap-4 items-center">
                         {onView && (
                           <span
-                            className="text-xs underline text-[#4a4c56]  cursor-pointer"
+                            className="text-xs underline text-text-muted  cursor-pointer"
                             onClick={() => onView(row)}
                           >
                             View details
@@ -131,7 +131,7 @@ export default function DynamicTable({
                 <tr>
                   <td
                     colSpan={columns.length + (onView || onDelete ? 1 : 0)}
-                    className="px-4 py-10 text-center text-[#4a4c56] text-sm"
+                    className="px-4 py-10 text-center text-text-muted text-sm"
                   >
                     {error ? (
                       <p className="text-red-500 text-xl capitalize font-semibold">

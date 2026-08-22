@@ -14,7 +14,7 @@ function  AboutApsu() {
             the source of all life.
           </p>
         </div>
-        <div className="bg-[#BCFFE6]  rounded-2xl relative overflow-hidden px-4 py-12 md:py-20 mt-6 flex flex-col items-center justify-center text-center">
+        <div className="bg-bg-green-100  rounded-2xl relative overflow-hidden px-4 py-12 md:py-20 mt-6 flex flex-col items-center justify-center text-center">
           <div className="absolute top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
             <div className="w-75 h-75 md:w-112.5 md:h-112.5 rounded-full border-2 border-green-400/30 animate-ripple-1" />
             <div className="w-105 h-105 md:w-150 md:h-150 rounded-full border-2 border-green-400/30 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ripple-2" />
@@ -67,7 +67,7 @@ function  AboutApsu() {
                   zu
                 </span>
                 <div className="flex items-center gap-1.5 bg-white shadow-[0_4px_12px_0_rgba(2,31,24,0.04)] px-4 py-2 rounded-full border border-borderColor">
-                  <LightIcon className="w-4 h-4 text-[#097545]" />
+                  <LightIcon className="w-4 h-4 text-success" />
                   <span className="text-sm md:text-base font-medium text-greenColor">
                     To know the deep
                   </span>

@@ -21,12 +21,12 @@ export default function OrderStepper({
         <div className="relative">
           {/* Background Line */}
 
-          <div className="absolute left-[11px] top-3 bottom-3 w-[2px] bg-[#E8F3ED]" />
+          <div className="absolute left-[11px] top-3 bottom-3 w-[2px] bg-brand-surface" />
 
           {/* Progress Line */}
 
           <div
-            className="absolute left-[11px] top-3 w-[2px] bg-[#FCBE15] transition-all duration-700 ease-in-out"
+            className="absolute left-[11px] top-3 w-[2px] bg-warning transition-all duration-700 ease-in-out"
             style={{
               height: `calc(${progress}% - 16px)`,
             }}
@@ -59,10 +59,10 @@ export default function OrderStepper({
 
                     ${
                       completed
-                        ? 'bg-[#219653] border-[#E8F3ED]'
+                        ? 'bg-success-dark border-brand-surface'
                         : active
-                          ? 'bg-[#FCBE15] border-[#E8F3ED]'
-                          : 'bg-[#5A6561] border-[#E8F3ED]'
+                          ? 'bg-warning border-brand-surface'
+                          : 'bg-text-muted border-brand-surface'
                     }
                   `}
                   >
@@ -72,7 +72,7 @@ export default function OrderStepper({
 
                     {active && (
                       <>
-                        <span className="absolute inset-0 rounded-full bg-[#FCBE15]/40 animate-ping" />
+                        <span className="absolute inset-0 rounded-full bg-warning/40 animate-ping" />
 
                         <span className="relative h-2 w-2 rounded-full bg-white" />
                       </>
@@ -89,7 +89,7 @@ export default function OrderStepper({
                       active
                         ? 'font-semibold text-secondary-text'
                         : completed
-                          ? 'font-medium text-[#5A6561]'
+                          ? 'font-medium text-text-muted'
                           : 'text-[#8A928D]'
                     }
                   `}
@@ -111,12 +111,12 @@ export default function OrderStepper({
         <div className="relative flex justify-between">
           {/* Background Line */}
 
-          <div className="absolute left-0 right-0 top-5 h-[2px] bg-[#E8F3ED]" />
+          <div className="absolute left-0 right-0 top-5 h-[2px] bg-brand-surface" />
 
           {/* Progress Line */}
 
           <div
-            className="absolute left-0 top-5 h-[2px] bg-[#FCBE15] transition-all duration-700 ease-in-out"
+            className="absolute left-0 top-5 h-[2px] bg-warning transition-all duration-700 ease-in-out"
             style={{
               width: `${progress}%`,
             }}
@@ -151,10 +151,10 @@ export default function OrderStepper({
 
                   ${
                     completed
-                      ? 'bg-[#219653] border-[#E8F3ED]'
+                      ? 'bg-success-dark border-brand-surface'
                       : active
-                        ? 'bg-[#FCBE15] border-[#E8F3ED] scale-110'
-                        : 'bg-[#5A6561] border-[#E8F3ED]'
+                        ? 'bg-warning border-brand-surface scale-110'
+                        : 'bg-text-muted border-brand-surface'
                   }
                 `}
                 >
@@ -164,7 +164,7 @@ export default function OrderStepper({
 
                   {active && (
                     <>
-                      <span className="absolute inset-0 rounded-full bg-[#FCBE15]/40 animate-ping" />
+                      <span className="absolute inset-0 rounded-full bg-warning/40 animate-ping" />
 
                       <span className="relative h-3 w-3 rounded-full bg-white" />
                     </>
@@ -181,7 +181,7 @@ export default function OrderStepper({
                     active
                       ? 'font-semibold text-secondary-text'
                       : completed
-                        ? 'font-medium text-[#5A6561]'
+                        ? 'font-medium text-text-muted'
                         : 'text-[#8A928D]'
                   }
                 `}

@@ -87,16 +87,16 @@ export default function OrderDetailsTab() {
   return (
     <div className="w-full text-left space-y-4 font-[Work_Sans]">
       <div>
-        <h3 className="text-xl font-bold text-[#102b1c]">Order Details</h3>
-        <p className="text-sm md:text-[16px] text-[#102b1c] font-light mt-2">
+        <h3 className="text-xl font-bold text-brand">Order Details</h3>
+        <p className="text-sm md:text-[16px] text-brand font-light mt-2">
           Track your medication order and delivery progress.
         </p>
       </div>
 
-      <div className="w-full overflow-x-auto rounded-[12px] mt-6 border border-[#EBEAE4] bg-white ">
+      <div className="w-full overflow-x-auto rounded-[12px] mt-6 border border-border bg-white ">
         <table className="w-full border-collapse text-left min-w-[750px]">
           <thead>
-            <tr className="bg-[#ecf9f1] text-[#102b1c] font-medium text-sm">
+            <tr className="bg-bg-subtle text-brand font-medium text-sm">
               <th className="p-4 pl-6">Order#</th>
               <th className="p-4">Treatment</th>
               <th className="p-4">Plan</th>
@@ -120,14 +120,14 @@ export default function OrderDetailsTab() {
                 </td>
                 <td className="p-4 text-gray-600">{order.plan}</td>
                 <td className="p-4 text-gray-600">{order.orderDate}</td>
-                <td className="p-4 font-medium text-[#111]">
+                <td className="p-4 font-medium text-ink">
                   {order.status === 'Not Approved'
                     ? order.paymentStatus
                     : order.paymentStatus}
                 </td>
                 <td className="p-4">
                   <span
-                    className={`md:px-3 py-1 rounded-full   line-clamp-none md:line-clamp-2 w-fit text-center md:text-start  text-xs font-medium ${order.status === 'Shipped' ? 'text-[#006aab] border border-[##b6e6ff] bg-[#eff9ff]' : order.status === 'Not Approved' ? 'text-[#EF4444] border border-[#FEE2E2] bg-[#FEF2F2]' : 'text-[#bb4e02] border border-[#fde99f] bg-[#FFF9EC]'}`}
+                    className={`md:px-3 py-1 rounded-full   line-clamp-none md:line-clamp-2 w-fit text-center md:text-start  text-xs font-medium ${order.status === 'Shipped' ? 'text-[#006aab] border border-[##b6e6ff] bg-[#eff9ff]' : order.status === 'Not Approved' ? 'text-error border border-bg-red-100 bg-bg-red-50' : 'text-[#bb4e02] border border-[#fde99f] bg-bg-warning'}`}
                   >
                     {order.status}
                   </span>
@@ -148,7 +148,7 @@ export default function OrderDetailsTab() {
 
       {selectedOrder && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/20">
-          <div className="bg-white rounded-[12px] max-w-4xl w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-[#EBEAE4] max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-[12px] max-w-4xl w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-border max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setSelectedOrder(null)}
               className="absolute top-5 right-5 text-gray-400 hover:text-gray-600 p-1 rounded-full border border-gray-100 hover:bg-gray-50 transition-colors"
@@ -175,7 +175,7 @@ export default function OrderDetailsTab() {
                   <div className="grid grid-cols-1 gap-4">
                     <div className="order-1 rounded-[12px] p-4 flex flex-col justify-between space-y-4 shadow">
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 p-2 rounded-full bg-[#102b1c] flex items-center justify-center text-[#A3C9A8] shrink-0">
+                        <div className="w-10 h-10 p-2 rounded-full bg-brand flex items-center justify-center text-brand-light shrink-0">
                           <InjectionIcon />
                         </div>
                         <div>
@@ -183,11 +183,11 @@ export default function OrderDetailsTab() {
                             <h4 className="font-semibold text-base md:text-[18px] text-gray-900">
                               {selectedOrder.treatmentName}
                             </h4>
-                            <span className="px-2 py-0.5 rounded-full text-[12px] font-medium text-[#D2942A] border border-[#FCEFCE] bg-[#FFF9EC]">
+                            <span className="px-2 py-0.5 rounded-full text-[12px] font-medium text-warning border border-bg-warning bg-bg-warning">
                               {selectedOrder.status}
                             </span>
                           </div>
-                          <p className="text-xs md:text-[14px] text-[#219653] font-medium mt-0.5">
+                          <p className="text-xs md:text-[14px] text-success-dark font-medium mt-0.5">
                             {selectedOrder.treatmentSub}
                           </p>
                         </div>
@@ -214,7 +214,7 @@ export default function OrderDetailsTab() {
                           <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
                             Payment
                           </p>
-                          <p className="text-sm font-medium text-[#219653] whitespace-nowrap">
+                          <p className="text-sm font-medium text-success-dark whitespace-nowrap">
                             {selectedOrder.paymentStatus}
                           </p>
                         </div>
@@ -252,11 +252,11 @@ export default function OrderDetailsTab() {
                   </div>
                 </div>
 
-                <div className="bg-[#fffaea] border border-[#FCEFCE] rounded-[16px] p-4 text-left shadow">
-                  <h4 className="text-sm md:text-[16px] font-medium text-[#102b1c] mb-1">
+                <div className="bg-bg-yellow-50 border border-bg-warning rounded-[16px] p-4 text-left shadow">
+                  <h4 className="text-sm md:text-[16px] font-medium text-brand mb-1">
                     Under Physician Review
                   </h4>
-                  <p className="text-xs md:text-[14px] text-[#6c6c6c] font-normal leading-[160%]">
+                  <p className="text-xs md:text-[14px] text-text-secondary font-normal leading-[160%]">
                     Your physician is currently reviewing your health
                     assessment. We&apos;ll notify you by email once a decision
                     has been made. This typically takes 1-2 business days.

@@ -86,7 +86,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block w-full hover:text-[#BED5C9] transition-colors"
+                    className="block w-full hover:text-border-light transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block w-full hover:text-[#BED5C9] transition-colors"
+                    className="block w-full hover:text-border-light transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -118,7 +118,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block w-full hover:text-[#BED5C9] transition-colors xl:whitespace-nowrap"
+                    className="block w-full hover:text-border-light transition-colors xl:whitespace-nowrap"
                   >
                     {link.label}
                   </Link>
@@ -174,7 +174,7 @@ export default function Footer() {
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
-          <div className=" h-2/3 w-full absolute bottom-0 bg-linear-to-t  from-[#102B1C] to-transparent"></div>
+          <div className=" h-2/3 w-full absolute bottom-0 bg-linear-to-t  from-brand to-transparent"></div>
           <Image
             src="/footer-img.png"
             alt="footer image"

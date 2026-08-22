@@ -35,7 +35,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
         <div className="grid grid-cols-1 gap-4">
           <div className="order-1 rounded-[12px] p-4 flex flex-col justify-between space-y-4 shadow">
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 p-2 rounded-full bg-[#102b1c] flex items-center justify-center text-[#A3C9A8] shrink-0">
+              <div className="w-10 h-10 p-2 rounded-full bg-brand flex items-center justify-center text-brand-light shrink-0">
                 <InjectionIcon />
               </div>
               <div>
@@ -43,11 +43,11 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
                   <h4 className="font-semibold text-base md:text-[18px] text-gray-900">
                     {order.treatmentName}
                   </h4>
-                  <span className="px-2 py-0.5 rounded-full text-[12px] font-medium text-[#D2942A] border border-[#FCEFCE] bg-[#FFF9EC]">
+                  <span className="px-2 py-0.5 rounded-full text-[12px] font-medium text-warning border border-bg-warning bg-bg-warning">
                     {order.status}
                   </span>
                 </div>
-                <p className="text-xs md:text-[14px] text-[#219653] font-medium mt-0.5">
+                <p className="text-xs md:text-[14px] text-success-dark font-medium mt-0.5">
                   {order.treatmentSub}
                 </p>
               </div>
@@ -74,7 +74,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
                 <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
                   Payment
                 </p>
-                <p className="text-sm font-medium text-[#219653] whitespace-nowrap">
+                <p className="text-sm font-medium text-success-dark whitespace-nowrap">
                   {order.paymentStatus}
                 </p>
               </div>
@@ -104,7 +104,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
           </h5>
           <div className="space-y-5">
             <div className="flex justify-between items-center border-b border-gray-100 pb-3">
-              <span className="text-sm text-[#6c6c6c] font-light">
+              <span className="text-sm text-text-secondary font-light">
                 Tracking Number
               </span>
               <span className="text-sm font-medium text-gray-900">
@@ -112,13 +112,13 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
               </span>
             </div>
             <div className="flex justify-between items-center border-b border-gray-100 pb-3">
-              <span className="text-sm text-[#6c6c6c] font-light">Carrier</span>
+              <span className="text-sm text-text-secondary font-light">Carrier</span>
               <span className="text-sm font-medium text-gray-900">
                 {order.carrier || 'USPS Priority Mail'}
               </span>
             </div>
             <div className="flex justify-between items-center border-b border-gray-100 pb-3">
-              <span className="text-sm text-[#6c6c6c] font-light">
+              <span className="text-sm text-text-secondary font-light">
                 Estimated Delivery
               </span>
               <span className="text-sm font-medium text-gray-900">
@@ -126,7 +126,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
               </span>
             </div>
             <div className="pt-2">
-              <p className="text-sm text-[#6c6c6c] font-light mb-2">
+              <p className="text-sm text-text-secondary font-light mb-2">
                 Shipping Address
               </p>
               <p className="text-sm font-medium text-gray-900 leading-relaxed">
@@ -138,11 +138,11 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
         </div>
       </div>
 
-      <div className="bg-[#eff9ff] border border-[#b6e6ff] rounded-[12px] p-4 text-left shadow">
-        <h4 className="text-sm md:text-[16px] font-medium text-[#102b1c] mb-1">
+      <div className="bg-[#eff9ff] border border-info rounded-[12px] p-4 text-left shadow">
+        <h4 className="text-sm md:text-[16px] font-medium text-brand mb-1">
           Your Order Is On Its Way
         </h4>
-        <p className="text-xs md:text-[14px] text-[#6c6c6c] font-normal leading-[160%]">
+        <p className="text-xs md:text-[14px] text-text-secondary font-normal leading-[160%]">
           Your medication has been shipped and is on its way. You can track your
           package using the tracking number above.
         </p>

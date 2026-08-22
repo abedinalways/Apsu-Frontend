@@ -55,7 +55,7 @@ function BirthOption() {
       </div>
 
       <MedicationSection
-        sectionBgColor="bg-[#FFDEFF]"
+        sectionBgColor="bg-bg-purple-100"
         data={birthControlData}
       />
     </div>
