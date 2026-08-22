@@ -89,7 +89,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
             </div>
           </div>
           <div className="order-2 rounded-[12px] space-y-4 bg-white shadow p-2">
-            <h5 className="text-lg font-medium text-[#142C1E] mb-6 md:mb-8">
+            <h5 className="text-lg font-medium text-[secondary-text] mb-6 md:mb-8">
               Order Progress
             </h5>
             <OrderStepper

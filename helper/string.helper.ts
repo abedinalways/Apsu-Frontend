@@ -5,20 +5,17 @@ export const StringHelper = {
   /**
    * Extract parts of a string
    */
-  textShorten: (text, length = 100) => {
-    let result;
+  textShorten(text: string, length = 100): string {
     if (text.length >= length) {
-      result = text.substring(0, length) + "...";
-    } else {
-      result = text;
+      return text.substring(0, length) + '...';
     }
-    return result;
+    return text;
   },
 
   /**
    * Replace text with performance
    */
-  replace: (str, search, replacement) => {
+  replace(str: string, search: string, replacement: string): string {
     return str.split(search).join(replacement);
   },
 
@@ -27,13 +24,10 @@ export const StringHelper = {
    * @param {number} price
    * @param {number} discount
    */
-  discount: (price, discount) => {
-    let result;
+  discount(price: number, discount?: number): number {
     if (discount == null) {
-      result = Number(price);
-    } else {
-      result = Number(price) - (Number(price) * Number(discount)) / 100;
+      return Number(price);
     }
-    return result;
+    return Number(price) - (Number(price) * Number(discount)) / 100;
   },
 };

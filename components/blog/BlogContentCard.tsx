@@ -31,12 +31,12 @@ export default function BlogContentCard({
       <div className="flex flex-1 flex-col">
         {/* Header */}
         <div className="hidden lg:flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[14px] font-normal leading-[132%] uppercase tracking-[0.14em] text-[#00774d]">
+          <p className="text-[14px] font-normal leading-[132%] uppercase tracking-[0.14em] text-[color-greenColor]">
             {category}
           </p>
 
           <p className="text-[14px] leading-[160%] font-medium text-[#6c6c6c]">
-             {readTime}
+            {readTime}
           </p>
         </div>
 
@@ -46,14 +46,14 @@ export default function BlogContentCard({
         </h3>
 
         {/* Description */}
-        <p className="mt-2 md:mt-4 text-[12px] md:text-[14px] font-normal leading-[160%] text-[#3b3b3c] line-clamp-2" >
+        <p className="mt-2 md:mt-4 text-[12px] md:text-[14px] font-normal leading-[160%] text-[#3b3b3c] line-clamp-2">
           {description}
         </p>
 
         {/* Footer */}
         <Link
           href={href}
-          className="md:mt-2 mt-1 inline-flex w-fit items-center gap-3 text-[16px] leading-[124%] font-medium text-[#00774d] transition-all duration-300 hover:gap-4"
+          className="md:mt-2 mt-1 inline-flex w-fit items-center gap-3 text-[16px] leading-[124%] font-medium text-[color-greenColor] transition-all duration-300 hover:gap-4"
         >
           Read more
           <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[#008C5E]">

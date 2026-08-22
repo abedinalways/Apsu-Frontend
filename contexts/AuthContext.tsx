@@ -1,12 +1,11 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { authService, User } from '@/lib/services/auth';
+import { createContext, useContext, useState, ReactNode } from 'react';
+import { authService } from '@/lib/services/auth';
 
 // ─── Context Types ─────────────────────────────────────────────────────────────
 
 interface AuthContextType {
-  user: User | null;
   isLoading: boolean;
   isAuthenticated: boolean;
   error: string | null;
@@ -24,21 +23,10 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 // ─── Provider ─────────────────────────────────────────────────────────────────
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Restore session from localStorage on mount
-  useEffect(() => {
-    try {
-      const currentUser = authService.getCurrentUser();
-      setUser(currentUser);
-    } catch (err) {
-      console.error('[AuthContext] Session restore failed:', err);
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+  const isAuthenticated = authService.isAuthenticated();
 
   // ─── Actions ────────────────────────────────────────────────────────────────
 
@@ -52,20 +40,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const response = await authService.signIn({ email, password });
 
-      if (response.success && response.user) {
-        setUser(response.user);
+      if (response.success) {
+        setIsLoading(false);
         return { success: true };
       }
 
       const errorMessage = response.error ?? 'Login failed. Please try again.';
       setError(errorMessage);
+      setIsLoading(false);
       return { success: false, error: errorMessage };
     } catch {
       const errorMessage = 'An unexpected error occurred. Please try again.';
       setError(errorMessage);
-      return { success: false, error: errorMessage };
-    } finally {
       setIsLoading(false);
+      return { success: false, error: errorMessage };
     }
   };
 
@@ -79,20 +67,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const response = await authService.register({ email, password });
 
-      if (response.success && response.user) {
-        setUser(response.user);
+      if (response.success) {
+        setIsLoading(false);
         return { success: true };
       }
 
       const errorMessage = response.error ?? 'Registration failed. Please try again.';
       setError(errorMessage);
+      setIsLoading(false);
       return { success: false, error: errorMessage };
     } catch {
       const errorMessage = 'An unexpected error occurred. Please try again.';
       setError(errorMessage);
-      return { success: false, error: errorMessage };
-    } finally {
       setIsLoading(false);
+      return { success: false, error: errorMessage };
     }
   };
 
@@ -106,26 +94,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const response = await authService.createPassword({ email, password });
 
-      if (response.success && response.user) {
-        setUser(response.user);
+      if (response.success) {
+        setIsLoading(false);
         return { success: true };
       }
 
       const errorMessage = response.error ?? 'Failed to create account. Please try again.';
       setError(errorMessage);
+      setIsLoading(false);
       return { success: false, error: errorMessage };
     } catch {
       const errorMessage = 'An unexpected error occurred. Please try again.';
       setError(errorMessage);
-      return { success: false, error: errorMessage };
-    } finally {
       setIsLoading(false);
+      return { success: false, error: errorMessage };
     }
   };
 
   const logout = () => {
     authService.logout();
-    setUser(null);
     setError(null);
   };
 
@@ -136,9 +123,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   return (
     <AuthContext.Provider
       value={{
-        user,
         isLoading,
-        isAuthenticated: !!user,
+        isAuthenticated,
         error,
         login,
         register,

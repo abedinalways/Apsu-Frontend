@@ -1,6 +1,6 @@
 'use client';
 
-import CheckupIcon from "../icons/CheckupIcon";
+import CheckupIcon from '../icons/CheckupIcon';
 
 interface TreatmentData {
   title: string;
@@ -36,7 +36,7 @@ export default function TreatmentCard({ data }: TreatmentCardProps) {
           </div>
         </div>
 
-        <span className="px-3 py-1 text-xs font-medium text-[#142C1E] bg-[#ecf9f1] border border-[#cddcd3] rounded-full capitalize">
+        <span className="px-3 py-1 text-xs font-medium text-[secondary-text] bg-[#ecf9f1] border border-[#cddcd3] rounded-full capitalize">
           {data.status}
         </span>
       </div>
@@ -82,7 +82,7 @@ export default function TreatmentCard({ data }: TreatmentCardProps) {
         </div>
         <div className="w-full h-2 bg-[#EAF2EC] rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#00774d] rounded-full transition-all duration-500"
+            className="h-full bg-[color-greenColor] rounded-full transition-all duration-500"
             style={{ width: `${data.progressPercentage}%` }}
           />
         </div>

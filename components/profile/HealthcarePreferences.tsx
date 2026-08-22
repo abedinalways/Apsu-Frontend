@@ -21,8 +21,6 @@ import {
 import { ProfileFormValues } from './type';
 import GlobeIcon from '../icons/GlobeIcon';
 
-
-
 interface HealthcarePreferencesProps {
   form: UseFormReturn<ProfileFormValues>;
 }
@@ -32,7 +30,7 @@ export default function HealthcarePreferences({
 }: HealthcarePreferencesProps) {
   return (
     <div className="space-y-4 rounded-[16px] border border-gray-100 bg-white p-5 shadow-sm">
-      <div className="flex items-center gap-2 border-b border-gray-50 pb-2 text-sm font-medium text-[#142C1E]">
+      <div className="flex items-center gap-2 border-b border-gray-50 pb-2 text-sm font-medium text-[secondary-text]">
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ecf9f1]">
           <GlobeIcon />
         </span>
@@ -45,7 +43,7 @@ export default function HealthcarePreferences({
           control={form.control}
           name="language"
           render={({ field }) => (
-            <FormItem className=''>
+            <FormItem className="">
               <FormLabel className="text-base font-medium text-black">
                 Language
               </FormLabel>
@@ -58,7 +56,7 @@ export default function HealthcarePreferences({
                 <FormControl>
                   <SelectTrigger
                     ref={field.ref}
-                    className="h-[48px] rounded-[8px] md:w-[189px] border-[#cddcd3] bg-[#faf9f4] focus:ring-0 md:h-[56px]"
+                    className="h-[48px] rounded-[8px] md:w-[189px] border-[#cddcd3] bg-[background] focus:ring-0 md:h-[56px]"
                   >
                     <SelectValue placeholder="Select language" />
                   </SelectTrigger>

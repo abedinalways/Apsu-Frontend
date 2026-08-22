@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -58,7 +57,7 @@ function DetailItem({
       </div>
       <div className="min-w-0">
         <p className="text-xs text-[#888888] text-justify">{label}</p>
-        <p className="mt-0.5 text-sm md:text-[16px] font-normal text-[#142C1E] text-justify">
+        <p className="mt-0.5 text-sm md:text-[16px] font-normal text-[secondary-text] text-justify">
           {value}
         </p>
       </div>
@@ -115,7 +114,7 @@ export default function PrescriptionDetailsModal({
           <div className="flex flex-col items-start">
             <h2
               id="prescription-details-title"
-              className="text-lg md:text-xl font-semibold text-[#142C1E]"
+              className="text-lg md:text-xl font-semibold text-[secondary-text]"
             >
               Prescriptions Details
             </h2>
@@ -125,7 +124,7 @@ export default function PrescriptionDetailsModal({
           </div>
           <button
             onClick={onClose}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-[#142C1E]"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-[secondary-text]"
             aria-label="Close"
           >
             <X className="h-4 w-4" />
@@ -144,11 +143,11 @@ export default function PrescriptionDetailsModal({
                     <h3 className="text-base md:text-lg font-medium text-[#111]">
                       {data.treatmentName}
                     </h3>
-                    <span className="rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-2.5 py-0.5 text-xs font-medium text-[#00774d]">
+                    <span className="rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-2.5 py-0.5 text-xs font-medium text-[color-greenColor]">
                       {data.status}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-[#00774d] flex items-start">
+                  <p className="mt-1 text-sm text-[color-greenColor] flex items-start">
                     {data.treatmentSub}
                   </p>
                   <p className="mt-3 text-xs md:text-sm md:leading-relaxed text-[#111] text-justify">
@@ -165,7 +164,7 @@ export default function PrescriptionDetailsModal({
                   </div>
                   <div className="text-left">
                     <p className="text-xs text-[#6c6c6c]">Prescribed By</p>
-                    <p className="text-sm md:text-lg font-medium text-[#142C1E]">
+                    <p className="text-sm md:text-lg font-medium text-[secondary-text]">
                       {doctorName}
                     </p>
                     <p className="text-xs md:text-[14px] text-[#3b3b3c]">
@@ -174,7 +173,7 @@ export default function PrescriptionDetailsModal({
                   </div>
                 </div>
                 <div className="w-full flex md:justify-end justify-center">
-                  <button className="flex items-center gap-2 rounded-full border border-[#000] bg-white px-4 py-1 text-sm font-medium text-[#142C1E] transition hover:bg-[#F7FAF8]">
+                  <button className="flex items-center gap-2 rounded-full border border-[#000] bg-white px-4 py-1 text-sm font-medium text-[secondary-text] transition hover:bg-[#F7FAF8]">
                     <ChatIcon /> Message Care Team
                   </button>
                 </div>

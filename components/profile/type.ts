@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { profileSchema } from './profile.schema';
-
+import { profileSchema } from '@/lib/validations/profile.schema';
 
 export type ProfileFormValues = z.infer<typeof profileSchema>;

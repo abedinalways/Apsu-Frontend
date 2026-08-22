@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useFormContext } from "react-hook-form";
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Checkbox } from "@/components/ui/checkbox";
-import { cn } from "@/lib/utils";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Checkbox } from '@/components/ui/checkbox';
+import { cn } from '@/lib/utils';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const EFFECT_OPTIONS = [
-  { id: "low_energy", label: "Low energy" },
-  { id: "difficulty_concentrating", label: "Difficulty concentrating" },
-  { id: "irritability", label: "Irritability" },
-  { id: "stress", label: "Stress" },
-  { id: "mood_change", label: "Mood change" },
+  { id: 'low_energy', label: 'Low energy' },
+  { id: 'difficulty_concentrating', label: 'Difficulty concentrating' },
+  { id: 'irritability', label: 'Irritability' },
+  { id: 'stress', label: 'Stress' },
+  { id: 'mood_change', label: 'Mood change' },
 ];
 
 const RATING_CATEGORIES = [
-  { id: "poor", label: "Poor", range: "<18.5" },
-  { id: "moderate", label: "Moderate", range: "18.5 - 24.9" },
-  { id: "normal", label: "Normal", range: "25 - 29.9" },
-  { id: "high", label: "High", range: "≥ 30" },
+  { id: 'poor', label: 'Poor', range: '<18.5' },
+  { id: 'moderate', label: 'Moderate', range: '18.5 - 24.9' },
+  { id: 'normal', label: 'Normal', range: '25 - 29.9' },
+  { id: 'high', label: 'High', range: '≥ 30' },
 ];
 
 export default function GoalLifestyleActivityStepTwo() {
@@ -45,11 +45,11 @@ export default function GoalLifestyleActivityStepTwo() {
             const selected = (field.value as string[] | undefined) ?? [];
             return (
               <FormItem className="space-y-2">
-                {EFFECT_OPTIONS.map((option) => {
+                {EFFECT_OPTIONS.map(option => {
                   const isChecked = selected.includes(option.id);
                   const toggle = () => {
                     const updated = isChecked
-                      ? selected.filter((id) => id !== option.id)
+                      ? selected.filter(id => id !== option.id)
                       : [...selected, option.id];
                     field.onChange(updated);
                   };
@@ -57,16 +57,16 @@ export default function GoalLifestyleActivityStepTwo() {
                     <label
                       key={option.id}
                       className={cn(
-                        "flex items-center space-x-3 w-full p-4 rounded-xl border transition-all cursor-pointer select-none h-14! bg-[#FAF9F4]",
+                        'flex items-center space-x-3 w-full p-4 rounded-xl border transition-all cursor-pointer select-none h-14! bg-[background]',
                         isChecked
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200",
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200',
                       )}
                     >
                       <Checkbox
                         checked={isChecked}
                         onCheckedChange={toggle}
-                        className="h-5 w-5 rounded border-gray-300 data-[state=checked]:bg-[#0B251A] data-[state=checked]:border-[#0B251A]"
+                        className="h-5 w-5 rounded border-gray-300 data-[state=checked]:bg-[secondary-bg] data-[state=checked]:border-[secondary-bg]"
                       />
                       <span className="text-sm font-medium text-gray-700">
                         {option.label}
@@ -105,25 +105,25 @@ export default function GoalLifestyleActivityStepTwo() {
 
                   {/* Dynamic select options row labels exactly from layout map */}
                   <div className="grid grid-cols-4 gap-1 text-center">
-                    {RATING_CATEGORIES.map((cat) => {
+                    {RATING_CATEGORIES.map(cat => {
                       const isSelected = field.value === cat.id;
                       return (
                         <div
                           key={cat.id}
                           onClick={() => field.onChange(cat.id)}
                           className={cn(
-                            "cursor-pointer p-2 rounded-lg transition-all group select-none",
+                            'cursor-pointer p-2 rounded-lg transition-all group select-none',
                             isSelected
-                              ? "bg-gray-100/80"
-                              : "hover:bg-gray-50/60",
+                              ? 'bg-gray-100/80'
+                              : 'hover:bg-gray-50/60',
                           )}
                         >
                           <p
                             className={cn(
-                              "text-xs font-semibold tracking-tight transition-colors",
+                              'text-xs font-semibold tracking-tight transition-colors',
                               isSelected
-                                ? "text-[#0B251A]"
-                                : "text-gray-600 group-hover:text-gray-900",
+                                ? 'text-[secondary-bg]'
+                                : 'text-gray-600 group-hover:text-gray-900',
                             )}
                           >
                             {cat.label}

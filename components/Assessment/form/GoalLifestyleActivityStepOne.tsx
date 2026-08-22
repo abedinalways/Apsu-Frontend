@@ -1,31 +1,31 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { FormData } from '@/zod/AssessmentSchema';
 // import { FormData } from "./schema";
 
 const GOAL_OPTIONS = [
-  { id: "under-20", label: "Under 20 lbs" },
-  { id: "20-50", label: "20 - 50 lbs" },
-  { id: "50-plus", label: "50+ lbs" },
-  { id: "not-sure", label: "Not sure yet" },
+  { id: 'under-20', label: 'Under 20 lbs' },
+  { id: '20-50', label: '20 - 50 lbs' },
+  { id: '50-plus', label: '50+ lbs' },
+  { id: 'not-sure', label: 'Not sure yet' },
 ] as const;
 
 export default function GoalLifestyleActivityStepOne() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const selectedGoal = watch("weightLossGoal");
+  const selectedGoal = watch('weightLossGoal');
 
   return (
     <div className="space-y-6">
       {/* Title block from Screenshot 2026-07-05 093153.png */}
       <div>
-        <h2 className="text-xl font-bold text-[#0B251A] tracking-tight">
+        <h2 className="text-xl font-bold text-[secondary-bg] tracking-tight">
           What's your weight loss goal?
         </h2>
         <p className="text-xs text-muted-foreground mt-1.5">
@@ -41,7 +41,7 @@ export default function GoalLifestyleActivityStepOne() {
           <FormItem className="space-y-2">
             <FormControl>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {GOAL_OPTIONS.map((option) => {
+                {GOAL_OPTIONS.map(option => {
                   const isSelected = selectedGoal === option.id;
 
                   return (
@@ -49,22 +49,22 @@ export default function GoalLifestyleActivityStepOne() {
                       key={option.id}
                       type="button"
                       onClick={() =>
-                        setValue("weightLossGoal", option.id, {
+                        setValue('weightLossGoal', option.id, {
                           shouldValidate: true,
                         })
                       }
                       className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all ${
                         isSelected
-                          ? "border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm"
-                          : "border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]"
+                          ? 'border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm'
+                          : 'border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]'
                       }`}
                     >
                       {/* Custom styled outer circular radio control ring */}
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                            ? "border-[#AFC1B6] bg-[#AFC1B6] text-white"
-                            : "border-gray-400 bg-white"
+                            ? 'border-[#AFC1B6] bg-[#AFC1B6] text-white'
+                            : 'border-gray-400 bg-white'
                         }`}
                       >
                         {isSelected && (

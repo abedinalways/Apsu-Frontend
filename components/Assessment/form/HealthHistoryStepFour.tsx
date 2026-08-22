@@ -1,44 +1,44 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { FormData } from "@/zod/AssessmentSchema";
-import { Check } from "lucide-react";
+} from '@/components/ui/form';
+import { FormData } from '@/zod/AssessmentSchema';
+import { Check } from 'lucide-react';
 
 const ALLERGY_OPTIONS = [
-  { id: "penicillin", label: "Penicillin" },
-  { id: "latex", label: "Latex" },
-  { id: "sulfa-drugs", label: "Sulfa drugs" },
-  { id: "food-allergies", label: "Food allergies" },
-  { id: "none", label: "None of these" },
+  { id: 'penicillin', label: 'Penicillin' },
+  { id: 'latex', label: 'Latex' },
+  { id: 'sulfa-drugs', label: 'Sulfa drugs' },
+  { id: 'food-allergies', label: 'Food allergies' },
+  { id: 'none', label: 'None of these' },
 ] as const;
 
 export default function HealthHistoryStepFour() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const selectedAllergies = watch("knownAllergies") || [];
+  const selectedAllergies = watch('knownAllergies') || [];
 
   const handleToggleAllergy = (id: string, checked: boolean) => {
     let updatedAllergies = [...selectedAllergies];
 
-    if (id === "none") {
+    if (id === 'none') {
       // If "None of these" is checked, clear all other selections
-      updatedAllergies = checked ? ["none"] : [];
+      updatedAllergies = checked ? ['none'] : [];
     } else {
       if (checked) {
         // Remove "none" if a specific allergen target gets activated
-        updatedAllergies = updatedAllergies.filter((item) => item !== "none");
+        updatedAllergies = updatedAllergies.filter(item => item !== 'none');
         updatedAllergies.push(id);
       } else {
-        updatedAllergies = updatedAllergies.filter((item) => item !== id);
+        updatedAllergies = updatedAllergies.filter(item => item !== id);
       }
     }
 
-    setValue("knownAllergies", updatedAllergies, { shouldValidate: true });
+    setValue('knownAllergies', updatedAllergies, { shouldValidate: true });
   };
 
   return (
@@ -61,7 +61,7 @@ export default function HealthHistoryStepFour() {
           <FormItem className="space-y-3">
             <FormControl>
               <div className="flex flex-col gap-3">
-                {ALLERGY_OPTIONS.map((option) => {
+                {ALLERGY_OPTIONS.map(option => {
                   const isChecked = selectedAllergies.includes(option.id);
 
                   return (
@@ -71,24 +71,24 @@ export default function HealthHistoryStepFour() {
                       tabIndex={0}
                       aria-checked={isChecked}
                       onClick={() => handleToggleAllergy(option.id, !isChecked)}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter" || event.key === " ") {
+                      onKeyDown={event => {
+                        if (event.key === 'Enter' || event.key === ' ') {
                           event.preventDefault();
                           handleToggleAllergy(option.id, !isChecked);
                         }
                       }}
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c] bg-[#FAF9F4] cursor-pointer  ${
+                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c] bg-[background] cursor-pointer  ${
                         isChecked
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       <span
                         aria-hidden="true"
                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-all ${
                           isChecked
-                            ? "border-[#AFC1B6] bg-[#0B251A] text-white"
-                            : "border-gray-300 bg-white text-transparent"
+                            ? 'border-[#AFC1B6] bg-[secondary-bg] text-white'
+                            : 'border-gray-300 bg-white text-transparent'
                         }`}
                       >
                         <Check className="h-3.5 w-3.5" />

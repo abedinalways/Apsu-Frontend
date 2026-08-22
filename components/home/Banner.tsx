@@ -1,8 +1,8 @@
-import { Stethoscope, Truck } from "lucide-react";
-import { IoEarthOutline } from "react-icons/io5";
-import PrimaryButton from "../reusable/button/PrimaryButton";
-import BannerMedicineCards from "./BannerMedicineCards";
-import LanguageCarousel from "./LanguageCarousel";
+import { Stethoscope, Truck } from 'lucide-react';
+import { IoEarthOutline } from 'react-icons/io5';
+import PrimaryButton from '../reusable/button/PrimaryButton';
+import BannerMedicineCards from './BannerMedicineCards';
+import LanguageCarousel from './LanguageCarousel';
 
 export const Banner = () => {
   return (
@@ -12,18 +12,18 @@ export const Banner = () => {
         <div className="text-[#21AC88] h-fit flex items-center flex-col-reverse lg:flex-row justify-center gap-2 lg:gap-6 ">
           <div className="flex items-center flex-wrap justify-center gap-2 lg:gap-6">
             <p className="text-sm flex items-center gap-2">
-              {" "}
+              {' '}
               <IoEarthOutline className="size-3 md:size-5" />
               40+ Language
             </p>
             <p className="text-xs md:text-sm flex items-center gap-2">
-              {" "}
+              {' '}
               <Stethoscope className="size-3 md:size-5" />
               US-licensed physicians
             </p>
           </div>
           <p className="text-sm flex items-center gap-2">
-            {" "}
+            {' '}
             <Truck className="size-3 md:size-5" />
             Free expedited shipping
           </p>

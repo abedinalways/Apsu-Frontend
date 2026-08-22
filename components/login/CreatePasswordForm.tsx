@@ -51,7 +51,9 @@ export default function CreatePasswordForm({
         toast.success('Account created successfully! Welcome to APSU.');
         router.push('/profile');
       } else {
-        toast.error(result.error || 'Failed to create account. Please try again.');
+        toast.error(
+          result.error || 'Failed to create account. Please try again.',
+        );
       }
     } catch (error) {
       toast.error('An unexpected error occurred. Please try again.');
@@ -79,16 +81,20 @@ export default function CreatePasswordForm({
             name="password"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className="text-base sm:text-[14px] font-medium text-black">
+                <FormLabel
+                  htmlFor="create-password"
+                  className="text-base sm:text-[14px] font-medium text-black"
+                >
                   New Password <span className="text-red-500">*</span>
                 </FormLabel>
                 <div className="relative">
                   <FormControl>
                     <input
                       {...field}
+                      id="create-password"
                       type={showPass ? 'text' : 'password'}
                       placeholder="At least 8 characters"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[#faf9f4] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm focus:outline-none focus:border-[#142C1E] pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm focus:outline-none focus:border-[secondary-text] pr-12 transition-colors"
                     />
                   </FormControl>
                   <button
@@ -128,16 +134,20 @@ export default function CreatePasswordForm({
             name="confirmPassword"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className="text-base sm:text-[14px] font-medium text-black">
+                <FormLabel
+                  htmlFor="confirm-password"
+                  className="text-base sm:text-[14px] font-medium text-black"
+                >
                   Confirm Password <span className="text-red-500">*</span>
                 </FormLabel>
                 <div className="relative">
                   <FormControl>
                     <input
                       {...field}
+                      id="confirm-password"
                       type={showConfirmPass ? 'text' : 'password'}
                       placeholder="Confirm your password"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[#faf9f4] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm focus:outline-none focus:border-[#142C1E] pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm focus:outline-none focus:border-[secondary-text] pr-12 transition-colors"
                     />
                   </FormControl>
                   <button
@@ -174,7 +184,7 @@ export default function CreatePasswordForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[secondary-text] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Creating Account...' : 'Continue to Sign In'}
           </button>

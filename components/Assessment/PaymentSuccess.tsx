@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { Check } from "lucide-react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
+import React, { useState } from 'react';
+import { Check } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export interface OrderDetails {
   orderId?: string;
@@ -25,10 +25,10 @@ export interface PaymentSuccessProps {
 }
 
 export default function PaymentSuccess({
-  title = "Payment Successful!",
-  subtitle = "Your payment has been received successfully.",
+  title = 'Payment Successful!',
+  subtitle = 'Your payment has been received successfully.',
   orderDetails: orderDetailsProp,
-  buttonText = "Continue to Profile",
+  buttonText = 'Continue to Profile',
   onScheduleConsultation,
 }: PaymentSuccessProps) {
   const router = useRouter();
@@ -37,17 +37,17 @@ export default function PaymentSuccess({
     if (onScheduleConsultation) {
       onScheduleConsultation();
     } else {
-      router.push("/profile");
+      router.push('/profile');
     }
   };
   const [orderDetails] = useState<OrderDetails>(
     orderDetailsProp || {
-      orderId: "9400 1111 2222",
-      treatment: "Weight loss",
-      plan: "3 Months",
-      estimatedDelivery: "Jul 30, 2026",
-      totalAmount: "$200",
-      productImageUrl: "/images/PaymentSuccess.png",
+      orderId: '9400 1111 2222',
+      treatment: 'Weight loss',
+      plan: '3 Months',
+      estimatedDelivery: 'Jul 30, 2026',
+      totalAmount: '$200',
+      productImageUrl: '/images/PaymentSuccess.png',
     },
   );
 
@@ -78,7 +78,7 @@ export default function PaymentSuccess({
               </div>
 
               <div className="col-span-7 flex flex-col justify-between h-full space-y-2">
-                <h3 className="text-sm md:text-base font-bold text-[#0B251A]">
+                <h3 className="text-sm md:text-base font-bold text-[secondary-bg]">
                   Order Summary
                 </h3>
 
@@ -86,7 +86,7 @@ export default function PaymentSuccess({
                   <div className="flex justify-between items-center">
                     <span className="text-stone-500 font-normal">Order ID</span>
                     <span className="font-semibold text-stone-800">
-                      {orderDetails.orderId || "9400 1111 2222"}
+                      {orderDetails.orderId || '9400 1111 2222'}
                     </span>
                   </div>
 
@@ -95,14 +95,14 @@ export default function PaymentSuccess({
                       Treatment
                     </span>
                     <span className="font-semibold text-stone-800">
-                      {orderDetails.treatment || "Weight loss"}
+                      {orderDetails.treatment || 'Weight loss'}
                     </span>
                   </div>
 
                   <div className="flex justify-between items-center">
                     <span className="text-stone-500 font-normal">Plan</span>
                     <span className="font-semibold text-stone-800">
-                      {orderDetails.plan || "3 Months"}
+                      {orderDetails.plan || '3 Months'}
                     </span>
                   </div>
 
@@ -113,7 +113,7 @@ export default function PaymentSuccess({
                       Delivery
                     </span>
                     <span className="font-semibold text-stone-800 text-right">
-                      {orderDetails.estimatedDelivery || "Jul 30, 2026"}
+                      {orderDetails.estimatedDelivery || 'Jul 30, 2026'}
                     </span>
                   </div>
                 </div>
@@ -122,8 +122,8 @@ export default function PaymentSuccess({
                   <span className="text-stone-500 text-xs font-normal">
                     Total
                   </span>
-                  <span className="text-sm md:text-base font-bold text-[#0B251A]">
-                    {orderDetails.totalAmount || "$200"}
+                  <span className="text-sm md:text-base font-bold text-[secondary-bg]">
+                    {orderDetails.totalAmount || '$200'}
                   </span>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function PaymentSuccess({
 
           <button
             onClick={handleButtonClick}
-            className="w-full bg-[#0B251A] hover:bg-[#143B2A] text-white font-semibold text-sm md:text-base py-3.5 px-6 rounded-full transition-colors duration-200 shadow-sm active:scale-[0.99] cursor-pointer"
+            className="w-full bg-[secondary-bg] hover:bg-[#143B2A] text-white font-semibold text-sm md:text-base py-3.5 px-6 rounded-full transition-colors duration-200 shadow-sm active:scale-[0.99] cursor-pointer"
           >
             {buttonText}
           </button>

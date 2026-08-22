@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import { useCurrentUser } from '@/hooks/useCurrentUser';
+import { ProfileService, type Treatment } from '@/lib/services/profile.service';
 import EmptyTabState from './EmptyTabState';
 import EditProfileModal from './EditProfileModal';
 import EditIcon from '../icons/EditIcon';
@@ -24,28 +26,22 @@ const TABS = [
   { id: 'prescriptions', label: 'Prescriptions' },
 ];
 
+type TabId = (typeof TABS)[number]['id'];
+
 export default function ProfileClient() {
   const [treatmentState, setTreatmentState] = useState<
-    'approved' | 'not-approved' | 'empty'
-  >('not-approved');
-  const hasOrders = true;
-  const hasPrescriptions = true;
-
-  const activeTreatment = {
-    title: 'Weight Loss Program',
-    planDuration: '12 months plan',
-    status: 'Active',
-    medication: 'Semaglutide 0.5mg',
-    startDate: 'Jan 15, 2025',
-    duration: '6 Months',
-    renewalDate: 'Jul 15, 2025',
-    progressPercentage: 33,
-  };
+    'approved' | 'not-approved' | 'empty' | 'loading' | 'error'
+  >('loading');
+  const [treatment, setTreatment] = useState<Treatment | null>(null);
+  const [hasOrders, setHasOrders] = useState(false);
+  const [hasPrescriptions, setHasPrescriptions] = useState(false);
+  const [profileError, setProfileError] = useState<string | null>(null);
 
   const router = useRouter();
   const searchParams = useSearchParams();
-  const activeTab = searchParams.get('tab') || 'my-treatments';
-  const { user, isLoading: isAuthLoading } = useAuth();
+  const activeTab = (searchParams.get('tab') as TabId) || 'my-treatments';
+  const { isLoading: isAuthLoading } = useAuth();
+  const { user } = useCurrentUser();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -56,12 +52,13 @@ export default function ProfileClient() {
   // Derive user display info from auth context
   const userName = user?.name || user?.email?.split('@')[0] || 'User';
   const userEmail = user?.email || '';
-  const userInitials = userName
-    .split(' ')
-    .map(n => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2) || 'US';
+  const userInitials =
+    userName
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2) || 'US';
 
   // Redirect to login if not authenticated
   useEffect(() => {
@@ -69,6 +66,35 @@ export default function ProfileClient() {
       router.replace('/login?redirect=%2Fprofile');
     }
   }, [user, isAuthLoading, router]);
+
+  // Fetch profile data
+  useEffect(() => {
+    let mounted = true;
+
+    const loadProfile = async () => {
+      try {
+        const data = await ProfileService.getProfile();
+
+        if (!mounted) return;
+
+        setTreatment(data.treatment);
+        setHasOrders(data.orders.length > 0);
+        setHasPrescriptions(data.prescriptions.length > 0);
+        setTreatmentState(data.treatment ? 'not-approved' : 'empty');
+        setProfileError(null);
+      } catch {
+        if (!mounted) return;
+        setTreatmentState('error');
+        setProfileError('Failed to load profile data.');
+      }
+    };
+
+    loadProfile();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   if (isAuthLoading) {
     return (
@@ -82,6 +108,39 @@ export default function ProfileClient() {
     return null; // Will redirect via useEffect
   }
 
+  if (treatmentState === 'loading') {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="text-gray-500">Loading profile...</div>
+      </div>
+    );
+  }
+
+  if (treatmentState === 'error') {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
+        <p className="text-red-500">{profileError}</p>
+        <button
+          onClick={() => setTreatmentState('loading')}
+          className="px-4 py-2 bg-[secondary-bg] text-white rounded-full text-sm"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
+  const activeTreatment = treatment ?? {
+    title: 'Weight Loss Program',
+    planDuration: '12 months plan',
+    status: 'Active',
+    medication: 'Semaglutide 0.5mg',
+    startDate: 'Jan 15, 2025',
+    duration: '6 Months',
+    renewalDate: 'Jul 15, 2025',
+    progressPercentage: 33,
+  };
+
   return (
     <div className="space-y-6 font-[Work_Sans] w-full">
       <div className="bg-white border border-[#cddcd3] rounded-[16px] p-6 md:p-8 flex flex-col lg:flex-row items-center md:items-end  gap-4 md:gap-2 relative">
@@ -90,7 +149,7 @@ export default function ProfileClient() {
         </div>
 
         <div className="text-center w-fit md:w-full md:mx-auto space-y-3 mt-2 ">
-          <h1 className="text-2xl md:text-[32px] font-medium text-[#142C1E] text-center md:text-start md:ml-60 ">
+          <h1 className="text-2xl md:text-[32px] font-medium text-[secondary-text] text-center md:text-start md:ml-60 ">
             {userName}
           </h1>
           <div className="lg:flex flex-wrap space-y-2 md:space-y-3 lg:space-y-0  lg:gap-4 text-[14px] text-gray-500  w-fit mx-auto">
@@ -115,19 +174,18 @@ export default function ProfileClient() {
       </div>
 
       <div className="bg-white border border-[#EBEAE4] rounded-[16px] p-6 max-w-md w-full space-y-4 mt-12">
-        <p className="text-sm md:text-[16px] font-normal tracking-wider text-[#00774d] uppercase">
+        <p className="text-sm md:text-[16px] font-normal tracking-wider text-[color-greenColor] uppercase">
           ACTIVE TRAETMENT
         </p>
         <div className="flex flex-col  gap-4">
           <div>
             <h3 className="text-xl md:text-[24px] font-medium text-[#102B1C]">
-              Weight Loss Program
+              {activeTreatment.title}
             </h3>
           </div>
-          <h4 className="text-sm md:text-[16px] font-normal tracking-wider text-[#00774d] ">
-            12 months plan
+          <h4 className="text-sm md:text-[16px] font-normal tracking-wider text-[color-greenColor] ">
+            {activeTreatment.planDuration}
           </h4>
-            
         </div>
       </div>
 
@@ -140,7 +198,7 @@ export default function ProfileClient() {
                 <button
                   key={tab.id}
                   onClick={() => handleTabChange(tab.id)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-[#142C1E] shadow-sm cursor-pointer' : 'text-gray-600 bg-white border-[#B8D9C6] hover:text-gray-900 hover:bg-[#F4F3EF] cursor-pointer'}`}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-[secondary-text] shadow-sm cursor-pointer' : 'text-gray-600 bg-white border-[#B8D9C6] hover:text-gray-900 hover:bg-[#F4F3EF] cursor-pointer'}`}
                 >
                   {tab.label}
                 </button>

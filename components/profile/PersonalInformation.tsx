@@ -6,8 +6,6 @@ import ProfileIcon from '../icons/ProfileIcon';
 import InputField from '../reusable/InputFiled/InputField';
 import { ProfileFormValues } from './type';
 
-
-
 interface PersonalInformationProps {
   control: Control<ProfileFormValues>;
 }
@@ -17,7 +15,7 @@ export default function PersonalInformation({
 }: PersonalInformationProps) {
   return (
     <div className="space-y-4 rounded-[12px] border border-gray-100 bg-white p-5 shadow">
-      <div className="flex items-center gap-2 border-b border-gray-50 pb-2 text-sm font-medium text-[#142C1E]">
+      <div className="flex items-center gap-2 border-b border-gray-50 pb-2 text-sm font-medium text-[secondary-text]">
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ecf9f1]">
           <ProfileIcon />
         </span>

@@ -1,33 +1,33 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useFormContext } from "react-hook-form";
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { cn } from "@/lib/utils";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { cn } from '@/lib/utils';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const MEDICATION_OPTIONS = [
-  { id: "yes", label: "Yes" },
-  { id: "no", label: "No" },
-  { id: "few_times", label: "Few times" },
+  { id: 'yes', label: 'Yes' },
+  { id: 'no', label: 'No' },
+  { id: 'few_times', label: 'Few times' },
 ];
 
 const SNORE_OPTIONS = [
-  { id: "yes", label: "Yes" },
-  { id: "no", label: "No" },
-  { id: "not_sure", label: "Not sure" },
+  { id: 'yes', label: 'Yes' },
+  { id: 'no', label: 'No' },
+  { id: 'not_sure', label: 'Not sure' },
 ];
 
 const PREGNANT_OPTIONS = [
-  { id: "yes", label: "Yes" },
-  { id: "no", label: "No" },
-  { id: "not_applicable", label: "Not applicable" },
+  { id: 'yes', label: 'Yes' },
+  { id: 'no', label: 'No' },
+  { id: 'not_applicable', label: 'Not applicable' },
 ];
 
 export default function EligibilityCheckStepFour() {
@@ -58,21 +58,21 @@ export default function EligibilityCheckStepFour() {
                   value={field.value}
                   className="grid grid-cols-1 sm:grid-cols-3 gap-2.5"
                 >
-                  {MEDICATION_OPTIONS.map((option) => {
+                  {MEDICATION_OPTIONS.map(option => {
                     const isSelected = field.value === option.id;
                     return (
                       <label
                         key={option.id}
                         className={cn(
-                          "flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[#FAF9F4] h-14!",
+                          'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[background] h-14!',
                           isSelected
-                            ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                            : "border-gray-200",
+                            ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                            : 'border-gray-200',
                         )}
                       >
                         <RadioGroupItem
                           value={option.id}
-                          className="h-4 w-4 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-[#0B251A] data-[state=checked]:text-[#0B251A]"
+                          className="h-4 w-4 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-[secondary-bg] data-[state=checked]:text-[secondary-bg]"
                         />
                         <span className="text-gray-700">{option.label}</span>
                       </label>
@@ -102,21 +102,21 @@ export default function EligibilityCheckStepFour() {
                   value={field.value}
                   className="grid grid-cols-1 sm:grid-cols-3 gap-2.5"
                 >
-                  {SNORE_OPTIONS.map((option) => {
+                  {SNORE_OPTIONS.map(option => {
                     const isSelected = field.value === option.id;
                     return (
                       <label
                         key={option.id}
                         className={cn(
-                          "flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[#FAF9F4] h-14!",
+                          'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[background] h-14!',
                           isSelected
-                            ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                            : "border-gray-200",
+                            ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                            : 'border-gray-200',
                         )}
                       >
                         <RadioGroupItem
                           value={option.id}
-                          className="h-4 w-4 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-[#0B251A] data-[state=checked]:text-[#0B251A]"
+                          className="h-4 w-4 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-[secondary-bg] data-[state=checked]:text-[secondary-bg]"
                         />
                         <span className="text-gray-700">{option.label}</span>
                       </label>
@@ -146,21 +146,21 @@ export default function EligibilityCheckStepFour() {
                   value={field.value}
                   className="grid grid-cols-1 sm:grid-cols-3 gap-2.5"
                 >
-                  {PREGNANT_OPTIONS.map((option) => {
+                  {PREGNANT_OPTIONS.map(option => {
                     const isSelected = field.value === option.id;
                     return (
                       <label
                         key={option.id}
                         className={cn(
-                          "flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[#FAF9F4] h-14!",
+                          'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[background] h-14!',
                           isSelected
-                            ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                            : "border-gray-200",
+                            ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                            : 'border-gray-200',
                         )}
                       >
                         <RadioGroupItem
                           value={option.id}
-                          className="h-4 w-4 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-[#0B251A] data-[state=checked]:text-[#0B251A]"
+                          className="h-4 w-4 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-[secondary-bg] data-[state=checked]:text-[secondary-bg]"
                         />
                         <span className="text-gray-700">{option.label}</span>
                       </label>

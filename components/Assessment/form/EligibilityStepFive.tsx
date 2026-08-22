@@ -1,34 +1,34 @@
-"use client";
+'use client';
 
-import { useRef } from "react";
-import { useFormContext } from "react-hook-form";
-import Image from "next/image";
+import { useRef } from 'react';
+import { useFormContext } from 'react-hook-form';
+import Image from 'next/image';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Upload, Trash2, CheckCircle2, FileVideo } from "lucide-react";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Upload, Trash2, CheckCircle2, FileVideo } from 'lucide-react';
+import { FormData } from '@/zod/AssessmentSchema';
 
 export default function EligibilityStepFive() {
   const { control, setValue, watch } = useFormContext<FormData>();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   // Watch videoAttachments array (assumes Array<{ id?: string; name: string; size: string; type: string }>)
-  const attachments = watch("videoAttachments" as any) || [];
+  const attachments = watch('videoAttachments' as any) || [];
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      const newFiles = Array.from(e.target.files).map((file) => ({
+      const newFiles = Array.from(e.target.files).map(file => ({
         id: Math.random().toString(36).substring(7),
         name: file.name,
-        size: `${(file.size / (1024 * 1024)).toFixed(2).replace(".", ",")} MB`,
-        type: file.name.split(".").pop()?.toUpperCase() || "MP4",
+        size: `${(file.size / (1024 * 1024)).toFixed(2).replace('.', ',')} MB`,
+        type: file.name.split('.').pop()?.toUpperCase() || 'MP4',
       }));
 
-      setValue("videoAttachments" as any, [...attachments, ...newFiles], {
+      setValue('videoAttachments' as any, [...attachments, ...newFiles], {
         shouldValidate: true,
       });
     }
@@ -36,7 +36,7 @@ export default function EligibilityStepFive() {
 
   const handleRemoveFile = (index: number) => {
     const updated = attachments.filter((_: any, i: number) => i !== index);
-    setValue("videoAttachments" as any, updated, { shouldValidate: true });
+    setValue('videoAttachments' as any, updated, { shouldValidate: true });
   };
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -46,14 +46,14 @@ export default function EligibilityStepFive() {
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      const newFiles = Array.from(e.dataTransfer.files).map((file) => ({
+      const newFiles = Array.from(e.dataTransfer.files).map(file => ({
         id: Math.random().toString(36).substring(7),
         name: file.name,
-        size: `${(file.size / (1024 * 1024)).toFixed(2).replace(".", ",")} MB`,
-        type: file.name.split(".").pop()?.toUpperCase() || "MP4",
+        size: `${(file.size / (1024 * 1024)).toFixed(2).replace('.', ',')} MB`,
+        type: file.name.split('.').pop()?.toUpperCase() || 'MP4',
       }));
 
-      setValue("videoAttachments" as any, [...attachments, ...newFiles], {
+      setValue('videoAttachments' as any, [...attachments, ...newFiles], {
         shouldValidate: true,
       });
     }
@@ -109,14 +109,14 @@ export default function EligibilityStepFive() {
       {/* Video Dropzone */}
       <FormField
         control={control}
-        name={"videoAttachments" as any}
+        name={'videoAttachments' as any}
         render={() => (
           <FormItem>
             <FormControl>
               <div
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
-                className="bg-[#FAF9F4] border border-[#dce3de] rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
+                className="bg-[background] border border-[#dce3de] rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
               >
                 <input
                   type="file"
@@ -134,7 +134,7 @@ export default function EligibilityStepFive() {
                 </div>
                 <div>
                   <p className="text-[15px] font-medium text-[#102b1c]">
-                    Upload Video or{" "}
+                    Upload Video or{' '}
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
@@ -164,13 +164,13 @@ export default function EligibilityStepFive() {
             {attachments.map((file: any, index: number) => (
               <div
                 key={file.id || index}
-                className="bg-[#FAF9F4] border border-[#dce3de] rounded-xl p-3.5 flex items-center justify-between"
+                className="bg-[background] border border-[#dce3de] rounded-xl p-3.5 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
                   {/* Video Badge Icon */}
                   <div className="h-10 w-9 rounded-md bg-[#22c55e] text-white flex flex-col items-center justify-center text-[9px] font-bold tracking-wider">
                     <FileVideo className="h-3.5 w-3.5 mb-0.5 opacity-90" />
-                    <span>{file.type || "MP4"}</span>
+                    <span>{file.type || 'MP4'}</span>
                   </div>
                   <div>
                     <p className="text-[14px] font-medium text-[#102b1c] leading-tight">

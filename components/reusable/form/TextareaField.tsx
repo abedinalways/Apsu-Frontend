@@ -27,20 +27,24 @@ export default function TextareaField({
       control={control}
       name={name}
       render={({ field }) => (
-         <FormItem className="relative space-y-2 pb-4">
-          <FormLabel className="text-base sm:text-[17px] font-medium text-black">
+        <FormItem className="relative space-y-2 pb-4">
+          <FormLabel
+            htmlFor={name}
+            className="text-base sm:text-[17px] font-medium text-black"
+          >
             {label}
           </FormLabel>
 
           <FormControl>
             <Textarea
               {...field}
+              id={name}
               placeholder={placeholder}
-              className="h-28 sm:h-32 rounded-2xl border-[#b8d9c6] bg-[#faf9f4] p-4 text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm sm:placeholder:text-[16px] resize-none hover:border-[#8ab69b] focus-visible:border-[#5a8d6e] focus-visible:ring-4 focus-visible:ring-[#5a8d6e]/10 focus-visible:bg-white transition-all duration-200 ease-in-out shadow-sm outline-none focus-visible:ring-offset-0"
+              className="h-28 sm:h-32 rounded-2xl border-[#b8d9c6] bg-[background] p-4 text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm sm:placeholder:text-[16px] resize-none hover:border-[#8ab69b] focus-visible:border-[#5a8d6e] focus-visible:ring-4 focus-visible:ring-[#5a8d6e]/10 focus-visible:bg-white transition-all duration-200 ease-in-out shadow-sm outline-none focus-visible:ring-offset-0"
             />
           </FormControl>
 
-           <FormMessage className="absolute -bottom-1 right-0 text-xs text-red-600 font-medium px-2 py-1 rounded" />
+          <FormMessage className="absolute -bottom-1 right-0 text-xs text-red-600 font-medium px-2 py-1 rounded" />
         </FormItem>
       )}
     />

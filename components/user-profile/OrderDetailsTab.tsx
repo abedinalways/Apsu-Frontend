@@ -135,7 +135,7 @@ export default function OrderDetailsTab() {
                 <td className="p-4 pr-6 text-center">
                   <button
                     onClick={() => setSelectedOrder(order)}
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-[#142C1E] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-[secondary-text] transition-colors cursor-pointer"
                   >
                     <Eye className="w-4 h-4" /> View
                   </button>
@@ -157,7 +157,7 @@ export default function OrderDetailsTab() {
             </button>
 
             <div className="mb-6">
-              <h3 className="text-xl font-bold text-[#142C1E]">
+              <h3 className="text-xl font-bold text-[secondary-text]">
                 Order Details
               </h3>
               <p className="text-sm md:text-[16px] text-gray-400 font-light mt-0.5">
@@ -229,7 +229,7 @@ export default function OrderDetailsTab() {
                       </div>
                     </div>
                     <div className="order-2 rounded-[12px] space-y-4 bg-white shadow p-2">
-                      <h5 className="text-lg font-medium text-[#142C1E] mb-6 md:mb-8">
+                      <h5 className="text-lg font-medium text-[secondary-text] mb-6 md:mb-8">
                         Order Progress
                       </h5>
                       <OrderStepper

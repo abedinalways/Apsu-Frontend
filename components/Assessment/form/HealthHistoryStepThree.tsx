@@ -1,56 +1,56 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Textarea } from "@/components/ui/textarea";
-import { X } from "lucide-react";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Textarea } from '@/components/ui/textarea';
+import { X } from 'lucide-react';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const SIDE_EFFECT_OPTIONS = [
-  "Vomiting",
-  "Nausea",
-  "Diarrhea",
-  "Fatigue",
-  "Decreased appetite",
-  "None",
+  'Vomiting',
+  'Nausea',
+  'Diarrhea',
+  'Fatigue',
+  'Decreased appetite',
+  'None',
 ];
 
 export default function HealthHistoryStepThree() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const activeSideEffects = watch("selectedSideEffects") || [];
+  const activeSideEffects = watch('selectedSideEffects') || [];
 
   const handleToggleSideEffect = (effect: string) => {
     let updatedEffects = [...activeSideEffects];
 
-    if (effect === "None") {
+    if (effect === 'None') {
       // "None" option clears all selected symptoms
-      updatedEffects = ["None"];
+      updatedEffects = ['None'];
     } else {
       // Remove "None" if a symptom is selected
-      updatedEffects = updatedEffects.filter((item) => item !== "None");
+      updatedEffects = updatedEffects.filter(item => item !== 'None');
 
       if (updatedEffects.includes(effect)) {
-        updatedEffects = updatedEffects.filter((item) => item !== effect);
+        updatedEffects = updatedEffects.filter(item => item !== effect);
       } else {
         updatedEffects.push(effect);
       }
     }
 
-    setValue("selectedSideEffects", updatedEffects, { shouldValidate: true });
+    setValue('selectedSideEffects', updatedEffects, { shouldValidate: true });
   };
 
   // Helper to split options into selected (dark badges) and unselected (outlined pills) arrays
-  const selectedList = SIDE_EFFECT_OPTIONS.filter((item) =>
+  const selectedList = SIDE_EFFECT_OPTIONS.filter(item =>
     activeSideEffects.includes(item),
   );
   const unselectedList = SIDE_EFFECT_OPTIONS.filter(
-    (item) => !activeSideEffects.includes(item),
+    item => !activeSideEffects.includes(item),
   );
 
   return (
@@ -75,12 +75,12 @@ export default function HealthHistoryStepThree() {
                 {/* Outlined unselected pills container row */}
                 {unselectedList.length > 0 && (
                   <div className="flex flex-wrap gap-2">
-                    {unselectedList.map((effect) => (
+                    {unselectedList.map(effect => (
                       <button
                         key={effect}
                         type="button"
                         onClick={() => handleToggleSideEffect(effect)}
-                        className="px-4 py-2 rounded-full border border-[#AFC1B6] bg-white text-xs font-medium text-[#0B251A] hover:bg-[#AFC1B6]/10 transition-all active:scale-95"
+                        className="px-4 py-2 rounded-full border border-[#AFC1B6] bg-white text-xs font-medium text-[secondary-bg] hover:bg-[#AFC1B6]/10 transition-all active:scale-95"
                       >
                         {effect}
                       </button>
@@ -90,17 +90,17 @@ export default function HealthHistoryStepThree() {
 
                 {/* Subfield Label section */}
                 <FormLabel className="text-[14px] font-semibold text-[#111] flex items-center gap-0.5 pt-2">
-                  Describe any side effects you have experienced:{" "}
+                  Describe any side effects you have experienced:{' '}
                   <span className="text-red-500">*</span>
                 </FormLabel>
 
                 {/* Active dark badge layout area matching Screenshot 2026-07-05 121744.png */}
                 {selectedList.length > 0 && (
                   <div className="flex flex-wrap gap-2 pt-0.5">
-                    {selectedList.map((effect) => (
+                    {selectedList.map(effect => (
                       <div
                         key={effect}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#AFC1B6] bg-[#0B251A] text-white text-xs font-medium shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#AFC1B6] bg-[secondary-bg] text-white text-xs font-medium shadow-sm"
                       >
                         <span>{effect}</span>
                         <button
@@ -131,7 +131,7 @@ export default function HealthHistoryStepThree() {
               <Textarea
                 {...field}
                 placeholder="add any additional details here..."
-                className="min-h-[110px] resize-none rounded-2xl text-sm placeholder:text-gray-400 p-4 w-full bg-[#FAF9F4] border-[#FAF9F4]  h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] "
+                className="min-h-[110px] resize-none rounded-2xl text-sm placeholder:text-gray-400 p-4 w-full bg-[background] border-[background]  h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] "
               />
             </FormControl>
             <FormMessage />

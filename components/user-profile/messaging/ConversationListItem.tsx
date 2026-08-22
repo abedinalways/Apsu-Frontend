@@ -36,7 +36,7 @@ export default function ConversationListItem({
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
-            <p className="text-[16px] font-semibold text-[#142C1E] truncate">
+            <p className="text-[16px] font-semibold text-[secondary-text] truncate">
               {conversation.participantName}
             </p>
             <p className="text-[14px] text-gray-500 truncate mt-0.5">

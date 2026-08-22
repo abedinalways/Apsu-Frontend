@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Textarea } from "@/components/ui/textarea";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Textarea } from '@/components/ui/textarea';
+import { FormData } from '@/zod/AssessmentSchema';
 
-const METHOD_TAGS = ["Diet", "Exercise", "Prescribed medication", "Surgery"];
+const METHOD_TAGS = ['Diet', 'Exercise', 'Prescribed medication', 'Surgery'];
 const MOTIVATION_TAGS = [
-  "Improve health",
-  "More energy",
-  "Medical clearance",
-  "Confident",
+  'Improve health',
+  'More energy',
+  'Medical clearance',
+  'Confident',
 ];
 
 export default function GoalLifestyleActivityStepThree() {
@@ -24,7 +24,7 @@ export default function GoalLifestyleActivityStepThree() {
 
   // Appends a tag's text cleanly to the end of the corresponding textarea
   const handleAppendTag = (fieldName: keyof FormData, tagValue: string) => {
-    const currentText = (getValues(fieldName) as string) || "";
+    const currentText = (getValues(fieldName) as string) || '';
     const cleanText = currentText.trim();
     const newText = cleanText
       ? `${cleanText}, ${tagValue.toLowerCase()}`
@@ -49,24 +49,24 @@ export default function GoalLifestyleActivityStepThree() {
         render={({ field }) => (
           <FormItem className="space-y-2">
             <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
-              What method do you applied for loosing your weight?{" "}
+              What method do you applied for loosing your weight?{' '}
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>
             <FormControl>
               <Textarea
                 {...field}
                 placeholder="Tell us more.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F4] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[background] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
               />
             </FormControl>
             {/* Quick selection pill tags */}
             <div className="flex flex-wrap gap-1.5 pt-0.5">
-              {METHOD_TAGS.map((tag) => (
+              {METHOD_TAGS.map(tag => (
                 <button
                   key={tag}
                   type="button"
-                  onClick={() => handleAppendTag("weightLossMethods", tag)}
-                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[#0B251A] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
+                  onClick={() => handleAppendTag('weightLossMethods', tag)}
+                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[secondary-bg] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>
@@ -84,24 +84,24 @@ export default function GoalLifestyleActivityStepThree() {
         render={({ field }) => (
           <FormItem className="space-y-2">
             <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
-              What&apos;s your primary motivation for loosing weight?{" "}
+              What&apos;s your primary motivation for loosing weight?{' '}
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>
             <FormControl>
               <Textarea
                 {...field}
                 placeholder="Tell us more.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F4] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[background] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
               />
             </FormControl>
             {/* Quick selection pill tags */}
             <div className="flex flex-wrap gap-1.5 pt-0.5">
-              {MOTIVATION_TAGS.map((tag) => (
+              {MOTIVATION_TAGS.map(tag => (
                 <button
                   key={tag}
                   type="button"
-                  onClick={() => handleAppendTag("weightLossMotivation", tag)}
-                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[#0B251A] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
+                  onClick={() => handleAppendTag('weightLossMotivation', tag)}
+                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[secondary-bg] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>
@@ -119,14 +119,14 @@ export default function GoalLifestyleActivityStepThree() {
         render={({ field }) => (
           <FormItem className="space-y-2">
             <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
-              What barrier do you think affect most on you weight loss journey?{" "}
+              What barrier do you think affect most on you weight loss journey?{' '}
               <span className="text-red-500 font-serif">*</span>
             </FormLabel>
             <FormControl>
               <Textarea
                 {...field}
                 placeholder="Describe in brief.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[#FAF9F4] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[background] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
               />
             </FormControl>
             <FormMessage />

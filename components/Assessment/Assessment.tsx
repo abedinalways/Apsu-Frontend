@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import BirthControlIcons from "@/components/icons/BirthControlIcons";
-import SleepIcons from "@/components/icons/SleepIcons";
-import WeightLossIcons from "@/components/icons/WeightLossIcons";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import BirthControlIcons from '@/components/icons/BirthControlIcons';
+import SleepIcons from '@/components/icons/SleepIcons';
+import WeightLossIcons from '@/components/icons/WeightLossIcons';
 
 export default function Assessment() {
   const router = useRouter();
@@ -12,30 +12,30 @@ export default function Assessment() {
 
   const options = [
     {
-      id: "weight-loss",
-      title: "Weight Loss",
-      description: "GLP-1 and metabolic support, guided by a physician.",
+      id: 'weight-loss',
+      title: 'Weight Loss',
+      description: 'GLP-1 and metabolic support, guided by a physician.',
       icon: <WeightLossIcons />,
-      href: "/assessment/weight-loss",
+      href: '/assessment/weight-loss',
     },
     {
-      id: "birth-control",
-      title: "Birth Control",
-      description: "Pills, patches, rings - delivered discreetly each month.",
+      id: 'birth-control',
+      title: 'Birth Control',
+      description: 'Pills, patches, rings - delivered discreetly each month.',
       icon: <BirthControlIcons />,
-      href: "/assessment/birth",
+      href: '/assessment/birth',
     },
     {
-      id: "sleep",
-      title: "Sleep",
-      description: "Personalized plans for falling and staying asleep.",
+      id: 'sleep',
+      title: 'Sleep',
+      description: 'Personalized plans for falling and staying asleep.',
       icon: <SleepIcons />,
-      href: "/assessment/sleep",
+      href: '/assessment/sleep',
     },
   ] as const;
 
   const handleContinue = () => {
-    const selectedOption = options.find((o) => o.id === selected);
+    const selectedOption = options.find(o => o.id === selected);
     if (selectedOption) {
       router.push(selectedOption.href);
     }
@@ -49,7 +49,7 @@ export default function Assessment() {
         </h2>
 
         <div className="grid gap-4">
-          {options.map((option) => {
+          {options.map(option => {
             const isSelected = selected === option.id;
             return (
               <button
@@ -58,8 +58,8 @@ export default function Assessment() {
                 onClick={() => setSelected(option.id)}
                 className={`flex items-center justify-between p-4 rounded-xl border text-left transition-all cursor-pointer ${
                   isSelected
-                    ? "border-[#ECF9F1] bg-[#ECF9F1]"
-                    : "border-gray-100 bg-[#FAF9F4] hover:bg-[#FAF9F4]/50"
+                    ? 'border-[#ECF9F1] bg-[#ECF9F1]'
+                    : 'border-gray-100 bg-[background] hover:bg-[background]/50'
                 }`}
               >
                 <div className="space-y-3 pr-4">
@@ -81,7 +81,7 @@ export default function Assessment() {
             type="button"
             onClick={handleContinue}
             disabled={!selected}
-            className="px-6 py-3 bg-[#0B251A] text-white rounded-full text-sm font-medium disabled:opacity-30 cursor-pointer"
+            className="px-6 py-3 bg-[secondary-bg] text-white rounded-full text-sm font-medium disabled:opacity-30 cursor-pointer"
           >
             Continue &gt;
           </button>

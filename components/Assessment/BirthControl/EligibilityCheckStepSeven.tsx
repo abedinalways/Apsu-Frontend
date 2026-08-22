@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Textarea } from "@/components/ui/textarea";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Textarea } from '@/components/ui/textarea';
+import { FormData } from '@/zod/AssessmentSchema';
 
 export default function EligibilityCheckStepSeven() {
   const { control } = useFormContext<FormData>();
@@ -33,7 +33,7 @@ export default function EligibilityCheckStepSeven() {
               <Textarea
                 {...field}
                 placeholder="Describe your concerns if you have any..."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200  text-sm placeholder:text-gray-400 w-full p-4 bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200  text-sm placeholder:text-gray-400 w-full p-4 bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]"
               />
             </FormControl>
             <FormMessage />

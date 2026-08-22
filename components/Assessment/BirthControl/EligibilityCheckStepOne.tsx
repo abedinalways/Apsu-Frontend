@@ -1,29 +1,29 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const NICOTINE_OPTIONS = [
-  { id: "every-day", label: "Every day" },
-  { id: "few-times-week", label: "A few times per week" },
-  { id: "few-times-month", label: "A few times per month" },
-  { id: "quit-smoking", label: "I quit smoking" },
-  { id: "other-nicotine", label: "Using other nicotine containing product" },
+  { id: 'every-day', label: 'Every day' },
+  { id: 'few-times-week', label: 'A few times per week' },
+  { id: 'few-times-month', label: 'A few times per month' },
+  { id: 'quit-smoking', label: 'I quit smoking' },
+  { id: 'other-nicotine', label: 'Using other nicotine containing product' },
   {
-    id: "never-used",
-    label: "I’ve never smoked or used nicotine containing products",
+    id: 'never-used',
+    label: 'I’ve never smoked or used nicotine containing products',
   },
 ] as const;
 
 export default function EligibilityCheckStepOne() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const selectedUsage = watch("nicotineUsage");
+  const selectedUsage = watch('nicotineUsage');
 
   return (
     <div className="space-y-6">
@@ -47,7 +47,7 @@ export default function EligibilityCheckStepOne() {
           <FormItem className="space-y-3">
             <FormControl>
               <div className="flex flex-col gap-3">
-                {NICOTINE_OPTIONS.map((option) => {
+                {NICOTINE_OPTIONS.map(option => {
                   const isSelected = selectedUsage === option.id;
 
                   return (
@@ -55,22 +55,22 @@ export default function EligibilityCheckStepOne() {
                       key={option.id}
                       type="button"
                       onClick={() =>
-                        setValue("nicotineUsage", option.id, {
+                        setValue('nicotineUsage', option.id, {
                           shouldValidate: true,
                         })
                       }
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] cursor-pointer ${
+                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all bg-[background] h-14! text-[16px] text-[#6c6c6c] cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       {/* Outer circular radio container button accent */}
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                            ? "border-[#AFC1B6] bg-[#0B251A]"
-                            : "border-gray-400 bg-white"
+                            ? 'border-[#AFC1B6] bg-[secondary-bg]'
+                            : 'border-gray-400 bg-white'
                         }`}
                       >
                         {isSelected && (

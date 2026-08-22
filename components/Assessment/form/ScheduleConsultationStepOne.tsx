@@ -1,43 +1,43 @@
-"use client";
+'use client';
 
-import React, { useState, useMemo, useEffect } from "react";
-import { useFormContext } from "react-hook-form";
+import React, { useState, useMemo, useEffect } from 'react';
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
+} from '@/components/ui/form';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ChevronLeft, ChevronRight, Globe, ChevronDown } from "lucide-react";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/dropdown-menu';
+import { ChevronLeft, ChevronRight, Globe, ChevronDown } from 'lucide-react';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const TIME_SLOTS = [
-  "08:30 AM",
-  "09:30 AM",
-  "10:30 AM",
-  "11:30 AM",
-  "05:30 PM",
-  "06:30 PM",
-  "07:30 PM",
-  "08:30 PM",
+  '08:30 AM',
+  '09:30 AM',
+  '10:30 AM',
+  '11:30 AM',
+  '05:30 PM',
+  '06:30 PM',
+  '07:30 PM',
+  '08:30 PM',
 ];
 
 const COMMON_TIMEZONES = [
-  "America/New_York",
-  "America/Chicago",
-  "America/Denver",
-  "America/Los_Angeles",
-  "Europe/London",
-  "Asia/Dhaka",
+  'America/New_York',
+  'America/Chicago',
+  'America/Denver',
+  'America/Los_Angeles',
+  'Europe/London',
+  'Asia/Dhaka',
 ];
 
-const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const DAYS_OF_WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 export default function ScheduleConsultationStepOne() {
   const { control, watch, setValue } = useFormContext<FormData>();
@@ -45,19 +45,19 @@ export default function ScheduleConsultationStepOne() {
   // Track active calendar view index state (initialized to current year/month)
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  const selectedDateStr = watch("consultationDate");
-  const activeTime = watch("consultationTime");
-  const activeTimezone = watch("timezone");
+  const selectedDateStr = watch('consultationDate');
+  const activeTime = watch('consultationTime');
+  const activeTimezone = watch('timezone');
   const today = new Date();
   const todayDateStr = `${today.getFullYear()}-${String(
     today.getMonth() + 1,
-  ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+  ).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 
   // Dynamically auto-detect browser local system timezone on mount if not yet assigned
   useEffect(() => {
     if (!activeTimezone) {
       const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      setValue("timezone", userTimezone || "America/Los_Angeles");
+      setValue('timezone', userTimezone || 'America/Los_Angeles');
     }
   }, [activeTimezone, setValue]);
 
@@ -83,13 +83,13 @@ export default function ScheduleConsultationStepOne() {
   const handleNextMonth = () => setCurrentDate(new Date(year, month + 1, 1));
 
   const handleDateSelect = (day: number) => {
-    const formattedDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-    setValue("consultationDate", formattedDate, { shouldValidate: true });
+    const formattedDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    setValue('consultationDate', formattedDate, { shouldValidate: true });
   };
 
-  const monthLabel = currentDate.toLocaleString("default", {
-    month: "long",
-    year: "numeric",
+  const monthLabel = currentDate.toLocaleString('default', {
+    month: 'long',
+    year: 'numeric',
   });
 
   return (
@@ -140,7 +140,7 @@ export default function ScheduleConsultationStepOne() {
 
                     {/* Calendar Table Grid */}
                     <div className="grid grid-cols-7 gap-y-2 gap-x-1 text-center text-xs">
-                      {DAYS_OF_WEEK.map((day) => (
+                      {DAYS_OF_WEEK.map(day => (
                         <span
                           key={day}
                           className="text-gray-500 font-medium pb-2"
@@ -154,7 +154,7 @@ export default function ScheduleConsultationStepOne() {
 
                         const thisDateStr = `${year}-${String(
                           month + 1,
-                        ).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+                        ).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
                         const isSelected = selectedDateStr === thisDateStr;
                         const isToday = todayDateStr === thisDateStr;
 
@@ -165,10 +165,10 @@ export default function ScheduleConsultationStepOne() {
                             onClick={() => handleDateSelect(day)}
                             className={`h-10 w-10 rounded-full mx-auto flex items-center justify-center font-medium text-xs transition-all cursor-pointer ${
                               isSelected
-                                ? "bg-gray-800 text-white font-bold scale-105 shadow-sm"
+                                ? 'bg-gray-800 text-white font-bold scale-105 shadow-sm'
                                 : isToday
-                                  ? "bg-[#AFC1B6] text-gray-900 hover:bg-[#AFC1B6]"
-                                  : "text-gray-700 hover:bg-gray-50"
+                                  ? 'bg-[#AFC1B6] text-gray-900 hover:bg-[#AFC1B6]'
+                                  : 'text-gray-700 hover:bg-gray-50'
                             }`}
                           >
                             {day}
@@ -196,21 +196,21 @@ export default function ScheduleConsultationStepOne() {
               <FormItem>
                 <FormControl>
                   <div className="space-y-2 max-h-[290px] overflow-y-auto pr-1 scrollbar-thin">
-                    {TIME_SLOTS.map((slot) => {
+                    {TIME_SLOTS.map(slot => {
                       const isSelected = activeTime === slot;
                       return (
                         <button
                           key={slot}
                           type="button"
                           onClick={() =>
-                            setValue("consultationTime", slot, {
+                            setValue('consultationTime', slot, {
                               shouldValidate: true,
                             })
                           }
                           className={`w-full py-2.5 text-center rounded-full text-xs font-medium border transition-all cursor-pointer ${
                             isSelected
-                              ? "bg-gray-800 text-white border-transparent"
-                              : "border-gray-400 text-gray-800 hover:bg-gray-50 bg-white"
+                              ? 'bg-gray-800 text-white border-transparent'
+                              : 'border-gray-400 text-gray-800 hover:bg-gray-50 bg-white'
                           }`}
                         >
                           {slot}
@@ -240,7 +240,7 @@ export default function ScheduleConsultationStepOne() {
                 <DropdownMenuTrigger className="flex items-center gap-1.5 text-xs cursor-pointer text-gray-700 font-medium bg-none border-none outline-none focus:outline-none">
                   <Globe className="w-4 h-4 text-gray-400" />
                   <span className="underline cursor-pointer hover:text-gray-900">
-                    {activeTimezone || "Detecting time zone..."}
+                    {activeTimezone || 'Detecting time zone...'}
                   </span>
                   <ChevronDown className="w-3 h-3 text-gray-400" />
                 </DropdownMenuTrigger>
@@ -248,13 +248,13 @@ export default function ScheduleConsultationStepOne() {
                   align="start"
                   className="w-56 max-h-48 overflow-y-auto rounded-xl"
                 >
-                  {COMMON_TIMEZONES.map((tz) => (
+                  {COMMON_TIMEZONES.map(tz => (
                     <DropdownMenuItem
                       key={tz}
                       onClick={() =>
-                        setValue("timezone", tz, { shouldValidate: true })
+                        setValue('timezone', tz, { shouldValidate: true })
                       }
-                      className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-[#0B251A]"
+                      className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-[secondary-bg]"
                     >
                       {tz}
                     </DropdownMenuItem>

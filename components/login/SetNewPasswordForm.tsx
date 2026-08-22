@@ -17,13 +17,15 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-const setPasswordSchema = z.object({
-  password: z.string().min(8, 'Password must be at least 8 characters'),
-  confirmPassword: z.string(),
-}).refine((data) => data.password === data.confirmPassword, {
-  message: "Passwords don't match",
-  path: ["confirmPassword"],
-});
+const setPasswordSchema = z
+  .object({
+    password: z.string().min(8, 'Password must be at least 8 characters'),
+    confirmPassword: z.string(),
+  })
+  .refine(data => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ['confirmPassword'],
+  });
 
 type SetPasswordFormValues = z.infer<typeof setPasswordSchema>;
 
@@ -37,7 +39,7 @@ export default function SetNewPasswordForm({
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const router = useRouter();
   const { login } = useAuth();
 
@@ -48,16 +50,11 @@ export default function SetNewPasswordForm({
 
   const onSubmit = async (values: SetPasswordFormValues) => {
     setIsSubmitting(true);
-    
+
     try {
-      // Demo: Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast.success('Password reset successful! Please sign in.');
-      
-      // Redirect to sign in
-      onSuccess();
-    } catch (error) {
+      // Password reset is not connected to a backend yet.
+      toast.error('Password reset is not connected to a backend yet.');
+    } catch {
       toast.error('Failed to reset password. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -82,16 +79,20 @@ export default function SetNewPasswordForm({
             name="password"
             render={({ field }) => (
               <FormItem className="space-y-1">
-                <FormLabel className="text-sm font-medium text-black">
+                <FormLabel
+                  htmlFor="new-password"
+                  className="text-sm font-medium text-black"
+                >
                   New Password <span className="text-red-500">*</span>
                 </FormLabel>
                 <div className="relative">
                   <FormControl>
                     <input
                       {...field}
+                      id="new-password"
                       type={showPass ? 'text' : 'password'}
                       placeholder="At least 8 characters"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[#faf9f4] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-[#142C1E] pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-[secondary-text] pr-12 transition-colors"
                     />
                   </FormControl>
                   <button
@@ -116,16 +117,20 @@ export default function SetNewPasswordForm({
             name="confirmPassword"
             render={({ field }) => (
               <FormItem className="space-y-1">
-                <FormLabel className="text-sm font-medium text-black">
+                <FormLabel
+                  htmlFor="confirm-new-password"
+                  className="text-sm font-medium text-black"
+                >
                   Confirm Password <span className="text-red-500">*</span>
                 </FormLabel>
                 <div className="relative">
                   <FormControl>
                     <input
                       {...field}
+                      id="confirm-new-password"
                       type={showConfirmPass ? 'text' : 'password'}
                       placeholder="Confirm your password"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[#faf9f4] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-[#142C1E] pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-[secondary-text] pr-12 transition-colors"
                     />
                   </FormControl>
                   <button
@@ -148,7 +153,7 @@ export default function SetNewPasswordForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[secondary-text] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Resetting...' : 'Reset Password'}
           </button>

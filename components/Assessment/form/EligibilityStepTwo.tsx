@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useFormContext } from "react-hook-form";
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import Link from "next/link";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import Link from 'next/link';
+import { FormData } from '@/zod/AssessmentSchema';
 
 export default function EligibilityStepTwo() {
   const { control } = useFormContext<FormData>();
@@ -39,7 +39,7 @@ export default function EligibilityStepTwo() {
                 {...field}
                 type="email"
                 placeholder="maria@example.com"
-                className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
               />
             </FormControl>
             <FormMessage />
@@ -50,7 +50,7 @@ export default function EligibilityStepTwo() {
       {/* Dynamic Legal Terms Disclaimer Text Footer */}
       <p className="text-[14px] text-[#111]">
         By entering your email, we&apos;ll save your progress and send you
-        updates about your care and you agree to our{" "}
+        updates about your care and you agree to our{' '}
         <Link
           href="/terms-and-privacy"
           className="underline decoration-gray-400 hover:text-[#111]/80 text-[14px] text-[#111] transition-colors"

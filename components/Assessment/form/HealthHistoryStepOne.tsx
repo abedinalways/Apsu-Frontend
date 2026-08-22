@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { ChevronUp, ChevronDown } from "lucide-react";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { ChevronUp, ChevronDown } from 'lucide-react';
+import { FormData } from '@/zod/AssessmentSchema';
 
 export default function HealthHistoryStepOne() {
   const { control, watch, formState } = useFormContext<FormData>();
-  const unitSystem = watch("unitSystem") || "imperial";
+  const unitSystem = watch('unitSystem') || 'imperial';
 
   return (
     <div className="space-y-6">
@@ -35,25 +35,25 @@ export default function HealthHistoryStepOne() {
         render={({ field }) => (
           <FormItem>
             <FormControl>
-              <div className="inline-flex gap-1 p-1 bg-[#FAF9F4] border border-gray-200 rounded-md max-w-fit">
+              <div className="inline-flex gap-1 p-1 bg-[background] border border-gray-200 rounded-md max-w-fit">
                 <button
                   type="button"
-                  onClick={() => field.onChange("imperial")}
+                  onClick={() => field.onChange('imperial')}
                   className={`px-4 py-1.5 text-[12px] font-semibold rounded-md border transition-all cursor-pointer ${
-                    field.value === "imperial"
-                      ? "border-[#102b1c] bg-[#102b1c] text-white"
-                      : "border-gray-100 text-gray-600 hover:text-gray-900"
+                    field.value === 'imperial'
+                      ? 'border-[#102b1c] bg-[#102b1c] text-white'
+                      : 'border-gray-100 text-gray-600 hover:text-gray-900'
                   }`}
                 >
                   ft / lbs
                 </button>
                 <button
                   type="button"
-                  onClick={() => field.onChange("metric")}
+                  onClick={() => field.onChange('metric')}
                   className={`px-4 py-1.5 text-xs font-semibold rounded-md border transition-all cursor-pointer ${
-                    field.value === "metric"
-                      ? "border-[#102b1c] bg-[#102b1c] text-white"
-                      : "border-gray-100 text-gray-600 hover:text-gray-900"
+                    field.value === 'metric'
+                      ? 'border-[#102b1c] bg-[#102b1c] text-white'
+                      : 'border-gray-100 text-gray-600 hover:text-gray-900'
                   }`}
                 >
                   cm / kgs
@@ -66,7 +66,7 @@ export default function HealthHistoryStepOne() {
       />
       {/* Height Fields */}
       <div className="space-y-2">
-        {unitSystem === "imperial" ? (
+        {unitSystem === 'imperial' ? (
           <>
             <div className="grid grid-cols-2 gap-4">
               <FormField
@@ -82,11 +82,11 @@ export default function HealthHistoryStepOne() {
                         <Input
                           type="number"
                           {...field}
-                          className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                           <div className="flex gap-1">
-                            {" "}
+                            {' '}
                             <div className="flex flex-col text-[8px] text-gray-400">
                               <ChevronUp className="h-2 w-2" />
                               <ChevronDown className="h-2 w-2" />
@@ -112,7 +112,7 @@ export default function HealthHistoryStepOne() {
                         <Input
                           type="number"
                           {...field}
-                          className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                           <div className="flex gap-1">
@@ -160,7 +160,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
@@ -182,7 +182,7 @@ export default function HealthHistoryStepOne() {
 
       {/* Weight Fields */}
       <div className="space-y-2">
-        {unitSystem === "imperial" ? (
+        {unitSystem === 'imperial' ? (
           <FormField
             control={control}
             name="weightLbs"
@@ -196,11 +196,11 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
-                        {" "}
+                        {' '}
                         <div className="flex flex-col text-[8px] text-gray-400">
                           <ChevronUp className="h-2 w-2" />
                           <ChevronDown className="h-2 w-2" />
@@ -228,7 +228,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">

@@ -9,7 +9,7 @@ import { Form } from '@/components/ui/form';
 
 import { useState } from 'react';
 import { ProfileFormValues } from '../profile/type';
-import { profileSchema } from '../profile/profile.schema';
+import { profileSchema } from '@/lib/validations/profile.schema';
 import { profileDefaultValues } from '../profile/defaultValues';
 import PersonalInformation from '../profile/PersonalInformation';
 import ShippingAddress from '../profile/ShippingAddress';
