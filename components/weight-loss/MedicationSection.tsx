@@ -20,7 +20,7 @@ interface MedicationSectionProps {
 }
 
 export default function MedicationSection({
-  sectionBgColor = "bg-[#FAF9F5]",
+  sectionBgColor = "bg-bg-surface",
   data,
 }: MedicationSectionProps) {
   return (

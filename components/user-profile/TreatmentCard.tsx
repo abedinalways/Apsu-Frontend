@@ -19,24 +19,24 @@ interface TreatmentCardProps {
 
 export default function TreatmentCard({ data }: TreatmentCardProps) {
   return (
-    <div className="w-full bg-white border border-[#cddcd3] rounded-2xl p-6 text-left space-y-6 font-[Work_Sans]">
+    <div className="w-full bg-white border border-borderColor rounded-2xl p-6 text-left space-y-6 font-[Work_Sans]">
       {/* Top Header Section */}
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div className="flex items-center gap-4">
-          <div className="w-13 h-13 rounded-full bg-[#1A3020] flex items-center justify-center text-[#A3C9A8] shrink-0">
+          <div className="w-13 h-13 rounded-full bg-[#1A3020] flex items-center justify-center text-brand-light shrink-0">
             <CheckupIcon />
           </div>
           <div>
             <h3 className="text-xl md:text-[24px] font-semibold text-gray-900 tracking-tight">
               {data.title}
             </h3>
-            <p className="text-sm md:text-[16px] text-[#3b3b3c] font-light">
+            <p className="text-sm md:text-[16px] text-text-primary font-light">
               {data.planDuration}
             </p>
           </div>
         </div>
 
-        <span className="px-3 py-1 text-xs font-medium text-secondary-text bg-[#ecf9f1] border border-[#cddcd3] rounded-full capitalize">
+        <span className="px-3 py-1 text-xs font-medium text-secondary-text bg-bg-subtle border border-borderColor rounded-full capitalize">
           {data.status}
         </span>
       </div>
@@ -76,7 +76,7 @@ export default function TreatmentCard({ data }: TreatmentCardProps) {
       <div className="space-y-2 pt-2">
         <div className="flex justify-between items-center text-xs text-gray-400 font-light">
           <span>Progress</span>
-          <span className="text-[#6c6c6c]">
+          <span className="text-text-secondary">
             {data.progressPercentage}% complete
           </span>
         </div>

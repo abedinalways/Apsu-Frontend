@@ -34,7 +34,7 @@ export default function GoalLifestyleActivityStepTwo() {
     <div className="space-y-6">
       {/* Section 1: How does this affect your day? */}
       <div className="space-y-4">
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           How does this affect your day?
         </h2>
 
@@ -59,7 +59,7 @@ export default function GoalLifestyleActivityStepTwo() {
                       className={cn(
                         'flex items-center space-x-3 w-full p-4 rounded-xl border transition-all cursor-pointer select-none h-14! bg-[background]',
                         isChecked
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-border-light border-2 text-secondary-bg'
                           : 'border-gray-200',
                       )}
                     >
@@ -83,7 +83,7 @@ export default function GoalLifestyleActivityStepTwo() {
 
       {/* Section 2: How would you rate your sleep quality? */}
       <div className="space-y-4">
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           How would you rate your sleep quality?
         </h2>
 

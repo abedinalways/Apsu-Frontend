@@ -80,14 +80,14 @@ export default function ConsultationTabContainer() {
 
       {/* history table for consultation */}
       <div className="w-full text-left space-y-4 font-[Work_Sans] ">
-        <h3 className="text-xl  font-medium text-[#102b1c]">
+        <h3 className="text-xl  font-medium text-brand">
           Consultation History
         </h3>
 
-        <div className="w-full overflow-x-auto rounded-[12px] border border-[#EBEAE4] bg-white">
+        <div className="w-full overflow-x-auto rounded-[12px] border border-border bg-white">
           <table className="w-full border-collapse text-left min-w-[650px]">
             <thead>
-              <tr className="bg-[#ecf9f1] text-secondary-text font-semibold text-sm">
+              <tr className="bg-bg-subtle text-secondary-text font-semibold text-sm">
                 <th className="p-4 pl-6">Date & Time</th>
                 <th className="p-4">Physician</th>
                 <th className="p-4">Treatment</th>
@@ -115,14 +115,14 @@ export default function ConsultationTabContainer() {
                   </td>
 
                   {/* Treatment */}
-                  <td className="p-4 text-[#111]">{item.program}</td>
+                  <td className="p-4 text-ink">{item.program}</td>
 
                   {/* Status */}
                   <td className="p-4">
                     <span
                       className={`px-3 py-0.5 rounded-full text-xs font-medium border ${
                         item.status === 'Upcoming'
-                          ? 'text-[#006aab] border-[#b6e6ff] bg-[#eff9ff]'
+                          ? 'text-[#006aab] border-info bg-[#eff9ff]'
                           : 'text-[#04913e] border-[#b2ffd0] bg-[#eefff4]'
                       }`}
                     >
@@ -159,7 +159,7 @@ export default function ConsultationTabContainer() {
       {/* Physician Notes (Modal) */}
       {selectedConsultation && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 animate-fade-in">
-          <div className="bg-white rounded-[24px] max-w-md w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-[#EBEAE4]">
+          <div className="bg-white rounded-[24px] max-w-md w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-border">
             {/* Close Button */}
             <button
               onClick={() => setSelectedConsultation(null)}

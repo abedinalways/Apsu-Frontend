@@ -20,7 +20,7 @@ export default function BlogHero({ blog }: Props) {
                 text-[12px]
                 uppercase
                 tracking-[0.28em]
-                text-[#7B7B7B]
+                text-text-muted
               "
             >
               LAST UPDATED ON {blog.date.toUpperCase()}
@@ -34,7 +34,7 @@ export default function BlogHero({ blog }: Props) {
                 font-medium
                 leading-[115%]
                 tracking-[-0.03em]
-                text-[#17332A]
+                text-brand
 
               "
             >
@@ -47,7 +47,7 @@ export default function BlogHero({ blog }: Props) {
                 className="
                   uppercase
                   tracking-[0.18em]
-                  text-[#008C5E]
+                  text-success
                 "
               >
                 {blog.category}
@@ -57,7 +57,7 @@ export default function BlogHero({ blog }: Props) {
               |
               </span>
 
-              <span className="text-[#666666]">{blog.readTime}</span>
+              <span className="text-text-secondary">{blog.readTime}</span>
             </div>
           </div>
       </div>

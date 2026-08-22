@@ -5,7 +5,7 @@ import PaymentSuccess from "@/containers/Assessment/PaymentSuccess";
 
 export default function PaymentSuccessPage() {
   return (
-    <div className="bg-[#FFFFFF] min-h-screen">
+    <div className="bg-white min-h-screen">
       <PaymentSuccess />
     </div>
   );

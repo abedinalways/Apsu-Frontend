@@ -26,14 +26,14 @@ export default function BlogSearch({ value, onChange }: BlogSearchProps) {
           w-full
           rounded-xl
           border
-          border-[#b8d9c6]
+          border-border-focus
           bg-white
           pl-11
           pr-4
           text-sm
           outline-none
           transition
-          focus:border-[#008C5E]
+          focus:border-success
           focus:ring-2
           focus:ring-[#008C5E]/10
         "

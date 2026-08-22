@@ -49,7 +49,7 @@ export default function CTAWidget() {
       </div>
 
       <div className="p-6">
-        <h4 className="text-[24px] font-medium text-center text-[#292B2A]">
+        <h4 className="text-[24px] font-medium text-center text-text-primary">
           Start your journey today
         </h4>
 

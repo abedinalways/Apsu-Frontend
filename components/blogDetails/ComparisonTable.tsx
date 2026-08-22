@@ -30,11 +30,11 @@ export default function ComparisonTable({ tableData }: ComparisonTableProps) {
             <tr
               key={rowIdx}
               className={`${
-                rowIdx % 2 === 0 ? 'bg-[#f1fff6eb]' : 'bg-[#f1fff6eb]'
+                rowIdx % 2 === 0 ? 'bg-bg-green-50' : 'bg-bg-green-50'
               } border-b border-[#E8EDEA] last:border-b-0`}
             >
               {row.map((cell, cellIdx) => (
-                <td key={cellIdx} className="px-5 py-4 text-sm text-[#3B3A35]">
+                <td key={cellIdx} className="px-5 py-4 text-sm text-text-primary">
                   {cell}
                 </td>
               ))}
@@ -55,7 +55,7 @@ export default function ComparisonTable({ tableData }: ComparisonTableProps) {
                 <span className="text-xs font-semibold text-secondary-text uppercase tracking-wider mb-1">
                   {header}
                 </span>
-                <span className="text-sm text-[#3B3A35]">
+                <span className="text-sm text-text-primary">
                   {row[headerIdx] || '-'}
                 </span>
               </div>

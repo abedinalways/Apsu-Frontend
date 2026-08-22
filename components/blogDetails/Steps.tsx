@@ -17,10 +17,10 @@ export default function Steps({ steps }: StepsProps) {
             {index + 1}
           </span>
           <div>
-            <h4 className="flex items-start  text-[1.25rem] font-semibold  text-[#111]">
+            <h4 className="flex items-start  text-[1.25rem] font-semibold  text-ink">
               {step.title}
             </h4>
-            <p className="mt-1 text-[1.126rem] text-[#3b3b3c]">
+            <p className="mt-1 text-[1.126rem] text-text-primary">
               {step.description}
             </p>
           </div>

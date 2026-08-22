@@ -44,7 +44,7 @@
   margin: 0 auto;
 }
 @theme inline {
-  --color-primaryColor: var(--primaryColor); /* used as --primaryColor */
+  --color-primaryColor: var(--primaryColor);
   --color-secondaryColor: var(--color-secondary-charcol-900);
   --color-blackColor: #070707;
   --color-borderColor: #cddcd3;
@@ -60,6 +60,27 @@
   --color-blueColor: #0068ef;
   --color-bgColor: #faf9f4;
   --color-descriptionColor: #3b3b3c;
+
+  --color-brand: #102b1c;
+  --color-brand-hover: #1c3d2a;
+  --color-brand-light: #A3C9A8;
+  --color-brand-surface: #E8F3ED;
+  --color-ink: #111111;
+  --color-text-primary: #3b3b3c;
+  --color-text-secondary: #6c6c6c;
+  --color-text-muted: #585E5A;
+  --color-bg-surface: #faf9f4;
+  --color-bg-subtle: #ecf9f1;
+  --color-border: #cddcd3;
+  --color-border-focus: #b8d9c6;
+  --color-border-light: #AFC1B6;
+  --color-success: #008C5E;
+  --color-success-dark: #219653;
+  --color-error: #e12626;
+  --color-warning: #ffc52e;
+  --color-info: #0068ef;
+  --color-white: #ffffff;
+  --color-black: #070707;
 }
 /* ------------------------------
    Light Theme (default)

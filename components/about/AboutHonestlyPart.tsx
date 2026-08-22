@@ -76,7 +76,7 @@ function AboutHonestlyPart() {
               return (
                 <div
                   key={index}
-                  className="bg-[#102B1C] backdrop-blur-sm rounded-2xl p-4 py-6 lg:p-8 flex flex-col items-start text-left shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+                  className="bg-brand backdrop-blur-sm rounded-2xl p-4 py-6 lg:p-8 flex flex-col items-start text-left shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
                 >
                   {/* Custom Thin Styled Icon */}
                   {Icon && (
