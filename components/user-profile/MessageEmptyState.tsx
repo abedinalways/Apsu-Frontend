@@ -48,7 +48,7 @@ export default function MessageEmptyState({
 
       {/* Text Content */}
       <div className="space-y-1.5">
-        <h3 className="text-lg sm:text-xl font-medium text-[secondary-text]">
+        <h3 className="text-lg sm:text-xl font-medium text-secondary-text">
           {title}
         </h3>
         <p className="text-xs sm:text-sm text-gray-400 italic font-light max-w-xs sm:max-w-sm">

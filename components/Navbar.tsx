@@ -96,7 +96,7 @@ export default function Navbar() {
                   onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
                   className="flex items-center gap-2  text-white rounded-full aspect-square pl-1 pr-3 py-1 "
                 >
-                  <div className="w-8 h-8 rounded-full bg-white text-[secondary-text] flex items-center justify-center font-semibold text-sm">
+                  <div className="w-8 h-8 rounded-full bg-white text-secondary-text flex items-center justify-center font-semibold text-sm">
                     {/* {user.email.charAt(0).toUpperCase()} */}
                     <UserIcon />
                   </div>

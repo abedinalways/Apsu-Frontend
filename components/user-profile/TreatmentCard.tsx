@@ -36,7 +36,7 @@ export default function TreatmentCard({ data }: TreatmentCardProps) {
           </div>
         </div>
 
-        <span className="px-3 py-1 text-xs font-medium text-[secondary-text] bg-[#ecf9f1] border border-[#cddcd3] rounded-full capitalize">
+        <span className="px-3 py-1 text-xs font-medium text-secondary-text bg-[#ecf9f1] border border-[#cddcd3] rounded-full capitalize">
           {data.status}
         </span>
       </div>

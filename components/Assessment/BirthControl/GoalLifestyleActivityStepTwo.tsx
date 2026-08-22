@@ -53,13 +53,13 @@ export default function GoalLifestyleActivityStepTwo() {
                       className={cn(
                         'flex items-center space-x-4 w-full p-4 rounded-xl border transition-all cursor-pointer select-none bg-[background] h-14! text-[16px] text-[#6c6c6c]',
                         isSelected
-                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200',
                       )}
                     >
                       <RadioGroupItem
                         value={option.id}
-                        className="h-5 w-5 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-[secondary-bg] data-[state=checked]:text-[secondary-bg]"
+                        className="h-5 w-5 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-secondary-bg data-[state=checked]:text-secondary-bg"
                       />
                       <span className="text-sm font-medium text-gray-700">
                         {option.label}

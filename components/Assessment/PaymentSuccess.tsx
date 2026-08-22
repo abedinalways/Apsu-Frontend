@@ -78,7 +78,7 @@ export default function PaymentSuccess({
               </div>
 
               <div className="col-span-7 flex flex-col justify-between h-full space-y-2">
-                <h3 className="text-sm md:text-base font-bold text-[secondary-bg]">
+                <h3 className="text-sm md:text-base font-bold text-secondary-bg">
                   Order Summary
                 </h3>
 
@@ -122,7 +122,7 @@ export default function PaymentSuccess({
                   <span className="text-stone-500 text-xs font-normal">
                     Total
                   </span>
-                  <span className="text-sm md:text-base font-bold text-[secondary-bg]">
+                  <span className="text-sm md:text-base font-bold text-secondary-bg">
                     {orderDetails.totalAmount || '$200'}
                   </span>
                 </div>
@@ -132,7 +132,7 @@ export default function PaymentSuccess({
 
           <button
             onClick={handleButtonClick}
-            className="w-full bg-[secondary-bg] hover:bg-[#143B2A] text-white font-semibold text-sm md:text-base py-3.5 px-6 rounded-full transition-colors duration-200 shadow-sm active:scale-[0.99] cursor-pointer"
+            className="w-full bg-secondary-bg hover:bg-[#143B2A] text-white font-semibold text-sm md:text-base py-3.5 px-6 rounded-full transition-colors duration-200 shadow-sm active:scale-[0.99] cursor-pointer"
           >
             {buttonText}
           </button>

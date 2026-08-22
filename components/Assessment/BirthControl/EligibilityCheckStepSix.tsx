@@ -126,7 +126,7 @@ export default function EligibilityCheckStepSix() {
                           onClick={() =>
                             handleAddMedication(searchQuery.trim())
                           }
-                          className="w-full text-left px-4 py-3 text-xs font-semibold text-[secondary-bg] hover:bg-[#AFC1B6]/10 transition-colors"
+                          className="w-full text-left px-4 py-3 text-xs font-semibold text-secondary-bg hover:bg-[#AFC1B6]/10 transition-colors"
                         >
                           Add missing: &ldquo;{searchQuery}&rdquo;
                         </button>
@@ -144,7 +144,7 @@ export default function EligibilityCheckStepSix() {
                       .map(med => (
                         <div
                           key={med}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[secondary-bg] text-white text-xs font-medium transition-all"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary-bg text-white text-xs font-medium transition-all"
                         >
                           <span>{med}</span>
                           <button
@@ -165,7 +165,7 @@ export default function EligibilityCheckStepSix() {
                   onClick={handleClearAllMeds}
                   className={`w-full py-4 text-center text-sm font-medium transition-all bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] ${
                     hasNoneSelected
-                      ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                      ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                       : 'border-gray-200'
                   }`}
                 >

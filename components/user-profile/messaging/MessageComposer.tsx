@@ -115,7 +115,7 @@ export default function MessageComposer({ onSend }: MessageComposerProps) {
             </div>
           )}
           <div className="flex-1 min-w-0">
-            <p className="truncate text-xs text-[secondary-text]">
+            <p className="truncate text-xs text-secondary-text">
               {attachment.name}
             </p>
           </div>
@@ -170,7 +170,7 @@ export default function MessageComposer({ onSend }: MessageComposerProps) {
           onChange={e => setDraft(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Type a new message.."
-          className="flex-1 min-w-0 h-9 sm:h-10 rounded-[20px] border border-[#E5E7EB] bg-white px-3 sm:px-4 py-2 text-xs sm:text-sm text-[secondary-text] outline-none placeholder:text-gray-400 focus:border-[#A3C9A8]"
+          className="flex-1 min-w-0 h-9 sm:h-10 rounded-[20px] border border-[#E5E7EB] bg-white px-3 sm:px-4 py-2 text-xs sm:text-sm text-secondary-text outline-none placeholder:text-gray-400 focus:border-[#A3C9A8]"
         />
         <label htmlFor="message-composer" className="sr-only">
           Type a new message

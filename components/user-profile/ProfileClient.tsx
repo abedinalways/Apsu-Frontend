@@ -122,7 +122,7 @@ export default function ProfileClient() {
         <p className="text-red-500">{profileError}</p>
         <button
           onClick={() => setTreatmentState('loading')}
-          className="px-4 py-2 bg-[secondary-bg] text-white rounded-full text-sm"
+          className="px-4 py-2 bg-secondary-bg text-white rounded-full text-sm"
         >
           Retry
         </button>
@@ -149,7 +149,7 @@ export default function ProfileClient() {
         </div>
 
         <div className="text-center w-fit md:w-full md:mx-auto space-y-3 mt-2 ">
-          <h1 className="text-2xl md:text-[32px] font-medium text-[secondary-text] text-center md:text-start md:ml-60 ">
+          <h1 className="text-2xl md:text-[32px] font-medium text-secondary-text text-center md:text-start md:ml-60 ">
             {userName}
           </h1>
           <div className="lg:flex flex-wrap space-y-2 md:space-y-3 lg:space-y-0  lg:gap-4 text-[14px] text-gray-500  w-fit mx-auto">
@@ -198,7 +198,7 @@ export default function ProfileClient() {
                 <button
                   key={tab.id}
                   onClick={() => handleTabChange(tab.id)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-[secondary-text] shadow-sm cursor-pointer' : 'text-gray-600 bg-white border-[#B8D9C6] hover:text-gray-900 hover:bg-[#F4F3EF] cursor-pointer'}`}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${isActive ? 'bg-[#A3C9A8] text-secondary-text shadow-sm cursor-pointer' : 'text-gray-600 bg-white border-[#B8D9C6] hover:text-gray-900 hover:bg-[#F4F3EF] cursor-pointer'}`}
                 >
                   {tab.label}
                 </button>

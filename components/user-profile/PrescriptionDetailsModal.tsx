@@ -57,7 +57,7 @@ function DetailItem({
       </div>
       <div className="min-w-0">
         <p className="text-xs text-[#888888] text-justify">{label}</p>
-        <p className="mt-0.5 text-sm md:text-[16px] font-normal text-[secondary-text] text-justify">
+        <p className="mt-0.5 text-sm md:text-[16px] font-normal text-secondary-text text-justify">
           {value}
         </p>
       </div>
@@ -114,7 +114,7 @@ export default function PrescriptionDetailsModal({
           <div className="flex flex-col items-start">
             <h2
               id="prescription-details-title"
-              className="text-lg md:text-xl font-semibold text-[secondary-text]"
+              className="text-lg md:text-xl font-semibold text-secondary-text"
             >
               Prescriptions Details
             </h2>
@@ -124,7 +124,7 @@ export default function PrescriptionDetailsModal({
           </div>
           <button
             onClick={onClose}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-[secondary-text]"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-secondary-text"
             aria-label="Close"
           >
             <X className="h-4 w-4" />
@@ -164,7 +164,7 @@ export default function PrescriptionDetailsModal({
                   </div>
                   <div className="text-left">
                     <p className="text-xs text-[#6c6c6c]">Prescribed By</p>
-                    <p className="text-sm md:text-lg font-medium text-[secondary-text]">
+                    <p className="text-sm md:text-lg font-medium text-secondary-text">
                       {doctorName}
                     </p>
                     <p className="text-xs md:text-[14px] text-[#3b3b3c]">
@@ -173,7 +173,7 @@ export default function PrescriptionDetailsModal({
                   </div>
                 </div>
                 <div className="w-full flex md:justify-end justify-center">
-                  <button className="flex items-center gap-2 rounded-full border border-[#000] bg-white px-4 py-1 text-sm font-medium text-[secondary-text] transition hover:bg-[#F7FAF8]">
+                  <button className="flex items-center gap-2 rounded-full border border-[#000] bg-white px-4 py-1 text-sm font-medium text-secondary-text transition hover:bg-[#F7FAF8]">
                     <ChatIcon /> Message Care Team
                   </button>
                 </div>

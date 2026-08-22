@@ -112,7 +112,7 @@ export default function TreatmentPlanStepOne() {
                       }
                       className={`w-full p-4 rounded-2xl border text-left flex items-start justify-between transition-all relative bg-[background] cursor-pointer ${
                         isSelected
-                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -121,7 +121,7 @@ export default function TreatmentPlanStepOne() {
                         <div
                           className={`h-5 w-5 rounded-full border flex items-center justify-center mt-0.5 shrink-0 transition-colors ${
                             isSelected
-                              ? 'border-[#AFC1B6] bg-[secondary-bg]'
+                              ? 'border-[#AFC1B6] bg-secondary-bg'
                               : 'border-gray-200 bg-white'
                           }`}
                         >
@@ -141,7 +141,7 @@ export default function TreatmentPlanStepOne() {
                           <div
                             className={`inline-block px-2 py-0.5 text-[10px] font-semibold rounded-full ${
                               plan.badgeVariant === 'save'
-                                ? 'border-[#AFC1B6] text-[secondary-bg]'
+                                ? 'border-[#AFC1B6] text-secondary-bg'
                                 : 'border-gray-200'
                             }`}
                           >

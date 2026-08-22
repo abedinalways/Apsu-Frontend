@@ -146,7 +146,7 @@ export default function EligibilityStepThree() {
                 <Checkbox
                   checked={field.value}
                   onCheckedChange={field.onChange}
-                  className="h-4 w-4 rounded border-gray-300 text-emerald-900 data-[state=checked]:bg-[secondary-bg] data-[state=checked]:border-[secondary-bg]"
+                  className="h-4 w-4 rounded border-gray-300 text-emerald-900 data-[state=checked]:bg-secondary-bg data-[state=checked]:border-secondary-bg"
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
@@ -168,7 +168,7 @@ export default function EligibilityStepThree() {
                 <Checkbox
                   checked={field.value}
                   onCheckedChange={field.onChange}
-                  className="h-4 w-4 rounded border-gray-300 text-emerald-900 data-[state=checked]:bg-[secondary-bg] data-[state=checked]:border-[secondary-bg]"
+                  className="h-4 w-4 rounded border-gray-300 text-emerald-900 data-[state=checked]:bg-secondary-bg data-[state=checked]:border-secondary-bg"
                 />
               </FormControl>
               <div className="space-y-1 leading-none">

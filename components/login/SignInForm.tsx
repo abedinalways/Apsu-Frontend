@@ -72,7 +72,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="maria@example.com"
-            className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-[secondary-text] transition-colors"
+            className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text transition-colors"
           />
         </div>
 
@@ -90,7 +90,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder="Your password"
-              className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-[secondary-text] pr-12 transition-colors"
+              className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
             />
             <button
               type="button"
@@ -148,7 +148,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-[secondary-text] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-secondary-text hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? 'Signing In...' : 'Sign In'}
         </button>

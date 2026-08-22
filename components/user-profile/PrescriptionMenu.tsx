@@ -55,7 +55,7 @@ export default function PrescriptionMenu({
           onViewDetails();
           onClose();
         }}
-        className="flex w-full items-center gap-3 rounded-[8px] bg-[#EEF8F2] px-3 py-2 text-left text-xs font-medium text-[secondary-text] transition-colors duration-200 hover:bg-[#E6F4EC]"
+        className="flex w-full items-center gap-3 rounded-[8px] bg-[#EEF8F2] px-3 py-2 text-left text-xs font-medium text-secondary-text transition-colors duration-200 hover:bg-[#E6F4EC]"
       >
         <Eye className="h-4 w-4 shrink-0" />
         <span>View Details</span>
@@ -69,7 +69,7 @@ export default function PrescriptionMenu({
           onTrackOrder();
           onClose();
         }}
-        className="mt-1 flex w-full items-center gap-3 rounded-[8px] px-3 py-2 text-left text-xs font-medium text-[secondary-text] transition-colors duration-200 hover:bg-[#F7FAF8]"
+        className="mt-1 flex w-full items-center gap-3 rounded-[8px] px-3 py-2 text-left text-xs font-medium text-secondary-text transition-colors duration-200 hover:bg-[#F7FAF8]"
       >
         <ClipboardList className="h-4 w-4 shrink-0" />
         <span>Track Order</span>

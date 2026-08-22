@@ -356,7 +356,7 @@ export default function MultiStepForm() {
                 <button
                   type="button"
                   onClick={handlePlaceOrder}
-                  className="px-6 py-3 bg-[secondary-bg] text-white rounded-full text-sm font-medium cursor-pointer"
+                  className="px-6 py-3 bg-secondary-bg text-white rounded-full text-sm font-medium cursor-pointer"
                 >
                   Place order
                 </button>
@@ -374,7 +374,7 @@ export default function MultiStepForm() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-6 py-3 bg-[secondary-bg] text-white rounded-full text-sm font-medium cursor-pointer"
+                  className="px-6 py-3 bg-secondary-bg text-white rounded-full text-sm font-medium cursor-pointer"
                 >
                   Continue &gt;
                 </button>

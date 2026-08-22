@@ -254,7 +254,7 @@ export default function ScheduleConsultationStepOne() {
                       onClick={() =>
                         setValue('timezone', tz, { shouldValidate: true })
                       }
-                      className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-[secondary-bg]"
+                      className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-secondary-bg"
                     >
                       {tz}
                     </DropdownMenuItem>

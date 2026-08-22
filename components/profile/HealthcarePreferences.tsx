@@ -30,7 +30,7 @@ export default function HealthcarePreferences({
 }: HealthcarePreferencesProps) {
   return (
     <div className="space-y-4 rounded-[16px] border border-gray-100 bg-white p-5 shadow-sm">
-      <div className="flex items-center gap-2 border-b border-gray-50 pb-2 text-sm font-medium text-[secondary-text]">
+      <div className="flex items-center gap-2 border-b border-gray-50 pb-2 text-sm font-medium text-secondary-text">
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ecf9f1]">
           <GlobeIcon />
         </span>

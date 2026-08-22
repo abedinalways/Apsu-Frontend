@@ -66,7 +66,7 @@ export default function GoalLifestyleActivityStepThree() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag('weightLossMethods', tag)}
-                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[secondary-bg] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
+                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-secondary-bg bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>
@@ -101,7 +101,7 @@ export default function GoalLifestyleActivityStepThree() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag('weightLossMotivation', tag)}
-                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-[secondary-bg] bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
+                  className="px-3 py-1 rounded-full border border-[#AFC1B6] text-[11px] font-medium text-secondary-bg bg-white hover:bg-[#AFC1B6]/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>

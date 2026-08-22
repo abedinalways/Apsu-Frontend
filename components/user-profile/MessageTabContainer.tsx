@@ -142,7 +142,7 @@ export default function MessageTabContainer() {
       {!showSidebar && (
         <button
           onClick={() => setShowSidebar(true)}
-          className="hidden lg:block md:absolute md:top-9 left-2 -translate-y-1/2 z-40 bg-[secondary-text] text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
+          className="hidden lg:block md:absolute md:top-9 left-2 -translate-y-1/2 z-40 bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
           aria-label="Show sidebar"
         >
           <StepBackIcon className="w-4 h-4" />
@@ -156,7 +156,7 @@ export default function MessageTabContainer() {
       >
         <div className="p-4 border-b border-[#F4F3EF]">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-lg font-semibold text-[secondary-text]">
+            <h2 className="text-lg font-semibold text-secondary-text">
               Messages
             </h2>
             <div className="flex items-center gap-1">
@@ -169,7 +169,7 @@ export default function MessageTabContainer() {
               </button>
               <button
                 onClick={() => setShowSidebar(false)}
-                className="hidden lg:block  bg-[secondary-text] text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
+                className="hidden lg:block  bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
                 aria-label="Hide sidebar"
               >
                 <StepForwardIcon className="w-4 h-4 text-white" />
@@ -202,7 +202,7 @@ export default function MessageTabContainer() {
           <div className="md:hidden p-4 border-b border-[#F4F3EF]">
             <button
               onClick={() => setShowChat(true)}
-              className="w-full flex items-center justify-center gap-2 bg-[secondary-text] text-white py-3 rounded-[12px] hover:bg-[#1e3a2a] transition-colors"
+              className="w-full flex items-center justify-center gap-2 bg-secondary-text text-white py-3 rounded-[12px] hover:bg-[#1e3a2a] transition-colors"
             >
               <span className="text-sm font-medium">
                 Select a conversation to start chatting
@@ -235,7 +235,7 @@ export default function MessageTabContainer() {
                   </div>
                   <div className="min-w-0 ">
                     <div className="flex items-center gap-2 min-w-0">
-                      <h3 className="font-semibold text-[secondary-text] text-sm sm:text-base truncate">
+                      <h3 className="font-semibold text-secondary-text text-sm sm:text-base truncate">
                         {activeConversation.participantName}
                       </h3>
                     </div>

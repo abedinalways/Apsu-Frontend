@@ -169,7 +169,7 @@
 //           Your personal data will be used to process your order, support your
 //           experience throughout this website, and for other purposes described
 //           in our{" "}
-//           <span className="text-[secondary-bg] underline cursor-pointer">
+//           <span className="text-secondary-bg underline cursor-pointer">
 //             privacy policy
 //           </span>
 //           .
@@ -190,7 +190,7 @@
 //               <div className="space-y-1 leading-none">
 //                 <FormLabel className="text-[11px] text-muted-foreground">
 //                   I have read and agree to the website{" "}
-//                   <span className="text-[secondary-bg] underline cursor-pointer">
+//                   <span className="text-secondary-bg underline cursor-pointer">
 //                     terms and conditions<span className="text-red-500">*</span>
 //                   </span>
 //                 </FormLabel>
@@ -306,7 +306,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 space-y-4 bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'card'
-                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -428,7 +428,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'paypal'
-                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -447,7 +447,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'venmo'
-                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -466,7 +466,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'bank'
-                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -491,7 +491,7 @@ export default function CheckoutPaymentStepOne() {
           Your personal data will be used to process your order, support your
           experience throughout this website, and for other purposes described
           in our{' '}
-          <span className="text-[secondary-bg] underline cursor-pointer">
+          <span className="text-secondary-bg underline cursor-pointer">
             privacy policy
           </span>
           .
@@ -512,7 +512,7 @@ export default function CheckoutPaymentStepOne() {
               <div className="space-y-1 leading-none">
                 <FormLabel className="text-[11px] text-muted-foreground">
                   I have read and agree to the website{' '}
-                  <span className="text-[secondary-bg] underline cursor-pointer">
+                  <span className="text-secondary-bg underline cursor-pointer">
                     terms and conditions<span className="text-red-500">*</span>
                   </span>
                 </FormLabel>

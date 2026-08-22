@@ -87,7 +87,7 @@ export default function OrderStepper({
 
                     ${
                       active
-                        ? 'font-semibold text-[secondary-text]'
+                        ? 'font-semibold text-secondary-text'
                         : completed
                           ? 'font-medium text-[#5A6561]'
                           : 'text-[#8A928D]'
@@ -179,7 +179,7 @@ export default function OrderStepper({
 
                   ${
                     active
-                      ? 'font-semibold text-[secondary-text]'
+                      ? 'font-semibold text-secondary-text'
                       : completed
                         ? 'font-medium text-[#5A6561]'
                         : 'text-[#8A928D]'

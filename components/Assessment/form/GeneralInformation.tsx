@@ -111,7 +111,7 @@ export default function GeneralInformation() {
                     key={g}
                     className={`flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full ${
                       currentGender === g
-                        ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                        ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                         : 'border-gray-200'
                     }`}
                   >

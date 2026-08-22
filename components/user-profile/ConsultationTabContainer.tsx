@@ -87,7 +87,7 @@ export default function ConsultationTabContainer() {
         <div className="w-full overflow-x-auto rounded-[12px] border border-[#EBEAE4] bg-white">
           <table className="w-full border-collapse text-left min-w-[650px]">
             <thead>
-              <tr className="bg-[#ecf9f1] text-[secondary-text] font-semibold text-sm">
+              <tr className="bg-[#ecf9f1] text-secondary-text font-semibold text-sm">
                 <th className="p-4 pl-6">Date & Time</th>
                 <th className="p-4">Physician</th>
                 <th className="p-4">Treatment</th>
@@ -137,7 +137,7 @@ export default function ConsultationTabContainer() {
                       disabled={!item.notes}
                       className={`inline-flex items-center  cursor-pointer gap-1.5 text-sm font-medium transition-colors ${
                         item.notes
-                          ? 'text-gray-600 hover:text-[secondary-text]'
+                          ? 'text-gray-600 hover:text-secondary-text'
                           : 'text-gray-300 cursor-not-allowed'
                       }`}
                       title={

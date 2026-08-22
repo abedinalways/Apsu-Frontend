@@ -25,7 +25,7 @@ export default function GoalLifestyleActivityStepOne() {
     <div className="space-y-6">
       {/* Title block from Screenshot 2026-07-05 093153.png */}
       <div>
-        <h2 className="text-xl font-bold text-[secondary-bg] tracking-tight">
+        <h2 className="text-xl font-bold text-secondary-bg tracking-tight">
           What's your weight loss goal?
         </h2>
         <p className="text-xs text-muted-foreground mt-1.5">

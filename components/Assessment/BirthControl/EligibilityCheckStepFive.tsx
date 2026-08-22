@@ -79,7 +79,7 @@ export default function EligibilityCheckStepFive() {
                       }}
                       className={`flex items-center gap-4 p-4 w-full text-left transition-all bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] cursor-pointer ${
                         isChecked
-                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -87,7 +87,7 @@ export default function EligibilityCheckStepFive() {
                         aria-hidden="true"
                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-all ${
                           isChecked
-                            ? 'border-[#AFC1B6] bg-[secondary-bg] text-white'
+                            ? 'border-[#AFC1B6] bg-secondary-bg text-white'
                             : 'border-gray-300 bg-white text-transparent'
                         }`}
                       >

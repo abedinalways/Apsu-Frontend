@@ -70,14 +70,14 @@ export default function EligibilityCheckStepTwo() {
                         className={cn(
                           'flex items-center space-x-3.5 p-4  select-none  gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
                           isChecked
-                            ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >
                         <Checkbox
                           checked={isChecked}
                           onCheckedChange={() => handleSelect(option.id)}
-                          className="h-5 w-5 rounded border-gray-300 data-[state=checked]:bg-[secondary-bg] data-[state=checked]:border-[secondary-bg]"
+                          className="h-5 w-5 rounded border-gray-300 data-[state=checked]:bg-secondary-bg data-[state=checked]:border-secondary-bg"
                         />
                         <span className="text-sm font-medium text-gray-700">
                           {option.label}

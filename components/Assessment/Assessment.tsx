@@ -81,7 +81,7 @@ export default function Assessment() {
             type="button"
             onClick={handleContinue}
             disabled={!selected}
-            className="px-6 py-3 bg-[secondary-bg] text-white rounded-full text-sm font-medium disabled:opacity-30 cursor-pointer"
+            className="px-6 py-3 bg-secondary-bg text-white rounded-full text-sm font-medium disabled:opacity-30 cursor-pointer"
           >
             Continue &gt;
           </button>

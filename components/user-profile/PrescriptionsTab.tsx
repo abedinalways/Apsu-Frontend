@@ -134,7 +134,7 @@ export default function PrescriptionsTab() {
   return (
     <section className="w-full font-[Work_Sans]">
       <div className="mb-6 md:mb-8">
-        <h2 className="text-2xl md:text-[32px] font-semibold text-[secondary-text]">
+        <h2 className="text-2xl md:text-[32px] font-semibold text-secondary-text">
           Prescriptions
         </h2>
         <p className="mt-2 text-sm md:text-base text-[#666666]">
@@ -159,7 +159,7 @@ export default function PrescriptionsTab() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex gap-2 sm:flex-row sm:flex-wrap sm:items-center">
-                    <h3 className="text-md md:text-lg font-semibold leading-tight text-[secondary-text]">
+                    <h3 className="text-md md:text-lg font-semibold leading-tight text-secondary-text">
                       {item.treatmentName}
                     </h3>
                     <span className="w-fit rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-3 py-1 text-xs font-medium text-[#21A45A]">
@@ -179,7 +179,7 @@ export default function PrescriptionsTab() {
                 <div className="relative">
                   <button
                     onClick={e => handleMenuClick(e, item.id)}
-                    className="flex h-10 w-10 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-[secondary-text]"
+                    className="flex h-10 w-10 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-secondary-text"
                   >
                     <MoreVertical className="h-5 w-5" />
                   </button>
@@ -207,7 +207,7 @@ export default function PrescriptionsTab() {
                     <span className="flex items-start rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-3 py-1 text-xs font-medium text-[#21A45A] w-fit">
                       {item.status}
                     </span>
-                    <h3 className="mt-3 text-base font-semibold leading-tight text-[secondary-text] flex items-start">
+                    <h3 className="mt-3 text-base font-semibold leading-tight text-secondary-text flex items-start">
                       {item.treatmentName}
                     </h3>
                     <p className="mt-2 text-sm text-[#666666] flex items-start">
@@ -221,7 +221,7 @@ export default function PrescriptionsTab() {
                   <div className="relative">
                     <button
                       onClick={e => handleMenuClick(e, item.id)}
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-[secondary-text]"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-secondary-text"
                     >
                       <MoreVertical className="h-5 w-5" />
                     </button>

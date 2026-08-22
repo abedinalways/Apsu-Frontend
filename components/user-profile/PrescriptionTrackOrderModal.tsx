@@ -46,9 +46,7 @@ export default function PrescriptionTrackOrderModal({
         </button>
 
         <div className="mb-6">
-          <h3 className="text-xl font-bold text-[secondary-text]">
-            Track Order
-          </h3>
+          <h3 className="text-xl font-bold text-secondary-text">Track Order</h3>
           <p className="text-sm md:text-[16px] text-gray-400 font-light mt-0.5">
             Track your prescription delivery status.
           </p>
@@ -116,7 +114,7 @@ export default function PrescriptionTrackOrderModal({
               </div>
             </div>
             <div className="order-2 rounded-[12px] space-y-4 bg-white shadow p-2">
-              <h5 className="text-lg font-medium text-[secondary-text] mb-6 md:mb-8">
+              <h5 className="text-lg font-medium text-secondary-text mb-6 md:mb-8">
                 Order Progress
               </h5>
               <OrderStepper steps={progressSteps} currentStep={3} />

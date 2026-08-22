@@ -14,7 +14,7 @@ export default function ComparisonTable({ tableData }: ComparisonTableProps) {
       {/* Desktop Table */}
       <table className="hidden md:table w-full border-collapse rounded-[12px] overflow-hidden shadow-sm ">
         <thead>
-          <tr className="bg-[secondary-text]">
+          <tr className="bg-secondary-text">
             {tableData.headers.map((header, idx) => (
               <th
                 key={idx}
@@ -52,7 +52,7 @@ export default function ComparisonTable({ tableData }: ComparisonTableProps) {
           >
             {tableData.headers.map((header, headerIdx) => (
               <div key={headerIdx} className="flex flex-col">
-                <span className="text-xs font-semibold text-[secondary-text] uppercase tracking-wider mb-1">
+                <span className="text-xs font-semibold text-secondary-text uppercase tracking-wider mb-1">
                   {header}
                 </span>
                 <span className="text-sm text-[#3B3A35]">

@@ -62,7 +62,7 @@ export default function EmailVerificationForm({
           <button
             type="submit"
             disabled={isChecking}
-            className="w-full bg-[secondary-text] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-secondary-text hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isChecking ? 'Checking...' : 'Verify Email'}
           </button>

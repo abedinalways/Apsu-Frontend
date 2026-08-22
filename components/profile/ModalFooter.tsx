@@ -24,7 +24,7 @@ export default function ModalFooter({
         type="submit"
         form="edit-profile-form"
         disabled={isLoading}
-        className="flex h-11 min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-[secondary-text] px-6 text-sm font-medium text-white transition-colors hover:bg-[#1c3d2a] disabled:cursor-not-allowed disabled:bg-[secondary-text]/70"
+        className="flex h-11 min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-secondary-text px-6 text-sm font-medium text-white transition-colors hover:bg-[#1c3d2a] disabled:cursor-not-allowed disabled:bg-secondary-text/70"
       >
         {isLoading ? 'Updating...' : 'Update & Save'}
       </button>
