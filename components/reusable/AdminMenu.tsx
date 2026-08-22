@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "@/components/reusable/Header";
-import Sidebar from "@/components/reusable/Sidebar";
+import Header from "@/containers/reusable/Header";
+import Sidebar from "@/containers/reusable/Sidebar";
 import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 

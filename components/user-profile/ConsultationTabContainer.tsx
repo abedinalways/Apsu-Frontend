@@ -182,7 +182,7 @@ export default function ConsultationTabContainer() {
 
             {/* Modal Header */}
             <div className="space-y-4">
-              <span className="text-xs md:text-[16px] font-normal uppercase tracking-[.13em] text-[color-greenColor] block">
+              <span className="text-xs md:text-[16px] font-normal uppercase tracking-[.13em] text-primary block">
                 Physician Notes
               </span>
 

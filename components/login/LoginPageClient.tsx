@@ -3,9 +3,9 @@
 import { useState, Suspense } from 'react';
 import Image from 'next/image';
 import EnterCodeForm from './EnterCodeForm';
-import SetNewPasswordForm from './SetNewPasswordForm';
+import SetNewPasswordForm from '@/containers/login/SetNewPasswordForm';
 import ForgotPasswordForm from './ForgotPasswordForm';
-import SignInForm from './SignInForm';
+import SignInForm from '@/containers/login/SignInForm';
 import APSU from '../icons/APSU';
 import Link from 'next/link';
 

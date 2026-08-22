@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Form } from '@/components/ui/form';
 import EmailVerificationForm from './EmailVerificationForm';
-import PasswordCreationForm from './CreatePasswordForm';
+import PasswordCreationForm from '@/containers/login/CreatePasswordForm';
 
 
 // Validation schemas

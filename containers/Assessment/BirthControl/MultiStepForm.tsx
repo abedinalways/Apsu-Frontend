@@ -11,28 +11,32 @@ import HealthHistoryStepOne from '@/components/Assessment/form/HealthHistoryStep
 import HealthHistoryStepTwo from '@/components/Assessment/form/HealthHistoryStepTwo';
 import HealthHistoryStepThree from '@/components/Assessment/form/HealthHistoryStepThree';
 import HealthHistoryStepFour from '@/components/Assessment/form/HealthHistoryStepFour';
+import GoalLifestyleActivityStepOne from '@/components/Assessment/BirthControl/GoalLifestyleActivityStepOne';
+import GoalLifestyleActivityStepTwo from '@/components/Assessment/BirthControl/GoalLifestyleActivityStepTwo';
+import EligibilityCheckStepOne from '@/components/Assessment/BirthControl/EligibilityCheckStepOne';
+import EligibilityCheckStepTwo from '@/components/Assessment/BirthControl/EligibilityCheckStepTwo';
+import EligibilityCheckStepThree from '@/components/Assessment/BirthControl/EligibilityCheckStepThree';
+import EligibilityCheckStepFour from '@/components/Assessment/BirthControl/EligibilityCheckStepFour';
+import EligibilityCheckStepFive from '@/components/Assessment/BirthControl/EligibilityCheckStepFive';
+import EligibilityCheckStepSix from '@/components/Assessment/BirthControl/EligibilityCheckStepSix';
+import EligibilityCheckStepSeven from '@/components/Assessment/BirthControl/EligibilityCheckStepSeven';
+import EligibilityCheckStepEight from '@/components/Assessment/BirthControl/EligibilityCheckStepEight';
+import CommonEligibilityCheckStepOne from '@/components/Assessment/form/CommonEligibilityCheckStepOne';
+import EligibilityStepOne from '@/components/Assessment/form/EligibilityStepOne';
+import EligibilityStepTwo from '@/components/Assessment/form/EligibilityStepTwo';
+import EligibilityStepThree from '@/components/Assessment/form/EligibilityStepThree';
+import EligibilityStepFour from '@/components/Assessment/form/EligibilityStepFour';
+import EligibilityStepFive from '@/components/Assessment/form/EligibilityStepFive';
 import TreatmentPlanStepOne from '@/components/Assessment/form/TreatmentPlanStepOne';
 import ScheduleConsultationStepOne from '@/components/Assessment/form/ScheduleConsultationStepOne';
 import CheckoutPaymentStepOne from '@/components/Assessment/form/CheckoutPaymentStepOne';
-import GoalLifestyleActivityStepOne from './GoalLifestyleActivityStepOne';
-import GoalLifestyleActivityStepTwo from './GoalLifestyleActivityStepTwo';
-import EligibilityCheckStepOne from './EligibilityCheckStepOne';
-import EligibilityCheckStepTwo from './EligibilityCheckStepTwo';
-import EligibilityCheckStepThree from './EligibilityCheckStepThree';
-import EligibilityCheckStepFour from './EligibilityCheckStepFour';
-import CommonEligibilityCheckStepOne from '../form/CommonEligibilityCheckStepOne';
-import EligibilityStepOne from '../form/EligibilityStepOne';
-import EligibilityStepTwo from '../form/EligibilityStepTwo';
-import EligibilityStepThree from '../form/EligibilityStepThree';
-import EligibilityStepFour from '../form/EligibilityStepFour';
-import EligibilityStepFive from '../form/EligibilityStepFive';
 
 const TOTAL_STEPS = 7;
 
 const STEP_LABELS = [
   'General information',
   'Health History',
-  '(Goal, lifestyle, activity)',
+  'Goal, Lifestyle, Activity',
   'Eligibility Check',
   'Eligibility',
   'Treatment Plan',
@@ -50,7 +54,7 @@ export default function MultiStepForm() {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema) as Resolver<FormData>,
     defaultValues: {
-      goal: 'sleep',
+      goal: 'birth-control',
       firstName: '',
       lastName: '',
       dob: '',
@@ -83,16 +87,8 @@ export default function MultiStepForm() {
       currentMedications: [],
       medicalTeamConcerns: '',
       isCurrentlyPregnant: undefined,
-      dailyEffects: [],
-      sleepRatingCategory: undefined,
-      wakeUpFrequency: undefined,
-      fallBackAsleep: undefined,
-      screenTimeBeforeBed: undefined,
-      pastSleepTreatments: [],
-      diagnosedConditions: [],
-      takesSleepMedication: undefined,
-      heavySnoringOrApnea: undefined,
-      pregnantOrBreastfeeding: undefined,
+      birthControlGoals: [],
+      preferredMethod: undefined,
       email: '',
       reviewAcknowledged: false,
       shippingAddress: '',
@@ -117,6 +113,7 @@ export default function MultiStepForm() {
     shouldUnregister: false,
   });
 
+  // Validates current step before allowing progression
   const nextStep = async () => {
     let fieldsToValidate: Array<keyof FormData> = [];
 
@@ -147,23 +144,25 @@ export default function MultiStepForm() {
     }
     if (step === 3) {
       const goalLifestyleFields: Array<Array<keyof FormData>> = [
-        ['weightLossGoal'],
-        ['dailyEffects', 'sleepRatingCategory'],
+        ['birthControlGoals'],
+        ['preferredMethod'],
       ];
+
       fieldsToValidate = goalLifestyleFields[goalLifestyleStep] || [];
     }
     if (step === 4) {
       const eligibilityCheckFields: Array<Array<keyof FormData>> = [
-        ['wakeUpFrequency', 'fallBackAsleep', 'screenTimeBeforeBed'],
-        ['pastSleepTreatments'],
-        ['diagnosedConditions'],
-        [
-          'takesSleepMedication',
-          'heavySnoringOrApnea',
-          'pregnantOrBreastfeeding',
-        ],
+        ['nicotineUsage'],
+        ['nicotineProductTypes'],
+        ['smokingFrequency'],
+        ['monitoredForHighBP'],
+        ['autoimmuneConditions'],
+        ['currentMedications'],
+        ['medicalTeamConcerns'],
+        ['isCurrentlyPregnant'],
         [],
       ];
+
       fieldsToValidate = eligibilityCheckFields[eligibilityCheckStep] || [];
     }
     if (step === 5) {
@@ -180,6 +179,7 @@ export default function MultiStepForm() {
           'shippingPostalCode',
         ],
       ];
+
       fieldsToValidate = eligibilityFields[eligibilityStep] || [];
     }
     if (step === 6) fieldsToValidate = ['treatmentPlan'];
@@ -197,7 +197,7 @@ export default function MultiStepForm() {
       return;
     }
 
-    if (step === 4 && eligibilityCheckStep < 4) {
+    if (step === 4 && eligibilityCheckStep < 8) {
       setEligibilityCheckStep(prev => prev + 1);
       return;
     }
@@ -241,7 +241,7 @@ export default function MultiStepForm() {
     }
 
     if (step === 5) {
-      setEligibilityCheckStep(4);
+      setEligibilityCheckStep(8);
     }
 
     if (step === 6) {
@@ -263,16 +263,16 @@ export default function MultiStepForm() {
     if (!isValid) return;
 
     const data = form.getValues();
-    console.log('=======data========');
-    console.log(data);
+    console.log('click==========', data);
     router.push('/assessment/payment-success');
   };
 
   return (
     <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-[#FFFFFF] max-h-screen flex flex-col">
       <Form {...form}>
-        <form className="space-y-6">
-          <div className="flex-1 overflow-y-auto">
+        <form className="flex flex-col h-full">
+          <div className="flex-1 overflow-y-auto space-y-6">
+            {/* Dynamic header / progress bar logic */}
             {step <= TOTAL_STEPS && (
               <div className="mb-6">
                 <div className="flex justify-between text-xs text-muted-foreground mb-2">
@@ -329,6 +329,18 @@ export default function MultiStepForm() {
               <EligibilityCheckStepFour />
             )}
             {step === 4 && eligibilityCheckStep === 4 && (
+              <EligibilityCheckStepFive />
+            )}
+            {step === 4 && eligibilityCheckStep === 5 && (
+              <EligibilityCheckStepSix />
+            )}
+            {step === 4 && eligibilityCheckStep === 6 && (
+              <EligibilityCheckStepSeven />
+            )}
+            {step === 4 && eligibilityCheckStep === 7 && (
+              <EligibilityCheckStepEight />
+            )}
+            {step === 4 && eligibilityCheckStep === 8 && (
               <CommonEligibilityCheckStepOne />
             )}
             {step === 5 && eligibilityStep === 0 && <EligibilityStepOne />}
@@ -348,7 +360,7 @@ export default function MultiStepForm() {
                 <button
                   type="button"
                   onClick={prevStep}
-                  // disabled={step === 1}
+                  // disabled={step === 0}
                   className="px-6 py-3 border rounded-full text-sm font-medium hover:bg-gray-50 disabled:opacity-30 cursor-pointer"
                 >
                   &lt; Back
@@ -362,7 +374,7 @@ export default function MultiStepForm() {
                 </button>
               </div>
             ) : (
-              <div className="flex justify-between items-center w-full ">
+              <div className="flex justify-between items-center w-full">
                 <button
                   type="button"
                   onClick={prevStep}

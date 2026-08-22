@@ -1,4 +1,4 @@
-import Assessment from "@/components/Assessment/Assessment";
+import Assessment from "@/containers/Assessment/Assessment";
 import React from "react";
 
 export default function AssessmentPage() {

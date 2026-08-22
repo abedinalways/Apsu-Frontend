@@ -59,7 +59,7 @@ export function InfoSidebar({ sections }: TermsSidebarProps) {
   };
 
   return (
-    <aside className="shrink-0 flex-col gap-6 sm:gap-8 mt-8 sm:mt-10 md:mt-0 lg:flex lg:py-12 w-full font-[work_sans] shadow rounded-[16px] bg-white border border-[#cddcd3] p-8">
+    <aside className="shrink-0 flex-col gap-6 sm:gap-8 mt-8 sm:mt-10 md:mt-0 lg:flex lg:py-12 w-full font-[work_sans] shadow rounded-[16px] bg-white border border-gray-50 p-8">
       <div className="flex flex-col gap-3">
         <span className="text-lg sm:text-xl md:text-2xl font-semibold uppercase tracking-wide text-[#111]">
           All Treatment
@@ -71,7 +71,7 @@ export function InfoSidebar({ sections }: TermsSidebarProps) {
               <button
                 key={section.id}
                 onClick={() => handleLinkClick(section.id)}
-                className={`rounded-md px-2 py-1.5 text-[16px] text-start sm:py-1 transition-colors font-medium ${isActive ? 'text-[color-greenColor]' : 'text-[#6c6c6c]'} hover:bg-gray-50`}
+                className={`rounded-md px-2 py-1.5 text-[16px] text-start sm:py-1 transition-colors font-medium ${isActive ? 'text-greenColor' : 'text-grayColor1'} hover:bg-gray-50`}
               >
                 {section.serial}. {section.sidebarTitle || section.title}
               </button>

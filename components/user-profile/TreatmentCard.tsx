@@ -82,7 +82,7 @@ export default function TreatmentCard({ data }: TreatmentCardProps) {
         </div>
         <div className="w-full h-2 bg-[#EAF2EC] rounded-full overflow-hidden">
           <div
-            className="h-full bg-[color-greenColor] rounded-full transition-all duration-500"
+            className="h-full bg-primary rounded-full transition-all duration-500"
             style={{ width: `${data.progressPercentage}%` }}
           />
         </div>

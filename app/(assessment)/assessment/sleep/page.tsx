@@ -1,4 +1,4 @@
-import MultiStepForm from "@/components/Assessment/Sleep/MultiStepForm";
+import MultiStepForm from "@/containers/Assessment/Sleep/MultiStepForm";
 import React from "react";
 
 export default function SleepPage() {

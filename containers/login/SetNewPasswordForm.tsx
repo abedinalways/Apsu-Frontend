@@ -92,7 +92,7 @@ export default function SetNewPasswordForm({
                       id="new-password"
                       type={showPass ? 'text' : 'password'}
                       placeholder="At least 8 characters"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-primary placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
                     />
                   </FormControl>
                   <button

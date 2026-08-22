@@ -5,18 +5,18 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { ProfileService, type Treatment } from '@/lib/services/profile.service';
-import EmptyTabState from './EmptyTabState';
+import EmptyTabState from '@/components/user-profile/EmptyTabState';
 import EditProfileModal from './EditProfileModal';
-import EditIcon from '../icons/EditIcon';
-import MessageIcon from '../icons/MessageIcon';
-import CallIcon from '../icons/CallIcon';
-import LocationIcon from '../icons/LocationIcon';
-import VideoCallIcon from '../icons/VideoCallIcon';
-import TreatmentCard from './TreatmentCard';
-import NotApprovedTreatment from './NotApprovedTreatment';
-import MessageTabContainer from './MessageTabContainer';
-import OrderDetailsTab from './OrderDetailsTab';
-import PrescriptionsTab from './PrescriptionsTab';
+import EditIcon from '@/components/icons/EditIcon';
+import MessageIcon from '@/components/icons/MessageIcon';
+import CallIcon from '@/components/icons/CallIcon';
+import LocationIcon from '@/components/icons/LocationIcon';
+import VideoCallIcon from '@/components/icons/VideoCallIcon';
+import TreatmentCard from '@/components/user-profile/TreatmentCard';
+import NotApprovedTreatment from '@/components/user-profile/NotApprovedTreatment';
+import MessageTabContainer from '@/components/user-profile/MessageTabContainer';
+import OrderDetailsTab from '@/components/user-profile/OrderDetailsTab';
+import PrescriptionsTab from '@/components/user-profile/PrescriptionsTab';
 import { MessagingProvider } from '@/contexts/MessagingContext';
 
 const TABS = [
@@ -174,7 +174,7 @@ export default function ProfileClient() {
       </div>
 
       <div className="bg-white border border-[#EBEAE4] rounded-[16px] p-6 max-w-md w-full space-y-4 mt-12">
-        <p className="text-sm md:text-[16px] font-normal tracking-wider text-[color-greenColor] uppercase">
+        <p className="text-sm md:text-[16px] font-normal tracking-wider text-primary uppercase">
           ACTIVE TRAETMENT
         </p>
         <div className="flex flex-col  gap-4">
@@ -183,7 +183,7 @@ export default function ProfileClient() {
               {activeTreatment.title}
             </h3>
           </div>
-          <h4 className="text-sm md:text-[16px] font-normal tracking-wider text-[color-greenColor] ">
+          <h4 className="text-sm md:text-[16px] font-normal tracking-wider text-primary ">
             {activeTreatment.planDuration}
           </h4>
         </div>

@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import ProfileClient from "@/components/user-profile/ProfileClient";
+import ProfileClient from "@/containers/user-profile/ProfileClient";
 
 
 export const metadata = {

@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar';
+import Navbar from '@/containers/Navbar';
 
 export default function ProfileLayout({
   children,

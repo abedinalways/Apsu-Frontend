@@ -143,11 +143,11 @@ export default function PrescriptionDetailsModal({
                     <h3 className="text-base md:text-lg font-medium text-[#111]">
                       {data.treatmentName}
                     </h3>
-                    <span className="rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-2.5 py-0.5 text-xs font-medium text-[color-greenColor]">
+                    <span className="rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-2.5 py-0.5 text-xs font-medium text-primary">
                       {data.status}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-[color-greenColor] flex items-start">
+                  <p className="mt-1 text-sm text-primary flex items-start">
                     {data.treatmentSub}
                   </p>
                   <p className="mt-3 text-xs md:text-sm md:leading-relaxed text-[#111] text-justify">

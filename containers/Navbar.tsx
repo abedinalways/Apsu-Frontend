@@ -7,13 +7,13 @@ import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import { FaRegCircleXmark } from 'react-icons/fa6';
 import { CircleX, ChevronDown, LogOut, User } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { toast } from 'sonner';
-import UserIcon from './icons/UserIcon';
+import UserIcon from '@/components/icons/UserIcon';
 
 const menuItems = [
   { name: 'Weight Loss', path: '/weight-loss' },
@@ -76,9 +76,9 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 className={cn(
-                  'relative text-lg transition-colors duration-300 hover:text-[color-greenColor]',
+                  'relative text-lg transition-colors duration-300 hover:text-primary',
                   pathname === item.path
-                    ? 'text-[color-greenColor] font-medium'
+                    ? 'text-primary font-medium'
                     : 'text-black',
                 )}
               >
@@ -191,9 +191,9 @@ export default function Navbar() {
                   key={item.path}
                   href={item.path}
                   className={cn(
-                    'transition-colors duration-300 hover:text-[color-greenColor]',
+                    'transition-colors duration-300 hover:text-primary',
                     pathname === item.path
-                      ? 'text-[color-greenColor] font-medium'
+                      ? 'text-primary font-medium'
                       : 'text-secondary',
                   )}
                   onClick={() => setMenuOpen(false)}

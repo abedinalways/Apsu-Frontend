@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/containers/Navbar';
 import SmoothScroll from '@/lib/animation/SmoothScroll';
 
 import 'react-datepicker/dist/react-datepicker.css';

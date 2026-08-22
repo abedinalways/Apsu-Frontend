@@ -14,17 +14,17 @@ import TreatmentPlanStepOne from '@/components/Assessment/form/TreatmentPlanStep
 import ScheduleConsultationStepOne from '@/components/Assessment/form/ScheduleConsultationStepOne';
 import CheckoutPaymentStepOne from '@/components/Assessment/form/CheckoutPaymentStepOne';
 import HealthHistoryStepFour from '@/components/Assessment/form/HealthHistoryStepFour';
-import EligibilityStepOne from '../form/EligibilityStepOne';
-import EligibilityStepTwo from '../form/EligibilityStepTwo';
-import EligibilityStepThree from '../form/EligibilityStepThree';
-import EligibilityStepFour from '../form/EligibilityStepFour';
-import EligibilityStepFive from '../form/EligibilityStepFive';
-import EligibilityCheckStepOne from './EligibilityCheckStepOne';
-import CommonEligibilityCheckStepOne from '../form/CommonEligibilityCheckStepOne';
-import GoalLifestyleActivityStepOne from './GoalLifestyleActivityStepOne';
-import GoalLifestyleActivityStepTwo from './GoalLifestyleActivityStepTwo';
-import GoalLifestyleActivityStepThree from './GoalLifestyleActivityStepThree';
-import GoalLifestyleActivityStepFour from './GoalLifestyleActivityStepFour';
+import EligibilityStepOne from '@/components/Assessment/form/EligibilityStepOne';
+import EligibilityStepTwo from '@/components/Assessment/form/EligibilityStepTwo';
+import EligibilityStepThree from '@/components/Assessment/form/EligibilityStepThree';
+import EligibilityStepFour from '@/components/Assessment/form/EligibilityStepFour';
+import EligibilityStepFive from '@/components/Assessment/form/EligibilityStepFive';
+import EligibilityCheckStepOne from '@/components/Assessment/WeightLoss/EligibilityCheckStepOne';
+import CommonEligibilityCheckStepOne from '@/components/Assessment/form/CommonEligibilityCheckStepOne';
+import GoalLifestyleActivityStepOne from '@/components/Assessment/WeightLoss/GoalLifestyleActivityStepOne';
+import GoalLifestyleActivityStepTwo from '@/components/Assessment/WeightLoss/GoalLifestyleActivityStepTwo';
+import GoalLifestyleActivityStepThree from '@/components/Assessment/WeightLoss/GoalLifestyleActivityStepThree';
+import GoalLifestyleActivityStepFour from '@/components/Assessment/WeightLoss/GoalLifestyleActivityStepFour';
 
 const TOTAL_STEPS = 7;
 

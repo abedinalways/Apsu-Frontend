@@ -5,7 +5,7 @@ import React, { Suspense } from "react";
 function AssessmentLayout({ children }: { children: React.ReactNode }) {
   return (
     <Suspense fallback={<Loader />}>
-      <div className="bg-[#FFFFFF]">
+      <div className="bg-white">
         <AssessmentNavbar />
         {children}
       </div>

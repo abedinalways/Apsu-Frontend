@@ -8,14 +8,14 @@ import { Form } from '@/components/ui/form';
 
 
 import { useState } from 'react';
-import { ProfileFormValues } from '../profile/type';
+import { ProfileFormValues } from '@/components/profile/type';
 import { profileSchema } from '@/lib/validations/profile.schema';
-import { profileDefaultValues } from '../profile/defaultValues';
-import PersonalInformation from '../profile/PersonalInformation';
-import ShippingAddress from '../profile/ShippingAddress';
-import HealthcarePreferences from '../profile/HealthcarePreferences';
-import AccountSecurity from '../profile/AccountSecurity';
-import ModalFooter from '../profile/ModalFooter';
+import { profileDefaultValues } from '@/components/profile/defaultValues';
+import PersonalInformation from '@/components/profile/PersonalInformation';
+import ShippingAddress from '@/components/profile/ShippingAddress';
+import HealthcarePreferences from '@/components/profile/HealthcarePreferences';
+import AccountSecurity from '@/components/profile/AccountSecurity';
+import ModalFooter from '@/components/profile/ModalFooter';
 
 interface EditProfileModalProps {
   isOpen: boolean;

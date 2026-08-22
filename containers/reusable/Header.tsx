@@ -12,8 +12,8 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+} from "@/components/ui/dropdown-menu";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Search from "./Search";
 
 interface HeaderProps {
