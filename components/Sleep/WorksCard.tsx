@@ -74,7 +74,7 @@ export default function WorksCard() {
           />
 
           <div className="absolute bottom-5 right-5 md:bottom-6 md:right-6">
-            <button className="bg-[#102B1C] hover:bg-[#153e2a] transition-colors duration-300 text-white text-sm md:text-base font-medium py-2.5 pl-5 pr-2.5 rounded-full flex items-center gap-3 shadow-xl">
+            <button className="bg-brand hover:bg-[#153e2a] transition-colors duration-300 text-white text-sm md:text-base font-medium py-2.5 pl-5 pr-2.5 rounded-full flex items-center gap-3 shadow-xl">
               Start your intake
               <div className="bg-white text-[#0f2e1f] rounded-full w-7 h-7 flex items-center justify-center">
                 <ArrowRight className="w-4 h-4" strokeWidth={3} />
@@ -89,7 +89,7 @@ export default function WorksCard() {
           <div className="absolute left-0 top-6 bottom-6 w-px bg-borderColor hidden md:block">
             {/* Active Highlight Line moving based on active index */}
             <div
-              className="absolute w-0.5 left-[-0.5px] bg-[#102B1C] transition-all duration-300 rounded-full"
+              className="absolute w-0.5 left-[-0.5px] bg-brand transition-all duration-300 rounded-full"
               style={{
                 // Splits the total track space dynamically into 5 segment intervals
                 height: "20%",

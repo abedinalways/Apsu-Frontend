@@ -55,15 +55,15 @@ export default function GoalLifestyleActivityStepOne() {
                       }
                       className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all ${
                         isSelected
-                          ? 'border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm'
-                          : 'border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]'
+                          ? 'border-border-light bg-border-light/10 shadow-sm'
+                          : 'border-gray-100 bg-bg-surface/50 hover:bg-bg-surface'
                       }`}
                     >
                       {/* Custom styled outer circular radio control ring */}
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                            ? 'border-[#AFC1B6] bg-[#AFC1B6] text-white'
+                            ? 'border-border-light bg-border-light text-white'
                             : 'border-gray-400 bg-white'
                         }`}
                       >

@@ -28,7 +28,7 @@ export default function QuickSummary({ summary }: Props) {
           text-[24px]
           font-medium
           leading-tight
-          text-[#292B2A]
+          text-text-primary
         "
       >
         Quick Summary
@@ -56,7 +56,7 @@ export default function QuickSummary({ summary }: Props) {
 
                     ${
                       isActive
-                        ? ' text-[#008C5E]'
+                        ? ' text-success'
                         : 'text-[#606060] hover:bg-[#F8F8F8]'
                     }
                   `}

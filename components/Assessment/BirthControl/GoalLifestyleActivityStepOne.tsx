@@ -28,10 +28,10 @@ export default function GoalLifestyleActivityStepOne() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984078010 (2).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           What are you looking for from your birth control?
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
+        <p className="text-[14px] text-text-primary mt-1.5">
           Please select all that apply.
         </p>
       </div>
@@ -71,9 +71,9 @@ export default function GoalLifestyleActivityStepOne() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center space-x-3.5 w-full p-4 rounded-xl border transition-all cursor-pointer select-none bg-[background] h-14! text-[16px] text-[#6c6c6c]',
+                          'flex items-center space-x-3.5 w-full p-4 rounded-xl border transition-all cursor-pointer select-none bg-[background] h-14! text-[16px] text-text-secondary',
                           isChecked
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-border-light border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >

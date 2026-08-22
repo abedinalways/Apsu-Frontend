@@ -28,7 +28,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
       <div className="p-4 rounded-2xl bg-white md:h-[250px]">
         {/* Top */}
         <div className="mb-3 flex items-center justify-between gap-3">
-          <span className="text-[16px] font-medium uppercase tracking-[0.22em] text-[#008C5E]">
+          <span className="text-[16px] font-medium uppercase tracking-[0.22em] text-success">
             {category}
           </span>
 
@@ -38,7 +38,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
         </div>
 
         {/* Title */}
-        <h3 className="line-clamp-2 text-[18px] font-medium leading-[140%] text-[#292B2A]">
+        <h3 className="line-clamp-2 text-[18px] font-medium leading-[140%] text-text-primary">
           {title}
         </h3>
 
@@ -50,7 +50,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
         {/* Footer */}
         <Link
           href={href}
-          className="mt-5 inline-flex items-center gap-2 font-medium text-[#008C5E] transition-all hover:gap-3"
+          className="mt-5 inline-flex items-center gap-2 font-medium text-success transition-all hover:gap-3"
         >
           Read more
           <span className="flex h-5 w-5 items-center justify-center rounded-full border border-current transition-all duration-300 group-hover/readmore:translate-x-1">

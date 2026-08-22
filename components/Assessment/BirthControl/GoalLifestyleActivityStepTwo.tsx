@@ -28,7 +28,7 @@ export default function GoalLifestyleActivityStepTwo() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984077999 (4).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           Do you have any preferred method?
         </h2>
       </div>
@@ -51,9 +51,9 @@ export default function GoalLifestyleActivityStepTwo() {
                     <label
                       key={option.id}
                       className={cn(
-                        'flex items-center space-x-4 w-full p-4 rounded-xl border transition-all cursor-pointer select-none bg-[background] h-14! text-[16px] text-[#6c6c6c]',
+                        'flex items-center space-x-4 w-full p-4 rounded-xl border transition-all cursor-pointer select-none bg-[background] h-14! text-[16px] text-text-secondary',
                         isSelected
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-border-light border-2 text-secondary-bg'
                           : 'border-gray-200',
                       )}
                     >

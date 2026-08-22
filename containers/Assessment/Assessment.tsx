@@ -42,9 +42,9 @@ export default function Assessment() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-[#FFFFFF] max-h-screen flex flex-col">
+    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-white max-h-screen flex flex-col">
       <div className="flex-1 overflow-y-auto">
-        <h2 className="text-[20px] font-semibold text-[#102b1c] mb-6">
+        <h2 className="text-[20px] font-semibold text-brand mb-6">
           What would you like help with today?
         </h2>
 
@@ -58,7 +58,7 @@ export default function Assessment() {
                 onClick={() => setSelected(option.id)}
                 className={`flex items-center justify-between p-4 rounded-xl border text-left transition-all cursor-pointer ${
                   isSelected
-                    ? 'border-[#ECF9F1] bg-[#ECF9F1]'
+                    ? 'border-bg-subtle bg-bg-subtle'
                     : 'border-gray-100 bg-[background] hover:bg-[background]/50'
                 }`}
               >
@@ -75,7 +75,7 @@ export default function Assessment() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF]">
+      <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-white">
         <div className="flex justify-end">
           <button
             type="button"

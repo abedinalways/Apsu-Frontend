@@ -17,7 +17,7 @@ export default function BlogQuoteCard() {
         </div>
 
         {/* Title */}
-        <h3 className="mt-4 text-[20px] md:text-[28px] leading-[116%] font-medium text-[#292B2A]">
+        <h3 className="mt-4 text-[20px] md:text-[28px] leading-[116%] font-medium text-text-primary">
           Why Healthcare Should Speak Your Language
         </h3>
 

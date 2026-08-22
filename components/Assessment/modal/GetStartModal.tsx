@@ -38,13 +38,13 @@ export default function GetStartModal({
           </div>
 
           {/* Modal Heading Title */}
-          <h2 className="text-[24px] font-bold text-[#102b1c] tracking-tight leading-tight mb-4">
+          <h2 className="text-[24px] font-bold text-brand tracking-tight leading-tight mb-4">
             Let&apos;s find the right plan for you
           </h2>
 
           {/* Content Section divider separator */}
           <div className="border-t border-gray-100/80 pt-4 mb-4">
-            <h3 className="text-[20px] font-semibold text-[#111] tracking-wide mb-3">
+            <h3 className="text-[20px] font-semibold text-ink tracking-wide mb-3">
               How It Works
             </h3>
 
@@ -60,7 +60,7 @@ export default function GetStartModal({
                   key={idx}
                   className="flex items-center gap-2.5 text-gray-700 text-sm font-medium"
                 >
-                  <CheckCircle2 className="h-5 w-5 fill-[#0F5132] text-white shrink-0" />
+                  <CheckCircle2 className="h-5 w-5 fill-success text-white shrink-0" />
                   <span className="text-[18px]">{text}</span>
                 </li>
               ))}
@@ -68,8 +68,8 @@ export default function GetStartModal({
           </div>
 
           {/* Free Plan Cost Highlight Box Section */}
-          <div className="bg-[#ecf9f1] border border-[#EBF7F0] p-4 rounded-xl mb-6">
-            <p className="text-[14px] text-[#111] font-medium leading-relaxed">
+          <div className="bg-bg-subtle border border-[#EBF7F0] p-4 rounded-xl mb-6">
+            <p className="text-[14px] text-ink font-medium leading-relaxed">
               Our physician and shipping cost both are $0. No membership
               required.
             </p>
@@ -79,7 +79,7 @@ export default function GetStartModal({
           <button
             type="button"
             onClick={onGetStarted}
-            className="w-full py-3.5 bg-[#102b1c] hover:bg-[#102b1c]/80 text-[#fff] font-medium text-[16px] rounded-full tracking-wide shadow-sm active:scale-[0.99] transition-all cursor-pointer"
+            className="w-full py-3.5 bg-brand hover:bg-brand/80 text-white font-medium text-[16px] rounded-full tracking-wide shadow-sm active:scale-[0.99] transition-all cursor-pointer"
           >
             Get started
           </button>

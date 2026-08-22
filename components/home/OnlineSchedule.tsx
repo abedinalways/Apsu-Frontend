@@ -51,7 +51,7 @@ const ScheduleSlider = () => {
   ];
 
   return (
-    <div className="bg-[#FAF9F5] py-6 md:py-8 font-sans text-primaryColor">
+    <div className="bg-bg-surface py-6 md:py-8 font-sans text-primaryColor">
       <div className="container ">
         {/* Header Section with Navigation Buttons */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -109,7 +109,7 @@ const ScheduleSlider = () => {
 
                 <div className={`absolute top-0 w-full h-full  left-0  `}>
                   <h3
-                    className={`relative ${slide?.isDarkText && "bg-linear-to-b  from-[#102B1C] to-transparent pb-8 text-white"} text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight p-4 lg:px-10 lg:p-6 leading-[116%]  z-10 `}
+                    className={`relative ${slide?.isDarkText && "bg-linear-to-b  from-brand to-transparent pb-8 text-white"} text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight p-4 lg:px-10 lg:p-6 leading-[116%]  z-10 `}
                   >
                     {slide.title}
                   </h3>

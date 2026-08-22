@@ -20,10 +20,10 @@ export default function HealthHistoryStepOne() {
     <div className="space-y-6">
       {/* Title & Subtitle */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c] tracking-tight">
+        <h2 className="text-[20px] font-semibold text-brand tracking-tight">
           We've got you! What's your starting point?
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
+        <p className="text-[14px] text-text-primary mt-1.5">
           This will help to calculate your BMI to check your eligibility.
         </p>
       </div>
@@ -41,7 +41,7 @@ export default function HealthHistoryStepOne() {
                   onClick={() => field.onChange('imperial')}
                   className={`px-4 py-1.5 text-[12px] font-semibold rounded-md border transition-all cursor-pointer ${
                     field.value === 'imperial'
-                      ? 'border-[#102b1c] bg-[#102b1c] text-white'
+                      ? 'border-brand bg-brand text-white'
                       : 'border-gray-100 text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -52,7 +52,7 @@ export default function HealthHistoryStepOne() {
                   onClick={() => field.onChange('metric')}
                   className={`px-4 py-1.5 text-xs font-semibold rounded-md border transition-all cursor-pointer ${
                     field.value === 'metric'
-                      ? 'border-[#102b1c] bg-[#102b1c] text-white'
+                      ? 'border-brand bg-brand text-white'
                       : 'border-gray-100 text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -74,7 +74,7 @@ export default function HealthHistoryStepOne() {
                 name="heightFt"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-[14px] text-[#111]">
+                    <FormLabel className="text-[14px] text-ink">
                       Your Height <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
@@ -82,7 +82,7 @@ export default function HealthHistoryStepOne() {
                         <Input
                           type="number"
                           {...field}
-                          className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-[background] h-14! text-[16px] text-text-secondary focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                           <div className="flex gap-1">
@@ -104,7 +104,7 @@ export default function HealthHistoryStepOne() {
                 name="heightIn"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-[14px] text-[#111]">
+                    <FormLabel className="text-[14px] text-ink">
                       Height (in) <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
@@ -112,7 +112,7 @@ export default function HealthHistoryStepOne() {
                         <Input
                           type="number"
                           {...field}
-                          className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="bg-[background] h-14! text-[16px] text-text-secondary focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                           <div className="flex gap-1">
@@ -152,7 +152,7 @@ export default function HealthHistoryStepOne() {
             name="heightCm"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[14px] text-[#111]">
+                <FormLabel className="text-[14px] text-ink">
                   Your Height <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
@@ -160,7 +160,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[background] h-14! text-[16px] text-text-secondary focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
@@ -188,7 +188,7 @@ export default function HealthHistoryStepOne() {
             name="weightLbs"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[14px] text-[#111]">
+                <FormLabel className="text-[14px] text-ink">
                   Your Current Weight <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
@@ -196,7 +196,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[background] h-14! text-[16px] text-text-secondary focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">
@@ -220,7 +220,7 @@ export default function HealthHistoryStepOne() {
             name="weightKgs"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[14px] text-[#111]">
+                <FormLabel className="text-[14px] text-ink">
                   Your Current Weight <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
@@ -228,7 +228,7 @@ export default function HealthHistoryStepOne() {
                     <Input
                       type="number"
                       {...field}
-                      className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="bg-[background] h-14! text-[16px] text-text-secondary focus-visible:ring-[1px] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <div className="absolute right-3 flex items-center gap-1.5 pointer-events-none text-xs font-medium text-gray-600">
                       <div className="flex gap-1">

@@ -104,7 +104,7 @@ export default function EnterCodeForm({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-secondary-text hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-secondary-text hover:bg-brand-hover text-white font-medium h-12 rounded-full transition-colors duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? 'Verifying...' : 'Verify'}
         </button>

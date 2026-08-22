@@ -37,14 +37,14 @@ export default function EligibilityCheckStepFour() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984078010 (1).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           Please confirm the followings:
         </h2>
       </div>
 
       {/* Question 1: Do you currently take any sleep medications? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
+        <h3 className="font-semibold text-[14px] text-ink">
           Do you currently take any sleep medications?
         </h3>
         <FormField
@@ -66,7 +66,7 @@ export default function EligibilityCheckStepFour() {
                         className={cn(
                           'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[background] h-14!',
                           isSelected
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-border-light border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >
@@ -88,7 +88,7 @@ export default function EligibilityCheckStepFour() {
 
       {/* Question 2: Do you snore heavily or stop breathing during sleep? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
+        <h3 className="font-semibold text-[14px] text-ink">
           Do you snore heavily or stop breathing during sleep?
         </h3>
         <FormField
@@ -110,7 +110,7 @@ export default function EligibilityCheckStepFour() {
                         className={cn(
                           'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[background] h-14!',
                           isSelected
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-border-light border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >
@@ -132,7 +132,7 @@ export default function EligibilityCheckStepFour() {
 
       {/* Question 3: Are you pregnant or breastfeeding? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
+        <h3 className="font-semibold text-[14px] text-ink">
           Are you pregnant or breastfeeding?
         </h3>
         <FormField
@@ -154,7 +154,7 @@ export default function EligibilityCheckStepFour() {
                         className={cn(
                           'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[background] h-14!',
                           isSelected
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-border-light border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >

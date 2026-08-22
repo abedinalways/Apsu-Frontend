@@ -73,7 +73,7 @@ const WorkList = () => {
               className="medicine-card bg-white rounded-2xl px-4 md:px-6 py-6 md:py-10 shadow-[0_4px_20px_rgba(0,0,0,0.02)] h-full "
             >
               {/* Top Right Number */}
-              <div className=" text-[52px] lg:text-[80px] leading-[100%] text-end  text-[#21AC8847]">
+              <div className=" text-[52px] lg:text-[80px] leading-[100%] text-end  text-success">
                 {card.number}
               </div>
 
@@ -82,7 +82,7 @@ const WorkList = () => {
                 <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6 md:mb-8">
                   {card.title}
                 </h3>
-                <p className="text-[#585E5A] text-sm md:text-base leading-relaxed mb-6 max-w-sm">
+                <p className="text-text-muted text-sm md:text-base leading-relaxed mb-6 max-w-sm">
                   {card.description}
                 </p>
 

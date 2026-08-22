@@ -71,7 +71,7 @@ export default function QuickCheckCard({
     <div className="w-full py-12 md:py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14">
         {/* Left Column: Often a Good Fit */}
-        <div className="space-y-6 md:space-y-8 bg-[#FFFFFF] rounded-2xl p-5 lg:p-8">
+        <div className="space-y-6 md:space-y-8 bg-white rounded-2xl p-5 lg:p-8">
           <h3 className="text-2xl md:text-3xl font-bold text-secondary-bg tracking-tight">
             {goodFitTitle}
           </h3>
@@ -80,7 +80,7 @@ export default function QuickCheckCard({
             {goodFitItems.map(item => (
               <li key={item.id} className="flex items-start gap-4 group">
                 {/* Custom circular green check icon based on the reference image */}
-                <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0F5132] text-white shadow-sm transition-transform group-hover:scale-105 duration-200">
+                <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-success text-white shadow-sm transition-transform group-hover:scale-105 duration-200">
                   <Check className="h-3.5 w-3.5 stroke-[3.5]" />
                 </div>
                 <span className="text-base md:text-lg text-gray-700 font-normal leading-relaxed tracking-tight">
@@ -92,7 +92,7 @@ export default function QuickCheckCard({
         </div>
 
         {/* Right Column: Needs a Closer Look */}
-        <div className="space-y-6 md:space-y-8 bg-[#FFFFFF] rounded-2xl p-5 lg:p-8">
+        <div className="space-y-6 md:space-y-8 bg-white rounded-2xl p-5 lg:p-8">
           <h3 className="text-2xl md:text-3xl font-bold text-secondary-bg tracking-tight">
             {closerLookTitle}
           </h3>

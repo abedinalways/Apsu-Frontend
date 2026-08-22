@@ -64,7 +64,7 @@ export default function EligibilityStepFour() {
       case 'jpeg':
       case 'pdf':
       case 'png':
-        return 'bg-[#e5252a] text-white';
+        return 'bg-error text-white';
       case 'doc':
       case 'docx':
         return 'bg-[#1868db] text-white';
@@ -77,10 +77,10 @@ export default function EligibilityStepFour() {
     <div className="space-y-6">
       {/* Title & Subtitle */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c] tracking-tight">
+        <h2 className="text-[20px] font-semibold text-brand tracking-tight">
           Identity Verification
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5 leading-relaxed">
+        <p className="text-[14px] text-text-primary mt-1.5 leading-relaxed">
           To verify your identity, please upload a valid Driver's License or
           government-issued photo ID.
         </p>
@@ -96,7 +96,7 @@ export default function EligibilityStepFour() {
               <div
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
-                className="bg-[background] border border-[#dce3de] rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
+                className="bg-[background] border border-border-light rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
               >
                 <input
                   type="file"
@@ -108,17 +108,17 @@ export default function EligibilityStepFour() {
                 />
                 <div
                   onClick={() => fileInputRef.current?.click()}
-                  className="h-12 w-12 rounded-full bg-[#dbe5de] flex items-center justify-center cursor-pointer hover:bg-[#cfded3] transition-colors"
+                  className="h-12 w-12 rounded-full bg-border-light flex items-center justify-center cursor-pointer hover:bg-border-light transition-colors"
                 >
-                  <Upload className="h-5 w-5 text-[#102b1c]" />
+                  <Upload className="h-5 w-5 text-brand" />
                 </div>
                 <div>
-                  <p className="text-[15px] font-medium text-[#102b1c]">
+                  <p className="text-[15px] font-medium text-brand">
                     Drag & Drop or{' '}
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="text-[#102b1c] underline font-semibold cursor-pointer"
+                      className="text-brand underline font-semibold cursor-pointer"
                     >
                       Browse
                     </button>
@@ -137,14 +137,14 @@ export default function EligibilityStepFour() {
       {/* Attachments List */}
       {attachments.length > 0 && (
         <div className="border border-gray-200/80 rounded-2xl p-5 space-y-3">
-          <h3 className="text-[16px] font-medium text-[#102b1c]">
+          <h3 className="text-[16px] font-medium text-brand">
             Attachments
           </h3>
           <div className="space-y-2.5">
             {attachments.map((file: any, index: number) => (
               <div
                 key={file.id || index}
-                className="bg-[background] border border-[#dce3de] rounded-xl p-3.5 flex items-center justify-between"
+                className="bg-[background] border border-border-light rounded-xl p-3.5 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
                   {/* File Type Icon Badge */}
@@ -157,7 +157,7 @@ export default function EligibilityStepFour() {
                     <span>{file.type}</span>
                   </div>
                   <div>
-                    <p className="text-[14px] font-medium text-[#102b1c] leading-tight">
+                    <p className="text-[14px] font-medium text-brand leading-tight">
                       {file.name}
                     </p>
                     <p className="text-[12px] text-gray-500 mt-0.5">

@@ -27,7 +27,7 @@ export default function EligibilityCheckStepOne() {
     <div className="space-y-6">
       {/* Question Header matching Screenshot 2026-07-05 093221.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           What are your current condition?
         </h2>
       </div>
@@ -54,11 +54,11 @@ export default function EligibilityCheckStepOne() {
                       }
                       className={`w-full p-4 text-left  rounded-2xl border transition-all h-14! bg-[background] cursor-pointer  ${
                         isSelected
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-border-light border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
-                      <span className="text-[14px] text-[#111]">
+                      <span className="text-[14px] text-ink">
                         {option.label}
                       </span>
                     </button>

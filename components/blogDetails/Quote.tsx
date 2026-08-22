@@ -17,7 +17,7 @@ export default function BlogQuote({ content }: Props) {
         md:p-10
       "
     >
-      <Quote className="text-[#008C5E]" size={40} />
+      <Quote className="text-success" size={40} />
 
       <p
         className="
@@ -25,7 +25,7 @@ export default function BlogQuote({ content }: Props) {
           text-[28px]
           leading-[150%]
           font-medium
-          text-[#17332A]
+          text-brand
         "
       >
         {content}

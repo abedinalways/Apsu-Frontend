@@ -96,10 +96,10 @@ export default function ScheduleConsultationStepOne() {
     <div className="space-y-6">
       {/* Step Header Block */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           Schedule Your Consultation
         </h2>
-        <p className="text-[14px] text-[#111] mt-1.5">
+        <p className="text-[14px] text-ink mt-1.5">
           Choose a convenient date and time to meet with a licensed physician.
         </p>
       </div>
@@ -107,7 +107,7 @@ export default function ScheduleConsultationStepOne() {
       <div className="grid grid-cols-1 md:grid-cols-[60%_1fr] gap-6 items-start">
         {/* Left Grid Layout Element: Calendar Panel */}
         <div className="space-y-3">
-          <label className="text-[14px] text-[#111] tracking-wide">
+          <label className="text-[14px] text-ink tracking-wide">
             Select date
           </label>
           <FormField
@@ -122,7 +122,7 @@ export default function ScheduleConsultationStepOne() {
                       <button
                         type="button"
                         onClick={handlePrevMonth}
-                        className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] flex items-center justify-center hover:bg-gray-50 transition-colors"
+                        className="h-10 w-10 rounded-full border border-gray-100 bg-bg-surface flex items-center justify-center hover:bg-gray-50 transition-colors"
                       >
                         <ChevronLeft className="h-4 w-4 text-gray-600" />
                       </button>
@@ -132,7 +132,7 @@ export default function ScheduleConsultationStepOne() {
                       <button
                         type="button"
                         onClick={handleNextMonth}
-                        className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] hover:bg-gray-50 flex items-center justify-center hover:opacity-90 transition-opacity"
+                        className="h-10 w-10 rounded-full border border-gray-100 bg-bg-surface hover:bg-gray-50 flex items-center justify-center hover:opacity-90 transition-opacity"
                       >
                         <ChevronRight className="h-4 w-4 text-gray-600" />
                       </button>
@@ -167,7 +167,7 @@ export default function ScheduleConsultationStepOne() {
                               isSelected
                                 ? 'bg-gray-800 text-white font-bold scale-105 shadow-sm'
                                 : isToday
-                                  ? 'bg-[#AFC1B6] text-gray-900 hover:bg-[#AFC1B6]'
+                                  ? 'bg-border-light text-gray-900 hover:bg-border-light'
                                   : 'text-gray-700 hover:bg-gray-50'
                             }`}
                           >
@@ -186,7 +186,7 @@ export default function ScheduleConsultationStepOne() {
 
         {/* Right Layout Grid: Time List Picker */}
         <div className="space-y-3">
-          <label className="text-[14px] text-[#111] tracking-wide">
+          <label className="text-[14px] text-ink tracking-wide">
             Select time
           </label>
           <FormField
@@ -228,7 +228,7 @@ export default function ScheduleConsultationStepOne() {
 
       {/* Dynamic Selector Dropdown for Timezone handling */}
       <div className="space-y-2 pt-2">
-        <label className="text-[14px] text-[#111] tracking-wide">
+        <label className="text-[14px] text-ink tracking-wide">
           Time zone
         </label>
         <FormField
@@ -254,7 +254,7 @@ export default function ScheduleConsultationStepOne() {
                       onClick={() =>
                         setValue('timezone', tz, { shouldValidate: true })
                       }
-                      className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-secondary-bg"
+                      className="text-xs cursor-pointer focus:bg-border-light/10 focus:text-secondary-bg"
                     >
                       {tz}
                     </DropdownMenuItem>

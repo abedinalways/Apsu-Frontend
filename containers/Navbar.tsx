@@ -122,7 +122,7 @@ export default function Navbar() {
                       <Link
                         href="/profile"
                         onClick={() => setProfileDropdownOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 hover:bg-[#ecf9f1] transition-colors"
+                        className="flex items-center gap-3 px-4 py-3 hover:bg-bg-subtle transition-colors"
                       >
                         <span className="text-xs md:text-sm  font-normal text-gray-700">
                           My Account
@@ -130,9 +130,9 @@ export default function Navbar() {
                       </Link>
                       <button
                         onClick={handleLogout}
-                        className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[#ecf9f1] transition-colors text-left"
+                        className="w-full flex items-center gap-3 px-4 py-3 hover:bg-bg-subtle transition-colors text-left"
                       >
-                        <span className="text-xs md:text-sm font-normal text-[#3b3b3c]">
+                        <span className="text-xs md:text-sm font-normal text-text-primary">
                           Log Out
                         </span>
                       </button>
@@ -175,7 +175,7 @@ export default function Navbar() {
       >
         <div className="w-full absolute top-0 p-3 right-0 h-full bg-background md:max-w-[320px] md:rounded-l-2xl">
           <div className="border bg-white h-full rounded-2xl px-2 py-3 space-y-15">
-            <div className="flex w-full justify-between items-center pb-2 border-b-2 border-[#CDDCD3]">
+            <div className="flex w-full justify-between items-center pb-2 border-b-2 border-borderColor">
               <Image src="/logo.png" alt="apsu" height={32} width={87} />
               <button
                 aria-label="close-menu"

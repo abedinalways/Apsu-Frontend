@@ -165,7 +165,7 @@ const SuccessStories = () => {
                 {stories.map((item) => (
                   <SwiperSlide key={item.id}>
                     <div
-                      className="group medicine-card relative flex flex-col bg-bgColor shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl p-4 md:p-6 min-h-100  lg:min-h-132.5 justify-between overflow-hidden cursor-pointer transition-all duration-300 border border-[#F5F4EE]"
+                      className="group medicine-card relative flex flex-col bg-bgColor shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl p-4 md:p-6 min-h-100  lg:min-h-132.5 justify-between overflow-hidden cursor-pointer transition-all duration-300 border border-bg-bg-surface"
                       onMouseEnter={() => setActiveCard(item.id)}
                       onMouseLeave={() => setActiveCard(2)}
                       onClick={() =>

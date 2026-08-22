@@ -70,11 +70,11 @@ export default function EligibilityCheckStepSix() {
     <div className="space-y-6">
       {/* Step description headers matching Screenshot 2026-07-05 113111.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           Are you currently taking any medications every day, even if only for a
           short time? Please do not include birth control.
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
+        <p className="text-[14px] text-text-primary mt-1.5">
           To help us respond to your request quickly and accurately, please
           select all the medications you take - either regularly or as needed.
           This includes prescriptions, over-the-counter medications, vitamins,
@@ -103,7 +103,7 @@ export default function EligibilityCheckStepSix() {
                     onFocus={() => setShowSuggestions(true)}
                     placeholder="Search your medication name"
                     disabled={hasNoneSelected}
-                    className="pl-11 pr-4 py-2 rounded-2xl border-none text-sm w-full bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]"
+                    className="pl-11 pr-4 py-2 rounded-2xl border-none text-sm w-full bg-[background] h-14! text-[16px] text-text-secondary focus-visible:ring-[1px]"
                   />
 
                   {/* Dynamic suggestions drop list dropdown portal container */}
@@ -126,7 +126,7 @@ export default function EligibilityCheckStepSix() {
                           onClick={() =>
                             handleAddMedication(searchQuery.trim())
                           }
-                          className="w-full text-left px-4 py-3 text-xs font-semibold text-secondary-bg hover:bg-[#AFC1B6]/10 transition-colors"
+                          className="w-full text-left px-4 py-3 text-xs font-semibold text-secondary-bg hover:bg-border-light/10 transition-colors"
                         >
                           Add missing: &ldquo;{searchQuery}&rdquo;
                         </button>
@@ -163,9 +163,9 @@ export default function EligibilityCheckStepSix() {
                 <button
                   type="button"
                   onClick={handleClearAllMeds}
-                  className={`w-full py-4 text-center text-sm font-medium transition-all bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] ${
+                  className={`w-full py-4 text-center text-sm font-medium transition-all bg-[background] h-14! rounded-xl border text-[16px] text-text-secondary ${
                     hasNoneSelected
-                      ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                      ? 'border-border-light border-2 text-secondary-bg'
                       : 'border-gray-200'
                   }`}
                 >

@@ -9,8 +9,8 @@ export default function Paragraph({ content, emphasis }: ParagraphProps) {
     <p
       className={
         emphasis
-          ? 'text-[1.13rem] font-normal text-[#3b3b3c] md:-mt-30'
-          : 'text-[1.13rem] font-normal leading-relaxed text-[#3b3b3c]'
+          ? 'text-[1.13rem] font-normal text-text-primary md:-mt-30'
+          : 'text-[1.13rem] font-normal leading-relaxed text-text-primary'
       }
     >
       {content}

@@ -31,7 +31,7 @@ export default function NumberList({ items }: Props) {
               className="
                 text-[18px]
                 font-medium
-                text-[#292B2A]
+                text-text-primary
               "
             >
               {item}

@@ -41,14 +41,14 @@ export default function EligibilityCheckStepOne() {
     <div className="space-y-6">
       {/* Top Header Label */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           Tell us about your sleep habit
         </h2>
       </div>
 
       {/* Question 1: Do you wake up during the night? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
+        <h3 className="font-semibold text-[14px] text-ink">
           Do you wake up during the night?
         </h3>
         <FormField
@@ -69,9 +69,9 @@ export default function EligibilityCheckStepOne() {
                           })
                         }
                         className={cn(
-                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
+                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-text-secondary capitalize transition-all w-full cursor-pointer',
                           isSelected
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-border-light border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >
@@ -89,7 +89,7 @@ export default function EligibilityCheckStepOne() {
 
       {/* Question 2: When you wake up, can you usually fall back asleep? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
+        <h3 className="font-semibold text-[14px] text-ink">
           When you wake up, can you usually fall back asleep?
         </h3>
         <FormField
@@ -109,9 +109,9 @@ export default function EligibilityCheckStepOne() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
+                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-text-secondary capitalize transition-all w-full cursor-pointer',
                           isSelected
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-border-light border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >
@@ -133,7 +133,7 @@ export default function EligibilityCheckStepOne() {
 
       {/* Question 3: How often do you use screens before bed? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
+        <h3 className="font-semibold text-[14px] text-ink">
           How often do you use screens before bed?
         </h3>
         <FormField
@@ -153,9 +153,9 @@ export default function EligibilityCheckStepOne() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
+                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-text-secondary capitalize transition-all w-full cursor-pointer',
                           isSelected
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-border-light border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >

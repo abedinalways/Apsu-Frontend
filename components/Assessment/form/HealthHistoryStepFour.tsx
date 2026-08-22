@@ -45,10 +45,10 @@ export default function HealthHistoryStepFour() {
     <div className="space-y-6">
       {/* Description header matching text from Screenshot 2026-07-05 122224.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-brand">
           Do you have any allergies?
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
+        <p className="text-[14px] text-text-primary mt-1.5">
           Please select all that apply.
         </p>
       </div>
@@ -77,9 +77,9 @@ export default function HealthHistoryStepFour() {
                           handleToggleAllergy(option.id, !isChecked);
                         }
                       }}
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c] bg-[background] cursor-pointer  ${
+                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-text-secondary bg-[background] cursor-pointer  ${
                         isChecked
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-border-light border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -87,7 +87,7 @@ export default function HealthHistoryStepFour() {
                         aria-hidden="true"
                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-all ${
                           isChecked
-                            ? 'border-[#AFC1B6] bg-secondary-bg text-white'
+                            ? 'border-border-light bg-secondary-bg text-white'
                             : 'border-gray-300 bg-white text-transparent'
                         }`}
                       >

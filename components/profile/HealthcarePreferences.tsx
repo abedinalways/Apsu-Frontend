@@ -31,7 +31,7 @@ export default function HealthcarePreferences({
   return (
     <div className="space-y-4 rounded-[16px] border border-gray-100 bg-white p-5 shadow-sm">
       <div className="flex items-center gap-2 border-b border-gray-50 pb-2 text-sm font-medium text-secondary-text">
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ecf9f1]">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-bg-subtle">
           <GlobeIcon />
         </span>
 
@@ -56,7 +56,7 @@ export default function HealthcarePreferences({
                 <FormControl>
                   <SelectTrigger
                     ref={field.ref}
-                    className="h-[48px] rounded-[8px] md:w-[189px] border-[#cddcd3] bg-[background] focus:ring-0 md:h-[56px]"
+                    className="h-[48px] rounded-[8px] md:w-[189px] border-borderColor bg-[background] focus:ring-0 md:h-[56px]"
                   >
                     <SelectValue placeholder="Select language" />
                   </SelectTrigger>

@@ -39,7 +39,7 @@ function ProgramPricingSection({ img, benefits }: { img: string | StaticImageDat
           <div className="w-full space-y-4 mt-4 xl:mt-0 ">
             {/* How It Works Header Line */}
             <div className="border-y pt-2 border-gray-200 pb-3 flex items-center justify-between cursor-pointer group">
-              <a href="#Works" className="text-xs md:text-sm font-semibold text-[#585E5A] group-hover:text-[#0C2417] underline transition-colors">
+              <a href="#Works" className="text-xs md:text-sm font-semibold text-text-muted group-hover:text-[#0C2417] underline transition-colors">
                 How It Works
               </a>
             </div>
@@ -50,7 +50,7 @@ function ProgramPricingSection({ img, benefits }: { img: string | StaticImageDat
                 onClick={() => setIsBenefitsOpen(!isBenefitsOpen)}
                 className="flex items-center justify-between cursor-pointer select-none py-1"
               >
-                <span className="text-xs md:text-sm font-semibold text-[#585E5A]">
+                <span className="text-xs md:text-sm font-semibold text-text-muted">
                   Program Benefits
                 </span>
                 <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">

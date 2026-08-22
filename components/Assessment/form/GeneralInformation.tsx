@@ -27,7 +27,7 @@ export default function GeneralInformation() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-[20px] font-semibold text-[#102b1c]">
+      <h2 className="text-[20px] font-semibold text-brand">
         Tell us about yourself first!
       </h2>
 
@@ -37,14 +37,14 @@ export default function GeneralInformation() {
           name="firstName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[14px] text-[#111]">
+              <FormLabel className="text-[14px] text-ink">
                 First Name <span className="text-red-500">*</span>
               </FormLabel>
               <FormControl>
                 <Input
                   placeholder="First Name"
                   {...field}
-                  className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px]"
+                  className="bg-[background] h-14! text-[16px] text-text-secondary focus-visible:ring-[1px]"
                 />
               </FormControl>
               <FormMessage />
@@ -56,14 +56,14 @@ export default function GeneralInformation() {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[14px] text-[#111]">
+              <FormLabel className="text-[14px] text-ink">
                 Last Name <span className="text-red-500">*</span>
               </FormLabel>
               <FormControl>
                 <Input
                   placeholder="Last Name"
                   {...field}
-                  className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                  className="bg-[background] h-14! text-[16px] text-text-secondary focus-visible:ring-[1px]"
                 />
               </FormControl>
               <FormMessage />
@@ -77,14 +77,14 @@ export default function GeneralInformation() {
         name="dob"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-[14px] text-[#111]">
+            <FormLabel className="text-[14px] text-ink">
               Date of Birth <span className="text-red-500">*</span>
             </FormLabel>
             <FormControl>
               <Input
                 type="date"
                 {...field}
-                className="bg-[background] h-14! text-[16px] text-[#6c6c6c] flex flex-col pt-4 focus-visible:ring-[1px]"
+                className="bg-[background] h-14! text-[16px] text-text-secondary flex flex-col pt-4 focus-visible:ring-[1px]"
               />
             </FormControl>
             <FormMessage />
@@ -97,7 +97,7 @@ export default function GeneralInformation() {
         name="gender"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-[14px] text-[#111]">
+            <FormLabel className="text-[14px] text-ink">
               Gender <span className="text-red-500">*</span>
             </FormLabel>
             <FormControl>
@@ -109,9 +109,9 @@ export default function GeneralInformation() {
                 {genders.map(g => (
                   <div
                     key={g}
-                    className={`flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full ${
+                    className={`flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-text-secondary capitalize transition-all w-full ${
                       currentGender === g
-                        ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                        ? 'border-border-light border-2 text-secondary-bg'
                         : 'border-gray-200'
                     }`}
                   >
@@ -133,12 +133,12 @@ export default function GeneralInformation() {
         name="residence"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-[14px] text-[#111]">
+            <FormLabel className="text-[14px] text-ink">
               Select your Residence <span className="text-red-500">*</span>
             </FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <SelectTrigger className="bg-[background] h-14! w-full text-[16px] text-[#6c6c6c] cursor-pointer">
+                <SelectTrigger className="bg-[background] h-14! w-full text-[16px] text-text-secondary cursor-pointer">
                   <SelectValue placeholder="Select your state name" />
                 </SelectTrigger>
               </FormControl>

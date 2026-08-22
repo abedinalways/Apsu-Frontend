@@ -56,11 +56,11 @@ export default function EditProfileModal({
       <div className="relative flex max-h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-[12px] bg-white shadow">
         <div className="flex shrink-0 items-center justify-between border-b border-gray-100 bg-white p-4">
           <div>
-            <h2 className="text-xl font-medium text-[#102b1c]">
+            <h2 className="text-xl font-medium text-brand">
               Profile Settings
             </h2>
 
-            <p className="mt-0.5 text-sm font-light text-[#3b3b3c] md:text-[16px]">
+            <p className="mt-0.5 text-sm font-light text-text-primary md:text-[16px]">
               Manage your profile and preferences.
             </p>
           </div>

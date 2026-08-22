@@ -27,19 +27,19 @@ export default function MessageEmptyState({
           {/* Main Speech Bubble */}
           <path
             d="M36 54C47.0457 54 56 46.165 56 36.5C56 26.835 47.0457 19 36 19C24.9543 19 16 26.835 16 36.5C16 41.8142 18.6908 46.5702 22.9161 49.7806L20 59L29.6521 55.4559C31.6268 56.446 33.7645 54 36 54Z"
-            stroke="#9CA3AF"
+            stroke="currentColor"
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
           {/* Three dots */}
-          <circle cx="28" cy="36.5" r="1.3" fill="#9CA3AF" />
-          <circle cx="36" cy="36.5" r="1.3" fill="#9CA3AF" />
-          <circle cx="44" cy="36.5" r="1.3" fill="#9CA3AF" />
+          <circle cx="28" cy="36.5" r="1.3" fill="currentColor" />
+          <circle cx="36" cy="36.5" r="1.3" fill="currentColor" />
+          <circle cx="44" cy="36.5" r="1.3" fill="currentColor" />
           {/* X mark on top right */}
           <path
             d="M50 17L62 29M62 17L50 29"
-            stroke="#9CA3AF"
+            stroke="currentColor"
             strokeWidth="1.8"
             strokeLinecap="round"
           />
@@ -61,7 +61,7 @@ export default function MessageEmptyState({
         <button
           type="button"
           onClick={onMessageCareTeam}
-          className="mt-3 px-6 py-2.5 bg-[#102B1C] hover:bg-[#1c3d2a] text-white text-xs sm:text-sm font-medium rounded-full transition-colors shadow-sm cursor-pointer"
+          className="mt-3 px-6 py-2.5 bg-brand hover:bg-brand-hover text-white text-xs sm:text-sm font-medium rounded-full transition-colors shadow-sm cursor-pointer"
         >
           Message Care Team
         </button>

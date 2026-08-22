@@ -137,12 +137,12 @@ export default function MessageTabContainer() {
   }
 
   return (
-    <div className="w-full h-[550px] sm:h-[600px] flex rounded-[12px] border border-[#EBEAE4] overflow-hidden bg-white max-w-full relative mx-2">
+    <div className="w-full h-[550px] sm:h-[600px] flex rounded-[12px] border border-border overflow-hidden bg-white max-w-full relative mx-2">
       {/* Sidebar Toggle Button (Desktop) */}
       {!showSidebar && (
         <button
           onClick={() => setShowSidebar(true)}
-          className="hidden lg:block md:absolute md:top-9 left-2 -translate-y-1/2 z-40 bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
+          className="hidden lg:block md:absolute md:top-9 left-2 -translate-y-1/2 z-40 bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-brand transition-colors cursor-pointer"
           aria-label="Show sidebar"
         >
           <StepBackIcon className="w-4 h-4" />
@@ -152,9 +152,9 @@ export default function MessageTabContainer() {
       {/* Sidebar - Conversation List */}
       <div
         ref={sidebarRef}
-        className={`${showChat ? 'hidden md:flex' : 'flex md:flex'} w-full md:w-80 border-r border-[#EBEAE4] flex-col bg-white min-w-0 relative overflow-hidden`}
+        className={`${showChat ? 'hidden md:flex' : 'flex md:flex'} w-full md:w-80 border-r border-border flex-col bg-white min-w-0 relative overflow-hidden`}
       >
-        <div className="p-4 border-b border-[#F4F3EF]">
+        <div className="p-4 border-b border-border">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-lg font-semibold text-secondary-text">
               Messages
@@ -169,7 +169,7 @@ export default function MessageTabContainer() {
               </button>
               <button
                 onClick={() => setShowSidebar(false)}
-                className="hidden lg:block  bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
+                className="hidden lg:block  bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-brand transition-colors cursor-pointer"
                 aria-label="Hide sidebar"
               >
                 <StepForwardIcon className="w-4 h-4 text-white" />
@@ -183,7 +183,7 @@ export default function MessageTabContainer() {
               value={searchQuery}
               onChange={e => updateSearch(e.target.value)}
               placeholder="Search messages"
-              className="w-full pl-9 pr-4 py-2 rounded-[12px] border border-[#EBEAE4] bg-[#FAF9F5] text-[14px] focus:outline-none focus:border-[#A3C9A8]"
+              className="w-full pl-9 pr-4 py-2 rounded-[12px] border border-border bg-bg-surface text-[14px] focus:outline-none focus:border-brand-light"
             />
           </div>
         </div>
@@ -199,10 +199,10 @@ export default function MessageTabContainer() {
         className={`${showChat ? 'flex' : 'hidden md:flex'} ${!showSidebar ? 'lg:w-full lg:max-w-full' : ''} flex-1 flex-col bg-white min-w-0  w-full `}
       >
         {!showChat && (
-          <div className="md:hidden p-4 border-b border-[#F4F3EF]">
+          <div className="md:hidden p-4 border-b border-border">
             <button
               onClick={() => setShowChat(true)}
-              className="w-full flex items-center justify-center gap-2 bg-secondary-text text-white py-3 rounded-[12px] hover:bg-[#1e3a2a] transition-colors"
+              className="w-full flex items-center justify-center gap-2 bg-secondary-text text-white py-3 rounded-[12px] hover:bg-brand transition-colors"
             >
               <span className="text-sm font-medium">
                 Select a conversation to start chatting
@@ -212,7 +212,7 @@ export default function MessageTabContainer() {
         )}
         {activeConversation ? (
           <>
-            <div className="px-3 py-3 sm:px-4 sm:py-4 border-b border-[#F4F3EF] shrink-0">
+            <div className="px-3 py-3 sm:px-4 sm:py-4 border-b border-border shrink-0">
               <div className="flex items-center justify-between gap-2 min-w-0">
                 <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                   {/* Back button for mobile */}

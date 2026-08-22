@@ -23,7 +23,7 @@ interface OrderProgressProps {
 
 export function OrderProgress({ progressStep }: OrderProgressProps) {
   return (
-    <div className="border border-[#EBEAE4] rounded-[24px] p-6 mb-4 bg-white font-[Work_Sans]">
+    <div className="border border-border rounded-[24px] p-6 mb-4 bg-white font-[Work_Sans]">
       <h5 className="text-xl font-bold text-secondary-text mb-8">
         Order Progress
       </h5>
@@ -33,14 +33,14 @@ export function OrderProgress({ progressStep }: OrderProgressProps) {
           {steps.map(({ step, label }) => (
             <StepperItem key={step} step={step} className="flex-1 group/step">
               <StepperTrigger className="flex flex-col items-center gap-3 w-full pointer-events-none">
-                <StepperIndicator className="w-4 h-4 rounded-full bg-[#5A6561] text-transparent border-0 shrink-0 transition-all duration-300 data-[state=active]:w-5 data-[state=active]:h-5 data-[state=active]:bg-[#FCBE15] data-[state=completed]:w-4 data-[state=completed]:h-4 data-[state=completed]:bg-[#5A6561]" />
+                <StepperIndicator className="w-4 h-4 rounded-full bg-text-muted text-transparent border-0 shrink-0 transition-all duration-300 data-[state=active]:w-5 data-[state=active]:h-5 data-[state=active]:bg-warning data-[state=completed]:w-4 data-[state=completed]:h-4 data-[state=completed]:bg-text-muted" />
                 <span className="text-[13px] font-normal tracking-wide text-[#7D8884] transition-colors duration-300 group-data-[state=active]/step:text-secondary-text group-data-[state=active]/step:font-medium">
                   {label}
                 </span>
               </StepperTrigger>
 
               {steps.length > step && (
-                <StepperSeparator className="bg-[#E2EAE5] h-[1.5px] mt-2 group-data-[state=completed]/step:bg-[#5A6561]" />
+                <StepperSeparator className="bg-[#E2EAE5] h-[1.5px] mt-2 group-data-[state=completed]/step:bg-text-muted" />
               )}
             </StepperItem>
           ))}

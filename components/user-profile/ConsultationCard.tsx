@@ -27,10 +27,10 @@ export default function ConsultationCard({
       <h3 className="text-lg font-semibold text-secondary-text">Upcoming</h3>
 
       {/* Main Card */}
-      <div className="w-full bg-white border border-[#EBEAE4] rounded-[24px] p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-5">
+      <div className="w-full bg-white border border-border rounded-[24px] p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-5">
         {/* Left: Info Section */}
         <div className="flex items-start gap-4">
-          <div className="w-12 h-12 rounded-full bg-[#102b1c] flex items-center justify-center text-[#A3C9A8] shrink-0">
+          <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-brand-light shrink-0">
             <CalenderIcon />
           </div>
 
@@ -43,7 +43,7 @@ export default function ConsultationCard({
               {data.doctorName}
             </h4>
 
-            <p className="text-xs md:text-sm text-[#6c6c6c] font-light leading-[160%]">
+            <p className="text-xs md:text-sm text-text-secondary font-light leading-[160%]">
               {data.specialty} · {data.program}
             </p>
 
@@ -75,12 +75,12 @@ export default function ConsultationCard({
 
         {/* Right: Action Buttons */}
         <div className="grid grid-cols-1 md:grid-cols-2   items-center gap-4 md:gap-3 w-full md:w-auto shrink-0 pt-2 md:pt-0">
-          <button className="flex-1 md:flex-none bg-secondary-text hover:bg-[#1c3d2a] text-white text-sm font-medium h-11 px-5 rounded-full flex items-center justify-center gap-2 transition-colors">
+          <button className="flex-1 md:flex-none bg-secondary-text hover:bg-brand-hover text-white text-sm font-medium h-11 px-5 rounded-full flex items-center justify-center gap-2 transition-colors">
             <Video className="w-4 h-4" /> Join Call
           </button>
           <button
             onClick={onReschedule}
-            className="flex-1 md:flex-none bg-white hover:bg-gray-50 text-gray-700 text-sm md:text-[16px] font-medium h-11 px-5 border border-[#102b1c] rounded-full transition-colors"
+            className="flex-1 md:flex-none bg-white hover:bg-gray-50 text-gray-700 text-sm md:text-[16px] font-medium h-11 px-5 border border-brand rounded-full transition-colors"
           >
             Reschedule
           </button>
