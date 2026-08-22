@@ -21,12 +21,7 @@ interface PrescriptionTrackOrderModalProps {
   };
 }
 
-const progressSteps = [
-  'Prescribed',
-  'Preparing',
-  'Shipped',
-  'Delivered',
-];
+const progressSteps = ['Prescribed', 'Preparing', 'Shipped', 'Delivered'];
 
 export default function PrescriptionTrackOrderModal({
   open,
@@ -51,7 +46,7 @@ export default function PrescriptionTrackOrderModal({
         </button>
 
         <div className="mb-6">
-          <h3 className="text-xl font-bold text-[#142C1E]">
+          <h3 className="text-xl font-bold text-[secondary-text]">
             Track Order
           </h3>
           <p className="text-sm md:text-[16px] text-gray-400 font-light mt-0.5">
@@ -64,7 +59,11 @@ export default function PrescriptionTrackOrderModal({
             <div className="order-1 rounded-[12px] p-4 flex flex-col justify-between space-y-4 shadow">
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 p-2 rounded-full bg-[#102b1c] flex items-center justify-center text-[#A3C9A8] shrink-0">
-                  {data.type === 'injection' ? <SyringeIcon /> : <Pill className="h-5 w-5" />}
+                  {data.type === 'injection' ? (
+                    <SyringeIcon />
+                  ) : (
+                    <Pill className="h-5 w-5" />
+                  )}
                 </div>
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
@@ -117,13 +116,10 @@ export default function PrescriptionTrackOrderModal({
               </div>
             </div>
             <div className="order-2 rounded-[12px] space-y-4 bg-white shadow p-2">
-              <h5 className="text-lg font-medium text-[#142C1E] mb-6 md:mb-8">
+              <h5 className="text-lg font-medium text-[secondary-text] mb-6 md:mb-8">
                 Order Progress
               </h5>
-              <OrderStepper
-                steps={progressSteps}
-                currentStep={3}
-              />
+              <OrderStepper steps={progressSteps} currentStep={3} />
             </div>
           </div>
           <div className="rounded-[20px] p-4 flex flex-col justify-center bg-white shadow">
@@ -160,7 +156,8 @@ export default function PrescriptionTrackOrderModal({
                   Shipping Address
                 </p>
                 <p className="text-sm font-medium text-gray-900 leading-relaxed">
-                  {data.shippingAddress || '123 Main Street, Apt 4B Miami, FL 33101'}
+                  {data.shippingAddress ||
+                    '123 Main Street, Apt 4B Miami, FL 33101'}
                 </p>
               </div>
             </div>

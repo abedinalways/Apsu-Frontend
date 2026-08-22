@@ -4,19 +4,16 @@
 export const UtilHelper = {
   /**
    * debouncing
-   * @param {*} fn
-   * @param {*} delay
+   * @param {Function} fn
+   * @param {number} delay
    * @returns
    */
-  debounce: function (fn: any, delay: number = 300) {
-    let timer: any;
-    return function () {
-      let context = this,
-        args = arguments;
-
+  debounce(fn: (...args: unknown[]) => void, delay: number = 300) {
+    let timer: ReturnType<typeof setTimeout>;
+    return function (this: unknown, ...args: unknown[]) {
       clearTimeout(timer);
       timer = setTimeout(() => {
-        fn.apply(context, args);
+        fn.apply(this, args);
       }, delay);
     };
   },

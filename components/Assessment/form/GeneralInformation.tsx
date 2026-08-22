@@ -1,29 +1,29 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/select';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { FormData } from '@/zod/AssessmentSchema';
 
 export default function GeneralInformation() {
   const { control, watch } = useFormContext<FormData>();
-  const currentGender = watch("gender");
+  const currentGender = watch('gender');
 
-  const genders = ["male", "female", "intersex"] as const;
+  const genders = ['male', 'female', 'intersex'] as const;
 
   return (
     <div className="space-y-6">
@@ -44,7 +44,7 @@ export default function GeneralInformation() {
                 <Input
                   placeholder="First Name"
                   {...field}
-                  className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px]"
+                  className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px]"
                 />
               </FormControl>
               <FormMessage />
@@ -63,7 +63,7 @@ export default function GeneralInformation() {
                 <Input
                   placeholder="Last Name"
                   {...field}
-                  className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                  className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                 />
               </FormControl>
               <FormMessage />
@@ -84,7 +84,7 @@ export default function GeneralInformation() {
               <Input
                 type="date"
                 {...field}
-                className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c] flex flex-col pt-4 focus-visible:ring-[1px]"
+                className="bg-[background] h-14! text-[16px] text-[#6c6c6c] flex flex-col pt-4 focus-visible:ring-[1px]"
               />
             </FormControl>
             <FormMessage />
@@ -106,13 +106,13 @@ export default function GeneralInformation() {
                 defaultValue={field.value}
                 className="grid grid-cols-3 gap-3"
               >
-                {genders.map((g) => (
+                {genders.map(g => (
                   <div
                     key={g}
-                    className={`flex items-center justify-center gap-2 bg-[#FAF9F4] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full ${
+                    className={`flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full ${
                       currentGender === g
-                        ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                        : "border-gray-200"
+                        ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                        : 'border-gray-200'
                     }`}
                   >
                     <RadioGroupItem value={g} id={g} />
@@ -138,7 +138,7 @@ export default function GeneralInformation() {
             </FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <SelectTrigger className="bg-[#FAF9F4] h-14! w-full text-[16px] text-[#6c6c6c] cursor-pointer">
+                <SelectTrigger className="bg-[background] h-14! w-full text-[16px] text-[#6c6c6c] cursor-pointer">
                   <SelectValue placeholder="Select your state name" />
                 </SelectTrigger>
               </FormControl>

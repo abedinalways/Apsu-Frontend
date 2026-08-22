@@ -48,7 +48,8 @@ export function TermsSidebar({ sections }: TermsSidebarProps) {
     const element = document.getElementById(id);
     if (element) {
       const offset = 100; // Account for fixed header
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - offset;
 
       window.scrollTo({
@@ -71,7 +72,7 @@ export function TermsSidebar({ sections }: TermsSidebarProps) {
               <button
                 key={section.id}
                 onClick={() => handleLinkClick(section.id)}
-                className={`rounded-md px-2 py-1.5 text-[16px] text-start sm:py-1 transition-colors font-medium ${isActive ? 'text-[#00774d]' : 'text-[#6c6c6c]'} hover:bg-gray-50`}
+                className={`rounded-md px-2 py-1.5 text-[16px] text-start sm:py-1 transition-colors font-medium ${isActive ? 'text-[color-greenColor]' : 'text-[#6c6c6c]'} hover:bg-gray-50`}
               >
                 {section.serial}. {section.sidebarTitle || section.title}
               </button>

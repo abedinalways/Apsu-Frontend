@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const GOAL_OPTIONS = [
-  { id: "rarely", label: "Rarely" },
-  { id: "sometimes", label: "Sometimes" },
-  { id: "most-nights", label: "Most nights" },
-  { id: "every-night", label: "Every night" },
+  { id: 'rarely', label: 'Rarely' },
+  { id: 'sometimes', label: 'Sometimes' },
+  { id: 'most-nights', label: 'Most nights' },
+  { id: 'every-night', label: 'Every night' },
 ] as const;
 
 export default function GoalLifestyleActivityStepOne() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const selectedGoal = watch("weightLossGoal");
+  const selectedGoal = watch('weightLossGoal');
 
   return (
     <div className="space-y-6">
@@ -40,7 +40,7 @@ export default function GoalLifestyleActivityStepOne() {
           <FormItem className="space-y-2">
             <FormControl>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {GOAL_OPTIONS.map((option) => {
+                {GOAL_OPTIONS.map(option => {
                   const isSelected = selectedGoal === option.id;
 
                   return (
@@ -48,22 +48,22 @@ export default function GoalLifestyleActivityStepOne() {
                       key={option.id}
                       type="button"
                       onClick={() =>
-                        setValue("weightLossGoal", option.id, {
+                        setValue('weightLossGoal', option.id, {
                           shouldValidate: true,
                         })
                       }
-                      className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c] bg-[#FAF9F4] cursor-pointer ${
+                      className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c] bg-[background] cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       {/* Custom styled outer circular radio control ring */}
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                            ? "border-[#AFC1B6] bg-[#0B251A] text-white"
-                            : "border-gray-400 bg-white"
+                            ? 'border-[#AFC1B6] bg-[secondary-bg] text-white'
+                            : 'border-gray-400 bg-white'
                         }`}
                       >
                         {isSelected && (

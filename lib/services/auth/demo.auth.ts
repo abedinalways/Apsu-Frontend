@@ -22,6 +22,7 @@ import type {
   ForgotPasswordPayload,
   ResetPasswordPayload,
 } from './types';
+import { Session } from '@/lib/session';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -144,39 +145,29 @@ class DemoAuthService implements IAuthService {
 
   getCurrentUser(): User | null {
     if (typeof window === 'undefined') return null;
-
-    const raw = localStorage.getItem(STORAGE_KEYS.user);
-    if (!raw) return null;
-
-    try {
-      return JSON.parse(raw) as User;
-    } catch {
-      return null;
-    }
+    const data = Session.getUser();
+    if (!data) return null;
+    return {
+      id: data.email,
+      email: data.email,
+      name: data.name,
+    };
   }
 
   isAuthenticated(): boolean {
     if (typeof window === 'undefined') return false;
-    return !!localStorage.getItem(STORAGE_KEYS.user);
+    return !!Session.getToken();
   }
 
   logout(): void {
-    if (typeof window === 'undefined') return;
-    localStorage.removeItem(STORAGE_KEYS.user);
-    localStorage.removeItem(STORAGE_KEYS.token);
-    // Clear the middleware cookie
-    document.cookie = `${STORAGE_KEYS.token}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
+    Session.clearAll();
   }
 
   // ─── Private Helpers ──────────────────────────────────────────────────────
 
   private persistSession(user: User): void {
-    localStorage.setItem(STORAGE_KEYS.user, JSON.stringify(user));
-    localStorage.setItem(STORAGE_KEYS.token, 'demo_token');
-
-    // Set cookie so Next.js middleware can read it for route protection
-    const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toUTCString();
-    document.cookie = `${STORAGE_KEYS.token}=demo_token; expires=${expires}; path=/; SameSite=Lax`;
+    Session.setUser({ email: user.email, name: user.name });
+    Session.setToken('demo_token');
   }
 
   /** Generate a stable ID from the email (demo only) */

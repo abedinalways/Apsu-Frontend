@@ -13,7 +13,12 @@ type MessageBubbleProps = {
   userLanguage?: string;
 };
 
-export default function MessageBubble({ message, isNew, showTranslation, userLanguage }: MessageBubbleProps) {
+export default function MessageBubble({
+  message,
+  isNew,
+  showTranslation,
+  userLanguage,
+}: MessageBubbleProps) {
   const isUser = message.sender === 'user';
   const isSystem = message.sender === 'system';
   const [showImagePreview, setShowImagePreview] = useState(false);
@@ -28,7 +33,7 @@ export default function MessageBubble({ message, isNew, showTranslation, userLan
     );
   }
 
-  const displayLanguage = isUser ? (userLanguage || 'Your Language') : 'English';
+  const displayLanguage = isUser ? userLanguage || 'Your Language' : 'English';
 
   return (
     <div
@@ -44,8 +49,8 @@ export default function MessageBubble({ message, isNew, showTranslation, userLan
           className={cn(
             'rounded-[20px] px-3 py-2.5 text-xs sm:text-sm leading-5 sm:leading-6',
             isUser
-              ? 'bg-[#E8F5E9] text-[#142C1E] rounded-tr-sm'
-              : 'bg-[#FAF9F4] border border-[#E5E7EB] text-[#142C1E] rounded-tl-sm',
+              ? 'bg-[#E8F5E9] text-[secondary-text] rounded-tr-sm'
+              : 'bg-[background] border border-[#E5E7EB] text-[secondary-text] rounded-tl-sm',
           )}
         >
           <p className="break-words whitespace-pre-wrap">{message.body}</p>
@@ -81,7 +86,7 @@ export default function MessageBubble({ message, isNew, showTranslation, userLan
                       d="M9 12h6m-6 4h6m2 5H7a2 0 01-2-2V5a2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 0 01-2 2z"
                     />
                   </svg>
-                  <span className="text-xs text-[#142C1E] flex-1">
+                  <span className="text-xs text-[secondary-text] flex-1">
                     {message.attachment.name}
                   </span>
                   <Download className="w-4 h-4 text-gray-500" />

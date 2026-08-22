@@ -20,14 +20,11 @@ export default function ForgotPasswordForm({
 
   const onSubmit = async (values: { email: string }) => {
     setIsSubmitting(true);
-    
+
     try {
-      // Demo: Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 800));
-      
-      toast.success('Reset code sent! Please check your email.');
-      onNext(values.email);
-    } catch (error) {
+      // Forgot password is not connected to a backend yet.
+      toast.error('Password reset is not connected to a backend yet.');
+    } catch {
       toast.error('Failed to send reset code. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -57,7 +54,7 @@ export default function ForgotPasswordForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#142C1E] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[secondary-text] hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Sending...' : 'Send Code'}
           </button>

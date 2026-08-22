@@ -17,11 +17,14 @@ interface ConsultationCardProps {
   onReschedule: () => void;
 }
 
-export default function ConsultationCard({ data, onReschedule }: ConsultationCardProps) {
+export default function ConsultationCard({
+  data,
+  onReschedule,
+}: ConsultationCardProps) {
   return (
     <div className="w-full text-left space-y-4 font-[Work_Sans]">
       {/* Section Title */}
-      <h3 className="text-lg font-semibold text-[#142C1E]">Upcoming</h3>
+      <h3 className="text-lg font-semibold text-[secondary-text]">Upcoming</h3>
 
       {/* Main Card */}
       <div className="w-full bg-white border border-[#EBEAE4] rounded-[24px] p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-5">
@@ -72,7 +75,7 @@ export default function ConsultationCard({ data, onReschedule }: ConsultationCar
 
         {/* Right: Action Buttons */}
         <div className="grid grid-cols-1 md:grid-cols-2   items-center gap-4 md:gap-3 w-full md:w-auto shrink-0 pt-2 md:pt-0">
-          <button className="flex-1 md:flex-none bg-[#142C1E] hover:bg-[#1c3d2a] text-white text-sm font-medium h-11 px-5 rounded-full flex items-center justify-center gap-2 transition-colors">
+          <button className="flex-1 md:flex-none bg-[secondary-text] hover:bg-[#1c3d2a] text-white text-sm font-medium h-11 px-5 rounded-full flex items-center justify-center gap-2 transition-colors">
             <Video className="w-4 h-4" /> Join Call
           </button>
           <button

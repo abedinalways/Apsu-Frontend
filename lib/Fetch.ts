@@ -1,120 +1,108 @@
 import axios from "axios";
 import { AppConfig } from "../config/app.config";
 
-const config = {
-  headers: {
-    "Content-Type": "application/json",
-  },
-};
-
 type AdapterOption = "fetch" | "axios";
+
+const baseUrl = `${AppConfig().app.apiUrl}`;
+
+// Configure axios defaults once
+axios.defaults.baseURL = baseUrl;
+axios.defaults.headers.common["Content-Type"] = "application/json";
+axios.defaults.withCredentials = true;
 
 /**
  * Custom fetch class
+ *
+ * Credentials are included automatically for all requests.
+ * Do NOT pass Authorization headers in individual services;
+ * use a dedicated auth header interceptor here when the backend is ready.
  */
 export class Fetch {
-  private static _baseUrl = `${AppConfig().app.apiUrl}`;
   private static _adapter: AdapterOption = "axios";
 
-  /**
-   * Set adapter.
-   * e.g. `fetch` or `axios`
-   * @param adapter
-   */
   static setAdapter(adapter: AdapterOption) {
     this._adapter = adapter;
   }
 
-  /**
-   * get request
-   * @param url
-   * @param header
-   * @returns
-   */
-  static async get(url: string, header?: any) {
-    if (this._adapter == "axios") {
-      return await axios.get(`${this._baseUrl}${url}`, header);
-    } else {
-      const res = await fetch(`${this._baseUrl}${url}`, header);
-      return await res.json();
-    }
+  private static getFetchConfig(header?: Record<string, any>): RequestInit {
+    return {
+      ...header,
+      credentials: "include",
+    };
   }
 
-  /**
-   * post request
-   * @param url
-   * @param data
-   * @param header
-   * @returns
-   */
-  static async post(url: string, data: any, header?: any) {
-    if (this._adapter == "axios") {
-      return await axios.post(`${this._baseUrl}${url}`, data, header);
-    } else {
-      const res = await fetch(`${this._baseUrl}${url}`, {
-        ...header,
-        method: "POST",
-        body: data,
-      });
-      return await res.json();
+  static async get(url: string, header?: Record<string, any>) {
+    if (this._adapter === "axios") {
+      return await axios.get(url, header);
     }
+    const res = await fetch(`${baseUrl}${url}`, this.getFetchConfig(header));
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.message ?? `Request failed with status ${res.status}`);
+    }
+    return res.json();
   }
 
-  /**
-   * put request
-   * @param url
-   * @param data
-   * @param header
-   * @returns
-   */
-  static async put(url: string, data: any, header?: any) {
-    if (this._adapter == "axios") {
-      return await axios.put(`${this._baseUrl}${url}`, data, header);
-    } else {
-      const res = await fetch(`${this._baseUrl}${url}`, {
-        ...header,
-        method: "PUT",
-        body: data,
-      });
-      return await res.json();
+  static async post(url: string, data: any, header?: Record<string, any>) {
+    if (this._adapter === "axios") {
+      return await axios.post(url, data, header);
     }
+    const res = await fetch(`${baseUrl}${url}`, {
+      ...this.getFetchConfig(header),
+      method: "POST",
+      body: data,
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.message ?? `Request failed with status ${res.status}`);
+    }
+    return res.json();
   }
 
-  /**
-   * patch request
-   * @param url
-   * @param data
-   * @param header
-   * @returns
-   */
-  static async patch(url: string, data: any, header?: any) {
-    if (this._adapter == "axios") {
-      return await axios.patch(`${this._baseUrl}${url}`, data, header);
-    } else {
-      const res = await fetch(`${this._baseUrl}${url}`, {
-        ...header,
-        method: "PATCH",
-        body: data,
-      });
-      return await res.json();
+  static async put(url: string, data: any, header?: Record<string, any>) {
+    if (this._adapter === "axios") {
+      return await axios.put(url, data, header);
     }
+    const res = await fetch(`${baseUrl}${url}`, {
+      ...this.getFetchConfig(header),
+      method: "PUT",
+      body: data,
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.message ?? `Request failed with status ${res.status}`);
+    }
+    return res.json();
   }
 
-  /**
-   * delete request
-   * @param url
-   * @param header
-   * @returns
-   */
-  static async delete(url: string, header?: any) {
-    if (this._adapter == "axios") {
-      return await axios.delete(`${this._baseUrl}${url}`, header);
-    } else {
-      const res = await fetch(`${this._baseUrl}${url}`, {
-        ...header,
-        method: "DELETE",
-      });
-      return await res.json();
+  static async patch(url: string, data: any, header?: Record<string, any>) {
+    if (this._adapter === "axios") {
+      return await axios.patch(url, data, header);
     }
+    const res = await fetch(`${baseUrl}${url}`, {
+      ...this.getFetchConfig(header),
+      method: "PATCH",
+      body: data,
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.message ?? `Request failed with status ${res.status}`);
+    }
+    return res.json();
+  }
+
+  static async delete(url: string, header?: Record<string, any>) {
+    if (this._adapter === "axios") {
+      return await axios.delete(url, header);
+    }
+    const res = await fetch(`${baseUrl}${url}`, {
+      ...this.getFetchConfig(header),
+      method: "DELETE",
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.message ?? `Request failed with status ${res.status}`);
+    }
+    return res.json();
   }
 }

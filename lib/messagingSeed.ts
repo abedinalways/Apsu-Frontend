@@ -82,7 +82,7 @@ export function buildMessagingSeed() {
         id: 'care-team-1',
         participantName: 'Care Team',
         participantRole: 'Apsu Support',
-        avatarColor: '#142C1E',
+        avatarColor: 'secondary-text',
         initials: 'CT',
         unreadCount: 1,
         online: true,

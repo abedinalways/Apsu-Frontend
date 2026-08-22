@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useFormContext } from "react-hook-form";
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
+import { FormData } from '@/zod/AssessmentSchema';
 
 export default function EligibilityStepThree() {
   const { control } = useFormContext<FormData>();
@@ -39,7 +39,7 @@ export default function EligibilityStepThree() {
                 <Input
                   {...field}
                   placeholder="Apertment no., rd no etc.."
-                  className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                  className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                 />
               </FormControl>
               <FormMessage />
@@ -61,7 +61,7 @@ export default function EligibilityStepThree() {
                   <Input
                     {...field}
                     placeholder="Jakarta"
-                    className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                    className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -81,7 +81,7 @@ export default function EligibilityStepThree() {
                   <Input
                     {...field}
                     placeholder="Jakarta"
-                    className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]l"
+                    className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]l"
                   />
                 </FormControl>
                 <FormMessage />
@@ -104,7 +104,7 @@ export default function EligibilityStepThree() {
                   <Input
                     {...field}
                     placeholder="Indonesia"
-                    className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                    className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -124,7 +124,7 @@ export default function EligibilityStepThree() {
                   <Input
                     {...field}
                     placeholder="10111"
-                    className="bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                    className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -146,7 +146,7 @@ export default function EligibilityStepThree() {
                 <Checkbox
                   checked={field.value}
                   onCheckedChange={field.onChange}
-                  className="h-4 w-4 rounded border-gray-300 text-emerald-900 data-[state=checked]:bg-[#0B251A] data-[state=checked]:border-[#0B251A]"
+                  className="h-4 w-4 rounded border-gray-300 text-emerald-900 data-[state=checked]:bg-[secondary-bg] data-[state=checked]:border-[secondary-bg]"
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
@@ -168,7 +168,7 @@ export default function EligibilityStepThree() {
                 <Checkbox
                   checked={field.value}
                   onCheckedChange={field.onChange}
-                  className="h-4 w-4 rounded border-gray-300 text-emerald-900 data-[state=checked]:bg-[#0B251A] data-[state=checked]:border-[#0B251A]"
+                  className="h-4 w-4 rounded border-gray-300 text-emerald-900 data-[state=checked]:bg-[secondary-bg] data-[state=checked]:border-[secondary-bg]"
                 />
               </FormControl>
               <div className="space-y-1 leading-none">

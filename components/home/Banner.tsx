@@ -1,8 +1,8 @@
-import { Stethoscope, Truck } from "lucide-react";
-import { IoEarthOutline } from "react-icons/io5";
-import PrimaryButton from "../reusable/button/PrimaryButton";
-import BannerMedicineCards from "./BannerMedicineCards";
-import LanguageCarousel from "./LanguageCarousel";
+import { Stethoscope, Truck } from 'lucide-react';
+import { IoEarthOutline } from 'react-icons/io5';
+import PrimaryButton from '../reusable/button/PrimaryButton';
+import BannerMedicineCards from './BannerMedicineCards';
+import LanguageCarousel from './LanguageCarousel';
 
 export const Banner = () => {
   return (
@@ -12,26 +12,26 @@ export const Banner = () => {
         <div className="text-[#21AC88] h-fit flex items-center flex-col-reverse lg:flex-row justify-center gap-2 lg:gap-6 ">
           <div className="flex items-center flex-wrap justify-center gap-2 lg:gap-6">
             <p className="text-sm flex items-center gap-2">
-              {" "}
+              {' '}
               <IoEarthOutline className="size-3 md:size-5" />
               40+ Language
             </p>
             <p className="text-xs md:text-sm flex items-center gap-2">
-              {" "}
+              {' '}
               <Stethoscope className="size-3 md:size-5" />
               US-licensed physicians
             </p>
           </div>
           <p className="text-sm flex items-center gap-2">
-            {" "}
+            {' '}
             <Truck className="size-3 md:size-5" />
             Free expedited shipping
           </p>
         </div>
         {/* title */}
         <h1 className="text-primary font-medium text-4xl md:text-5xl lg:text-6xl xl:text-7xl md:max-w-150 lg:max-w-210 max-w-218 text-center mt-8">
-          Healthcare that{" "}
-          <span className="text-[#00774D]">speaks your language.</span>
+          Healthcare that{' '}
+          <span className="text-[color-greenColor]">speaks your language.</span>
         </h1>
         {/* subtitle */}
         <p className="text-center text-descriptionColor lg:text-xl mt-8 max-w-100 xl:max-w-150 xl:flex xl:flex-col">

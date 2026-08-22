@@ -1,6 +1,12 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from 'react';
 import type { Conversation, Message, MessagingState } from '@/types/messaging';
 import { buildMessagingSeed } from '@/lib/messagingSeed';
 
@@ -19,7 +25,7 @@ const buildMessageId = (prefix: 'user' | 'care-team' | 'system') =>
 
 const moveConversationToFront = (ids: string[], conversationId: string) => [
   conversationId,
-  ...ids.filter((id) => id !== conversationId),
+  ...ids.filter(id => id !== conversationId),
 ];
 
 function upsertMessage(
@@ -60,27 +66,33 @@ interface MessagingContextType extends MessagingState {
   sendMessage: (body: string, attachment?: Message['attachment']) => boolean;
   updateDraft: (value: string) => void;
   updateSearch: (value: string) => void;
-  receiveMessage: (conversationId: string, body: string, senderName: string) => void;
+  receiveMessage: (
+    conversationId: string,
+    body: string,
+    senderName: string,
+  ) => void;
   startCareTeamConversation: () => void;
 }
 
-const MessagingContext = createContext<MessagingContextType | undefined>(undefined);
+const MessagingContext = createContext<MessagingContextType | undefined>(
+  undefined,
+);
 
 export function MessagingProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<MessagingState>(initialState);
 
   const activeConversation = state.activeConversationId
-    ? state.conversationsById[state.activeConversationId] ?? null
+    ? (state.conversationsById[state.activeConversationId] ?? null)
     : null;
 
   const activeMessages = state.activeConversationId
-    ? state.messagesByConversationId[state.activeConversationId] ?? []
+    ? (state.messagesByConversationId[state.activeConversationId] ?? [])
     : [];
 
   const filteredConversations = state.conversationIds
-    .map((id) => state.conversationsById[id])
+    .map(id => state.conversationsById[id])
     .filter(Boolean)
-    .filter((conversation) => {
+    .filter(conversation => {
       if (!conversation) return false;
       const normalizedQuery = state.searchQuery.trim().toLowerCase();
       if (!normalizedQuery) return true;
@@ -88,7 +100,7 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
         conversation.participantName,
         conversation.participantRole,
         conversation.lastMessagePreview,
-      ].some((value) => value.toLowerCase().includes(normalizedQuery));
+      ].some(value => value.toLowerCase().includes(normalizedQuery));
     })
     .sort(
       (left, right) =>
@@ -96,18 +108,15 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
         new Date(left.lastMessageAt).getTime(),
     );
 
-  const unreadCount = state.conversationIds.reduce(
-    (total, conversationId) => {
-      const conversation = state.conversationsById[conversationId];
-      return total + (conversation?.unreadCount ?? 0);
-    },
-    0,
-  );
+  const unreadCount = state.conversationIds.reduce((total, conversationId) => {
+    const conversation = state.conversationsById[conversationId];
+    return total + (conversation?.unreadCount ?? 0);
+  }, 0);
 
   const totalConversations = state.conversationIds.length;
 
   const selectConversation = (conversationId: string) => {
-    setState((prev) => {
+    setState(prev => {
       const conversation = prev.conversationsById[conversationId];
       if (!conversation) return prev;
 
@@ -123,7 +132,7 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
   };
 
   const startCareTeamConversation = () => {
-    setState((prev) => {
+    setState(prev => {
       if (prev.conversationsById['care-team-1']) {
         return {
           ...prev,
@@ -134,7 +143,7 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
         id: 'care-team-1',
         participantName: 'Care Team',
         participantRole: 'Apsu Support',
-        avatarColor: '#142C1E',
+        avatarColor: 'secondary-text',
         initials: 'CT',
         unreadCount: 0,
         online: true,
@@ -146,20 +155,29 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
         ...prev,
         activeConversationId: 'care-team-1',
         conversationIds: ['care-team-1', ...prev.conversationIds],
-        conversationsById: { ...prev.conversationsById, 'care-team-1': newConv },
-        messagesByConversationId: { ...prev.messagesByConversationId, 'care-team-1': [] },
-        draftsByConversationId: { ...prev.draftsByConversationId, 'care-team-1': '' },
+        conversationsById: {
+          ...prev.conversationsById,
+          'care-team-1': newConv,
+        },
+        messagesByConversationId: {
+          ...prev.messagesByConversationId,
+          'care-team-1': [],
+        },
+        draftsByConversationId: {
+          ...prev.draftsByConversationId,
+          'care-team-1': '',
+        },
       };
     });
   };
 
   const updateSearch = (value: string) => {
-    setState((prev) => ({ ...prev, searchQuery: value }));
+    setState(prev => ({ ...prev, searchQuery: value }));
   };
 
   const updateDraft = (value: string) => {
     if (!state.activeConversationId) return;
-    setState((prev) => ({
+    setState(prev => ({
       ...prev,
       draftsByConversationId: {
         ...prev.draftsByConversationId,
@@ -168,7 +186,10 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
     }));
   };
 
-  const sendMessage = (body: string, attachment?: Message['attachment']): boolean => {
+  const sendMessage = (
+    body: string,
+    attachment?: Message['attachment'],
+  ): boolean => {
     if (!state.activeConversationId) return false;
     const normalizedBody = body.trim();
     if (!normalizedBody && !attachment) return false;
@@ -187,16 +208,21 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
       attachment,
     };
 
-    setState((prev) => {
+    setState(prev => {
       // Guard: check if message with same ID already exists
-      const existingMessages = prev.messagesByConversationId[prev.activeConversationId!] || [];
+      const existingMessages =
+        prev.messagesByConversationId[prev.activeConversationId!] || [];
       if (existingMessages.some(msg => msg.id === messageId)) {
         return prev; // Don't add duplicate
       }
 
       const newState = { ...prev };
       upsertMessage(newState, prev.activeConversationId!, message);
-      refreshConversationSnapshot(newState, prev.activeConversationId!, message);
+      refreshConversationSnapshot(
+        newState,
+        prev.activeConversationId!,
+        message,
+      );
       newState.draftsByConversationId[prev.activeConversationId!] = '';
       return newState;
     });
@@ -220,7 +246,7 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
       status: 'delivered',
     };
 
-    setState((prev) => {
+    setState(prev => {
       const conversation = prev.conversationsById[conversationId];
       if (!conversation) return prev;
 
@@ -248,15 +274,15 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (state.initialized) return;
-    setState((prev) => {
+    setState(prev => {
       const seed = buildMessagingSeed();
       return {
         ...prev,
         initialized: true,
         activeConversationId: seed.activeConversationId,
-        conversationIds: seed.conversations.map((c) => c.id),
+        conversationIds: seed.conversations.map(c => c.id),
         conversationsById: Object.fromEntries(
-          seed.conversations.map((c) => [c.id, c]),
+          seed.conversations.map(c => [c.id, c]),
         ),
         messagesByConversationId: seed.messagesByConversationId,
         draftsByConversationId: seed.draftsByConversationId,

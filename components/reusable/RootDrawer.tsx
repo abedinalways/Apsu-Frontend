@@ -6,8 +6,8 @@ function RootDrawer({
   setOpen,
   children,
 }: {
-  open?: boolean;
-  setOpen?: (open: boolean) => void;
+  open: boolean;
+  setOpen: (open: boolean) => void;
   children?: React.ReactNode;
 }) {
   return (

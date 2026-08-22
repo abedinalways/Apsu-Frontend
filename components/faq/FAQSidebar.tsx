@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -19,7 +18,6 @@ export function FAQSidebar({ topics }: FAQSidebarProps) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
-     
         if (isClicked) return;
 
         entries.forEach(entry => {
@@ -29,7 +27,6 @@ export function FAQSidebar({ topics }: FAQSidebarProps) {
         });
       },
       {
-     
         rootMargin: '-10% 0px -50% 0px',
       },
     );
@@ -46,7 +43,6 @@ export function FAQSidebar({ topics }: FAQSidebarProps) {
     setActiveId(id);
     setIsClicked(true);
 
-  
     setTimeout(() => {
       setIsClicked(false);
     }, 800);
@@ -68,7 +64,7 @@ export function FAQSidebar({ topics }: FAQSidebarProps) {
                 href={`#${topic.id}`}
                 onClick={() => handleLinkClick(topic.id)}
                 className={`rounded-md px-2 py-1.5 sm:py-1 transition-colors font-medium ${
-                  isActive ? 'text-[#00774d]' : 'text-[#6c6c6c]'
+                  isActive ? 'text-[color-greenColor]' : 'text-[#6c6c6c]'
                 }`}
               >
                 {topic.title}

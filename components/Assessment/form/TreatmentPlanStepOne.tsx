@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { FormData } from "@/zod/AssessmentSchema";
-import Image from "next/image";
+} from '@/components/ui/form';
+import { FormData } from '@/zod/AssessmentSchema';
+import Image from 'next/image';
 // import { FormData } from "./schema";
 
 interface PlanOption {
-  id: "1-month" | "3-months" | "6-months" | "12-months";
+  id: '1-month' | '3-months' | '6-months' | '12-months';
   title: string;
   description: string;
   badge: string;
-  badgeVariant: "neutral" | "save";
+  badgeVariant: 'neutral' | 'save';
   totalPrice: string;
   monthlyPrice: string;
   originalPrice?: string;
@@ -24,49 +24,49 @@ interface PlanOption {
 
 const PLAN_OPTIONS: PlanOption[] = [
   {
-    id: "1-month",
-    title: "1 month supply",
-    description: "Good for getting started",
-    badge: "No commitment",
-    badgeVariant: "neutral",
-    totalPrice: "$299",
-    monthlyPrice: "$299/month",
+    id: '1-month',
+    title: '1 month supply',
+    description: 'Good for getting started',
+    badge: 'No commitment',
+    badgeVariant: 'neutral',
+    totalPrice: '$299',
+    monthlyPrice: '$299/month',
   },
   {
-    id: "3-months",
-    title: "3 months supply",
-    description: "Save more with our most popular plan",
-    badge: "Save $80",
-    badgeVariant: "save",
-    totalPrice: "$717",
-    monthlyPrice: "$239/month",
-    originalPrice: "$897",
+    id: '3-months',
+    title: '3 months supply',
+    description: 'Save more with our most popular plan',
+    badge: 'Save $80',
+    badgeVariant: 'save',
+    totalPrice: '$717',
+    monthlyPrice: '$239/month',
+    originalPrice: '$897',
   },
   {
-    id: "6-months",
-    title: "6 months supply",
-    description: "Our best value",
-    badge: "Save $180",
-    badgeVariant: "save",
-    totalPrice: "$1,314",
-    monthlyPrice: "$219/month",
-    originalPrice: "$1,794",
+    id: '6-months',
+    title: '6 months supply',
+    description: 'Our best value',
+    badge: 'Save $180',
+    badgeVariant: 'save',
+    totalPrice: '$1,314',
+    monthlyPrice: '$219/month',
+    originalPrice: '$1,794',
   },
   {
-    id: "12-months",
-    title: "12 months supply",
-    description: "Maximum savings",
-    badge: "Save $420",
-    badgeVariant: "save",
-    totalPrice: "$2,388",
-    monthlyPrice: "$199/month",
-    originalPrice: "$3,588",
+    id: '12-months',
+    title: '12 months supply',
+    description: 'Maximum savings',
+    badge: 'Save $420',
+    badgeVariant: 'save',
+    totalPrice: '$2,388',
+    monthlyPrice: '$199/month',
+    originalPrice: '$3,588',
   },
 ];
 
 export default function TreatmentPlanStepOne() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const selectedPlan = watch("treatmentPlan") || "3-months";
+  const selectedPlan = watch('treatmentPlan') || '3-months';
 
   return (
     <div className="space-y-6">
@@ -98,7 +98,7 @@ export default function TreatmentPlanStepOne() {
           <FormItem className="space-y-3">
             <FormControl>
               <div className="flex flex-col gap-3">
-                {PLAN_OPTIONS.map((plan) => {
+                {PLAN_OPTIONS.map(plan => {
                   const isSelected = selectedPlan === plan.id;
 
                   return (
@@ -106,14 +106,14 @@ export default function TreatmentPlanStepOne() {
                       key={plan.id}
                       type="button"
                       onClick={() =>
-                        setValue("treatmentPlan", plan.id, {
+                        setValue('treatmentPlan', plan.id, {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 rounded-2xl border text-left flex items-start justify-between transition-all relative bg-[#FAF9F4] cursor-pointer ${
+                      className={`w-full p-4 rounded-2xl border text-left flex items-start justify-between transition-all relative bg-[background] cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       <div className="flex items-center justify-center gap-3 ">
@@ -121,12 +121,12 @@ export default function TreatmentPlanStepOne() {
                         <div
                           className={`h-5 w-5 rounded-full border flex items-center justify-center mt-0.5 shrink-0 transition-colors ${
                             isSelected
-                              ? "border-[#AFC1B6] bg-[#0B251A]"
-                              : "border-gray-200 bg-white"
+                              ? 'border-[#AFC1B6] bg-[secondary-bg]'
+                              : 'border-gray-200 bg-white'
                           }`}
                         >
                           {isSelected && (
-                            <div className="h-2.5 w-2.5 rounded-full bg-[#FAF9F4]" />
+                            <div className="h-2.5 w-2.5 rounded-full bg-[background]" />
                           )}
                         </div>
 
@@ -140,9 +140,9 @@ export default function TreatmentPlanStepOne() {
                           </div>
                           <div
                             className={`inline-block px-2 py-0.5 text-[10px] font-semibold rounded-full ${
-                              plan.badgeVariant === "save"
-                                ? "border-[#AFC1B6] text-[#0B251A]"
-                                : "border-gray-200"
+                              plan.badgeVariant === 'save'
+                                ? 'border-[#AFC1B6] text-[secondary-bg]'
+                                : 'border-gray-200'
                             }`}
                           >
                             {plan.badge}

@@ -16,7 +16,7 @@
 //         overflow-hidden
 //         rounded-[12px]
 //         bg-white
-        
+
 //         shadow-[1px 1px 2px 0 rgba(0, 0, 0, 0.1), 2px 3px 4px 0 rgba(0, 0, 0, 0.09), 5px 7px 5px 0 rgba(0, 0, 0, 0.05), 9px 13px 6px 0 rgba(0, 0, 0, 0.01), 15px 20px 7px 0 rgba(0, 0, 0, 0)]
 //         transition-all
 //         duration-300
@@ -38,7 +38,7 @@
 
 //       {/* Content */}
 
-//       <div className="p-4 bg-[#faf9f4]">
+//       <div className="p-4 bg-[background]">
 //         <div className="mb-3 flex items-center justify-between gap-2">
 //           <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#008C5E]">
 //             {blog.category}
@@ -76,7 +76,6 @@
 //     </article>
 //   );
 // }
-
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -162,5 +161,3 @@ group-hover/readmore:translate-x-1
     </article>
   );
 }
-
-

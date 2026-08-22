@@ -16,6 +16,7 @@ export default function BlogSearch({ value, onChange }: BlogSearchProps) {
       />
 
       <input
+        id="blog-search"
         type="text"
         placeholder="Search any title here..."
         value={value}
@@ -37,6 +38,9 @@ export default function BlogSearch({ value, onChange }: BlogSearchProps) {
           focus:ring-[#008C5E]/10
         "
       />
+      <label htmlFor="blog-search" className="sr-only">
+        Search blogs
+      </label>
     </div>
   );
 }

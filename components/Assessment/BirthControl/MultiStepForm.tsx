@@ -1,46 +1,46 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { Resolver, useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form } from "@/components/ui/form";
-import { FormData, formSchema } from "@/zod/AssessmentSchema";
-import GeneralInformation from "../form/GeneralInformation";
-import HealthHistoryStepOne from "../form/HealthHistoryStepOne";
-import HealthHistoryStepTwo from "../form/HealthHistoryStepTwo";
-import HealthHistoryStepThree from "../form/HealthHistoryStepThree";
-import HealthHistoryStepFour from "../form/HealthHistoryStepFour";
-import GoalLifestyleActivityStepOne from "./GoalLifestyleActivityStepOne";
-import GoalLifestyleActivityStepTwo from "./GoalLifestyleActivityStepTwo";
-import EligibilityCheckStepOne from "./EligibilityCheckStepOne";
-import EligibilityCheckStepTwo from "./EligibilityCheckStepTwo";
-import EligibilityCheckStepThree from "./EligibilityCheckStepThree";
-import EligibilityCheckStepFour from "./EligibilityCheckStepFour";
-import EligibilityCheckStepFive from "./EligibilityCheckStepFive";
-import EligibilityCheckStepSix from "./EligibilityCheckStepSix";
-import EligibilityCheckStepSeven from "./EligibilityCheckStepSeven";
-import EligibilityCheckStepEight from "./EligibilityCheckStepEight";
-import CommonEligibilityCheckStepOne from "../form/CommonEligibilityCheckStepOne";
-import EligibilityStepOne from "../form/EligibilityStepOne";
-import EligibilityStepTwo from "../form/EligibilityStepTwo";
-import EligibilityStepThree from "../form/EligibilityStepThree";
-import EligibilityStepFour from "../form/EligibilityStepFour";
-import EligibilityStepFive from "../form/EligibilityStepFive";
-import TreatmentPlanStepOne from "../form/TreatmentPlanStepOne";
-import ScheduleConsultationStepOne from "../form/ScheduleConsultationStepOne";
-import CheckoutPaymentStepOne from "../form/CheckoutPaymentStepOne";
+import React, { useState } from 'react';
+import { Resolver, useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Form } from '@/components/ui/form';
+import { FormData, formSchema } from '@/zod/AssessmentSchema';
+import GeneralInformation from '../form/GeneralInformation';
+import HealthHistoryStepOne from '../form/HealthHistoryStepOne';
+import HealthHistoryStepTwo from '../form/HealthHistoryStepTwo';
+import HealthHistoryStepThree from '../form/HealthHistoryStepThree';
+import HealthHistoryStepFour from '../form/HealthHistoryStepFour';
+import GoalLifestyleActivityStepOne from './GoalLifestyleActivityStepOne';
+import GoalLifestyleActivityStepTwo from './GoalLifestyleActivityStepTwo';
+import EligibilityCheckStepOne from './EligibilityCheckStepOne';
+import EligibilityCheckStepTwo from './EligibilityCheckStepTwo';
+import EligibilityCheckStepThree from './EligibilityCheckStepThree';
+import EligibilityCheckStepFour from './EligibilityCheckStepFour';
+import EligibilityCheckStepFive from './EligibilityCheckStepFive';
+import EligibilityCheckStepSix from './EligibilityCheckStepSix';
+import EligibilityCheckStepSeven from './EligibilityCheckStepSeven';
+import EligibilityCheckStepEight from './EligibilityCheckStepEight';
+import CommonEligibilityCheckStepOne from '../form/CommonEligibilityCheckStepOne';
+import EligibilityStepOne from '../form/EligibilityStepOne';
+import EligibilityStepTwo from '../form/EligibilityStepTwo';
+import EligibilityStepThree from '../form/EligibilityStepThree';
+import EligibilityStepFour from '../form/EligibilityStepFour';
+import EligibilityStepFive from '../form/EligibilityStepFive';
+import TreatmentPlanStepOne from '../form/TreatmentPlanStepOne';
+import ScheduleConsultationStepOne from '../form/ScheduleConsultationStepOne';
+import CheckoutPaymentStepOne from '../form/CheckoutPaymentStepOne';
 
 const TOTAL_STEPS = 7;
 
 const STEP_LABELS = [
-  "General information",
-  "Health History",
-  "Goal, Lifestyle, Activity",
-  "Eligibility Check",
-  "Eligibility",
-  "Treatment Plan",
-  "Checkout & Payment",
+  'General information',
+  'Health History',
+  'Goal, Lifestyle, Activity',
+  'Eligibility Check',
+  'Eligibility',
+  'Treatment Plan',
+  'Checkout & Payment',
 ];
 
 export default function MultiStepForm() {
@@ -54,13 +54,13 @@ export default function MultiStepForm() {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema) as Resolver<FormData>,
     defaultValues: {
-      goal: "birth-control",
-      firstName: "",
-      lastName: "",
-      dob: "",
+      goal: 'birth-control',
+      firstName: '',
+      lastName: '',
+      dob: '',
       gender: undefined,
-      residence: "",
-      unitSystem: "imperial",
+      residence: '',
+      unitSystem: 'imperial',
       heightFt: undefined,
       heightIn: undefined,
       heightCm: undefined,
@@ -68,48 +68,48 @@ export default function MultiStepForm() {
       weightKgs: undefined,
       medicalConditions: [],
       selectedSideEffects: [],
-      sideEffectsAdditionalDetails: "",
+      sideEffectsAdditionalDetails: '',
       knownAllergies: [],
       weightLossGoal: undefined,
       triedLosingWeightBefore: undefined,
-      weightLossMethods: "",
-      weightLossMotivation: "",
-      weightLossBarriers: "",
+      weightLossMethods: '',
+      weightLossMotivation: '',
+      weightLossBarriers: '',
       lifestyleDescription: undefined,
-      eatingRestrictions: "",
-      sleepHours: "",
+      eatingRestrictions: '',
+      sleepHours: '',
       nicotineUsage: undefined,
       nicotineProductTypes: [],
       smokingFrequency: undefined,
-      bloodPressureValue: "",
+      bloodPressureValue: '',
       monitoredForHighBP: undefined,
       autoimmuneConditions: [],
       currentMedications: [],
-      medicalTeamConcerns: "",
+      medicalTeamConcerns: '',
       isCurrentlyPregnant: undefined,
       birthControlGoals: [],
       preferredMethod: undefined,
-      email: "",
+      email: '',
       reviewAcknowledged: false,
-      shippingAddress: "",
-      shippingState: "",
-      shippingCity: "",
-      shippingCountry: "",
-      shippingPostalCode: "",
+      shippingAddress: '',
+      shippingState: '',
+      shippingCity: '',
+      shippingCountry: '',
+      shippingPostalCode: '',
       billingSameAsShipping: true,
       receivePromotions: false,
-      consultationDate: "",
-      consultationTime: "",
-      timezone: "America/Los_Angeles",
-      cardName: "",
-      cardNumber: "",
-      cardExpiry: "",
-      cardCvv: "",
+      consultationDate: '',
+      consultationTime: '',
+      timezone: 'America/Los_Angeles',
+      cardName: '',
+      cardNumber: '',
+      cardExpiry: '',
+      cardCvv: '',
       agreeTerms: true,
       attachments: [],
       videoAttachments: [],
     },
-    mode: "onChange",
+    mode: 'onChange',
     shouldUnregister: false,
   });
 
@@ -119,47 +119,47 @@ export default function MultiStepForm() {
 
     if (step === 1)
       fieldsToValidate = [
-        "firstName",
-        "lastName",
-        "dob",
-        "gender",
-        "residence",
+        'firstName',
+        'lastName',
+        'dob',
+        'gender',
+        'residence',
       ];
     if (step === 2) {
       if (healthHistoryStep === 0) {
         fieldsToValidate =
-          form.getValues("unitSystem") === "imperial"
-            ? ["heightFt", "heightIn", "weightLbs"]
-            : ["heightCm", "weightKgs"];
+          form.getValues('unitSystem') === 'imperial'
+            ? ['heightFt', 'heightIn', 'weightLbs']
+            : ['heightCm', 'weightKgs'];
       } else if (healthHistoryStep === 1) {
-        fieldsToValidate = ["medicalConditions"];
+        fieldsToValidate = ['medicalConditions'];
       } else if (healthHistoryStep === 2) {
         fieldsToValidate = [
-          "selectedSideEffects",
-          "sideEffectsAdditionalDetails",
+          'selectedSideEffects',
+          'sideEffectsAdditionalDetails',
         ];
       } else {
-        fieldsToValidate = ["knownAllergies"];
+        fieldsToValidate = ['knownAllergies'];
       }
     }
     if (step === 3) {
       const goalLifestyleFields: Array<Array<keyof FormData>> = [
-        ["birthControlGoals"],
-        ["preferredMethod"],
+        ['birthControlGoals'],
+        ['preferredMethod'],
       ];
 
       fieldsToValidate = goalLifestyleFields[goalLifestyleStep] || [];
     }
     if (step === 4) {
       const eligibilityCheckFields: Array<Array<keyof FormData>> = [
-        ["nicotineUsage"],
-        ["nicotineProductTypes"],
-        ["smokingFrequency"],
-        ["monitoredForHighBP"],
-        ["autoimmuneConditions"],
-        ["currentMedications"],
-        ["medicalTeamConcerns"],
-        ["isCurrentlyPregnant"],
+        ['nicotineUsage'],
+        ['nicotineProductTypes'],
+        ['smokingFrequency'],
+        ['monitoredForHighBP'],
+        ['autoimmuneConditions'],
+        ['currentMedications'],
+        ['medicalTeamConcerns'],
+        ['isCurrentlyPregnant'],
         [],
       ];
 
@@ -167,72 +167,72 @@ export default function MultiStepForm() {
     }
     if (step === 5) {
       const eligibilityFields: Array<Array<keyof FormData>> = [
-        ["reviewAcknowledged"],
-        ["email"],
+        ['reviewAcknowledged'],
+        ['email'],
         [],
         [],
         [
-          "shippingAddress",
-          "shippingState",
-          "shippingCity",
-          "shippingCountry",
-          "shippingPostalCode",
+          'shippingAddress',
+          'shippingState',
+          'shippingCity',
+          'shippingCountry',
+          'shippingPostalCode',
         ],
       ];
 
       fieldsToValidate = eligibilityFields[eligibilityStep] || [];
     }
-    if (step === 6) fieldsToValidate = ["treatmentPlan"];
+    if (step === 6) fieldsToValidate = ['treatmentPlan'];
 
     const isValid = await form.trigger(fieldsToValidate);
     if (!isValid) return;
 
     if (step === 2 && healthHistoryStep < 3) {
-      setHealthHistoryStep((prev) => prev + 1);
+      setHealthHistoryStep(prev => prev + 1);
       return;
     }
 
     if (step === 3 && goalLifestyleStep < 1) {
-      setGoalLifestyleStep((prev) => prev + 1);
+      setGoalLifestyleStep(prev => prev + 1);
       return;
     }
 
     if (step === 4 && eligibilityCheckStep < 8) {
-      setEligibilityCheckStep((prev) => prev + 1);
+      setEligibilityCheckStep(prev => prev + 1);
       return;
     }
 
     if (step === 5 && eligibilityStep < 4) {
-      setEligibilityStep((prev) => prev + 1);
+      setEligibilityStep(prev => prev + 1);
       return;
     }
 
-    setStep((prev) => Math.min(prev + 1, TOTAL_STEPS));
+    setStep(prev => Math.min(prev + 1, TOTAL_STEPS));
   };
 
   const prevStep = () => {
     if (step === 1) {
-      router.push("/assessment");
+      router.push('/assessment');
       return;
     }
 
     if (step === 2 && healthHistoryStep > 0) {
-      setHealthHistoryStep((prev) => prev - 1);
+      setHealthHistoryStep(prev => prev - 1);
       return;
     }
 
     if (step === 3 && goalLifestyleStep > 0) {
-      setGoalLifestyleStep((prev) => prev - 1);
+      setGoalLifestyleStep(prev => prev - 1);
       return;
     }
 
     if (step === 4 && eligibilityCheckStep > 0) {
-      setEligibilityCheckStep((prev) => prev - 1);
+      setEligibilityCheckStep(prev => prev - 1);
       return;
     }
 
     if (step === 5 && eligibilityStep > 0) {
-      setEligibilityStep((prev) => prev - 1);
+      setEligibilityStep(prev => prev - 1);
       return;
     }
 
@@ -248,23 +248,23 @@ export default function MultiStepForm() {
       setEligibilityStep(4);
     }
 
-    setStep((prev) => Math.max(prev - 1, 1));
+    setStep(prev => Math.max(prev - 1, 1));
   };
 
   const handlePlaceOrder = async () => {
     const step8Fields = [
-      "cardName",
-      "cardNumber",
-      "cardExpiry",
-      "cardCvv",
-      "agreeTerms",
+      'cardName',
+      'cardNumber',
+      'cardExpiry',
+      'cardCvv',
+      'agreeTerms',
     ] as const;
     const isValid = await form.trigger(step8Fields);
     if (!isValid) return;
 
     const data = form.getValues();
-    console.log("click==========", data);
-    router.push("/assessment/payment-success");
+    console.log('click==========', data);
+    router.push('/assessment/payment-success');
   };
 
   return (
@@ -294,7 +294,7 @@ export default function MultiStepForm() {
                         setEligibilityStep(0);
                       }}
                       className={`h-full flex-1 rounded-full transition-all duration-300 ${
-                        i + 1 <= step ? "bg-emerald-800" : "bg-gray-300"
+                        i + 1 <= step ? 'bg-emerald-800' : 'bg-gray-300'
                       } cursor-pointer`}
                       aria-label={`Go to step ${i + 1}`}
                     />
@@ -368,7 +368,7 @@ export default function MultiStepForm() {
                 <button
                   type="button"
                   onClick={handlePlaceOrder}
-                  className="px-6 py-3 bg-[#0B251A] text-white rounded-full text-sm font-medium cursor-pointer"
+                  className="px-6 py-3 bg-[secondary-bg] text-white rounded-full text-sm font-medium cursor-pointer"
                 >
                   Place order
                 </button>
@@ -386,7 +386,7 @@ export default function MultiStepForm() {
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-6 py-3 bg-[#0B251A] text-white rounded-full text-sm font-medium cursor-pointer"
+                  className="px-6 py-3 bg-[secondary-bg] text-white rounded-full text-sm font-medium cursor-pointer"
                 >
                   Continue &gt;
                 </button>

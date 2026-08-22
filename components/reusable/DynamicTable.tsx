@@ -9,7 +9,7 @@ interface ColumnConfig {
   label: React.ReactNode;
   width: any;
   accessor: string;
-  formatter?: (value: any, row: any) => React.ReactNode;
+  formatter?: (value: any, row: any, index?: number) => React.ReactNode;
 }
 
 interface DynamicTableProps {
@@ -57,7 +57,7 @@ export default function DynamicTable({
           >
             <thead className=" sticky top-0 text-white rounded-2xl! overflow-hidden  p-2">
               <tr className="">
-                {columns.map((col, index) => (
+                {columns.map((col: ColumnConfig, index: number) => (
                   <th
                     key={index}
                     style={{ width: col.width || "auto" }}
@@ -85,10 +85,10 @@ export default function DynamicTable({
                     <Loader />
                   </td>
                 </tr>
-              ) : data?.length > 0 ? (
-                data.map((row, i) => (
+                ) : data?.length > 0 ? (
+                data.map((row: any, i: number) => (
                   <tr key={i} className="border-t border-gray-100">
-                    {columns.map((col, idx) => (
+                    {columns.map((col: ColumnConfig, idx: number) => (
                       <td
                         key={idx}
                         style={{ width: col.width || "auto" }}

@@ -55,8 +55,8 @@ export default function Search() {
           },
         };
         setProduct(demoProducts?.data || { results: [] });
-      } catch (error) {
-        console.error("Failed to fetch product info:", error);
+      } catch {
+        setProduct({ results: [] });
       }
     };
 

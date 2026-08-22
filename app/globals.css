@@ -84,6 +84,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: #111111;
   --secondary-foreground: oklch(0.205 0 0);
+  --secondary-text: #142c1e;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -120,6 +121,7 @@
   --primary: #102b1c;
   --primary-foreground: oklch(0.205 0 0);
   --secondary: #111111;
+  --secondary-bg: #0b251a;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);

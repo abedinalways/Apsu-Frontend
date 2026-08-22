@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function Pointer(props) {
+function Pointer(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={20}

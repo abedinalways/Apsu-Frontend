@@ -1,35 +1,35 @@
-"use client";
+'use client';
 
-import { useRef } from "react";
-import { useFormContext } from "react-hook-form";
+import { useRef } from 'react';
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Textarea } from "@/components/ui/textarea";
-import { Upload, Trash2, FileText } from "lucide-react";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Textarea } from '@/components/ui/textarea';
+import { Upload, Trash2, FileText } from 'lucide-react';
+import { FormData } from '@/zod/AssessmentSchema';
 
 export default function CommonEligibilityCheckStepOne() {
   const { control, setValue, watch } = useFormContext<FormData>();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   // Watch labReports array (assumes Array<{ id?: string; name: string; size: string; type: string }>)
-  const attachments = watch("labReports" as any) || [];
+  const attachments = watch('labReports' as any) || [];
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      const newFiles = Array.from(e.target.files).map((file) => ({
+      const newFiles = Array.from(e.target.files).map(file => ({
         id: Math.random().toString(36).substring(7),
         name: file.name,
-        size: `${(file.size / (1024 * 1024)).toFixed(2).replace(".", ",")} MB`,
-        type: file.name.split(".").pop()?.toUpperCase() || "PDF",
+        size: `${(file.size / (1024 * 1024)).toFixed(2).replace('.', ',')} MB`,
+        type: file.name.split('.').pop()?.toUpperCase() || 'PDF',
       }));
 
-      setValue("labReports" as any, [...attachments, ...newFiles], {
+      setValue('labReports' as any, [...attachments, ...newFiles], {
         shouldValidate: true,
       });
     }
@@ -37,7 +37,7 @@ export default function CommonEligibilityCheckStepOne() {
 
   const handleRemoveFile = (index: number) => {
     const updated = attachments.filter((_: any, i: number) => i !== index);
-    setValue("labReports" as any, updated, { shouldValidate: true });
+    setValue('labReports' as any, updated, { shouldValidate: true });
   };
 
   const handleDragOver = (e: React.DragEvent) => {
@@ -47,14 +47,14 @@ export default function CommonEligibilityCheckStepOne() {
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      const newFiles = Array.from(e.dataTransfer.files).map((file) => ({
+      const newFiles = Array.from(e.dataTransfer.files).map(file => ({
         id: Math.random().toString(36).substring(7),
         name: file.name,
-        size: `${(file.size / (1024 * 1024)).toFixed(2).replace(".", ",")} MB`,
-        type: file.name.split(".").pop()?.toUpperCase() || "PDF",
+        size: `${(file.size / (1024 * 1024)).toFixed(2).replace('.', ',')} MB`,
+        type: file.name.split('.').pop()?.toUpperCase() || 'PDF',
       }));
 
-      setValue("labReports" as any, [...attachments, ...newFiles], {
+      setValue('labReports' as any, [...attachments, ...newFiles], {
         shouldValidate: true,
       });
     }
@@ -62,16 +62,16 @@ export default function CommonEligibilityCheckStepOne() {
 
   const getBadgeColor = (type: string) => {
     switch (type.toLowerCase()) {
-      case "pdf":
-      case "jpg":
-      case "jpeg":
-      case "png":
-        return "bg-[#e5252a] text-white";
-      case "doc":
-      case "docx":
-        return "bg-[#1868db] text-white";
+      case 'pdf':
+      case 'jpg':
+      case 'jpeg':
+      case 'png':
+        return 'bg-[#e5252a] text-white';
+      case 'doc':
+      case 'docx':
+        return 'bg-[#1868db] text-white';
       default:
-        return "bg-gray-600 text-white";
+        return 'bg-gray-600 text-white';
     }
   };
 
@@ -80,7 +80,7 @@ export default function CommonEligibilityCheckStepOne() {
       {/* Medical Team Concerns / Questions Area */}
       <FormField
         control={control}
-        name={"medicalConcerns" as any}
+        name={'medicalConcerns' as any}
         render={({ field }) => (
           <FormItem>
             <FormLabel className="text-[16px] font-semibold text-[#102b1c] tracking-tight block">
@@ -91,7 +91,7 @@ export default function CommonEligibilityCheckStepOne() {
               <Textarea
                 {...field}
                 placeholder="Describe your concerns if you have any..."
-                className="bg-[#FAF9F4] border-[#dce3de] focus-visible:ring-[1px] min-h-35 text-[15px] text-[#3b3b3c] placeholder:text-gray-400 p-4 rounded-xl resize-y"
+                className="bg-[background] border-[#dce3de] focus-visible:ring-[1px] min-h-35 text-[15px] text-[#3b3b3c] placeholder:text-gray-400 p-4 rounded-xl resize-y"
               />
             </FormControl>
             <FormMessage />
@@ -113,14 +113,14 @@ export default function CommonEligibilityCheckStepOne() {
       {/* File Dropzone */}
       <FormField
         control={control}
-        name={"labReports" as any}
+        name={'labReports' as any}
         render={() => (
           <FormItem>
             <FormControl>
               <div
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
-                className="bg-[#FAF9F4] border border-[#dce3de] rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
+                className="bg-[background] border border-[#dce3de] rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
               >
                 <input
                   type="file"
@@ -138,7 +138,7 @@ export default function CommonEligibilityCheckStepOne() {
                 </div>
                 <div>
                   <p className="text-[15px] font-medium text-[#102b1c]">
-                    Drag & Drop or{" "}
+                    Drag & Drop or{' '}
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
@@ -168,7 +168,7 @@ export default function CommonEligibilityCheckStepOne() {
             {attachments.map((file: any, index: number) => (
               <div
                 key={file.id || index}
-                className="bg-[#FAF9F4] border border-[#dce3de] rounded-xl p-3.5 flex items-center justify-between"
+                className="bg-[background] border border-[#dce3de] rounded-xl p-3.5 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
                   {/* File Type Icon Badge */}

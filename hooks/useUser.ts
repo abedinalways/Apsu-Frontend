@@ -1,23 +1,17 @@
 import { useEffect, useState } from "react";
-import { UserService } from "../service/user/user.service";
+import { authService } from "@/lib/services/auth";
+import type { User } from "@/lib/services/auth";
 
-/**
- * Return user details from server use in component
- * @returns
- */
-export function useUser(context = null) {
-  const [user, setUser] = useState(null);
+export function useUser() {
+  const [user, setUser] = useState<User | null>(null);
 
   const getUser = async () => {
-    const res = await UserService.getUserDetails(context);
-    let userData = null;
-
-    if (res.data.status == "success") {
-      userData = await res.data.data;
-    } else {
-      userData = null;
+    try {
+      const userData = authService.getCurrentUser();
+      setUser(userData);
+    } catch {
+      setUser(null);
     }
-    setUser(userData);
   };
 
   useEffect(() => {
@@ -27,23 +21,10 @@ export function useUser(context = null) {
   return user;
 }
 
-/**
- * Return user details from server use in serversideprops
- * @returns
- */
-export async function getUser(context = null) {
-  let userData = null;
+export async function getUserServer() {
   try {
-    const res = await UserService.getUserDetails(context);
-
-    if (res.data.error) {
-      userData = null;
-    } else {
-      userData = res.data.data;
-    }
-  } catch (error) {
-    userData = null;
+    return authService.getCurrentUser();
+  } catch {
+    return null;
   }
-
-  return userData;
 }

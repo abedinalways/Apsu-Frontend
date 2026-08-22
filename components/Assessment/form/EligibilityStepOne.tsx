@@ -1,33 +1,33 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useFormContext } from "react-hook-form";
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Check } from "lucide-react";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { Check } from 'lucide-react';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const REVIEW_ITEMS = [
-  "Information provided is accurate.",
-  "You understand that eligibility is determined by a licensed physician.",
-  "Payment does not guarantee a prescription.",
-  "If not approved, you may be eligible for a refund.",
+  'Information provided is accurate.',
+  'You understand that eligibility is determined by a licensed physician.',
+  'Payment does not guarantee a prescription.',
+  'If not approved, you may be eligible for a refund.',
 ];
 
 export default function EligibilityStepOne() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const isAcknowledged = watch("reviewAcknowledged") || false;
+  const isAcknowledged = watch('reviewAcknowledged') || false;
 
   const toggleAcknowledgment = () => {
-    setValue("reviewAcknowledged", !isAcknowledged, { shouldValidate: true });
+    setValue('reviewAcknowledged', !isAcknowledged, { shouldValidate: true });
   };
 
   return (
-    <div className="w-full bg-[#faf9f4] border border-gray-100 rounded-2xl p-6 sm:p-8 space-y-6">
+    <div className="w-full bg-[background] border border-gray-100 rounded-2xl p-6 sm:p-8 space-y-6">
       {/* Title Header text matched exactly from Frame 195.png */}
       <div className="space-y-4">
         <h2 className="text-[20px] font-semibold text-[#102b1c]">

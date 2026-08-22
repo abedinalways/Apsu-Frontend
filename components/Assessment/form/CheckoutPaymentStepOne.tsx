@@ -39,7 +39,7 @@
 //         </div>
 //       </div>
 
-//       <div className="bg-[#FAF9F4] rounded-2xl p-4 space-y-3 text-xs">
+//       <div className="bg-[background] rounded-2xl p-4 space-y-3 text-xs">
 //         <h3 className="font-bold text-sm text-gray-800 mb-1">Order Summary</h3>
 //         <div className="flex justify-between text-gray-600">
 //           <span>Subtotal</span>
@@ -92,7 +92,7 @@
 //                   <Input
 //                     placeholder="Enter your card name"
 //                     {...field}
-//                     className="bg-[#FAF9F4] h-11"
+//                     className="bg-[background] h-11"
 //                   />
 //                 </FormControl>
 //                 <FormMessage />
@@ -112,7 +112,7 @@
 //                   <Input
 //                     placeholder="Enter your card number"
 //                     {...field}
-//                     className="bg-[#FAF9F4] h-11"
+//                     className="bg-[background] h-11"
 //                   />
 //                 </FormControl>
 //                 <FormMessage />
@@ -134,7 +134,7 @@
 //                       <Input
 //                         placeholder="MM / YY"
 //                         {...field}
-//                         className="bg-[#FAF9F4] h-11 text-center"
+//                         className="bg-[background] h-11 text-center"
 //                       />
 //                     </FormControl>
 //                     <FormMessage />
@@ -155,7 +155,7 @@
 //                       <Input
 //                         placeholder="123"
 //                         {...field}
-//                         className="bg-[#FAF9F4] h-11 text-center"
+//                         className="bg-[background] h-11 text-center"
 //                       />
 //                     </FormControl>
 //                     <FormMessage />
@@ -169,7 +169,7 @@
 //           Your personal data will be used to process your order, support your
 //           experience throughout this website, and for other purposes described
 //           in our{" "}
-//           <span className="text-[#0B251A] underline cursor-pointer">
+//           <span className="text-[secondary-bg] underline cursor-pointer">
 //             privacy policy
 //           </span>
 //           .
@@ -190,7 +190,7 @@
 //               <div className="space-y-1 leading-none">
 //                 <FormLabel className="text-[11px] text-muted-foreground">
 //                   I have read and agree to the website{" "}
-//                   <span className="text-[#0B251A] underline cursor-pointer">
+//                   <span className="text-[secondary-bg] underline cursor-pointer">
 //                     terms and conditions<span className="text-red-500">*</span>
 //                   </span>
 //                 </FormLabel>
@@ -204,28 +204,28 @@
 //   );
 // }
 
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Image from "next/image";
-import VisaCardIcons from "@/components/icons/VisaCardIcons";
-import MsCardIcons from "@/components/icons/MsCardIcons";
-import MXCardIcons from "@/components/icons/MXCardIcons";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import Image from 'next/image';
+import VisaCardIcons from '@/components/icons/VisaCardIcons';
+import MsCardIcons from '@/components/icons/MsCardIcons';
+import MXCardIcons from '@/components/icons/MXCardIcons';
 // import { BuildingLibraryIcon } from "@heroicons/react/24/outline";
 
 export default function CheckoutPaymentStepOne() {
   const { control, watch } = useFormContext();
-  const selectedPaymentMethod = watch("paymentMethod", "card");
+  const selectedPaymentMethod = watch('paymentMethod', 'card');
   const cardIcons = [VisaCardIcons, MsCardIcons, MXCardIcons];
 
   return (
@@ -251,7 +251,7 @@ export default function CheckoutPaymentStepOne() {
       </div>
 
       {/* Order Summary & Payment Options */}
-      <div className="bg-[#FAF9F4] rounded-2xl p-4 space-y-3 text-xs">
+      <div className="bg-[background] rounded-2xl p-4 space-y-3 text-xs">
         <h3 className="font-bold text-sm text-gray-800 mb-1">Order Summary</h3>
         <div className="flex justify-between text-gray-600">
           <span>Subtotal</span>
@@ -260,7 +260,7 @@ export default function CheckoutPaymentStepOne() {
         <hr className="border" />
         <div className="flex justify-between text-gray-600 items-center">
           <span>
-            Shipping fee{" "}
+            Shipping fee{' '}
             <span className="text-[10px] text-muted-foreground">
               (Standard 1-3 Days)
             </span>
@@ -299,15 +299,15 @@ export default function CheckoutPaymentStepOne() {
                 <FormControl>
                   <RadioGroup
                     onValueChange={field.onChange}
-                    defaultValue={field.value || "card"}
+                    defaultValue={field.value || 'card'}
                     className="space-y-3"
                   >
                     {/* Option 1: Credit / Debit / Prepaid Card */}
                     <div
                       className={`border rounded-2xl p-4 space-y-4 bg-white shadow-sm transition-all ${
-                        selectedPaymentMethod === "card"
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                        selectedPaymentMethod === 'card'
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       <div className="flex items-center justify-between cursor-pointer">
@@ -330,7 +330,7 @@ export default function CheckoutPaymentStepOne() {
                       </div>
 
                       {/* Expandable Form Fields for Card details */}
-                      {selectedPaymentMethod === "card" && (
+                      {selectedPaymentMethod === 'card' && (
                         <div className="space-y-4 pt-2 border-t border-gray-100">
                           <FormField
                             control={control}
@@ -338,14 +338,14 @@ export default function CheckoutPaymentStepOne() {
                             render={({ field }) => (
                               <FormItem className="space-y-1">
                                 <FormLabel className="text-[11px] font-medium text-gray-700">
-                                  Name on Card{" "}
+                                  Name on Card{' '}
                                   <span className="text-red-500">*</span>
                                 </FormLabel>
                                 <FormControl>
                                   <Input
                                     placeholder="Enter your card name"
                                     {...field}
-                                    className="bg-[#FAF9F4] h-11"
+                                    className="bg-[background] h-11"
                                   />
                                 </FormControl>
                                 <FormMessage />
@@ -359,14 +359,14 @@ export default function CheckoutPaymentStepOne() {
                             render={({ field }) => (
                               <FormItem className="space-y-1">
                                 <FormLabel className="text-[11px] font-medium text-gray-700">
-                                  Card Number{" "}
+                                  Card Number{' '}
                                   <span className="text-red-500">*</span>
                                 </FormLabel>
                                 <FormControl>
                                   <Input
                                     placeholder="Enter your card number"
                                     {...field}
-                                    className="bg-[#FAF9F4] h-11"
+                                    className="bg-[background] h-11"
                                   />
                                 </FormControl>
                                 <FormMessage />
@@ -382,14 +382,14 @@ export default function CheckoutPaymentStepOne() {
                                 render={({ field }) => (
                                   <FormItem className="flex flex-col gap-1">
                                     <FormLabel className="text-[11px] font-medium text-gray-700">
-                                      Expiry Date{" "}
+                                      Expiry Date{' '}
                                       <span className="text-red-500">*</span>
                                     </FormLabel>
                                     <FormControl>
                                       <Input
                                         placeholder="MM / YY"
                                         {...field}
-                                        className="bg-[#FAF9F4] h-11 text-center"
+                                        className="bg-[background] h-11 text-center"
                                       />
                                     </FormControl>
                                     <FormMessage />
@@ -404,14 +404,14 @@ export default function CheckoutPaymentStepOne() {
                                 render={({ field }) => (
                                   <FormItem className="flex flex-col gap-1">
                                     <FormLabel className="text-[11px] font-medium text-gray-700">
-                                      CVV{" "}
+                                      CVV{' '}
                                       <span className="text-red-500">*</span>
                                     </FormLabel>
                                     <FormControl>
                                       <Input
                                         placeholder="123"
                                         {...field}
-                                        className="bg-[#FAF9F4] h-11 text-center"
+                                        className="bg-[background] h-11 text-center"
                                       />
                                     </FormControl>
                                     <FormMessage />
@@ -427,9 +427,9 @@ export default function CheckoutPaymentStepOne() {
                     {/* Option 2: Paypal */}
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
-                        selectedPaymentMethod === "paypal"
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                        selectedPaymentMethod === 'paypal'
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       <label className="flex items-center gap-3 cursor-pointer w-full">
@@ -446,9 +446,9 @@ export default function CheckoutPaymentStepOne() {
                     {/* Option 3: Venmo */}
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
-                        selectedPaymentMethod === "venmo"
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                        selectedPaymentMethod === 'venmo'
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       <label className="flex items-center gap-3 cursor-pointer w-full">
@@ -465,9 +465,9 @@ export default function CheckoutPaymentStepOne() {
                     {/* Option 4: Bank Account */}
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
-                        selectedPaymentMethod === "bank"
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                        selectedPaymentMethod === 'bank'
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       <label className="flex items-center gap-3 cursor-pointer w-full">
@@ -490,8 +490,8 @@ export default function CheckoutPaymentStepOne() {
         <p className="text-[10px] text-muted-foreground leading-relaxed pt-2">
           Your personal data will be used to process your order, support your
           experience throughout this website, and for other purposes described
-          in our{" "}
-          <span className="text-[#0B251A] underline cursor-pointer">
+          in our{' '}
+          <span className="text-[secondary-bg] underline cursor-pointer">
             privacy policy
           </span>
           .
@@ -511,8 +511,8 @@ export default function CheckoutPaymentStepOne() {
               </FormControl>
               <div className="space-y-1 leading-none">
                 <FormLabel className="text-[11px] text-muted-foreground">
-                  I have read and agree to the website{" "}
-                  <span className="text-[#0B251A] underline cursor-pointer">
+                  I have read and agree to the website{' '}
+                  <span className="text-[secondary-bg] underline cursor-pointer">
                     terms and conditions<span className="text-red-500">*</span>
                   </span>
                 </FormLabel>

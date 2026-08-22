@@ -67,7 +67,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-primary text-[#FAF9F4] pt-30">
+    <footer className="bg-primary text-[background] pt-30">
       <div className="container ">
         {/* section 1 */}
         <div className="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-6 ">
@@ -75,14 +75,14 @@ export default function Footer() {
           <div className=" lg:col-span-2 xl:col-span-3">
             <Image src="/footer-logo.png" alt="apsu" width={228} height={83} />
             <p className="text-lg mt-4 max-w-100">
-              American medicine, in the language you think in.{" "}
+              American medicine, in the language you think in.{' '}
             </p>
           </div>
           {/* Products */}
           <div className="space-y-4 pt-10 lg:pt-0">
             <h4 className="text-lg font-medium">Products</h4>
             <ul className="flex flex-col gap-3">
-              {ProductsLinks.map((link) => (
+              {ProductsLinks.map(link => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -98,7 +98,7 @@ export default function Footer() {
           <div className="space-y-4 pt-6 lg:pt-0">
             <h4 className="text-lg font-medium">Company</h4>
             <ul className="flex flex-col gap-3">
-              {CompanyLinks.map((link) => (
+              {CompanyLinks.map(link => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -114,7 +114,7 @@ export default function Footer() {
           <div className="space-y-4 pt-6 lg:pt-0">
             <h4 className="text-lg font-medium">Legal</h4>
             <ul className="flex flex-col gap-3">
-              {LegalLinks.map((link) => (
+              {LegalLinks.map(link => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -142,9 +142,9 @@ export default function Footer() {
             this is an emergency, call 911.
           </p>
           <p className="pt-6 lg:pt-4">
-            By using our services, you agree to our{" "}
+            By using our services, you agree to our{' '}
             <Link href="/terms" className="hover:underline">
-              {" "}
+              {' '}
               Terms & Conditions.
             </Link>
           </p>
@@ -159,7 +159,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="size-9 rounded-full bg-[#173A26] hover:bg-[#FAF9F4] hover:text-secondary transition-all duration-200 flex items-center justify-center"
+                className="size-9 rounded-full bg-[#173A26] hover:bg-[background] hover:text-secondary transition-all duration-200 flex items-center justify-center"
               >
                 <Icon className="size-5" />
               </a>

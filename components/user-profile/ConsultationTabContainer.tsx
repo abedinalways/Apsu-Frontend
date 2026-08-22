@@ -5,7 +5,6 @@ import { toast } from 'sonner';
 import { Eye } from 'lucide-react';
 import ConsultationCard from './ConsultationCard';
 
-
 interface Consultation {
   id: string;
   doctorName: string;
@@ -21,7 +20,6 @@ export default function ConsultationTabContainer() {
   const [selectedConsultation, setSelectedConsultation] =
     useState<Consultation | null>(null);
 
- 
   const upcomingConsultation: Consultation = {
     id: '1',
     doctorName: 'Dr. Robert',
@@ -32,7 +30,6 @@ export default function ConsultationTabContainer() {
     date: 'Tue, Jul 20',
   };
 
-  
   const consultationHistory: Consultation[] = [
     {
       id: 'h1',
@@ -67,7 +64,6 @@ export default function ConsultationTabContainer() {
     },
   ];
 
-  
   const handleReschedule = () => {
     toast('Reschedule Requested', {
       description: 'Our care team will contact you to reschedule.',
@@ -91,7 +87,7 @@ export default function ConsultationTabContainer() {
         <div className="w-full overflow-x-auto rounded-[12px] border border-[#EBEAE4] bg-white">
           <table className="w-full border-collapse text-left min-w-[650px]">
             <thead>
-              <tr className="bg-[#ecf9f1] text-[#142C1E] font-semibold text-sm">
+              <tr className="bg-[#ecf9f1] text-[secondary-text] font-semibold text-sm">
                 <th className="p-4 pl-6">Date & Time</th>
                 <th className="p-4">Physician</th>
                 <th className="p-4">Treatment</th>
@@ -141,7 +137,7 @@ export default function ConsultationTabContainer() {
                       disabled={!item.notes}
                       className={`inline-flex items-center  cursor-pointer gap-1.5 text-sm font-medium transition-colors ${
                         item.notes
-                          ? 'text-gray-600 hover:text-[#142C1E]'
+                          ? 'text-gray-600 hover:text-[secondary-text]'
                           : 'text-gray-300 cursor-not-allowed'
                       }`}
                       title={
@@ -186,7 +182,7 @@ export default function ConsultationTabContainer() {
 
             {/* Modal Header */}
             <div className="space-y-4">
-              <span className="text-xs md:text-[16px] font-normal uppercase tracking-[.13em] text-[#00774d] block">
+              <span className="text-xs md:text-[16px] font-normal uppercase tracking-[.13em] text-[color-greenColor] block">
                 Physician Notes
               </span>
 

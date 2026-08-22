@@ -1,4 +1,4 @@
-import { FeatureItem } from "@/app/(Frond-End)/weight-loss/page";
+import { FeatureItem } from "@/app/(Front-End)/weight-loss/page";
 import PrimaryButton from "../reusable/button/PrimaryButton";
 import { StaticImageData } from "next/image";
 

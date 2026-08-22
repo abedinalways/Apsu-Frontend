@@ -16,7 +16,6 @@ import PrimaryButton from '../reusable/button/PrimaryButton';
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -33,51 +32,13 @@ export default function ContactForm() {
   async function onSubmit(values: ContactFormValues) {
     setIsSubmitting(true);
     try {
-      // Simulate API call
-      console.log('Form submitted:', values);
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      setIsSubmitted(true);
-      toast.success('Your message has been sent successfully!');
-      form.reset();
+      console.log('Contact form submitted:', values);
+      toast.error('Contact form is not connected to a backend yet.');
     } catch (error) {
       toast.error('Something went wrong. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
-  }
-
-  if (isSubmitted) {
-    return (
-      <div className="rounded-2xl bg-white shadow h-full flex flex-col items-center justify-center p-8 text-center min-h-[500px]">
-        <div className="size-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-          <svg
-            className="size-10 text-primary"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-        </div>
-        <h3 className="text-2xl font-semibold text-black mb-2 font-[Work_Sans]">Thank You!</h3>
-        <p className="text-gray-600 mb-8">
-          Your message has been received. We&apos;ll get back to you as soon as
-          possible.
-        </p>
-        <button
-          onClick={() => setIsSubmitted(false)}
-          className="text-primary font-semibold hover:underline cursor-pointer"
-        >
-          Send another message
-        </button>
-      </div>
-    );
   }
 
   return (

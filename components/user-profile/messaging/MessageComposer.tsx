@@ -21,51 +21,57 @@ export default function MessageComposer({ onSend }: MessageComposerProps) {
     if (now - lastSentTimeRef.current < 500) {
       return;
     }
-    
+
     const trimmed = draft.trim();
     const hasContent = trimmed || attachment;
-    
+
     if (!hasContent) return;
-    
+
     // Update timestamp immediately
     lastSentTimeRef.current = now;
-    
+
     onSend(trimmed, attachment || undefined);
     setDraft('');
     setAttachment(null);
   }, [draft, attachment, onSend]);
 
-  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      handleSubmit();
-    }
-  }, [handleSubmit]);
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleSubmit();
+      }
+    },
+    [handleSubmit],
+  );
 
-  const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+  const handleFileSelect = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
 
-    // Limit file size to 5MB
-    const maxSize = 5 * 1024 * 1024;
-    if (file.size > maxSize) {
-      alert('File size must be less than 5MB');
+      // Limit file size to 5MB
+      const maxSize = 5 * 1024 * 1024;
+      if (file.size > maxSize) {
+        alert('File size must be less than 5MB');
+        e.target.value = '';
+        return;
+      }
+
+      // Use object URL for all files - instant and no freezing
+      const objectUrl = URL.createObjectURL(file);
+      const newAttachment: MessageAttachment = {
+        id: `att-${Date.now()}`,
+        type: file.type.startsWith('image/') ? 'image' : 'document',
+        url: objectUrl,
+        name: file.name,
+      };
+
+      setAttachment(newAttachment);
       e.target.value = '';
-      return;
-    }
-
-    // Use object URL for all files - instant and no freezing
-    const objectUrl = URL.createObjectURL(file);
-    const newAttachment: MessageAttachment = {
-      id: `att-${Date.now()}`,
-      type: file.type.startsWith('image/') ? 'image' : 'document',
-      url: objectUrl,
-      name: file.name,
-    };
-    
-    setAttachment(newAttachment);
-    e.target.value = '';
-  }, []);
+    },
+    [],
+  );
 
   const handleCameraClick = useCallback(() => {
     cameraInputRef.current?.click();
@@ -98,22 +104,38 @@ export default function MessageComposer({ onSend }: MessageComposerProps) {
       {attachment && (
         <div className="mb-2 flex items-center gap-2 rounded-lg border border-[#E5E7EB] bg-[#FAF9F5] p-2">
           {attachment.type === 'image' ? (
-            <img src={attachment.url} alt={attachment.name} className="h-12 w-12 rounded object-cover" />
+            <img
+              src={attachment.url}
+              alt={attachment.name}
+              className="h-12 w-12 rounded object-cover"
+            />
           ) : (
             <div className="flex h-12 w-12 items-center justify-center rounded bg-[#E5E7EB]">
               <Paperclip className="h-6 w-6 text-gray-500" />
             </div>
           )}
           <div className="flex-1 min-w-0">
-            <p className="truncate text-xs text-[#142C1E]">{attachment.name}</p>
+            <p className="truncate text-xs text-[secondary-text]">
+              {attachment.name}
+            </p>
           </div>
           <button
             type="button"
             onClick={() => setAttachment(null)}
             className="text-gray-400 hover:text-gray-600"
           >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
@@ -142,13 +164,17 @@ export default function MessageComposer({ onSend }: MessageComposerProps) {
 
         {/* Text input field */}
         <input
+          id="message-composer"
           type="text"
           value={draft}
-          onChange={(e) => setDraft(e.target.value)}
+          onChange={e => setDraft(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Type a new message.."
-          className="flex-1 min-w-0 h-9 sm:h-10 rounded-[20px] border border-[#E5E7EB] bg-white px-3 sm:px-4 py-2 text-xs sm:text-sm text-[#142C1E] outline-none placeholder:text-gray-400 focus:border-[#A3C9A8]"
+          className="flex-1 min-w-0 h-9 sm:h-10 rounded-[20px] border border-[#E5E7EB] bg-white px-3 sm:px-4 py-2 text-xs sm:text-sm text-[secondary-text] outline-none placeholder:text-gray-400 focus:border-[#A3C9A8]"
         />
+        <label htmlFor="message-composer" className="sr-only">
+          Type a new message
+        </label>
 
         {/* Send button */}
         <button

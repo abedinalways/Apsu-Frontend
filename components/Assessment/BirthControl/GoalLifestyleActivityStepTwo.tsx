@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import React from "react";
-import { useFormContext } from "react-hook-form";
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { cn } from "@/lib/utils";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { cn } from '@/lib/utils';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const METHOD_OPTIONS = [
-  { id: "daily_pill", label: "Daily pill" },
-  { id: "weekly_patch", label: "Weekly patch" },
-  { id: "monthly_yearly_ring", label: "Monthly or yearly ring" },
-  { id: "self_injection_3_months", label: "Self-injection every 3 months" },
-  { id: "non_hormonal", label: "Non-hormonal options" },
-  { id: "not_sure", label: "I'm not sure" },
+  { id: 'daily_pill', label: 'Daily pill' },
+  { id: 'weekly_patch', label: 'Weekly patch' },
+  { id: 'monthly_yearly_ring', label: 'Monthly or yearly ring' },
+  { id: 'self_injection_3_months', label: 'Self-injection every 3 months' },
+  { id: 'non_hormonal', label: 'Non-hormonal options' },
+  { id: 'not_sure', label: "I'm not sure" },
 ];
 
 export default function GoalLifestyleActivityStepTwo() {
@@ -45,21 +45,21 @@ export default function GoalLifestyleActivityStepTwo() {
                 value={field.value}
                 className="space-y-3"
               >
-                {METHOD_OPTIONS.map((option) => {
+                {METHOD_OPTIONS.map(option => {
                   const isSelected = field.value === option.id;
                   return (
                     <label
                       key={option.id}
                       className={cn(
-                        "flex items-center space-x-4 w-full p-4 rounded-xl border transition-all cursor-pointer select-none bg-[#FAF9F4] h-14! text-[16px] text-[#6c6c6c]",
+                        'flex items-center space-x-4 w-full p-4 rounded-xl border transition-all cursor-pointer select-none bg-[background] h-14! text-[16px] text-[#6c6c6c]',
                         isSelected
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200",
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200',
                       )}
                     >
                       <RadioGroupItem
                         value={option.id}
-                        className="h-5 w-5 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-[#0B251A] data-[state=checked]:text-[#0B251A]"
+                        className="h-5 w-5 border-gray-300 text-emerald-900 focus:ring-emerald-800 data-[state=checked]:border-[secondary-bg] data-[state=checked]:text-[secondary-bg]"
                       />
                       <span className="text-sm font-medium text-gray-700">
                         {option.label}

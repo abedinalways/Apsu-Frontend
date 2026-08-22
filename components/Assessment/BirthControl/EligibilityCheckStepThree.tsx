@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const SMOKING_OPTIONS = [
-  { id: "never", label: "Never" },
-  { id: "occasionally", label: "Occasionally" },
-  { id: "daily", label: "Daily" },
-  { id: "stopped-last-month", label: "Stopped from last month" },
+  { id: 'never', label: 'Never' },
+  { id: 'occasionally', label: 'Occasionally' },
+  { id: 'daily', label: 'Daily' },
+  { id: 'stopped-last-month', label: 'Stopped from last month' },
 ] as const;
 
 export default function EligibilityCheckStepThree() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const selectedFrequency = watch("smokingFrequency");
+  const selectedFrequency = watch('smokingFrequency');
 
   return (
     <div className="space-y-6">
@@ -40,7 +40,7 @@ export default function EligibilityCheckStepThree() {
           <FormItem className="space-y-3">
             <FormControl>
               <div className="flex flex-col gap-3">
-                {SMOKING_OPTIONS.map((option) => {
+                {SMOKING_OPTIONS.map(option => {
                   const isSelected = selectedFrequency === option.id;
 
                   return (
@@ -48,14 +48,14 @@ export default function EligibilityCheckStepThree() {
                       key={option.id}
                       type="button"
                       onClick={() =>
-                        setValue("smokingFrequency", option.id, {
+                        setValue('smokingFrequency', option.id, {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 text-left rounded-xl border transition-all bg-[#FAF9F4] h-14! cursor-pointer text-[16px] text-[#6c6c6c] ${
+                      className={`w-full p-4 text-left rounded-xl border transition-all bg-[background] h-14! cursor-pointer text-[16px] text-[#6c6c6c] ${
                         isSelected
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       <span className="text-sm font-medium text-gray-700">

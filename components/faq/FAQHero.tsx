@@ -23,15 +23,19 @@ export function FAQHero() {
         {/* Search Input */}
         <div className="relative w-full max-w-md px-4 sm:px-0">
           <div className="absolute left-6 sm:left-4 top-1/2 -translate-y-1/2 pointer-events-none">
-            <SearchIcon className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400" />
+            <SearchIcon className="h-5 w-5 sm:h-6 sm:h-6 text-gray-400" />
           </div>
           <input
+            id="faq-search"
             type="text"
             placeholder="Search Questions"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             className="w-full rounded-[12px] border border-[#b8d9c6] bg-[#FDFBF7] py-3 sm:py-3.5 pl-10 sm:pl-11 pr-4 text-sm sm:text-base text-gray-700 shadow-sm outline-none transition-all placeholder:text-gray-400 hover:border-green-300 focus:border-green-400 focus:shadow-md focus:ring-0"
           />
+          <label htmlFor="faq-search" className="sr-only">
+            Search Questions
+          </label>
         </div>
       </div>
     </section>

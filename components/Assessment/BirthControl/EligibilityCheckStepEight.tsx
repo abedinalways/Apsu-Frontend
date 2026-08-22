@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 import {
   FormField,
   FormItem,
   FormControl,
   FormMessage,
-} from "@/components/ui/form";
-import { FormData } from "@/zod/AssessmentSchema";
+} from '@/components/ui/form';
+import { FormData } from '@/zod/AssessmentSchema';
 
 const PREGNANCY_OPTIONS = [
-  { id: "yes", label: "Yes" },
-  { id: "no", label: "No" },
-  { id: "not-sure", label: "Not Sure" },
+  { id: 'yes', label: 'Yes' },
+  { id: 'no', label: 'No' },
+  { id: 'not-sure', label: 'Not Sure' },
 ] as const;
 
 export default function EligibilityCheckStepEight() {
   const { control, watch, setValue } = useFormContext<FormData>();
-  const currentSelection = watch("isCurrentlyPregnant");
+  const currentSelection = watch('isCurrentlyPregnant');
 
   return (
     <div className="space-y-6">
@@ -36,7 +36,7 @@ export default function EligibilityCheckStepEight() {
           <FormItem className="space-y-3">
             <FormControl>
               <div className="flex flex-col gap-3">
-                {PREGNANCY_OPTIONS.map((option) => {
+                {PREGNANCY_OPTIONS.map(option => {
                   const isSelected = currentSelection === option.id;
 
                   return (
@@ -44,14 +44,14 @@ export default function EligibilityCheckStepEight() {
                       key={option.id}
                       type="button"
                       onClick={() =>
-                        setValue("isCurrentlyPregnant", option.id, {
+                        setValue('isCurrentlyPregnant', option.id, {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 text-left transition-all bg-[#FAF9F4] h-14! rounded-xl border text-[16px] text-[#6c6c6c] cursor-pointer ${
+                      className={`w-full p-4 text-left transition-all bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] cursor-pointer ${
                         isSelected
-                          ? "border-[#AFC1B6] border-2 text-[#0B251A]"
-                          : "border-gray-200"
+                          ? 'border-[#AFC1B6] border-2 text-[secondary-bg]'
+                          : 'border-gray-200'
                       }`}
                     >
                       <span className="text-sm font-medium">

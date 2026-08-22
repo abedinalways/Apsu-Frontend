@@ -1,30 +1,32 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { Button } from "./ui/button";
-import { FaRegCircleXmark } from "react-icons/fa6";
-import { CircleX, ChevronDown, LogOut, User } from "lucide-react";
-import { useAuth } from "@/contexts/AuthContext";
-import { toast } from "sonner";
-import UserIcon from "./icons/UserIcon";
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { Button } from './ui/button';
+import { FaRegCircleXmark } from 'react-icons/fa6';
+import { CircleX, ChevronDown, LogOut, User } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import { useCurrentUser } from '@/hooks/useCurrentUser';
+import { toast } from 'sonner';
+import UserIcon from './icons/UserIcon';
 
 const menuItems = [
-  { name: "Weight Loss", path: "/weight-loss" },
-  { name: "Birth Control", path: "/birth-control" },
-  { name: "Sleep", path: "/sleep" },
-  { name: "Contact Us", path: "/contact" },
+  { name: 'Weight Loss', path: '/weight-loss' },
+  { name: 'Birth Control', path: '/birth-control' },
+  { name: 'Sleep', path: '/sleep' },
+  { name: 'Contact Us', path: '/contact' },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { user, isAuthenticated, logout } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
+  const { user } = useCurrentUser();
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -35,9 +37,9 @@ export default function Navbar() {
       setScrolled(window.scrollY > 50); // Change after scrolling 50px
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleLogout = () => {
@@ -74,9 +76,9 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 className={cn(
-                  'relative text-lg transition-colors duration-300 hover:text-[#00774d]',
+                  'relative text-lg transition-colors duration-300 hover:text-[color-greenColor]',
                   pathname === item.path
-                    ? 'text-[#00774d] font-medium'
+                    ? 'text-[color-greenColor] font-medium'
                     : 'text-black',
                 )}
               >
@@ -94,7 +96,7 @@ export default function Navbar() {
                   onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
                   className="flex items-center gap-2  text-white rounded-full aspect-square pl-1 pr-3 py-1 "
                 >
-                  <div className="w-8 h-8 rounded-full bg-white text-[#142C1E] flex items-center justify-center font-semibold text-sm">
+                  <div className="w-8 h-8 rounded-full bg-white text-[secondary-text] flex items-center justify-center font-semibold text-sm">
                     {/* {user.email.charAt(0).toUpperCase()} */}
                     <UserIcon />
                   </div>
@@ -189,9 +191,9 @@ export default function Navbar() {
                   key={item.path}
                   href={item.path}
                   className={cn(
-                    'transition-colors duration-300 hover:text-[#00774d]',
+                    'transition-colors duration-300 hover:text-[color-greenColor]',
                     pathname === item.path
-                      ? 'text-[#00774d] font-medium'
+                      ? 'text-[color-greenColor] font-medium'
                       : 'text-secondary',
                   )}
                   onClick={() => setMenuOpen(false)}

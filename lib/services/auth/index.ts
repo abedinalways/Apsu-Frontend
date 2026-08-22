@@ -1,25 +1,23 @@
 /**
  * Auth Service — Entry Point
  *
- * ─── TO SWITCH BETWEEN DEMO AND REAL API ─────────────────────────────────────
+ * ─── SWITCHING BETWEEN DEMO AND REAL API ──────────────────────────────────────
  *
- *  DEMO MODE (current):
- *    export { demoAuthService as authService } from './demo.auth';
+ * Set the environment variable:
+ *   NEXT_PUBLIC_AUTH_MODE=demo     (default if unset)
+ *   NEXT_PUBLIC_AUTH_MODE=api
  *
- *  PRODUCTION MODE (when backend is ready):
- *    export { apiAuthService as authService } from './api.auth';
- *
- * That's it. One line change. Everything else stays the same.
+ * That's it. One env var. Everything else stays the same.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
-// ✅ ACTIVE: Demo mode — accepts any email/password, no backend needed
-export { demoAuthService as authService } from './demo.auth';
+import { demoAuthService } from './demo.auth';
+import { apiAuthService } from './api.auth';
 
-// 🔌 FUTURE: Uncomment when backend is ready
-// export { apiAuthService as authService } from './api.auth';
+const mode = (process.env.NEXT_PUBLIC_AUTH_MODE || 'demo') as 'demo' | 'api';
 
-// Re-export types so consumers don't need to import from the sub-files
+export const authService = mode === 'api' ? apiAuthService : demoAuthService;
+
 export type {
   User,
   AuthResponse,
