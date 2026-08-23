@@ -7,6 +7,7 @@ import BlogBreadcrumb from './BlogBreadcrumb';
 import Image from 'next/image';
 import BlogFAQs from './BlogFAQs';
 import RecommendedCarousel from '../blog/RecommendedCarousel';
+import BlogCTA from './BlogCTA';
 
 interface Props {
   blog: BlogMeta;
@@ -36,6 +37,7 @@ export default function BlogDetailsPage({ blog }: Props) {
         understand your options, use treatment safely, and have support
         throughout the process.
       </p>
+      
       <BlogFAQs />
       <RecommendedCarousel />
     </div>

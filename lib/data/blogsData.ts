@@ -7,7 +7,7 @@ export const blogsData = [
     category: 'Weight Loss',
     date: '20 Jan 2026',
     readTime: '5 min read',
-    title: 'Compounded GLP-1 vs. Brand-Name GLP-1: What\'s the Difference?',
+    title: "Compounded GLP-1 vs. Brand-Name GLP-1: What's the Difference?",
     description:
       'GLP-1 treatments have gained attention for weight management. Understand how they work and what factors physicians consider before prescribing them.',
     href: '/blog/understanding-glp1',
@@ -16,49 +16,50 @@ export const blogsData = [
   {
     id: 2,
     image: '/images/blog/img25.jpg',
-    category: 'Sleep',
+    category: 'Birth Control',
     date: '20 Jan 2026',
-    readTime: '5 min read',
-    title: 'Healthy Evening Habits That Support Better Sleep',
+    readTime: '6 min read',
+    title: "Birth Control Pills vs. the Shot: What's the Difference?",
     description:
-      'Small changes in your nightly routine can have a big impact. Discover habits that may improve sleep quality and consistency.',
+      'Both prevent pregnancy well. The real difference is how much control you keep. Learn which method fits your lifestyle, health, and future plans.',
     href: '/blog/healthy-evening-habits',
   },
 
   {
     id: 3,
     image: '/images/blog/img36.png',
-    category: 'Health',
+    category: 'Sleep',
     date: '20 Jan 2026',
-    readTime: '5 min read',
-    title: 'How Language Barriers Impact Healthcare Decisions',
+    readTime: '7 min read',
+    title:
+      'Understanding Prescription Sleep Medications: Types and How They Work',
     description:
-      'Millions of people delay care because they struggle to communicate with providers. Learn why language accessibility is essential for better health outcomes.',
+      'Learn the main groups of prescription sleep medications, how they differ, and what to discuss with a healthcare provider before deciding whether medication is appropriate.',
     href: '/blog/language-barriers-healthcare',
   },
 
   {
     id: 4,
     image: '/images/blog/img30.jpg',
-    category: 'Telehealth',
+    category: 'Weight Loss',
     date: '20 Jan 2026',
-    readTime: '5 min read',
-    title: 'How Online Healthcare Is Making Treatment More Accessible',
+    readTime: '8 min read',
+    title: 'How Do GLP-1 Medications Help You Lose Weight?',
     description:
-      'Telehealth is changing the way people connect with healthcare providers. Learn how virtual care offers convenience, privacy, and faster access to treatment.',
+      'Understand what GLP-1 medications actually do, how they work, and what to expect from treatment — beyond the myths and oversimplifications.',
     href: '/blog/online-healthcare',
   },
 
   {
     id: 5,
-    image: '/images/blog/img29.jpg',
+    image: '/images/blog/img37.jpg',
     category: "Women's Health",
     date: '21 Jan 2026',
-    readTime: '6 min read',
-    title: "Women's Preventive Care Checklist",
+    readTime: '9 min read',
+    title: 'Semaglutide vs. Tirzepatide: Key Differences, Results, and Risks',
     description:
-      'Regular screenings and preventive care help detect issues early and improve long-term health outcomes.',
-    href: '/blog/womens-preventive-care',
+      'A clear guide to semaglutide and tirzepatide for weight management, including how they work, how study results differ, common side effects, compounded medication cautions, and questions to ask a clinician.',
+    href: '/blog/semaglutide-vs-tirzepatide',
   },
 
   {

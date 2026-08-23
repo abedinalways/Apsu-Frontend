@@ -9,7 +9,7 @@ import React from 'react'
 
 export default async function BlogPage() {
   const blogs = await BlogService.getBlogs();
-  const featuredBlogs = blogs.slice(0, 3);
+  const featuredBlogs = blogs.slice(0, 5);
 
   return (
     <>

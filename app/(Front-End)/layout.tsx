@@ -13,7 +13,7 @@ export default function FrontEndLayout({
   return (
     <>
       <SmoothScroll>
-        <div className="flex flex-col w-full min-h-screen bg-[background]">
+        <div className="flex flex-col w-full min-h-screen bg-bgColor">
           <Navbar />
           <main className="flex-1">{children}</main>
           {/* <TwScreenSize/> */}
