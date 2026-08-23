@@ -30,6 +30,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-secondary-text: var(--secondary-text);
   --color-secondary-bg: var(--secondary-bg);
+  --color-background:var(--background);
 }
 
 /* ------------------------------
@@ -61,6 +62,7 @@
   --color-bgColor: #faf9f4;
   --color-descriptionColor: #3b3b3c;
   --color-highlightColor: var(--highlightColor);
+  --color-lightGreenColor: var(--lightGreenColor);
 }
 /* ------------------------------
    Light Theme (default)
@@ -76,9 +78,10 @@
   --grayColor1: #777980;
   --bgColor: rgba(243, 243, 244, 0.5);
   --descriptionColor: #4a4c56;
+  --lightGreenColor: #e8f3ed;
   /* ========== */
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #faf9f4;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -128,6 +131,7 @@
   --secondary-bg: #0b251a;
   --secondary-text: #142c1e;
   --highlightColor:#fbff19;
+  --lightGreenColor: #e8f3ed;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);

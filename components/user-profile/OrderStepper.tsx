@@ -21,7 +21,7 @@ export default function OrderStepper({
         <div className="relative">
           {/* Background Line */}
 
-          <div className="absolute left-[11px] top-3 bottom-3 w-[2px] bg-[#E8F3ED]" />
+          <div className="absolute left-[11px] top-3 bottom-3 w-[2px] bg-lightGreenColor" />
 
           {/* Progress Line */}
 
@@ -59,10 +59,10 @@ export default function OrderStepper({
 
                     ${
                       completed
-                        ? 'bg-[#219653] border-[#E8F3ED]'
+                        ? 'bg-[#219653] border-lightGreenColor'
                         : active
-                          ? 'bg-[#FCBE15] border-[#E8F3ED]'
-                          : 'bg-[#5A6561] border-[#E8F3ED]'
+                          ? 'bg-[#FCBE15] border-lightGreenColor'
+                          : 'bg-[#5A6561] border-lightGreenColor'
                     }
                   `}
                   >
@@ -111,7 +111,7 @@ export default function OrderStepper({
         <div className="relative flex justify-between">
           {/* Background Line */}
 
-          <div className="absolute left-0 right-0 top-5 h-[2px] bg-[#E8F3ED]" />
+          <div className="absolute left-0 right-0 top-5 h-[2px] bg-lightGreenColor" />
 
           {/* Progress Line */}
 
@@ -151,10 +151,10 @@ export default function OrderStepper({
 
                   ${
                     completed
-                      ? 'bg-[#219653] border-[#E8F3ED]'
+                      ? 'bg-[#219653] border-lightGreenColor'
                       : active
-                        ? 'bg-[#FCBE15] border-[#E8F3ED] scale-110'
-                        : 'bg-[#5A6561] border-[#E8F3ED]'
+                        ? 'bg-[#FCBE15] border-lightGreenColor scale-110'
+                        : 'bg-[#5A6561] border-lightGreenColor'
                   }
                 `}
                 >
