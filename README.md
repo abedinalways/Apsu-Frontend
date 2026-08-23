@@ -1,6 +1,8 @@
 # Apsu Frontend
 
-Next.js frontend for the Apsu health platform. Supports weight loss, birth control, and sleep assessment flows, blog content, and user profile management.
+Next.js frontend for the Apsu health platform. Supports weight loss, birth control, and sleep assessment flows, blog 
+
+content, and user profile management.
 
 ---
 
