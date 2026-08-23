@@ -126,7 +126,11 @@ export default function HealthHistoryStepThree() {
         control={control}
         name="sideEffectsAdditionalDetails"
         render={({ field }) => (
-          <FormItem>
+          <FormItem className="space-y-2">
+            <FormLabel className="text-[14px] font-semibold text-[#111] flex items-center gap-0.5">
+              Describe any side effects you have experienced:{' '}
+              <span className="text-red-500">*</span>
+            </FormLabel>
             <FormControl>
               <Textarea
                 {...field}

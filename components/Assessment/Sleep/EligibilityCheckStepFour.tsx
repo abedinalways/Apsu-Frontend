@@ -7,6 +7,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { cn } from '@/lib/utils';
@@ -44,14 +45,14 @@ export default function EligibilityCheckStepFour() {
 
       {/* Question 1: Do you currently take any sleep medications? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
-          Do you currently take any sleep medications?
-        </h3>
         <FormField
           control={control}
           name="takesSleepMedication"
           render={({ field }) => (
             <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] font-semibold text-[#111]">
+                Do you currently take any sleep medications?
+              </FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -88,14 +89,14 @@ export default function EligibilityCheckStepFour() {
 
       {/* Question 2: Do you snore heavily or stop breathing during sleep? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
-          Do you snore heavily or stop breathing during sleep?
-        </h3>
         <FormField
           control={control}
           name="heavySnoringOrApnea"
           render={({ field }) => (
             <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] font-semibold text-[#111]">
+                Do you snore heavily or stop breathing during sleep?
+              </FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -132,14 +133,14 @@ export default function EligibilityCheckStepFour() {
 
       {/* Question 3: Are you pregnant or breastfeeding? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
-          Are you pregnant or breastfeeding?
-        </h3>
         <FormField
           control={control}
           name="pregnantOrBreastfeeding"
           render={({ field }) => (
             <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] font-semibold text-[#111]">
+                Are you pregnant or breastfeeding?
+              </FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}

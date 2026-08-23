@@ -6,6 +6,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { FormData } from '@/zod/AssessmentSchema';
 
@@ -38,6 +39,9 @@ export default function EligibilityCheckStepThree() {
         name="smokingFrequency"
         render={() => (
           <FormItem className="space-y-3">
+            <FormLabel className="text-[14px] font-semibold text-[#111]">
+              Do you smoke or use nicotine products?
+            </FormLabel>
             <FormControl>
               <div className="flex flex-col gap-3">
                 {SMOKING_OPTIONS.map(option => {

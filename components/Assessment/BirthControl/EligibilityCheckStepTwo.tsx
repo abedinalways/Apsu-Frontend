@@ -54,40 +54,41 @@ export default function EligibilityCheckStepTwo() {
                 {PRODUCT_OPTIONS.map(option => {
                   const isChecked = selectedProducts.includes(option.id);
 
-                  return (
-                    <div
-                      key={option.id}
-                      role="checkbox"
-                      tabIndex={0}
-                      aria-checked={isChecked}
-                      onClick={() => handleToggle(option.id, !isChecked)}
-                      onKeyDown={event => {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                          event.preventDefault();
-                          handleToggle(option.id, !isChecked);
-                        }
-                      }}
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all bg-[background] h-14! cursor-pointer text-[16px] text-[#6c6c6c] ${
-                        isChecked
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
-                          : 'border-gray-200'
-                      }`}
-                    >
-                      <span
-                        aria-hidden="true"
-                        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-all ${
-                          isChecked
-                            ? 'border-[#AFC1B6] bg-secondary-bg text-white'
-                            : 'border-gray-300 bg-white text-transparent'
-                        }`}
-                      >
-                        <Check className="h-3.5 w-3.5" />
-                      </span>
-                      <span className="text-sm font-medium text-gray-700">
-                        {option.label}
-                      </span>
-                    </div>
-                  );
+                   return (
+                     <div
+                       key={option.id}
+                       role="checkbox"
+                       tabIndex={0}
+                       aria-checked={isChecked}
+                       aria-labelledby={`nicotine-${option.id}`}
+                       onClick={() => handleToggle(option.id, !isChecked)}
+                       onKeyDown={event => {
+                         if (event.key === 'Enter' || event.key === ' ') {
+                           event.preventDefault();
+                           handleToggle(option.id, !isChecked);
+                         }
+                       }}
+                       className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all bg-[background] h-14! cursor-pointer text-[16px] text-[#6c6c6c] ${
+                         isChecked
+                           ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                           : 'border-gray-200'
+                       }`}
+                     >
+                       <span
+                         aria-hidden="true"
+                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-all ${
+                           isChecked
+                             ? 'border-[#AFC1B6] bg-secondary-bg text-white'
+                             : 'border-gray-300 bg-white text-transparent'
+                         }`}
+                       >
+                         <Check className="h-3.5 w-3.5" />
+                       </span>
+                       <span id={`nicotine-${option.id}`} className="text-sm font-medium text-gray-700">
+                         {option.label}
+                       </span>
+                     </div>
+                   );
                 })}
               </div>
             </FormControl>

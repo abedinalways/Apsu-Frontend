@@ -7,6 +7,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import {
   DropdownMenu,
@@ -107,14 +108,14 @@ export default function ScheduleConsultationStepOne() {
       <div className="grid grid-cols-1 md:grid-cols-[60%_1fr] gap-6 items-start">
         {/* Left Grid Layout Element: Calendar Panel */}
         <div className="space-y-3">
-          <label className="text-[14px] text-[#111] tracking-wide">
-            Select date
-          </label>
           <FormField
             control={control}
             name="consultationDate"
             render={() => (
-              <FormItem>
+              <FormItem className="space-y-2">
+                <FormLabel className="text-[14px] text-[#111] tracking-wide">
+                  Select date
+                </FormLabel>
                 <FormControl>
                   <div className="p-4 border border-gray-100 rounded-3xl bg-white shadow-sm">
                     {/* Header controls matching image_0de666.png perfectly */}
@@ -186,14 +187,14 @@ export default function ScheduleConsultationStepOne() {
 
         {/* Right Layout Grid: Time List Picker */}
         <div className="space-y-3">
-          <label className="text-[14px] text-[#111] tracking-wide">
-            Select time
-          </label>
           <FormField
             control={control}
             name="consultationTime"
             render={() => (
-              <FormItem>
+              <FormItem className="space-y-2">
+                <FormLabel className="text-[14px] text-[#111] tracking-wide">
+                  Select time
+                </FormLabel>
                 <FormControl>
                   <div className="space-y-2 max-h-[290px] overflow-y-auto pr-1 scrollbar-thin">
                     {TIME_SLOTS.map(slot => {
@@ -228,39 +229,41 @@ export default function ScheduleConsultationStepOne() {
 
       {/* Dynamic Selector Dropdown for Timezone handling */}
       <div className="space-y-2 pt-2">
-        <label className="text-[14px] text-[#111] tracking-wide">
-          Time zone
-        </label>
         <FormField
           control={control}
           name="timezone"
           render={() => (
-            <FormItem>
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-1.5 text-xs cursor-pointer text-gray-700 font-medium bg-none border-none outline-none focus:outline-none">
-                  <Globe className="w-4 h-4 text-gray-400" />
-                  <span className="underline cursor-pointer hover:text-gray-900">
-                    {activeTimezone || 'Detecting time zone...'}
-                  </span>
-                  <ChevronDown className="w-3 h-3 text-gray-400" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  align="start"
-                  className="w-56 max-h-48 overflow-y-auto rounded-xl"
-                >
-                  {COMMON_TIMEZONES.map(tz => (
-                    <DropdownMenuItem
-                      key={tz}
-                      onClick={() =>
-                        setValue('timezone', tz, { shouldValidate: true })
-                      }
-                      className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-secondary-bg"
-                    >
-                      {tz}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+            <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] text-[#111] tracking-wide">
+                Time zone
+              </FormLabel>
+              <FormControl>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center gap-1.5 text-xs cursor-pointer text-gray-700 font-medium bg-none border-none outline-none focus:outline-none">
+                    <Globe className="w-4 h-4 text-gray-400" />
+                    <span className="underline cursor-pointer hover:text-gray-900">
+                      {activeTimezone || 'Detecting time zone...'}
+                    </span>
+                    <ChevronDown className="w-3 h-3 text-gray-400" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    align="start"
+                    className="w-56 max-h-48 overflow-y-auto rounded-xl"
+                  >
+                    {COMMON_TIMEZONES.map(tz => (
+                      <DropdownMenuItem
+                        key={tz}
+                        onClick={() =>
+                          setValue('timezone', tz, { shouldValidate: true })
+                        }
+                        className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-secondary-bg"
+                      >
+                        {tz}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}

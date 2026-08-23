@@ -6,6 +6,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import CustomImage from '@/components/reusable/CustomImage';
 import { FormData } from '@/zod/AssessmentSchema';
@@ -50,6 +51,9 @@ export default function Treatment() {
         name="goal"
         render={() => (
           <FormItem className="space-y-4">
+            <FormLabel className="text-[14px] font-semibold text-[#111]">
+              What would you like help with today?
+            </FormLabel>
             <FormControl>
               <div className="grid gap-4">
                 {options.map(option => {

@@ -7,6 +7,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { cn } from '@/lib/utils';
@@ -48,14 +49,14 @@ export default function EligibilityCheckStepOne() {
 
       {/* Question 1: Do you wake up during the night? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
-          Do you wake up during the night?
-        </h3>
         <FormField
           control={control}
           name="wakeUpFrequency"
           render={() => (
             <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] font-semibold text-[#111]">
+                Do you wake up during the night?
+              </FormLabel>
               <FormControl>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                   {WAKE_UP_OPTIONS.map(option => {
@@ -89,14 +90,14 @@ export default function EligibilityCheckStepOne() {
 
       {/* Question 2: When you wake up, can you usually fall back asleep? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
-          When you wake up, can you usually fall back asleep?
-        </h3>
         <FormField
           control={control}
           name="fallBackAsleep"
           render={({ field }) => (
             <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] font-semibold text-[#111]">
+                When you wake up, can you usually fall back asleep?
+              </FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -133,14 +134,14 @@ export default function EligibilityCheckStepOne() {
 
       {/* Question 3: How often do you use screens before bed? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
-          How often do you use screens before bed?
-        </h3>
         <FormField
           control={control}
           name="screenTimeBeforeBed"
           render={({ field }) => (
             <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] font-semibold text-[#111]">
+                How often do you use screens before bed?
+              </FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}

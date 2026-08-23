@@ -125,6 +125,7 @@ export default function EligibilityStepFive() {
                   multiple
                   accept=".mp4,.mov"
                   className="hidden"
+                  aria-label="Upload video attachments"
                 />
                 <div
                   onClick={() => fileInputRef.current?.click()}

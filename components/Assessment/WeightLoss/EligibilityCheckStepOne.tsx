@@ -6,6 +6,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { FormData } from '@/zod/AssessmentSchema';
 
@@ -38,6 +39,9 @@ export default function EligibilityCheckStepOne() {
         name="triedLosingWeightBefore"
         render={() => (
           <FormItem className="space-y-3">
+            <FormLabel className="text-[14px] font-semibold text-[#111]">
+              What are your current conditions?
+            </FormLabel>
             <FormControl>
               <div className="flex flex-col gap-3">
                 {ATTEMPT_OPTIONS.map(option => {

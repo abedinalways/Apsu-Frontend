@@ -7,6 +7,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { Checkbox } from '@/components/ui/checkbox';
 import { cn } from '@/lib/utils';
@@ -92,6 +93,9 @@ export default function GoalLifestyleActivityStepTwo() {
           name="sleepRatingCategory"
           render={({ field }) => (
             <FormItem className="space-y-3">
+              <FormLabel className="text-[14px] font-semibold text-[#111]">
+                How would you rate your sleep quality?
+              </FormLabel>
               <FormControl>
                 <div className="w-full space-y-3">
                   {/* Multi-colored horizontal line bar gradient preview */}
