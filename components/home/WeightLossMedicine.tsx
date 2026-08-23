@@ -1,5 +1,6 @@
 "use client";
 import MedicineImg from "@/public/images/work/medicine.png";
+import MedicineImg2 from "@/public/images/work/semaglutide.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,7 +11,7 @@ function WeightLossMedicine() {
   const data = [
     {
       id: 1,
-      image: MedicineImg,
+      image: MedicineImg2,
       title: "Compounded Semaglutide",
       price: 200,
     },
