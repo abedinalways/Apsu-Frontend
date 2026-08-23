@@ -3,7 +3,7 @@ import { Blog } from '@/types/blog';
 export const blogsData = [
   {
     id: 1,
-    image: '/images/blog/img26.png',
+    image: '/images/blog/img25.jpg',
     category: 'Weight Loss',
     date: '20 Jan 2026',
     readTime: '5 min read',
@@ -15,7 +15,7 @@ export const blogsData = [
 
   {
     id: 2,
-    image: '/images/blog/img25.jpg',
+    image: '/images/blog/img26.png',
     category: 'Birth Control',
     date: '20 Jan 2026',
     readTime: '6 min read',
@@ -27,7 +27,7 @@ export const blogsData = [
 
   {
     id: 3,
-    image: '/images/blog/img36.png',
+    image: '/images/blog/img27.jpg',
     category: 'Sleep',
     date: '20 Jan 2026',
     readTime: '7 min read',

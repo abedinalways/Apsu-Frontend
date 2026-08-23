@@ -6,6 +6,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { FormData } from '@/zod/AssessmentSchema';
@@ -28,7 +29,10 @@ export default function EligibilityCheckStepSeven() {
         control={control}
         name="medicalTeamConcerns"
         render={({ field }) => (
-          <FormItem>
+          <FormItem className="space-y-2">
+            <FormLabel className="text-[14px] font-semibold text-[#111]">
+              Do you have any concerns you would like to share with your medical team?
+            </FormLabel>
             <FormControl>
               <Textarea
                 {...field}

@@ -105,6 +105,7 @@ export default function EligibilityStepFour() {
                   multiple
                   accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
                   className="hidden"
+                  aria-label="Upload attachments"
                 />
                 <div
                   onClick={() => fileInputRef.current?.click()}

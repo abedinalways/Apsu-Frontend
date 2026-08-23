@@ -129,6 +129,7 @@ export default function CommonEligibilityCheckStepOne() {
                   multiple
                   accept=".jpg,.jpeg,.png,.pdf"
                   className="hidden"
+                  aria-label="Upload lab reports"
                 />
                 <div
                   onClick={() => fileInputRef.current?.click()}

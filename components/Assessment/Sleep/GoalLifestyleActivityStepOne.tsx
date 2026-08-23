@@ -6,6 +6,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { FormData } from '@/zod/AssessmentSchema';
 
@@ -38,6 +39,9 @@ export default function GoalLifestyleActivityStepOne() {
         name="weightLossGoal"
         render={() => (
           <FormItem className="space-y-2">
+            <FormLabel className="text-[14px] font-semibold text-[#111]">
+              What is your sleep goal?
+            </FormLabel>
             <FormControl>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {GOAL_OPTIONS.map(option => {

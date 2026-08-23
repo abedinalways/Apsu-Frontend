@@ -60,6 +60,7 @@
   --color-orengeColor: #ff6a55;
   --color-blueColor: #0068ef;
   --color-bgColor: #faf9f4;
+  --color-lightGreenColor:var(--lightGreenColor);
   --color-descriptionColor: #3b3b3c;
   --color-highlightColor: var(--highlightColor);
   --color-lightGreenColor: var(--lightGreenColor);
@@ -70,6 +71,7 @@
 :root {
   --primaryColor: #102b1c;
   --secondaryColor: #d6ae29;
+  --lightGreenColor:#E8F3ED;
   --blackColor: #070707;
   --whiteColor: #fff;
   --ratingColor: #ffc52e;

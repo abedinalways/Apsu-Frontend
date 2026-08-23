@@ -9,7 +9,7 @@ export const blogDetails: BlogMeta[] = [
     author: 'Apsu Health',
     date: '20 Jan 2026',
     readTime: '5 mins read',
-    heroImage: '/images/blogDetails/hero.png',
+    heroImage: '/images/blog/img25.jpg',
 
     summary: [
       { id: 'brand-name', title: 'The Brand-Name Products' },
@@ -401,8 +401,7 @@ export const blogDetails: BlogMeta[] = [
         content:
           'Compounded GLP-1s are not FDA-approved brand-name medications. "Compounded" does not mean "generic." The provider, the pharmacy, the formulation, and the dosing instructions all matter. And before you start anything, know exactly what you\'re taking and how to take it safely.',
       },
-      
-      
+
       {
         id: 'right-choice-5',
         type: 'disclaimer',
@@ -416,7 +415,7 @@ export const blogDetails: BlogMeta[] = [
   {
     id: 2,
     slug: 'healthy-evening-habits',
-    title: 'Birth Control Pills vs. the Shot: What\'s the Difference?',
+    title: "Birth Control Pills vs. the Shot: What's the Difference?",
     category: 'Birth Control',
     author: 'Apsu Health',
     date: '20 Jan 2026',
@@ -425,7 +424,10 @@ export const blogDetails: BlogMeta[] = [
 
     summary: [
       { id: 'what-they-are', title: 'What They Are' },
-      { id: 'effectiveness', title: 'Effectiveness: The Gap Is About Memory, Not Medicine' },
+      {
+        id: 'effectiveness',
+        title: 'Effectiveness: The Gap Is About Memory, Not Medicine',
+      },
       { id: 'period-changes', title: 'How Your Period Might Change' },
       { id: 'weight-acne-mood', title: 'Weight, Acne, and Mood' },
       { id: 'bone-health', title: 'Bone Health and the Shot' },
@@ -447,7 +449,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'intro-2',
         type: 'paragraph',
         content:
-          'A pill is a decision you make every day, and you can stop any time. A shot is a decision you make four times a year — and once it\'s in, you can\'t take it back. Everything that follows, from bleeding patterns to how fast fertility returns, largely comes down to that.',
+          "A pill is a decision you make every day, and you can stop any time. A shot is a decision you make four times a year — and once it's in, you can't take it back. Everything that follows, from bleeding patterns to how fast fertility returns, largely comes down to that.",
       },
 
       // ---------- What They Are ----------
@@ -460,19 +462,19 @@ export const blogDetails: BlogMeta[] = [
         id: 'what-they-are-1',
         type: 'paragraph',
         content:
-          'The pill isn\'t one medication. **Combined pills** contain estrogen and progestin; **progestin-only pills** contain no estrogen. Dosing schedules, side effects, and medical restrictions differ between them. Most need a prescription, though Opill, a progestin-only pill, is available over the counter in the U.S. — which can matter if cost or privacy is a concern for you.',
+          "The pill isn't one medication. **Combined pills** contain estrogen and progestin; **progestin-only pills** contain no estrogen. Dosing schedules, side effects, and medical restrictions differ between them. Most need a prescription, though Opill, a progestin-only pill, is available over the counter in the U.S. — which can matter if cost or privacy is a concern for you.",
       },
       {
         id: 'what-they-are-2',
         type: 'paragraph',
         content:
-          'The shot usually means **DMPA**, a progestin-only injection that protects against pregnancy for about 13 weeks. It\'s typically given by a healthcare professional, though a self-administered version is sometimes an option with a provider\'s support.',
+          "The shot usually means **DMPA**, a progestin-only injection that protects against pregnancy for about 13 weeks. It's typically given by a healthcare professional, though a self-administered version is sometimes an option with a provider's support.",
       },
       {
         id: 'what-they-are-3',
         type: 'paragraph',
         content:
-          'Both work mainly by preventing ovulation. Neither protects against HIV or other STIs — that\'s true regardless of your relationship status, so condoms are worth using alongside either method. Most U.S. campus health centers offer STI testing at low or no cost.',
+          "Both work mainly by preventing ovulation. Neither protects against HIV or other STIs — that's true regardless of your relationship status, so condoms are worth using alongside either method. Most U.S. campus health centers offer STI testing at low or no cost.",
       },
 
       // ---------- Effectiveness ----------
@@ -485,7 +487,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'effectiveness-1',
         type: 'paragraph',
         content:
-          'Used perfectly, both are over 99% effective. In real life, pills come in around **93%** and the shot around **96%**. That gap isn\'t because the pill is medically weaker. It\'s because there\'s more to forget — a missed dose, a late pack, or taking a progestin-only pill outside its time window can all reduce protection. The shot asks less of you day to day.',
+          "Used perfectly, both are over 99% effective. In real life, pills come in around **93%** and the shot around **96%**. That gap isn't because the pill is medically weaker. It's because there's more to forget — a missed dose, a late pack, or taking a progestin-only pill outside its time window can all reduce protection. The shot asks less of you day to day.",
       },
       {
         id: 'effectiveness-2',
@@ -497,13 +499,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'effectiveness-3',
         type: 'paragraph',
         content:
-          'Pills tend to suit people who already take a daily medication or keep a predictable routine. The shot tends to suit people who don\'t. But the shot isn\'t effort-free — you still have to book the next injection on time, which takes planning if you travel, study abroad, or go home over breaks.',
+          "Pills tend to suit people who already take a daily medication or keep a predictable routine. The shot tends to suit people who don't. But the shot isn't effort-free — you still have to book the next injection on time, which takes planning if you travel, study abroad, or go home over breaks.",
       },
       {
         id: 'effectiveness-4',
         type: 'highlight',
         content:
-          'Apsu connects patients with licensed U.S. providers who can help you match a method to your history and your schedule — including if you\'ve been on one and want to switch.',
+          "Apsu connects patients with licensed U.S. providers who can help you match a method to your history and your schedule — including if you've been on one and want to switch.",
       },
 
       // ---------- How Your Period Might Change ----------
@@ -522,13 +524,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'period-changes-2',
         type: 'paragraph',
         content:
-          'The shot causes irregular bleeding most often of all. Many users spot frequently at first; over time, periods may become very light or stop. If your period stops on hormonal birth control, blood isn\'t accumulating inside you. The uterine lining simply stays thin, so there\'s little to shed.',
+          "The shot causes irregular bleeding most often of all. Many users spot frequently at first; over time, periods may become very light or stop. If your period stops on hormonal birth control, blood isn't accumulating inside you. The uterine lining simply stays thin, so there's little to shed.",
       },
       {
         id: 'period-changes-3',
         type: 'paragraph',
         content:
-          'You can stop the pill whenever you want — it\'s safe at any point. But most providers suggest finishing the pack you\'re on rather than stopping partway. Stopping mid-pack usually triggers bleeding within a couple of days and can make it take longer for your cycle to settle back into a rhythm. Progestin-only pills tend to cause less of this than combined pills.',
+          "You can stop the pill whenever you want — it's safe at any point. But most providers suggest finishing the pack you're on rather than stopping partway. Stopping mid-pack usually triggers bleeding within a couple of days and can make it take longer for your cycle to settle back into a rhythm. Progestin-only pills tend to cause less of this than combined pills.",
       },
       {
         id: 'period-changes-4',
@@ -547,7 +549,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'weight-acne-mood-1',
         type: 'paragraph',
         content:
-          'Most pills aren\'t clearly linked to significant weight gain, though bloating, appetite changes, or fluid retention happen for some people. The shot has a stronger association with weight gain — but experiences vary widely, and plenty of users notice little change.',
+          "Most pills aren't clearly linked to significant weight gain, though bloating, appetite changes, or fluid retention happen for some people. The shot has a stronger association with weight gain — but experiences vary widely, and plenty of users notice little change.",
       },
       {
         id: 'weight-acne-mood-2',
@@ -559,7 +561,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'weight-acne-mood-3',
         type: 'paragraph',
         content:
-          'Mood changes are one of the most commonly discussed effects and one of the least settled — studies disagree, and individual experience varies a lot. If your mood shifts noticeably after starting or switching, that\'s worth raising with a provider rather than waiting it out.',
+          "Mood changes are one of the most commonly discussed effects and one of the least settled — studies disagree, and individual experience varies a lot. If your mood shifts noticeably after starting or switching, that's worth raising with a provider rather than waiting it out.",
       },
       {
         id: 'weight-acne-mood-4',
@@ -585,7 +587,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'bone-health-1',
         type: 'paragraph',
         content:
-          'The shot can temporarily lower bone mineral density while you\'re using it, and carries an **FDA boxed warning** about long-term use. That warning doesn\'t mean everyone must stop after two years. The decision weighs your pregnancy risk, available alternatives, health history, and bone-health risk factors. Healthy young users don\'t normally need routine bone-density testing.',
+          "The shot can temporarily lower bone mineral density while you're using it, and carries an **FDA boxed warning** about long-term use. That warning doesn't mean everyone must stop after two years. The decision weighs your pregnancy risk, available alternatives, health history, and bone-health risk factors. Healthy young users don't normally need routine bone-density testing.",
       },
       {
         id: 'bone-health-2',
@@ -610,7 +612,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'getting-pregnant-2',
         type: 'paragraph',
         content:
-          'The shot works differently. It keeps acting after the injection and can\'t be removed. Ovulation may not return for several months, and for some people it takes a year or more to conceive after the last shot. That\'s a delay, not infertility. Neither method causes permanent infertility. But if you might want to be pregnant within the next year, the pill gives you more flexibility.',
+          "The shot works differently. It keeps acting after the injection and can't be removed. Ovulation may not return for several months, and for some people it takes a year or more to conceive after the last shot. That's a delay, not infertility. Neither method causes permanent infertility. But if you might want to be pregnant within the next year, the pill gives you more flexibility.",
       },
 
       // ---------- What to Tell Your Provider ----------
@@ -629,13 +631,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'provider-2',
         type: 'paragraph',
         content:
-          'Migraines don\'t automatically rule out the pill — the type of migraine matters, as does whether the pill contains estrogen. Progestin-only pills and the shot are often options when estrogen isn\'t, though they carry their own considerations.',
+          "Migraines don't automatically rule out the pill — the type of migraine matters, as does whether the pill contains estrogen. Progestin-only pills and the shot are often options when estrogen isn't, though they carry their own considerations.",
       },
       {
         id: 'provider-3',
         type: 'paragraph',
         content:
-          'Also mention seizure medications, tuberculosis drugs like rifampin, certain HIV medications, and St. John\'s wort. Some interfere with birth control pills. You don\'t normally need a pelvic exam just to start either method. Blood pressure is usually checked before an estrogen-containing pill.',
+          "Also mention seizure medications, tuberculosis drugs like rifampin, certain HIV medications, and St. John's wort. Some interfere with birth control pills. You don't normally need a pelvic exam just to start either method. Blood pressure is usually checked before an estrogen-containing pill.",
       },
 
       // ---------- Cost, Privacy, and Travel ----------
@@ -654,13 +656,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'cost-privacy-2',
         type: 'paragraph',
         content:
-          'One thing worth knowing if you\'re on a parent\'s or partner\'s plan: an **explanation of benefits (EOB)** may be sent to the policyholder, and it can list the provider, date, and a general description of the service. Privacy rules vary by plan and state, so call the insurer beforehand if confidentiality matters to you.',
+          "One thing worth knowing if you're on a parent's or partner's plan: an **explanation of benefits (EOB)** may be sent to the policyholder, and it can list the provider, date, and a general description of the service. Privacy rules vary by plan and state, so call the insurer beforehand if confidentiality matters to you.",
       },
       {
         id: 'cost-privacy-3',
         type: 'paragraph',
         content:
-          'For travel, ask whether your plan allows a multi-month or vacation refill, and keep pills in your carry-on in the original packaging. Across time zones, keep the gap between doses close to normal — timing is stricter for some progestin-only pills. If you\'re on the shot, check your next injection date before booking. And if you move states, a telehealth provider may not be able to keep prescribing unless licensed where you now live.',
+          "For travel, ask whether your plan allows a multi-month or vacation refill, and keep pills in your carry-on in the original packaging. Across time zones, keep the gap between doses close to normal — timing is stricter for some progestin-only pills. If you're on the shot, check your next injection date before booking. And if you move states, a telehealth provider may not be able to keep prescribing unless licensed where you now live.",
       },
       {
         id: 'cost-privacy-4',
@@ -685,20 +687,20 @@ export const blogDetails: BlogMeta[] = [
         id: 'choosing-2',
         type: 'paragraph',
         content:
-          'The shot may fit if daily medication isn\'t realistic for you, you\'d rather deal with birth control a few times a year, you\'re comfortable with unpredictable bleeding, you\'re not planning a pregnancy soon, you can\'t use estrogen, or you\'d rather not keep pills where others might see them.',
+          "The shot may fit if daily medication isn't realistic for you, you'd rather deal with birth control a few times a year, you're comfortable with unpredictable bleeding, you're not planning a pregnancy soon, you can't use estrogen, or you'd rather not keep pills where others might see them.",
       },
       {
         id: 'choosing-3',
         type: 'paragraph',
         // emphasis: true,
         content:
-          'Neither is better in the abstract. The right one is whichever you\'ll actually use.',
+          "Neither is better in the abstract. The right one is whichever you'll actually use.",
       },
       {
         id: 'choosing-4',
         type: 'highlight',
         content:
-          'Apsu connects patients with licensed U.S. providers who can help you match a method to your history and your schedule — including if you\'ve been on one and want to switch.',
+          "Apsu connects patients with licensed U.S. providers who can help you match a method to your history and your schedule — including if you've been on one and want to switch.",
       },
       {
         id: 'choosing-disclaimer',
@@ -713,26 +715,45 @@ export const blogDetails: BlogMeta[] = [
   {
     id: 3,
     slug: 'language-barriers-healthcare',
-    title: 'Understanding Prescription Sleep Medications: Types and How They Work',
+    title:
+      'Understanding Prescription Sleep Medications: Types and How They Work',
     category: 'Sleep',
     author: 'Apsu Health',
     date: '20 Jan 2026',
     readTime: '7 mins read',
-    heroImage: '/images/blogDetails/hero.png',
+    heroImage: '/images/blog/img27.jpg',
 
     summary: [
-      { id: 'i-cant-sleep', title: '"I Can\'t Sleep" Can Mean Different Things' },
-      { id: 'main-groups', title: 'The Main Groups of Prescription Sleep Medications' },
+      {
+        id: 'i-cant-sleep',
+        title: '"I Can\'t Sleep" Can Mean Different Things',
+      },
+      {
+        id: 'main-groups',
+        title: 'The Main Groups of Prescription Sleep Medications',
+      },
       { id: 'z-drugs', title: '1. Z-Drugs' },
       { id: 'benzodiazepines', title: '2. Benzodiazepines' },
       { id: 'orexin', title: '3. Orexin Receptor Antagonists' },
       { id: 'melatonin', title: '4. Melatonin Receptor Agonist' },
-      { id: 'antidepressants', title: '5. Low-Dose Doxepin and Other Sedating Antidepressants' },
+      {
+        id: 'antidepressants',
+        title: '5. Low-Dose Doxepin and Other Sedating Antidepressants',
+      },
       { id: 'other-options', title: '6. Other Off-Label Options' },
       { id: 'off-label', title: 'A Note on Off-Label Use and OTC Products' },
-      { id: 'appointment', title: 'Before Your Appointment: What to Have Ready' },
-      { id: 'next-day', title: 'Next-Day Effects, Duration, and What Medication Can\'t Do' },
-      { id: 'when-to-talk', title: 'When Should You Talk to a Healthcare Provider?' },
+      {
+        id: 'appointment',
+        title: 'Before Your Appointment: What to Have Ready',
+      },
+      {
+        id: 'next-day',
+        title: "Next-Day Effects, Duration, and What Medication Can't Do",
+      },
+      {
+        id: 'when-to-talk',
+        title: 'When Should You Talk to a Healthcare Provider?',
+      },
       { id: 'key-takeaways', title: 'Key Takeaways' },
     ],
 
@@ -742,13 +763,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'intro-1',
         type: 'paragraph',
         content:
-          'In this guide, we\'ll explain the main groups of prescription sleep medications, how they differ, and what to discuss with a healthcare provider before deciding whether medication is appropriate. One thing to know upfront: **prescription sleep medications are not all the same**. Some mainly help you fall asleep; others help you stay asleep. Some quiet the brain\'s wakefulness signals, while others produce a broader sedating effect.',
+          "In this guide, we'll explain the main groups of prescription sleep medications, how they differ, and what to discuss with a healthcare provider before deciding whether medication is appropriate. One thing to know upfront: **prescription sleep medications are not all the same**. Some mainly help you fall asleep; others help you stay asleep. Some quiet the brain's wakefulness signals, while others produce a broader sedating effect.",
       },
       {
         id: 'intro-2',
         type: 'paragraph',
         content:
-          'The right choice depends on your **sleep pattern**, **health history**, **other medications**, and **daily schedule** — and on what\'s actually causing the problem.',
+          "The right choice depends on your **sleep pattern**, **health history**, **other medications**, and **daily schedule** — and on what's actually causing the problem.",
       },
 
       // ---------- "I Can't Sleep" Can Mean Different Things ----------
@@ -761,13 +782,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'i-cant-sleep-1',
         type: 'paragraph',
         content:
-          'Before talking about medication, it helps to pin down what\'s happening at night. **Trouble falling asleep**, **waking repeatedly**, **waking too early**, **irregular hours**, or enough hours that still don\'t feel like enough. It may last a week or months.',
+          "Before talking about medication, it helps to pin down what's happening at night. **Trouble falling asleep**, **waking repeatedly**, **waking too early**, **irregular hours**, or enough hours that still don't feel like enough. It may last a week or months.",
       },
       {
         id: 'i-cant-sleep-2',
         type: 'paragraph',
         content:
-          'These differences matter. A medication that acts quickly and wears off quickly is a different tool from one that stays active longer. Insomnia can also be a symptom of something else. **Anxiety**, **depression**, **sleep apnea**, **restless legs**, **chronic pain**, **substance use**, and an **out-of-sync body clock** can all interfere with sleep. This last issue can be especially common when your schedule regularly spans North America and Asia. Simply making you drowsy doesn\'t treat the underlying cause.',
+          "These differences matter. A medication that acts quickly and wears off quickly is a different tool from one that stays active longer. Insomnia can also be a symptom of something else. **Anxiety**, **depression**, **sleep apnea**, **restless legs**, **chronic pain**, **substance use**, and an **out-of-sync body clock** can all interfere with sleep. This last issue can be especially common when your schedule regularly spans North America and Asia. Simply making you drowsy doesn't treat the underlying cause.",
       },
 
       // ---------- The Main Groups ----------
@@ -826,7 +847,7 @@ export const blogDetails: BlogMeta[] = [
         type: 'paragraph',
         // emphasis: true,
         content:
-          'The most important warning: **never stop suddenly** without your provider\'s guidance — abrupt discontinuation can trigger serious withdrawal, including seizures. Combining with alcohol or other sedatives can cause dangerous breathing problems.',
+          "The most important warning: **never stop suddenly** without your provider's guidance — abrupt discontinuation can trigger serious withdrawal, including seizures. Combining with alcohol or other sedatives can cause dangerous breathing problems.",
       },
 
       // ---------- 3. Orexin Receptor Antagonists ----------
@@ -852,7 +873,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'melatonin-1',
         type: 'paragraph',
         content:
-          'Ramelteon acts on the same receptors involved in your response to melatonin, mainly helping with **falling asleep**. It\'s not a controlled substance and isn\'t associated with dependence — unusual among the options here. Possible dizziness, tiredness, and some drug interactions. Because it works with your sleep-wake system, timing matters: no pill cancels out an irregular schedule or overnight calls home.',
+          "Ramelteon acts on the same receptors involved in your response to melatonin, mainly helping with **falling asleep**. It's not a controlled substance and isn't associated with dependence — unusual among the options here. Possible dizziness, tiredness, and some drug interactions. Because it works with your sleep-wake system, timing matters: no pill cancels out an irregular schedule or overnight calls home.",
       },
 
       // ---------- 5. Low-Dose Doxepin ----------
@@ -871,14 +892,14 @@ export const blogDetails: BlogMeta[] = [
         id: 'antidepressants-2',
         type: 'paragraph',
         content:
-          'Providers are more likely to consider this group when you also have a condition it treats. Expect sleepiness, dizziness when standing, and dry mouth; with mirtazapine, increased appetite and weight gain are common enough that some people stop for that reason alone. And drowsiness alone doesn\'t make a good insomnia treatment — evidence for trazodone and mirtazapine in chronic insomnia is limited.',
+          "Providers are more likely to consider this group when you also have a condition it treats. Expect sleepiness, dizziness when standing, and dry mouth; with mirtazapine, increased appetite and weight gain are common enough that some people stop for that reason alone. And drowsiness alone doesn't make a good insomnia treatment — evidence for trazodone and mirtazapine in chronic insomnia is limited.",
       },
       {
         id: 'antidepressants-warning',
         type: 'paragraph',
         // emphasis: true,
         content:
-          'The most important warning: antidepressants carry an **FDA boxed warning** for increased risk of suicidal thoughts and behaviors in patients under 25 — relevant to trazodone and mirtazapine, and to you if you\'re a student or young adult. Low-dose doxepin (Silenor) is an exception; higher-dose doxepin isn\'t. Contact your provider right away if your mood or behavior changes after starting.',
+          "The most important warning: antidepressants carry an **FDA boxed warning** for increased risk of suicidal thoughts and behaviors in patients under 25 — relevant to trazodone and mirtazapine, and to you if you're a student or young adult. Low-dose doxepin (Silenor) is an exception; higher-dose doxepin isn't. Contact your provider right away if your mood or behavior changes after starting.",
       },
 
       // ---------- 6. Other Off-Label Options ----------
@@ -891,13 +912,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'other-options-1',
         type: 'paragraph',
         content:
-          'Hydroxyzine (Atarax, Vistaril) is a prescription antihistamine, related to over-the-counter diphenhydramine. It\'s FDA-approved for anxiety, itching, and sedation around anesthesia — not insomnia, though it\'s used off-label when sleeplessness comes with anxiety. It isn\'t a controlled substance. Beyond next-day drowsiness and dry mouth, it can affect heart rhythm: **QT prolongation** has been reported, and it\'s contraindicated if you have a prolonged QT interval, so tell your provider about any antibiotics or antidepressants you take. Evidence for insomnia specifically is thin — a 2023 review found only five eligible studies.',
+          "Hydroxyzine (Atarax, Vistaril) is a prescription antihistamine, related to over-the-counter diphenhydramine. It's FDA-approved for anxiety, itching, and sedation around anesthesia — not insomnia, though it's used off-label when sleeplessness comes with anxiety. It isn't a controlled substance. Beyond next-day drowsiness and dry mouth, it can affect heart rhythm: **QT prolongation** has been reported, and it's contraindicated if you have a prolonged QT interval, so tell your provider about any antibiotics or antidepressants you take. Evidence for insomnia specifically is thin — a 2023 review found only five eligible studies.",
       },
       {
         id: 'other-options-2',
         type: 'paragraph',
         content:
-          'Nerve-pain drugs and antipsychotics show up occasionally when sleep problems accompany another condition. They aren\'t standard treatments for uncomplicated insomnia. Antipsychotics in particular should never be treated as casual sleep aids just because they cause drowsiness.',
+          "Nerve-pain drugs and antipsychotics show up occasionally when sleep problems accompany another condition. They aren't standard treatments for uncomplicated insomnia. Antipsychotics in particular should never be treated as casual sleep aids just because they cause drowsiness.",
       },
 
       // ---------- A Note on Off-Label Use ----------
@@ -923,32 +944,37 @@ export const blogDetails: BlogMeta[] = [
         id: 'appointment-1',
         type: 'paragraph',
         content:
-          'There\'s no single best sleep medication for everyone. Come prepared to answer:',
+          "There's no single best sleep medication for everyone. Come prepared to answer:",
       },
       {
         id: 'appointment-questions',
         type: 'bullet',
-        content: 'Do you struggle to fall asleep, stay asleep, or both? For how long?',
+        content:
+          'Do you struggle to fall asleep, stay asleep, or both? For how long?',
       },
       {
         id: 'appointment-questions-2',
         type: 'bullet',
-        content: 'What time do you need to wake up — and do you drive, commute, or take morning exams?',
+        content:
+          'What time do you need to wake up — and do you drive, commute, or take morning exams?',
       },
       {
         id: 'appointment-questions-3',
         type: 'bullet',
-        content: 'What\'s your work, school, and travel schedule, including trips home?',
+        content:
+          "What's your work, school, and travel schedule, including trips home?",
       },
       {
         id: 'appointment-questions-4',
         type: 'bullet',
-        content: 'What else do you take — medications, supplements, melatonin, Chinese herbal products, cannabis, alcohol, caffeine, and anything bought outside the U.S.?',
+        content:
+          'What else do you take — medications, supplements, melatonin, Chinese herbal products, cannabis, alcohol, caffeine, and anything bought outside the U.S.?',
       },
       {
         id: 'appointment-questions-5',
         type: 'bullet',
-        content: 'Are you pregnant or breastfeeding? Any liver, kidney, breathing, or mental health conditions? Any history of substance use problems?',
+        content:
+          'Are you pregnant or breastfeeding? Any liver, kidney, breathing, or mental health conditions? Any history of substance use problems?',
       },
       {
         id: 'appointment-note',
@@ -968,25 +994,25 @@ export const blogDetails: BlogMeta[] = [
       {
         id: 'next-day',
         type: 'heading',
-        content: 'Next-Day Effects, Duration, and What Medication Can\'t Do',
+        content: "Next-Day Effects, Duration, and What Medication Can't Do",
       },
       {
         id: 'next-day-1',
         type: 'paragraph',
         content:
-          'Some sleep medications affect concentration, judgment, and reaction time the next morning — even when you feel fine. You may be less ready to drive, sit an exam, or make a big decision than you realize. Take medication only as prescribed, never someone else\'s, never with alcohol, and only when you have a full night ahead.',
+          "Some sleep medications affect concentration, judgment, and reaction time the next morning — even when you feel fine. You may be less ready to drive, sit an exam, or make a big decision than you realize. Take medication only as prescribed, never someone else's, never with alcohol, and only when you have a full night ahead.",
       },
       {
         id: 'next-day-2',
         type: 'paragraph',
         content:
-          'There\'s also no universal treatment length. Your provider should periodically review whether the medication is still working and still needed, whether side effects or dose creep have appeared, and whether the original cause has been addressed. Some drugs lose effect over time; others cause **rebound insomnia** — temporarily worse sleep after stopping. Anything associated with dependence needs gradual tapering under medical guidance.',
+          "There's also no universal treatment length. Your provider should periodically review whether the medication is still working and still needed, whether side effects or dose creep have appeared, and whether the original cause has been addressed. Some drugs lose effect over time; others cause **rebound insomnia** — temporarily worse sleep after stopping. Anything associated with dependence needs gradual tapering under medical guidance.",
       },
       {
         id: 'next-day-3',
         type: 'paragraph',
         content:
-          'For chronic insomnia, major clinical guidelines recommend **cognitive behavioral therapy for insomnia (CBT-I)** as first-line treatment — a structured program that rebuilds the link between bed and sleep. It\'s more than "sleep hygiene," and it\'s sometimes combined with medication. A pill can make you drowsy, but it can\'t reset a body clock stuck between time zones or resolve ongoing stress on its own.',
+          "For chronic insomnia, major clinical guidelines recommend **cognitive behavioral therapy for insomnia (CBT-I)** as first-line treatment — a structured program that rebuilds the link between bed and sleep. It's more than \"sleep hygiene,\" and it's sometimes combined with medication. A pill can make you drowsy, but it can't reset a body clock stuck between time zones or resolve ongoing stress on its own.",
       },
 
       // ---------- When Should You Talk ----------
@@ -1013,12 +1039,14 @@ export const blogDetails: BlogMeta[] = [
       {
         id: 'when-to-talk-list-3',
         type: 'bullet',
-        content: 'You rely on medication, alcohol, cannabis, or antihistamines to sleep — or need more and more',
+        content:
+          'You rely on medication, alcohol, cannabis, or antihistamines to sleep — or need more and more',
       },
       {
         id: 'when-to-talk-list-4',
         type: 'bullet',
-        content: 'You snore loudly, gasp, or seem to stop breathing during sleep',
+        content:
+          'You snore loudly, gasp, or seem to stop breathing during sleep',
       },
       {
         id: 'when-to-talk-list-5',
@@ -1030,7 +1058,7 @@ export const blogDetails: BlogMeta[] = [
         type: 'paragraph',
         // emphasis: true,
         content:
-          'Seek urgent help for severe breathing difficulty, fainting, suspected overdose, extreme confusion, suicidal thoughts, or injuries related to sleepwalking. If you\'re having thoughts of suicide, call or text **988 (Suicide & Crisis Lifeline)** in the U.S.',
+          "Seek urgent help for severe breathing difficulty, fainting, suspected overdose, extreme confusion, suicidal thoughts, or injuries related to sleepwalking. If you're having thoughts of suicide, call or text **988 (Suicide & Crisis Lifeline)** in the U.S.",
       },
 
       // ---------- Key Takeaways ----------
@@ -1043,7 +1071,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'key-takeaways-1',
         type: 'paragraph',
         content:
-          'Prescription sleep medications work in different ways — some strengthen calming signals, some block wakefulness signals, and some work with your sleep-wake cycle. But a drug that makes you drowsy doesn\'t necessarily treat the cause of your insomnia.',
+          "Prescription sleep medications work in different ways — some strengthen calming signals, some block wakefulness signals, and some work with your sleep-wake cycle. But a drug that makes you drowsy doesn't necessarily treat the cause of your insomnia.",
       },
       {
         id: 'key-takeaways-2',
@@ -1055,7 +1083,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'key-takeaways-3',
         type: 'highlight',
         content:
-          'Not sure whether medication is the right next step? Apsu can connect you with a licensed provider who\'ll look at your sleep pattern, your schedule, and everything else you\'re taking. Some of those conversations end in a prescription. Many end in a better plan that doesn\'t involve one.',
+          "Not sure whether medication is the right next step? Apsu can connect you with a licensed provider who'll look at your sleep pattern, your schedule, and everything else you're taking. Some of those conversations end in a prescription. Many end in a better plan that doesn't involve one.",
       },
       {
         id: 'key-takeaways-disclaimer',
@@ -1079,7 +1107,10 @@ export const blogDetails: BlogMeta[] = [
 
     summary: [
       { id: 'start-hormone', title: 'Start with the hormone you already have' },
-      { id: 'where-weight-loss-comes', title: 'Where the weight loss actually comes from' },
+      {
+        id: 'where-weight-loss-comes',
+        title: 'Where the weight loss actually comes from',
+      },
       { id: 'stomach-nausea', title: 'The stomach part and the nausea myth' },
       { id: 'blood-sugar', title: 'The blood sugar piece' },
       { id: 'what-numbers-look', title: 'What the numbers look like' },
@@ -1087,7 +1118,10 @@ export const blogDetails: BlogMeta[] = [
       { id: 'changed-2026', title: 'Two things that changed in 2026' },
       { id: 'compounded-meaning', title: 'What "compounded" means' },
       { id: 'safety', title: 'Safety, briefly but seriously' },
-      { id: 'asian-in-north-america', title: 'If you\'re Asian in North America' },
+      {
+        id: 'asian-in-north-america',
+        title: "If you're Asian in North America",
+      },
     ],
 
     content: [
@@ -1096,7 +1130,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'intro-1',
         type: 'paragraph',
         content:
-          'You\'ve probably heard the theories: they melt fat, they shut off hunger completely, they simply make you too nauseous to eat. The reality is more specific and more interesting. Understanding what these medications actually do will change what you expect from treatment, and what you ask your doctor.',
+          "You've probably heard the theories: they melt fat, they shut off hunger completely, they simply make you too nauseous to eat. The reality is more specific and more interesting. Understanding what these medications actually do will change what you expect from treatment, and what you ask your doctor.",
       },
 
       // ---------- Start with the hormone you already have ----------
@@ -1109,13 +1143,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'start-hormone-1',
         type: 'paragraph',
         content:
-          'GLP-1 stands for glucagon-like peptide-1. Your gut releases it every time you eat. It nudges your pancreas to release insulin when blood sugar climbs, slows how fast food leaves your stomach, and reaches the parts of your brain that decide you\'ve had enough.',
+          "GLP-1 stands for glucagon-like peptide-1. Your gut releases it every time you eat. It nudges your pancreas to release insulin when blood sugar climbs, slows how fast food leaves your stomach, and reaches the parts of your brain that decide you've had enough.",
       },
       {
         id: 'start-hormone-2',
         type: 'paragraph',
         content:
-          'You already run this system. The problem is that natural GLP-1 breaks down within minutes. **Semaglutide** and **tirzepatide** are built to solve exactly that. They activate the same receptors but resist the enzyme that would normally clear them, so one weekly injection keeps the signal running for days. That\'s the whole trick. Not a new mechanism — an old one, held open.',
+          "You already run this system. The problem is that natural GLP-1 breaks down within minutes. **Semaglutide** and **tirzepatide** are built to solve exactly that. They activate the same receptors but resist the enzyme that would normally clear them, so one weekly injection keeps the signal running for days. That's the whole trick. Not a new mechanism — an old one, held open.",
       },
       {
         id: 'start-hormone-3',
@@ -1134,19 +1168,19 @@ export const blogDetails: BlogMeta[] = [
         id: 'where-weight-loss-comes-1',
         type: 'paragraph',
         content:
-          'FDA labeling describes these drugs as acting in brain regions that regulate appetite and food intake, and that\'s the honest center of gravity here. People eat less because eating less stops feeling like a fight. Portions that used to leave you unsatisfied now finish the job. The pull toward the calorie-dense stuff softens.',
+          "FDA labeling describes these drugs as acting in brain regions that regulate appetite and food intake, and that's the honest center of gravity here. People eat less because eating less stops feeling like a fight. Portions that used to leave you unsatisfied now finish the job. The pull toward the calorie-dense stuff softens.",
       },
       {
         id: 'where-weight-loss-comes-2',
         type: 'paragraph',
         content:
-          'A lot of patients describe the "food noise" quieting down — the running mental commentary about what\'s in the fridge, what you\'ll order, whether you should. It isn\'t a clinical term and it isn\'t in any label, but it\'s reported often enough, and consistently enough, that it\'s worth naming.',
+          "A lot of patients describe the \"food noise\" quieting down — the running mental commentary about what's in the fridge, what you'll order, whether you should. It isn't a clinical term and it isn't in any label, but it's reported often enough, and consistently enough, that it's worth naming.",
       },
       {
         id: 'where-weight-loss-comes-3',
         type: 'paragraph',
         content:
-          'What it isn\'t: **total hunger deletion**. Most people still get hungry. And the size of the effect varies enormously. Some patients describe the change as dramatic; others notice something subtle. Neither reaction means the medication is or isn\'t working.',
+          "What it isn't: **total hunger deletion**. Most people still get hungry. And the size of the effect varies enormously. Some patients describe the change as dramatic; others notice something subtle. Neither reaction means the medication is or isn't working.",
       },
 
       // ---------- The stomach part and the nausea myth ----------
@@ -1159,7 +1193,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'stomach-nausea-1',
         type: 'paragraph',
         content:
-          'These medications slow gastric emptying. Food sits in your stomach longer, so a smaller meal registers as enough. Both the Wegovy and Zepbound labels note this effect. It\'s also why the side effects cluster where they do: nausea, constipation, diarrhea, bloating, reflux, abdominal pain. These show up in the labels as the most common adverse reactions, and they\'re the main reason doses start low and climb slowly. Two corrections worth making:',
+          "These medications slow gastric emptying. Food sits in your stomach longer, so a smaller meal registers as enough. Both the Wegovy and Zepbound labels note this effect. It's also why the side effects cluster where they do: nausea, constipation, diarrhea, bloating, reflux, abdominal pain. These show up in the labels as the most common adverse reactions, and they're the main reason doses start low and climb slowly. Two corrections worth making:",
       },
       {
         id: 'stomach-nausea-2',
@@ -1172,7 +1206,7 @@ export const blogDetails: BlogMeta[] = [
         type: 'paragraph',
         // emphasis: true,
         content:
-          'Second, and more important: nausea is **not** how the medication works. It\'s a side effect, not a mechanism. Feeling sick is not evidence of progress, and it\'s not a price you\'re supposed to pay. Persistent nausea is a reason to call your prescriber.',
+          "Second, and more important: nausea is **not** how the medication works. It's a side effect, not a mechanism. Feeling sick is not evidence of progress, and it's not a price you're supposed to pay. Persistent nausea is a reason to call your prescriber.",
       },
 
       // ---------- The blood sugar piece ----------
@@ -1185,13 +1219,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'blood-sugar-1',
         type: 'paragraph',
         content:
-          'These drugs help your body release insulin when blood sugar is high, and dial down a hormone that pushes it up. The insulin effect is **glucose-dependent**. It activates when your blood sugar is elevated, not around the clock. That\'s why hypoglycemia risk is generally low when these medications are used alone, and why it rises meaningfully if you also take insulin or a sulfonylurea.',
+          "These drugs help your body release insulin when blood sugar is high, and dial down a hormone that pushes it up. The insulin effect is **glucose-dependent**. It activates when your blood sugar is elevated, not around the clock. That's why hypoglycemia risk is generally low when these medications are used alone, and why it rises meaningfully if you also take insulin or a sulfonylurea.",
       },
       {
         id: 'blood-sugar-2',
         type: 'paragraph',
         content:
-          'Better glucose control is real and valuable, especially with type 2 diabetes, prediabetes, or insulin resistance. But it improves the metabolic environment you\'re working in. It doesn\'t do the work for you.',
+          "Better glucose control is real and valuable, especially with type 2 diabetes, prediabetes, or insulin resistance. But it improves the metabolic environment you're working in. It doesn't do the work for you.",
       },
 
       // ---------- What the numbers look like ----------
@@ -1203,8 +1237,7 @@ export const blogDetails: BlogMeta[] = [
       {
         id: 'what-numbers-look-1',
         type: 'paragraph',
-        content:
-          'In the trials FDA reviewed for approval:',
+        content: 'In the trials FDA reviewed for approval:',
       },
       {
         id: 'numbers-semaglutide',
@@ -1222,7 +1255,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'numbers-diabetes',
         type: 'bullet',
         content:
-          'In both drugs\' trials that included people with type 2 diabetes, average loss was smaller — closer to **10–15%**.',
+          "In both drugs' trials that included people with type 2 diabetes, average loss was smaller — closer to **10–15%**.",
       },
       {
         id: 'numbers-context',
@@ -1248,13 +1281,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'what-happens-when-stop-2',
         type: 'paragraph',
         content:
-          'You\'ll see headlines saying people return to their starting weight in about 1.7 years. For semaglutide and tirzepatide, the post-stopping evidence only extends about a year. The direction of the finding is solid. The precise timeline is a model.',
+          "You'll see headlines saying people return to their starting weight in about 1.7 years. For semaglutide and tirzepatide, the post-stopping evidence only extends about a year. The direction of the finding is solid. The precise timeline is a model.",
       },
       {
         id: 'what-happens-when-stop-3',
         type: 'paragraph',
         content:
-          'What it means practically: appetite returns when the medication is no longer there to suppress it. That\'s not dependency, and it\'s not a character failure. It\'s the same reason blood pressure climbs back when someone stops taking a blood-pressure medication. Obesity is increasingly treated as a chronic condition, and the 2026 ADA Standards of Care reflect that — patients who respond well are generally expected to continue treatment rather than stop at a goal weight. Not everyone regains everything. But planning for "I\'ll take this for six months and be done" is planning against the evidence.',
+          "What it means practically: appetite returns when the medication is no longer there to suppress it. That's not dependency, and it's not a character failure. It's the same reason blood pressure climbs back when someone stops taking a blood-pressure medication. Obesity is increasingly treated as a chronic condition, and the 2026 ADA Standards of Care reflect that — patients who respond well are generally expected to continue treatment rather than stop at a goal weight. Not everyone regains everything. But planning for \"I'll take this for six months and be done\" is planning against the evidence.",
       },
 
       // ---------- Two things that changed in 2026 ----------
@@ -1267,7 +1300,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'changed-2026-1',
         type: 'paragraph',
         content:
-          'The suicidal-ideation warning is gone. In January 2026, after reviewing 91 placebo-controlled trials covering more than 107,000 patients, the FDA concluded there was no increased risk of suicidal ideation or behavior with GLP-1 medications, and asked manufacturers to remove that warning from the Wegovy, Zepbound, and Saxenda labels. If you read something scary about this in 2024, it has been superseded. (Any concerning mood change is still worth telling your doctor about — that\'s true of any medication.)',
+          "The suicidal-ideation warning is gone. In January 2026, after reviewing 91 placebo-controlled trials covering more than 107,000 patients, the FDA concluded there was no increased risk of suicidal ideation or behavior with GLP-1 medications, and asked manufacturers to remove that warning from the Wegovy, Zepbound, and Saxenda labels. If you read something scary about this in 2024, it has been superseded. (Any concerning mood change is still worth telling your doctor about — that's true of any medication.)",
       },
       {
         id: 'changed-2026-2',
@@ -1286,7 +1319,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'compounded-meaning-1',
         type: 'paragraph',
         content:
-          'Compounding is an established part of American pharmacy practice. A **503A compounding pharmacy** prepares a medication for one specific patient, on the prescription of a licensed clinician, under state pharmacy board oversight. It exists because mass-produced products don\'t fit every patient.',
+          "Compounding is an established part of American pharmacy practice. A **503A compounding pharmacy** prepares a medication for one specific patient, on the prescription of a licensed clinician, under state pharmacy board oversight. It exists because mass-produced products don't fit every patient.",
       },
       {
         id: 'compounded-meaning-2',
@@ -1313,7 +1346,7 @@ export const blogDetails: BlogMeta[] = [
       {
         id: 'compounded-questions-3',
         type: 'bullet',
-        content: 'What\'s the clinical reasoning behind that choice?',
+        content: "What's the clinical reasoning behind that choice?",
       },
       {
         id: 'compounded-meaning-4',
@@ -1337,12 +1370,13 @@ export const blogDetails: BlogMeta[] = [
       {
         id: 'safety-list',
         type: 'bullet',
-        content: 'Severe or persistent abdominal pain (possible pancreatitis or gallbladder disease)',
+        content:
+          'Severe or persistent abdominal pain (possible pancreatitis or gallbladder disease)',
       },
       {
         id: 'safety-list-2',
         type: 'bullet',
-        content: 'Vomiting that won\'t stop, or signs of dehydration',
+        content: "Vomiting that won't stop, or signs of dehydration",
       },
       {
         id: 'safety-list-3',
@@ -1352,26 +1386,27 @@ export const blogDetails: BlogMeta[] = [
       {
         id: 'safety-list-4',
         type: 'bullet',
-        content: 'Significant low blood sugar, especially if you also take insulin or a sulfonylurea',
+        content:
+          'Significant low blood sugar, especially if you also take insulin or a sulfonylurea',
       },
       {
         id: 'safety-2',
         type: 'paragraph',
         content:
-          'Semaglutide and tirzepatide carry a **boxed warning** for thyroid C-cell tumors and should not be used by anyone with a personal or family history of medullary thyroid carcinoma or MEN2. They aren\'t recommended in pregnancy or while trying to conceive.',
+          "Semaglutide and tirzepatide carry a **boxed warning** for thyroid C-cell tumors and should not be used by anyone with a personal or family history of medullary thyroid carcinoma or MEN2. They aren't recommended in pregnancy or while trying to conceive.",
       },
 
       // ---------- If you're Asian in North America ----------
       {
         id: 'asian-in-north-america',
         type: 'heading',
-        content: 'If you\'re Asian in North America',
+        content: "If you're Asian in North America",
       },
       {
         id: 'asian-in-north-america-1',
         type: 'paragraph',
         content:
-          'One fact that too many clinics skip: people of Asian descent often develop type 2 diabetes and metabolic problems at a lower BMI than other groups, in part because of a tendency toward **visceral fat** — the kind that accumulates around organs while the scale still looks unremarkable. The American Diabetes Association has recommended since 2015 that Asian Americans be screened for diabetes starting at a BMI of **23**, rather than 25. That\'s a reason to have an earlier metabolic conversation with a clinician.',
+          "One fact that too many clinics skip: people of Asian descent often develop type 2 diabetes and metabolic problems at a lower BMI than other groups, in part because of a tendency toward **visceral fat** — the kind that accumulates around organs while the scale still looks unremarkable. The American Diabetes Association has recommended since 2015 that Asian Americans be screened for diabetes starting at a BMI of **23**, rather than 25. That's a reason to have an earlier metabolic conversation with a clinician.",
       },
       {
         id: 'asian-in-north-america-2',
@@ -1382,14 +1417,13 @@ export const blogDetails: BlogMeta[] = [
       {
         id: 'asian-in-north-america-3',
         type: 'paragraph',
-        content:
-          'A few practical realities for our readers:',
+        content: 'A few practical realities for our readers:',
       },
       {
         id: 'asian-practical-1',
         type: 'bullet',
         content:
-          'Eating less makes nutrition harder, not easier. When your meals are built on rice, noodles, takeout, and whatever\'s open at midnight during finals, a suppressed appetite makes it very easy to fall short on protein, fiber, and fluids. Smaller portions raise the stakes on what\'s in them.',
+          "Eating less makes nutrition harder, not easier. When your meals are built on rice, noodles, takeout, and whatever's open at midnight during finals, a suppressed appetite makes it very easy to fall short on protein, fiber, and fluids. Smaller portions raise the stakes on what's in them.",
       },
       {
         id: 'asian-practical-2',
@@ -1401,13 +1435,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'asian-practical-3',
         type: 'bullet',
         content:
-          'Be honest with yourself about why. There\'s real cultural pressure toward thinness in our communities, and it\'s worth separating from medical need. These are prescription drugs with boxed warnings, not a cosmetic shortcut for a few pounds you don\'t medically need to lose.',
+          "Be honest with yourself about why. There's real cultural pressure toward thinness in our communities, and it's worth separating from medical need. These are prescription drugs with boxed warnings, not a cosmetic shortcut for a few pounds you don't medically need to lose.",
       },
       {
         id: 'asian-in-north-america-4',
         type: 'paragraph',
         content:
-          'If you\'re considering GLP-1 treatment, the first step is understanding whether these medications are appropriate for your health goals. A licensed healthcare provider can review your medical history, weight goals, and treatment options.',
+          "If you're considering GLP-1 treatment, the first step is understanding whether these medications are appropriate for your health goals. A licensed healthcare provider can review your medical history, weight goals, and treatment options.",
       },
       {
         id: 'asian-in-north-america-5',
@@ -1433,7 +1467,7 @@ export const blogDetails: BlogMeta[] = [
   {
     id: 5,
     slug: 'semaglutide-vs-tirzepatide',
-    title: 'Semaglutide vs. Tirzepatide: What\'s the Difference?',
+    title: "Semaglutide vs. Tirzepatide: What's the Difference?",
     category: 'Weight Loss',
     author: 'Apsu Health',
     date: '20 Jan 2026',
@@ -1502,7 +1536,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'semaglutide-3',
         type: 'paragraph',
         content:
-          'A practical point: not all semaglutide products are used in the same way. Even when products contain semaglutide, their approved uses, dosage forms, and dosing schedules may differ. A patient should not assume that one semaglutide product can be swapped for another without a clinician\'s direction.',
+          "A practical point: not all semaglutide products are used in the same way. Even when products contain semaglutide, their approved uses, dosage forms, and dosing schedules may differ. A patient should not assume that one semaglutide product can be swapped for another without a clinician's direction.",
       },
 
       // ---------- What is tirzepatide? ----------
@@ -1592,11 +1626,27 @@ export const blogDetails: BlogMeta[] = [
         tableData: {
           headers: ['Feature', 'Semaglutide', 'Tirzepatide'],
           rows: [
-            ['Mechanism', 'GLP-1 receptor agonist (single pathway)', 'Activates both GIP and GLP-1 receptors (dual pathway)'],
-            ['Weight-loss results', 'Clinically meaningful average weight loss.', 'Dual-pathway design may produce larger average weight-loss results in some studies; clinical decision still depends on the patient.'],
+            [
+              'Mechanism',
+              'GLP-1 receptor agonist (single pathway)',
+              'Activates both GIP and GLP-1 receptors (dual pathway)',
+            ],
+            [
+              'Weight-loss results',
+              'Clinically meaningful average weight loss.',
+              'Dual-pathway design may produce larger average weight-loss results in some studies; clinical decision still depends on the patient.',
+            ],
             ['Starting dose', '0.25 mg once weekly', '2.5 mg once weekly'],
-            ['Dose escalation', 'Gradually increased to a 2.4 mg once-weekly maintenance dose.', 'Increased to 5 mg once weekly, with possible escalation to higher maintenance doses if clinically appropriate and tolerated.'],
-            ['Oral-contraceptive warning', 'Also delays gastric emptying and may affect oral medications, but no specific contraception instruction in the FDA label.', 'FDA label includes a specific contraception instruction after initiation and each dose escalation.'],
+            [
+              'Dose escalation',
+              'Gradually increased to a 2.4 mg once-weekly maintenance dose.',
+              'Increased to 5 mg once weekly, with possible escalation to higher maintenance doses if clinically appropriate and tolerated.',
+            ],
+            [
+              'Oral-contraceptive warning',
+              'Also delays gastric emptying and may affect oral medications, but no specific contraception instruction in the FDA label.',
+              'FDA label includes a specific contraception instruction after initiation and each dose escalation.',
+            ],
           ],
         },
       },
@@ -1617,7 +1667,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'candidate-2',
         type: 'paragraph',
         content:
-          'It is important not to oversimplify this into \'only very visibly overweight people should care\' or \'anyone who wants to lose a few pounds can use it.\' Many Asian patients can develop metabolic risk at lower BMI levels than non-Asian populations. For example, CDC-recognized Diabetes Prevention Program eligibility uses BMI 23 or higher for Asian American adults, compared with 25 or higher for others. That is a prevention-program threshold, not a GLP-1 prescribing rule. It is best used as a reason to discuss metabolic health earlier, not as a promise of medication eligibility [6].',
+          "It is important not to oversimplify this into 'only very visibly overweight people should care' or 'anyone who wants to lose a few pounds can use it.' Many Asian patients can develop metabolic risk at lower BMI levels than non-Asian populations. For example, CDC-recognized Diabetes Prevention Program eligibility uses BMI 23 or higher for Asian American adults, compared with 25 or higher for others. That is a prevention-program threshold, not a GLP-1 prescribing rule. It is best used as a reason to discuss metabolic health earlier, not as a promise of medication eligibility [6].",
       },
 
       // ---------- Where compounded GLP-1 medications may fit ----------
@@ -1630,13 +1680,13 @@ export const blogDetails: BlogMeta[] = [
         id: 'compounded-1',
         type: 'paragraph',
         content:
-          'Compounded GLP-1 medications may be considered when a licensed clinician determines that a patient\'s needs cannot be met by an FDA-approved option or when an FDA-approved medication is not commercially available. For some patients, a compounded prescription may offer a more accessible or flexible treatment pathway, especially when care is coordinated through a clinician and a state-licensed pharmacy.',
+          "Compounded GLP-1 medications may be considered when a licensed clinician determines that a patient's needs cannot be met by an FDA-approved option or when an FDA-approved medication is not commercially available. For some patients, a compounded prescription may offer a more accessible or flexible treatment pathway, especially when care is coordinated through a clinician and a state-licensed pharmacy.",
       },
       {
         id: 'compounded-2',
         type: 'paragraph',
         content:
-          'If you\'d like to explore whether this is appropriate for you, Apsu can connect you with a licensed clinician for an online intake and eligibility review.',
+          "If you'd like to explore whether this is appropriate for you, Apsu can connect you with a licensed clinician for an online intake and eligibility review.",
       },
 
       // ---------- Safety overview ----------
@@ -1661,7 +1711,7 @@ export const blogDetails: BlogMeta[] = [
         id: 'safety-3',
         type: 'paragraph',
         content:
-          '**Boxed warning:** both carry the FDA\'s most serious warning, about thyroid C-cell tumors in animal studies; not for people with a personal or family history of medullary thyroid carcinoma or MEN 2.',
+          "**Boxed warning:** both carry the FDA's most serious warning, about thyroid C-cell tumors in animal studies; not for people with a personal or family history of medullary thyroid carcinoma or MEN 2.",
       },
       {
         id: 'safety-4',
@@ -1702,7 +1752,8 @@ export const blogDetails: BlogMeta[] = [
       {
         id: 'faq-2',
         type: 'paragraph',
-        content: '**Why do some patients consider compounded GLP-1 medications?**',
+        content:
+          '**Why do some patients consider compounded GLP-1 medications?**',
       },
       {
         id: 'faq-2-answer',

@@ -6,6 +6,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { FormData } from '@/zod/AssessmentSchema';
 import Image from 'next/image';
@@ -96,6 +97,9 @@ export default function TreatmentPlanStepOne() {
         name="treatmentPlan"
         render={() => (
           <FormItem className="space-y-3">
+            <FormLabel className="text-[14px] font-semibold text-[#111]">
+              Choose a plan that fits you.
+            </FormLabel>
             <FormControl>
               <div className="flex flex-col gap-3">
                 {PLAN_OPTIONS.map(plan => {
