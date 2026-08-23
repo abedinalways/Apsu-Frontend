@@ -191,7 +191,7 @@ export default function ProfileClient() {
 
       <div className="bg-white border border-[#EBEAE4] rounded-[24px] overflow-hidden">
         <div className="px-4 py-4 md:px-8 border-b border-[#F4F3EF] flex justify-center md:justify-start">
-          <div className="bg-transparent lg:bg-[#E8F3ED] flex flex-wrap md:flex-nowrap mx-auto justify-center gap-2 p-2 md:p-2 rounded-full">
+          <div className="bg-transparent lg:bg-lightGreenColor flex flex-wrap md:flex-nowrap mx-auto justify-center gap-2 p-2 md:p-2 rounded-full">
             {TABS.map(tab => {
               const isActive = activeTab === tab.id;
               return (

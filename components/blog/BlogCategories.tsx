@@ -13,7 +13,7 @@ export default function BlogCategories({
 }: BlogCategoriesProps) {
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <span className="text-2xl font-medium text-[#292B2A]">Categories:</span>
+      <span className="text-2xl font-medium text-primary">Categories:</span>
 
       {categories.map(category => {
         const active = activeCategory === category;
@@ -33,7 +33,7 @@ export default function BlogCategories({
               duration-300
               ${
                 active
-                  ? ' bg-[#b8d9c6] text-[#102b1c]'
+                  ? ' bg-lightGreenColor text-primary'
                   : 'border-[#E3E3E3] bg-white text-[#6B6B6B] hover:border-[#008C5E] hover:text-[#008C5E]'
               }
             `}

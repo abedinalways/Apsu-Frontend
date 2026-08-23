@@ -16,6 +16,7 @@ import PrimaryButton from '../reusable/button/PrimaryButton';
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -31,18 +32,38 @@ export default function ContactForm() {
 
   async function onSubmit(values: ContactFormValues) {
     setIsSubmitting(true);
+    setSubmitError(null);
     try {
       console.log('Contact form submitted:', values);
       toast.error('Contact form is not connected to a backend yet.');
     } catch (error) {
-      toast.error('Something went wrong. Please try again later.');
+      const message = 'Something went wrong. Please try again later.';
+      setSubmitError(message);
+      toast.error(message);
     } finally {
       setIsSubmitting(false);
     }
   }
 
+  const handleRetry = () => {
+    setSubmitError(null);
+    form.handleSubmit(onSubmit)();
+  };
+
   return (
     <div className="rounded-2xl  bg-white  shadow h-full">
+      {submitError && (
+        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center justify-between">
+          <p className="text-sm text-red-600">{submitError}</p>
+          <button
+            type="button"
+            onClick={handleRetry}
+            className="text-sm text-red-600 hover:text-red-700 font-medium"
+          >
+            Retry
+          </button>
+        </div>
+      )}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className=" p-8">
           <ContactFormFields control={form.control} />

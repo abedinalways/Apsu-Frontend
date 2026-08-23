@@ -14,6 +14,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
   const [password, setPassword] = useState('');
   const [showPass, setShowPass] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -21,9 +22,12 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
 
     if (!email || !password) {
-      toast.error('Please enter both email and password.');
+      const message = 'Please enter both email and password.';
+      setError(message);
+      toast.error(message);
       return;
     }
 
@@ -37,10 +41,14 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
         const redirectTo = searchParams.get('redirect') || '/profile';
         router.push(redirectTo);
       } else {
-        toast.error(result.error || 'Login failed. Please try again.');
+        const errorMessage = result.error || 'Login failed. Please try again.';
+        setError(errorMessage);
+        toast.error(errorMessage);
       }
     } catch {
-      toast.error('An unexpected error occurred. Please try again.');
+      const errorMessage = 'An unexpected error occurred. Please try again.';
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -57,6 +65,12 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
           updates.
         </p>
       </div>
+
+      {error && (
+        <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+          <p className="text-sm text-red-600">{error}</p>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">

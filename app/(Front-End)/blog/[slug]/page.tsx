@@ -12,10 +12,10 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  
+
   try {
     const blog = await BlogService.getBlogBySlug(slug);
-    
+
     return {
       title: blog.title,
       description: blog.summary?.[0]?.title || 'Blog post',
@@ -35,16 +35,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { slug } = await params;
 
+  let blog;
   try {
-    const blog = await BlogService.getBlogBySlug(slug);
-
-    if (!blog) {
-      notFound();
-    }
-
-    return <BlogDetailsPage blog={blog} />;
+    blog = await BlogService.getBlogBySlug(slug);
   } catch (error) {
-    console.error('Error fetching blog:', error);
+    console.error('Failed to fetch blog:', error);
+    throw error;
+  }
+
+  if (!blog) {
     notFound();
   }
+
+  return <BlogDetailsPage blog={blog} />;
 }

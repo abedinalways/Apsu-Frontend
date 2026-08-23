@@ -59,6 +59,7 @@
   --color-orengeColor: #ff6a55;
   --color-blueColor: #0068ef;
   --color-bgColor: #faf9f4;
+  --color-lightGreenColor:var(--lightGreenColor);
   --color-descriptionColor: #3b3b3c;
   --color-highlightColor: var(--highlightColor);
 }
@@ -68,6 +69,7 @@
 :root {
   --primaryColor: #102b1c;
   --secondaryColor: #d6ae29;
+  --lightGreenColor:#E8F3ED;
   --blackColor: #070707;
   --whiteColor: #fff;
   --ratingColor: #ffc52e;
@@ -128,6 +130,7 @@
   --secondary-bg: #0b251a;
   --secondary-text: #142c1e;
   --highlightColor:#fbff19;
+  --lightGreenColor:#E8F3ED;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
