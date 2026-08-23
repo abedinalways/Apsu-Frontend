@@ -16,7 +16,10 @@ export type ContentType =
   | 'callout'
   | 'steps'
   | 'iconGrid'
-  | 'table';
+  | 'table'
+  | 'richText'
+  | 'disclaimer'
+  | 'highlight';
 
 export interface StepItem {
   title: string;

@@ -60,6 +60,7 @@
   --color-blueColor: #0068ef;
   --color-bgColor: #faf9f4;
   --color-descriptionColor: #3b3b3c;
+  --color-highlightColor: var(--highlightColor);
 }
 /* ------------------------------
    Light Theme (default)
@@ -70,6 +71,7 @@
   --blackColor: #070707;
   --whiteColor: #fff;
   --ratingColor: #ffc52e;
+  --highlightColor:#dfec53;
   --headerColor: #040815;
   --grayColor1: #777980;
   --bgColor: rgba(243, 243, 244, 0.5);
@@ -125,6 +127,7 @@
   --secondary: #111111;
   --secondary-bg: #0b251a;
   --secondary-text: #142c1e;
+  --highlightColor:#fbff19;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);

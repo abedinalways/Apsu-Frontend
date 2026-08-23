@@ -10,11 +10,16 @@ import NumberList from './NumberList';
 import Paragraph from './Paragraph';
 import BlogQuote from './Quote';
 import Steps from './Steps';
+import Disclaimer from './Disclaimer';
+import Highlight from './Highlight';
 
 
 export const BLOG_COMPONENTS = {
   heading: Heading,
   paragraph: Paragraph,
+  richText: Paragraph,
+  disclaimer: Disclaimer,
+  highlight: Highlight,
   image: HeroImage,
   bullet: BulletList,
   number: NumberList,

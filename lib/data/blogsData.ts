@@ -7,7 +7,7 @@ export const blogsData = [
     category: 'Weight Loss',
     date: '20 Jan 2026',
     readTime: '5 min read',
-    title: 'Understanding GLP-1 Medications: What Patients Should Know',
+    title: 'Compounded GLP-1 vs. Brand-Name GLP-1: What\'s the Difference?',
     description:
       'GLP-1 treatments have gained attention for weight management. Understand how they work and what factors physicians consider before prescribing them.',
     href: '/blog/understanding-glp1',
