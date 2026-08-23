@@ -12,7 +12,7 @@ import WhyApsuSleepSection from "@/components/birth-control/WhyApsuSleepSection"
 import QuickCheckSection from "@/components/Sleep/QuickCheckSection";
 import SleepFAQsection from "@/components/Sleep/SleepFAQsection";
 import SleepQuestion from "@/components/Sleep/SleepQuestion";
-import tirzepatideImg from "@/public/images/banner/Medicine.png";
+import tirzepatideImg from "@/public/images/banner/sleep-hero.png";
 export interface FeatureItem {
   id: number;
   text: string;

@@ -1,5 +1,5 @@
 import  image1  from "@/public/images/birth-controll/birth1.png";
-import  image2  from "@/public/images/birth-controll/birth2.png";
+import  image2  from "@/public/images/birth-controll/birth-medicine.png";
 import { StaticImageData } from "next/image";
 import MedicationSection from "./MedicationSection";
 export interface MedicationItem {

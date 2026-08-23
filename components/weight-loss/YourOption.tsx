@@ -1,7 +1,5 @@
-import {
-  default as semaglutideVial,
-  default as tirzepatideVial,
-} from "@/public/images/banner/medic.png";
+import { default as tirzepatideVial } from "@/public/images/banner/medic.png";
+import semagluImg from "@/public/images/banner/sem-medicin.png";
 import { StaticImageData } from "next/image";
 import CommonHeader from "../reusable/CommonHeader";
 import MedicationSection from "./MedicationSection";
@@ -26,7 +24,7 @@ function YourOption() {
         "A widely used starting point for medical weight management.",
       ],
       price: "$200",
-      image: semaglutideVial,
+      image: semagluImg,
     },
     {
       id: 2,
