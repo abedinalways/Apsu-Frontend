@@ -225,10 +225,8 @@ export default function MessageTabContainer() {
                   </button>
                   <div className="shrink-0 md:ml-10">
                     <div
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold "
-                      style={{
-                        backgroundColor: activeConversation.avatarColor,
-                      }}
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold bg-primaryColor"
+                      
                     >
                       {activeConversation.initials}
                     </div>

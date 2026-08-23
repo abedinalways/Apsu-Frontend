@@ -25,8 +25,8 @@ export default function ConversationListItem({
       {/* Avatar */}
       <div className="shrink-0">
         <div
-          className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[14px] font-semibold"
-          style={{ backgroundColor: conversation.avatarColor }}
+          className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[14px] font-semibold bg-primaryColor"
+         
         >
           {conversation.initials}
         </div>
