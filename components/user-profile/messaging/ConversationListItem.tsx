@@ -24,10 +24,7 @@ export default function ConversationListItem({
     >
       {/* Avatar */}
       <div className="shrink-0">
-        <div
-          className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[14px] font-semibold bg-primaryColor"
-         
-        >
+        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[14px] font-semibold bg-primaryColor">
           {conversation.initials}
         </div>
       </div>
@@ -39,11 +36,11 @@ export default function ConversationListItem({
             <p className="text-[16px] font-semibold text-secondary-text truncate">
               {conversation.participantName}
             </p>
-            <p className="text-[14px] text-gray-500 truncate mt-0.5">
+            <p className="text-[14px] text-grayColor1 truncate mt-0.5">
               {conversation.lastMessagePreview}
             </p>
           </div>
-          <span className="text-[11px] font-medium text-gray-400 shrink-0">
+          <span className="text-[11px] font-medium text-grayColor1 shrink-0">
             {formatConversationTimestamp(conversation.lastMessageAt)}
           </span>
         </div>

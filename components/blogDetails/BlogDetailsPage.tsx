@@ -28,7 +28,7 @@ export default function BlogDetailsPage({ blog }: Props) {
         <BlogSidebar blog={blog} />
         <BlogLayout blog={blog} />
       </div>
-      <div className="border-t border-[#b8d9c6] my-10"></div>
+      <div className="border-t border-lightGreenColor my-10"></div>
       <p className="text-center text-[32px] leading-[124%] font-medium flex items-start">
         <Image src="/images/blogDetails/55.png" width={33} height={24} alt="" />{' '}
         If you are considering GLP-1 treatment, Apsu can help you take the next

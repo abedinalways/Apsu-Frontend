@@ -20,7 +20,7 @@ export default function BlogError({
       <div className="custom-container flex flex-col items-center justify-center min-h-[50vh] gap-4">
         <div className="text-center space-y-2">
           <h2 className="text-2xl font-semibold text-gray-900">Something went wrong</h2>
-          <p className="text-gray-500">We couldn&apos;t load the blog posts. Please try again.</p>
+          <p className="text-grayColor1">We couldn&apos;t load the blog posts. Please try again.</p>
         </div>
         <Button
           onClick={reset}

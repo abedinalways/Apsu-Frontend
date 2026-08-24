@@ -42,7 +42,7 @@ export default function Treatment() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-semibold text-gray-800">
+      <h2 className="text-xl font-semibold text-blackColor">
         What would you like help with today?
       </h2>
 
@@ -51,7 +51,7 @@ export default function Treatment() {
         name="goal"
         render={() => (
           <FormItem className="space-y-4">
-            <FormLabel className="text-[14px] font-semibold text-[#111]">
+            <FormLabel className="text-[14px] font-semibold text-blackColor">
               What would you like help with today?
             </FormLabel>
             <FormControl>
@@ -67,8 +67,8 @@ export default function Treatment() {
                       }
                       className={`flex items-center justify-between p-4 rounded-xl border text-left transition-all ${
                         isSelected
-                          ? 'border-[#ECF9F1] bg-[#ECF9F1]'
-                          : 'border-gray-100 bg-[background] hover:bg-[background]/50'
+                          ? 'border-lightGreenColor bg-lightGreenColor'
+                          : 'border-gray-100 bg-background hover:bg-background/50'
                       }`}
                     >
                       <div className="space-y-3 pr-4">

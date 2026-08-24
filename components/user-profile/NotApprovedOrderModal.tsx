@@ -19,7 +19,7 @@
 //         <div className="grid grid-cols-1 gap-4">
 //           <div className="order-1 rounded-[12px] p-4 flex flex-col justify-between space-y-4 shadow">
 //             <div className="flex items-start gap-3">
-//               <div className="w-10 h-10 p-2 rounded-full bg-[#102b1c] flex items-center justify-center text-[#A3C9A8] shrink-0">
+//               <div className="w-10 h-10 p-2 rounded-full bg-greenColor flex items-center justify-center text-lightGreenColor shrink-0">
 //                 <SyringeIcon />
 //               </div>
 //               <div>
@@ -39,23 +39,23 @@
 
 //             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-left pt-2 border-t border-gray-50">
 //               <div>
-//                 <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
+//                 <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
 //                   Order ID
 //                 </p>
-//                 <p className="text-sm font-medium text-gray-800 whitespace-nowrap">
+//                 <p className="text-sm font-medium text-blackColor whitespace-nowrap">
 //                   {order.orderId}
 //                 </p>
 //               </div>
 //               <div className="md:ml-8">
-//                 <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
+//                 <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
 //                   Order Date
 //                 </p>
-//                 <p className="text-sm font-medium text-gray-800 whitespace-nowrap">
+//                 <p className="text-sm font-medium text-blackColor whitespace-nowrap">
 //                   {order.orderDate}
 //                 </p>
 //               </div>
 //               <div className="md:ml-8">
-//                 <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
+//                 <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
 //                   Payment
 //                 </p>
 //                 <p className="text-sm font-medium text-[#D2942A] whitespace-nowrap leading-[124%]">
@@ -63,7 +63,7 @@
 //                 </p>
 //               </div>
 //               <div className="md:ml-8">
-//                 <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
+//                 <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
 //                   Total
 //                 </p>
 //                 <p className="text-sm font-bold text-gray-900 whitespace-nowrap">
@@ -80,7 +80,7 @@
 //           </h5>
 //           <div className="w-full space-y-3 pt-2">
 //             <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-//               <span className="text-sm text-[#6c6c6c] font-light">
+//               <span className="text-sm text-grayColor1 font-light">
 //                 Total Refundable
 //               </span>
 //               <span className="text-sm font-semibold text-gray-900">
@@ -88,7 +88,7 @@
 //               </span>
 //             </div>
 //             <div className="flex justify-between items-center">
-//               <span className="text-sm text-[#6c6c6c] font-light">
+//               <span className="text-sm text-grayColor1 font-light">
 //                 Estimated Time
 //               </span>
 //               <span className="text-sm font-medium text-gray-700">
@@ -100,10 +100,10 @@
 //       </div>
 
 //       <div className="bg-[#feecee] border border-red-300 rounded-[12px] p-4 text-left shadow">
-//         <h4 className="text-sm md:text-[16px] font-medium text-[#102b1c] mb-1">
+//         <h4 className="text-sm md:text-[16px] font-medium text-greenColor mb-1">
 //           Treatment not approved
 //         </h4>
-//         <p className="text-xs md:text-[14px] text-[#102b1c] font-normal leading-[160%]">
+//         <p className="text-xs md:text-[14px] text-greenColor font-normal leading-[160%]">
 //           Unfortunately, your treatment was not approved by the physician based
 //           on your health assessment. Your refund has been initiated and will be
 //           returned to your original payment method within 3–5 business days.
@@ -137,7 +137,7 @@ export default function NotApprovedOrderModal({
         <div className="grid grid-cols-1 gap-4">
           <div className="order-1 rounded-[12px] p-4 flex flex-col justify-between space-y-4 shadow">
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 p-2 rounded-full bg-[#102b1c] flex items-center justify-center text-[#A3C9A8] shrink-0">
+              <div className="w-10 h-10 p-2 rounded-full bg-greenColor flex items-center justify-center text-lightGreenColor shrink-0">
                 <SyringeIcon />
               </div>
               <div>
@@ -157,23 +157,23 @@ export default function NotApprovedOrderModal({
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-left pt-2 border-t border-gray-50">
               <div>
-                <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
+                <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
                   Order ID
                 </p>
-                <p className="text-sm font-medium text-gray-800 whitespace-nowrap">
+                <p className="text-sm font-medium text-blackColor whitespace-nowrap">
                   {order.orderId}
                 </p>
               </div>
               <div className="md:ml-8">
-                <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
+                <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
                   Order Date
                 </p>
-                <p className="text-sm font-medium text-gray-800 whitespace-nowrap">
+                <p className="text-sm font-medium text-blackColor whitespace-nowrap">
                   {order.orderDate}
                 </p>
               </div>
               <div className="md:ml-8">
-                <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
+                <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
                   Payment
                 </p>
                 {isRefundCompleted ? (
@@ -187,7 +187,7 @@ export default function NotApprovedOrderModal({
                 )}
               </div>
               <div className="md:ml-8">
-                <p className="text-[12px] text-gray-400 font-light whitespace-nowrap">
+                <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
                   Total
                 </p>
                 <p className="text-sm font-bold text-gray-900 whitespace-nowrap">
@@ -204,7 +204,7 @@ export default function NotApprovedOrderModal({
           </h5>
           <div className="w-full space-y-3 pt-2">
             <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-              <span className="text-sm text-[#6c6c6c] font-light">
+              <span className="text-sm text-grayColor1 font-light">
                 {isRefundCompleted ? 'Refunded Amount' : 'Total Refundable'}
               </span>
               <span className="text-sm font-semibold text-gray-900">
@@ -212,7 +212,7 @@ export default function NotApprovedOrderModal({
               </span>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-[#6c6c6c] font-light">
+              <span className="text-sm text-grayColor1 font-light">
                 {isRefundCompleted ? 'Refund Date' : 'Estimated Time'}
               </span>
               <span className="text-sm font-medium text-gray-700">
@@ -225,17 +225,17 @@ export default function NotApprovedOrderModal({
 
       {isRefundCompleted ? (
         <div className="bg-[#FFF9EC] border border-[#FCEFCE] rounded-[12px] p-4 text-left shadow">
-          <p className="text-xs md:text-[14px] text-gray-800 font-normal leading-[160%]">
+          <p className="text-xs md:text-[14px] text-blackColor font-normal leading-[160%]">
             Your refund has been successfully processed and returned to your
             original payment method.
           </p>
         </div>
       ) : (
         <div className="bg-[#feecee] border border-red-300 rounded-[12px] p-4 text-left shadow">
-          <h4 className="text-sm md:text-[16px] font-medium text-[#102b1c] mb-1">
+          <h4 className="text-sm md:text-[16px] font-medium text-greenColor mb-1">
             Treatment not approved
           </h4>
-          <p className="text-xs md:text-[14px] text-[#102b1c] font-normal leading-[160%]">
+          <p className="text-xs md:text-[14px] text-greenColor font-normal leading-[160%]">
             Unfortunately, your treatment was not approved by the physician
             based on your health assessment. Your refund has been initiated and
             will be returned to your original payment method within 3–5 business

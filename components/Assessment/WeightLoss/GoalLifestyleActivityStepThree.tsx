@@ -37,7 +37,7 @@ export default function GoalLifestyleActivityStepThree() {
     <div className="space-y-6">
       {/* Step Header matching Screenshot 2026-07-05 120126.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Share your challenges and motivations.
         </h2>
       </div>
@@ -48,15 +48,15 @@ export default function GoalLifestyleActivityStepThree() {
         name="weightLossMethods"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
+            <FormLabel className="text-[14px] text-blackColor flex items-center gap-0.5">
               What method do you applied for loosing your weight?{' '}
-              <span className="text-red-500 font-serif">*</span>
+              <span className="text-redColor font-serif">*</span>
             </FormLabel>
             <FormControl>
               <Textarea
                 {...field}
                 placeholder="Tell us more.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[background] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-background text-sm focus-visible:ring-[1px] placeholder:text-grayColor1 p-3"
               />
             </FormControl>
             {/* Quick selection pill tags */}
@@ -83,15 +83,15 @@ export default function GoalLifestyleActivityStepThree() {
         name="weightLossMotivation"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
+            <FormLabel className="text-[14px] text-blackColor flex items-center gap-0.5">
               What&apos;s your primary motivation for loosing weight?{' '}
-              <span className="text-red-500 font-serif">*</span>
+              <span className="text-redColor font-serif">*</span>
             </FormLabel>
             <FormControl>
               <Textarea
                 {...field}
                 placeholder="Tell us more.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[background] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-background text-sm focus-visible:ring-[1px] placeholder:text-grayColor1 p-3"
               />
             </FormControl>
             {/* Quick selection pill tags */}
@@ -118,15 +118,15 @@ export default function GoalLifestyleActivityStepThree() {
         name="weightLossBarriers"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
+            <FormLabel className="text-[14px] text-blackColor flex items-center gap-0.5">
               What barrier do you think affect most on you weight loss journey?{' '}
-              <span className="text-red-500 font-serif">*</span>
+              <span className="text-redColor font-serif">*</span>
             </FormLabel>
             <FormControl>
               <Textarea
                 {...field}
                 placeholder="Describe in brief.."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-[background] text-sm focus-visible:ring-[1px] placeholder:text-gray-400 p-3"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 bg-background text-sm focus-visible:ring-[1px] placeholder:text-grayColor1 p-3"
               />
             </FormControl>
             <FormMessage />

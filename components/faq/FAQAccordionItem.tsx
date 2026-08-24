@@ -30,7 +30,7 @@ export function FAQAccordionItem({ item }: FAQAccordionItemProps) {
         <span>{item.question}</span>
         <ChevronDown
           className={`h-5 w-5 shrink-0 transition-transform duration-200 ${
-            isOpen ? 'rotate-180 text-white' : 'text-gray-400'
+            isOpen ? 'rotate-180 text-white' : 'text-grayColor1'
           }`}
         />
       </button>

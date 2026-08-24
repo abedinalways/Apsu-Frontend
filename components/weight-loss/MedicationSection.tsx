@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Check } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
-import WhiteCustomButton from "../reusable/button/WhiteCustomButton";
+import { Check } from 'lucide-react';
+import Image, { StaticImageData } from 'next/image';
+import WhiteCustomButton from '../reusable/button/WhiteCustomButton';
 
 export interface MedicationItem {
   id: number;
@@ -20,7 +20,7 @@ interface MedicationSectionProps {
 }
 
 export default function MedicationSection({
-  sectionBgColor = "bg-[#FAF9F5]",
+  sectionBgColor = 'bg-background',
   data,
 }: MedicationSectionProps) {
   return (
@@ -37,7 +37,7 @@ export default function MedicationSection({
               >
                 <div
                   className={`${sectionBgColor} rounded-2xl p-4 md:p-6 lg:p-8 flex flex-col justify-between shadow-[0_2px_8px_rgba(2,31,24,0.02)] min-h-95 ${
-                    isEven ? "lg:order-1" : "lg:order-2"
+                    isEven ? 'lg:order-1' : 'lg:order-2'
                   }`}
                 >
                   <div className="space-y-4">
@@ -70,7 +70,7 @@ export default function MedicationSection({
                   {/* Pricing & Button area */}
                   <div className="pt-6 space-y-4">
                     <h4 className="text-2xl md:text-3xl  text-headerColor">
-                      From{" "}
+                      From{' '}
                       <span className="text-3xl md:text-5xl lg:text-[52px]">
                         {item.price}
                       </span>
@@ -88,7 +88,7 @@ export default function MedicationSection({
                 {/* --- Image Product Box --- */}
                 <div
                   className={`bg-white rounded-2xl shadow-[0_4px_12px_rgba(2,31,24,0.05)]   flex items-center justify-center  ${
-                    isEven ? "lg:order-2" : "lg:order-1"
+                    isEven ? 'lg:order-2' : 'lg:order-1'
                   }`}
                 >
                   <div className="relative w-full h-full ">

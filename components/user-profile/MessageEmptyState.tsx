@@ -51,7 +51,7 @@ export default function MessageEmptyState({
         <h3 className="text-lg sm:text-xl font-medium text-secondary-text">
           {title}
         </h3>
-        <p className="text-xs sm:text-sm text-gray-400 italic font-light max-w-xs sm:max-w-sm">
+        <p className="text-xs sm:text-sm text-grayColor1 italic font-light max-w-xs sm:max-w-sm">
           {subTitle}
         </p>
       </div>
@@ -61,7 +61,7 @@ export default function MessageEmptyState({
         <button
           type="button"
           onClick={onMessageCareTeam}
-          className="mt-3 px-6 py-2.5 bg-[#102B1C] hover:bg-[#1c3d2a] text-white text-xs sm:text-sm font-medium rounded-full transition-colors shadow-sm cursor-pointer"
+          className="mt-3 px-6 py-2.5 bg-greenColor hover:bg-greenColor text-white text-xs sm:text-sm font-medium rounded-full transition-colors shadow-sm cursor-pointer"
         >
           Message Care Team
         </button>

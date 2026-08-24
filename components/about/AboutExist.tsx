@@ -1,19 +1,19 @@
-import aboutExistImage from "@/public/images/about/exist.png";
-import Image from "next/image";
+import aboutExistImage from '@/public/images/about/exist.png';
+import Image from 'next/image';
 
 function AboutExist() {
   const stats = [
     {
-      value: "1 in 5",
+      value: '1 in 5',
       description:
-        "People in the U.S. speak a language other than English at home.",
-      source: "U.S. Census Bureau, American Community Survey",
+        'People in the U.S. speak a language other than English at home.',
+      source: 'U.S. Census Bureau, American Community Survey',
     },
     {
-      value: "25M+",
+      value: '25M+',
       description:
         'Have limited English proficiency — they speak English less than "very well."',
-      source: "U.S. Census Bureau, American Community Survey",
+      source: 'U.S. Census Bureau, American Community Survey',
     },
   ];
   return (
@@ -49,7 +49,7 @@ function AboutExist() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="flex flex-col bg-white shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl p-8 md:p-10 justify-between min-h-55 border border-[#CDDCD3]"
+                  className="flex flex-col bg-white shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl p-8 md:p-10 justify-between min-h-55 border border-lightGreenColor"
                 >
                   <div>
                     {/* Big Bold Stat Value */}

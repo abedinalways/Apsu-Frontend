@@ -74,10 +74,10 @@ export default function TreatmentPlanStepOne() {
       {/* Visual Header Banner matching Screenshot 2026-07-05 104917.png */}
       <div className="relative overflow-hidden rounded-2xl bg-[#D2FDEB] p-5 flex items-center justify-between">
         <div className="space-y-1 max-w-[70%] z-10">
-          <h2 className="text-[20px] font-semibold text-[#102b1c]">
+          <h2 className="text-[20px] font-semibold text-greenColor">
             Choose a plan that fits you.
           </h2>
-          <p className="text-[14px] text-[#111]">
+          <p className="text-[14px] text-blackColor">
             Select the duration that works best for your goals. Longer plans
             offer greater savings.
           </p>
@@ -97,7 +97,7 @@ export default function TreatmentPlanStepOne() {
         name="treatmentPlan"
         render={() => (
           <FormItem className="space-y-3">
-            <FormLabel className="text-[14px] font-semibold text-[#111]">
+            <FormLabel className="text-[14px] font-semibold text-blackColor">
               Choose a plan that fits you.
             </FormLabel>
             <FormControl>
@@ -114,7 +114,7 @@ export default function TreatmentPlanStepOne() {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 rounded-2xl border text-left flex items-start justify-between transition-all relative bg-[background] cursor-pointer ${
+                      className={`w-full p-4 rounded-2xl border text-left flex items-start justify-between transition-all relative bg-background cursor-pointer ${
                         isSelected
                           ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200'
@@ -130,7 +130,7 @@ export default function TreatmentPlanStepOne() {
                           }`}
                         >
                           {isSelected && (
-                            <div className="h-2.5 w-2.5 rounded-full bg-[background]" />
+                            <div className="h-2.5 w-2.5 rounded-full bg-background" />
                           )}
                         </div>
 
@@ -139,7 +139,7 @@ export default function TreatmentPlanStepOne() {
                           <div className="font-bold text-sm text-gray-900 leading-none">
                             {plan.title}
                           </div>
-                          <div className="text-xs text-gray-500 font-medium leading-none">
+                          <div className="text-xs text-grayColor1 font-medium leading-none">
                             {plan.description}
                           </div>
                           <div
@@ -159,11 +159,11 @@ export default function TreatmentPlanStepOne() {
                         <div className="text-base font-bold text-emerald-800 leading-none">
                           {plan.totalPrice}
                         </div>
-                        <div className="text-[11px] text-gray-500 font-medium mt-1">
+                        <div className="text-[11px] text-grayColor1 font-medium mt-1">
                           {plan.monthlyPrice}
                         </div>
                         {plan.originalPrice && (
-                          <div className="text-[10px] text-gray-400 line-through mt-1 font-medium">
+                          <div className="text-[10px] text-grayColor1 line-through mt-1 font-medium">
                             {plan.originalPrice}
                           </div>
                         )}

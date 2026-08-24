@@ -20,7 +20,7 @@ export default function EligibilityStepThree() {
     <div className="space-y-6">
       {/* Title Header text layout from Frame 1984077999 (1).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           If your treatment is approved, where should we ship your order?
         </h2>
       </div>
@@ -32,14 +32,14 @@ export default function EligibilityStepThree() {
           name="shippingAddress"
           render={({ field }) => (
             <FormItem className="space-y-1.5">
-              <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
-                Address <span className="text-red-500">*</span>
+              <FormLabel className="text-[14px] text-blackColor flex items-center gap-0.5">
+                Address <span className="text-redColor">*</span>
               </FormLabel>
               <FormControl>
                 <Input
                   {...field}
                   placeholder="Apertment no., rd no etc.."
-                  className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                  className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                 />
               </FormControl>
               <FormMessage />
@@ -54,14 +54,14 @@ export default function EligibilityStepThree() {
             name="shippingState"
             render={({ field }) => (
               <FormItem className="space-y-1.5">
-                <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
-                  State <span className="text-red-500">*</span>
+                <FormLabel className="text-[14px] text-blackColor flex items-center gap-0.5">
+                  State <span className="text-redColor">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     placeholder="Jakarta"
-                    className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                    className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -74,14 +74,14 @@ export default function EligibilityStepThree() {
             name="shippingCity"
             render={({ field }) => (
               <FormItem className="space-y-1.5">
-                <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
-                  City <span className="text-red-500">*</span>
+                <FormLabel className="text-[14px] text-blackColor flex items-center gap-0.5">
+                  City <span className="text-redColor">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     placeholder="Jakarta"
-                    className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]l"
+                    className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]l"
                   />
                 </FormControl>
                 <FormMessage />
@@ -97,14 +97,14 @@ export default function EligibilityStepThree() {
             name="shippingCountry"
             render={({ field }) => (
               <FormItem className="space-y-1.5">
-                <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
-                  Country <span className="text-red-500">*</span>
+                <FormLabel className="text-[14px] text-blackColor flex items-center gap-0.5">
+                  Country <span className="text-redColor">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     placeholder="Indonesia"
-                    className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                    className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -117,14 +117,14 @@ export default function EligibilityStepThree() {
             name="shippingPostalCode"
             render={({ field }) => (
               <FormItem className="space-y-1.5">
-                <FormLabel className="text-[14px] text-[#111] flex items-center gap-0.5">
-                  Postal Code <span className="text-red-500">*</span>
+                <FormLabel className="text-[14px] text-blackColor flex items-center gap-0.5">
+                  Postal Code <span className="text-redColor">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     placeholder="10111"
-                    className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                    className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -150,7 +150,7 @@ export default function EligibilityStepThree() {
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <label className="text-[14px] text-[#111]">
+                <label className="text-[14px] text-blackColor">
                   Billing address is the same as shipping address.
                 </label>
               </div>
@@ -172,7 +172,7 @@ export default function EligibilityStepThree() {
                 />
               </FormControl>
               <div className="space-y-1 leading-none">
-                <label className="text-[14px] text-[#111] leading-normal">
+                <label className="text-[14px] text-blackColor leading-normal">
                   I&apos;m also like to receive occasional promotions via email.
                   Opt-out any time.
                 </label>

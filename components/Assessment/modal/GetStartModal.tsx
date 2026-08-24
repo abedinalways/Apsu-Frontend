@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { CheckCircle2 } from "lucide-react";
-import Image from "next/image";
+import React from 'react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 
 interface GetStartModalProps {
   isOpen: boolean;
@@ -38,23 +38,23 @@ export default function GetStartModal({
           </div>
 
           {/* Modal Heading Title */}
-          <h2 className="text-[24px] font-bold text-[#102b1c] tracking-tight leading-tight mb-4">
+          <h2 className="text-[24px] font-bold text-greenColor tracking-tight leading-tight mb-4">
             Let&apos;s find the right plan for you
           </h2>
 
           {/* Content Section divider separator */}
           <div className="border-t border-gray-100/80 pt-4 mb-4">
-            <h3 className="text-[20px] font-semibold text-[#111] tracking-wide mb-3">
+            <h3 className="text-[20px] font-semibold text-blackColor tracking-wide mb-3">
               How It Works
             </h3>
 
             {/* Feature Flow Checklist */}
             <ul className="space-y-2.5">
               {[
-                "Choose your program",
-                "Share your history",
-                "A physician reviews",
-                "Medication ships",
+                'Choose your program',
+                'Share your history',
+                'A physician reviews',
+                'Medication ships',
               ].map((text, idx) => (
                 <li
                   key={idx}
@@ -68,8 +68,8 @@ export default function GetStartModal({
           </div>
 
           {/* Free Plan Cost Highlight Box Section */}
-          <div className="bg-[#ecf9f1] border border-[#EBF7F0] p-4 rounded-xl mb-6">
-            <p className="text-[14px] text-[#111] font-medium leading-relaxed">
+          <div className="bg-lightGreenColor border border-[#EBF7F0] p-4 rounded-xl mb-6">
+            <p className="text-[14px] text-blackColor font-medium leading-relaxed">
               Our physician and shipping cost both are $0. No membership
               required.
             </p>
@@ -79,7 +79,7 @@ export default function GetStartModal({
           <button
             type="button"
             onClick={onGetStarted}
-            className="w-full py-3.5 bg-[#102b1c] hover:bg-[#102b1c]/80 text-[#fff] font-medium text-[16px] rounded-full tracking-wide shadow-sm active:scale-[0.99] transition-all cursor-pointer"
+            className="w-full py-3.5 bg-greenColor hover:bg-greenColor/80 text-[#fff] font-medium text-[16px] rounded-full tracking-wide shadow-sm active:scale-[0.99] transition-all cursor-pointer"
           >
             Get started
           </button>

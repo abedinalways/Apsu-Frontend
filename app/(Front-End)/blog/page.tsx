@@ -23,8 +23,8 @@ export default async function BlogPage() {
       <main className="pt-30 md:pt-50">
         <div className="custom-container flex flex-col items-center justify-center min-h-[50vh] gap-4">
           <div className="text-center space-y-2">
-            <h2 className="text-2xl font-semibold text-gray-900">No blogs found</h2>
-            <p className="text-gray-500">Check back later for new articles.</p>
+            <h2 className="text-2xl font-semibold text-primary">No blogs found</h2>
+            <p className="text-grayColor1">Check back later for new articles.</p>
           </div>
         </div>
       </main>

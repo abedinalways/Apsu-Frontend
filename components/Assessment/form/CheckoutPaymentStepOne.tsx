@@ -39,14 +39,14 @@
 //         </div>
 //       </div>
 
-//       <div className="bg-[background] rounded-2xl p-4 space-y-3 text-xs">
-//         <h3 className="font-bold text-sm text-gray-800 mb-1">Order Summary</h3>
-//         <div className="flex justify-between text-gray-600">
+//       <div className="bg-background rounded-2xl p-4 space-y-3 text-xs">
+//         <h3 className="font-bold text-sm text-blackColor mb-1">Order Summary</h3>
+//         <div className="flex justify-between text-grayColor1">
 //           <span>Subtotal</span>
 //           <span className="font-semibold text-gray-900">$450.00</span>
 //         </div>
 //         <hr className="border" />
-//         <div className="flex justify-between text-gray-600 items-center">
+//         <div className="flex justify-between text-grayColor1 items-center">
 //           <span>
 //             Shipping fee{" "}
 //             <span className="text-[10px] text-muted-foreground">
@@ -56,7 +56,7 @@
 //           <span className="font-semibold text-gray-900">$0.00</span>
 //         </div>
 //         <hr className="border" />
-//         <div className="flex justify-between text-gray-600">
+//         <div className="flex justify-between text-grayColor1">
 //           <span>Consultation fee</span>
 //           <span className="font-semibold text-gray-900">$0.00</span>
 //         </div>
@@ -67,7 +67,7 @@
 //         </div>
 //         <hr className="border" />
 //         <div className="flex justify-between items-center">
-//           <span className="text-xs font-bold text-gray-800">Self Checkout</span>
+//           <span className="text-xs font-bold text-blackColor">Self Checkout</span>
 //           <div className="flex items-center gap-2">
 //             {cardIcons.map((Icon, index) => (
 //               <div
@@ -86,13 +86,13 @@
 //             render={({ field }) => (
 //               <FormItem className="space-y-1">
 //                 <FormLabel className="text-[11px] font-medium text-gray-700">
-//                   Name on Card <span className="text-red-500">*</span>
+//                   Name on Card <span className="text-redColor">*</span>
 //                 </FormLabel>
 //                 <FormControl>
 //                   <Input
 //                     placeholder="Enter your card name"
 //                     {...field}
-//                     className="bg-[background] h-11"
+//                     className="bg-background h-11"
 //                   />
 //                 </FormControl>
 //                 <FormMessage />
@@ -106,13 +106,13 @@
 //             render={({ field }) => (
 //               <FormItem className="space-y-1">
 //                 <FormLabel className="text-[11px] font-medium text-gray-700">
-//                   Card Number <span className="text-red-500">*</span>
+//                   Card Number <span className="text-redColor">*</span>
 //                 </FormLabel>
 //                 <FormControl>
 //                   <Input
 //                     placeholder="Enter your card number"
 //                     {...field}
-//                     className="bg-[background] h-11"
+//                     className="bg-background h-11"
 //                   />
 //                 </FormControl>
 //                 <FormMessage />
@@ -127,14 +127,14 @@
 //                 name="cardExpiry"
 //                 render={({ field }) => (
 //                   <FormItem className="flex flex-col gap-1">
-//                     <FormLabel className="text-[14px] text-[#111]">
-//                       Expiry Date <span className="text-red-500">*</span>
+//                     <FormLabel className="text-[14px] text-blackColor">
+//                       Expiry Date <span className="text-redColor">*</span>
 //                     </FormLabel>
 //                     <FormControl>
 //                       <Input
 //                         placeholder="MM / YY"
 //                         {...field}
-//                         className="bg-[background] h-11 text-center"
+//                         className="bg-background h-11 text-center"
 //                       />
 //                     </FormControl>
 //                     <FormMessage />
@@ -148,14 +148,14 @@
 //                 name="cardCvv"
 //                 render={({ field }) => (
 //                   <FormItem className="flex flex-col gap-1">
-//                     <FormLabel className="text-[14px] text-[#111]">
-//                       CVV <span className="text-red-500">*</span>
+//                     <FormLabel className="text-[14px] text-blackColor">
+//                       CVV <span className="text-redColor">*</span>
 //                     </FormLabel>
 //                     <FormControl>
 //                       <Input
 //                         placeholder="123"
 //                         {...field}
-//                         className="bg-[background] h-11 text-center"
+//                         className="bg-background h-11 text-center"
 //                       />
 //                     </FormControl>
 //                     <FormMessage />
@@ -191,7 +191,7 @@
 //                 <FormLabel className="text-[11px] text-muted-foreground">
 //                   I have read and agree to the website{" "}
 //                   <span className="text-secondary-bg underline cursor-pointer">
-//                     terms and conditions<span className="text-red-500">*</span>
+//                     terms and conditions<span className="text-redColor">*</span>
 //                   </span>
 //                 </FormLabel>
 //                 <FormMessage />
@@ -251,14 +251,16 @@ export default function CheckoutPaymentStepOne() {
       </div>
 
       {/* Order Summary & Payment Options */}
-      <div className="bg-[background] rounded-2xl p-4 space-y-3 text-xs">
-        <h3 className="font-bold text-sm text-gray-800 mb-1">Order Summary</h3>
-        <div className="flex justify-between text-gray-600">
+      <div className="bg-background rounded-2xl p-4 space-y-3 text-xs">
+        <h3 className="font-bold text-sm text-blackColor mb-1">
+          Order Summary
+        </h3>
+        <div className="flex justify-between text-grayColor1">
           <span>Subtotal</span>
           <span className="font-semibold text-gray-900">$450.00</span>
         </div>
         <hr className="border" />
-        <div className="flex justify-between text-gray-600 items-center">
+        <div className="flex justify-between text-grayColor1 items-center">
           <span>
             Shipping fee{' '}
             <span className="text-[10px] text-muted-foreground">
@@ -268,7 +270,7 @@ export default function CheckoutPaymentStepOne() {
           <span className="font-semibold text-gray-900">$0.00</span>
         </div>
         <hr className="border" />
-        <div className="flex justify-between text-gray-600">
+        <div className="flex justify-between text-grayColor1">
           <span>Consultation fee</span>
           <span className="font-semibold text-gray-900">$0.00</span>
         </div>
@@ -282,7 +284,7 @@ export default function CheckoutPaymentStepOne() {
         {/* Payment Selection Section */}
         <div className="space-y-3 pt-2">
           <div>
-            <h4 className="text-sm font-bold text-gray-800">
+            <h4 className="text-sm font-bold text-blackColor">
               Select Payment Option
             </h4>
             <p className="text-[10px] text-muted-foreground">
@@ -313,7 +315,7 @@ export default function CheckoutPaymentStepOne() {
                       <div className="flex items-center justify-between cursor-pointer">
                         <label className="flex items-center gap-3 cursor-pointer w-full">
                           <RadioGroupItem value="card" id="card" />
-                          <span className="font-bold text-xs text-gray-800">
+                          <span className="font-bold text-xs text-blackColor">
                             Credit/Debit/Prepaid Card
                           </span>
                         </label>
@@ -339,13 +341,13 @@ export default function CheckoutPaymentStepOne() {
                               <FormItem className="space-y-1">
                                 <FormLabel className="text-[11px] font-medium text-gray-700">
                                   Name on Card{' '}
-                                  <span className="text-red-500">*</span>
+                                  <span className="text-redColor">*</span>
                                 </FormLabel>
                                 <FormControl>
                                   <Input
                                     placeholder="Enter your card name"
                                     {...field}
-                                    className="bg-[background] h-11"
+                                    className="bg-background h-11"
                                   />
                                 </FormControl>
                                 <FormMessage />
@@ -360,13 +362,13 @@ export default function CheckoutPaymentStepOne() {
                               <FormItem className="space-y-1">
                                 <FormLabel className="text-[11px] font-medium text-gray-700">
                                   Card Number{' '}
-                                  <span className="text-red-500">*</span>
+                                  <span className="text-redColor">*</span>
                                 </FormLabel>
                                 <FormControl>
                                   <Input
                                     placeholder="Enter your card number"
                                     {...field}
-                                    className="bg-[background] h-11"
+                                    className="bg-background h-11"
                                   />
                                 </FormControl>
                                 <FormMessage />
@@ -383,13 +385,13 @@ export default function CheckoutPaymentStepOne() {
                                   <FormItem className="flex flex-col gap-1">
                                     <FormLabel className="text-[11px] font-medium text-gray-700">
                                       Expiry Date{' '}
-                                      <span className="text-red-500">*</span>
+                                      <span className="text-redColor">*</span>
                                     </FormLabel>
                                     <FormControl>
                                       <Input
                                         placeholder="MM / YY"
                                         {...field}
-                                        className="bg-[background] h-11 text-center"
+                                        className="bg-background h-11 text-center"
                                       />
                                     </FormControl>
                                     <FormMessage />
@@ -405,13 +407,13 @@ export default function CheckoutPaymentStepOne() {
                                   <FormItem className="flex flex-col gap-1">
                                     <FormLabel className="text-[11px] font-medium text-gray-700">
                                       CVV{' '}
-                                      <span className="text-red-500">*</span>
+                                      <span className="text-redColor">*</span>
                                     </FormLabel>
                                     <FormControl>
                                       <Input
                                         placeholder="123"
                                         {...field}
-                                        className="bg-[background] h-11 text-center"
+                                        className="bg-background h-11 text-center"
                                       />
                                     </FormControl>
                                     <FormMessage />
@@ -434,7 +436,7 @@ export default function CheckoutPaymentStepOne() {
                     >
                       <label className="flex items-center gap-3 cursor-pointer w-full">
                         <RadioGroupItem value="paypal" id="paypal" />
-                        <span className="font-bold text-xs text-gray-800">
+                        <span className="font-bold text-xs text-blackColor">
                           Paypal
                         </span>
                       </label>
@@ -453,7 +455,7 @@ export default function CheckoutPaymentStepOne() {
                     >
                       <label className="flex items-center gap-3 cursor-pointer w-full">
                         <RadioGroupItem value="venmo" id="venmo" />
-                        <span className="font-bold text-xs text-gray-800">
+                        <span className="font-bold text-xs text-blackColor">
                           Venmo
                         </span>
                       </label>
@@ -472,11 +474,11 @@ export default function CheckoutPaymentStepOne() {
                     >
                       <label className="flex items-center gap-3 cursor-pointer w-full">
                         <RadioGroupItem value="bank" id="bank" />
-                        <span className="font-bold text-xs text-gray-800">
+                        <span className="font-bold text-xs text-blackColor">
                           Bank Account
                         </span>
                       </label>
-                      {/* <BuildingLibraryIcon className="w-5 h-5 text-gray-600" /> */}
+                      {/* <BuildingLibraryIcon className="w-5 h-5 text-grayColor1" /> */}
                     </div>
                   </RadioGroup>
                 </FormControl>
@@ -513,7 +515,7 @@ export default function CheckoutPaymentStepOne() {
                 <FormLabel className="text-[11px] text-muted-foreground">
                   I have read and agree to the website{' '}
                   <span className="text-secondary-bg underline cursor-pointer">
-                    terms and conditions<span className="text-red-500">*</span>
+                    terms and conditions<span className="text-redColor">*</span>
                   </span>
                 </FormLabel>
                 <FormMessage />

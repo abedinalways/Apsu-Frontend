@@ -18,7 +18,7 @@ export default function NumberList({ items }: Props) {
               items-center
               justify-center
               rounded-full
-              bg-[#123826]
+              bg-greenColor
               text-white
               font-semibold
             "
@@ -31,7 +31,7 @@ export default function NumberList({ items }: Props) {
               className="
                 text-[18px]
                 font-medium
-                text-[#292B2A]
+                text-primary
               "
             >
               {item}

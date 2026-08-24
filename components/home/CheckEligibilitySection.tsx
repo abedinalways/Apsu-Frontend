@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import { Input } from "@/components/ui/input";
-import image from "@/public/images/work/bgImage.png";
-import { FormData } from "@/zod/AssessmentSchema";
-import { ArrowRight } from "lucide-react";
-import { useForm } from "react-hook-form";
-import { ShortIcon } from "../icons/Icons";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { Input } from '@/components/ui/input';
+import image from '@/public/images/work/bgImage.png';
+import { FormData } from '@/zod/AssessmentSchema';
+import { ArrowRight } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { ShortIcon } from '../icons/Icons';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 export default function CheckEligibilitySection() {
   const { register, watch, setValue, handleSubmit } = useForm<FormData>({
     defaultValues: {
-      unitSystem: "imperial",
-      gender: "female",
+      unitSystem: 'imperial',
+      gender: 'female',
     },
   });
-  const unitSystem = watch("unitSystem") || "imperial";
-  const selectedGender = watch("gender") as string;
+  const unitSystem = watch('unitSystem') || 'imperial';
+  const selectedGender = watch('gender') as string;
   const bmiScore = 56;
   const maxBmi = 100;
   const circumference = 2 * Math.PI * 50;
@@ -28,7 +28,7 @@ export default function CheckEligibilitySection() {
   const onSubmit = (data: FormData) => {
     console.log(data);
   };
-   gsap.registerPlugin(useGSAP, ScrollTrigger);
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -36,16 +36,16 @@ export default function CheckEligibilitySection() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: 'top 80%',
         },
       });
 
-      tl.from(".medicine-card", {
+      tl.from('.medicine-card', {
         opacity: 0,
         y: 60,
         scale: 0.9,
         duration: 1.2,
-        ease: "power3.out",
+        ease: 'power3.out',
         stagger: 0.12,
       });
     },
@@ -57,15 +57,18 @@ export default function CheckEligibilitySection() {
       className="relative w-full p-3 md:py-6 lg:p-4  rounded-3xl! overflow-hidden flex items-center justify-center"
       style={{
         backgroundImage: `url('${image.src}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        width: "100%",
-        height: "100%",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        width: '100%',
+        height: '100%',
       }}
     >
       <form onSubmit={handleSubmit(onSubmit)} className=" ">
-        <div ref={sectionRef} className="relative z-10 w-full xl:p-10   items-end  grid grid-cols-1 lg:grid-cols-2 gap-6 ">
+        <div
+          ref={sectionRef}
+          className="relative z-10 w-full xl:p-10   items-end  grid grid-cols-1 lg:grid-cols-2 gap-6 "
+        >
           {/* Left Card: Check Your Eligibility */}
           <div className="medicine-card bg-white rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex flex-col justify-between">
             <div>
@@ -74,7 +77,7 @@ export default function CheckEligibilitySection() {
                 <span className="text-[11px] font-semibold tracking-wider text-[#0B5233] uppercase">
                   CHECK YOUR ELIGIBILITY
                 </span>
-                <span className="text-sm md:text-base font-semibold text-gray-500">
+                <span className="text-sm md:text-base font-semibold text-grayColor1">
                   BMI
                 </span>
               </div>
@@ -118,10 +121,10 @@ export default function CheckEligibilitySection() {
                     <span className="text-4xl md:text-5xl font-bold text-primaryColor tracking-tight">
                       {bmiScore}
                     </span>
-                    <span className="text-[12px] font-medium text-gray-500 mt-1">
+                    <span className="text-[12px] font-medium text-grayColor1 mt-1">
                       Your
                     </span>
-                    <span className="text-[12px] font-medium text-gray-500">
+                    <span className="text-[12px] font-medium text-grayColor1">
                       BMI Score
                     </span>
                   </div>
@@ -132,22 +135,22 @@ export default function CheckEligibilitySection() {
                 <div className="inline-flex gap-1 p-1  border border-primaryColor rounded-full max-w-fit">
                   <button
                     type="button"
-                    onClick={() => setValue("unitSystem", "imperial")}
+                    onClick={() => setValue('unitSystem', 'imperial')}
                     className={`px-5 py-1.5 text-[14px] font-medium rounded-full transition-all cursor-pointer ${
-                      unitSystem === "imperial"
-                        ? "bg-primaryColor text-white shadow-sm"
-                        : "text-gray-600 hover:text-gray-900"
+                      unitSystem === 'imperial'
+                        ? 'bg-primaryColor text-white shadow-sm'
+                        : 'text-grayColor1 hover:text-gray-900'
                     }`}
                   >
                     ft / lbs
                   </button>
                   <button
                     type="button"
-                    onClick={() => setValue("unitSystem", "metric")}
+                    onClick={() => setValue('unitSystem', 'metric')}
                     className={`px-5 py-1.5 text-[11px] font-semibold rounded-full transition-all cursor-pointer ${
-                      unitSystem === "metric"
-                        ? "bg-primaryColor text-white shadow-sm"
-                        : "text-gray-600 hover:text-gray-900"
+                      unitSystem === 'metric'
+                        ? 'bg-primaryColor text-white shadow-sm'
+                        : 'text-grayColor1 hover:text-gray-900'
                     }`}
                   >
                     cm / kgs
@@ -157,7 +160,7 @@ export default function CheckEligibilitySection() {
 
               {/* Height & Weight Inputs Grid */}
               <div className="space-y-4 mb-5">
-                {unitSystem === "imperial" ? (
+                {unitSystem === 'imperial' ? (
                   <div className="grid grid-cols-2  lg:grid-cols-3 gap-3">
                     <div>
                       <label className="text-sm md:text-base text-[#585E5A]">
@@ -166,10 +169,10 @@ export default function CheckEligibilitySection() {
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
-                          {...register("heightFt")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          {...register('heightFt')}
+                          className="bg-[#F6F8FA] h-12 text-[14px] text-blackColor rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
-                        <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
+                        <div className="absolute right-3 pointer-events-none text-[11px] text-grayColor1 font-medium">
                           <div className="flex items-center gap-1">
                             <ShortIcon className="text-[#758C7D] w-4 h-4" />
                             <p>ft</p>
@@ -184,10 +187,10 @@ export default function CheckEligibilitySection() {
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
-                          {...register("heightIn")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          {...register('heightIn')}
+                          className="bg-[#F6F8FA] h-12 text-[14px] text-blackColor rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
-                        <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
+                        <div className="absolute right-3 pointer-events-none text-[11px] text-grayColor1 font-medium">
                           <div className="flex items-center gap-1">
                             <ShortIcon className="text-[#758C7D] w-4 h-4" />
                             <p>in</p>
@@ -202,10 +205,10 @@ export default function CheckEligibilitySection() {
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
-                          {...register("weightLbs")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          {...register('weightLbs')}
+                          className="bg-[#F6F8FA] h-12 text-[14px] text-blackColor rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
-                        <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
+                        <div className="absolute right-3 pointer-events-none text-[11px] text-grayColor1 font-medium">
                           <div className="flex items-center gap-1">
                             <ShortIcon className="text-[#758C7D] w-4 h-4" />
                             <p>lbs</p>
@@ -223,10 +226,10 @@ export default function CheckEligibilitySection() {
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
-                          {...register("heightCm")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          {...register('heightCm')}
+                          className="bg-[#F6F8FA] h-12 text-[14px] text-blackColor rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
-                        <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
+                        <div className="absolute right-3 pointer-events-none text-[11px] text-grayColor1 font-medium">
                           <div className="flex items-center gap-1">
                             <ShortIcon className="text-[#758C7D] w-4 h-4" />
                             <p>cm</p>
@@ -241,10 +244,10 @@ export default function CheckEligibilitySection() {
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
-                          {...register("weightKgs")}
-                          className="bg-[#F6F8FA] h-12 text-[14px] text-[#111] rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          {...register('weightKgs')}
+                          className="bg-[#F6F8FA] h-12 text-[14px] text-blackColor rounded-full border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
-                        <div className="absolute right-3 pointer-events-none text-[11px] text-gray-500 font-medium">
+                        <div className="absolute right-3 pointer-events-none text-[11px] text-grayColor1 font-medium">
                           <div className="flex items-center gap-1">
                             <ShortIcon className="text-[#758C7D] w-4 h-4" />
                             <p>kgs</p>
@@ -266,8 +269,8 @@ export default function CheckEligibilitySection() {
                     <input
                       type="radio"
                       value="male"
-                      checked={selectedGender === "male"}
-                      onChange={() => setValue("gender", "male")}
+                      checked={selectedGender === 'male'}
+                      onChange={() => setValue('gender', 'male')}
                       className="accent-primaryColor w-4 h-4"
                     />
                     <span className="text-[13px] text-primaryColor font-medium">
@@ -278,8 +281,8 @@ export default function CheckEligibilitySection() {
                     <input
                       type="radio"
                       value="female"
-                      checked={selectedGender === "female"}
-                      onChange={() => setValue("gender", "female")}
+                      checked={selectedGender === 'female'}
+                      onChange={() => setValue('gender', 'female')}
                       className="accent-primaryColor w-4 h-4"
                     />
                     <span className="text-[13px] text-primaryColor font-medium">
@@ -334,10 +337,10 @@ export default function CheckEligibilitySection() {
                   <span className="text-4xl md:text-5xl font-bold text-primaryColor tracking-tight">
                     {bmiScore}
                   </span>
-                  <span className="text-[12px] font-medium text-gray-500 mt-1">
+                  <span className="text-[12px] font-medium text-grayColor1 mt-1">
                     Your
                   </span>
-                  <span className="text-[12px] font-medium text-gray-500">
+                  <span className="text-[12px] font-medium text-grayColor1">
                     BMI Score
                   </span>
                 </div>
@@ -346,7 +349,7 @@ export default function CheckEligibilitySection() {
               {/* Gradient BMI Range Bar */}
               <div className="w-full space-y-2">
                 <div className="w-full h-2 rounded-full bg-linear-to-r from-[#3B82F6] via-[#10B981] via-[#F59E0B] to-[#EF4444]" />
-                <div className="flex justify-between items-center text-[10px] md:text-[11px] text-gray-500 text-center font-medium pt-1">
+                <div className="flex justify-between items-center text-[10px] md:text-[11px] text-grayColor1 text-center font-medium pt-1">
                   <span>Underweight &lt;18.5</span>
                   <span>Healthy Weight 18.5 - 24.9</span>
                   <span>Overweight 25.0 - 29.9</span>

@@ -25,10 +25,10 @@ export default function GoalLifestyleActivityStepOne() {
     <div className="space-y-6">
       {/* Title block from Screenshot 2026-07-05 093153.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           How often do you have trouble falling asleep?
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
+        <p className="text-[14px] text-grayColor1 mt-1.5">
           Think about the past few weeks.
         </p>
       </div>
@@ -39,7 +39,7 @@ export default function GoalLifestyleActivityStepOne() {
         name="weightLossGoal"
         render={() => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-[14px] font-semibold text-[#111]">
+            <FormLabel className="text-[14px] font-semibold text-blackColor">
               What is your sleep goal?
             </FormLabel>
             <FormControl>
@@ -56,7 +56,7 @@ export default function GoalLifestyleActivityStepOne() {
                           shouldValidate: true,
                         })
                       }
-                      className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-[#6c6c6c] bg-[background] cursor-pointer ${
+                      className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-grayColor1 bg-background cursor-pointer ${
                         isSelected
                           ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200'
@@ -67,7 +67,7 @@ export default function GoalLifestyleActivityStepOne() {
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
                             ? 'border-[#AFC1B6] bg-secondary-bg text-white'
-                            : 'border-gray-400 bg-white'
+                            : 'border-grayColor1 bg-white'
                         }`}
                       >
                         {isSelected && (

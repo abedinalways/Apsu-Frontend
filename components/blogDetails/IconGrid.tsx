@@ -9,9 +9,9 @@ export default function IconGrid({ items }: IconGridProps) {
       {items.map(item => (
         <div
           key={item}
-          className="flex items-center gap-3 rounded-xl border border-[#E4DFD1] bg-white p-4 text-sm font-semibold text-[#1E4B45]"
+          className="flex items-center gap-3 rounded-xl border border-lightGreenColor bg-white p-4 text-sm font-semibold text-greenColor"
         >
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E1EFE9]">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-lightGreenColor">
             <span className="h-2 w-2 rounded-full bg-[#2B7A6E]" />
           </span>
           {item}

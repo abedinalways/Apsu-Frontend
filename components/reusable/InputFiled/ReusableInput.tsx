@@ -1,5 +1,5 @@
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 type ReusableInputProps = {
   label?: string;
@@ -14,11 +14,11 @@ const ReusableInput = ({
   containerClassName,
   required,
   className,
-  type = "text", // default type
+  type = 'text', // default type
   ...props
 }: ReusableInputProps) => {
   return (
-    <div className={`space-y-1.5 ${containerClassName || ""}`}>
+    <div className={`space-y-1.5 ${containerClassName || ''}`}>
       {label && (
         <Label className="text-sm text-headerColor font-medium">
           {label} {required && <span className="text-redColor">*</span>}
@@ -27,11 +27,11 @@ const ReusableInput = ({
 
       <Input
         type={type}
-        className={`h-12! md:h-13! bg-bgColor ${className || ""}`}
+        className={`h-12! md:h-13! bg-bgColor ${className || ''}`}
         {...props}
       />
 
-      {error && <p className="text-red-500 text-xs">{error}</p>}
+      {error && <p className="text-redColor text-xs">{error}</p>}
     </div>
   );
 };

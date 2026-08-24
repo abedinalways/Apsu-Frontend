@@ -11,13 +11,13 @@ export default function BlogQuote({ content }: Props) {
       className="
         rounded-[32px]
         border
-        border-[#E5F2EC]
-        bg-[#F7FCF9]
+        border-lightGreenColor
+        bg-lightGreenColor
         p-8
         md:p-10
       "
     >
-      <Quote className="text-[#008C5E]" size={40} />
+      <Quote className="text-greenColor" size={40} />
 
       <p
         className="
@@ -25,7 +25,7 @@ export default function BlogQuote({ content }: Props) {
           text-[28px]
           leading-[150%]
           font-medium
-          text-[#17332A]
+          text-greenColor
         "
       >
         {content}

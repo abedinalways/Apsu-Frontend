@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { BoltIcon } from '../icons/CheckIcon';
 
-
 interface ImageTextProps {
   image?: string;
   alt?: string;
@@ -28,7 +27,7 @@ function VisualBlock({
         src={image}
         alt={alt ?? ''}
         fill
-        className="object-contain w-full h-full " 
+        className="object-contain w-full h-full "
         // sizes="(min-width: 768px) 45vw, 100vw"
       />
     </div>
@@ -50,7 +49,7 @@ export default function ImageText({
   const text = (
     <div className="space-y-4 md:space-y-0">
       {description && (
-        <p className="text-[1.13rem] leading-relaxed text-[#3b3b3c] ">
+        <p className="text-[1.13rem] leading-relaxed text-bulletColor ">
           {description}
         </p>
       )}
@@ -59,7 +58,7 @@ export default function ImageText({
           {bullets.map(item => (
             <li
               key={item}
-              className="flex items-start gap-3 text-[0.95rem] text-[#3B3A35] "
+              className="flex items-start gap-3 text-[0.95rem] text-bulletColor "
             >
               <BoltIcon />
               <span>{item}</span>

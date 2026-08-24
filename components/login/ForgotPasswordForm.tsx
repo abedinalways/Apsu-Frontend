@@ -37,7 +37,7 @@ export default function ForgotPasswordForm({
         <h2 className="text-2xl md:text-[32px] font-semibold text-gray-900 tracking-tight">
           Reset Your Password
         </h2>
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <p className="text-sm text-grayColor1 leading-relaxed">
           Enter your email for the verification code
         </p>
       </div>
@@ -54,7 +54,7 @@ export default function ForgotPasswordForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-secondary-text hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-secondary-text hover:bg-greenColor text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Sending...' : 'Send Code'}
           </button>
@@ -62,7 +62,7 @@ export default function ForgotPasswordForm({
       </Form>
 
       <div className="text-center pt-2">
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-grayColor1">
           Remember your password?{' '}
           <button
             onClick={onBack}

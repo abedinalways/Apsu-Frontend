@@ -4,7 +4,7 @@ export default function Divider() {
       className="
         my-14
         border-t
-        border-[#ECECEC]
+        border-lightGreenColor
       "
     />
   );

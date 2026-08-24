@@ -60,10 +60,10 @@ export default function PaymentSuccess({
           </div>
 
           <div className="mb-6 space-y-1.5">
-            <h2 className="text-[20px] font-semibold text-[#102b1c] tracking-tight">
+            <h2 className="text-[20px] font-semibold text-greenColor tracking-tight">
               {title}
             </h2>
-            <p className="text-[14px] text-[#3b3b3c] mt-1.5">{subtitle}</p>
+            <p className="text-[14px] text-grayColor1 mt-1.5">{subtitle}</p>
           </div>
 
           <div className="bg-white rounded-2xl border border-stone-200/70 p-4 md:p-5 text-left mb-6 shadow-xs">

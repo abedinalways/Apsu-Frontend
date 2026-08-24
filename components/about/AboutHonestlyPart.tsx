@@ -64,7 +64,7 @@ function AboutHonestlyPart() {
           </h2>
 
           {/* Inner Sub-description */}
-          <p className="text-base md:text-lg text-[background] max-w-xl  mb-16 lg:mb-30 font-light">
+          <p className="text-base md:text-lg text-background max-w-xl  mb-16 lg:mb-30 font-light">
             The AI handles the language. Your physician makes every medical
             decision.
           </p>
@@ -76,7 +76,7 @@ function AboutHonestlyPart() {
               return (
                 <div
                   key={index}
-                  className="bg-[#102B1C] backdrop-blur-sm rounded-2xl p-4 py-6 lg:p-8 flex flex-col items-start text-left shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+                  className="bg-greenColor backdrop-blur-sm rounded-2xl p-4 py-6 lg:p-8 flex flex-col items-start text-left shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
                 >
                   {/* Custom Thin Styled Icon */}
                   {Icon && (
@@ -91,7 +91,7 @@ function AboutHonestlyPart() {
                   </h3>
 
                   {/* Card Description */}
-                  <p className="text-[background] text-base lg:text-lg leading-[160%] ">
+                  <p className="text-background text-base lg:text-lg leading-[160%] ">
                     {card.description}
                   </p>
                 </div>

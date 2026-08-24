@@ -1,5 +1,5 @@
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
 
 type ReusableTextareaProps = {
   label?: string;
@@ -25,11 +25,11 @@ const ReusableTextarea = ({
 
       <Textarea
         placeholder={placeholder}
-        className={`min-h-[80px] ${className || ""} placeholder:text-[16px]`}
+        className={`min-h-[80px] ${className || ''} placeholder:text-[16px]`}
         {...props}
       />
 
-      {error && <p className="text-red-500 text-xs">{error}</p>}
+      {error && <p className="text-redColor text-xs">{error}</p>}
     </div>
   );
 };

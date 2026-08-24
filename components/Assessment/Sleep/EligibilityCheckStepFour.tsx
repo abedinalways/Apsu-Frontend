@@ -38,7 +38,7 @@ export default function EligibilityCheckStepFour() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984078010 (1).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Please confirm the followings:
         </h2>
       </div>
@@ -50,7 +50,7 @@ export default function EligibilityCheckStepFour() {
           name="takesSleepMedication"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-[14px] font-semibold text-[#111]">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
                 Do you currently take any sleep medications?
               </FormLabel>
               <FormControl>
@@ -65,7 +65,7 @@ export default function EligibilityCheckStepFour() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[background] h-14!',
+                          'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-background h-14!',
                           isSelected
                             ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                             : 'border-gray-200',
@@ -94,7 +94,7 @@ export default function EligibilityCheckStepFour() {
           name="heavySnoringOrApnea"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-[14px] font-semibold text-[#111]">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
                 Do you snore heavily or stop breathing during sleep?
               </FormLabel>
               <FormControl>
@@ -109,7 +109,7 @@ export default function EligibilityCheckStepFour() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[background] h-14!',
+                          'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-background h-14!',
                           isSelected
                             ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                             : 'border-gray-200',
@@ -138,7 +138,7 @@ export default function EligibilityCheckStepFour() {
           name="pregnantOrBreastfeeding"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-[14px] font-semibold text-[#111]">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
                 Are you pregnant or breastfeeding?
               </FormLabel>
               <FormControl>
@@ -153,7 +153,7 @@ export default function EligibilityCheckStepFour() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-[background] h-14!',
+                          'flex items-center gap-2.5 cursor-pointer select-none rounded-xl border py-3.5 px-4 text-xs font-medium transition-all bg-background h-14!',
                           isSelected
                             ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                             : 'border-gray-200',

@@ -1,6 +1,6 @@
-"use client"
+'use client';
 
-import { useState } from "react"
+import { useState } from 'react';
 import {
   Stepper,
   StepperContent,
@@ -10,14 +10,14 @@ import {
   StepperPanel,
   StepperSeparator,
   StepperTrigger,
-} from "@/components/reui/stepper"
+} from '@/components/reui/stepper';
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button';
 
-const steps = [1, 2, 3, 4]
+const steps = [1, 2, 3, 4];
 
 export function Pattern() {
-  const [currentStep, setCurrentStep] = useState(2)
+  const [currentStep, setCurrentStep] = useState(2);
 
   return (
     <Stepper
@@ -26,10 +26,10 @@ export function Pattern() {
       className="w-full max-w-md space-y-8"
     >
       <StepperNav>
-        {steps.map((step) => (
+        {steps.map(step => (
           <StepperItem key={step} step={step}>
             <StepperTrigger asChild>
-              <StepperIndicator className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=completed]:bg-green-500 data-[state=completed]:text-white data-[state=inactive]:text-gray-500">
+              <StepperIndicator className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=completed]:bg-green-500 data-[state=completed]:text-white data-[state=inactive]:text-grayColor1">
                 {step}
               </StepperIndicator>
             </StepperTrigger>
@@ -41,7 +41,7 @@ export function Pattern() {
       </StepperNav>
 
       <StepperPanel className="text-sm">
-        {steps.map((step) => (
+        {steps.map(step => (
           <StepperContent
             className="flex w-full items-center justify-center"
             key={step}
@@ -56,19 +56,19 @@ export function Pattern() {
       <div className="flex items-center justify-between gap-2.5">
         <Button
           variant="outline"
-          onClick={() => setCurrentStep((prev) => prev - 1)}
+          onClick={() => setCurrentStep(prev => prev - 1)}
           disabled={currentStep === 1}
         >
           Previous
         </Button>
         <Button
           variant="outline"
-          onClick={() => setCurrentStep((prev) => prev + 1)}
+          onClick={() => setCurrentStep(prev => prev + 1)}
           disabled={currentStep === steps.length}
         >
           Next
         </Button>
       </div>
     </Stepper>
-  )
+  );
 }

@@ -53,12 +53,12 @@ export default function ContactForm() {
   return (
     <div className="rounded-2xl  bg-white  shadow h-full">
       {submitError && (
-        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center justify-between">
-          <p className="text-sm text-red-600">{submitError}</p>
+        <div className="mb-4 p-4 bg-red-50 border border-orengeColor rounded-lg flex items-center justify-between">
+          <p className="text-sm text-redColor">{submitError}</p>
           <button
             type="button"
             onClick={handleRetry}
-            className="text-sm text-red-600 hover:text-red-700 font-medium"
+            className="text-sm text-redColor hover:text-redColor font-medium"
           >
             Retry
           </button>
