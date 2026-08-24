@@ -26,7 +26,6 @@ export default function CheckEligibilitySection() {
   const progressOffset = circumference * (1 - bmiScore / maxBmi);
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
   };
   gsap.registerPlugin(useGSAP, ScrollTrigger);
   const sectionRef = useRef<HTMLDivElement>(null);

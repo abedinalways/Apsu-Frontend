@@ -168,7 +168,7 @@ export default function ScheduleConsultationStepOne() {
                               isSelected
                                 ? 'bg-blackColor text-white font-bold scale-105 shadow-sm'
                                 : isToday
-                                  ? 'bg-[#AFC1B6] text-gray-900 hover:bg-[#AFC1B6]'
+                                  ? 'bg-lightGreenColor text-gray-900 hover:bg-lightGreenColor'
                                   : 'text-gray-700 hover:bg-gray-50'
                             }`}
                           >
@@ -256,7 +256,7 @@ export default function ScheduleConsultationStepOne() {
                         onClick={() =>
                           setValue('timezone', tz, { shouldValidate: true })
                         }
-                        className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-secondary-bg"
+                        className="text-xs cursor-pointer focus:bg-lightGreenColor/10 focus:text-secondary-bg"
                       >
                         {tz}
                       </DropdownMenuItem>

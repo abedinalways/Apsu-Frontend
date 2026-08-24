@@ -71,14 +71,14 @@ export default function EligibilityCheckStepFour() {
                   }
                   className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all bg-background h-14! cursor-pointer text-[16px] text-grayColor1 ${
                     isMonitored === 'yes'
-                      ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                      ? 'border-lightGreenColor border-2 text-secondary-bg'
                       : 'border-gray-200'
                   }`}
                 >
                   <div
                     className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                       isMonitored === 'yes'
-                        ? 'border-[#AFC1B6] bg-secondary-bg'
+                        ? 'border-lightGreenColor bg-secondary-bg'
                         : 'border-grayColor1 bg-white'
                     }`}
                   >
@@ -99,14 +99,14 @@ export default function EligibilityCheckStepFour() {
                   }
                   className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all bg-background h-14! cursor-pointer text-[16px] text-grayColor1 ${
                     isMonitored === 'no'
-                      ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                      ? 'border-lightGreenColor border-2 text-secondary-bg'
                       : 'border-gray-200'
                   }`}
                 >
                   <div
                     className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                       isMonitored === 'no'
-                        ? 'border-[#AFC1B6] bg-secondary-bg'
+                        ? 'border-lightGreenColor bg-secondary-bg'
                         : 'border-grayColor1 bg-white'
                     }`}
                   >

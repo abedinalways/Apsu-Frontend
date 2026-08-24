@@ -58,7 +58,7 @@ export default function EligibilityCheckStepThree() {
                       }
                       className={`w-full p-4 text-left rounded-xl border transition-all bg-background h-14! cursor-pointer text-[16px] text-grayColor1 ${
                         isSelected
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-lightGreenColor border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
