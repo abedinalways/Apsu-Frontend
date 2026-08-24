@@ -3,7 +3,7 @@ import React from "react";
 
 export default function WeightLossPage() {
   return (
-    <div className="bg-[#FFFFFF] min-h-screen">
+    <div className="bg-background-color min-h-screen">
       <MultiStepForm />
     </div>
   );
