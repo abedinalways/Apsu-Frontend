@@ -9,9 +9,9 @@ export const metadata = {
 
 export default function ProfilePage() {
   return (
-    <main className="min-h-screen bg-[#FAF9F5] p-4 md:p-8 flex justify-center items-start mt-40 ">
+    <main className="min-h-screen bg-background p-4 md:p-8 flex justify-center items-start mt-40 ">
       <div className="w-full max-w-5xl space-y-6 ">
-        <Suspense fallback={<div className="text-center py-10 text-gray-500">Loading profile...</div>}>
+        <Suspense fallback={<div className="text-center py-10 text-grayColor1">Loading profile...</div>}>
           <ProfileClient />
         </Suspense>
       </div>

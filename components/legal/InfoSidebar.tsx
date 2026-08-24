@@ -61,7 +61,7 @@ export function InfoSidebar({ sections }: TermsSidebarProps) {
   return (
     <aside className="shrink-0 flex-col gap-6 sm:gap-8 mt-8 sm:mt-10 md:mt-0 lg:flex lg:py-12 w-full font-[work_sans] shadow rounded-[16px] bg-white border border-gray-50 p-8">
       <div className="flex flex-col gap-3">
-        <span className="text-lg sm:text-xl md:text-2xl font-semibold uppercase tracking-wide text-[#111]">
+        <span className="text-lg sm:text-xl md:text-2xl font-semibold uppercase tracking-wide text-blackColor">
           All Treatment
         </span>
         <nav className="flex flex-col gap-2 text-base sm:text-lg">

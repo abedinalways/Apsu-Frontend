@@ -17,7 +17,7 @@ export default function RecommendedHeader({
 }: Props) {
   return (
     <div className="mb-10 flex items-center justify-between">
-      <h2 className="recommended-title text-[32px] md:text-[52px] font-medium text-[#292B2A]">
+      <h2 className="recommended-title text-[32px] md:text-[52px] font-medium text-primary">
         Recommended Insights
       </h2>
 

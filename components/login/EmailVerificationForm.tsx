@@ -44,7 +44,7 @@ export default function EmailVerificationForm({
         <h2 className="text-2xl font-semibold text-gray-900 tracking-tight">
           Welcome Back
         </h2>
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <p className="text-sm text-grayColor1 leading-relaxed">
           Access your treatments, prescriptions, consultations, and order
           updates.
         </p>
@@ -62,14 +62,14 @@ export default function EmailVerificationForm({
           <button
             type="submit"
             disabled={isChecking}
-            className="w-full bg-secondary-text hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-secondary-text hover:bg-greenColor text-white font-medium h-12 rounded-full transition-colors duration-200 mt-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isChecking ? 'Checking...' : 'Verify Email'}
           </button>
         </form>
       </Form>
 
-      <div className="flex items-start gap-2 text-xs text-gray-500 pt-2">
+      <div className="flex items-start gap-2 text-xs text-grayColor1 pt-2">
         <svg
           className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0"
           fill="none"

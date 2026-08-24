@@ -42,7 +42,7 @@ export default function EligibilityCheckStepOne() {
     <div className="space-y-6">
       {/* Top Header Label */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Tell us about your sleep habit
         </h2>
       </div>
@@ -54,7 +54,7 @@ export default function EligibilityCheckStepOne() {
           name="wakeUpFrequency"
           render={() => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-[14px] font-semibold text-[#111]">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
                 Do you wake up during the night?
               </FormLabel>
               <FormControl>
@@ -70,7 +70,7 @@ export default function EligibilityCheckStepOne() {
                           })
                         }
                         className={cn(
-                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
+                          'flex items-center justify-center gap-2 bg-background h-14! rounded-xl border text-[16px] text-grayColor1 capitalize transition-all w-full cursor-pointer',
                           isSelected
                             ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                             : 'border-gray-200',
@@ -95,7 +95,7 @@ export default function EligibilityCheckStepOne() {
           name="fallBackAsleep"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-[14px] font-semibold text-[#111]">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
                 When you wake up, can you usually fall back asleep?
               </FormLabel>
               <FormControl>
@@ -110,7 +110,7 @@ export default function EligibilityCheckStepOne() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
+                          'flex items-center justify-center gap-2 bg-background h-14! rounded-xl border text-[16px] text-grayColor1 capitalize transition-all w-full cursor-pointer',
                           isSelected
                             ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                             : 'border-gray-200',
@@ -139,7 +139,7 @@ export default function EligibilityCheckStepOne() {
           name="screenTimeBeforeBed"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-[14px] font-semibold text-[#111]">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
                 How often do you use screens before bed?
               </FormLabel>
               <FormControl>
@@ -154,7 +154,7 @@ export default function EligibilityCheckStepOne() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
+                          'flex items-center justify-center gap-2 bg-background h-14! rounded-xl border text-[16px] text-grayColor1 capitalize transition-all w-full cursor-pointer',
                           isSelected
                             ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                             : 'border-gray-200',

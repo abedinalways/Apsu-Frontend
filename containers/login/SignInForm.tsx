@@ -60,7 +60,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
         <h2 className="text-2xl md:text-[28px] font-medium text-gray-900 tracking-tight ">
           Welcome Back
         </h2>
-        <p className="text-sm md:text-[1rem] text-gray-500 leading-relaxed">
+        <p className="text-sm md:text-[1rem] text-grayColor1 leading-relaxed">
           Access your treatments, prescriptions, consultations, and order
           updates.
         </p>
@@ -86,7 +86,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="maria@example.com"
-            className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text transition-colors"
+            className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text transition-colors"
           />
         </div>
 
@@ -95,7 +95,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
             htmlFor="signin-password"
             className="text-sm font-medium text-black"
           >
-            Password <span className="text-red-500">*</span>
+            Password <span className="text-redColor">*</span>
           </label>
           <div className="relative">
             <input
@@ -104,11 +104,11 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder="Your password"
-              className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+              className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
             />
             <button
               type="button"
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 z-20"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-grayColor1 hover:text-grayColor1 z-20"
               onClick={() => setShowPass(!showPass)}
             >
               {showPass ? (

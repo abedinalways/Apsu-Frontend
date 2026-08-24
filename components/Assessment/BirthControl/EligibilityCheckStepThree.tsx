@@ -25,10 +25,10 @@ export default function EligibilityCheckStepThree() {
     <div className="space-y-6">
       {/* Header text matching Screenshot 2026-07-05 111411.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Do you currently smoke?
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
+        <p className="text-[14px] text-grayColor1 mt-1.5">
           This affects which options are safest for you.
         </p>
       </div>
@@ -39,7 +39,7 @@ export default function EligibilityCheckStepThree() {
         name="smokingFrequency"
         render={() => (
           <FormItem className="space-y-3">
-            <FormLabel className="text-[14px] font-semibold text-[#111]">
+            <FormLabel className="text-[14px] font-semibold text-blackColor">
               Do you smoke or use nicotine products?
             </FormLabel>
             <FormControl>
@@ -56,7 +56,7 @@ export default function EligibilityCheckStepThree() {
                           shouldValidate: true,
                         })
                       }
-                      className={`w-full p-4 text-left rounded-xl border transition-all bg-[background] h-14! cursor-pointer text-[16px] text-[#6c6c6c] ${
+                      className={`w-full p-4 text-left rounded-xl border transition-all bg-background h-14! cursor-pointer text-[16px] text-grayColor1 ${
                         isSelected
                           ? 'border-[#AFC1B6] border-2 text-secondary-bg'
                           : 'border-gray-200'

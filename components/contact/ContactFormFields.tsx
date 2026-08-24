@@ -9,7 +9,7 @@ export default function ContactFormFields({ control }: Props) {
   return (
     <div className="space-y-3">
       <div className="">
-        <p className="text-base sm:text-[17px] font-medium text-black block">
+        <p className="text-base sm:text-[17px] font-medium text-primary block">
           Full Name
         </p>
         <div className="grid gap-4 sm:gap-4 grid-cols-2">
@@ -17,7 +17,7 @@ export default function ContactFormFields({ control }: Props) {
             <InputField
               control={control}
               name="firstName"
-              label="First Name"
+              label=''
               placeholder="First name"
             />
           </div>
@@ -25,7 +25,7 @@ export default function ContactFormFields({ control }: Props) {
             <InputField
               control={control}
               name="lastName"
-              label="Last Name"
+              label=""
               placeholder="Last name"
             />
           </div>

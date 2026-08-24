@@ -5,15 +5,15 @@ export function InfoHero() {
     <section className="flex flex-col  justify-start mb-4 max-w-3xl">
       <div className="flex flex-col  gap-2  max-w-4xl">
         {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[110%] text-[#102b1c]">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[110%] text-greenColor">
           Medications Safety Information
         </h1>
 
         {/* Last Updated */}
-        <p className="text-[20px] text-[#6c6c6c] leading-[120%]">
+        <p className="text-[20px] text-grayColor1 leading-[120%]">
           Last updated on 21 June, 2026
         </p>
-        <div className="w-full border-t border-dashed border-[#cddcd3] py-4"></div>
+        <div className="w-full border-t border-dashed border-lightGreenColor py-4"></div>
         <p className="py-4 hidden md:block">
           Please read this carefully. This page is a general summary of safety
           information for the medications offered through Apsu. It does not

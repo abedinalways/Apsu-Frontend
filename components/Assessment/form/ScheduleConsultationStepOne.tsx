@@ -97,10 +97,10 @@ export default function ScheduleConsultationStepOne() {
     <div className="space-y-6">
       {/* Step Header Block */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Schedule Your Consultation
         </h2>
-        <p className="text-[14px] text-[#111] mt-1.5">
+        <p className="text-[14px] text-blackColor mt-1.5">
           Choose a convenient date and time to meet with a licensed physician.
         </p>
       </div>
@@ -113,7 +113,7 @@ export default function ScheduleConsultationStepOne() {
             name="consultationDate"
             render={() => (
               <FormItem className="space-y-2">
-                <FormLabel className="text-[14px] text-[#111] tracking-wide">
+                <FormLabel className="text-[14px] text-blackColor tracking-wide">
                   Select date
                 </FormLabel>
                 <FormControl>
@@ -125,9 +125,9 @@ export default function ScheduleConsultationStepOne() {
                         onClick={handlePrevMonth}
                         className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] flex items-center justify-center hover:bg-gray-50 transition-colors"
                       >
-                        <ChevronLeft className="h-4 w-4 text-gray-600" />
+                        <ChevronLeft className="h-4 w-4 text-grayColor1" />
                       </button>
-                      <span className="text-sm font-semibold text-gray-800 min-w-[100px] text-center">
+                      <span className="text-sm font-semibold text-blackColor min-w-[100px] text-center">
                         {monthLabel}
                       </span>
                       <button
@@ -135,7 +135,7 @@ export default function ScheduleConsultationStepOne() {
                         onClick={handleNextMonth}
                         className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] hover:bg-gray-50 flex items-center justify-center hover:opacity-90 transition-opacity"
                       >
-                        <ChevronRight className="h-4 w-4 text-gray-600" />
+                        <ChevronRight className="h-4 w-4 text-grayColor1" />
                       </button>
                     </div>
 
@@ -144,7 +144,7 @@ export default function ScheduleConsultationStepOne() {
                       {DAYS_OF_WEEK.map(day => (
                         <span
                           key={day}
-                          className="text-gray-500 font-medium pb-2"
+                          className="text-grayColor1 font-medium pb-2"
                         >
                           {day}
                         </span>
@@ -166,7 +166,7 @@ export default function ScheduleConsultationStepOne() {
                             onClick={() => handleDateSelect(day)}
                             className={`h-10 w-10 rounded-full mx-auto flex items-center justify-center font-medium text-xs transition-all cursor-pointer ${
                               isSelected
-                                ? 'bg-gray-800 text-white font-bold scale-105 shadow-sm'
+                                ? 'bg-blackColor text-white font-bold scale-105 shadow-sm'
                                 : isToday
                                   ? 'bg-[#AFC1B6] text-gray-900 hover:bg-[#AFC1B6]'
                                   : 'text-gray-700 hover:bg-gray-50'
@@ -192,7 +192,7 @@ export default function ScheduleConsultationStepOne() {
             name="consultationTime"
             render={() => (
               <FormItem className="space-y-2">
-                <FormLabel className="text-[14px] text-[#111] tracking-wide">
+                <FormLabel className="text-[14px] text-blackColor tracking-wide">
                   Select time
                 </FormLabel>
                 <FormControl>
@@ -210,8 +210,8 @@ export default function ScheduleConsultationStepOne() {
                           }
                           className={`w-full py-2.5 text-center rounded-full text-xs font-medium border transition-all cursor-pointer ${
                             isSelected
-                              ? 'bg-gray-800 text-white border-transparent'
-                              : 'border-gray-400 text-gray-800 hover:bg-gray-50 bg-white'
+                              ? 'bg-blackColor text-white border-transparent'
+                              : 'border-grayColor1 text-blackColor hover:bg-gray-50 bg-white'
                           }`}
                         >
                           {slot}
@@ -234,17 +234,17 @@ export default function ScheduleConsultationStepOne() {
           name="timezone"
           render={() => (
             <FormItem className="space-y-2">
-              <FormLabel className="text-[14px] text-[#111] tracking-wide">
+              <FormLabel className="text-[14px] text-blackColor tracking-wide">
                 Time zone
               </FormLabel>
               <FormControl>
                 <DropdownMenu>
                   <DropdownMenuTrigger className="flex items-center gap-1.5 text-xs cursor-pointer text-gray-700 font-medium bg-none border-none outline-none focus:outline-none">
-                    <Globe className="w-4 h-4 text-gray-400" />
+                    <Globe className="w-4 h-4 text-grayColor1" />
                     <span className="underline cursor-pointer hover:text-gray-900">
                       {activeTimezone || 'Detecting time zone...'}
                     </span>
-                    <ChevronDown className="w-3 h-3 text-gray-400" />
+                    <ChevronDown className="w-3 h-3 text-grayColor1" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
                     align="start"

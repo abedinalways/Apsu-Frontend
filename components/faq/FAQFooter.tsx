@@ -12,7 +12,7 @@ export default function FAQFooter() {
               your language
             </h2>
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
-              <span className="flex flex-col md:flex-row justify-center gap-3 sm:gap-4 items-center font-normal text-[#fff]">
+              <span className="flex flex-col md:flex-row justify-center gap-3 sm:gap-4 items-center font-normal text-whiteColor">
                 <p className="text-sm sm:text-base">Done in minutes</p>
                 <p className="rounded-full bg-white w-1.5 h-1.5 aspect-square"></p>
                 <p className="text-sm sm:text-base">No insurance required</p>

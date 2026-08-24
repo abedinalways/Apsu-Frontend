@@ -9,7 +9,7 @@ export const TwScreenSize = () => {
   }
 
   return (
-    <div className="fixed right-3 bottom-3 z-50 h-8 w-8 text-center text-base leading-8 text-white *:absolute *:inset-0 *:rounded-sm *:bg-red-500">
+    <div className="fixed right-3 bottom-3 z-50 h-8 w-8 text-center text-base leading-8 text-white *:absolute *:inset-0 *:rounded-sm *:bg-redColor">
       <span>NIL</span>
       <span className="xs:block hidden">xs</span>
       <span className="hidden sm:block">sm</span>

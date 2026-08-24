@@ -40,7 +40,7 @@ export default function GoalLifestyleActivityStepOne() {
         name="weightLossGoal"
         render={() => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-[14px] font-semibold text-[#111]">
+            <FormLabel className="text-[14px] font-semibold text-blackColor">
               What is your weight loss goal?
             </FormLabel>
             <FormControl>
@@ -68,7 +68,7 @@ export default function GoalLifestyleActivityStepOne() {
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
                             ? 'border-[#AFC1B6] bg-[#AFC1B6] text-white'
-                            : 'border-gray-400 bg-white'
+                            : 'border-grayColor1 bg-white'
                         }`}
                       >
                         {isSelected && (

@@ -20,7 +20,7 @@ export default function ReadingProgress() {
       <div
         className="
           h-full
-          bg-[#008C5E]
+          bg-primaryColor
           transition-all
           duration-150
         "

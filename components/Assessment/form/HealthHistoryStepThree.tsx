@@ -57,10 +57,10 @@ export default function HealthHistoryStepThree() {
     <div className="space-y-6">
       {/* Step Description Headers from Screenshot 2026-07-05 121717.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Do you faced any side effects during your medication?
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
+        <p className="text-[14px] text-grayColor1 mt-1.5">
           Please select all that apply.
         </p>
       </div>
@@ -89,9 +89,9 @@ export default function HealthHistoryStepThree() {
                 )}
 
                 {/* Subfield Label section */}
-                <FormLabel className="text-[14px] font-semibold text-[#111] flex items-center gap-0.5 pt-2">
+                <FormLabel className="text-[14px] font-semibold text-blackColor flex items-center gap-0.5 pt-2">
                   Describe any side effects you have experienced:{' '}
-                  <span className="text-red-500">*</span>
+                  <span className="text-redColor">*</span>
                 </FormLabel>
 
                 {/* Active dark badge layout area matching Screenshot 2026-07-05 121744.png */}
@@ -127,15 +127,15 @@ export default function HealthHistoryStepThree() {
         name="sideEffectsAdditionalDetails"
         render={({ field }) => (
           <FormItem className="space-y-2">
-            <FormLabel className="text-[14px] font-semibold text-[#111] flex items-center gap-0.5">
+            <FormLabel className="text-[14px] font-semibold text-blackColor flex items-center gap-0.5">
               Describe any side effects you have experienced:{' '}
-              <span className="text-red-500">*</span>
+              <span className="text-redColor">*</span>
             </FormLabel>
             <FormControl>
               <Textarea
                 {...field}
                 placeholder="add any additional details here..."
-                className="min-h-[110px] resize-none rounded-2xl text-sm placeholder:text-gray-400 p-4 w-full bg-[background] border-[background]  h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] "
+                className="min-h-[110px] resize-none rounded-2xl text-sm placeholder:text-grayColor1 p-4 w-full bg-background border-background  h-11 text-[16px] text-grayColor1 focus-visible:ring-[1px] "
               />
             </FormControl>
             <FormMessage />

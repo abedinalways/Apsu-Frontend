@@ -80,14 +80,14 @@ export default function ConsultationTabContainer() {
 
       {/* history table for consultation */}
       <div className="w-full text-left space-y-4 font-[Work_Sans] ">
-        <h3 className="text-xl  font-medium text-[#102b1c]">
+        <h3 className="text-xl  font-medium text-greenColor">
           Consultation History
         </h3>
 
-        <div className="w-full overflow-x-auto rounded-[12px] border border-[#EBEAE4] bg-white">
+        <div className="w-full overflow-x-auto rounded-[12px] border border-background bg-white">
           <table className="w-full border-collapse text-left min-w-[650px]">
             <thead>
-              <tr className="bg-[#ecf9f1] text-secondary-text font-semibold text-sm">
+              <tr className="bg-lightGreenColor text-secondary-text font-semibold text-sm">
                 <th className="p-4 pl-6">Date & Time</th>
                 <th className="p-4">Physician</th>
                 <th className="p-4">Treatment</th>
@@ -95,7 +95,7 @@ export default function ConsultationTabContainer() {
                 <th className="p-4 pr-6 text-center">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#EBEAE4] text-sm text-gray-800">
+            <tbody className="divide-y divide-background text-sm text-blackColor">
               {consultationHistory.map(item => (
                 <tr
                   key={item.id}
@@ -104,7 +104,7 @@ export default function ConsultationTabContainer() {
                   {/* Date & Time */}
                   <td className="p-4 pl-6">
                     <p className="font-medium">{item.date}</p>
-                    <p className="text-xs text-gray-400 font-light">
+                    <p className="text-xs text-grayColor1 font-light">
                       {item.time}
                     </p>
                   </td>
@@ -115,7 +115,7 @@ export default function ConsultationTabContainer() {
                   </td>
 
                   {/* Treatment */}
-                  <td className="p-4 text-[#111]">{item.program}</td>
+                  <td className="p-4 text-blackColor">{item.program}</td>
 
                   {/* Status */}
                   <td className="p-4">
@@ -137,7 +137,7 @@ export default function ConsultationTabContainer() {
                       disabled={!item.notes}
                       className={`inline-flex items-center  cursor-pointer gap-1.5 text-sm font-medium transition-colors ${
                         item.notes
-                          ? 'text-gray-600 hover:text-secondary-text'
+                          ? 'text-grayColor1 hover:text-secondary-text'
                           : 'text-gray-300 cursor-not-allowed'
                       }`}
                       title={
@@ -159,11 +159,11 @@ export default function ConsultationTabContainer() {
       {/* Physician Notes (Modal) */}
       {selectedConsultation && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 animate-fade-in">
-          <div className="bg-white rounded-[24px] max-w-md w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-[#EBEAE4]">
+          <div className="bg-white rounded-[24px] max-w-md w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-background">
             {/* Close Button */}
             <button
               onClick={() => setSelectedConsultation(null)}
-              className="absolute top-5 right-5 text-gray-400 hover:text-gray-600 p-1 rounded-full border border-gray-100 hover:bg-gray-50 transition-colors"
+              className="absolute top-5 right-5 text-grayColor1 hover:text-grayColor1 p-1 rounded-full border border-gray-100 hover:bg-gray-50 transition-colors"
             >
               <svg
                 className="w-4 h-4"
@@ -188,18 +188,18 @@ export default function ConsultationTabContainer() {
 
               <div className="flex gap-10 text-sm border-b border-gray-50 pb-3">
                 <div>
-                  <p className="text-xs md:text-[14px] text-gray-400 font-light mb-0.5">
+                  <p className="text-xs md:text-[14px] text-grayColor1 font-light mb-0.5">
                     Date
                   </p>
-                  <p className="font-medium text-sm md:text-[18px] text-gray-800">
+                  <p className="font-medium text-sm md:text-[18px] text-blackColor">
                     {selectedConsultation.date}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs md:text-[14px] text-gray-400 font-light mb-0.5">
+                  <p className="text-xs md:text-[14px] text-grayColor1 font-light mb-0.5">
                     Physician
                   </p>
-                  <p className="font-medium text-sm md:text-[18px] text-gray-800">
+                  <p className="font-medium text-sm md:text-[18px] text-blackColor">
                     {selectedConsultation.doctorName}
                   </p>
                 </div>
@@ -207,7 +207,7 @@ export default function ConsultationTabContainer() {
             </div>
 
             {/* Modal Content / Note Body */}
-            <div className="mt-6 bg-gray-100 rounded-[12px] p-3 text-sm md:text-[16px] text-gray-600 font-light leading-[160%]">
+            <div className="mt-6 bg-gray-100 rounded-[12px] p-3 text-sm md:text-[16px] text-grayColor1 font-light leading-[160%]">
               {selectedConsultation.notes}
             </div>
           </div>
