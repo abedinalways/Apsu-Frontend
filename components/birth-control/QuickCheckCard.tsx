@@ -71,7 +71,7 @@ export default function QuickCheckCard({
     <div className="w-full py-12 md:py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14">
         {/* Left Column: Often a Good Fit */}
-        <div className="space-y-6 md:space-y-8 bg-[#FFFFFF] rounded-2xl p-5 lg:p-8">
+        <div className="space-y-6 md:space-y-8 bg-background-color rounded-2xl p-5 lg:p-8">
           <h3 className="text-2xl md:text-3xl font-bold text-secondary-bg tracking-tight">
             {goodFitTitle}
           </h3>
@@ -92,7 +92,7 @@ export default function QuickCheckCard({
         </div>
 
         {/* Right Column: Needs a Closer Look */}
-        <div className="space-y-6 md:space-y-8 bg-[#FFFFFF] rounded-2xl p-5 lg:p-8">
+        <div className="space-y-6 md:space-y-8 bg-background-color rounded-2xl p-5 lg:p-8">
           <h3 className="text-2xl md:text-3xl font-bold text-secondary-bg tracking-tight">
             {closerLookTitle}
           </h3>

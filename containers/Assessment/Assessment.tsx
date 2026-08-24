@@ -42,7 +42,7 @@ export default function Assessment() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-[#FFFFFF] max-h-screen flex flex-col">
+    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-background-color max-h-screen flex flex-col">
       <div className="flex-1 overflow-y-auto">
         <h2 className="text-[20px] font-semibold text-greenColor mb-6">
           What would you like help with today?
@@ -75,7 +75,7 @@ export default function Assessment() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF]">
+      <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-background-color">
         <div className="flex justify-end">
           <button
             type="button"

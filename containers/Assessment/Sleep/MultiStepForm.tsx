@@ -281,7 +281,7 @@ export default function MultiStepForm() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-[#FFFFFF] max-h-screen flex flex-col">
+    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-background-color max-h-screen flex flex-col">
       <Form {...form}>
         <form className="space-y-6">
           <div className="flex-1 overflow-y-auto">
@@ -354,7 +354,7 @@ export default function MultiStepForm() {
           </div>
 
           {/* Global Form Footer Trigger buttons */}
-          <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-[#FFFFFF] pb-10">
+          <div className="flex flex-col gap-3 pt-6 border-t mt-6 bg-background-color pb-10">
             {submitError && (
               <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
                 <p className="text-sm text-red-600">{submitError}</p>
