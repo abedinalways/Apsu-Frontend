@@ -36,8 +36,6 @@ export default function EditProfileModal({
     try {
       setIsLoading(true);
 
-      console.log(values);
-
       // await profileService.updateProfile(values);
 
       onClose();

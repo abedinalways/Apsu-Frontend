@@ -54,7 +54,7 @@ export default function EligibilityCheckStepEight() {
                       }
                       className={`w-full p-4 text-left transition-all bg-background h-14! rounded-xl border text-[16px] text-grayColor1 cursor-pointer ${
                         isSelected
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-lightGreenColor border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >

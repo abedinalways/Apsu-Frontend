@@ -34,7 +34,6 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setSubmitError(null);
     try {
-      console.log('Contact form submitted:', values);
       toast.error('Contact form is not connected to a backend yet.');
     } catch (error) {
       const message = 'Something went wrong. Please try again later.';

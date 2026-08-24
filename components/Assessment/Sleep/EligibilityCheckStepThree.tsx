@@ -70,7 +70,7 @@ export default function EligibilityCheckStepThree() {
                         className={cn(
                           'flex items-center space-x-3.5 w-full p-4 rounded-xl border transition-all select-none bg-background cursor-pointer h-14!',
                           isChecked
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-lightGreenColor border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >

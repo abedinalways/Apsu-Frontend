@@ -60,7 +60,11 @@ Forgot Password Flow:
 
 ```
 ├── lib/services/
-│   └── auth.service.ts          # Auth service with demo implementations
+│   └── auth/
+│       ├── index.ts            # Auth service entry point (demo/api switching)
+│       ├── demo.auth.ts        # Demo implementation
+│       ├── api.auth.ts         # Real API implementation
+│       └── types.ts            # Shared types & IAuthService interface
 ├── contexts/
 │   └── AuthContext.tsx          # React context for auth state management
 ├── middleware.ts                # Route protection middleware
@@ -74,22 +78,29 @@ Forgot Password Flow:
 │   └── SetNewPasswordForm.tsx
 └── app/
     ├── layout.tsx               # Root layout with AuthProvider
-    ├── (auth)/login/page.tsx    # Login page
-    └── (user)/profile/          # Protected profile page
+    └── (auth)/login/page.tsx    # Login page
 ```
 
 ## Key Features
 
-### 1. **Auth Service** (`lib/services/auth.service.ts`)
+### 1. **Auth Service** (`lib/services/auth/index.ts`)
 - Centralized authentication logic
-- Demo implementations with localStorage
+- Switches between demo and real API via `NEXT_PUBLIC_AUTH_MODE`
+- Demo implementation uses cookie-based session
 - Easy to replace with real API calls
 
+**Switching:**
+```env
+NEXT_PUBLIC_AUTH_MODE=demo   # default
+NEXT_PUBLIC_AUTH_MODE=api    # use real backend
+```
+
 **Methods:**
-- `createPassword(email, password)` - Create new account
-- `signIn(email, password)` - Sign in existing user
-- `forgotPassword(email)` - Request password reset
-- `resetPassword(email, code, newPassword)` - Reset password
+- `signIn(payload)` - Sign in existing user
+- `createPassword(payload)` - Create new account
+- `register(payload)` - Register new user
+- `forgotPassword(payload)` - Request password reset
+- `resetPassword(payload)` - Reset password
 - `getCurrentUser()` - Get current user
 - `isAuthenticated()` - Check auth status
 - `logout()` - Logout user
@@ -138,79 +149,47 @@ All forms include:
 
 ## Integration with Backend API
 
-### Step 1: Update Auth Service
+### Step 1: Implement `lib/services/auth/api.auth.ts`
 
-Replace demo implementations with real API calls:
+The `api.auth.ts` file already exists. Update its methods to call real endpoints:
 
 ```typescript
-// lib/services/auth.service.ts
+// lib/services/auth/api.auth.ts
 
-async createPassword(data: CreatePasswordData): Promise<AuthResponse> {
-  // Replace this:
-  // await this.delay(1000);
-  
-  // With this:
-  const response = await fetch(`${this.baseUrl}/auth/create-password`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  });
-  
-  const result = await response.json();
-  return result;
+async signIn(payload: SignInPayload): Promise<AuthResponse> {
+  const response = await Fetch.post('/auth/signin', payload);
+  return response;
 }
 
-async signIn(data: SignInData): Promise<AuthResponse> {
-  // Replace demo logic with:
-  const response = await fetch(`${this.baseUrl}/auth/signin`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  });
-  
-  const result = await response.json();
-  
-  if (result.success && result.token) {
-    this.setToken(result.token);
-  }
-  
-  return result;
+async createPassword(payload: RegisterPayload): Promise<AuthResponse> {
+  const response = await Fetch.post('/auth/create-password', payload);
+  return response;
 }
+
+// ... implement other methods similarly
 ```
 
-### Step 2: Update Token Storage
+Then set `NEXT_PUBLIC_AUTH_MODE=api` in `.env.local`.
 
-Replace localStorage with HTTP-only cookies for security:
+### Step 2: Token Storage
 
-```typescript
-// In middleware.ts
-const token = request.cookies.get('auth_token')?.value;
+The demo service already uses cookie-based sessions via `lib/session.ts`. The real API should return a session cookie from the backend. Do not store tokens in localStorage.
 
-// In auth.service.ts
-private setToken(token: string): void {
-  // Use cookies instead of localStorage
-  document.cookie = `auth_token=${token}; path=/; max-age=${7 * 24 * 60 * 60}`;
-}
-```
+### Step 3: Middleware
 
-### Step 3: Update Middleware
-
-Add backend token validation:
+The existing middleware already reads cookies for route protection. Add backend token validation when the real API is ready:
 
 ```typescript
-export async function middleware(request: NextRequest) {
-  const token = request.cookies.get('auth_token')?.value;
-  
-  if (token && isProtectedRoute) {
-    // Verify token with backend
-    const response = await fetch(`${baseUrl}/auth/verify`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    
-    if (!response.ok) {
-      // Token invalid, redirect to login
-      return NextResponse.redirect(loginUrl);
-    }
+// middleware.ts
+const token = request.cookies.get('apsu_session')?.value;
+
+if (token && isProtectedRoute) {
+  const response = await fetch(`${baseUrl}/api/auth/verify`, {
+    headers: { Cookie: `apsu_session=${token}` },
+  });
+
+  if (!response.ok) {
+    return NextResponse.redirect(loginUrl);
   }
 }
 ```
@@ -319,9 +298,8 @@ Authorization: Bearer <token>
 ## Security Considerations
 
 ### Current (Demo):
-- ⚠️ Passwords stored in localStorage (insecure)
-- ⚠️ Simple base64 encoding (not real hashing)
-- ⚠️ No HTTPS enforcement
+- ⚠️ Demo mode uses in-memory/cookie session (not real password hashing)
+- ⚠️ No HTTPS enforcement in development
 - ⚠️ Demo token validation
 
 ### Production:
@@ -350,10 +328,10 @@ Authorization: Bearer <token>
    - Use code `123456`
    - Reset password
    - Sign in with new password
-5. Test route protection:
-   - Logout (clear localStorage)
-   - Try accessing `/profile`
-   - Verify redirect to `/login`
+ 5. Test route protection:
+    - Logout
+    - Try accessing `/profile`
+    - Verify redirect to `/login`
 
 ### Automated Testing:
 ```typescript
@@ -385,7 +363,7 @@ describe('Authentication Flow', () => {
 - Verify cookies are being set correctly
 
 ### Issue: Auth state not persisting
-- Check localStorage/cookies on page refresh
+- Check cookies on page refresh
 - Verify AuthProvider is wrapping the app
 - Check token expiration
 
