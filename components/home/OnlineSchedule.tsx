@@ -6,8 +6,7 @@ import image1 from '@/public/images/schedule/Content.png';
 import image2 from '@/public/images/schedule/Sourced-from-licensed-US-V2.jpg';
 import image4 from '@/public/images/schedule/delivery-male-with-mask-packages.jpg';
 import image3 from '@/public/images/schedule/team_doctor_nurse_preparing_prescription_paper_patient_annual_checkup.png';
-import { ArrowLeft, ArrowRight } from 'lucide-react'; // বা আপনার প্রোজেক্টের যেকোনো অ্যারো আইকন
-// Swiper styles ইমপোর্ট করতে ভুলবেন না
+import { ArrowLeft, ArrowRight } from 'lucide-react'; 
 import Image, { StaticImageData } from 'next/image';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 interface SlideItem {
@@ -109,7 +108,7 @@ const ScheduleSlider = () => {
 
                 <div className={`absolute top-0 w-full h-full  left-0  `}>
                   <h3
-                    className={`relative ${slide?.isDarkText && 'bg-linear-to-b  from-greenColor to-transparent pb-8 text-white'} text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight p-4 lg:px-10 lg:p-6 leading-[116%]  z-10 `}
+                    className={`relative ${slide?.isDarkText && 'bg-linear-to-b  from-primaryColor to-transparent pb-8 text-white'} text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight p-4 lg:px-10 lg:p-6 leading-[116%]  z-10 `}
                   >
                     {slide.title}
                   </h3>

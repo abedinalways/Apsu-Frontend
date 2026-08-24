@@ -74,9 +74,9 @@ export default function WorksCard() {
           />
 
           <div className="absolute bottom-5 right-5 md:bottom-6 md:right-6">
-            <button className="bg-greenColor hover:bg-[#153e2a] transition-colors duration-300 text-white text-sm md:text-base font-medium py-2.5 pl-5 pr-2.5 rounded-full flex items-center gap-3 shadow-xl">
+            <button className="bg-primaryColor hover:bg-primaryColor transition-colors duration-300 text-white text-sm md:text-base font-medium py-2.5 pl-5 pr-2.5 rounded-full flex items-center gap-3 shadow-xl">
               Start your intake
-              <div className="bg-white text-[#0f2e1f] rounded-full w-7 h-7 flex items-center justify-center">
+              <div className="bg-white text-primaryColor rounded-full w-7 h-7 flex items-center justify-center">
                 <ArrowRight className="w-4 h-4" strokeWidth={3} />
               </div>
             </button>
@@ -148,7 +148,7 @@ export default function WorksCard() {
                         </span>
 
                         <AccordionPrimitive.Content className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-                          <p className="text-[#5b5b5b] font-medium pt-1">
+                          <p className="text-grayColor1 font-medium pt-1">
                             {step.description}
                           </p>
                         </AccordionPrimitive.Content>

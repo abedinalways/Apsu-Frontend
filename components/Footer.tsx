@@ -159,7 +159,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="size-9 rounded-full bg-[#173A26] hover:bg-background hover:text-secondary transition-all duration-200 flex items-center justify-center"
+                className="size-9 rounded-full bg-greenColor/40 hover:bg-background hover:text-secondary transition-all duration-200 flex items-center justify-center"
               >
                 <Icon className="size-5" />
               </a>
