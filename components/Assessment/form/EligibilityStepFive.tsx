@@ -129,7 +129,7 @@ export default function EligibilityStepFive() {
                 />
                 <div
                   onClick={() => fileInputRef.current?.click()}
-                  className="h-12 w-12 rounded-full bg-[#dbe5de] flex items-center justify-center cursor-pointer hover:bg-[#cfded3] transition-colors"
+                  className="h-12 w-12 rounded-full bg-lightGreenColor flex items-center justify-center cursor-pointer hover:bg-[#cfded3] transition-colors"
                 >
                   <Upload className="h-5 w-5 text-greenColor" />
                 </div>
@@ -165,11 +165,11 @@ export default function EligibilityStepFive() {
             {attachments.map((file: any, index: number) => (
               <div
                 key={file.id || index}
-                className="bg-background border border-[#dce3de] rounded-xl p-3.5 flex items-center justify-between"
+                className="bg-background border border-lightGreenColor rounded-xl p-3.5 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
                   {/* Video Badge Icon */}
-                  <div className="h-10 w-9 rounded-md bg-[#22c55e] text-white flex flex-col items-center justify-center text-[9px] font-bold tracking-wider">
+                  <div className="h-10 w-9 rounded-md bg-greenColor text-white flex flex-col items-center justify-center text-[9px] font-bold tracking-wider">
                     <FileVideo className="h-3.5 w-3.5 mb-0.5 opacity-90" />
                     <span>{file.type || 'MP4'}</span>
                   </div>

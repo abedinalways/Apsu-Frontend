@@ -39,7 +39,7 @@ export default function EligibilityStepTwo() {
                 {...field}
                 type="email"
                 placeholder="maria@example.com"
-                className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                className="bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]]"
               />
             </FormControl>
             <FormMessage />

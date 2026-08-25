@@ -39,7 +39,7 @@ export default function EligibilityStepThree() {
                 <Input
                   {...field}
                   placeholder="Apertment no., rd no etc.."
-                  className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                  className="bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]]"
                 />
               </FormControl>
               <FormMessage />
@@ -61,7 +61,7 @@ export default function EligibilityStepThree() {
                   <Input
                     {...field}
                     placeholder="Jakarta"
-                    className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                    className="bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -81,7 +81,7 @@ export default function EligibilityStepThree() {
                   <Input
                     {...field}
                     placeholder="Jakarta"
-                    className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]l"
+                    className="bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -104,7 +104,7 @@ export default function EligibilityStepThree() {
                   <Input
                     {...field}
                     placeholder="Indonesia"
-                    className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                    className="bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]]"
                   />
                 </FormControl>
                 <FormMessage />
@@ -124,7 +124,7 @@ export default function EligibilityStepThree() {
                   <Input
                     {...field}
                     placeholder="10111"
-                    className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                    className="bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]]"
                   />
                 </FormControl>
                 <FormMessage />
