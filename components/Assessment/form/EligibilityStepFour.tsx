@@ -96,7 +96,7 @@ export default function EligibilityStepFour() {
               <div
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
-                className="bg-background border border-[#dce3de] rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
+                className="bg-background border border-lightGreenColor rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
               >
                 <input
                   type="file"
@@ -109,7 +109,7 @@ export default function EligibilityStepFour() {
                 />
                 <div
                   onClick={() => fileInputRef.current?.click()}
-                  className="h-12 w-12 rounded-full bg-[#dbe5de] flex items-center justify-center cursor-pointer hover:bg-[#cfded3] transition-colors"
+                  className="h-12 w-12 rounded-full bg-lightGreenColor flex items-center justify-center cursor-pointer hover:bg-[#cfded3] transition-colors"
                 >
                   <Upload className="h-5 w-5 text-greenColor" />
                 </div>
@@ -145,7 +145,7 @@ export default function EligibilityStepFour() {
             {attachments.map((file: any, index: number) => (
               <div
                 key={file.id || index}
-                className="bg-background border border-[#dce3de] rounded-xl p-3.5 flex items-center justify-between"
+                className="bg-background border border-lightGreenColor rounded-xl p-3.5 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
                   {/* File Type Icon Badge */}

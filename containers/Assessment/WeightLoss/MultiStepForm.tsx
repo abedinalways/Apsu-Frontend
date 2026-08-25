@@ -273,7 +273,7 @@ export default function MultiStepForm() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-background-color max-h-screen flex flex-col">
+    <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 flex flex-col">
       <Form {...form}>
         <form className="space-y-6">
           <div className="flex-1 overflow-y-auto">
