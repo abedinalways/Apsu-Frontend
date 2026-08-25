@@ -5,7 +5,7 @@ import PrimaryButton from '../reusable/button/PrimaryButton';
 
 export default function ContactCard() {
   return (
-    <div className="flex flex-col items-center gap-3 sm:gap-4 rounded-[16px] bg-[#fff] p-6 sm:p-8 shadow-[0_4px_22px_0_rgba(2,29,23,0.06)]  mx-auto">
+    <div className="flex flex-col items-center gap-3 sm:gap-4 rounded-[16px] bg-whiteColor p-6 sm:p-8 shadow-[0_4px_22px_0_rgba(2,29,23,0.06)]  mx-auto">
       <p className="text-lg sm:text-xl md:text-2xl font-medium text-blackColor w-full text-center">
         Still have a question?
       </p>

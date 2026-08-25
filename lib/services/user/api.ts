@@ -1,10 +1,8 @@
-import type { User, UsersResponse } from './types';
-import { Fetch } from '@/lib/Fetch';
+import type { UsersResponse } from './types';
 
 export class ApiUserService {
   async getUsers(): Promise<UsersResponse> {
-    const response = await Fetch.get('/users');
-    return response.data as UsersResponse;
+    throw new Error('getUsers not implemented');
   }
 }
 

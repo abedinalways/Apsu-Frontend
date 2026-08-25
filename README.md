@@ -109,6 +109,55 @@ All API calls go through `lib/Fetch.ts`, which wraps Axios with `credentials: "i
 
 ---
 
+## Backend Integration Guide
+
+When the real backend is ready, the files below are the only ones that need to change. No component or page code should be touched — the service layer isolates backend wiring completely.
+
+### Step 1: Set environment variables
+
+Update `.env.local`:
+
+```env
+NEXT_PUBLIC_API_ENDPOINT=https://your-real-backend.com
+NEXT_PUBLIC_AUTH_MODE=api
+NEXT_PUBLIC_BLOG_MODE=api
+NEXT_PUBLIC_PROFILE_MODE=api
+NEXT_PUBLIC_USER_MODE=api
+```
+
+### Step 2: Implement the real API services
+
+| File | What to do |
+|------|-----------|
+| `lib/services/auth/api.auth.ts` | Implement `signIn`, `register`, `createPassword`, `forgotPassword`, `resetPassword`, `getCurrentUser`, `logout` against real auth endpoints. Types are already defined in `lib/services/auth/types.ts`. |
+| `lib/services/blog.service.ts` | Replace mock returns in `getBlogs`, `getBlogBySlug`, `getRelatedBlogs` with real API calls. |
+| `lib/services/profile.service.ts` | Replace mock returns in `getProfile`, `getTreatment`, `getOrders`, `getPrescriptions` with real API calls. |
+| `lib/services/user/api.ts` | Implement `getUsers` against the real users endpoint. Types are in `lib/services/user/types.ts`. |
+
+### Step 3: Update the HTTP client if needed
+
+| File | What to do |
+|------|-----------|
+| `lib/Fetch.ts` | Update `baseUrl` or timeout/retry config if the backend requires it. Auth headers are already attached via interceptor. |
+| `lib/session.ts` | Update session storage mechanism if the backend uses a different token scheme. All session reads/writes flow through this module only. |
+
+### Step 4: Remove or archive demo/mock files (optional)
+
+Once real implementations are verified, the following mock files can be removed or kept for reference:
+
+| File | Purpose |
+|------|---------|
+| `lib/services/auth/demo.auth.ts` | Demo auth implementation |
+| `lib/services/user/demo.ts` | Demo user data |
+| `lib/data/blogsData.ts` | Static blog listings |
+| `lib/data/blogDetails.ts` | Static blog content |
+
+### Files that do NOT need to change
+
+All components, containers, pages, forms, and contexts remain untouched. They call the service layer through the same interface regardless of mock or real backend.
+
+---
+
 ## Documentation
 
 | File | Purpose |

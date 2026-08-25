@@ -64,7 +64,7 @@ export default function SetNewPasswordForm({
   return (
     <div className="w-full max-w-sm mx-auto space-y-6 font-[Work_Sans]">
       <div className="space-y-2">
-        <h2 className="text-2xl md:text-[32px] font-semibold text-gray-900 tracking-tight">
+        <h2 className="text-2xl md:text-[32px] font-semibold text-blackColor tracking-tight">
           Set New Password
         </h2>
         <p className="text-sm text-grayColor1 leading-relaxed">
@@ -81,7 +81,7 @@ export default function SetNewPasswordForm({
               <FormItem className="space-y-1">
                 <FormLabel
                   htmlFor="new-password"
-                  className="text-sm font-medium text-black"
+                  className="text-sm font-medium text-blackColor"
                 >
                   New Password <span className="text-redColor">*</span>
                 </FormLabel>
@@ -92,7 +92,7 @@ export default function SetNewPasswordForm({
                       id="new-password"
                       type={showPass ? 'text' : 'password'}
                       placeholder="At least 8 characters"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-primary placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 focus:outline-none focus:border-secondary-text pr-12 transition-colors"
                     />
                   </FormControl>
                   <button
@@ -119,7 +119,7 @@ export default function SetNewPasswordForm({
               <FormItem className="space-y-1">
                 <FormLabel
                   htmlFor="confirm-new-password"
-                  className="text-sm font-medium text-black"
+                  className="text-sm font-medium text-blackColor"
                 >
                   Confirm Password <span className="text-redColor">*</span>
                 </FormLabel>
@@ -130,7 +130,7 @@ export default function SetNewPasswordForm({
                       id="confirm-new-password"
                       type={showConfirmPass ? 'text' : 'password'}
                       placeholder="Confirm your password"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 focus:outline-none focus:border-secondary-text pr-12 transition-colors"
                     />
                   </FormControl>
                   <button

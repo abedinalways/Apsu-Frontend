@@ -72,7 +72,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
   return (
     <div className="w-full max-w-sm mx-auto space-y-6 font-[Work_Sans]">
       <div className="space-y-2">
-        <h2 className="text-2xl md:text-[28px] font-medium text-gray-900 tracking-tight ">
+        <h2 className="text-2xl md:text-[28px] font-medium text-blackColor tracking-tight ">
           Welcome Back
         </h2>
         <p className="text-sm md:text-[1rem] text-grayColor1 leading-relaxed">
@@ -82,8 +82,8 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
       </div>
 
       {error && (
-        <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-sm text-red-600">{error}</p>
+        <div className="p-3 bg-whiteColor border border-orangeColor rounded-lg">
+          <p className="text-sm text-redColor">{error}</p>
         </div>
       )}
 
@@ -91,7 +91,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
         <div className="space-y-2">
           <label
             htmlFor="signin-email"
-            className="text-base sm:text-[18px] font-medium text-black"
+            className="text-base sm:text-[18px] font-medium text-blackColor"
           >
             Email Address
           </label>
@@ -101,14 +101,14 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="maria@example.com"
-            className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text transition-colors"
+            className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 focus:outline-none focus:border-secondary-text transition-colors"
           />
         </div>
 
         <div className="space-y-1">
           <label
             htmlFor="signin-password"
-            className="text-sm font-medium text-black"
+            className="text-sm font-medium text-blackColor"
           >
             Password <span className="text-redColor">*</span>
           </label>
@@ -119,7 +119,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder="Your password"
-              className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+              className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 focus:outline-none focus:border-secondary-text pr-12 transition-colors"
             />
             <button
               type="button"
@@ -167,7 +167,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
             <button
               type="button"
               onClick={onForgotPassword}
-              className="text-xs text-red-400 hover:underline"
+              className="text-xs text-redColor hover:underline"
             >
               Forgot Password
             </button>
