@@ -65,7 +65,7 @@ export default function CreatePasswordForm({
   return (
     <div className="w-full max-w-sm mx-auto space-y-6 font-[Work_Sans]">
       <div className="space-y-2">
-        <h2 className="text-2xl md:text-[32px] font-semibold text-gray-900 tracking-tight">
+        <h2 className="text-2xl md:text-[32px] font-semibold text-blackColor tracking-tight">
           Create Your Password
         </h2>
         <p className="text-sm md:text-[16px] text-grayColor1 leading-relaxed">
@@ -83,7 +83,7 @@ export default function CreatePasswordForm({
               <FormItem className="space-y-2">
                 <FormLabel
                   htmlFor="create-password"
-                  className="text-base sm:text-[14px] font-medium text-black"
+                  className="text-base sm:text-[14px] font-medium text-blackColor"
                 >
                   New Password <span className="text-redColor">*</span>
                 </FormLabel>
@@ -94,7 +94,7 @@ export default function CreatePasswordForm({
                       id="create-password"
                       type={showPass ? 'text' : 'password'}
                       placeholder="At least 8 characters"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 placeholder:text-sm focus:outline-none focus:border-secondary-text pr-12 transition-colors"
                     />
                   </FormControl>
                   <button
@@ -103,7 +103,7 @@ export default function CreatePasswordForm({
                     onClick={() => setShowPass(!showPass)}
                   >
                     {showPass ? (
-                      <span className="text-xs font-semibold bg-gray-100 px-1.5 py-0.5 rounded text-grayColor1">
+                      <span className="text-xs font-semibold bg-background px-1.5 py-0.5 rounded text-grayColor1">
                         <EyeIcon />
                       </span>
                     ) : (
@@ -147,7 +147,7 @@ export default function CreatePasswordForm({
                       id="confirm-password"
                       type={showConfirmPass ? 'text' : 'password'}
                       placeholder="Confirm your password"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] placeholder:text-sm focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 placeholder:text-sm focus:outline-none focus:border-secondary-text pr-12 transition-colors"
                     />
                   </FormControl>
                   <button
@@ -156,7 +156,7 @@ export default function CreatePasswordForm({
                     onClick={() => setShowConfirmPass(!showConfirmPass)}
                   >
                     {showConfirmPass ? (
-                      <span className="text-xs font-semibold bg-gray-100 px-1.5 py-0.5 rounded text-grayColor1">
+                      <span className="text-xs font-semibold bg-background px-1.5 py-0.5 rounded text-grayColor1">
                         <EyeIcon />
                       </span>
                     ) : (

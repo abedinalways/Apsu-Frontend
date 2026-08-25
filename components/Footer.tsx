@@ -118,7 +118,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block w-full hover:text-[#BED5C9] transition-colors xl:whitespace-nowrap"
+                    className="block w-full hover:text-lightGreenColor transition-colors xl:whitespace-nowrap"
                   >
                     {link.label}
                   </Link>

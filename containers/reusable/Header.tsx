@@ -81,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({
 
                   <button
                     onClick={() => setPopoverOpen(false)}
-                    className="text-[#455468] bg-bgColor w-[35px] h-[35px] shadow-sm rounded-full cursor-pointer text-lg font-bold flex items-center justify-center"
+                    className="text-greenColor bg-bgColor w-[35px] h-[35px] shadow-sm rounded-full cursor-pointer text-lg font-bold flex items-center justify-center"
                   >
                     <X className="" />
                   </button>

@@ -5,14 +5,14 @@ import WhiteCustomButton from "../reusable/button/WhiteCustomButton";
 const MedicineCard = ({ data, idx }: { data: MedicineData; idx: number }) => {
   return (
     <div
-      className={`flex p-3 h-full md:p-4 lg:p-6 justify-between  pb-0! ${idx === 0 ? "bg-[#C9FFEB]" : idx === 1 ? "pr-0! bg-[#FFDEFF]" : "bg-[#D0FFFD]"} overflow-hidden  rounded-2xl`}
+      className={`flex p-3 h-full md:p-4 lg:p-6 justify-between  pb-0! ${idx === 0 ? "bg-lightGreenColor" : idx === 1 ? "pr-0! bg-purpleColor" : "bg-lightGreenColor"} overflow-hidden  rounded-2xl`}
     >
       <div className=" max-w-53 lg:max-w-58 flex flex-col justify-between pb-3 md:pb-4 lg:pb-6">
         <div>
           <p className="text-sm  md:text-base lg:text-lg text-primary">
             {data.for}
           </p>
-          <h4 className="text-xl xl:text-2xl font-medium text-[#2A2A2A] mt-4">
+          <h4 className="text-xl xl:text-2xl font-medium text-blackColor mt-4">
             {data.info}
           </h4>
         </div>

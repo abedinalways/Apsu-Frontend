@@ -40,14 +40,14 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
               </div>
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
-                  <h4 className="font-semibold text-base md:text-[18px] text-gray-900">
+                  <h4 className="font-semibold text-base md:text-[18px] text-blackColor">
                     {order.treatmentName}
                   </h4>
-                  <span className="px-2 py-0.5 rounded-full text-[12px] font-medium text-[#D2942A] border border-[#FCEFCE] bg-[#FFF9EC]">
+                  <span className="px-2 py-0.5 rounded-full text-[12px] font-medium text-orangeColor border border-background bg-backround">
                     {order.status}
                   </span>
                 </div>
-                <p className="text-xs md:text-[14px] text-[#219653] font-medium mt-0.5">
+                <p className="text-xs md:text-[14px] text-greenColor font-medium mt-0.5">
                   {order.treatmentSub}
                 </p>
               </div>
@@ -74,7 +74,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
                 <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
                   Payment
                 </p>
-                <p className="text-sm font-medium text-[#219653] whitespace-nowrap">
+                <p className="text-sm font-medium text-greenColor whitespace-nowrap">
                   {order.paymentStatus}
                 </p>
               </div>
@@ -82,7 +82,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
                 <p className="text-[12px] text-grayColor1 font-light whitespace-nowrap">
                   Total
                 </p>
-                <p className="text-sm font-bold text-gray-900 whitespace-nowrap">
+                <p className="text-sm font-bold text-blackColor whitespace-nowrap">
                   {order.totalPrice}
                 </p>
               </div>
@@ -107,23 +107,23 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
               <span className="text-sm text-grayColor1 font-light">
                 Tracking Number
               </span>
-              <span className="text-sm font-medium text-gray-900">
+              <span className="text-sm font-medium text-blackColor">
                 {order.trackingNumber || '9400 1111 2222'}
               </span>
             </div>
-            <div className="flex justify-between items-center border-b border-gray-100 pb-3">
+            <div className="flex justify-between items-center border-b border-background pb-3">
               <span className="text-sm text-grayColor1 font-light">
                 Carrier
               </span>
-              <span className="text-sm font-medium text-gray-900">
+              <span className="text-sm font-medium text-blackColor">
                 {order.carrier || 'USPS Priority Mail'}
               </span>
             </div>
-            <div className="flex justify-between items-center border-b border-gray-100 pb-3">
+            <div className="flex justify-between items-center border-b border-background pb-3">
               <span className="text-sm text-grayColor1 font-light">
                 Estimated Delivery
               </span>
-              <span className="text-sm font-medium text-gray-900">
+              <span className="text-sm font-medium text-blackColor">
                 {order.estimatedDelivery || 'Jul 30, 2026'}
               </span>
             </div>
@@ -131,7 +131,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
               <p className="text-sm text-grayColor1 font-light mb-2">
                 Shipping Address
               </p>
-              <p className="text-sm font-medium text-gray-900 leading-relaxed">
+              <p className="text-sm font-medium text-blackColor leading-relaxed">
                 {order.shippingAddress ||
                   '123 Main Street, Apt 4B Miami, FL 33101'}
               </p>
@@ -140,7 +140,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
         </div>
       </div>
 
-      <div className="bg-[#eff9ff] border border-[#b6e6ff] rounded-[12px] p-4 text-left shadow">
+      <div className="bg-[#eff9ff] border border-blueColor rounded-[12px] p-4 text-left shadow">
         <h4 className="text-sm md:text-[16px] font-medium text-greenColor mb-1">
           Your Order Is On Its Way
         </h4>

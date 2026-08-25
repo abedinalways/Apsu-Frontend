@@ -63,7 +63,7 @@ Forgot Password Flow:
 │   └── auth/
 │       ├── index.ts            # Auth service entry point (demo/api switching)
 │       ├── demo.auth.ts        # Demo implementation
-│       ├── api.auth.ts         # Real API implementation
+│       ├── api.auth.ts         # Real API implementation (empty - ready for backend)
 │       └── types.ts            # Shared types & IAuthService interface
 ├── contexts/
 │   └── AuthContext.tsx          # React context for auth state management
@@ -151,18 +151,18 @@ All forms include:
 
 ### Step 1: Implement `lib/services/auth/api.auth.ts`
 
-The `api.auth.ts` file already exists. Update its methods to call real endpoints:
+The `api.auth.ts` file already exists with stub implementations. Update each method to call the real backend endpoints once they are defined. Do not invent endpoint paths or request formats — use the contract agreed with the backend team.
 
 ```typescript
 // lib/services/auth/api.auth.ts
 
 async signIn(payload: SignInPayload): Promise<AuthResponse> {
-  const response = await Fetch.post('/auth/signin', payload);
+  const response = await Fetch.post('<real-endpoint>', payload);
   return response;
 }
 
 async createPassword(payload: RegisterPayload): Promise<AuthResponse> {
-  const response = await Fetch.post('/auth/create-password', payload);
+  const response = await Fetch.post('<real-endpoint>', payload);
   return response;
 }
 
@@ -177,122 +177,14 @@ The demo service already uses cookie-based sessions via `lib/session.ts`. The re
 
 ### Step 3: Middleware
 
-The existing middleware already reads cookies for route protection. Add backend token validation when the real API is ready:
-
-```typescript
-// middleware.ts
-const token = request.cookies.get('apsu_session')?.value;
-
-if (token && isProtectedRoute) {
-  const response = await fetch(`${baseUrl}/api/auth/verify`, {
-    headers: { Cookie: `apsu_session=${token}` },
-  });
-
-  if (!response.ok) {
-    return NextResponse.redirect(loginUrl);
-  }
-}
-```
+The existing middleware already reads cookies for route protection. Add backend token validation when the real API is ready by verifying the session cookie with the backend.
 
 ### Step 4: Environment Variables
 
 Add to `.env.local`:
 
 ```env
-NEXT_PUBLIC_API_URL=https://your-api-domain.com/api
-```
-
-## API Endpoints (Expected)
-
-### POST /api/auth/create-password
-**Request:**
-```json
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "user": {
-    "id": "123",
-    "email": "user@example.com"
-  },
-  "token": "jwt_token_here"
-}
-```
-
-### POST /api/auth/signin
-**Request:**
-```json
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "user": {
-    "id": "123",
-    "email": "user@example.com"
-  },
-  "token": "jwt_token_here"
-}
-```
-
-### POST /api/auth/forgot-password
-**Request:**
-```json
-{
-  "email": "user@example.com"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true
-}
-```
-
-### POST /api/auth/reset-password
-**Request:**
-```json
-{
-  "email": "user@example.com",
-  "code": "123456",
-  "newPassword": "newpassword123"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true
-}
-```
-
-### GET /api/auth/verify
-**Headers:**
-```
-Authorization: Bearer <token>
-```
-
-**Response:**
-```json
-{
-  "valid": true,
-  "user": {
-    "id": "123",
-    "email": "user@example.com"
-  }
-}
+NEXT_PUBLIC_API_URL=https://your-api-domain.com
 ```
 
 ## Security Considerations
