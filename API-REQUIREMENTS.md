@@ -27,170 +27,98 @@ Set these in `.env.local` for local development.
 
 ---
 
-## Auth API
+## Authentication
+
+The backend owns all authentication and session handling. This section records, for
+each login and registration screen, the operation it needs the backend to perform —
+whether it reads or writes, and the data the UI actually holds. Route and wire-format
+details are deliberately left to backend design and are not specified here.
 
 **Service file:** `lib/services/auth/index.ts`  
-**Switching:** `NEXT_PUBLIC_AUTH_MODE=api`
+**Switch:** `NEXT_PUBLIC_AUTH_MODE=api`  
+**Session:** issued and validated by the backend. The frontend never stores tokens
+itself; it relies on the session cookie described under Shared Conventions.
 
-### POST /api/auth/signin
+### 1. Sign in
 
-Request:
-```json
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
+- **Screen:** Login → Sign In (`containers/login/SignInForm.tsx`)
+- **Type:** write — exchanges credentials for a session
+- **Fields sent:** `email`, `password`
+- **Fields returned:**
+  - `user.id` — string, required
+  - `user.email` — string, required
+  - `user.name` — string, nullable
+  - `user.avatar` — string (URL), nullable
+- **Failure cases to distinguish:**
+  - Invalid credentials → "Incorrect email or password"
+  - Account suspended or disabled → distinct, actionable message
+  - Validation failure (malformed email) → field-level message
+  - Unexpected server error → generic message
 
-Response 200:
-```json
-{
-  "success": true,
-  "user": {
-    "id": "uuid",
-    "email": "user@example.com",
-    "name": "User Name"
-  },
-  "token": "jwt_or_session_token"
-}
-```
+### 2. Register (new account)
 
-Response 401:
-```json
-{
-  "success": false,
-  "error": "Invalid email or password"
-}
-```
+- **Screen:** Registration → Create Password (`containers/login/CreatePasswordForm.tsx`)
+- **Type:** write — creates an account and starts a session
+- **Fields sent:** `email`, `password`, `name` (nullable)
+- **Fields returned:** same `user` shape as sign in
+- **Failure cases to distinguish:**
+  - Email already registered → "An account with this email already exists"
+  - Password too weak → specific message
+  - Validation failure → field-level message
+  - Unexpected server error → generic message
 
----
+### 3. Forgot password (request reset code)
 
-### POST /api/auth/register
+- **Screen:** Login → Forgot Password (`components/login/ForgotPasswordForm.tsx`)
+- **Type:** write — requests a one-time reset code sent by email
+- **Fields sent:** `email`
+- **Fields returned:** none required by the UI beyond success
+- **Failure cases to distinguish:**
+  - Email not found → generic confirmation (avoid account enumeration)
+  - Email service down → distinct message
+  - Unexpected server error → generic message
 
-Request:
-```json
-{
-  "email": "user@example.com",
-  "password": "password123",
-  "name": "User Name"
-}
-```
+### 4. Verify reset code
 
-Response 201:
-```json
-{
-  "success": true,
-  "user": {
-    "id": "uuid",
-    "email": "user@example.com",
-    "name": "User Name"
-  },
-  "token": "jwt_or_session_token"
-}
-```
+- **Screen:** Login → Enter Code (`components/login/EnterCodeForm.tsx`)
+- **Type:** write — confirms the emailed code before allowing a new password
+- **Fields sent:** `email`, `code`
+- **Fields returned:** a flag permitting the "set new password" step to proceed
+- **Failure cases to distinguish:**
+  - Invalid or expired code → retry with remaining attempts
+  - Too many failed attempts → lock / offer resend
+  - Unexpected server error → generic message
 
----
+### 5. Reset password (set new password)
 
-### POST /api/auth/create-password
+- **Screen:** Login → Set New Password (`containers/login/SetNewPasswordForm.tsx`)
+- **Type:** write — sets a new password using the verified code
+- **Fields sent:** `email`, `code`, `newPassword`
+- **Fields returned:** none required by the UI beyond success
+- **Failure cases to distinguish:**
+  - Code expired / already used → return to Enter Code
+  - Password too weak → specific message
+  - Validation failure → field-level message
 
-Used after email verification in the registration flow.
+### 6. Get current user (session check)
 
-Request:
-```json
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
+- **Screen:** Profile, Dashboard, Header/Navbar (`hooks/useCurrentUser.ts`)
+- **Type:** read — returns the signed-in user for the current session
+- **Fields sent:** none — the session cookie identifies the user
+- **Fields returned:** `user` shape (id, email, name, avatar) as in sign in
+- **Failure cases to distinguish:**
+  - Unauthenticated → treat as signed out, redirect to Login
+  - Session expired → treat as signed out
+  - Unexpected server error → generic message
 
-Response 200:
-```json
-{
-  "success": true,
-  "user": {
-    "id": "uuid",
-    "email": "user@example.com"
-  },
-  "token": "jwt_or_session_token"
-}
-```
+### 7. Sign out
 
----
-
-### POST /api/auth/forgot-password
-
-Request:
-```json
-{
-  "email": "user@example.com"
-}
-```
-
-Response 200:
-```json
-{
-  "success": true,
-  "message": "Password reset code sent"
-}
-```
-
----
-
-### POST /api/auth/reset-password
-
-Request:
-```json
-{
-  "email": "user@example.com",
-  "code": "123456",
-  "newPassword": "newpassword123"
-}
-```
-
-Response 200:
-```json
-{
-  "success": true,
-  "message": "Password reset successful"
-}
-```
-
----
-
-### GET /api/auth/verify
-
-Headers: Cookie-based session only.
-
-Response 200:
-```json
-{
-  "valid": true,
-  "user": {
-    "id": "uuid",
-    "email": "user@example.com",
-    "name": "User Name"
-  }
-}
-```
-
-Response 401:
-```json
-{
-  "valid": false,
-  "error": "Unauthorized"
-}
-```
-
----
-
-### POST /api/auth/logout
-
-Response 200:
-```json
-{
-  "success": true
-}
-```
+- **Screen:** Header/Navbar (`containers/reusable/Header.tsx`)
+- **Type:** write — ends the current session
+- **Fields sent:** none
+- **Fields returned:** none required by the UI beyond success
+- **Failure cases:** ending the session server-side is best-effort; the UI clears
+  local auth state regardless
 
 ---
 

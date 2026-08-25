@@ -9,6 +9,21 @@ interface SignInFormProps {
   onForgotPassword: () => void;
 }
 
+/**
+ * Validate the post-login redirect target to prevent open-redirect attacks.
+ * Only internal, same-origin relative paths are allowed (e.g. "/profile").
+ * Anything else — external URLs, protocol-relative "//evil.com", query-only
+ * values — falls back to the default "/profile".
+ */
+function getSafeRedirect(redirect: string | null): string {
+  if (!redirect) return '/profile';
+  const isSafeInternalPath =
+    redirect.startsWith('/') &&
+    !redirect.startsWith('//') &&
+    !redirect.startsWith('/\\');
+  return isSafeInternalPath ? redirect : '/profile';
+}
+
 export default function SignInForm({ onForgotPassword }: SignInFormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -38,7 +53,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
 
       if (result.success) {
         toast.success('Welcome back! Login successful.');
-        const redirectTo = searchParams.get('redirect') || '/profile';
+        const redirectTo = getSafeRedirect(searchParams.get('redirect'));
         router.push(redirectTo);
       } else {
         const errorMessage = result.error || 'Login failed. Please try again.';

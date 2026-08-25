@@ -2,14 +2,14 @@
  * Demo Auth Implementation
  *
  * This is a fully client-side mock of the auth service.
- * It accepts ANY valid email + password (min 6 chars) — no account creation needed.
- * Session is stored in localStorage + a cookie for middleware route protection.
+ * It accepts ANY valid email + password (min 8 chars) — no account creation needed.
+ * Session is stored in cookies (via `lib/session.ts`) for client state and
+ * middleware route protection.
  *
  * ─── HOW TO SWITCH TO REAL API ───────────────────────────────────────────────
- * In `lib/services/auth/index.ts`, change:
- *   export { demoAuthService as authService } from './demo.auth';
- * to:
- *   export { apiAuthService as authService } from './api.auth';
+ * Set `NEXT_PUBLIC_AUTH_MODE=api` in your environment (default is `demo`).
+ * `lib/services/auth/index.ts` reads that variable and exports the matching
+ * implementation. No imports or components need to change.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
@@ -33,14 +33,14 @@ const STORAGE_KEYS = {
 
 // ─── Demo Credentials ─────────────────────────────────────────────────────────
 // In demo mode, you can log in with any valid email.
-// Password just needs to be at least 6 characters.
+// Password just needs to be at least 8 characters.
 // No account creation is required.
 
 // ─── Implementation ───────────────────────────────────────────────────────────
 
 class DemoAuthService implements IAuthService {
   /**
-   * Sign in with any valid email and password (min 6 chars).
+   * Sign in with any valid email and password (min 8 chars).
    * No prior registration is needed in demo mode.
    */
   async signIn(payload: SignInPayload): Promise<AuthResponse> {
@@ -53,8 +53,8 @@ class DemoAuthService implements IAuthService {
       return { success: false, error: 'Email and password are required.' };
     }
 
-    if (password.length < 6) {
-      return { success: false, error: 'Password must be at least 6 characters.' };
+    if (password.length < 8) {
+      return { success: false, error: 'Password must be at least 8 characters.' };
     }
 
     // Demo: Accept any valid email/password — create an on-the-fly user
@@ -79,8 +79,8 @@ class DemoAuthService implements IAuthService {
       return { success: false, error: 'Email and password are required.' };
     }
 
-    if (password.length < 6) {
-      return { success: false, error: 'Password must be at least 6 characters.' };
+    if (password.length < 8) {
+      return { success: false, error: 'Password must be at least 8 characters.' };
     }
 
     const user: User = {
@@ -107,8 +107,8 @@ class DemoAuthService implements IAuthService {
       return { success: false, error: 'Email and password are required.' };
     }
 
-    if (password.length < 6) {
-      return { success: false, error: 'Password must be at least 6 characters.' };
+    if (password.length < 8) {
+      return { success: false, error: 'Password must be at least 8 characters.' };
     }
 
     const user: User = {

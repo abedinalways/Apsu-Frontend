@@ -1,21 +1,51 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import DynamicTable from '@/components/reusable/DynamicTable';
-import { demoData } from '@/public/demoData/DemoData';
-import { useState } from 'react';
+import { userService } from '@/lib/services/user';
 
 function DashboardUserTable() {
+  const [users, setUsers] = useState<Awaited<ReturnType<typeof userService.getUsers>>['users']>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
-  // Calculate pagination
-  const totalItems = demoData.length;
+  useEffect(() => {
+    let mounted = true;
+
+    async function loadUsers() {
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await userService.getUsers();
+        if (mounted) {
+          setUsers(response.users);
+        }
+      } catch (err) {
+        if (mounted) {
+          setError(err instanceof Error ? err.message : 'Failed to load users');
+        }
+      } finally {
+        if (mounted) {
+          setLoading(false);
+        }
+      }
+    }
+
+    loadUsers();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const totalItems = users.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentData = demoData.slice(startIndex, endIndex);
+  const currentData = users.slice(startIndex, endIndex);
 
-  // Define table columns
   const columns = [
     {
       label: 'Full Name',
@@ -84,6 +114,14 @@ function DashboardUserTable() {
     },
   ];
 
+  if (error) {
+    return (
+      <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+        <p className="text-sm text-red-600">{error}</p>
+      </div>
+    );
+  }
+
   return (
     <div className="">
       <div className="mb-4">
@@ -103,7 +141,7 @@ function DashboardUserTable() {
         onPageChange={setCurrentPage}
         setItemsPerPage={setItemsPerPage}
         noDataMessage="No users found"
-        loading={false}
+        loading={loading}
       />
     </div>
   );
