@@ -162,7 +162,7 @@ export default function PrescriptionTrackOrderModal({
           </div>
         </div>
 
-        <div className="bg-background border border-background rounded-[16px] p-4 text-left shadow">
+        <div className="bg-[#fffaea] border border-[#FCEFCE] rounded-[16px] p-4 text-left shadow">
           <h4 className="text-sm md:text-[16px] font-medium text-greenColor mb-1">
             Prescription Shipped
           </h4>
