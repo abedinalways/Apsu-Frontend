@@ -21,7 +21,7 @@ export function FAQAccordion({ item }: Props) {
       className="
         overflow-hidden
         rounded-2xl
-        border  hover:bg-greenColor hover:text-whiteColor transition-all
+        border  hover:bg-greenColor1 hover:text-whiteColor transition-all
         border-background
         bg-white
         shadow-[0_6px_18px_rgba(0,0,0,.04)]
@@ -36,7 +36,7 @@ export function FAQAccordion({ item }: Props) {
 
           hover:no-underline
 
-          data-[state=open]:bg-greenColor
+          data-[state=open]:bg-greenColor1
           data-[state=open]:text-white
         "
       >
@@ -75,7 +75,7 @@ export function FAQAccordion({ item }: Props) {
         className="
           border-t
           border-dashed
-          border-[#D8D4CC]
+          border-background
 
           bg-whiteColor
 
