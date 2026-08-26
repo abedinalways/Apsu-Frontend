@@ -38,11 +38,7 @@ export function FAQAccordion({ item }: Props) {
 
           hover:no-underline
 
-<<<<<<< HEAD
           data-[state=open]:bg-greenColor1
-=======
-          data-[state=open]:bg-greenColor
->>>>>>> 350b5c9 (update the faq section)
           data-[state=open]:text-white
         "
       >
@@ -81,11 +77,7 @@ export function FAQAccordion({ item }: Props) {
         className="
           border-t
           border-dashed
-<<<<<<< HEAD
-          border-greenColor
-=======
           border-background
->>>>>>> 350b5c9 (update the faq section)
 
           bg-whiteColor
 
