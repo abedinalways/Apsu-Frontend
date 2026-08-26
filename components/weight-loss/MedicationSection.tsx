@@ -87,7 +87,7 @@ export default function MedicationSection({
 
                 {/* --- Image Product Box --- */}
                 <div
-                  className={`bg-white rounded-2xl shadow-[0_4px_12px_rgba(2,31,24,0.05)]   flex items-center justify-center  ${
+                  className={`bg-white rounded-[19px] shadow-[0_4px_12px_rgba(2,31,24,0.05)]   flex items-center justify-center  ${
                     isEven ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
@@ -97,7 +97,7 @@ export default function MedicationSection({
                       alt={item.name}
                       width={800}
                       height={600}
-                      className="object-cover w-full h-full rounded-2xl"
+                      className="object-cover w-full h-full rounded-[19px]"
                     />
                   </div>
                 </div>
