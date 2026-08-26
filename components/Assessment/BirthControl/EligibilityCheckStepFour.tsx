@@ -41,7 +41,7 @@ export default function EligibilityCheckStepFour() {
               <Textarea
                 {...field}
                 placeholder="eg-Normal- Both numbers less than 129/80"
-                className="min-h-[110px] resize-none rounded-xl border-gray-200 placeholder:text-grayColor1 bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200 placeholder:text-grayColor1 bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]"
               />
             </FormControl>
             <FormMessage />

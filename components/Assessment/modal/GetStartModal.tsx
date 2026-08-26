@@ -60,7 +60,7 @@ export default function GetStartModal({
                   key={idx}
                   className="flex items-center gap-2.5 text-gray-700 text-sm font-medium"
                 >
-                  <CheckCircle2 className="h-5 w-5 fill-[#0F5132] text-white shrink-0" />
+                  <CheckCircle2 className="h-5 w-5 fill-greenColor text-white shrink-0" />
                   <span className="text-[18px]">{text}</span>
                 </li>
               ))}

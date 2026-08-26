@@ -116,7 +116,7 @@ export default function EligibilityStepFive() {
               <div
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
-                className="bg-background border border-[#dce3de] rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
+                className="bg-background border border-borderColor rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
               >
                 <input
                   type="file"
@@ -129,7 +129,7 @@ export default function EligibilityStepFive() {
                 />
                 <div
                   onClick={() => fileInputRef.current?.click()}
-                  className="h-12 w-12 rounded-full bg-lightGreenColor flex items-center justify-center cursor-pointer hover:bg-[#cfded3] transition-colors"
+                  className="h-12 w-12 rounded-full bg-lightGreenColor flex items-center justify-center cursor-pointer hover:bg-borderColor transition-colors"
                 >
                   <Upload className="h-5 w-5 text-greenColor" />
                 </div>
