@@ -21,11 +21,7 @@ export function FAQAccordion({ item }: Props) {
       className="
         overflow-hidden
         rounded-2xl
-<<<<<<< HEAD
-        border  hover:bg-greenColor1 hover:text-whiteColor transition-all
-=======
         border  hover:bg-greenColor hover:text-whiteColor transition-all
->>>>>>> 4490592 (update the login section)
         border-background
         bg-white
         shadow-[0_6px_18px_rgba(0,0,0,.04)]
@@ -40,11 +36,7 @@ export function FAQAccordion({ item }: Props) {
 
           hover:no-underline
 
-<<<<<<< HEAD
-          data-[state=open]:bg-greenColor1
-=======
           data-[state=open]:bg-greenColor
->>>>>>> 4490592 (update the login section)
           data-[state=open]:text-white
         "
       >
@@ -83,11 +75,7 @@ export function FAQAccordion({ item }: Props) {
         className="
           border-t
           border-dashed
-<<<<<<< HEAD
-          border-greenColor
-=======
           border-background
->>>>>>> 4490592 (update the login section)
 
           bg-whiteColor
 
