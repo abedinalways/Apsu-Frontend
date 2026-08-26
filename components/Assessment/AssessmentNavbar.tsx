@@ -21,7 +21,7 @@ export default function AssessmentNavbar() {
     languages.find((l) => l.value === language)?.label ?? "Select Language";
 
   return (
-    <header className="w-full bg-[#FAF9F6] border-b border-gray-100 px-6 py-4 ">
+    <header className="w-full bg-bgColor border-b border-gray-100 px-6 py-4 ">
       <div className="container mx-auto flex items-center justify-between">
         <Link href={"/"}>
           {" "}
