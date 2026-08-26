@@ -140,7 +140,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
         </div>
       </div>
 
-      <div className="bg-[#eff9ff] border border-[#b6e6ff] rounded-[12px] p-4 text-left shadow">
+      <div className="bg-[#eff9ff] border border-blueColor rounded-[12px] p-4 text-left shadow">
         <h4 className="text-sm md:text-[16px] font-medium text-greenColor mb-1">
           Your Order Is On Its Way
         </h4>
