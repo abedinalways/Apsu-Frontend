@@ -80,7 +80,7 @@ export default function QuickCheckCard({
             {goodFitItems.map(item => (
               <li key={item.id} className="flex items-start gap-4 group">
                 {/* Custom circular green check icon based on the reference image */}
-                <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0F5132] text-white shadow-sm transition-transform group-hover:scale-105 duration-200">
+                <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-greenColor text-white shadow-sm transition-transform group-hover:scale-105 duration-200">
                   <Check className="h-3.5 w-3.5 stroke-[3.5]" />
                 </div>
                 <span className="text-base md:text-lg text-gray-700 font-normal leading-relaxed tracking-tight">

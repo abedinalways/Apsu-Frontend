@@ -38,7 +38,7 @@ export default function EligibilityCheckStepSeven() {
               <Textarea
                 {...field}
                 placeholder="Describe your concerns if you have any..."
-                className="min-h-[110px] resize-none rounded-xl border-gray-200  text-sm placeholder:text-grayColor1 w-full p-4 bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]"
+                className="min-h-[110px] resize-none rounded-xl border-gray-200  text-sm placeholder:text-grayColor1 w-full p-4 bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]"
               />
             </FormControl>
             <FormMessage />

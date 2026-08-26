@@ -103,7 +103,7 @@ export default function EligibilityCheckStepSix() {
                     onFocus={() => setShowSuggestions(true)}
                     placeholder="Search your medication name"
                     disabled={hasNoneSelected}
-                    className="pl-11 pr-4 py-2 rounded-2xl border-none text-sm w-full bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]"
+                    className="pl-11 pr-4 py-2 rounded-2xl border-none text-sm w-full bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]"
                   />
 
                   {/* Dynamic suggestions drop list dropdown portal container */}
