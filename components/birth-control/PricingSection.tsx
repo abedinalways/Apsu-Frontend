@@ -4,7 +4,6 @@ import PricingCardSection from "../Sleep/PricingCardSection";
 
 export default function PricingSection() {
   const handlePricingRedirect = () => {
-    console.log("Redirecting to onboarding funnel flow...");
   };
 
   return (

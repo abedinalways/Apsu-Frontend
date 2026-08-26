@@ -20,7 +20,7 @@ export default function BlogToolbar({
   onSearchChange,
 }: BlogToolbarProps) {
   return (
-    <div className="rounded-[24px] bg-[#e8f3ed] py-12 px-6  flex flex-col  items-center">
+    <div className="rounded-[24px] bg-lightGreenColor py-12 px-6  flex flex-col  items-center">
       <div>
         <BlogCategories
           categories={categories}

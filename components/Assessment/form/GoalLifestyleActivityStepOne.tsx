@@ -6,6 +6,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { FormData } from '@/zod/AssessmentSchema';
 // import { FormData } from "./schema";
@@ -39,6 +40,9 @@ export default function GoalLifestyleActivityStepOne() {
         name="weightLossGoal"
         render={() => (
           <FormItem className="space-y-2">
+            <FormLabel className="text-[14px] font-semibold text-blackColor">
+              What is your weight loss goal?
+            </FormLabel>
             <FormControl>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {GOAL_OPTIONS.map(option => {
@@ -55,7 +59,7 @@ export default function GoalLifestyleActivityStepOne() {
                       }
                       className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all ${
                         isSelected
-                          ? 'border-[#AFC1B6] bg-[#AFC1B6]/10 shadow-sm'
+                          ? 'border-lightGreenColor bg-lightGreenColor/10 shadow-sm'
                           : 'border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]'
                       }`}
                     >
@@ -63,8 +67,8 @@ export default function GoalLifestyleActivityStepOne() {
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                            ? 'border-[#AFC1B6] bg-[#AFC1B6] text-white'
-                            : 'border-gray-400 bg-white'
+                            ? 'border-lightGreenColor bg-lightGreenColor text-white'
+                            : 'border-grayColor1 bg-white'
                         }`}
                       >
                         {isSelected && (

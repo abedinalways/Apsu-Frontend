@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 
 import { Form } from '@/components/ui/form';
 
-
 import { useState } from 'react';
 import { ProfileFormValues } from '@/components/profile/type';
 import { profileSchema } from '@/lib/validations/profile.schema';
@@ -37,8 +36,6 @@ export default function EditProfileModal({
     try {
       setIsLoading(true);
 
-      console.log(values);
-
       // await profileService.updateProfile(values);
 
       onClose();
@@ -56,11 +53,11 @@ export default function EditProfileModal({
       <div className="relative flex max-h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-[12px] bg-white shadow">
         <div className="flex shrink-0 items-center justify-between border-b border-gray-100 bg-white p-4">
           <div>
-            <h2 className="text-xl font-medium text-[#102b1c]">
+            <h2 className="text-xl font-medium text-greenColor">
               Profile Settings
             </h2>
 
-            <p className="mt-0.5 text-sm font-light text-[#3b3b3c] md:text-[16px]">
+            <p className="mt-0.5 text-sm font-light text-grayColor1 md:text-[16px]">
               Manage your profile and preferences.
             </p>
           </div>
@@ -68,7 +65,7 @@ export default function EditProfileModal({
           <button
             type="button"
             onClick={onClose}
-            className="cursor-pointer rounded-full border border-gray-100 p-1.5 text-green-200 transition-colors hover:bg-gray-50 hover:text-gray-600"
+            className="cursor-pointer rounded-full border border-gray-100 p-1.5 text-lightGreenColor transition-colors hover:bg-whiteColor hover:text-grayColor1"
           >
             <X className="h-5 w-5" />
           </button>

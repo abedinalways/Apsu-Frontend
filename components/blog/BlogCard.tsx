@@ -28,29 +28,29 @@ export default function BlogCard({ blog }: BlogCardProps) {
       <div className="p-4 rounded-2xl bg-white md:h-[250px]">
         {/* Top */}
         <div className="mb-3 flex items-center justify-between gap-3">
-          <span className="text-[16px] font-medium uppercase tracking-[0.22em] text-[#008C5E]">
+          <span className="text-[16px] font-medium uppercase tracking-[0.22em] text-greenColor">
             {category}
           </span>
 
-          <span className="text-sm whitespace-nowrap text-[#7D7D7D]">
+          <span className="text-sm whitespace-nowrap text-grayColor1">
             {date} • {readTime}
           </span>
         </div>
 
         {/* Title */}
-        <h3 className="line-clamp-2 text-[18px] font-medium leading-[140%] text-[#292B2A]">
+        <h3 className="line-clamp-2 text-[18px] font-medium leading-[140%] text-blackColor">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="mt-3 line-clamp-3 text-[16px] leading-[170%] text-[#666]">
+        <p className="mt-3 line-clamp-3 text-[16px] leading-[170%] text-grayColor16">
           {description}
         </p>
 
         {/* Footer */}
         <Link
           href={href}
-          className="mt-5 inline-flex items-center gap-2 font-medium text-[#008C5E] transition-all hover:gap-3"
+          className="mt-5 inline-flex items-center gap-2 font-medium text-greenColor transition-all hover:gap-3"
         >
           Read more
           <span className="flex h-5 w-5 items-center justify-center rounded-full border border-current transition-all duration-300 group-hover/readmore:translate-x-1">

@@ -29,7 +29,7 @@ export default function CTAWidget() {
   );
 
   return (
-    <div className="overflow-hidden rounded-[20px] border border-[#ECECEC] bg-white shadow-[0_10px_30px_rgba(0,0,0,.04)]">
+    <div className="overflow-hidden rounded-[20px] border border-lightGreenColor bg-white shadow-[0_10px_30px_rgba(0,0,0,.04)]">
       <div className="relative aspect-[4/3]">
         <Image
           src="/images/blogDetails/Thumbnail.png"
@@ -49,7 +49,7 @@ export default function CTAWidget() {
       </div>
 
       <div className="p-6">
-        <h4 className="text-[24px] font-medium text-center text-[#292B2A]">
+        <h4 className="text-[24px] font-medium text-center text-primary">
           Start your journey today
         </h4>
 

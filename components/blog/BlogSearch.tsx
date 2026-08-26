@@ -26,7 +26,7 @@ export default function BlogSearch({ value, onChange }: BlogSearchProps) {
           w-full
           rounded-xl
           border
-          border-[#b8d9c6]
+          border-lightGreenColor
           bg-white
           pl-11
           pr-4

@@ -123,7 +123,7 @@ export default function MessageTabContainer() {
   if (!isHydrated) {
     return (
       <div className="flex items-center justify-center h-[400px]">
-        <p className="text-gray-500">Loading messages...</p>
+        <p className="text-grayColor1">Loading messages...</p>
       </div>
     );
   }
@@ -137,12 +137,12 @@ export default function MessageTabContainer() {
   }
 
   return (
-    <div className="w-full h-[550px] sm:h-[600px] flex rounded-[12px] border border-[#EBEAE4] overflow-hidden bg-white max-w-full relative mx-2">
+    <div className="w-full h-[550px] sm:h-[600px] flex rounded-[12px] border border-background overflow-hidden bg-white max-w-full relative mx-2">
       {/* Sidebar Toggle Button (Desktop) */}
       {!showSidebar && (
         <button
           onClick={() => setShowSidebar(true)}
-          className="hidden lg:block md:absolute md:top-9 left-2 -translate-y-1/2 z-40 bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
+          className="hidden lg:block md:absolute md:top-9 left-2 -translate-y-1/2 z-40 bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-greenColor transition-colors cursor-pointer"
           aria-label="Show sidebar"
         >
           <StepBackIcon className="w-4 h-4" />
@@ -152,9 +152,9 @@ export default function MessageTabContainer() {
       {/* Sidebar - Conversation List */}
       <div
         ref={sidebarRef}
-        className={`${showChat ? 'hidden md:flex' : 'flex md:flex'} w-full md:w-80 border-r border-[#EBEAE4] flex-col bg-white min-w-0 relative overflow-hidden`}
+        className={`${showChat ? 'hidden md:flex' : 'flex md:flex'} w-full md:w-80 border-r border-background flex-col bg-white min-w-0 relative overflow-hidden`}
       >
-        <div className="p-4 border-b border-[#F4F3EF]">
+        <div className="p-4 border-b border-background">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-lg font-semibold text-secondary-text">
               Messages
@@ -169,7 +169,7 @@ export default function MessageTabContainer() {
               </button>
               <button
                 onClick={() => setShowSidebar(false)}
-                className="hidden lg:block  bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-[#1e3a2a] transition-colors cursor-pointer"
+                className="hidden lg:block  bg-secondary-text text-white p-3 rounded-full shadow-lg hover:bg-greenColor transition-colors cursor-pointer"
                 aria-label="Hide sidebar"
               >
                 <StepForwardIcon className="w-4 h-4 text-white" />
@@ -177,13 +177,13 @@ export default function MessageTabContainer() {
             </div>
           </div>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-grayColor1" />
             <input
               type="text"
               value={searchQuery}
               onChange={e => updateSearch(e.target.value)}
               placeholder="Search messages"
-              className="w-full pl-9 pr-4 py-2 rounded-[12px] border border-[#EBEAE4] bg-[#FAF9F5] text-[14px] focus:outline-none focus:border-[#A3C9A8]"
+              className="w-full pl-9 pr-4 py-2 rounded-[12px] border border-background bg-background text-[14px] focus:outline-none focus:border-lightGreenColor"
             />
           </div>
         </div>
@@ -199,10 +199,10 @@ export default function MessageTabContainer() {
         className={`${showChat ? 'flex' : 'hidden md:flex'} ${!showSidebar ? 'lg:w-full lg:max-w-full' : ''} flex-1 flex-col bg-white min-w-0  w-full `}
       >
         {!showChat && (
-          <div className="md:hidden p-4 border-b border-[#F4F3EF]">
+          <div className="md:hidden p-4 border-b border-background">
             <button
               onClick={() => setShowChat(true)}
-              className="w-full flex items-center justify-center gap-2 bg-secondary-text text-white py-3 rounded-[12px] hover:bg-[#1e3a2a] transition-colors"
+              className="w-full flex items-center justify-center gap-2 bg-secondary-text text-white py-3 rounded-[12px] hover:bg-greenColor transition-colors"
             >
               <span className="text-sm font-medium">
                 Select a conversation to start chatting
@@ -212,24 +212,19 @@ export default function MessageTabContainer() {
         )}
         {activeConversation ? (
           <>
-            <div className="px-3 py-3 sm:px-4 sm:py-4 border-b border-[#F4F3EF] shrink-0">
+            <div className="px-3 py-3 sm:px-4 sm:py-4 border-b border-background shrink-0">
               <div className="flex items-center justify-between gap-2 min-w-0">
                 <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                   {/* Back button for mobile */}
                   <button
                     onClick={handleBackToList}
-                    className="md:hidden p-1.5 -ml-1 hover:bg-gray-100 rounded-full shrink-0"
+                    className="md:hidden p-1.5 -ml-1 hover:bg-lightgreenColor rounded-full shrink-0"
                     aria-label="Back to conversations"
                   >
-                    <ArrowLeft className="w-5 h-5 text-gray-700" />
+                    <ArrowLeft className="w-5 h-5 text-blackColor" />
                   </button>
                   <div className="shrink-0 md:ml-10">
-                    <div
-                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold "
-                      style={{
-                        backgroundColor: activeConversation.avatarColor,
-                      }}
-                    >
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold bg-primaryColor">
                       {activeConversation.initials}
                     </div>
                   </div>
@@ -239,7 +234,7 @@ export default function MessageTabContainer() {
                         {activeConversation.participantName}
                       </h3>
                     </div>
-                    <p className="text-xs text-gray-500 truncate">
+                    <p className="text-xs text-grayColor1 truncate">
                       We typically reply within a few hours
                     </p>
                   </div>
@@ -253,12 +248,12 @@ export default function MessageTabContainer() {
                     <Menu className="w-4 h-4 text-gray-700" />
                   </button> */}
                   <div className="md:flex gap-2 block space-y-2 md:space-y-0">
-                    <div className="flex  items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg px-2 py-1">
-                      <Languages className="w-3 h-3 text-gray-600" />
+                    <div className="flex  items-center gap-1.5 bg-lightGreenColor border border-lightGreenColor rounded-lg px-2 py-1">
+                      <Languages className="w-3 h-3 text-grayColor1" />
                       <select
                         value={userLanguage}
                         onChange={e => setUserLanguage(e.target.value)}
-                        className="bg-transparent text-xs text-gray-700 outline-none cursor-pointer"
+                        className="bg-transparent text-xs text-blackColor outline-none cursor-pointer"
                       >
                         <option value="Korean">Korean</option>
                         <option value="Spanish">Spanish</option>
@@ -279,14 +274,14 @@ export default function MessageTabContainer() {
                           : 'Show all translations'
                       }
                     >
-                      <Languages className="w-3 h-3 text-gray-600" />
-                      <span className="text-xs text-gray-700 font-medium">
+                      <Languages className="w-3 h-3 text-grayColor1" />
+                      <span className="text-xs text-blackColor font-medium">
                         {showAllTranslations ? 'Hide' : 'Translate'}
                       </span>
                     </button>
                   </div>
-                  <button className="p-2 hover:bg-gray-100 rounded-full shrink-0">
-                    <Search className="w-4 h-4 text-gray-500" />
+                  <button className="p-2 hover:bg-grayColor1 rounded-full shrink-0">
+                    <Search className="w-4 h-4 text-grayColor1" />
                   </button>
                 </div>
               </div>
@@ -295,7 +290,7 @@ export default function MessageTabContainer() {
               ref={messagesContainerRef}
               className="flex-1 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-6 space-y-3 sm:space-y-4 min-w-0"
             >
-              <div className="text-center text-xs text-gray-400 py-1 sm:py-2">
+              <div className="text-center text-xs text-grayColor1 py-1 sm:py-2">
                 Today, Jul 20, 2026
               </div>
               {activeMessages.map(message => (

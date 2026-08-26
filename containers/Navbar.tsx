@@ -76,10 +76,10 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 className={cn(
-                  'relative text-lg transition-colors duration-300 hover:text-primary',
+                  'relative text-lg transition-colors duration-300 hover:text-primaryColor',
                   pathname === item.path
-                    ? 'text-primary font-medium'
-                    : 'text-black',
+                    ? 'text-greenColor font-medium'
+                    : 'text-primaryColor',
                 )}
               >
                 {item.name}
@@ -94,9 +94,9 @@ export default function Navbar() {
               <div className="hidden md:block relative">
                 <button
                   onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
-                  className="flex items-center gap-2  text-white rounded-full aspect-square pl-1 pr-3 py-1 "
+                  className="flex items-center gap-2  text-whiteColor rounded-full aspect-square pl-1 pr-3 py-1 "
                 >
-                  <div className="w-8 h-8 rounded-full bg-white text-secondary-text flex items-center justify-center font-semibold text-sm">
+                  <div className="w-8 h-8 rounded-full bg-whiteColor text-secondary-text flex items-center justify-center font-semibold text-sm">
                     {/* {user.email.charAt(0).toUpperCase()} */}
                     <UserIcon />
                   </div>
@@ -113,26 +113,26 @@ export default function Navbar() {
                       className="fixed inset-0 z-40"
                       onClick={() => setProfileDropdownOpen(false)}
                     />
-                    <div className="absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-lg border border-gray-200 py-2 z-50">
-                      <div className="px-4 py-3 border-b border-gray-100">
-                        <p className="text-sm font-medium text-gray-900 truncate py-2">
+                    <div className="absolute right-0 mt-2 w-64 bg-whiteColor rounded-2xl shadow-lg border border- py-2 z-50">
+                      <div className="px-4 py-3 border-b border-lightGreenColor">
+                        <p className="text-sm font-medium text-blackColor truncate py-2">
                           {user.email}
                         </p>
                       </div>
                       <Link
                         href="/profile"
                         onClick={() => setProfileDropdownOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 hover:bg-[#ecf9f1] transition-colors"
+                        className="flex items-center gap-3 px-4 py-3 hover:bg-lightGreenColor transition-colors"
                       >
-                        <span className="text-xs md:text-sm  font-normal text-gray-700">
+                        <span className="text-xs md:text-sm  font-normal text-blackColor">
                           My Account
                         </span>
                       </Link>
                       <button
                         onClick={handleLogout}
-                        className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[#ecf9f1] transition-colors text-left"
+                        className="w-full flex items-center gap-3 px-4 py-3 hover:bg-lightGreenColor transition-colors text-left"
                       >
-                        <span className="text-xs md:text-sm font-normal text-[#3b3b3c]">
+                        <span className="text-xs md:text-sm font-normal text-grayColor1">
                           Log Out
                         </span>
                       </button>
@@ -154,7 +154,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-black text-2xl flex items-center lg:hidden"
+              className="text-blackColor text-2xl flex items-center lg:hidden"
             >
               {menuOpen ? (
                 <FaRegCircleXmark className="size-8" />
@@ -174,8 +174,8 @@ export default function Navbar() {
         )}
       >
         <div className="w-full absolute top-0 p-3 right-0 h-full bg-background md:max-w-[320px] md:rounded-l-2xl">
-          <div className="border bg-white h-full rounded-2xl px-2 py-3 space-y-15">
-            <div className="flex w-full justify-between items-center pb-2 border-b-2 border-[#CDDCD3]">
+          <div className="border bg-whiteColor h-full rounded-2xl px-2 py-3 space-y-15">
+            <div className="flex w-full justify-between items-center pb-2 border-b-2 border-lightGreenColor">
               <Image src="/logo.png" alt="apsu" height={32} width={87} />
               <button
                 aria-label="close-menu"
@@ -191,9 +191,9 @@ export default function Navbar() {
                   key={item.path}
                   href={item.path}
                   className={cn(
-                    'transition-colors duration-300 hover:text-primary',
+                    'transition-colors duration-300 hover:text-primaryColor',
                     pathname === item.path
-                      ? 'text-primary font-medium'
+                      ? 'text-primaryColor font-medium'
                       : 'text-secondary',
                   )}
                   onClick={() => setMenuOpen(false)}
@@ -208,8 +208,8 @@ export default function Navbar() {
                 /* Logged In: Show Profile Info */
                 <>
                   <div className="text-center">
-                    <p className="text-sm text-gray-500">Signed in as</p>
-                    <p className="text-sm font-medium text-gray-900 truncate max-w-[200px]">
+                    <p className="text-sm text-grayColor1">Signed in as</p>
+                    <p className="text-sm font-medium text-blackColor truncate max-w-[200px]">
                       {user.email}
                     </p>
                   </div>
@@ -219,7 +219,7 @@ export default function Navbar() {
                   <Button
                     variant="outline"
                     onClick={handleLogout}
-                    className="text-lg w-full text-red-600 border-red-600"
+                    className="text-lg w-full text-redColor border-redColor"
                   >
                     Logout
                   </Button>

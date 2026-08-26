@@ -15,8 +15,8 @@ export default function EmptyTabState({
         <DemoIcon/>
       </div>
       <div className="space-y-1">
-        <h3 className="text-lg font-medium text-gray-900">{message}</h3>
-        <p className="text-xs md:text-sm text-gray-400 leading-relaxed font-light px-4">
+        <h3 className="text-lg font-medium text-blackColor">{message}</h3>
+        <p className="text-xs md:text-sm text-grayColor1 leading-relaxed font-light px-4">
           {subMessage}
         </p>
       </div>

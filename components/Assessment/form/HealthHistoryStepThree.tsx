@@ -57,10 +57,10 @@ export default function HealthHistoryStepThree() {
     <div className="space-y-6">
       {/* Step Description Headers from Screenshot 2026-07-05 121717.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Do you faced any side effects during your medication?
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
+        <p className="text-[14px] text-grayColor1 mt-1.5">
           Please select all that apply.
         </p>
       </div>
@@ -80,7 +80,7 @@ export default function HealthHistoryStepThree() {
                         key={effect}
                         type="button"
                         onClick={() => handleToggleSideEffect(effect)}
-                        className="px-4 py-2 rounded-full border border-[#AFC1B6] bg-white text-xs font-medium text-secondary-bg hover:bg-[#AFC1B6]/10 transition-all active:scale-95"
+                        className="px-4 py-2 rounded-full border border-lightGreenColor bg-white text-xs font-medium text-secondary-bg hover:bg-lightGreenColor/10 transition-all active:scale-95"
                       >
                         {effect}
                       </button>
@@ -89,9 +89,9 @@ export default function HealthHistoryStepThree() {
                 )}
 
                 {/* Subfield Label section */}
-                <FormLabel className="text-[14px] font-semibold text-[#111] flex items-center gap-0.5 pt-2">
+                <FormLabel className="text-[14px] font-semibold text-blackColor flex items-center gap-0.5 pt-2">
                   Describe any side effects you have experienced:{' '}
-                  <span className="text-red-500">*</span>
+                  <span className="text-redColor">*</span>
                 </FormLabel>
 
                 {/* Active dark badge layout area matching Screenshot 2026-07-05 121744.png */}
@@ -100,7 +100,7 @@ export default function HealthHistoryStepThree() {
                     {selectedList.map(effect => (
                       <div
                         key={effect}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#AFC1B6] bg-secondary-bg text-white text-xs font-medium shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-lightGreenColor bg-secondary-bg text-white text-xs font-medium shadow-sm"
                       >
                         <span>{effect}</span>
                         <button
@@ -126,12 +126,16 @@ export default function HealthHistoryStepThree() {
         control={control}
         name="sideEffectsAdditionalDetails"
         render={({ field }) => (
-          <FormItem>
+          <FormItem className="space-y-2">
+            <FormLabel className="text-[14px] font-semibold text-blackColor flex items-center gap-0.5">
+              Describe any side effects you have experienced:{' '}
+              <span className="text-redColor">*</span>
+            </FormLabel>
             <FormControl>
               <Textarea
                 {...field}
                 placeholder="add any additional details here..."
-                className="min-h-[110px] resize-none rounded-2xl text-sm placeholder:text-gray-400 p-4 w-full bg-[background] border-[background]  h-11 text-[16px] text-[#6c6c6c] focus-visible:ring-[1px] "
+                className="min-h-[110px] resize-none rounded-2xl text-sm placeholder:text-grayColor1 p-4 w-full bg-background border-background  h-11 text-[16px] text-grayColor1 focus-visible:ring-[1px] "
               />
             </FormControl>
             <FormMessage />

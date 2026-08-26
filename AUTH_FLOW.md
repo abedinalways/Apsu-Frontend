@@ -60,7 +60,11 @@ Forgot Password Flow:
 
 ```
 ├── lib/services/
-│   └── auth.service.ts          # Auth service with demo implementations
+│   └── auth/
+│       ├── index.ts            # Auth service entry point (demo/api switching)
+│       ├── demo.auth.ts        # Demo implementation
+│       ├── api.auth.ts         # Real API implementation (empty - ready for backend)
+│       └── types.ts            # Shared types & IAuthService interface
 ├── contexts/
 │   └── AuthContext.tsx          # React context for auth state management
 ├── middleware.ts                # Route protection middleware
@@ -74,22 +78,29 @@ Forgot Password Flow:
 │   └── SetNewPasswordForm.tsx
 └── app/
     ├── layout.tsx               # Root layout with AuthProvider
-    ├── (auth)/login/page.tsx    # Login page
-    └── (user)/profile/          # Protected profile page
+    └── (auth)/login/page.tsx    # Login page
 ```
 
 ## Key Features
 
-### 1. **Auth Service** (`lib/services/auth.service.ts`)
+### 1. **Auth Service** (`lib/services/auth/index.ts`)
 - Centralized authentication logic
-- Demo implementations with localStorage
+- Switches between demo and real API via `NEXT_PUBLIC_AUTH_MODE`
+- Demo implementation uses cookie-based session
 - Easy to replace with real API calls
 
+**Switching:**
+```env
+NEXT_PUBLIC_AUTH_MODE=demo   # default
+NEXT_PUBLIC_AUTH_MODE=api    # use real backend
+```
+
 **Methods:**
-- `createPassword(email, password)` - Create new account
-- `signIn(email, password)` - Sign in existing user
-- `forgotPassword(email)` - Request password reset
-- `resetPassword(email, code, newPassword)` - Reset password
+- `signIn(payload)` - Sign in existing user
+- `createPassword(payload)` - Create new account
+- `register(payload)` - Register new user
+- `forgotPassword(payload)` - Request password reset
+- `resetPassword(payload)` - Reset password
 - `getCurrentUser()` - Get current user
 - `isAuthenticated()` - Check auth status
 - `logout()` - Logout user
@@ -138,190 +149,49 @@ All forms include:
 
 ## Integration with Backend API
 
-### Step 1: Update Auth Service
+### Step 1: Implement `lib/services/auth/api.auth.ts`
 
-Replace demo implementations with real API calls:
-
-```typescript
-// lib/services/auth.service.ts
-
-async createPassword(data: CreatePasswordData): Promise<AuthResponse> {
-  // Replace this:
-  // await this.delay(1000);
-  
-  // With this:
-  const response = await fetch(`${this.baseUrl}/auth/create-password`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  });
-  
-  const result = await response.json();
-  return result;
-}
-
-async signIn(data: SignInData): Promise<AuthResponse> {
-  // Replace demo logic with:
-  const response = await fetch(`${this.baseUrl}/auth/signin`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  });
-  
-  const result = await response.json();
-  
-  if (result.success && result.token) {
-    this.setToken(result.token);
-  }
-  
-  return result;
-}
-```
-
-### Step 2: Update Token Storage
-
-Replace localStorage with HTTP-only cookies for security:
+The `api.auth.ts` file already exists with stub implementations. Update each method to call the real backend endpoints once they are defined. Do not invent endpoint paths or request formats — use the contract agreed with the backend team.
 
 ```typescript
-// In middleware.ts
-const token = request.cookies.get('auth_token')?.value;
+// lib/services/auth/api.auth.ts
 
-// In auth.service.ts
-private setToken(token: string): void {
-  // Use cookies instead of localStorage
-  document.cookie = `auth_token=${token}; path=/; max-age=${7 * 24 * 60 * 60}`;
+async signIn(payload: SignInPayload): Promise<AuthResponse> {
+  const response = await Fetch.post('<real-endpoint>', payload);
+  return response;
 }
+
+async createPassword(payload: RegisterPayload): Promise<AuthResponse> {
+  const response = await Fetch.post('<real-endpoint>', payload);
+  return response;
+}
+
+// ... implement other methods similarly
 ```
 
-### Step 3: Update Middleware
+Then set `NEXT_PUBLIC_AUTH_MODE=api` in `.env.local`.
 
-Add backend token validation:
+### Step 2: Token Storage
 
-```typescript
-export async function middleware(request: NextRequest) {
-  const token = request.cookies.get('auth_token')?.value;
-  
-  if (token && isProtectedRoute) {
-    // Verify token with backend
-    const response = await fetch(`${baseUrl}/auth/verify`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    
-    if (!response.ok) {
-      // Token invalid, redirect to login
-      return NextResponse.redirect(loginUrl);
-    }
-  }
-}
-```
+The demo service already uses cookie-based sessions via `lib/session.ts`. The real API should return a session cookie from the backend. Do not store tokens in localStorage.
+
+### Step 3: Middleware
+
+The existing middleware already reads cookies for route protection. Add backend token validation when the real API is ready by verifying the session cookie with the backend.
 
 ### Step 4: Environment Variables
 
 Add to `.env.local`:
 
 ```env
-NEXT_PUBLIC_API_URL=https://your-api-domain.com/api
-```
-
-## API Endpoints (Expected)
-
-### POST /api/auth/create-password
-**Request:**
-```json
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "user": {
-    "id": "123",
-    "email": "user@example.com"
-  },
-  "token": "jwt_token_here"
-}
-```
-
-### POST /api/auth/signin
-**Request:**
-```json
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "user": {
-    "id": "123",
-    "email": "user@example.com"
-  },
-  "token": "jwt_token_here"
-}
-```
-
-### POST /api/auth/forgot-password
-**Request:**
-```json
-{
-  "email": "user@example.com"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true
-}
-```
-
-### POST /api/auth/reset-password
-**Request:**
-```json
-{
-  "email": "user@example.com",
-  "code": "123456",
-  "newPassword": "newpassword123"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true
-}
-```
-
-### GET /api/auth/verify
-**Headers:**
-```
-Authorization: Bearer <token>
-```
-
-**Response:**
-```json
-{
-  "valid": true,
-  "user": {
-    "id": "123",
-    "email": "user@example.com"
-  }
-}
+NEXT_PUBLIC_API_URL=https://your-api-domain.com
 ```
 
 ## Security Considerations
 
 ### Current (Demo):
-- ⚠️ Passwords stored in localStorage (insecure)
-- ⚠️ Simple base64 encoding (not real hashing)
-- ⚠️ No HTTPS enforcement
+- ⚠️ Demo mode uses in-memory/cookie session (not real password hashing)
+- ⚠️ No HTTPS enforcement in development
 - ⚠️ Demo token validation
 
 ### Production:
@@ -350,10 +220,10 @@ Authorization: Bearer <token>
    - Use code `123456`
    - Reset password
    - Sign in with new password
-5. Test route protection:
-   - Logout (clear localStorage)
-   - Try accessing `/profile`
-   - Verify redirect to `/login`
+ 5. Test route protection:
+    - Logout
+    - Try accessing `/profile`
+    - Verify redirect to `/login`
 
 ### Automated Testing:
 ```typescript
@@ -385,7 +255,7 @@ describe('Authentication Flow', () => {
 - Verify cookies are being set correctly
 
 ### Issue: Auth state not persisting
-- Check localStorage/cookies on page refresh
+- Check cookies on page refresh
 - Verify AuthProvider is wrapping the app
 - Check token expiration
 

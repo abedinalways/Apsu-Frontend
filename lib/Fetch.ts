@@ -1,5 +1,6 @@
 import axios from "axios";
 import { AppConfig } from "../config/app.config";
+import { Session } from "./session";
 
 type AdapterOption = "fetch" | "axios";
 
@@ -10,12 +11,39 @@ axios.defaults.baseURL = baseUrl;
 axios.defaults.headers.common["Content-Type"] = "application/json";
 axios.defaults.withCredentials = true;
 
+let interceptorAdded = false;
+
+function ensureAuthInterceptor() {
+  if (interceptorAdded) return;
+  interceptorAdded = true;
+
+  axios.interceptors.request.use(config => {
+    const token = Session.getToken();
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  });
+
+  axios.interceptors.response.use(
+    response => response,
+    error => {
+      if (error.response?.status === 401) {
+        Session.clearAll();
+      }
+      return Promise.reject(error);
+    }
+  );
+}
+
+ensureAuthInterceptor();
+
 /**
  * Custom fetch class
  *
  * Credentials are included automatically for all requests.
- * Do NOT pass Authorization headers in individual services;
- * use a dedicated auth header interceptor here when the backend is ready.
+ * Auth headers are attached automatically via axios interceptor
+ * when a session token is present.
  */
 export class Fetch {
   private static _adapter: AdapterOption = "axios";

@@ -46,8 +46,6 @@ export default function LoginForm() {
 
   const handlePasswordCreated = () => {
     // Navigate to dashboard or home page
-    console.log('Login completed for:', email);
-    // router.push('/dashboard');
   };
 
   return (

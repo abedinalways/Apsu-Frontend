@@ -137,7 +137,7 @@ export default function PrescriptionsTab() {
         <h2 className="text-2xl md:text-[32px] font-semibold text-secondary-text">
           Prescriptions
         </h2>
-        <p className="mt-2 text-sm md:text-base text-[#666666]">
+        <p className="mt-2 text-sm md:text-base text-grayColor1">
           Approved by APSU physicians.
         </p>
       </div>
@@ -146,11 +146,11 @@ export default function PrescriptionsTab() {
         {prescriptions.map(item => (
           <div
             key={item.id}
-            className="group rounded-[24px] border border-[#D8E6DE] bg-white p-4 md:p-6 transition-all duration-300 hover:border-[#C8DBD0] hover:shadow-lg"
+            className="group rounded-[24px] border border-lightGreenColor bg-white p-4 md:p-6 transition-all duration-300 hover:border-lightGreenColor hover:shadow-lg"
           >
             <div className="hidden md:flex items-start justify-between gap-4">
               <div className="flex flex-1 items-start gap-4">
-                <div className="flex h-14 w-14 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-[#14311F] text-white">
+                <div className="flex h-14 w-14 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-primaryColor text-white">
                   {item.type === 'injection' ? (
                     <Syringe className="h-6 w-6 md:h-7 md:w-7" />
                   ) : (
@@ -162,14 +162,14 @@ export default function PrescriptionsTab() {
                     <h3 className="text-md md:text-lg font-semibold leading-tight text-secondary-text">
                       {item.treatmentName}
                     </h3>
-                    <span className="w-fit rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-3 py-1 text-xs font-medium text-[#21A45A]">
+                    <span className="w-fit rounded-full border border-lightGreenColor bg-background px-3 py-1 text-xs font-medium text-greenColor">
                       {item.status}
                     </span>
                   </div>
-                  <p className="mt-2 text-sm text-[#666666] flex items-start">
+                  <p className="mt-2 text-sm text-grayColor1 flex items-start">
                     {item.treatmentSub}
                   </p>
-                  <div className="mt-4 flex items-center gap-2 text-[#767676]">
+                  <div className="mt-4 flex items-center gap-2 text-grayColor1">
                     <CalendarDays className="h-4 w-4 md:h-5 md:w-5" />
                     <span className="text-sm">{item.duration}</span>
                   </div>
@@ -179,7 +179,7 @@ export default function PrescriptionsTab() {
                 <div className="relative">
                   <button
                     onClick={e => handleMenuClick(e, item.id)}
-                    className="flex h-10 w-10 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-secondary-text"
+                    className="flex h-10 w-10 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full border border-lightGreenColor text-grayColor1 transition hover:bg-background hover:text-secondary-text"
                   >
                     <MoreVertical className="h-5 w-5" />
                   </button>
@@ -194,7 +194,7 @@ export default function PrescriptionsTab() {
             </div>
 
             <div className="flex md:hidden items-start gap-3">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#14311F] text-white">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primaryColor text-white">
                 {item.type === 'injection' ? (
                   <Syringe className="h-5 w-5" />
                 ) : (
@@ -204,16 +204,16 @@ export default function PrescriptionsTab() {
               <div className="min-w-0 flex-1">
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0 flex-1">
-                    <span className="flex items-start rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-3 py-1 text-xs font-medium text-[#21A45A] w-fit">
+                    <span className="flex items-start rounded-full border border-lightGreenColor bg-background px-3 py-1 text-xs font-medium text-greenColor w-fit">
                       {item.status}
                     </span>
                     <h3 className="mt-3 text-base font-semibold leading-tight text-secondary-text flex items-start">
                       {item.treatmentName}
                     </h3>
-                    <p className="mt-2 text-sm text-[#666666] flex items-start">
+                    <p className="mt-2 text-sm text-grayColor1 flex items-start">
                       {item.treatmentSub}
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-[#767676]">
+                    <div className="mt-4 flex items-center gap-2 text-grayColor1">
                       <CalendarDays className="h-4 w-4" />
                       <span className="text-sm">{item.duration}</span>
                     </div>
@@ -221,7 +221,7 @@ export default function PrescriptionsTab() {
                   <div className="relative">
                     <button
                       onClick={e => handleMenuClick(e, item.id)}
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-secondary-text"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-lightGreenColor text-grayColor1 transition hover:bg-background hover:text-secondary-text"
                     >
                       <MoreVertical className="h-5 w-5" />
                     </button>

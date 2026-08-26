@@ -10,7 +10,7 @@ export default function Heading({ id, content, layout }: HeadingProps) {
   const heading = (
     <h2
       id={id}
-      className="scroll-mt-16 text-xl md:text-[1.5rem] font-medium text-[#111] tracking-tight leading-[116%]"
+      className="scroll-mt-16 text-xl md:text-[1.5rem] font-medium text-primary tracking-tight leading-[116%]"
     >
       {content}
     </h2>

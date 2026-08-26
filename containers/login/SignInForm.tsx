@@ -9,11 +9,27 @@ interface SignInFormProps {
   onForgotPassword: () => void;
 }
 
+/**
+ * Validate the post-login redirect target to prevent open-redirect attacks.
+ * Only internal, same-origin relative paths are allowed (e.g. "/profile").
+ * Anything else — external URLs, protocol-relative "//evil.com", query-only
+ * values — falls back to the default "/profile".
+ */
+function getSafeRedirect(redirect: string | null): string {
+  if (!redirect) return '/profile';
+  const isSafeInternalPath =
+    redirect.startsWith('/') &&
+    !redirect.startsWith('//') &&
+    !redirect.startsWith('/\\');
+  return isSafeInternalPath ? redirect : '/profile';
+}
+
 export default function SignInForm({ onForgotPassword }: SignInFormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPass, setShowPass] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -21,9 +37,12 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
 
     if (!email || !password) {
-      toast.error('Please enter both email and password.');
+      const message = 'Please enter both email and password.';
+      setError(message);
+      toast.error(message);
       return;
     }
 
@@ -34,13 +53,17 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
 
       if (result.success) {
         toast.success('Welcome back! Login successful.');
-        const redirectTo = searchParams.get('redirect') || '/profile';
+        const redirectTo = getSafeRedirect(searchParams.get('redirect'));
         router.push(redirectTo);
       } else {
-        toast.error(result.error || 'Login failed. Please try again.');
+        const errorMessage = result.error || 'Login failed. Please try again.';
+        setError(errorMessage);
+        toast.error(errorMessage);
       }
     } catch {
-      toast.error('An unexpected error occurred. Please try again.');
+      const errorMessage = 'An unexpected error occurred. Please try again.';
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -49,20 +72,26 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
   return (
     <div className="w-full max-w-sm mx-auto space-y-6 font-[Work_Sans]">
       <div className="space-y-2">
-        <h2 className="text-2xl md:text-[28px] font-medium text-gray-900 tracking-tight ">
+        <h2 className="text-2xl md:text-[28px] font-medium text-blackColor tracking-tight ">
           Welcome Back
         </h2>
-        <p className="text-sm md:text-[1rem] text-gray-500 leading-relaxed">
+        <p className="text-sm md:text-[1rem] text-grayColor1 leading-relaxed">
           Access your treatments, prescriptions, consultations, and order
           updates.
         </p>
       </div>
 
+      {error && (
+        <div className="p-3 bg-whiteColor border border-orangeColor rounded-lg">
+          <p className="text-sm text-redColor">{error}</p>
+        </div>
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
           <label
             htmlFor="signin-email"
-            className="text-base sm:text-[18px] font-medium text-black"
+            className="text-base sm:text-[18px] font-medium text-blackColor"
           >
             Email Address
           </label>
@@ -72,16 +101,16 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="maria@example.com"
-            className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text transition-colors"
+            className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 focus:outline-none focus:border-secondary-text transition-colors"
           />
         </div>
 
         <div className="space-y-1">
           <label
             htmlFor="signin-password"
-            className="text-sm font-medium text-black"
+            className="text-sm font-medium text-blackColor"
           >
-            Password <span className="text-red-500">*</span>
+            Password <span className="text-redColor">*</span>
           </label>
           <div className="relative">
             <input
@@ -90,11 +119,11 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder="Your password"
-              className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+              className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 focus:outline-none focus:border-secondary-text pr-12 transition-colors"
             />
             <button
               type="button"
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 z-20"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-grayColor1 hover:text-grayColor1 z-20"
               onClick={() => setShowPass(!showPass)}
             >
               {showPass ? (
@@ -138,7 +167,7 @@ export default function SignInForm({ onForgotPassword }: SignInFormProps) {
             <button
               type="button"
               onClick={onForgotPassword}
-              className="text-xs text-red-400 hover:underline"
+              className="text-xs text-redColor hover:underline"
             >
               Forgot Password
             </button>

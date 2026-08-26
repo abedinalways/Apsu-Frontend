@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { authService } from '@/lib/services/auth';
 
 // ─── Context Types ─────────────────────────────────────────────────────────────
@@ -24,9 +24,18 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    () => authService.isAuthenticated()
+  );
   const [isLoading, setIsLoading] = useState(true);
 
-  const isAuthenticated = authService.isAuthenticated();
+  // Re-hydrate auth state on mount. Loading only reflects the initial
+  // auth check (and in-flight sign-in/register calls). Without this a
+  // first-time visitor would stay stuck in a permanent loading state.
+  useEffect(() => {
+    setIsAuthenticated(authService.isAuthenticated());
+    setIsLoading(false);
+  }, []);
 
   // ─── Actions ────────────────────────────────────────────────────────────────
 
@@ -41,6 +50,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const response = await authService.signIn({ email, password });
 
       if (response.success) {
+        setIsAuthenticated(true);
         setIsLoading(false);
         return { success: true };
       }
@@ -113,6 +123,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = () => {
     authService.logout();
+    setIsAuthenticated(false);
     setError(null);
   };
 

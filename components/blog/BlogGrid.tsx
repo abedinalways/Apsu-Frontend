@@ -9,7 +9,7 @@ export default function BlogGrid({ blogs }: BlogGridProps) {
   if (blogs.length === 0) {
     return (
       <div className="flex h-64 items-center justify-center rounded-[24px] bg-white">
-        <p className="text-lg text-gray-500">No blogs found.</p>
+        <p className="text-lg text-bulletColor">No blogs found.</p>
       </div>
     );
   }

@@ -34,7 +34,7 @@ export default function BlogHero({ blog }: Props) {
                 font-medium
                 leading-[115%]
                 tracking-[-0.03em]
-                text-[#17332A]
+                text-primaryColor
 
               "
             >
@@ -47,17 +47,17 @@ export default function BlogHero({ blog }: Props) {
                 className="
                   uppercase
                   tracking-[0.18em]
-                  text-[#008C5E]
+                  text-greenColor
                 "
               >
                 {blog.category}
               </span>
 
-            <span className="text-green-300" >
+            <span className="text-greenColor" >
               |
               </span>
 
-              <span className="text-[#666666]">{blog.readTime}</span>
+              <span className="text-grayColor1">{blog.readTime}</span>
             </div>
           </div>
       </div>

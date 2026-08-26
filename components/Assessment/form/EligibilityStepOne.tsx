@@ -27,14 +27,14 @@ export default function EligibilityStepOne() {
   };
 
   return (
-    <div className="w-full bg-[background] border border-gray-100 rounded-2xl p-6 sm:p-8 space-y-6">
+    <div className="w-full bg-background border border-gray-100 rounded-2xl p-6 sm:p-8 space-y-6">
       {/* Title Header text matched exactly from Frame 195.png */}
       <div className="space-y-4">
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           You&apos;re almost done!
         </h2>
-        <div className="h-[1px] w-full bg-gray-200/60" />
-        <p className="text-[14px] text-[#111]">
+        <div className="h-px w-full bg-gray-200/60" />
+        <p className="text-[14px] text-blackColor">
           Before you continue, please review the following:
         </p>
       </div>
@@ -53,9 +53,9 @@ export default function EligibilityStepOne() {
                 {REVIEW_ITEMS.map((text, idx) => (
                   <div key={idx} className="flex items-start gap-3.5 group">
                     <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0F5132] text-white transition-transform group-hover:scale-105">
-                      <Check className="h-3.5 w-3.5 stroke-[3]" />
+                      <Check className="h-3.5 w-3.5 stroke-3" />
                     </div>
-                    <span className="text-[14px] text-[#111] leading-relaxed">
+                    <span className="text-[14px] text-blackColor leading-relaxed">
                       {text}
                     </span>
                   </div>

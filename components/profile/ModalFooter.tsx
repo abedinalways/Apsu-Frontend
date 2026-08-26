@@ -15,7 +15,7 @@ export default function ModalFooter({
         type="button"
         onClick={onClose}
         disabled={isLoading}
-        className="h-11 cursor-pointer rounded-full border border-gray-200 px-6 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
+        className="h-11 cursor-pointer rounded-full border border-gray-200 px-6 text-sm font-medium text-grayColor1 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
       >
         Cancel
       </button>
@@ -24,7 +24,7 @@ export default function ModalFooter({
         type="submit"
         form="edit-profile-form"
         disabled={isLoading}
-        className="flex h-11 min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-secondary-text px-6 text-sm font-medium text-white transition-colors hover:bg-[#1c3d2a] disabled:cursor-not-allowed disabled:bg-secondary-text/70"
+        className="flex h-11 min-w-[140px] cursor-pointer items-center justify-center rounded-full bg-secondary-text px-6 text-sm font-medium text-white transition-colors hover:bg-greenColor disabled:cursor-not-allowed disabled:bg-secondary-text/70"
       >
         {isLoading ? 'Updating...' : 'Update & Save'}
       </button>

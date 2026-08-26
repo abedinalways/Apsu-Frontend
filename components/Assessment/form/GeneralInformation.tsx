@@ -27,7 +27,7 @@ export default function GeneralInformation() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-[20px] font-semibold text-[#102b1c]">
+      <h2 className="text-[20px] font-semibold text-greenColor">
         Tell us about yourself first!
       </h2>
 
@@ -37,14 +37,14 @@ export default function GeneralInformation() {
           name="firstName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[14px] text-[#111]">
-                First Name <span className="text-red-500">*</span>
+              <FormLabel className="text-[14px] text-blackColor">
+                First Name <span className="text-redColor">*</span>
               </FormLabel>
               <FormControl>
                 <Input
                   placeholder="First Name"
                   {...field}
-                  className="bg-[background] h-14! text-[16px] text-[#6c6c6c] focus-visible:ring-[1px]"
+                  className="bg-background h-14! text-[16px] text-grayColor1 focus-visible:ring-[1px]"
                 />
               </FormControl>
               <FormMessage />
@@ -56,14 +56,14 @@ export default function GeneralInformation() {
           name="lastName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[14px] text-[#111]">
-                Last Name <span className="text-red-500">*</span>
+              <FormLabel className="text-[14px] text-blackColor">
+                Last Name <span className="text-redColor">*</span>
               </FormLabel>
               <FormControl>
                 <Input
                   placeholder="Last Name"
                   {...field}
-                  className="bg-[background] h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                  className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
                 />
               </FormControl>
               <FormMessage />
@@ -77,14 +77,14 @@ export default function GeneralInformation() {
         name="dob"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-[14px] text-[#111]">
-              Date of Birth <span className="text-red-500">*</span>
+            <FormLabel className="text-[14px] text-blackColor">
+              Date of Birth <span className="text-redColor">*</span>
             </FormLabel>
             <FormControl>
               <Input
                 type="date"
                 {...field}
-                className="bg-[background] h-14! text-[16px] text-[#6c6c6c] flex flex-col pt-4 focus-visible:ring-[1px]"
+                className="bg-background h-14! text-[16px] text-grayColor1 flex flex-col pt-4 focus-visible:ring-[1px]"
               />
             </FormControl>
             <FormMessage />
@@ -97,8 +97,8 @@ export default function GeneralInformation() {
         name="gender"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-[14px] text-[#111]">
-              Gender <span className="text-red-500">*</span>
+            <FormLabel className="text-[14px] text-blackColor">
+              Gender <span className="text-redColor">*</span>
             </FormLabel>
             <FormControl>
               <RadioGroup
@@ -109,9 +109,9 @@ export default function GeneralInformation() {
                 {genders.map(g => (
                   <div
                     key={g}
-                    className={`flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full ${
+                    className={`flex items-center justify-center gap-2 bg-background h-14! rounded-xl border text-[16px] text-grayColor1 capitalize transition-all w-full ${
                       currentGender === g
-                        ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                        ? 'border-lightGreenColor border-2 text-secondary-bg'
                         : 'border-gray-200'
                     }`}
                   >
@@ -133,12 +133,12 @@ export default function GeneralInformation() {
         name="residence"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-[14px] text-[#111]">
-              Select your Residence <span className="text-red-500">*</span>
+            <FormLabel className="text-[14px] text-blackColor">
+              Select your Residence <span className="text-redColor">*</span>
             </FormLabel>
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
-                <SelectTrigger className="bg-[background] h-14! w-full text-[16px] text-[#6c6c6c] cursor-pointer">
+                <SelectTrigger className="bg-background h-14! w-full text-[16px] text-grayColor1 cursor-pointer">
                   <SelectValue placeholder="Select your state name" />
                 </SelectTrigger>
               </FormControl>

@@ -64,10 +64,10 @@ export default function SetNewPasswordForm({
   return (
     <div className="w-full max-w-sm mx-auto space-y-6 font-[Work_Sans]">
       <div className="space-y-2">
-        <h2 className="text-2xl md:text-[32px] font-semibold text-gray-900 tracking-tight">
+        <h2 className="text-2xl md:text-[32px] font-semibold text-blackColor tracking-tight">
           Set New Password
         </h2>
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <p className="text-sm text-grayColor1 leading-relaxed">
           Create a strong password for your account
         </p>
       </div>
@@ -81,9 +81,9 @@ export default function SetNewPasswordForm({
               <FormItem className="space-y-1">
                 <FormLabel
                   htmlFor="new-password"
-                  className="text-sm font-medium text-black"
+                  className="text-sm font-medium text-blackColor"
                 >
-                  New Password <span className="text-red-500">*</span>
+                  New Password <span className="text-redColor">*</span>
                 </FormLabel>
                 <div className="relative">
                   <FormControl>
@@ -92,12 +92,12 @@ export default function SetNewPasswordForm({
                       id="new-password"
                       type={showPass ? 'text' : 'password'}
                       placeholder="At least 8 characters"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-primary placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 focus:outline-none focus:border-secondary-text pr-12 transition-colors"
                     />
                   </FormControl>
                   <button
                     type="button"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-grayColor1"
                     onClick={() => setShowPass(!showPass)}
                   >
                     {showPass ? (
@@ -119,9 +119,9 @@ export default function SetNewPasswordForm({
               <FormItem className="space-y-1">
                 <FormLabel
                   htmlFor="confirm-new-password"
-                  className="text-sm font-medium text-black"
+                  className="text-sm font-medium text-blackColor"
                 >
-                  Confirm Password <span className="text-red-500">*</span>
+                  Confirm Password <span className="text-redColor">*</span>
                 </FormLabel>
                 <div className="relative">
                   <FormControl>
@@ -130,12 +130,12 @@ export default function SetNewPasswordForm({
                       id="confirm-new-password"
                       type={showConfirmPass ? 'text' : 'password'}
                       placeholder="Confirm your password"
-                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-[#b8d9c6] bg-[background] text-sm sm:text-[16px] text-[#333] placeholder:text-[#999] focus:outline-none focus:border-secondary-text pr-12 transition-colors"
+                      className="w-full h-[48px] md:h-[56px] px-[14px] py-[8px] rounded-[12px] border border-lightGreenColor bg-background text-sm sm:text-[16px] text-blackColor placeholder:text-grayColor1 focus:outline-none focus:border-secondary-text pr-12 transition-colors"
                     />
                   </FormControl>
                   <button
                     type="button"
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-grayColor1"
                     onClick={() => setShowConfirmPass(!showConfirmPass)}
                   >
                     {showConfirmPass ? (
@@ -153,7 +153,7 @@ export default function SetNewPasswordForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-secondary-text hover:bg-[#1c3d2a] text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-secondary-text hover:bg-greenColor text-white font-medium h-12 rounded-full transition-colors duration-200 mt-4 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Resetting...' : 'Reset Password'}
           </button>

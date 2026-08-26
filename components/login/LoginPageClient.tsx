@@ -81,7 +81,7 @@ export default function LoginPageClient() {
           <EnterCodeForm
             email={userEmail}
             onNext={() => setStep('set-new-password')}
-            onResend={() => console.log('OTP Resent')}
+            onResend={() => {}}
           />
         )}
 

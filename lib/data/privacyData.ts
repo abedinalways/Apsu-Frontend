@@ -13,8 +13,8 @@ export const privacyData: PrivacySection[] = [
     title: 'Overview',
     sidebarTitle: 'Overview',
     content: `
-      <p class="mb-4 text-[#3b3b3c] text-[18px]">This Privacy Policy explains how Apsu, ("Apsu," "we," "us," or "our") collects, uses, shares, and protects information about you when you visit our website, use our applications, or otherwise use our services (the "Services"). It also describes the privacy choices and rights available to you.</p>
-      <p class="text-[#3b3b3c] text-[18px]">By using the Services, you agree to this Privacy Policy. If you do not agree, please do not use the Services. This policy is part of, and should be read together with, our Terms of Use.</p>
+      <p class="mb-4 text-grayColor1 text-[18px]">This Privacy Policy explains how Apsu, ("Apsu," "we," "us," or "our") collects, uses, shares, and protects information about you when you visit our website, use our applications, or otherwise use our services (the "Services"). It also describes the privacy choices and rights available to you.</p>
+      <p class="text-grayColor1 text-[18px]">By using the Services, you agree to this Privacy Policy. If you do not agree, please do not use the Services. This policy is part of, and should be read together with, our Terms of Use.</p>
     `,
   },
   {
@@ -23,8 +23,8 @@ export const privacyData: PrivacySection[] = [
     title: 'What this policy covers',
     sidebarTitle: 'What this policy covers',
     content: `
-      <p class="mb-4 text-[#3b3b3c] text-[18px]">Apsu is a technology platform that connects you with independent, licensed healthcare providers and licensed pharmacies. This policy covers the information Apsu handles as the operator of the platform.</p>
-      <p class="text-[#3b3b3c] text-[18px]">It does not govern how the independent providers and pharmacies handle your protected health information (PHI) in the course of treating you or filling your prescriptions. Those independent professionals maintain their own privacy practices and notices, which apply to the medical care and pharmacy services they provide. Where this policy and a provider's or pharmacy's notice both apply to the same information, the provider's or pharmacy's notice governs the PHI they hold.</p>
+      <p class="mb-4 text-grayColor1 text-[18px]">Apsu is a technology platform that connects you with independent, licensed healthcare providers and licensed pharmacies. This policy covers the information Apsu handles as the operator of the platform.</p>
+      <p class="text-grayColor1 text-[18px]">It does not govern how the independent providers and pharmacies handle your protected health information (PHI) in the course of treating you or filling your prescriptions. Those independent professionals maintain their own privacy practices and notices, which apply to the medical care and pharmacy services they provide. Where this policy and a provider's or pharmacy's notice both apply to the same information, the provider's or pharmacy's notice governs the PHI they hold.</p>
     `,
   },
   {
@@ -33,8 +33,8 @@ export const privacyData: PrivacySection[] = [
     title: 'Information we collect',
     sidebarTitle: 'Information we collect',
     content: `
-      <p class="mb-3 font-semibold text-[#111] text-[18px]">Information you provide:</p>
-      <div class="mb-6 space-y-3 text-[#3b3b3c] text-[18px]">
+      <p class="mb-3 font-semibold text-blackColor text-[18px]">Information you provide:</p>
+      <div class="mb-6 space-y-3 text-grayColor1 text-[18px]">
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
             <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Account and contact details</strong> — such as your name, email address, phone number, shipping address, and date of birth.</p>
+          <p><strong class="font-semibold text-blackColor">Account and contact details</strong> — such as your name, email address, phone number, shipping address, and date of birth.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -59,7 +59,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Health information</strong> — the responses you submit during intake and consultation, such as your medical history, conditions, medications, and goals. You provide this so that a licensed provider can evaluate whether treatment is appropriate; once shared with a provider, it also becomes part of the medical record they maintain.</p>
+          <p><strong class="font-semibold text-blackColor">Health information</strong> — the responses you submit during intake and consultation, such as your medical history, conditions, medications, and goals. You provide this so that a licensed provider can evaluate whether treatment is appropriate; once shared with a provider, it also becomes part of the medical record they maintain.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -72,7 +72,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Payment information</strong> — your payment card or similar details, which are collected and processed by our third-party payment processor; Apsu does not store full card numbers.</p>
+          <p><strong class="font-semibold text-blackColor">Payment information</strong> — your payment card or similar details, which are collected and processed by our third-party payment processor; Apsu does not store full card numbers.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -85,12 +85,12 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Communications</strong> — messages you send us or your provider through the platform, and support requests.</p>
+          <p><strong class="font-semibold text-blackColor">Communications</strong> — messages you send us or your provider through the platform, and support requests.</p>
         </div>
       </div>
 
-      <p class="mb-3 font-semibold text-[#111] text-[18px]">Information we collect automatically:</p>
-      <div class="mb-6 space-y-3 text-[#3b3b3c] text-[18px]">
+      <p class="mb-3 font-semibold text-blackColor text-[18px]">Information we collect automatically:</p>
+      <div class="mb-6 space-y-3 text-grayColor1 text-[18px]">
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
             <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,7 +102,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Device and usage data</strong> — such as IP address, browser and device type, pages viewed, links clicked, and the dates and times of your visits.</p>
+          <p><strong class="font-semibold text-blackColor">Device and usage data</strong> — such as IP address, browser and device type, pages viewed, links clicked, and the dates and times of your visits.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -115,7 +115,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Approximate location</strong> — derived from your IP address, used in part to confirm you are in a state where the Services are offered.</p>
+          <p><strong class="font-semibold text-blackColor">Approximate location</strong> — derived from your IP address, used in part to confirm you are in a state where the Services are offered.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -128,12 +128,12 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Cookies and similar technologies</strong> — see "Cookies & tracking" below.</p>
+          <p><strong class="font-semibold text-blackColor">Cookies and similar technologies</strong> — see "Cookies & tracking" below.</p>
         </div>
       </div>
 
-      <p class="mb-3 font-semibold text-[#111] text-[18px]">Information from other sources:</p>
-      <div class="space-y-3 text-[#3b3b3c] text-[18px]">
+      <p class="mb-3 font-semibold text-blackColor text-[18px]">Information from other sources:</p>
+      <div class="space-y-3 text-grayColor1 text-[18px]">
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
             <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -145,7 +145,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Providers and pharmacies</strong> — status updates about your consultation, prescription, and order fulfillment.</p>
+          <p><strong class="font-semibold text-blackColor">Providers and pharmacies</strong> — status updates about your consultation, prescription, and order fulfillment.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -158,7 +158,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Service providers</strong> — such as our payment processor, analytics providers, and shipping carriers.</p>
+          <p><strong class="font-semibold text-blackColor">Service providers</strong> — such as our payment processor, analytics providers, and shipping carriers.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -171,7 +171,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Referrals and marketing partners</strong> — for example, if you reach us through a referral link or promotion.</p>
+          <p><strong class="font-semibold text-blackColor">Referrals and marketing partners</strong> — for example, if you reach us through a referral link or promotion.</p>
         </div>
       </div>
     `,
@@ -182,8 +182,8 @@ export const privacyData: PrivacySection[] = [
     title: 'How we use information',
     sidebarTitle: 'How we use information',
     content: `
-      <p class="mb-4 text-[#3b3b3c] text-[18px]">We use the information we collect to:</p>
-      <div class="space-y-3 text-[#3b3b3c] text-[18px]">
+      <p class="mb-4 text-grayColor1 text-[18px]">We use the information we collect to:</p>
+      <div class="space-y-3 text-grayColor1 text-[18px]">
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
             <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -310,8 +310,8 @@ export const privacyData: PrivacySection[] = [
     title: 'How we share information',
     sidebarTitle: 'How we share information',
     content: `
-      <p class="mb-4 text-[#3b3b3c] text-[18px]">We share information only as described here:</p>
-      <div class="mb-6 space-y-3 text-[#3b3b3c] text-[18px]">
+      <p class="mb-4 text-grayColor1 text-[18px]">We share information only as described here:</p>
+      <div class="mb-6 space-y-3 text-grayColor1 text-[18px]">
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
             <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -323,7 +323,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Independent providers and pharmacies</strong> — to evaluate your eligibility, provide care, and fill and ship your prescriptions.</p>
+          <p><strong class="font-semibold text-blackColor">Independent providers and pharmacies</strong> — to evaluate your eligibility, provide care, and fill and ship your prescriptions.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -336,7 +336,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Service providers and vendors</strong> — companies that perform services for us under contract, such as hosting, payment processing, customer support, analytics, shipping, and the provider of our AI translation feature. They may use your information only to perform services for Apsu.</p>
+          <p><strong class="font-semibold text-blackColor">Service providers and vendors</strong> — companies that perform services for us under contract, such as hosting, payment processing, customer support, analytics, shipping, and the provider of our AI translation feature. They may use your information only to perform services for Apsu.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -349,7 +349,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Legal and safety</strong> — when we believe disclosure is required by law or legal process, or is necessary to protect the rights, safety, or property of you, Apsu, or others, including in an emergency.</p>
+          <p><strong class="font-semibold text-blackColor">Legal and safety</strong> — when we believe disclosure is required by law or legal process, or is necessary to protect the rights, safety, or property of you, Apsu, or others, including in an emergency.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -362,10 +362,10 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">With your consent</strong> — for any other purpose disclosed to you at the time.</p>
+          <p><strong class="font-semibold text-blackColor">With your consent</strong> — for any other purpose disclosed to you at the time.</p>
         </div>
       </div>
-      <p class="text-[#3b3b3c] text-[18px]"><strong class="font-semibold text-[#111]">We do not sell your personal information.</strong> We also do not disclose your health information for third-party marketing without your consent. See "Analytics & advertising" for how we handle advertising and how that maps to certain state-law definitions of "sale" and "sharing."</p>
+      <p class="text-grayColor1 text-[18px]"><strong class="font-semibold text-blackColor">We do not sell your personal information.</strong> We also do not disclose your health information for third-party marketing without your consent. See "Analytics & advertising" for how we handle advertising and how that maps to certain state-law definitions of "sale" and "sharing."</p>
     `,
   },
   {
@@ -374,7 +374,7 @@ export const privacyData: PrivacySection[] = [
     title: 'Cookies & tracking technologies',
     sidebarTitle: 'Cookies & tracking technologies',
     content: `
-      <p class="text-[#3b3b3c] text-[18px]">We and our service providers use cookies and similar technologies to operate the Services, remember your preferences, understand how the Services are used, and measure performance. Some cookies are necessary for the Services to function; others are optional. You can control cookies through your browser settings and, where available, through our cookie preferences tool. Blocking some cookies may affect how the Services work.</p>
+      <p class="text-grayColor1 text-[18px]">We and our service providers use cookies and similar technologies to operate the Services, remember your preferences, understand how the Services are used, and measure performance. Some cookies are necessary for the Services to function; others are optional. You can control cookies through your browser settings and, where available, through our cookie preferences tool. Blocking some cookies may affect how the Services work.</p>
     `,
   },
   {
@@ -383,7 +383,7 @@ export const privacyData: PrivacySection[] = [
     title: 'Analytics & advertising',
     sidebarTitle: 'Analytics & advertising',
     content: `
-      <p class="text-[#3b3b3c] text-[18px]">We use analytics providers to understand how visitors use the Services so we can improve them. These providers process usage data on our behalf. We do not share your personal information with third parties for their own cross-context behavioral advertising, and we do not use your health information to target advertising. If this changes, we will update this policy and provide the choices required by law before doing so.</p>
+      <p class="text-grayColor1 text-[18px]">We use analytics providers to understand how visitors use the Services so we can improve them. These providers process usage data on our behalf. We do not share your personal information with third parties for their own cross-context behavioral advertising, and we do not use your health information to target advertising. If this changes, we will update this policy and provide the choices required by law before doing so.</p>
     `,
   },
   {
@@ -392,7 +392,7 @@ export const privacyData: PrivacySection[] = [
     title: 'AI translation',
     sidebarTitle: 'AI translation',
     content: `
-      <p class="text-[#3b3b3c] text-[18px]">Apsu offers AI-assisted translation during the asynchronous (messaging-based) portion of your consultation, so you can communicate with your provider in your preferred language. To provide this feature, the relevant messages are processed by our translation service provider under contract, solely to deliver the translation. Automated translation may not be perfectly accurate; the English-language version is the official version, and you can ask your provider for clarification if anything is unclear. The Apsu website and intake form are currently provided in English only.</p>
+      <p class="text-grayColor1 text-[18px]">Apsu offers AI-assisted translation during the asynchronous (messaging-based) portion of your consultation, so you can communicate with your provider in your preferred language. To provide this feature, the relevant messages are processed by our translation service provider under contract, solely to deliver the translation. Automated translation may not be perfectly accurate; the English-language version is the official version, and you can ask your provider for clarification if anything is unclear. The Apsu website and intake form are currently provided in English only.</p>
     `,
   },
   {
@@ -401,8 +401,8 @@ export const privacyData: PrivacySection[] = [
     title: 'Your privacy rights',
     sidebarTitle: 'Your privacy rights',
     content: `
-      <p class="mb-4 text-[#3b3b3c] text-[18px]">Depending on where you live, you may have some or all of the following rights regarding the personal information Apsu holds about you:</p>
-      <div class="mb-6 space-y-3 text-[#3b3b3c] text-[18px]">
+      <p class="mb-4 text-grayColor1 text-[18px]">Depending on where you live, you may have some or all of the following rights regarding the personal information Apsu holds about you:</p>
+      <div class="mb-6 space-y-3 text-grayColor1 text-[18px]">
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
             <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -414,7 +414,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Access</strong> — to know what personal information we have collected and how we use and share it.</p>
+          <p><strong class="font-semibold text-blackColor">Access</strong> — to know what personal information we have collected and how we use and share it.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -427,7 +427,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Correction</strong> — to correct inaccurate personal information.</p>
+          <p><strong class="font-semibold text-blackColor">Correction</strong> — to correct inaccurate personal information.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -440,7 +440,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Deletion</strong> — to request deletion of your personal information, subject to legal exceptions (for example, records we must keep by law).</p>
+          <p><strong class="font-semibold text-blackColor">Deletion</strong> — to request deletion of your personal information, subject to legal exceptions (for example, records we must keep by law).</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -453,7 +453,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Portability</strong> — to receive a copy of certain information in a portable format.</p>
+          <p><strong class="font-semibold text-blackColor">Portability</strong> — to receive a copy of certain information in a portable format.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -466,7 +466,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Opt out</strong> — of any "sale" or "sharing" of personal information and of targeted advertising, to the extent these apply.</p>
+          <p><strong class="font-semibold text-blackColor">Opt out</strong> — of any "sale" or "sharing" of personal information and of targeted advertising, to the extent these apply.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -479,7 +479,7 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Limit use of sensitive information</strong> — where provided by law.</p>
+          <p><strong class="font-semibold text-blackColor">Limit use of sensitive information</strong> — where provided by law.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="mt-1 shrink-0">
@@ -492,10 +492,10 @@ export const privacyData: PrivacySection[] = [
               </g>
             </svg>
           </span>
-          <p><strong class="font-semibold text-[#111]">Non-discrimination</strong> — we will not discriminate against you for exercising your rights.</p>
+          <p><strong class="font-semibold text-blackColor">Non-discrimination</strong> — we will not discriminate against you for exercising your rights.</p>
         </div>
       </div>
-      <p class="text-[#3b3b3c] text-[18px]">Note that requests affecting your medical records held by the independent providers or pharmacies may need to be directed to them, and some health information is subject to separate laws and retention requirements.</p>
+      <p class="text-grayColor1 text-[18px]">Note that requests affecting your medical records held by the independent providers or pharmacies may need to be directed to them, and some health information is subject to separate laws and retention requirements.</p>
     `,
   },
   {
@@ -504,8 +504,8 @@ export const privacyData: PrivacySection[] = [
     title: 'How to exercise your rights',
     sidebarTitle: 'How to exercise your rights',
     content: `
-      <p class="mb-4 text-[#3b3b3c] text-[18px]">To make a request, contact us at support@apsuhealth.com. We will verify your request, which may require confirming information we already have about you. You may use an authorized agent to submit a request where the law allows, and we may ask the agent to provide proof of authorization.</p>
-      <p class="text-[#3b3b3c] text-[18px]">We will respond within the time required by applicable law. If we decline your request, you may have the right to appeal; instructions will be provided in our response. There is no charge for a reasonable request.</p>
+      <p class="mb-4 text-grayColor1 text-[18px]">To make a request, contact us at support@apsuhealth.com. We will verify your request, which may require confirming information we already have about you. You may use an authorized agent to submit a request where the law allows, and we may ask the agent to provide proof of authorization.</p>
+      <p class="text-grayColor1 text-[18px]">We will respond within the time required by applicable law. If we decline your request, you may have the right to appeal; instructions will be provided in our response. There is no charge for a reasonable request.</p>
     `,
   },
   {
@@ -514,7 +514,7 @@ export const privacyData: PrivacySection[] = [
     title: 'Data retention',
     sidebarTitle: 'Data retention',
     content: `
-      <p class="text-[#3b3b3c] text-[18px]">We keep personal information for as long as needed to provide the Services, comply with our legal, tax, and recordkeeping obligations, resolve disputes, and enforce our agreements. Medical records maintained by the independent providers are retained according to the periods that apply to those records under law. When information is no longer needed, we delete it or de-identify it.</p>
+      <p class="text-grayColor1 text-[18px]">We keep personal information for as long as needed to provide the Services, comply with our legal, tax, and recordkeeping obligations, resolve disputes, and enforce our agreements. Medical records maintained by the independent providers are retained according to the periods that apply to those records under law. When information is no longer needed, we delete it or de-identify it.</p>
     `,
   },
   {
@@ -523,7 +523,7 @@ export const privacyData: PrivacySection[] = [
     title: 'Data security',
     sidebarTitle: 'Data security',
     content: `
-      <p class="text-[#3b3b3c] text-[18px]">We use reasonable administrative, technical, and physical safeguards designed to protect your information, such as encryption in transit, access controls, and vendor security requirements. No system is perfectly secure, however, and we cannot guarantee absolute security. You also play a role — keep your account credentials confidential and notify us promptly if you believe your account has been compromised.</p>
+      <p class="text-grayColor1 text-[18px]">We use reasonable administrative, technical, and physical safeguards designed to protect your information, such as encryption in transit, access controls, and vendor security requirements. No system is perfectly secure, however, and we cannot guarantee absolute security. You also play a role — keep your account credentials confidential and notify us promptly if you believe your account has been compromised.</p>
     `,
   },
   {
@@ -532,7 +532,7 @@ export const privacyData: PrivacySection[] = [
     title: "Children's privacy",
     sidebarTitle: "Children's privacy",
     content: `
-      <p class="text-[#3b3b3c] text-[18px]">The Services are intended for adults 18 and older and are not directed to children. We do not knowingly collect personal information from children. If you believe a child has provided us information, please contact us and we will take appropriate steps to delete it.</p>
+      <p class="text-grayColor1 text-[18px]">The Services are intended for adults 18 and older and are not directed to children. We do not knowingly collect personal information from children. If you believe a child has provided us information, please contact us and we will take appropriate steps to delete it.</p>
     `,
   },
   {
@@ -541,9 +541,9 @@ export const privacyData: PrivacySection[] = [
     title: 'State privacy disclosures',
     sidebarTitle: 'State privacy disclosures',
     content: `
-      <p class="mb-4 text-[#3b3b3c] text-[18px]">Residents of California and certain other states (such as Virginia, Colorado, Connecticut, and others with comprehensive privacy laws) have the rights described in "Your privacy rights" and may exercise them as described in "How to exercise your rights."</p>
-      <h4 class="mb-2 text-[18px] font-semibold text-[#111]">California</h4>
-      <p class="text-[#3b3b3c] text-[18px]">Under California Civil Code § 1789.3, California residents may report complaints to the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs in writing at 1625 North Market Blvd., Suite N-112, Sacramento, CA 95834, or by phone at (800) 952-5210.</p>
+      <p class="mb-4 text-grayColor1 text-[18px]">Residents of California and certain other states (such as Virginia, Colorado, Connecticut, and others with comprehensive privacy laws) have the rights described in "Your privacy rights" and may exercise them as described in "How to exercise your rights."</p>
+      <h4 class="mb-2 text-[18px] font-semibold text-blackColor">California</h4>
+      <p class="text-grayColor1 text-[18px]">Under California Civil Code § 1789.3, California residents may report complaints to the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs in writing at 1625 North Market Blvd., Suite N-112, Sacramento, CA 95834, or by phone at (800) 952-5210.</p>
     `,
   },
   {
@@ -552,7 +552,7 @@ export const privacyData: PrivacySection[] = [
     title: 'U.S. only',
     sidebarTitle: 'U.S. only',
     content: `
-      <p class="text-[#3b3b3c] text-[18px]">The Services are intended for people located in the United States, and information we collect is processed in the United States. If you access the Services from outside the United States, you do so on your own initiative.</p>
+      <p class="text-grayColor1 text-[18px]">The Services are intended for people located in the United States, and information we collect is processed in the United States. If you access the Services from outside the United States, you do so on your own initiative.</p>
     `,
   },
   {
@@ -561,7 +561,7 @@ export const privacyData: PrivacySection[] = [
     title: 'Changes to this policy',
     sidebarTitle: 'Changes to this policy',
     content: `
-      <p class="text-[#3b3b3c] text-[18px]">We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last updated" date and provide notice as required by law. Your continued use of the Services after an update takes effect means you accept the updated policy.</p>
+      <p class="text-grayColor1 text-[18px]">We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last updated" date and provide notice as required by law. Your continued use of the Services after an update takes effect means you accept the updated policy.</p>
     `,
   },
   {
@@ -570,7 +570,7 @@ export const privacyData: PrivacySection[] = [
     title: 'Contact',
     sidebarTitle: 'Contact',
     content: `
-      <p class="text-[#3b3b3c] text-[18px]">If you have questions about this Privacy Policy or your information, contact us at: <strong class="font-semibold text-[#111]">support@apsuhealth.com</strong>.</p>
+      <p class="text-grayColor1 text-[18px]">If you have questions about this Privacy Policy or your information, contact us at: <strong class="font-semibold text-blackColor">support@apsuhealth.com</strong>.</p>
     `,
   },
 ];

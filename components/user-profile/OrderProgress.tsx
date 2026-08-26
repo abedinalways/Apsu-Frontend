@@ -23,7 +23,7 @@ interface OrderProgressProps {
 
 export function OrderProgress({ progressStep }: OrderProgressProps) {
   return (
-    <div className="border border-[#EBEAE4] rounded-[24px] p-6 mb-4 bg-white font-[Work_Sans]">
+    <div className="border border-background rounded-[24px] p-6 mb-4 bg-white font-[Work_Sans]">
       <h5 className="text-xl font-bold text-secondary-text mb-8">
         Order Progress
       </h5>

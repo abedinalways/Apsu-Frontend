@@ -1,20 +1,24 @@
-"use client";
+'use client';
 
-import { Menu, X } from "lucide-react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import { MdNotifications } from "react-icons/md";
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React, { useState } from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
+import { MdNotifications } from 'react-icons/md';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import Search from "./Search";
+} from '@/components/ui/dropdown-menu';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import Search from './Search';
 
 interface HeaderProps {
   onNotificationClick?: () => void;
@@ -77,14 +81,14 @@ const Header: React.FC<HeaderProps> = ({
 
                   <button
                     onClick={() => setPopoverOpen(false)}
-                    className="text-[#455468] bg-bgColor w-[35px] h-[35px] shadow-sm rounded-full cursor-pointer text-lg font-bold flex items-center justify-center"
+                    className="text-greenColor bg-bgColor w-[35px] h-[35px] shadow-sm rounded-full cursor-pointer text-lg font-bold flex items-center justify-center"
                   >
                     <X className="" />
                   </button>
                 </div>
 
                 <div className="overflow-y-auto px-4 py-3 flex-1">
-                  <p className="text-center text-sm text-gray-500 py-6">
+                  <p className="text-center text-sm text-grayColor1 py-6">
                     No notifications available
                   </p>
                 </div>
@@ -98,12 +102,12 @@ const Header: React.FC<HeaderProps> = ({
                     <div
                       className="flex items-center  p-1  rounded-full cursor-pointer hover:opacity-90"
                       style={{
-                        boxShadow: "2px 2px 7px 2px rgba(0, 0, 0, 0.1)",
+                        boxShadow: '2px 2px 7px 2px rgba(0, 0, 0, 0.1)',
                       }}
                     >
                       <div className=" w-6 h-6 lg:w-8 lg:h-8 rounded-md overflow-hidden">
                         <Image
-                          src={"/profile.png"}
+                          src={'/profile.png'}
                           alt="Admin Avatar"
                           width={40}
                           height={40}
@@ -121,17 +125,17 @@ const Header: React.FC<HeaderProps> = ({
                 <DropdownMenuContent align="end" className="w-48">
                   <div className="px-4 py-2">
                     <p className="text-sm font-semibold text-headerColor">
-                      {"User"}
+                      {'User'}
                     </p>
                     <p className="text-xs text-textColor">
-                      {"admin@company.com"}
+                      {'admin@company.com'}
                     </p>
                   </div>
                   <DropdownMenuSeparator />
 
                   <DropdownMenuItem
                     onClick={() => {
-                      router.push("/login");
+                      router.push('/login');
                     }}
                     className="text-redColor hover:bg-redColor/10! flex justify-center w-full hover:text-redColor! hover:border hover:border-redColor font-semibold cursor-pointer"
                   >

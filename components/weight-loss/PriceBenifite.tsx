@@ -1,16 +1,19 @@
-"use client";
+'use client';
 
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
-import { useState } from "react";
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
+import Image, { StaticImageData } from 'next/image';
+import { useState } from 'react';
 
+import PrimaryButton from '../reusable/button/PrimaryButton';
 
-import PrimaryButton from "../reusable/button/PrimaryButton";
-
-function ProgramPricingSection({ img, benefits }: { img: string | StaticImageData; benefits: string[] }) {
+function ProgramPricingSection({
+  img,
+  benefits,
+}: {
+  img: string | StaticImageData;
+  benefits: string[];
+}) {
   const [isBenefitsOpen, setIsBenefitsOpen] = useState(true);
-
- 
 
   return (
     <div className="  pb-14 pt-6 md:py-24 font-sans text-primaryColor">
@@ -19,7 +22,7 @@ function ProgramPricingSection({ img, benefits }: { img: string | StaticImageDat
         <div className="flex flex-col lg:col-span-5 justify-between w-full space-y-6">
           {/* Top Price Card */}
           <div className="bg-white rounded-2xl hidden p-6 md:p-8 shadow-[0_4px_12px_0_rgba(2,31,24,0.04)] border border-borderColor relative  lg:flex flex-col justify-center">
-            <span className="text-gray-500 text-sm md:text-base font-medium mb-3">
+            <span className="text-grayColor1 text-sm md:text-base font-medium mb-3">
               Starts from
             </span>
             <h2 className="text-3xl md:text-4xl font-normal mb-3 text-greenColor">
@@ -39,7 +42,10 @@ function ProgramPricingSection({ img, benefits }: { img: string | StaticImageDat
           <div className="w-full space-y-4 mt-4 xl:mt-0 ">
             {/* How It Works Header Line */}
             <div className="border-y pt-2 border-gray-200 pb-3 flex items-center justify-between cursor-pointer group">
-              <a href="#Works" className="text-xs md:text-sm font-semibold text-[#585E5A] group-hover:text-[#0C2417] underline transition-colors">
+              <a
+                href="#Works"
+                className="text-xs md:text-sm font-semibold text-[#585E5A] group-hover:text-[#0C2417] underline transition-colors"
+              >
                 How It Works
               </a>
             </div>
@@ -53,7 +59,7 @@ function ProgramPricingSection({ img, benefits }: { img: string | StaticImageDat
                 <span className="text-xs md:text-sm font-semibold text-[#585E5A]">
                   Program Benefits
                 </span>
-                <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">
+                <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-grayColor1">
                   {isBenefitsOpen ? (
                     <ChevronUp className="w-3.5 h-3.5" />
                   ) : (

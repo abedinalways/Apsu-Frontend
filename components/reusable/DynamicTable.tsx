@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import React from "react";
-import Loader from "./Loader";
-import PaginationPage from "./PaginationPage";
+import Image from 'next/image';
+import React from 'react';
+import Loader from './Loader';
+import PaginationPage from './PaginationPage';
 
 interface ColumnConfig {
   label: React.ReactNode;
@@ -41,7 +41,7 @@ export default function DynamicTable({
   onView,
   totalpage,
   onDelete,
-  noDataMessage = "No data found !.",
+  noDataMessage = 'No data found !.',
   totalItems,
   setItemsPerPage,
   error,
@@ -50,18 +50,18 @@ export default function DynamicTable({
   return (
     <div>
       {/* Table Wrapper with Border & Radius */}
-      <div className={`rounded-t-md ${border ? "border border-gray-200" : ""}`}>
-        <div className={` overflow-auto bg-white ${border ? "p-2" : ""}`}>
+      <div className={`rounded-t-md ${border ? 'border border-gray-200' : ''}`}>
+        <div className={` overflow-auto bg-white ${border ? 'p-2' : ''}`}>
           <table
-            className={`min-w-[1000px] w-full text-left bg-whiteColor  ${border ? "p-2" : ""}`}
+            className={`min-w-[1000px] w-full text-left bg-whiteColor  ${border ? 'p-2' : ''}`}
           >
             <thead className=" sticky top-0 text-white rounded-2xl! overflow-hidden  p-2">
               <tr className="">
                 {columns.map((col: ColumnConfig, index: number) => (
                   <th
                     key={index}
-                    style={{ width: col.width || "auto" }}
-                    className={`${index == 0 ? "rounded-l-lg" : index === columns.length - 1 ? "rounded-r-lg" : ""} px-4! bg-blackColor   py-5! text-sm font-medium border-b  `}
+                    style={{ width: col.width || 'auto' }}
+                    className={`${index == 0 ? 'rounded-l-lg' : index === columns.length - 1 ? 'rounded-r-lg' : ''} px-4! bg-blackColor   py-5! text-sm font-medium border-b  `}
                   >
                     {col.label}
                   </th>
@@ -85,13 +85,13 @@ export default function DynamicTable({
                     <Loader />
                   </td>
                 </tr>
-                ) : data?.length > 0 ? (
+              ) : data?.length > 0 ? (
                 data.map((row: any, i: number) => (
                   <tr key={i} className="border-t border-gray-100">
                     {columns.map((col: ColumnConfig, idx: number) => (
                       <td
                         key={idx}
-                        style={{ width: col.width || "auto" }}
+                        style={{ width: col.width || 'auto' }}
                         className="px-4 py-3 text-sm text-[#4a4c56]"
                       >
                         {col.formatter
@@ -134,12 +134,12 @@ export default function DynamicTable({
                     className="px-4 py-10 text-center text-[#4a4c56] text-sm"
                   >
                     {error ? (
-                      <p className="text-red-500 text-xl capitalize font-semibold">
-                        {" "}
-                        {error + " " + "please login again"}
+                      <p className="text-redColor text-xl capitalize font-semibold">
+                        {' '}
+                        {error + ' ' + 'please login again'}
                       </p>
                     ) : (
-                      <p className="text-xl text-gray-500 capitalize font-semibold">
+                      <p className="text-xl text-grayColor1 capitalize font-semibold">
                         {noDataMessage}
                       </p>
                     )}

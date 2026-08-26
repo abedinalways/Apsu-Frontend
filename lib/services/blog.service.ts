@@ -8,27 +8,36 @@ function extractSlug(href: string): string {
   return href.replace(/^\/blog\//, '');
 }
 
-const MOCK_BLOGS: Blog[] = blogsData.map(listing => {
-  const slug = extractSlug(listing.href);
-  const detail = blogDetails.find(d => d.slug === slug);
+function buildMockBlogs(): Blog[] {
+  try {
+    return blogsData.map(listing => {
+      const slug = extractSlug(listing.href);
+      const detail = blogDetails.find(d => d.slug === slug);
 
-  return {
-    id: listing.id,
-    slug,
-    title: listing.title,
-    category: listing.category,
-    date: listing.date,
-    readTime: listing.readTime,
-    author: detail?.author || 'Apsu Health',
-    image: listing.image,
-    heroImage: detail?.heroImage || listing.image,
-    description: listing.description,
-    href: listing.href,
-    summary: detail?.summary || [],
-    content: detail?.content || [],
-    sources: detail?.sources,
-  };
-});
+      return {
+        id: listing.id,
+        slug,
+        title: listing.title,
+        category: listing.category,
+        date: listing.date,
+        readTime: listing.readTime,
+        author: detail?.author || 'Apsu Health',
+        image: listing.image,
+        heroImage: detail?.heroImage || listing.image,
+        description: listing.description,
+        href: listing.href,
+        summary: detail?.summary || [],
+        content: detail?.content || [],
+        sources: detail?.sources,
+      };
+    });
+  } catch (error) {
+    console.error('Failed to load blog mock data:', error);
+    return [];
+  }
+}
+
+const MOCK_BLOGS: Blog[] = buildMockBlogs();
 
 export class BlogService {
   static async getBlogs(): Promise<Blog[]> {

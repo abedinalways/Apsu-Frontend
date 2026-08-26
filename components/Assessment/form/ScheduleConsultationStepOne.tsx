@@ -7,6 +7,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import {
   DropdownMenu,
@@ -96,10 +97,10 @@ export default function ScheduleConsultationStepOne() {
     <div className="space-y-6">
       {/* Step Header Block */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Schedule Your Consultation
         </h2>
-        <p className="text-[14px] text-[#111] mt-1.5">
+        <p className="text-[14px] text-blackColor mt-1.5">
           Choose a convenient date and time to meet with a licensed physician.
         </p>
       </div>
@@ -107,14 +108,14 @@ export default function ScheduleConsultationStepOne() {
       <div className="grid grid-cols-1 md:grid-cols-[60%_1fr] gap-6 items-start">
         {/* Left Grid Layout Element: Calendar Panel */}
         <div className="space-y-3">
-          <label className="text-[14px] text-[#111] tracking-wide">
-            Select date
-          </label>
           <FormField
             control={control}
             name="consultationDate"
             render={() => (
-              <FormItem>
+              <FormItem className="space-y-2">
+                <FormLabel className="text-[14px] text-blackColor tracking-wide">
+                  Select date
+                </FormLabel>
                 <FormControl>
                   <div className="p-4 border border-gray-100 rounded-3xl bg-white shadow-sm">
                     {/* Header controls matching image_0de666.png perfectly */}
@@ -124,9 +125,9 @@ export default function ScheduleConsultationStepOne() {
                         onClick={handlePrevMonth}
                         className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] flex items-center justify-center hover:bg-gray-50 transition-colors"
                       >
-                        <ChevronLeft className="h-4 w-4 text-gray-600" />
+                        <ChevronLeft className="h-4 w-4 text-grayColor1" />
                       </button>
-                      <span className="text-sm font-semibold text-gray-800 min-w-[100px] text-center">
+                      <span className="text-sm font-semibold text-blackColor min-w-[100px] text-center">
                         {monthLabel}
                       </span>
                       <button
@@ -134,7 +135,7 @@ export default function ScheduleConsultationStepOne() {
                         onClick={handleNextMonth}
                         className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] hover:bg-gray-50 flex items-center justify-center hover:opacity-90 transition-opacity"
                       >
-                        <ChevronRight className="h-4 w-4 text-gray-600" />
+                        <ChevronRight className="h-4 w-4 text-grayColor1" />
                       </button>
                     </div>
 
@@ -143,7 +144,7 @@ export default function ScheduleConsultationStepOne() {
                       {DAYS_OF_WEEK.map(day => (
                         <span
                           key={day}
-                          className="text-gray-500 font-medium pb-2"
+                          className="text-grayColor1 font-medium pb-2"
                         >
                           {day}
                         </span>
@@ -165,9 +166,9 @@ export default function ScheduleConsultationStepOne() {
                             onClick={() => handleDateSelect(day)}
                             className={`h-10 w-10 rounded-full mx-auto flex items-center justify-center font-medium text-xs transition-all cursor-pointer ${
                               isSelected
-                                ? 'bg-gray-800 text-white font-bold scale-105 shadow-sm'
+                                ? 'bg-blackColor text-white font-bold scale-105 shadow-sm'
                                 : isToday
-                                  ? 'bg-[#AFC1B6] text-gray-900 hover:bg-[#AFC1B6]'
+                                  ? 'bg-lightGreenColor text-gray-900 hover:bg-lightGreenColor'
                                   : 'text-gray-700 hover:bg-gray-50'
                             }`}
                           >
@@ -186,14 +187,14 @@ export default function ScheduleConsultationStepOne() {
 
         {/* Right Layout Grid: Time List Picker */}
         <div className="space-y-3">
-          <label className="text-[14px] text-[#111] tracking-wide">
-            Select time
-          </label>
           <FormField
             control={control}
             name="consultationTime"
             render={() => (
-              <FormItem>
+              <FormItem className="space-y-2">
+                <FormLabel className="text-[14px] text-blackColor tracking-wide">
+                  Select time
+                </FormLabel>
                 <FormControl>
                   <div className="space-y-2 max-h-[290px] overflow-y-auto pr-1 scrollbar-thin">
                     {TIME_SLOTS.map(slot => {
@@ -209,8 +210,8 @@ export default function ScheduleConsultationStepOne() {
                           }
                           className={`w-full py-2.5 text-center rounded-full text-xs font-medium border transition-all cursor-pointer ${
                             isSelected
-                              ? 'bg-gray-800 text-white border-transparent'
-                              : 'border-gray-400 text-gray-800 hover:bg-gray-50 bg-white'
+                              ? 'bg-blackColor text-white border-transparent'
+                              : 'border-grayColor1 text-blackColor hover:bg-gray-50 bg-white'
                           }`}
                         >
                           {slot}
@@ -228,39 +229,41 @@ export default function ScheduleConsultationStepOne() {
 
       {/* Dynamic Selector Dropdown for Timezone handling */}
       <div className="space-y-2 pt-2">
-        <label className="text-[14px] text-[#111] tracking-wide">
-          Time zone
-        </label>
         <FormField
           control={control}
           name="timezone"
           render={() => (
-            <FormItem>
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center gap-1.5 text-xs cursor-pointer text-gray-700 font-medium bg-none border-none outline-none focus:outline-none">
-                  <Globe className="w-4 h-4 text-gray-400" />
-                  <span className="underline cursor-pointer hover:text-gray-900">
-                    {activeTimezone || 'Detecting time zone...'}
-                  </span>
-                  <ChevronDown className="w-3 h-3 text-gray-400" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  align="start"
-                  className="w-56 max-h-48 overflow-y-auto rounded-xl"
-                >
-                  {COMMON_TIMEZONES.map(tz => (
-                    <DropdownMenuItem
-                      key={tz}
-                      onClick={() =>
-                        setValue('timezone', tz, { shouldValidate: true })
-                      }
-                      className="text-xs cursor-pointer focus:bg-[#AFC1B6]/10 focus:text-secondary-bg"
-                    >
-                      {tz}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+            <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] text-blackColor tracking-wide">
+                Time zone
+              </FormLabel>
+              <FormControl>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center gap-1.5 text-xs cursor-pointer text-gray-700 font-medium bg-none border-none outline-none focus:outline-none">
+                    <Globe className="w-4 h-4 text-grayColor1" />
+                    <span className="underline cursor-pointer hover:text-gray-900">
+                      {activeTimezone || 'Detecting time zone...'}
+                    </span>
+                    <ChevronDown className="w-3 h-3 text-grayColor1" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    align="start"
+                    className="w-56 max-h-48 overflow-y-auto rounded-xl"
+                  >
+                    {COMMON_TIMEZONES.map(tz => (
+                      <DropdownMenuItem
+                        key={tz}
+                        onClick={() =>
+                          setValue('timezone', tz, { shouldValidate: true })
+                        }
+                        className="text-xs cursor-pointer focus:bg-lightGreenColor/10 focus:text-secondary-bg"
+                      >
+                        {tz}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}

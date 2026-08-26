@@ -10,7 +10,7 @@ function BirthControll() {
   ];
   return (
     <div>
-      <div className="xl:py-27 lg:py-15 pt-4 relative px-3 md:px-6 mt-12 lg:mt-30  lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-[#FFDEFF] rounded-2xl lg:rounded-4xl">
+      <div className="xl:py-27 lg:py-15 pt-4 relative px-3 md:px-6 mt-12 lg:mt-30  lg:px-8 grid grid-cols-1 lg:grid-cols-2   bg-purpleColor rounded-2xl lg:rounded-4xl">
         <div>
           <div className="">
             <h3 className="text-3xl md:text-4xl max-w-153 leading-[124%] xl:text-[52px] font-medium tracking-tight mb-5">

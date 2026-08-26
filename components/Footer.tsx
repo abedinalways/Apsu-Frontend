@@ -67,7 +67,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-primary text-[background] pt-30">
+    <footer className="bg-primary text-background pt-30">
       <div className="container ">
         {/* section 1 */}
         <div className="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-6 ">
@@ -118,7 +118,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block w-full hover:text-[#BED5C9] transition-colors xl:whitespace-nowrap"
+                    className="block w-full hover:text-lightGreenColor transition-colors xl:whitespace-nowrap"
                   >
                     {link.label}
                   </Link>
@@ -159,7 +159,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="size-9 rounded-full bg-[#173A26] hover:bg-[background] hover:text-secondary transition-all duration-200 flex items-center justify-center"
+                className="size-9 rounded-full bg-greenColor/40 hover:bg-background hover:text-secondary transition-all duration-200 flex items-center justify-center"
               >
                 <Icon className="size-5" />
               </a>
@@ -174,7 +174,7 @@ export default function Footer() {
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
-          <div className=" h-2/3 w-full absolute bottom-0 bg-linear-to-t  from-[#102B1C] to-transparent"></div>
+          <div className=" h-2/3 w-full absolute bottom-0 bg-linear-to-t  from-primaryColor to-transparent"></div>
           <Image
             src="/footer-img.png"
             alt="footer image"

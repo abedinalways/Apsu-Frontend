@@ -1,6 +1,5 @@
 'use client';
 
-
 import ConversationListItem from './ConversationListItem';
 import type { Conversation } from '@/types/messaging';
 
@@ -18,14 +17,14 @@ export default function ConversationList({
   if (!conversations.length) {
     return (
       <div className="p-4 text-center">
-        <p className="text-sm text-gray-500">No conversations found.</p>
+        <p className="text-sm text-grayColor1">No conversations found.</p>
       </div>
     );
   }
 
   return (
     <div className="flex-1 overflow-y-auto">
-      {conversations.map((conversation) => (
+      {conversations.map(conversation => (
         <ConversationListItem
           key={conversation.id}
           conversation={conversation}

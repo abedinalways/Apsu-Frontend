@@ -7,6 +7,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { cn } from '@/lib/utils';
@@ -41,21 +42,21 @@ export default function EligibilityCheckStepOne() {
     <div className="space-y-6">
       {/* Top Header Label */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Tell us about your sleep habit
         </h2>
       </div>
 
       {/* Question 1: Do you wake up during the night? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
-          Do you wake up during the night?
-        </h3>
         <FormField
           control={control}
           name="wakeUpFrequency"
           render={() => (
             <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
+                Do you wake up during the night?
+              </FormLabel>
               <FormControl>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                   {WAKE_UP_OPTIONS.map(option => {
@@ -69,9 +70,9 @@ export default function EligibilityCheckStepOne() {
                           })
                         }
                         className={cn(
-                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
+                          'flex items-center justify-center gap-2 bg-background h-14! rounded-xl border text-[16px] text-grayColor1 capitalize transition-all w-full cursor-pointer',
                           isSelected
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-lightGreenColor border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >
@@ -89,14 +90,14 @@ export default function EligibilityCheckStepOne() {
 
       {/* Question 2: When you wake up, can you usually fall back asleep? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
-          When you wake up, can you usually fall back asleep?
-        </h3>
         <FormField
           control={control}
           name="fallBackAsleep"
           render={({ field }) => (
             <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
+                When you wake up, can you usually fall back asleep?
+              </FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -109,9 +110,9 @@ export default function EligibilityCheckStepOne() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
+                          'flex items-center justify-center gap-2 bg-background h-14! rounded-xl border text-[16px] text-grayColor1 capitalize transition-all w-full cursor-pointer',
                           isSelected
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-lightGreenColor border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >
@@ -133,14 +134,14 @@ export default function EligibilityCheckStepOne() {
 
       {/* Question 3: How often do you use screens before bed? */}
       <div className="space-y-3">
-        <h3 className="font-semibold text-[14px] text-[#111]">
-          How often do you use screens before bed?
-        </h3>
         <FormField
           control={control}
           name="screenTimeBeforeBed"
           render={({ field }) => (
             <FormItem className="space-y-2">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
+                How often do you use screens before bed?
+              </FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}
@@ -153,9 +154,9 @@ export default function EligibilityCheckStepOne() {
                       <label
                         key={option.id}
                         className={cn(
-                          'flex items-center justify-center gap-2 bg-[background] h-14! rounded-xl border text-[16px] text-[#6c6c6c] capitalize transition-all w-full cursor-pointer',
+                          'flex items-center justify-center gap-2 bg-background h-14! rounded-xl border text-[16px] text-grayColor1 capitalize transition-all w-full cursor-pointer',
                           isSelected
-                            ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                            ? 'border-lightGreenColor border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >

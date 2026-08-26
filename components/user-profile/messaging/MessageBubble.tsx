@@ -26,7 +26,7 @@ export default function MessageBubble({
   if (isSystem) {
     return (
       <div className={cn('flex justify-center', isNew && 'animate-fade-in')}>
-        <span className="rounded-full border border-[#D0D5DD] bg-white px-3 py-1 text-xs font-medium text-[#667085]">
+        <span className="rounded-full border border-lightGreenColor bg-white px-3 py-1 text-xs font-medium text-grayColor1">
           {message.body}
         </span>
       </div>
@@ -49,8 +49,8 @@ export default function MessageBubble({
           className={cn(
             'rounded-[20px] px-3 py-2.5 text-xs sm:text-sm leading-5 sm:leading-6',
             isUser
-              ? 'bg-[#E8F5E9] text-secondary-text rounded-tr-sm'
-              : 'bg-[background] border border-[#E5E7EB] text-secondary-text rounded-tl-sm',
+              ? 'bg-lightGreenColor text-secondary-text rounded-tr-sm'
+              : 'bg-background border border-lightGreenColor text-secondary-text rounded-tl-sm',
           )}
         >
           <p className="break-words whitespace-pre-wrap">{message.body}</p>
@@ -71,10 +71,10 @@ export default function MessageBubble({
                 <a
                   href={message.attachment.url}
                   download={message.attachment.name}
-                  className="flex items-center gap-2 rounded-lg border border-[#E5E7EB] bg-white p-2 hover:bg-gray-50 transition-colors cursor-pointer"
+                  className="flex items-center gap-2 rounded-lg border border-lightGreenColor bg-white p-2 hover:bg-background transition-colors cursor-pointer"
                 >
                   <svg
-                    className="h-5 w-5 text-gray-500"
+                    className="h-5 w-5 text-grayColor1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -89,7 +89,7 @@ export default function MessageBubble({
                   <span className="text-xs text-secondary-text flex-1">
                     {message.attachment.name}
                   </span>
-                  <Download className="w-4 h-4 text-gray-500" />
+                  <Download className="w-4 h-4 text-grayColor1" />
                 </a>
               )}
             </div>
@@ -126,10 +126,10 @@ export default function MessageBubble({
         {showTranslation && (
           <div className="mt-2 space-y-2">
             <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3">
-              <p className="text-xs text-gray-500 mb-1.5 font-medium">
+              <p className="text-xs text-grayColor1 mb-1.5 font-medium">
                 Translated into {isUser ? 'English' : userLanguage}
               </p>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-blackColor leading-relaxed">
                 "{message.body}"
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function MessageBubble({
         )}
         <div
           className={cn(
-            'mt-1 flex items-center gap-2 text-[11px] text-gray-400',
+            'mt-1 flex items-center gap-2 text-[11px] text-grayColor1',
             isUser && 'justify-end',
           )}
         >

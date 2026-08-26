@@ -52,7 +52,7 @@ function DetailItem({
     <div
       className={`flex items-start gap-3 p-4 md:p-6 border-[#E8F0EB] max-lg:border-b last:max-lg:border-b-0 ${(index + 1) % 3 !== 0 ? 'lg:border-r' : ''} ${index < 6 ? 'lg:border-b' : ''}`}
     >
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#ecf9f1]">
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-lightGreenColor">
         {icon}
       </div>
       <div className="min-w-0">
@@ -140,7 +140,7 @@ export default function PrescriptionDetailsModal({
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap-reverse md:flex-wrap md:items-center gap-2">
-                    <h3 className="text-base md:text-lg font-medium text-[#111]">
+                    <h3 className="text-base md:text-lg font-medium text-blackColor">
                       {data.treatmentName}
                     </h3>
                     <span className="rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-2.5 py-0.5 text-xs font-medium text-primary">
@@ -150,7 +150,7 @@ export default function PrescriptionDetailsModal({
                   <p className="mt-1 text-sm text-primary flex items-start">
                     {data.treatmentSub}
                   </p>
-                  <p className="mt-3 text-xs md:text-sm md:leading-relaxed text-[#111] text-justify">
+                  <p className="mt-3 text-xs md:text-sm md:leading-relaxed text-blackColor text-justify">
                     {approvalNote}
                   </p>
                 </div>
@@ -159,15 +159,15 @@ export default function PrescriptionDetailsModal({
               <div className="h-px w-full bg-[#E0EBE4] lg:hidden" />
               <div className="flex flex-col items-start gap-3 lg:min-w-55 lg:items-start">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#102b1c] text-xs font-semibold text-white">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-greenColor text-xs font-semibold text-white">
                     DR
                   </div>
                   <div className="text-left">
-                    <p className="text-xs text-[#6c6c6c]">Prescribed By</p>
+                    <p className="text-xs text-grayColor1">Prescribed By</p>
                     <p className="text-sm md:text-lg font-medium text-secondary-text">
                       {doctorName}
                     </p>
-                    <p className="text-xs md:text-[14px] text-[#3b3b3c]">
+                    <p className="text-xs md:text-[14px] text-grayColor1">
                       {doctorTitle}
                     </p>
                   </div>
@@ -182,7 +182,7 @@ export default function PrescriptionDetailsModal({
           </div>
 
           <div className="rounded-[12px] shadow bg-white p-4">
-            <h4 className="mb-4 text-base md:text-lg font-medium text-[#102b1c] text-justify">
+            <h4 className="mb-4 text-base md:text-lg font-medium text-greenColor text-justify">
               Details
             </h4>
             <div className="grid grid-cols-1 lg:grid-cols-3">

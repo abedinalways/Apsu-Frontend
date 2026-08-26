@@ -7,6 +7,7 @@ import {
   FormItem,
   FormControl,
   FormMessage,
+  FormLabel,
 } from '@/components/ui/form';
 import { Checkbox } from '@/components/ui/checkbox';
 import { cn } from '@/lib/utils';
@@ -34,7 +35,7 @@ export default function GoalLifestyleActivityStepTwo() {
     <div className="space-y-6">
       {/* Section 1: How does this affect your day? */}
       <div className="space-y-4">
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           How does this affect your day?
         </h2>
 
@@ -57,9 +58,9 @@ export default function GoalLifestyleActivityStepTwo() {
                     <label
                       key={option.id}
                       className={cn(
-                        'flex items-center space-x-3 w-full p-4 rounded-xl border transition-all cursor-pointer select-none h-14! bg-[background]',
+                        'flex items-center space-x-3 w-full p-4 rounded-xl border transition-all cursor-pointer select-none h-14! bg-background',
                         isChecked
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-lightGreenColor border-2 text-secondary-bg'
                           : 'border-gray-200',
                       )}
                     >
@@ -83,7 +84,7 @@ export default function GoalLifestyleActivityStepTwo() {
 
       {/* Section 2: How would you rate your sleep quality? */}
       <div className="space-y-4">
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           How would you rate your sleep quality?
         </h2>
 
@@ -92,6 +93,9 @@ export default function GoalLifestyleActivityStepTwo() {
           name="sleepRatingCategory"
           render={({ field }) => (
             <FormItem className="space-y-3">
+              <FormLabel className="text-[14px] font-semibold text-blackColor">
+                How would you rate your sleep quality?
+              </FormLabel>
               <FormControl>
                 <div className="w-full space-y-3">
                   {/* Multi-colored horizontal line bar gradient preview */}
@@ -100,7 +104,7 @@ export default function GoalLifestyleActivityStepTwo() {
                     <div className="h-full flex-1 bg-emerald-600" />
                     <div className="h-full flex-1 bg-yellow-600" />
                     <div className="h-full flex-1 bg-orange-500" />
-                    <div className="h-full flex-1 bg-red-500" />
+                    <div className="h-full flex-1 bg-redColor" />
                   </div>
 
                   {/* Dynamic select options row labels exactly from layout map */}
@@ -123,12 +127,12 @@ export default function GoalLifestyleActivityStepTwo() {
                               'text-xs font-semibold tracking-tight transition-colors',
                               isSelected
                                 ? 'text-secondary-bg'
-                                : 'text-gray-600 group-hover:text-gray-900',
+                                : 'text-grayColor1 group-hover:text-gray-900',
                             )}
                           >
                             {cat.label}
                           </p>
-                          <p className="text-[11px] text-gray-400 font-normal mt-0.5">
+                          <p className="text-[11px] text-grayColor1 font-normal mt-0.5">
                             {cat.range}
                           </p>
                         </div>

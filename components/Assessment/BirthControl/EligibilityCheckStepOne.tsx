@@ -29,10 +29,10 @@ export default function EligibilityCheckStepOne() {
     <div className="space-y-6">
       {/* Title & Description block from Screenshot 2026-07-05 110413.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-[#102b1c]">
+        <h2 className="text-[20px] font-semibold text-greenColor">
           Do you currently use nicotine-containing products?
         </h2>
-        <p className="text-[14px] text-[#3b3b3c] mt-1.5">
+        <p className="text-[14px] text-grayColor1 mt-1.5">
           This includes cigarettes, e-cigarettes/vape, pipe tobacco, chewing
           tobacco/snuff, cigars, nicotine patch, nicotine gum, nicotine inhaler,
           and nicotine lozenges.
@@ -59,9 +59,9 @@ export default function EligibilityCheckStepOne() {
                           shouldValidate: true,
                         })
                       }
-                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all bg-[background] h-14! text-[16px] text-[#6c6c6c] cursor-pointer ${
+                      className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all bg-background h-14! text-[16px] text-grayColor1 cursor-pointer ${
                         isSelected
-                          ? 'border-[#AFC1B6] border-2 text-secondary-bg'
+                          ? 'border-lightGreenColor border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -69,8 +69,8 @@ export default function EligibilityCheckStepOne() {
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                            ? 'border-[#AFC1B6] bg-secondary-bg'
-                            : 'border-gray-400 bg-white'
+                            ? 'border-lightGreenColor bg-secondary-bg'
+                            : 'border-grayColor1 bg-white'
                         }`}
                       >
                         {isSelected && (
