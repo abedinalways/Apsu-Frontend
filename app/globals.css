@@ -55,7 +55,9 @@
 <<<<<<< HEAD
 =======
   --color-purpleColor:#FFDEFF;
+  --color-yellowColor:#facc15;
   --color-greenColor1:#587362;
+  --color-gradientColor:#FFCA00;
   --color-greenBgColor: rgba(188, 255, 230, 0.8);
   --color-ratingColor: #ffc52e;
   --color-headerColor: var(--color-secondary-charcol-900);
