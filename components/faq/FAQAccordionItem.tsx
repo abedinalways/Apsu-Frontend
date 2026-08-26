@@ -14,7 +14,11 @@ export function FAQAccordionItem({ item }: FAQAccordionItemProps) {
   return (
     <div
       className={`overflow-hidden rounded-[12px] transition-colors duration-200 ${
+<<<<<<< HEAD
         isOpen ? 'bg-primary-800' : 'border border-[#e5e2da] bg-white'
+=======
+        isOpen ? 'bg-blackColor' : 'border border-background bg-white'
+>>>>>>> 673c73c (update the faq section)
       }`}
     >
       <button
