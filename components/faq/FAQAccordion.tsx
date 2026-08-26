@@ -75,7 +75,7 @@ export function FAQAccordion({ item }: Props) {
         className="
           border-t
           border-dashed
-          border-greenColor
+          border-background
 
           bg-whiteColor
 
