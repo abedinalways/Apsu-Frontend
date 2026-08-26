@@ -125,7 +125,7 @@ export default function PrescriptionTrackOrderModal({
               Shipping Details
             </h5>
             <div className="space-y-5">
-              <div className="flex justify-between items-center border-b border-gray-100 pb-3">
+              <div className="flex justify-between items-center border-b border-borderColor pb-3">
                 <span className="text-sm text-grayColor1 font-light">
                   Tracking Number
                 </span>
@@ -133,7 +133,7 @@ export default function PrescriptionTrackOrderModal({
                   {data.trackingNumber || '9400 1111 2222'}
                 </span>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-100 pb-3">
+              <div className="flex justify-between items-center border-b border-borderColor pb-3">
                 <span className="text-sm text-grayColor1 font-light">
                   Carrier
                 </span>
@@ -141,7 +141,7 @@ export default function PrescriptionTrackOrderModal({
                   {data.carrier || 'USPS Priority Mail'}
                 </span>
               </div>
-              <div className="flex justify-between items-center border-b border-gray-100 pb-3">
+              <div className="flex justify-between items-center border-b border-borderColor pb-3">
                 <span className="text-sm text-grayColor1 font-light">
                   Estimated Delivery
                 </span>
@@ -162,7 +162,7 @@ export default function PrescriptionTrackOrderModal({
           </div>
         </div>
 
-        <div className="bg-[#fffaea] border border-background rounded-[16px] p-4 text-left shadow">
+        <div className="bg-background border border-background rounded-[16px] p-4 text-left shadow">
           <h4 className="text-sm md:text-[16px] font-medium text-greenColor mb-1">
             Prescription Shipped
           </h4>

@@ -39,7 +39,7 @@ export default function StatCards({
                 <div className="text-[20px] font-semibold group-hover:text-whiteColor transition-all duration-200 text-blackColor">
                   {card.value}
                 </div>
-                <span className="text-xs font-medium group-hover:text-[#E5B400] transition-all duration-200  px-2 py-1 rounded">
+                <span className="text-xs font-medium group-hover:text-orangeColor transition-all duration-200  px-2 py-1 rounded">
                   ({card.percentage})
                 </span>
               </div>

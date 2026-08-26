@@ -19,7 +19,7 @@ export default function ConversationListItem({
       type="button"
       onClick={() => onSelect(conversation.id)}
       className={`w-full px-4 py-6 flex items-start gap-3 text-left transition-colors relative ${
-        isActive ? 'bg-[#E9F4EE]' : 'hover:bg-gray-50'
+        isActive ? 'bg-lightGreenColor' : 'hover:bg-background'
       }`}
     >
       {/* Avatar */}
@@ -48,7 +48,7 @@ export default function ConversationListItem({
 
       {/* Unread indicator - left green border */}
       {conversation.unreadCount > 0 && (
-        <div className="absolute left-0 top-2 bottom-2 w-1 bg-[#10B981] rounded-r-full" />
+        <div className="absolute left-0 top-2 bottom-2 w-1 bg-greenColor1 rounded-r-full" />
       )}
     </button>
   );

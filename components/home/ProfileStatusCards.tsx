@@ -43,7 +43,7 @@ const ProfileStatusCards = () => {
           {/* Gradient Progress Bar */}
           <div className="w-full h-2.5 rounded-full bg-gray-100 overflow-hidden">
             <div
-              className="h-full rounded-full bg-linear-to-r from-[#3B82F6] via-[#1A8A79] via-[#F59E0B] to-[#EF4444]"
+              className="h-full rounded-full bg-linear-to-r from-blueColor via-greenColor via-orangeColor to-redColor"
               style={{ width: "99%" }}
             />
           </div>

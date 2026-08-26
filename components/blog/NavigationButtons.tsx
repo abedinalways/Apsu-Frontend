@@ -28,10 +28,10 @@ export default function NavigationButtons({
         justify-center
         rounded-full
         border
-        border-[#0A3322]
+        border-primaryColor
         transition-all
         duration-300
-        hover:bg-[#0A3322]
+        hover:bg-primaryColor
         hover:text-white
         disabled:cursor-not-allowed
         disabled:opacity-40
@@ -51,10 +51,10 @@ export default function NavigationButtons({
         justify-center
         rounded-full
         border
-        border-[#0A3322]
+        border-primaryColor
         transition-all
         duration-300
-        hover:bg-[#0A3322]
+        hover:bg-primaryColor
         hover:text-white
         disabled:cursor-not-allowed
         disabled:opacity-40

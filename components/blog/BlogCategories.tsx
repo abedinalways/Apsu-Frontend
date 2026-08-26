@@ -34,7 +34,7 @@ export default function BlogCategories({
               ${
                 active
                   ? ' bg-lightGreenColor text-primary'
-                  : 'border-[#E3E3E3] bg-white text-[#6B6B6B] hover:border-[#008C5E] hover:text-[#008C5E]'
+                  : 'border-background bg-white text-grayColor1 hover:border-greenColorhover:text-greenColor'
               }
             `}
           >

@@ -45,7 +45,7 @@ export default function SleepBreakCard() {
           {stories.map((item) => (
             <div
               key={item.id}
-              className="group relative flex flex-col bg-[#D0FFFD] shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.06)] rounded-2xl p-4 md:p-6 min-h-[400px]  lg:min-h-[431px] justify-between overflow-hidden cursor-pointer transition-all duration-300 border border-[#F5F4EE]"
+              className="group relative flex flex-col bg-bgColor1 shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.06)] rounded-2xl p-4 md:p-6 min-h-[400px]  lg:min-h-[431px] justify-between overflow-hidden cursor-pointer transition-all duration-300 border border-borderColor"
             >
               {/* --- NORMAL CONTENT STATE --- */}
 
@@ -63,7 +63,7 @@ export default function SleepBreakCard() {
               <div className="flex items-end justify-between transition-all duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
                 <div>
                   <h4 className="text-blackColor font-semibold text-lg md:text-xl flex items-center gap-1">
-                    <div className="w-5 h-5 bg-[#0C2417] rounded-full flex items-center justify-center text-white">
+                    <div className="w-5 h-5 bg-primaryColor rounded-full flex items-center justify-center text-white">
                       <ArrowRight className="w-3 h-3 stroke-[3]" />
                     </div>{" "}
                     Matched to a

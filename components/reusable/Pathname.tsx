@@ -9,7 +9,7 @@ function Pathname() {
       <div className="flex flex-wrap mt-8 lg:mt-15 items-center gap-2 text-base text-grayColor1">
         <span className="flex items-center gap-2 ">
           {' '}
-          Home <ChevronRight className="w-4 h-4 text-[#737373]" />
+          Home <ChevronRight className="w-4 h-4 text-grayColor1" />
         </span>
 
         {sPath.map((path, index) => {
@@ -23,7 +23,7 @@ function Pathname() {
                   <Link href={fullPath} className=" capitalize">
                     {path}
                   </Link>
-                  <ChevronRight className="w-4 h-4 text-[#737373]" />
+                  <ChevronRight className="w-4 h-4 text-grayColor1" />
                 </>
               ) : (
                 <span className="capitalize text-headerColor font-medium">
