@@ -14,7 +14,7 @@ export function FAQAccordionItem({ item }: FAQAccordionItemProps) {
   return (
     <div
       className={`overflow-hidden rounded-[12px] transition-colors duration-200 ${
-        isOpen ? 'bg-primary-800' : 'border border-background bg-white'
+        isOpen ? 'bg-blackColor' : 'border border-background bg-white'
       }`}
     >
       <button
@@ -24,7 +24,7 @@ export function FAQAccordionItem({ item }: FAQAccordionItemProps) {
         className={`flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium transition-colors ${
           isOpen
             ? 'text-white'
-            : 'text-secondary-charcol-700 hover:text-primary-800'
+            : 'text-blackColor hover:text-blackColor'
         }`}
       >
         <span>{item.question}</span>

@@ -57,13 +57,13 @@ function AboutExist() {
                       {stat.value}
                     </h3>
                     {/* Description */}
-                    <p className="text-[#585E5A] text-sm md:text-base leading-relaxed max-w-md">
+                    <p className="text-grayColor1 text-sm md:text-base leading-relaxed max-w-md">
                       {stat.description}
                     </p>
                   </div>
 
                   {/* Source Text (Italicized) */}
-                  <p className="text-[#A1A6A2] italic text-xs md:text-sm mt-6">
+                  <p className="text-grayColor1 italic text-xs md:text-sm mt-6">
                     {stat.source}
                   </p>
                 </div>
