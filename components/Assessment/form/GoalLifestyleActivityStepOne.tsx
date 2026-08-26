@@ -60,7 +60,7 @@ export default function GoalLifestyleActivityStepOne() {
                       className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all ${
                         isSelected
                           ? 'border-lightGreenColor bg-lightGreenColor/10 shadow-sm'
-                          : 'border-gray-100 bg-[#FAF9F6]/50 hover:bg-[#FAF9F6]'
+                          : 'border-gray-100 bg-bgColor/50 hover:bg-bgColor'
                       }`}
                     >
                       {/* Custom styled outer circular radio control ring */}
