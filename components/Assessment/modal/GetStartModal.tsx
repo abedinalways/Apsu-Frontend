@@ -58,7 +58,7 @@ export default function GetStartModal({
               ].map((text, idx) => (
                 <li
                   key={idx}
-                  className="flex items-center gap-2.5 text-gray-700 text-sm font-medium"
+                  className="flex items-center gap-2.5 text-blackColor text-sm font-medium"
                 >
                   <CheckCircle2 className="h-5 w-5 fill-greenColor text-white shrink-0" />
                   <span className="text-[18px]">{text}</span>
@@ -68,7 +68,7 @@ export default function GetStartModal({
           </div>
 
           {/* Free Plan Cost Highlight Box Section */}
-          <div className="bg-lightGreenColor border border-[#EBF7F0] p-4 rounded-xl mb-6">
+          <div className="bg-lightGreenColor border border-borderColor p-4 rounded-xl mb-6">
             <p className="text-[14px] text-blackColor font-medium leading-relaxed">
               Our physician and shipping cost both are $0. No membership
               required.
@@ -79,7 +79,7 @@ export default function GetStartModal({
           <button
             type="button"
             onClick={onGetStarted}
-            className="w-full py-3.5 bg-greenColor hover:bg-greenColor/80 text-[#fff] font-medium text-[16px] rounded-full tracking-wide shadow-sm active:scale-[0.99] transition-all cursor-pointer"
+            className="w-full py-3.5 bg-greenColor hover:bg-greenColor/80 text-whiteColor font-medium text-[16px] rounded-full tracking-wide shadow-sm active:scale-[0.99] transition-all cursor-pointer"
           >
             Get started
           </button>
