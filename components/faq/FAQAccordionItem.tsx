@@ -14,7 +14,7 @@ export function FAQAccordionItem({ item }: FAQAccordionItemProps) {
   return (
     <div
       className={`overflow-hidden rounded-[12px] transition-colors duration-200 ${
-        isOpen ? 'bg-primary-800' : 'border border-borderColor bg-white'
+        isOpen ? 'bg-blackColor' : 'border border-background bg-white'
       }`}
     >
       <button
