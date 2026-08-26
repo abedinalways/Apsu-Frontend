@@ -5,8 +5,8 @@ function CareCard({ slide }: { slide: SlideItem }) {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-stretch w-full ">
-        <div className="md:col-span-2 bg-bgColor border border-[#F5F4EE] shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.04)] rounded-2xl p-6 md:p-4 lg:p-6 flex flex-col justify-between items-start text-left">
-          <span className="text-5xl md:text-6xl lg:text-[80px]  text-[#21AC8847]/38 ">
+        <div className="md:col-span-2 bg-bgColor border border-background shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.04)] rounded-2xl p-6 md:p-4 lg:p-6 flex flex-col justify-between items-start text-left">
+          <span className="text-5xl md:text-6xl lg:text-[80px]  text-greencolor ">
             {slide.stepNumber}
           </span>
 
