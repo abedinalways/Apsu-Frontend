@@ -52,6 +52,11 @@
   --color-borderColor: #cddcd3;
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
+<<<<<<< HEAD
+=======
+  --color-purpleColor:#FFDEFF;
+  --color-greenColor1:#587362;
+>>>>>>> 673c73c (update the faq section)
   --color-greenBgColor: rgba(188, 255, 230, 0.8);
   --color-ratingColor: #ffc52e;
   --color-headerColor: var(--color-secondary-charcol-900);
