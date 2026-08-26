@@ -53,7 +53,10 @@
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
   --color-purpleColor:#FFDEFF;
+<<<<<<< HEAD
   --color-greenColor1:#587362;
+=======
+>>>>>>> 4490592 (update the login section)
   --color-greenBgColor: rgba(188, 255, 230, 0.8);
   --color-ratingColor: #ffc52e;
   --color-headerColor: var(--color-secondary-charcol-900);
