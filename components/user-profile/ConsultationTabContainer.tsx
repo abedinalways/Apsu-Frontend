@@ -122,8 +122,8 @@ export default function ConsultationTabContainer() {
                     <span
                       className={`px-3 py-0.5 rounded-full text-xs font-medium border ${
                         item.status === 'Upcoming'
-                          ? 'text-[#006aab] border-[#b6e6ff] bg-[#eff9ff]'
-                          : 'text-[#04913e] border-[#b2ffd0] bg-[#eefff4]'
+                          ? 'text-blueColor border-borderColor bg-background'
+                          : 'text-greenColor border-borderColor bg-background'
                       }`}
                     >
                       {item.status}
@@ -138,7 +138,7 @@ export default function ConsultationTabContainer() {
                       className={`inline-flex items-center  cursor-pointer gap-1.5 text-sm font-medium transition-colors ${
                         item.notes
                           ? 'text-grayColor1 hover:text-secondary-text'
-                          : 'text-gray-300 cursor-not-allowed'
+                          : 'text-grayColor1 cursor-not-allowed'
                       }`}
                       title={
                         item.notes
@@ -163,7 +163,7 @@ export default function ConsultationTabContainer() {
             {/* Close Button */}
             <button
               onClick={() => setSelectedConsultation(null)}
-              className="absolute top-5 right-5 text-grayColor1 hover:text-grayColor1 p-1 rounded-full border border-gray-100 hover:bg-gray-50 transition-colors"
+              className="absolute top-5 right-5 text-grayColor1 hover:text-grayColor1 p-1 rounded-full border border-borderColor hover:bg-background transition-colors"
             >
               <svg
                 className="w-4 h-4"
@@ -207,7 +207,7 @@ export default function ConsultationTabContainer() {
             </div>
 
             {/* Modal Content / Note Body */}
-            <div className="mt-6 bg-gray-100 rounded-[12px] p-3 text-sm md:text-[16px] text-grayColor1 font-light leading-[160%]">
+            <div className="mt-6 bg-background rounded-[12px] p-3 text-sm md:text-[16px] text-grayColor1 font-light leading-[160%]">
               {selectedConsultation.notes}
             </div>
           </div>

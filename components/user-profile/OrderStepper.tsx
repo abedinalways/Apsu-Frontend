@@ -26,7 +26,7 @@ export default function OrderStepper({
           {/* Progress Line */}
 
           <div
-            className="absolute left-[11px] top-3 w-[2px] bg-[#FCBE15] transition-all duration-700 ease-in-out"
+            className="absolute left-[11px] top-3 w-[2px] bg-yellowColor transition-all duration-700 ease-in-out"
             style={{
               height: `calc(${progress}% - 16px)`,
             }}
@@ -59,10 +59,10 @@ export default function OrderStepper({
 
                     ${
                       completed
-                        ? 'bg-[#219653] border-lightGreenColor'
+                        ? 'bg-greenColor border-lightGreenColor'
                         : active
-                          ? 'bg-[#FCBE15] border-lightGreenColor'
-                          : 'bg-[#5A6561] border-lightGreenColor'
+                          ? 'bg-yellowColor border-lightGreenColor'
+                          : 'bg-greenColor1 border-lightGreenColor'
                     }
                   `}
                   >
@@ -72,7 +72,7 @@ export default function OrderStepper({
 
                     {active && (
                       <>
-                        <span className="absolute inset-0 rounded-full bg-[#FCBE15]/40 animate-ping" />
+                        <span className="absolute inset-0 rounded-full bg-yellowColor/40 animate-ping" />
 
                         <span className="relative h-2 w-2 rounded-full bg-white" />
                       </>
@@ -89,8 +89,8 @@ export default function OrderStepper({
                       active
                         ? 'font-semibold text-secondary-text'
                         : completed
-                          ? 'font-medium text-[#5A6561]'
-                          : 'text-[#8A928D]'
+                          ? 'font-medium text-grayColor1'
+                          : 'text-greenColor1'
                     }
                   `}
                   >
@@ -116,7 +116,7 @@ export default function OrderStepper({
           {/* Progress Line */}
 
           <div
-            className="absolute left-0 top-5 h-[2px] bg-[#FCBE15] transition-all duration-700 ease-in-out"
+            className="absolute left-0 top-5 h-[2px] bg-yellowColor transition-all duration-700 ease-in-out"
             style={{
               width: `${progress}%`,
             }}
@@ -151,10 +151,10 @@ export default function OrderStepper({
 
                   ${
                     completed
-                      ? 'bg-[#219653] border-lightGreenColor'
+                      ? 'bg-greenColor border-lightGreenColor'
                       : active
-                        ? 'bg-[#FCBE15] border-lightGreenColor scale-110'
-                        : 'bg-[#5A6561] border-lightGreenColor'
+                        ? 'bg-yellowColor border-lightGreenColor scale-110'
+                        : 'bg-greenColor1 border-lightGreenColor'
                   }
                 `}
                 >
@@ -164,7 +164,7 @@ export default function OrderStepper({
 
                   {active && (
                     <>
-                      <span className="absolute inset-0 rounded-full bg-[#FCBE15]/40 animate-ping" />
+                      <span className="absolute inset-0 rounded-full bg-yellowColor/40 animate-ping" />
 
                       <span className="relative h-3 w-3 rounded-full bg-white" />
                     </>
@@ -181,8 +181,8 @@ export default function OrderStepper({
                     active
                       ? 'font-semibold text-secondary-text'
                       : completed
-                        ? 'font-medium text-[#5A6561]'
-                        : 'text-[#8A928D]'
+                        ? 'font-medium text-greenColor1'
+                        : 'text-greenColor1'
                   }
                 `}
                 >

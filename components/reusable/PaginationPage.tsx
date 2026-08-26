@@ -110,13 +110,13 @@ function PaginationPage({
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="text-sm text-[#4a4c56]">
+              <div className="text-sm text-grayColor1">
                 Showing {startIndex} to {endIndex} of {effectiveTotalItems}{" "}
                 entries
               </div>
 
               <div className="flex items-center gap-2">
-                <label className="text-sm text-[#4a4c56]">Show</label>
+                <label className="text-sm text-grayColor1">Show</label>
                 <Select
                   value={String(itemsPerPage)}
                   onValueChange={(value) =>

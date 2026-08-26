@@ -67,7 +67,7 @@ export const termsData: TermsSection[] = [
     title: 'No guarantee of treatment',
     sidebarTitle: 'No guarantee of treatment',
     content: `
-      <p class="text-grayColor1 text-[18px]">Completing an intake, creating an account, or submitting payment does not guarantee that you will be prescribed any medication or treatment. Whether to prescribe is solely the decision of an independent licensed provider, based on clinical judgment, the information you provide, and applicable law. If a provider determines that treatment is not appropriate for you, <span class="text-[#ef4444]">you will be refunded for your medication and shipping, minus the consultation fee.</span></p>
+      <p class="text-grayColor1 text-[18px]">Completing an intake, creating an account, or submitting payment does not guarantee that you will be prescribed any medication or treatment. Whether to prescribe is solely the decision of an independent licensed provider, based on clinical judgment, the information you provide, and applicable law. If a provider determines that treatment is not appropriate for you, <span class="text-redColor">you will be refunded for your medication and shipping, minus the consultation fee.</span></p>
     `,
   },
   {

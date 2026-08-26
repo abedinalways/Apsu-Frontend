@@ -103,7 +103,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
             Shipping Details
           </h5>
           <div className="space-y-5">
-            <div className="flex justify-between items-center border-b border-gray-100 pb-3">
+            <div className="flex justify-between items-center border-b border-borderColor pb-3">
               <span className="text-sm text-grayColor1 font-light">
                 Tracking Number
               </span>
@@ -140,7 +140,7 @@ export default function ShippedOrderModal({ order }: ShippedOrderModalProps) {
         </div>
       </div>
 
-      <div className="bg-[#eff9ff] border border-blueColor rounded-[12px] p-4 text-left shadow">
+      <div className="bg-background border border-blueColor rounded-[12px] p-4 text-left shadow">
         <h4 className="text-sm md:text-[16px] font-medium text-greenColor mb-1">
           Your Order Is On Its Way
         </h4>

@@ -141,7 +141,7 @@ export default function WorksCard() {
                         <span
                           className={cn(
                             'text-lg font-semibold transition-colors duration-300',
-                            isOpen ? 'text-primaryColor' : 'text-[#3a5847]',
+                            isOpen ? 'text-primaryColor' : 'text-greenColor1',
                           )}
                         >
                           {step.title}

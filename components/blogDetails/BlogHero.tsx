@@ -14,17 +14,7 @@ export default function BlogHero({ blog }: Props) {
         {/* Hero Content */}
         <div className="flex-1 min-w-0">
           
-            {/* Updated Date */}
-            {/* <p
-              className="
-                text-[12px]
-                uppercase
-                tracking-[0.28em]
-                text-[#7B7B7B]
-              "
-            >
-              LAST UPDATED ON {blog.date.toUpperCase()}
-            </p> */}
+           
 
             {/* Title */}
             <h1

@@ -68,7 +68,7 @@ export default function DynamicTable({
                 ))}
                 {(onView || onDelete) && (
                   <th>
-                    <div className="px-4 border border-red-600  rounded-2xl py-3 text-sm font-medium text-[#4a4c56] border-b  bg-neutral-50">
+                    <div className="px-4 border border-redColor  rounded-2xl py-3 text-sm font-medium text-grayColor border-b  bg-background">
                       Action
                     </div>
                   </th>
@@ -80,19 +80,19 @@ export default function DynamicTable({
                 <tr>
                   <td
                     colSpan={columns.length + (onView || onDelete ? 1 : 0)}
-                    className="px-4 py-10 text-center text-[#4a4c56] text-sm"
+                    className="px-4 py-10 text-center text-grayColor1 text-sm"
                   >
                     <Loader />
                   </td>
                 </tr>
               ) : data?.length > 0 ? (
                 data.map((row: any, i: number) => (
-                  <tr key={i} className="border-t border-gray-100">
+                  <tr key={i} className="border-t border-background">
                     {columns.map((col: ColumnConfig, idx: number) => (
                       <td
                         key={idx}
                         style={{ width: col.width || 'auto' }}
-                        className="px-4 py-3 text-sm text-[#4a4c56]"
+                        className="px-4 py-3 text-sm text-grayColor1"
                       >
                         {col.formatter
                           ? col.formatter(
@@ -107,7 +107,7 @@ export default function DynamicTable({
                       <td className="px-4 py-3 flex gap-4 items-center">
                         {onView && (
                           <span
-                            className="text-xs underline text-[#4a4c56]  cursor-pointer"
+                            className="text-xs underline text-grayColor1  cursor-pointer"
                             onClick={() => onView(row)}
                           >
                             View details
@@ -131,7 +131,7 @@ export default function DynamicTable({
                 <tr>
                   <td
                     colSpan={columns.length + (onView || onDelete ? 1 : 0)}
-                    className="px-4 py-10 text-center text-[#4a4c56] text-sm"
+                    className="px-4 py-10 text-center text-grayColor1 text-sm"
                   >
                     {error ? (
                       <p className="text-redColor text-xl capitalize font-semibold">

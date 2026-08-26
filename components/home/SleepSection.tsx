@@ -12,7 +12,7 @@ function SleepSection() {
   ];
   return (
     <div>
-      <div className="xl:py-27 lg:py-15 pt-4 gap-4 relative px-3 md:px-6 mt-12 lg:mt-30 lg:px-8 grid grid-cols-1 lg:grid-cols-2 bg-[#D0FFFD] rounded-2xl lg:rounded-4xl">
+      <div className="xl:py-27 lg:py-15 pt-4 gap-4 relative px-3 md:px-6 mt-12 lg:mt-30 lg:px-8 grid grid-cols-1 lg:grid-cols-2 bg-lightGreenColor rounded-2xl lg:rounded-4xl">
         <div className="relative flex h-full items-end order-2 lg:order-1 w-full mt-2 lg:mt-0">
           <div className="lg:absolute flex justify-center w-full lg:-top-21.5 xl:-top-43.75 lg:left-2 left-4 ">
             <Image

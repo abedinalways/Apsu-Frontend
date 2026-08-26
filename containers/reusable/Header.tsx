@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({
           <div className=" xl:hidden h-full flex items-center">
             <button
               onClick={onMenuClick}
-              className=" pr-2 py-2  text-[#4A4C56]"
+              className=" pr-2 py-2  text-grayColor1"
             >
               {sidebarOpen ? (
                 <X className=" z-50 bg-black " />

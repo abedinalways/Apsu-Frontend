@@ -41,25 +41,25 @@ function ProgramPricingSection({
           {/* Menu / Accordion Wrapper */}
           <div className="w-full space-y-4 mt-4 xl:mt-0 ">
             {/* How It Works Header Line */}
-            <div className="border-y pt-2 border-gray-200 pb-3 flex items-center justify-between cursor-pointer group">
+            <div className="border-y pt-2 border-borderColor pb-3 flex items-center justify-between cursor-pointer group">
               <a
                 href="#Works"
-                className="text-xs md:text-sm font-semibold text-[#585E5A] group-hover:text-[#0C2417] underline transition-colors"
+                className="text-xs md:text-sm font-semibold text-grayColor1 group-hover:text-greenColor underline transition-colors"
               >
                 How It Works
               </a>
             </div>
 
             {/* Program Benefits Accordion */}
-            <div className="border-b border-gray-200 pb-3">
+            <div className="border-b border-borderColor pb-3">
               <div
                 onClick={() => setIsBenefitsOpen(!isBenefitsOpen)}
                 className="flex items-center justify-between cursor-pointer select-none py-1"
               >
-                <span className="text-xs md:text-sm font-semibold text-[#585E5A]">
+                <span className="text-xs md:text-sm font-semibold text-grayColor1">
                   Program Benefits
                 </span>
-                <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-grayColor1">
+                <div className="w-6 h-6 rounded-full bg-background flex items-center justify-center text-grayColor1">
                   {isBenefitsOpen ? (
                     <ChevronUp className="w-3.5 h-3.5" />
                   ) : (
