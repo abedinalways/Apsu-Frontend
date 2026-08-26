@@ -52,6 +52,21 @@
   --color-borderColor: #cddcd3;
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
+  --color-purpleColor:#FFDEFF;
+<<<<<<< HEAD
+  --color-greenColor1:#587362;
+=======
+<<<<<<< HEAD
+  --color-yellowColor:#facc15;
+  --color-greenColor1:#587362;
+  --color-gradientColor:#FFCA00;
+=======
+<<<<<<< HEAD
+  --color-greenColor1:#587362;
+=======
+>>>>>>> 4490592 (update the login section)
+>>>>>>> 677c80b (update the login section)
+>>>>>>> df4739e (update the login section)
   --color-greenBgColor: rgba(188, 255, 230, 0.8);
   --color-ratingColor: #ffc52e;
   --color-headerColor: var(--color-secondary-charcol-900);

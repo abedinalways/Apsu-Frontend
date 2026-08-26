@@ -22,9 +22,6 @@ export function FAQAccordion({ item }: Props) {
         overflow-hidden
         rounded-2xl
 <<<<<<< HEAD
-        border  hover:bg-[#586E60] hover:text-whiteColor transition-all
-        border-[#E7E2D9]
-=======
         border  hover:bg-greenColor1 hover:text-whiteColor transition-all
         border-background
 >>>>>>> 673c73c (update the faq section)
@@ -42,10 +39,10 @@ export function FAQAccordion({ item }: Props) {
           hover:no-underline
 
 <<<<<<< HEAD
-          data-[state=open]:bg-[#586E60]
-=======
           data-[state=open]:bg-greenColor1
->>>>>>> 673c73c (update the faq section)
+=======
+          data-[state=open]:bg-greenColor
+>>>>>>> 350b5c9 (update the faq section)
           data-[state=open]:text-white
         "
       >
@@ -85,10 +82,10 @@ export function FAQAccordion({ item }: Props) {
           border-t
           border-dashed
 <<<<<<< HEAD
-          border-[#D8D4CC]
-=======
           border-greenColor
->>>>>>> 673c73c (update the faq section)
+=======
+          border-background
+>>>>>>> 350b5c9 (update the faq section)
 
           bg-whiteColor
 
