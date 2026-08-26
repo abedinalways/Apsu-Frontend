@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { BlogService } from '@/lib/services/blog.service';
 import BlogContent from '@/components/blog/BlogContent'
 import BlogHero from '@/components/blog/BlogHero'
@@ -6,6 +7,14 @@ import RecommendedCarousel from '@/components/blog/RecommendedCarousel';
 
 import FAQFooter from '@/components/faq/FAQFooter'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'Health & Wellness Blog | Apsu',
+  description:
+    'Expert insights on weight loss, birth control, sleep health, and wellness. Stay informed with Apsu\'s medical blog.',
+  keywords:
+    'health blog, wellness blog, weight loss tips, birth control info, sleep health, medical advice, telehealth blog',
+};
 
 export default async function BlogPage() {
   let blogs;
