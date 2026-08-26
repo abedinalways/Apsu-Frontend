@@ -175,22 +175,35 @@ export default function CheckoutPaymentStepOne() {
                               <FormField
                                 control={control}
                                 name="cardExpiry"
-                                render={({ field }) => (
-                                  <FormItem className="flex flex-col gap-1">
-                                    <FormLabel className="text-[11px] font-medium text-gray-700">
-                                      Expiry Date{' '}
-                                      <span className="text-redColor">*</span>
-                                    </FormLabel>
-                                    <FormControl>
-                                      <Input
-                                        placeholder="MM / YY"
-                                        {...field}
-                                        className="bg-background h-11 text-center"
-                                      />
-                                    </FormControl>
-                                    <FormMessage />
-                                  </FormItem>
-                                )}
+                                render={({ field }) => {
+                                  const formatExpiry = (value: string) => {
+                                    const cleaned = value.replace(/\D/g, '').slice(0, 4);
+                                    if (cleaned.length >= 3) {
+                                      return `${cleaned.slice(0, 2)} / ${cleaned.slice(2, 4)}`;
+                                    }
+                                    return cleaned;
+                                  };
+
+                                  return (
+                                    <FormItem className="flex flex-col gap-1">
+                                      <FormLabel className="text-[11px] font-medium text-gray-700">
+                                        Expiry Date{' '}
+                                        <span className="text-redColor">*</span>
+                                      </FormLabel>
+                                      <FormControl>
+                                        <Input
+                                          placeholder="MM / YY"
+                                          {...field}
+                                          value={formatExpiry(field.value || '')}
+                                          onChange={(e) => field.onChange(formatExpiry(e.target.value))}
+                                          className="bg-background h-11 text-center"
+                                          maxLength={7}
+                                        />
+                                      </FormControl>
+                                      <FormMessage />
+                                    </FormItem>
+                                  );
+                                }}
                               />
                             </div>
                             <div className="min-w-0">
