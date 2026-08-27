@@ -34,6 +34,8 @@
   --color-bulletColor: var(--bulletColor);
   --color-lightGreenColor2: #bcffe6;
   --color-lightblueCOlor: #d0fffd;
+  --color-yellowColor:var(--yellowColor);
+
 }
 
 /* ------------------------------
@@ -70,6 +72,7 @@
   --color-highlightColor: var(--highlightColor);
   --color-lightGreenColor: var(--lightGreenColor);
   --color-primarySecondColor: #b8d9c6;
+  --color-yellowColor:#e8f3ed;
 }
 /* ------------------------------
    Light Theme (default)

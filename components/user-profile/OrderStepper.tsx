@@ -145,7 +145,7 @@ export default function OrderStepper({
                   items-center
                   justify-center
                   rounded-full
-                  border-[4px]
+                  border-4
                   transition-all
                   duration-500
 
@@ -153,7 +153,7 @@ export default function OrderStepper({
                     completed
                       ? 'bg-greenColor border-lightGreenColor'
                       : active
-                        ? 'bg-yellowColor border-lightGreenColor scale-110'
+                        ? 'bg-ratingColor border-lightGreenColor scale-110'
                         : 'bg-greenColor1 border-lightGreenColor'
                   }
                 `}
