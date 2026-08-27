@@ -69,7 +69,7 @@
   --color-descriptionColor: #3b3b3c;
   --color-highlightColor: var(--highlightColor);
   --color-lightGreenColor: var(--lightGreenColor);
-  --color-titleText:var(--title-text)
+  --color-primarySecondColor: #b8d9c6;
 }
 /* ------------------------------
    Light Theme (default)
