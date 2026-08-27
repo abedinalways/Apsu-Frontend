@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @theme {
   --color-border: var(--border);
@@ -30,8 +30,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-secondary-text: var(--secondary-text);
   --color-secondary-bg: var(--secondary-bg);
-  --color-background:var(--background);
-  --color-bulletColor:var(--bulletColor);
+  --color-background: var(--background);
+  --color-bulletColor: var(--bulletColor);
+  --color-lightGreenColor2: #bcffe6;
+  --color-lightblueCOlor: #d0fffd;
 }
 
 /* ------------------------------
@@ -52,10 +54,8 @@
   --color-borderColor: #cddcd3;
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
-  --color-purpleColor:#FFDEFF;
-  --color-yellowColor:#facc15;
-  --color-greenColor1:#587362;
-  --color-gradientColor:#FFCA00;
+  --color-purpleColor: #ffdeff;
+  --color-greenColor1: #587362;
   --color-greenBgColor: rgba(188, 255, 230, 0.8);
   --color-ratingColor: #ffc52e;
   --color-headerColor: var(--color-secondary-charcol-900);
@@ -65,12 +65,11 @@
   --color-orengeColor: #ff6a55;
   --color-blueColor: #0068ef;
   --color-bgColor: #faf9f4;
-  --color-bgColor1:#D0FFFD;
-  --color-lightGreenColor:var(--lightGreenColor);
+  --color-lightGreenColor: var(--lightGreenColor);
   --color-descriptionColor: #3b3b3c;
   --color-highlightColor: var(--highlightColor);
   --color-lightGreenColor: var(--lightGreenColor);
-  --color-titleText:var(--title-text)
+  --color-primarySecondColor: #b8d9c6;
 }
 /* ------------------------------
    Light Theme (default)
@@ -78,17 +77,17 @@
 :root {
   --primaryColor: #102b1c;
   --secondaryColor: #d6ae29;
-  --lightGreenColor:#E8F3ED;
+  --lightGreenColor: #e8f3ed;
   --blackColor: #070707;
   --whiteColor: #fff;
   --ratingColor: #ffc52e;
-  --highlightColor:#dfec53;
+  --highlightColor: #dfec53;
   --headerColor: #040815;
   --grayColor1: #777980;
   --bgColor: rgba(243, 243, 244, 0.5);
   --descriptionColor: #4a4c56;
   --lightGreenColor: #e8f3ed;
-  --bulletColor:#3B3A35;
+  --bulletColor: #3b3a35;
   /* ========== */
   --radius: 0.625rem;
   --background: #faf9f4;
@@ -141,8 +140,8 @@
   --secondary: #111111;
   --secondary-bg: #0b251a;
   --secondary-text: #142c1e;
-  --bulletColor:#3B3A35;
-  --highlightColor:#fbff19;
+  --bulletColor: #3b3a35;
+  --highlightColor: #fbff19;
   --lightGreenColor: #e8f3ed;
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);

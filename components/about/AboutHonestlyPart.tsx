@@ -1,28 +1,28 @@
-import honestyImg from '@/public/images/about/Frame 2147240890.jpg';
-import mobileImg from '@/public/images/about/aboutmobile.png';
-import { Clock, Stethoscope } from 'lucide-react'; // আপনার প্রজেক্টের সঠিক আইকন ব্যবহার করুন
-import Image from 'next/image';
-import { GlobalIcon } from '../icons/Icons';
+import honestyImg from "@/public/images/about/Frame 2147240890.jpg";
+import mobileImg from "@/public/images/about/aboutmobile.png";
+import { Clock, Stethoscope } from "lucide-react";
+import Image from "next/image";
+import { GlobalIcon } from "../icons/Icons";
 
 function AboutHonestlyPart() {
   const cards = [
     {
       icon: GlobalIcon,
-      title: 'In your language',
+      title: "In your language",
       description:
         "Complete your entire visit in the language you're most comfortable in. Our AI translates your intake and messages both ways inside the consultation. Nothing important gets lost on either side.",
     },
     {
       icon: Stethoscope,
-      title: 'U.S. physicians',
+      title: "U.S. physicians",
       description:
-        'Every diagnosis and prescription comes from a U.S. board-certified physician. The AI never diagnoses or prescribes. The medicine always stays with the doctor.',
+        "Every diagnosis and prescription comes from a U.S. board-certified physician. The AI never diagnoses or prescribes. The medicine always stays with the doctor.",
     },
     {
       icon: Clock,
-      title: 'On your schedule',
+      title: "On your schedule",
       description:
-        'Care is asynchronous. Share your history whenever it suits you; your physician reviews and responds. No appointment, no waiting room, no insurance required.',
+        "Care is asynchronous. Share your history whenever it suits you; your physician reviews and responds. No appointment, no waiting room, no insurance required.",
     },
   ];
 
@@ -76,7 +76,7 @@ function AboutHonestlyPart() {
               return (
                 <div
                   key={index}
-                  className="bg-greenColor backdrop-blur-sm rounded-2xl p-4 py-6 lg:p-8 flex flex-col items-start text-left shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+                  className="bg-primaryColor backdrop-blur-sm rounded-2xl p-4 py-6 lg:p-8 flex flex-col items-start text-left shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
                 >
                   {/* Custom Thin Styled Icon */}
                   {Icon && (
