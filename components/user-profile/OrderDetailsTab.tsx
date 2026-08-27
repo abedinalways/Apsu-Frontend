@@ -87,8 +87,8 @@ export default function OrderDetailsTab() {
   return (
     <div className="w-full text-left space-y-4 font-[Work_Sans]">
       <div>
-        <h3 className="text-xl font-bold text-greenColor">Order Details</h3>
-        <p className="text-sm md:text-[16px] text-greenColor font-light mt-2">
+        <h3 className="text-xl font-bold text-primaryColor">Order Details</h3>
+        <p className="text-sm md:text-[16px] text-primaryColor font-light mt-2">
           Track your medication order and delivery progress.
         </p>
       </div>
@@ -96,7 +96,7 @@ export default function OrderDetailsTab() {
       <div className="w-full overflow-x-auto rounded-[12px] mt-6 border border-background bg-white ">
         <table className="w-full border-collapse text-left min-w-[750px]">
           <thead>
-            <tr className="bg-lightGreenColor text-greenColor font-medium text-sm">
+            <tr className="bg-lightGreenColor text-primaryColor font-medium text-sm">
               <th className="p-4 pl-6">Order#</th>
               <th className="p-4">Treatment</th>
               <th className="p-4">Plan</th>
@@ -110,7 +110,7 @@ export default function OrderDetailsTab() {
             {orders.map(order => (
               <tr
                 key={order.orderId}
-                className="hover:bg-grayColor1/50 transition-colors"
+                className="hover:bg-lightGreenColor/50 transition-colors"
               >
                 <td className="p-4 pl-6 font-medium text-grayColor1">
                   {order.orderId.replace('RX-APSU-', 'APSU-')}
@@ -147,11 +147,14 @@ export default function OrderDetailsTab() {
       </div>
 
       {selectedOrder && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/20">
-          <div className="bg-white rounded-[12px] max-w-4xl w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-background max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50 animate-in fade-in duration-300">
+          <div
+            className="bg-white rounded-[12px] max-w-4xl w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-background max-h-[90vh] overflow-y-auto animate-in fade-in slide-in-from-bottom-4 zoom-in-95
+    duration-300 ease-out"
+          >
             <button
               onClick={() => setSelectedOrder(null)}
-              className="absolute top-5 right-5 text-grayColor1 hover:text-grayColor1 p-1 rounded-full border border-background hover:bg-whiteColor transition-colors"
+              className="absolute top-5 right-5 text-grayColor1 hover:text-lightGreenColor p-1 rounded-full border border-background hover:bg-whiteColor transition-colors"
             >
               <X className="w-4 h-4" />
             </button>

@@ -32,12 +32,15 @@ export default function PrescriptionTrackOrderModal({
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/40 backdrop-blur-[2px]"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/40 backdrop-blur-[2px] animate-in fade-in duration-200"
       onClick={e => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="bg-white rounded-[12px] max-w-4xl w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-background max-h-[90vh] overflow-y-auto">
+      <div
+        className="bg-white rounded-[12px] max-w-4xl w-full p-6 relative shadow-xl font-[Work_Sans] text-left border border-background max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95 slide-in-from-bottom-3
+    duration-300 ease-out"
+      >
         <button
           onClick={onClose}
           className="absolute top-5 right-5 text-grayColor1 hover:text-grayColor1 p-1 rounded-full border border-background hover:bg-background transition-colors"

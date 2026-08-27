@@ -5,7 +5,7 @@ export function TermsHero() {
     <section className="flex flex-col justify-start mb-4 max-w-3xl">
       <div className="flex flex-col gap-2 max-w-4xl">
         {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[110%] text-greenColor">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-[110%] text-primaryColor">
           Terms of Use
         </h1>
 
