@@ -44,7 +44,7 @@ export default function Assessment() {
   return (
     <div className="w-full max-w-2xl mx-auto px-3 sm:px-4 py-4 bg-background-color max-h-screen flex flex-col">
       <div className="flex-1 overflow-y-auto">
-        <h2 className="text-[20px] font-semibold text-greenColor mb-6">
+        <h2 className="text-[20px] font-semibold text-primaryColor mb-6">
           What would you like help with today?
         </h2>
 

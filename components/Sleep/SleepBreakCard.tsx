@@ -1,10 +1,8 @@
-import React from "react";
 import image1 from "@/public/images/sleep/sleep1.png";
 import image2 from "@/public/images/sleep/sleep2.png";
 import image3 from "@/public/images/sleep/sleep3.png";
-import { ArrowRight, Instagram, Linkedin, Star, Twitter } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import Arrow from "../icons/Arrow";
 interface SleepBreakCardItem {
   id: number;
   title: string;
@@ -45,7 +43,7 @@ export default function SleepBreakCard() {
           {stories.map((item) => (
             <div
               key={item.id}
-              className="group relative flex flex-col bg-bgColor1 shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.06)] rounded-2xl p-4 md:p-6 min-h-[400px]  lg:min-h-[431px] justify-between overflow-hidden cursor-pointer transition-all duration-300 border border-borderColor"
+              className="group relative flex flex-col bg-lightblueCOlor shadow-[0_4px_12px_0_rgba(2,_31,_24,_0.06)] rounded-2xl p-4 md:p-6 min-h-[400px]  lg:min-h-[431px] justify-between overflow-hidden cursor-pointer transition-all duration-300  "
             >
               {/* --- NORMAL CONTENT STATE --- */}
 
