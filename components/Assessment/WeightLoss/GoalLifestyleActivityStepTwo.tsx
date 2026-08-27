@@ -25,7 +25,7 @@ export default function GoalLifestyleActivityStepTwo() {
     <div className="space-y-6">
       {/* Question Header matching Screenshot 2026-07-05 093221.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Have you tried losing weight before?
         </h2>
       </div>

@@ -55,7 +55,7 @@ export default function GoalLifestyleActivityStepFour() {
     <div className="space-y-6">
       {/* Title Header Section from Screenshot 2026-07-05 120521.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Tell us a bit about your lifestyle management.
         </h2>
       </div>

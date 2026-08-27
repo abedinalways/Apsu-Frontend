@@ -54,10 +54,8 @@
   --color-borderColor: #cddcd3;
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
-  --color-purpleColor:#FFDEFF;
-  --color-yellowColor:#facc15;
-  --color-greenColor1:#587362;
-  --color-gradientColor:#FFCA00;
+  --color-purpleColor: #ffdeff;
+  --color-greenColor1: #587362;
   --color-greenBgColor: rgba(188, 255, 230, 0.8);
   --color-ratingColor: #ffc52e;
   --color-headerColor: var(--color-secondary-charcol-900);
@@ -67,8 +65,7 @@
   --color-orengeColor: #ff6a55;
   --color-blueColor: #0068ef;
   --color-bgColor: #faf9f4;
-  --color-bgColor1:#D0FFFD;
-  --color-lightGreenColor:var(--lightGreenColor);
+  --color-lightGreenColor: var(--lightGreenColor);
   --color-descriptionColor: #3b3b3c;
   --color-highlightColor: var(--highlightColor);
   --color-lightGreenColor: var(--lightGreenColor);
@@ -126,6 +123,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --title-text:#102B1C
 }
 /* ------------------------------
    Dark Theme

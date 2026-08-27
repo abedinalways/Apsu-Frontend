@@ -45,7 +45,7 @@ export default function HealthHistoryStepFour() {
     <div className="space-y-6">
       {/* Description header matching text from Screenshot 2026-07-05 122224.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Do you have any allergies?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">

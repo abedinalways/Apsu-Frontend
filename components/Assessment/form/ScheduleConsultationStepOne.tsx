@@ -97,7 +97,7 @@ export default function ScheduleConsultationStepOne() {
     <div className="space-y-6">
       {/* Step Header Block */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Schedule Your Consultation
         </h2>
         <p className="text-[14px] text-blackColor mt-1.5">

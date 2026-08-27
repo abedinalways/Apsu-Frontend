@@ -20,7 +20,7 @@ export default function EligibilityStepTwo() {
     <div className="space-y-6">
       {/* Section Header Text from Frame 1984077999.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Enter your details to save your progress.
         </h2>
       </div>

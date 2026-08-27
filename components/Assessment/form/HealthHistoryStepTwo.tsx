@@ -47,7 +47,7 @@ export default function HealthHistoryStepTwo() {
     <div className="space-y-6">
       {/* Title block modeled from Screenshot 2026-07-05 091641.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Have you ever been treated for or diagnosed with any of the following
           medical conditions?
         </h2>

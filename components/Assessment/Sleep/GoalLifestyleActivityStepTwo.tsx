@@ -35,7 +35,7 @@ export default function GoalLifestyleActivityStepTwo() {
     <div className="space-y-6">
       {/* Section 1: How does this affect your day? */}
       <div className="space-y-4">
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           How does this affect your day?
         </h2>
 
@@ -84,7 +84,7 @@ export default function GoalLifestyleActivityStepTwo() {
 
       {/* Section 2: How would you rate your sleep quality? */}
       <div className="space-y-4">
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           How would you rate your sleep quality?
         </h2>
 

@@ -25,7 +25,7 @@ export default function GoalLifestyleActivityStepOne() {
     <div className="space-y-6">
       {/* Title block from Screenshot 2026-07-05 093153.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           How often do you have trouble falling asleep?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">

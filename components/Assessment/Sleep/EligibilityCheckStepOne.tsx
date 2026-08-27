@@ -42,7 +42,7 @@ export default function EligibilityCheckStepOne() {
     <div className="space-y-6">
       {/* Top Header Label */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Tell us about your sleep habit
         </h2>
       </div>

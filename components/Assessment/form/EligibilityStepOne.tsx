@@ -30,7 +30,7 @@ export default function EligibilityStepOne() {
     <div className="w-full bg-background border border-gray-100 rounded-2xl p-6 sm:p-8 space-y-6">
       {/* Title Header text matched exactly from Frame 195.png */}
       <div className="space-y-4">
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           You&apos;re almost done!
         </h2>
         <div className="h-px w-full bg-gray-200/60" />

@@ -27,7 +27,7 @@ export default function EligibilityCheckStepTwo() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984077999 (2).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Have you tried any sleep treatments before?
         </h2>
       </div>

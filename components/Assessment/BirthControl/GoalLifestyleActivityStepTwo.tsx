@@ -28,7 +28,7 @@ export default function GoalLifestyleActivityStepTwo() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984077999 (4).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Do you have any preferred method?
         </h2>
       </div>

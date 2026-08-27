@@ -45,7 +45,7 @@ export default function EligibilityCheckStepFive() {
     <div className="space-y-6">
       {/* Header section from Screenshot 2026-07-05 112809.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Have you ever been diagnosed with any of these autoimmune conditions?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">

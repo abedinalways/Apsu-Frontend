@@ -20,7 +20,7 @@ export default function EligibilityStepThree() {
     <div className="space-y-6">
       {/* Title Header text layout from Frame 1984077999 (1).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           If your treatment is approved, where should we ship your order?
         </h2>
       </div>
