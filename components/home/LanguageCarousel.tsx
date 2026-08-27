@@ -29,8 +29,8 @@ const LanguageCarousel = ({
             key={language.name}
             className={`md:mx-3 mx-1 lg:mx-4 flex   items-center justify-center rounded-full border px-4 py-2 lg:py-3 lg:px-8 text-sm lg:text-lg transition-colors ${
               language.active
-                ? 'border-lightGreenColor bg-lightGreenColor text-secondary'
-                : 'border-lightGreenColor bg-background text-grayColor1'
+                ? 'border-primarySecondColor bg-primarySecondColor text-secondary'
+                : 'border-primarySecondColor bg-background text-grayColor1'
             }`}
           >
             {language.name}

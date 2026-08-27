@@ -14,13 +14,14 @@ function  AboutApsu() {
             the source of all life.
           </p>
         </div>
-        <div className="bg-lightGreenColor  rounded-2xl relative overflow-hidden px-4 py-12 md:py-20 mt-6 flex flex-col items-center justify-center text-center">
+        <div className="bg-lightGreenColor2  rounded-2xl relative overflow-hidden px-4 py-12 md:py-20 mt-6 flex flex-col items-center justify-center text-center">
           <div className="absolute top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
-            <div className="w-75 h-75 md:w-112.5 md:h-112.5 rounded-full border-2 border-greenColor animate-ripple-1" />
-            <div className="w-105 h-105 md:w-150 md:h-150 rounded-full border-2 border-greenColor absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ripple-2" />
-            <div className="w-135 h-135 md:w-187.5 md:h-187.5 rounded-full border-2 border-greenColor absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ripple-3" />
+            <div className="w-75 h-75 md:w-112.5 md:h-112.5 rounded-full border-2 border-greenColor/80 animate-ripple-1" />
+            <div className="w-105 h-105 md:w-150 md:h-150 rounded-full border-2 border-greenColor/80 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ripple-2" />
+            <div className="w-135 h-135 md:w-187.5 md:h-187.5 rounded-full border-2 border-greenColor/80 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ripple-3" />
           </div>
-          <div className="absolute bottom-0 left-0 w-full h-full max-h-70 bg-linear-to-b from-transparent to-lightGreenColor z-10"></div>
+          <div className="absolute bottom-0 left-0 w-full h-full max-h-50 bg-linear-to-b from-transparent to-lightGreenColor2 z-10"></div>
+          <div className="absolute bottom-0 left-0 w-full h-full max-h-70 bg-linear-to-b from-transparent to-lightGreenColor2 z-10"></div>
 
           {/* --- CONTENT WRAPPER --- */}
           <div className="relative z-10 w-full max-w-163.25 mx-auto flex flex-col items-center gap-4">

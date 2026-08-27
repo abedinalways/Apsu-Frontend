@@ -52,7 +52,7 @@ function YourOption() {
       </div>
 
       <MedicationSection
-        sectionBgColor="bg-background"
+        sectionBgColor="bg-lightGreenColor2/80"
         data={medicationsData}
       />
     </div>
