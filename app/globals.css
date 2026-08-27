@@ -54,8 +54,10 @@
   --color-borderColor: #cddcd3;
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
-  --color-purpleColor: #ffdeff;
-  --color-greenColor1: #587362;
+  --color-purpleColor:#FFDEFF;
+  --color-yellowColor:#facc15;
+  --color-greenColor1:#587362;
+  --color-gradientColor:#FFCA00;
   --color-greenBgColor: rgba(188, 255, 230, 0.8);
   --color-ratingColor: #ffc52e;
   --color-headerColor: var(--color-secondary-charcol-900);
@@ -65,7 +67,8 @@
   --color-orengeColor: #ff6a55;
   --color-blueColor: #0068ef;
   --color-bgColor: #faf9f4;
-  --color-lightGreenColor: var(--lightGreenColor);
+  --color-bgColor1:#D0FFFD;
+  --color-lightGreenColor:var(--lightGreenColor);
   --color-descriptionColor: #3b3b3c;
   --color-highlightColor: var(--highlightColor);
   --color-lightGreenColor: var(--lightGreenColor);

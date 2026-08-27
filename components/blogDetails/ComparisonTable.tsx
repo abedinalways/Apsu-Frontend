@@ -30,8 +30,8 @@ export default function ComparisonTable({ tableData }: ComparisonTableProps) {
             <tr
               key={rowIdx}
               className={`${
-                rowIdx % 2 === 0 ? 'bg-[#f1fff6eb]' : 'bg-[#f1fff6eb]'
-              } border-b border-[#E8EDEA] last:border-b-0`}
+                rowIdx % 2 === 0 ? 'bg-lightGreenColor' : 'bg-background'
+              } border-b border-background last:border-b-0`}
             >
               {row.map((cell, cellIdx) => (
                 <td
@@ -51,7 +51,7 @@ export default function ComparisonTable({ tableData }: ComparisonTableProps) {
         {tableData.rows.map((row, rowIdx) => (
           <div
             key={rowIdx}
-            className="border border-[#E8EDEA] rounded-[12px] p-4 space-y-3 bg-white"
+            className="border border-background rounded-[12px] p-4 space-y-3 bg-white"
           >
             {tableData.headers.map((header, headerIdx) => (
               <div key={headerIdx} className="flex flex-col">

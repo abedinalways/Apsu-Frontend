@@ -63,7 +63,7 @@ export default function GeneralInformation() {
                 <Input
                   placeholder="Last Name"
                   {...field}
-                  className="bg-background h-14! text-[16px] text-[#6c6c6c focus-visible:ring-[1px]]"
+                  className="bg-background h-14! text-[16px] text-blackColor focus-visible:ring-[1px]]"
                 />
               </FormControl>
               <FormMessage />

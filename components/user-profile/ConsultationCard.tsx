@@ -35,11 +35,11 @@ export default function ConsultationCard({
           </div>
 
           <div className="space-y-1.5">
-            <span className="px-3 py-1 text-[12px] font-normal text-[#00a6f4] border border-[#c1e3f9] bg-[#def2ff] rounded-full">
+            <span className="px-3 py-1 text-[12px] font-normal text-blueColor border border-borderColor bg-background rounded-full">
               {data.status}
             </span>
 
-            <h4 className="text-xl md:text-[1.5rem] font-medium text-gray-900 tracking-tight">
+            <h4 className="text-xl md:text-[1.5rem] font-medium text-blackColor tracking-tight">
               {data.doctorName}
             </h4>
 
@@ -80,7 +80,7 @@ export default function ConsultationCard({
           </button>
           <button
             onClick={onReschedule}
-            className="flex-1 md:flex-none bg-white hover:bg-gray-50 text-gray-700 text-sm md:text-[16px] font-medium h-11 px-5 border border-greenColor rounded-full transition-colors"
+            className="flex-1 md:flex-none bg-white hover:bg-gray-50 text-blackColor text-sm md:text-[16px] font-medium h-11 px-5 border border-greenColor rounded-full transition-colors"
           >
             Reschedule
           </button>

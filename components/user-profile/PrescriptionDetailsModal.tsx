@@ -50,13 +50,13 @@ function DetailItem({
 }) {
   return (
     <div
-      className={`flex items-start gap-3 p-4 md:p-6 border-[#E8F0EB] max-lg:border-b last:max-lg:border-b-0 ${(index + 1) % 3 !== 0 ? 'lg:border-r' : ''} ${index < 6 ? 'lg:border-b' : ''}`}
+      className={`flex items-start gap-3 p-4 md:p-6 border-borderColor max-lg:border-b last:max-lg:border-b-0 ${(index + 1) % 3 !== 0 ? 'lg:border-r' : ''} ${index < 6 ? 'lg:border-b' : ''}`}
     >
       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-lightGreenColor">
         {icon}
       </div>
       <div className="min-w-0">
-        <p className="text-xs text-[#888888] text-justify">{label}</p>
+        <p className="text-xs text-grayColor1 text-justify">{label}</p>
         <p className="mt-0.5 text-sm md:text-[16px] font-normal text-secondary-text text-justify">
           {value}
         </p>
@@ -118,13 +118,13 @@ export default function PrescriptionDetailsModal({
             >
               Prescriptions Details
             </h2>
-            <p className="mt-1 text-sm text-[#666666]">
+            <p className="mt-1 text-sm text-grayColor1 md:text-[16px] text-justify">
               View your prescription and treatment information
             </p>
           </div>
           <button
             onClick={onClose}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D8E6DE] text-[#97A7A0] transition hover:bg-[#F7FAF8] hover:text-secondary-text"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-borderColor text-greenColor1 transition hover:bg-background hover:text-secondary-text"
             aria-label="Close"
           >
             <X className="h-4 w-4" />
@@ -132,10 +132,10 @@ export default function PrescriptionDetailsModal({
         </div>
 
         <div className="space-y-4 p-4 md:space-y-5 md:p-6">
-          <div className="rounded-[12px] border border-[#E8F0EB] bg-white p-4 shadow">
+          <div className="rounded-[12px] border border-borderColor bg-white p-4 shadow">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-stretch lg:justify-between">
               <div className="flex flex-1 gap-3 md:gap-4">
-                <div className="flex h-12 w-12 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-full bg-[#14311F] text-white">
+                <div className="flex h-12 w-12 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-full bg-primaryColor text-white">
                   <SyringeIcon />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -143,7 +143,7 @@ export default function PrescriptionDetailsModal({
                     <h3 className="text-base md:text-lg font-medium text-blackColor">
                       {data.treatmentName}
                     </h3>
-                    <span className="rounded-full border border-[#BCEFD0] bg-[#ECFFF3] px-2.5 py-0.5 text-xs font-medium text-primary">
+                    <span className="rounded-full border border-borderColor bg-background px-2.5 py-0.5 text-xs font-medium text-primary">
                       {data.status}
                     </span>
                   </div>
@@ -155,8 +155,8 @@ export default function PrescriptionDetailsModal({
                   </p>
                 </div>
               </div>
-              <div className="hidden w-px shrink-0 bg-[#E0EBE4] lg:block" />
-              <div className="h-px w-full bg-[#E0EBE4] lg:hidden" />
+              <div className="hidden w-px shrink-0 bg-background lg:block" />
+              <div className="h-px w-full bg-background lg:hidden" />
               <div className="flex flex-col items-start gap-3 lg:min-w-55 lg:items-start">
                 <div className="flex items-start gap-3">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-greenColor text-xs font-semibold text-white">
@@ -173,7 +173,7 @@ export default function PrescriptionDetailsModal({
                   </div>
                 </div>
                 <div className="w-full flex md:justify-end justify-center">
-                  <button className="flex items-center gap-2 rounded-full border border-[#000] bg-white px-4 py-1 text-sm font-medium text-secondary-text transition hover:bg-[#F7FAF8]">
+                  <button className="flex items-center gap-2 rounded-full border border-blackColor bg-white px-4 py-1 text-sm font-medium text-secondary-text transition hover:bg-hoverColor">
                     <ChatIcon /> Message Care Team
                   </button>
                 </div>

@@ -33,14 +33,14 @@ export function OrderProgress({ progressStep }: OrderProgressProps) {
           {steps.map(({ step, label }) => (
             <StepperItem key={step} step={step} className="flex-1 group/step">
               <StepperTrigger className="flex flex-col items-center gap-3 w-full pointer-events-none">
-                <StepperIndicator className="w-4 h-4 rounded-full bg-[#5A6561] text-transparent border-0 shrink-0 transition-all duration-300 data-[state=active]:w-5 data-[state=active]:h-5 data-[state=active]:bg-[#FCBE15] data-[state=completed]:w-4 data-[state=completed]:h-4 data-[state=completed]:bg-[#5A6561]" />
-                <span className="text-[13px] font-normal tracking-wide text-[#7D8884] transition-colors duration-300 group-data-[state=active]/step:text-secondary-text group-data-[state=active]/step:font-medium">
+                <StepperIndicator className="w-4 h-4 rounded-full bg-greenColor1 text-transparent border-0 shrink-0 transition-all duration-300 data-[state=active]:w-5 data-[state=active]:h-5 data-[state=active]:bg-yellowColor data-[state=completed]:w-4 data-[state=completed]:h-4 data-[state=completed]:bg-greenColor1" />
+                <span className="text-[13px] font-normal tracking-wide text-grayColor1 transition-colors duration-300 group-data-[state=active]/step:text-secondary-text group-data-[state=active]/step:font-medium">
                   {label}
                 </span>
               </StepperTrigger>
 
               {steps.length > step && (
-                <StepperSeparator className="bg-[#E2EAE5] h-[1.5px] mt-2 group-data-[state=completed]/step:bg-[#5A6561]" />
+                <StepperSeparator className="bg-background h-[1.5px] mt-2 group-data-[state=completed]/step:bg-greenColor1" />
               )}
             </StepperItem>
           ))}

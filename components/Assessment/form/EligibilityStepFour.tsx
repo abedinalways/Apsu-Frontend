@@ -64,10 +64,10 @@ export default function EligibilityStepFour() {
       case 'jpeg':
       case 'pdf':
       case 'png':
-        return 'bg-[#e5252a] text-white';
+        return 'bg-redColor text-white';
       case 'doc':
       case 'docx':
-        return 'bg-[#1868db] text-white';
+        return 'bg-blueColor text-white';
       default:
         return 'bg-grayColor1 text-white';
     }
@@ -109,7 +109,7 @@ export default function EligibilityStepFour() {
                 />
                 <div
                   onClick={() => fileInputRef.current?.click()}
-                  className="h-12 w-12 rounded-full bg-lightGreenColor flex items-center justify-center cursor-pointer hover:bg-[#cfded3] transition-colors"
+                  className="h-12 w-12 rounded-full bg-lightGreenColor flex items-center justify-center cursor-pointer hover:bg-borderColor transition-colors"
                 >
                   <Upload className="h-5 w-5 text-greenColor" />
                 </div>

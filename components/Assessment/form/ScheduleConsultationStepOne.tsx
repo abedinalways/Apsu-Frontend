@@ -123,7 +123,7 @@ export default function ScheduleConsultationStepOne() {
                       <button
                         type="button"
                         onClick={handlePrevMonth}
-                        className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] flex items-center justify-center hover:bg-gray-50 transition-colors"
+                        className="h-10 w-10 rounded-full border border-gray-100 bg-bgColor flex items-center justify-center hover:bg-gray-50 transition-colors"
                       >
                         <ChevronLeft className="h-4 w-4 text-grayColor1" />
                       </button>
@@ -133,7 +133,7 @@ export default function ScheduleConsultationStepOne() {
                       <button
                         type="button"
                         onClick={handleNextMonth}
-                        className="h-10 w-10 rounded-full border border-gray-100 bg-[#FAF9F6] hover:bg-gray-50 flex items-center justify-center hover:opacity-90 transition-opacity"
+                        className="h-10 w-10 rounded-full border border-gray-100 bg-bgColor hover:bg-gray-50 flex items-center justify-center hover:opacity-90 transition-opacity"
                       >
                         <ChevronRight className="h-4 w-4 text-grayColor1" />
                       </button>

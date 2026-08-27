@@ -35,25 +35,25 @@ export const infoData: InfoSection[] = [
     <p class="mt-6 mb-4 font-semibold text-[24px] text-blackColor">Limitations of use</p>
     <div class="flex flex-col gap-3 text-grayColor1 text-[18px] mb-6">
       <div class="flex items-start gap-3">
-        <span class="mt-1 shrink-0 text-[#facc15]">
+        <span class="mt-1 shrink-0 text-yellowColor">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
         </span>
         <p>Should not be used with other GLP-1 or GIP medicines, or with other semaglutide- or tirzepatide-containing products.</p>
       </div>
       <div class="flex items-start gap-3">
-        <span class="mt-1 shrink-0 text-[#facc15]">
+        <span class="mt-1 shrink-0 text-yellowColor">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
         </span>
         <p>Safety and effectiveness when combined with other weight-loss products (including supplements) have not been established.</p>
       </div>
       <div class="flex items-start gap-3">
-        <span class="mt-1 shrink-0 text-[#facc15]">
+        <span class="mt-1 shrink-0 text-yellowColor">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
         </span>
         <p>Has not been studied in people with a history of pancreatitis, and is not for use in children under 18.</p>
       </div>
       <div class="flex items-start gap-3">
-        <span class="mt-1 shrink-0 text-[#facc15]">
+        <span class="mt-1 shrink-0 text-yellowColor">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
         </span>
         <p>Because these are compounded, they do not carry FDA-approved indications the way a brand-name drug does.</p>
@@ -64,19 +64,19 @@ export const infoData: InfoSection[] = [
     <p class="mt-8 mb-4 font-semibold text-[24px] text-blackColor">Who should not use it</p>
     <div class="flex flex-col gap-3 text-grayColor1 text-[18px] mb-6">
       <div class="flex items-start gap-3">
-        <span class="mt-1 shrink-0 text-[#ef4444]">
+        <span class="mt-1 shrink-0 text-redColor">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
         </span>
         <p>You or a family member has had medullary thyroid carcinoma (MTC), or you have MEN 2.</p>
       </div>
       <div class="flex items-start gap-3">
-        <span class="mt-1 shrink-0 text-[#ef4444]">
+        <span class="mt-1 shrink-0 text-redColor">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
         </span>
         <p>You have had a serious allergic reaction to the active ingredient or any component.</p>
       </div>
       <div class="flex items-start gap-3">
-        <span class="mt-1 shrink-0 text-[#ef4444]">
+        <span class="mt-1 shrink-0 text-redColor">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
         </span>
         <p>You are pregnant, planning to become pregnant, or breastfeeding (see below).</p>
@@ -557,7 +557,7 @@ export const infoData: InfoSection[] = [
     title: 'Reporting side effects',
     sidebarTitle: 'Reporting side effects',
     content: `
-    <p class="mb-4 text-grayColor1 text-[18px]">You are encouraged to report side effects. Contact your provider for medical advice about side effects, and report side effects to the FDA at <strong class="font-semibold text-blackColor">1-800-FDA-1088</strong> or at <a href="http://www.fda.gov/medwatch" target="_blank" rel="noopener noreferrer" class="underline text-[#0056b3]">www.fda.gov/medwatch</a>. You can also contact Apsu at <strong class="font-semibold text-blackColor">support@apsuhealth.com</strong>.</p>
+    <p class="mb-4 text-grayColor1 text-[18px]">You are encouraged to report side effects. Contact your provider for medical advice about side effects, and report side effects to the FDA at <strong class="font-semibold text-blackColor">1-800-FDA-1088</strong> or at <a href="http://www.fda.gov/medwatch" target="_blank" rel="noopener noreferrer" class="underline text-blueColor">www.fda.gov/medwatch</a>. You can also contact Apsu at <strong class="font-semibold text-blackColor">support@apsuhealth.com</strong>.</p>
     
     <p class="mb-4 text-grayColor1 text-[18px]">This page is not a complete list of indications, doses, warnings, interactions, or side effects. Ask your provider or pharmacist for the full prescribing information for your specific medication.</p>
     `,

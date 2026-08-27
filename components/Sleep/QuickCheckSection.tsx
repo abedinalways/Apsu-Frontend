@@ -46,13 +46,13 @@ export default function QuickCheckSection() {
               className="bg-white rounded-2xl px-4 md:px-6 py-4 md:py-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)] h-full "
             >
               {/* Top Right Number */}
-              <div className=" text-[52px] lg:text-[80px] leading-[100%] text-end  text-[#21AC8847]">
+              <div className=" text-[52px] lg:text-[80px] leading-[100%] text-end  text-greenColor">
                 {card.number}
               </div>
 
               {/* Card Content */}
               <div className="mt-5">
-                <p className="text-[#585E5A] text-sm md:text-base leading-relaxed mb-6 max-w-sm">
+                <p className="text-grayColor1 text-sm md:text-base leading-relaxed mb-6 max-w-sm">
                   {card.description}
                 </p>
               </div>

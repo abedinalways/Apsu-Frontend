@@ -76,12 +76,9 @@ export function FAQAccordion({ item }: Props) {
           border-t
           border-dashed
           border-greenColor
-
           bg-whiteColor
-
           px-4 sm:px-6
           py-4 sm:py-6
-
           text-sm sm:text-base
           leading-6 sm:leading-8
           text-grayColor1
