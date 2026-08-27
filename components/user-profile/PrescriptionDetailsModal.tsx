@@ -99,13 +99,13 @@ export default function PrescriptionDetailsModal({
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 p-4 backdrop-blur-[2px]"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 p-4 backdrop-blur-[2px] animate-in fade-in duration-200"
       onClick={e => {
         if (e.target === overlayRef.current) onClose();
       }}
     >
       <div
-        className="relative w-full max-w-230 max-h-[90vh] overflow-y-auto rounded-[28px] bg-white shadow-[0_24px_80px_rgba(20,44,30,0.18)]"
+        className="relative w-full max-w-230 max-h-[90vh] overflow-y-auto rounded-[28px] bg-white shadow-[0_24px_80px_rgba(20,44,30,0.18)] animate-in fade-in zoom-in-95 slide-in-from-bottom-3 duration-300 ease-out"
         role="dialog"
         aria-modal="true"
         aria-labelledby="prescription-details-title"
