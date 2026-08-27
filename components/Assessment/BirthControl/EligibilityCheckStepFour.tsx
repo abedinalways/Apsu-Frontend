@@ -19,7 +19,7 @@ export default function EligibilityCheckStepFour() {
     <div className="space-y-6">
       {/* Step Header Title Area */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Blood pressure monitoring
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">

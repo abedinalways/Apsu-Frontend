@@ -57,7 +57,7 @@ export default function HealthHistoryStepThree() {
     <div className="space-y-6">
       {/* Step Description Headers from Screenshot 2026-07-05 121717.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Do you faced any side effects during your medication?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">

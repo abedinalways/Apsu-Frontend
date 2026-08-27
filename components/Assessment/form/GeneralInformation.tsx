@@ -27,7 +27,7 @@ export default function GeneralInformation() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-[20px] font-semibold text-greenColor">
+      <h2 className="text-[20px] font-semibold text-titleText">
         Tell us about yourself first!
       </h2>
 

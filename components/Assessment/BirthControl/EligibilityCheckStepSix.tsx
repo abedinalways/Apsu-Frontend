@@ -70,7 +70,7 @@ export default function EligibilityCheckStepSix() {
     <div className="space-y-6">
       {/* Step description headers matching Screenshot 2026-07-05 113111.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Are you currently taking any medications every day, even if only for a
           short time? Please do not include birth control.
         </h2>

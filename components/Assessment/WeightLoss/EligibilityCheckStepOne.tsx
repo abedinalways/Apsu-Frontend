@@ -28,7 +28,7 @@ export default function EligibilityCheckStepOne() {
     <div className="space-y-6">
       {/* Question Header matching Screenshot 2026-07-05 093221.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           What are your current condition?
         </h2>
       </div>

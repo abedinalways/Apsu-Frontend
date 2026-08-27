@@ -37,7 +37,7 @@ export default function GoalLifestyleActivityStepThree() {
     <div className="space-y-6">
       {/* Step Header matching Screenshot 2026-07-05 120126.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Share your challenges and motivations.
         </h2>
       </div>

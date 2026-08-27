@@ -35,7 +35,7 @@ export default function EligibilityCheckStepTwo() {
     <div className="space-y-6">
       {/* Title & Subtitle block from Screenshot 2026-07-05 111020.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           What type of nicotine-containing product do you use?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">

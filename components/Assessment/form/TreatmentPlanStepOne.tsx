@@ -74,7 +74,7 @@ export default function TreatmentPlanStepOne() {
       {/* Visual Header Banner matching Screenshot 2026-07-05 104917.png */}
       <div className="relative overflow-hidden rounded-2xl bg- p-5 flex items-center justify-between">
         <div className="space-y-1 max-w-[70%] z-10">
-          <h2 className="text-[20px] font-semibold text-greenColor">
+          <h2 className="text-[20px] font-semibold text-titleText">
             Choose a plan that fits you.
           </h2>
           <p className="text-[14px] text-blackColor">

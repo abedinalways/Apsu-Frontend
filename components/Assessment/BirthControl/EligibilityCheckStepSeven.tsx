@@ -18,7 +18,7 @@ export default function EligibilityCheckStepSeven() {
     <div className="space-y-6">
       {/* Question Header text from Screenshot 2026-07-05 113401.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Please share any concerns or questions you have for the medical team
           below.
         </h2>

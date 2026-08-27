@@ -28,7 +28,7 @@ export default function GoalLifestyleActivityStepOne() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984078010 (2).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           What are you looking for from your birth control?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
