@@ -35,7 +35,7 @@ function SleepFAQsection() {
     },
   ];
   return (
-    <section className="xl:pb-27 lg:pb-15   relative  ">
+    <section className="xl:pb-27 lg:pb-15 md:mt-30  relative  ">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <h2 className="text-3xl md:text-4xl lg:hidden lg:text-[52px] border-b border-borderColor pb-4 font-medium text-primaryColor">

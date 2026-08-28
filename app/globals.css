@@ -371,3 +371,13 @@ html {
     9px 13px 6px 0 rgba(0, 0, 0, 0.01),
     15px 20px 7px 0 rgba(0, 0, 0, 0);
 }
+
+
+/* Smooth Schedule Slider Transition */
+.schedule-swiper .swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.schedule-swiper .swiper-slide {
+  transition: opacity 900ms cubic-bezier(0.4, 0, 0.2, 1);
+}

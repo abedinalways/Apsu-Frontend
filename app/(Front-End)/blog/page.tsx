@@ -33,7 +33,7 @@ export default async function BlogPage() {
     );
   }
 
-  const featuredBlogs = blogs.slice(0, 5);
+  const featuredBlogs = blogs.slice(0, 3);
 
   if (!blogs || blogs.length === 0) {
     return (
@@ -57,7 +57,7 @@ export default async function BlogPage() {
           <BlogContent featuredBlogs={featuredBlogs} />
         </div>
         {/* All Blogs */}
-        <section className="mt-24 overflow-x-hidden">
+        <section className="mt-30 overflow-x-hidden">
           <BlogSection initialBlogs={blogs} />
         </section>
         <div className="mt-32 custom-container">
