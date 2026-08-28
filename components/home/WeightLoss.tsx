@@ -34,7 +34,7 @@ function WeightLoss() {
             </ul>
           </div>
           <div className="mt-8">
-            <WhiteCustomButton text="See plans" />
+            <WhiteCustomButton text="See plans" href="/assessment/weight-loss" />
           </div>
         </div>
         <div className="relative w-full xl:col-span-2">

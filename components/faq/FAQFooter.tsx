@@ -18,7 +18,7 @@ export default function FAQFooter() {
                 <p className="text-sm sm:text-base">No insurance required</p>
               </span>
               <div className=" pt-10">
-                <PrimaryButton text="Start a free consultation" type="button" />
+                <PrimaryButton text="Start a free consultation" type="button" href="/assessment"/>
               </div>
             </div>
             <div className="absolute max-w-205.75 h-62.5  bottom-0 left-1/2 -translate-x-1/2 w-full ">

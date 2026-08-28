@@ -60,7 +60,7 @@ function WeightLosFAQsection() {
                   If you didn’t find your answer, feel free to reach out.
                 </p>
                 <div className="mt-6 flex justify-center w-full">
-                  <PrimaryButton text="Contact us" />
+                  <PrimaryButton text="Contact us" href="/contact" />
                 </div>
               </div>
             </div>

@@ -39,7 +39,7 @@ export const Banner = () => {
         </p>
         {/* cta button */}
         <div className="mt-6">
-          <PrimaryButton text="Start a free consultation" />
+          <PrimaryButton text="Start a free consultation" type="button" href='/assessment' />
         </div>
         {/* language carousel  */}
         <div className="mt-6 lg:mt-8 space-y-4 relative">

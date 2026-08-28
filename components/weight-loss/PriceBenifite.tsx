@@ -34,7 +34,7 @@ function ProgramPricingSection({
 
             {/* Float Button over the price card */}
             <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center md:w-auto">
-              <PrimaryButton text="Check your eligibility" />
+              <PrimaryButton text="Check your eligibility" href="/assessment/weight-loss"/>
             </div>
           </div>
 

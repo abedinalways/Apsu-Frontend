@@ -12,14 +12,16 @@ function WeightLossMedicine() {
     {
       id: 1,
       image: MedicineImg2,
-      title: "Compounded Semaglutide",
+      title: 'Compounded Semaglutide',
       price: 200,
+      link: 'assessment/weight-loss',
     },
     {
       id: 2,
       image: MedicineImg,
-      title: "Compounded Tirzepatide",
+      title: 'Compounded Tirzepatide',
       price: 200,
+      link: 'assessment/weight-loss',
     },
   ];
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -71,7 +73,7 @@ function WeightLossMedicine() {
               From <span className="text-2xl md:text-3xl">${item.price}</span>
               /month
             </p>
-            <PrimaryButton text="Get Started" />
+            <PrimaryButton text="Get Started" href={item.link} />
           </div>
         </div>
       ))}

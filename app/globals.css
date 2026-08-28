@@ -34,7 +34,7 @@
   --color-bulletColor: var(--bulletColor);
   --color-lightGreenColor2: #bcffe6;
   --color-lightblueCOlor: #d0fffd;
-  --color-yellowColor:var(--yellowColor);
+  --color-yellowColor: var(--yellowColor);
 
 }
 
@@ -57,6 +57,7 @@
   --color-whiteColor: #ffffff;
   --color-greenColor: #00774d;
   --color-purpleColor: #ffdeff;
+  --color-yellowColor: #f4b942;
   --color-greenColor1: #587362;
   --color-greenBgColor: rgba(188, 255, 230, 0.8);
   --color-ratingColor: #ffc52e;
@@ -72,7 +73,7 @@
   --color-highlightColor: var(--highlightColor);
   --color-lightGreenColor: var(--lightGreenColor);
   --color-primarySecondColor: #b8d9c6;
-  --color-yellowColor:#e8f3ed;
+  
 }
 /* ------------------------------
    Light Theme (default)

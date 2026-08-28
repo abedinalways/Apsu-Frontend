@@ -3,6 +3,7 @@ import { ArrowRight, Stethoscope, UserCheck } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { CapsulIcon, TruckIcon } from "../icons/Icons";
+import PrimaryButton from "../reusable/button/PrimaryButton";
 
 export interface PricingFeature {
   label: string;
@@ -118,15 +119,9 @@ export default function PricingCardSection({
             </div>
 
             {/* Action CTA Submission Button component frame */}
-            <button
-              onClick={onButtonClick}
-              className="w-full mt-3 bg-primaryColor hover:bg-primaryColor/70 transition-all text-white rounded-full py-3 px-4 lg:px-5 text-xs md:text-base font-medium flex items-center justify-between shadow-md group"
-            >
-              <span>{buttonText}</span>
-              <div className="bg-white text-primaryColor rounded-full p-1 group-hover:translate-x-0.5 transition-transform">
-                <ArrowRight className="h-3.5 w-3.5" strokeWidth={3} />
-              </div>
-            </button>
+            <PrimaryButton
+              text={buttonText}
+            href='/assessment'/>
           </div>
 
           {/* Checklist Feature Section Container */}
