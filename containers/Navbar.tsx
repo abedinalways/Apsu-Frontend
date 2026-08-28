@@ -76,7 +76,7 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 className={cn(
-                  'relative text-lg transition-colors duration-300 hover:text-primaryColor',
+                  'relative text-lg transition-colors duration-300 hover:text-greenColor hover:font-medium',
                   pathname === item.path
                     ? 'text-greenColor font-medium'
                     : 'text-primaryColor',

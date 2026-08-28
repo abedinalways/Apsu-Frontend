@@ -45,7 +45,8 @@ function BirthControll() {
             <div className="w-full ">
               <WhiteCustomButton
                 text="Start your birth control consult"
-                className="w-full md:w-auto"
+                className="md:w-fit"
+                href="/assessment/birth"
               />
             </div>
           </div>

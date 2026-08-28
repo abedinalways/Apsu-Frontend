@@ -11,6 +11,8 @@ import {
 import Image from 'next/image';
 import { useState } from 'react';
 import { HeadphonesIcon, TruckIcon } from '../icons/Icons';
+import PrimaryButton from '../reusable/button/PrimaryButton';
+import WhiteCustomButton from '../reusable/button/WhiteCustomButton';
 
 const WORKS_STEPS = [
   {
@@ -74,12 +76,8 @@ export default function WorksCard() {
           />
 
           <div className="absolute bottom-5 right-5 md:bottom-6 md:right-6">
-            <button className="bg-primaryColor hover:bg-primaryColor transition-colors duration-300 text-white text-sm md:text-base font-medium py-2.5 pl-5 pr-2.5 rounded-full flex items-center gap-3 shadow-xl">
-              Start your intake
-              <div className="bg-white text-primaryColor rounded-full w-7 h-7 flex items-center justify-center">
-                <ArrowRight className="w-4 h-4" strokeWidth={3} />
-              </div>
-            </button>
+            <WhiteCustomButton text="Start your intake" type="button" href="/assessment"/>
+     
           </div>
         </div>
 
