@@ -73,7 +73,7 @@ export default function GoalLifestyleActivityStepOne() {
                         className={cn(
                           'flex items-center space-x-3.5 w-full p-4 rounded-xl border transition-all cursor-pointer select-none bg-background h-14! text-[16px] text-grayColor1',
                           isChecked
-                            ? 'border-lightGreenColor border-2 text-secondary-bg'
+                            ? 'border-greenColor1  border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >

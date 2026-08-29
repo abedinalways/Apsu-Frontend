@@ -85,7 +85,7 @@ export default function GoalLifestyleActivityStepFour() {
                       }
                       className={`py-3.5 px-1 rounded-xl border text-[14px] text-blackColor font-medium text-center transition-all truncate h-14! bg-background  cursor-pointer ${
                         isSelected
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -123,7 +123,7 @@ export default function GoalLifestyleActivityStepFour() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag(tag)}
-                  className="px-3 py-1 rounded-full border border-lightGreenColor text-[11px] font-medium text-secondary-bg bg-white hover:bg-lightGreenColor/10 active:scale-95 transition-all"
+                  className="px-3 py-1 rounded-full border border-greenColor1  text-[11px] font-medium text-secondary-bg bg-white hover:bg-lightGreenColor/10 active:scale-95 transition-all"
                 >
                   {tag}
                 </button>

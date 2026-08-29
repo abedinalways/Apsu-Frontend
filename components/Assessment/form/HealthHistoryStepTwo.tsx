@@ -83,7 +83,7 @@ export default function HealthHistoryStepTwo() {
                       }}
                       className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! bg-background cursor-pointer text-[16px] text-grayColor1  ${
                         isChecked
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -91,7 +91,7 @@ export default function HealthHistoryStepTwo() {
                         aria-hidden="true"
                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-all  ${
                           isChecked
-                            ? 'border-lightGreenColor bg-secondary-bg text-white'
+                            ? 'border-greenColor1  bg-secondary-bg text-white'
                             : 'border-gray-300 bg-white text-transparent'
                         }`}
                       >
