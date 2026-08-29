@@ -10,6 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Link from 'next/link';
 
 export default function CheckEligibilitySection() {
   const { register, watch, setValue, resetField, handleSubmit } = useForm<FormData>({
@@ -422,14 +423,14 @@ export default function CheckEligibilitySection() {
             </div>
 
             {/* Bottom Action Link */}
-            <div className="pt-6  flex items-center gap-2  cursor-pointer group">
+            <Link href="/weight-loss" className="pt-6  flex items-center gap-2  cursor-pointer group">
               <span className="text-[14px] md:text-[16px] font-semibold text-primaryColor  transition-colors">
                 See your GLP-1 Options
               </span>
               <div className="w-7 h-7 rounded-full  border-2 border-primaryColor flex items-center justify-center   transition-all">
                 <ArrowRight className="w-4 h-4" />
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </form>
