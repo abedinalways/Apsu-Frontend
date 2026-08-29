@@ -2,7 +2,7 @@
 import care1 from "@/public/images/about/care1.png";
 import care3 from "@/public/images/about/care3.png";
 import care4 from "@/public/images/about/care4.png";
-import care2 from "@/public/images/about/Frame 184.png";
+import care22 from "@/public/images/about/care22.png";
 import mobile1 from "@/public/images/about/mobile1.png";
 import mobile2 from "@/public/images/about/mobile2.png";
 import mobile3 from "@/public/images/about/mobile3.png";
@@ -43,7 +43,7 @@ function AboutCareWork() {
       title: "Share your history",
       description:
         "Complete your intake in the language you think in. We translate it for your physician.",
-      mainImage: care2,
+      mainImage: care22,
       mobileImage: mobile2,
     },
     {
