@@ -28,7 +28,7 @@ export default function EligibilityCheckStepOne() {
     <div className="space-y-6">
       {/* Question Header matching Screenshot 2026-07-05 093221.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           What are your current condition?
         </h2>
       </div>
@@ -58,7 +58,7 @@ export default function EligibilityCheckStepOne() {
                       }
                       className={`w-full p-4 text-left  rounded-2xl border transition-all h-14! bg-background cursor-pointer  ${
                         isSelected
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >

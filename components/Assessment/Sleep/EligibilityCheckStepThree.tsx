@@ -27,7 +27,7 @@ export default function EligibilityCheckStepThree() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984077999 (3).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Have you ever been diagnosed with:
         </h2>
       </div>
@@ -70,7 +70,7 @@ export default function EligibilityCheckStepThree() {
                         className={cn(
                           'flex items-center space-x-3.5 w-full p-4 rounded-xl border transition-all select-none bg-background cursor-pointer h-14!',
                           isChecked
-                            ? 'border-lightGreenColor border-2 text-secondary-bg'
+                            ? 'border-greenColor1  border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >

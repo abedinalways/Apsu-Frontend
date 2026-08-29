@@ -45,7 +45,7 @@ export default function HealthHistoryStepFour() {
     <div className="space-y-6">
       {/* Description header matching text from Screenshot 2026-07-05 122224.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Do you have any allergies?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
@@ -80,7 +80,7 @@ export default function HealthHistoryStepFour() {
                       }}
                       className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all h-14! text-[16px] text-grayColor1 bg-background cursor-pointer  ${
                         isChecked
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -88,7 +88,7 @@ export default function HealthHistoryStepFour() {
                         aria-hidden="true"
                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-all ${
                           isChecked
-                            ? 'border-lightGreenColor bg-secondary-bg text-white'
+                            ? 'border-greenColor1  bg-secondary-bg text-white'
                             : 'border-gray-300 bg-white text-transparent'
                         }`}
                       >

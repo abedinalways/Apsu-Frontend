@@ -26,7 +26,7 @@ export default function GoalLifestyleActivityStepOne() {
     <div className="space-y-6">
       {/* Title block from Screenshot 2026-07-05 093153.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           What's your weight loss goal?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
@@ -59,7 +59,7 @@ export default function GoalLifestyleActivityStepOne() {
                       }
                       className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all bg-background  h-14! text-[16px] text-grayColor1 cursor-pointer ${
                         isSelected
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -67,7 +67,7 @@ export default function GoalLifestyleActivityStepOne() {
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                            ? 'border-lightGreenColor bg-secondary-bg text-white'
+                            ? 'border-greenColor1  bg-secondary-bg text-white'
                             : 'border-grayColor1 bg-white'
                         }`}
                       >

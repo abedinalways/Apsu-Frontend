@@ -37,7 +37,7 @@ export default function GoalLifestyleActivityStepThree() {
     <div className="space-y-6">
       {/* Step Header matching Screenshot 2026-07-05 120126.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Share your challenges and motivations.
         </h2>
       </div>
@@ -66,7 +66,7 @@ export default function GoalLifestyleActivityStepThree() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag('weightLossMethods', tag)}
-                  className="px-3 py-1 rounded-full border border-lightGreenColor text-[11px] font-medium text-secondary-bg bg-white hover:bg-lightGreenColor/10 active:scale-95 transition-all cursor-pointer"
+                  className="px-3 py-1 rounded-full border border-greenColor1  text-[11px] font-medium text-secondary-bg bg-white hover:bg-lightGreenColor/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>
@@ -101,7 +101,7 @@ export default function GoalLifestyleActivityStepThree() {
                   key={tag}
                   type="button"
                   onClick={() => handleAppendTag('weightLossMotivation', tag)}
-                  className="px-3 py-1 rounded-full border border-lightGreenColor text-[11px] font-medium text-secondary-bg bg-white hover:bg-lightGreenColor/10 active:scale-95 transition-all cursor-pointer"
+                  className="px-3 py-1 rounded-full border border-greenColor1  text-[11px] font-medium text-secondary-bg bg-white hover:bg-lightGreenColor/10 active:scale-95 transition-all cursor-pointer"
                 >
                   {tag}
                 </button>

@@ -8,6 +8,7 @@ export interface MedicationItem {
   name: string;
   brandInfo: string;
   features: string[];
+  link: string;
   price: string;
   perDuration: string;
   image: string | StaticImageData;
@@ -28,6 +29,7 @@ function BirthOption() {
       price: "$20",
       perDuration: "/mo",
       image: image1,
+      link: "/assessment/birth",
     },
     {
       id: 2,
@@ -42,6 +44,7 @@ function BirthOption() {
       price: "$20",
       perDuration: "/ 3mo",
       image: image2,
+      link: "/assessment/birth",
     },
   ];
 

@@ -19,7 +19,7 @@ export default function EligibilityCheckStepFour() {
     <div className="space-y-6">
       {/* Step Header Title Area */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Blood pressure monitoring
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
@@ -71,14 +71,14 @@ export default function EligibilityCheckStepFour() {
                   }
                   className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all bg-background h-14! cursor-pointer text-[16px] text-grayColor1 ${
                     isMonitored === 'yes'
-                      ? 'border-lightGreenColor border-2 text-secondary-bg'
+                      ? 'border-greenColor1  border-2 text-secondary-bg'
                       : 'border-gray-200'
                   }`}
                 >
                   <div
                     className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                       isMonitored === 'yes'
-                        ? 'border-lightGreenColor bg-secondary-bg'
+                        ? 'border-greenColor1  bg-secondary-bg'
                         : 'border-grayColor1 bg-white'
                     }`}
                   >
@@ -99,14 +99,14 @@ export default function EligibilityCheckStepFour() {
                   }
                   className={`flex items-center gap-2.5 px-5 py-3 rounded-xl border text-sm font-semibold transition-all bg-background h-14! cursor-pointer text-[16px] text-grayColor1 ${
                     isMonitored === 'no'
-                      ? 'border-lightGreenColor border-2 text-secondary-bg'
+                      ? 'border-greenColor1  border-2 text-secondary-bg'
                       : 'border-gray-200'
                   }`}
                 >
                   <div
                     className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                       isMonitored === 'no'
-                        ? 'border-lightGreenColor bg-secondary-bg'
+                        ? 'border-greenColor1  bg-secondary-bg'
                         : 'border-grayColor1 bg-white'
                     }`}
                   >

@@ -9,6 +9,7 @@ export interface MedicationItem {
   name: string;
   brandInfo: string;
   features: string[];
+  link: string;
   price: string;
   image: string | StaticImageData;
 }
@@ -25,6 +26,7 @@ function YourOption() {
       ],
       price: "$200",
       image: semagluImg,
+      link:'/assessment/weight-loss'
     },
     {
       id: 2,
@@ -37,6 +39,7 @@ function YourOption() {
       ],
       price: "$200",
       image: tirzepatideVial,
+      link:'/assessment/weight-loss'
     },
   ];
 

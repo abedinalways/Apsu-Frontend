@@ -25,7 +25,7 @@ export default function EligibilityCheckStepThree() {
     <div className="space-y-6">
       {/* Header text matching Screenshot 2026-07-05 111411.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Do you currently smoke?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
@@ -58,7 +58,7 @@ export default function EligibilityCheckStepThree() {
                       }
                       className={`w-full p-4 text-left rounded-xl border transition-all bg-background h-14! cursor-pointer text-[16px] text-grayColor1 ${
                         isSelected
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >

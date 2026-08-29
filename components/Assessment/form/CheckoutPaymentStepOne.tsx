@@ -102,7 +102,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 space-y-4 bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'card'
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -237,7 +237,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'paypal'
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -256,7 +256,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'venmo'
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -275,7 +275,7 @@ export default function CheckoutPaymentStepOne() {
                     <div
                       className={`border rounded-2xl p-4 py-5 flex items-center justify-between bg-white shadow-sm transition-all ${
                         selectedPaymentMethod === 'bank'
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >

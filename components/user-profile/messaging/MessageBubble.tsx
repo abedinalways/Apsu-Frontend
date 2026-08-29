@@ -99,13 +99,13 @@ export default function MessageBubble({
         {/* Image Preview Modal */}
         {showImagePreview && message.attachment?.type === 'image' && (
           <div
-            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+            className="fixed inset-0  bg-black/80 flex items-center justify-center p-4 z-1000000 h-screen w-screen"
             onClick={() => setShowImagePreview(false)}
           >
-            <div className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center">
               <button
                 onClick={() => setShowImagePreview(false)}
-                className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors z-10"
+                className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors z-10000000000"
                 aria-label="Close preview"
               >
                 <X className="w-6 h-6" />
@@ -113,9 +113,9 @@ export default function MessageBubble({
               <Image
                 src={message.attachment.url}
                 alt={message.attachment.name}
-                width={340}
-                height={340}
-                className="max-w-full max-h-full object-contain rounded-lg"
+                width={600}
+                height={600}
+                className="max-w-full max-h-full object-contain rounded-lg z-10000"
                 onClick={e => e.stopPropagation()}
               />
             </div>

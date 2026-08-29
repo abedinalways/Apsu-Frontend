@@ -53,7 +53,7 @@ export default function BlogContentCard({
         {/* Footer */}
         <Link
           href={href}
-          className="md:mt-2 mt-1 inline-flex w-fit items-center gap-3 text-[16px] leading-[124%] font-medium text-primary transition-all duration-300 hover:gap-4"
+          className="md:mt-2 mt-1 inline-flex w-fit items-center gap-3 text-[16px] leading-[124%] font-medium text-greenColor transition-all duration-300 hover:gap-4"
         >
           Read more
           <span className="flex h-6 w-6 items-center justify-center rounded-full border border-greenColor">

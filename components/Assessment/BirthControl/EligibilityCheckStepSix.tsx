@@ -70,7 +70,7 @@ export default function EligibilityCheckStepSix() {
     <div className="space-y-6">
       {/* Step description headers matching Screenshot 2026-07-05 113111.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Are you currently taking any medications every day, even if only for a
           short time? Please do not include birth control.
         </h2>
@@ -165,7 +165,7 @@ export default function EligibilityCheckStepSix() {
                   onClick={handleClearAllMeds}
                   className={`w-full py-4 text-center text-sm font-medium transition-all bg-background h-14! rounded-xl border text-[16px] text-grayColor1 ${
                     hasNoneSelected
-                      ? 'border-lightGreenColor border-2 text-secondary-bg'
+                      ? 'border-greenColor1  border-2 text-secondary-bg'
                       : 'border-gray-200'
                   }`}
                 >

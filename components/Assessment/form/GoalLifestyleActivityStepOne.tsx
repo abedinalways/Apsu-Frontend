@@ -59,7 +59,7 @@ export default function GoalLifestyleActivityStepOne() {
                       }
                       className={`flex items-center gap-3 p-4 w-full rounded-2xl border text-left transition-all ${
                         isSelected
-                          ? 'border-lightGreenColor bg-lightGreenColor/10 shadow-sm'
+                          ? 'border-greenColor1  bg-lightGreenColor/10 shadow-sm'
                           : 'border-gray-100 bg-bgColor/50 hover:bg-bgColor'
                       }`}
                     >
@@ -67,7 +67,7 @@ export default function GoalLifestyleActivityStepOne() {
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                            ? 'border-lightGreenColor bg-lightGreenColor text-white'
+                            ? 'border-greenColor1  bg-lightGreenColor text-white'
                             : 'border-grayColor1 bg-white'
                         }`}
                       >

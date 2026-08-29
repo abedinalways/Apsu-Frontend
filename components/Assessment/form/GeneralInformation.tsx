@@ -27,7 +27,7 @@ export default function GeneralInformation() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-[20px] font-semibold text-greenColor">
+      <h2 className="text-[20px] font-semibold text-titleText">
         Tell us about yourself first!
       </h2>
 
@@ -111,7 +111,7 @@ export default function GeneralInformation() {
                     key={g}
                     className={`flex items-center justify-center gap-2 bg-background h-14! rounded-xl border text-[16px] text-grayColor1 capitalize transition-all w-full ${
                       currentGender === g
-                        ? 'border-lightGreenColor border-2 text-secondary-bg'
+                        ? 'border-greenColor1 border-2 text-secondary-bg'
                         : 'border-gray-200'
                     }`}
                   >

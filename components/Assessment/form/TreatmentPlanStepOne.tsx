@@ -74,7 +74,7 @@ export default function TreatmentPlanStepOne() {
       {/* Visual Header Banner matching Screenshot 2026-07-05 104917.png */}
       <div className="relative overflow-hidden rounded-2xl bg- p-5 flex items-center justify-between">
         <div className="space-y-1 max-w-[70%] z-10">
-          <h2 className="text-[20px] font-semibold text-greenColor">
+          <h2 className="text-[20px] font-semibold text-titleText">
             Choose a plan that fits you.
           </h2>
           <p className="text-[14px] text-blackColor">
@@ -116,7 +116,7 @@ export default function TreatmentPlanStepOne() {
                       }
                       className={`w-full p-4 rounded-2xl border text-left flex items-start justify-between transition-all relative bg-background cursor-pointer ${
                         isSelected
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -125,7 +125,7 @@ export default function TreatmentPlanStepOne() {
                         <div
                           className={`h-5 w-5 rounded-full border flex items-center justify-center mt-0.5 shrink-0 transition-colors ${
                             isSelected
-                              ? 'border-lightGreenColor bg-secondary-bg'
+                              ? 'border-greenColor1  bg-secondary-bg'
                               : 'border-gray-200 bg-white'
                           }`}
                         >
@@ -145,7 +145,7 @@ export default function TreatmentPlanStepOne() {
                           <div
                             className={`inline-block px-2 py-0.5 text-[10px] font-semibold rounded-full ${
                               plan.badgeVariant === 'save'
-                                ? 'border-lightGreenColor text-secondary-bg'
+                                ? 'border-greenColor1  text-secondary-bg'
                                 : 'border-gray-200'
                             }`}
                           >

@@ -27,7 +27,7 @@ export default function QuickCheckSection() {
     },
   ];
   return (
-    <div className="container">
+    <div className="container ">
       <div className="text-center">
         <CommonHeader
           sectionName="IS IT RIGHT FOR YOU?"

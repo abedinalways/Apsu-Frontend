@@ -28,7 +28,7 @@ export default function GoalLifestyleActivityStepOne() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984078010 (2).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           What are you looking for from your birth control?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
@@ -73,7 +73,7 @@ export default function GoalLifestyleActivityStepOne() {
                         className={cn(
                           'flex items-center space-x-3.5 w-full p-4 rounded-xl border transition-all cursor-pointer select-none bg-background h-14! text-[16px] text-grayColor1',
                           isChecked
-                            ? 'border-lightGreenColor border-2 text-secondary-bg'
+                            ? 'border-greenColor1  border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >

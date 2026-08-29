@@ -10,6 +10,7 @@ export interface MedicationItem {
   name: string;
   brandInfo: string;
   features: string[];
+  link: string;
   price: string;
   image: string | StaticImageData;
 }
@@ -80,7 +81,8 @@ export default function MedicationSection({
                     </h4>
                     <WhiteCustomButton
                       text="Check eligibility"
-                      className="w-full md:w-auto"
+                      className="md:w-fit"
+                      href={item.link}
                     />
                   </div>
                 </div>

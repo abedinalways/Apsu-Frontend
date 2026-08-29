@@ -27,7 +27,7 @@ export default function EligibilityCheckStepTwo() {
     <div className="space-y-6">
       {/* Title Header text matched from Frame 1984077999 (2).png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Have you tried any sleep treatments before?
         </h2>
       </div>
@@ -70,7 +70,7 @@ export default function EligibilityCheckStepTwo() {
                         className={cn(
                           'flex items-center space-x-3.5 p-4  select-none  gap-2 bg-background h-14! rounded-xl border text-[16px] text-grayColor1 capitalize transition-all w-full cursor-pointer',
                           isChecked
-                            ? 'border-lightGreenColor border-2 text-secondary-bg'
+                            ? 'border-greenColor1  border-2 text-secondary-bg'
                             : 'border-gray-200',
                         )}
                       >

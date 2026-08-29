@@ -67,7 +67,7 @@ export default function Treatment() {
                       }
                       className={`flex items-center justify-between p-4 rounded-xl border text-left transition-all ${
                         isSelected
-                          ? 'border-lightGreenColor bg-lightGreenColor'
+                          ? 'border-greenColor1  bg-lightGreenColor'
                           : 'border-gray-100 bg-background hover:bg-background/50'
                       }`}
                     >

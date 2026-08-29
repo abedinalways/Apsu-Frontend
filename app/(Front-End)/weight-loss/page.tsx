@@ -41,7 +41,6 @@ function page() {
     "2 minute eligibility check",
     "No insurance needed",
     "Pay only if prescribed",
-    "Physician consult cost $0",
     "Shipping cost $0",
   ];
   return (

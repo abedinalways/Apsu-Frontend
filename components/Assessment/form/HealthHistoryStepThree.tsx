@@ -57,7 +57,7 @@ export default function HealthHistoryStepThree() {
     <div className="space-y-6">
       {/* Step Description Headers from Screenshot 2026-07-05 121717.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Do you faced any side effects during your medication?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
@@ -80,7 +80,7 @@ export default function HealthHistoryStepThree() {
                         key={effect}
                         type="button"
                         onClick={() => handleToggleSideEffect(effect)}
-                        className="px-4 py-2 rounded-full border border-lightGreenColor bg-white text-xs font-medium text-secondary-bg hover:bg-lightGreenColor/10 transition-all active:scale-95"
+                        className="px-4 py-2 rounded-full border border-greenColor1  bg-white text-xs font-medium text-secondary-bg hover:bg-lightGreenColor/10 transition-all active:scale-95"
                       >
                         {effect}
                       </button>
@@ -100,7 +100,7 @@ export default function HealthHistoryStepThree() {
                     {selectedList.map(effect => (
                       <div
                         key={effect}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-lightGreenColor bg-secondary-bg text-white text-xs font-medium shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-greenColor1  bg-secondary-bg text-white text-xs font-medium shadow-sm"
                       >
                         <span>{effect}</span>
                         <button

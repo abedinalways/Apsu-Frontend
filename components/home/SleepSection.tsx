@@ -60,7 +60,8 @@ function SleepSection() {
             <div className="flex justify-center md:justify-start w-full">
               <WhiteCustomButton
                 text="Start your sleep consult"
-                className="w-full md:w-auto"
+                className="md:w-fit"
+                href="/assessment/sleep"
               />
             </div>
           </div>

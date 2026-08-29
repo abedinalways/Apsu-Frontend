@@ -29,7 +29,7 @@ export default function EligibilityCheckStepOne() {
     <div className="space-y-6">
       {/* Title & Description block from Screenshot 2026-07-05 110413.png */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor">
+        <h2 className="text-[20px] font-semibold text-titleText">
           Do you currently use nicotine-containing products?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
@@ -61,7 +61,7 @@ export default function EligibilityCheckStepOne() {
                       }
                       className={`flex items-center gap-4 p-4 w-full rounded-2xl border text-left transition-all bg-background h-14! text-[16px] text-grayColor1 cursor-pointer ${
                         isSelected
-                          ? 'border-lightGreenColor border-2 text-secondary-bg'
+                          ? 'border-greenColor1  border-2 text-secondary-bg'
                           : 'border-gray-200'
                       }`}
                     >
@@ -69,7 +69,7 @@ export default function EligibilityCheckStepOne() {
                       <div
                         className={`h-5 w-5 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                           isSelected
-                            ? 'border-lightGreenColor bg-secondary-bg'
+                            ? 'border-greenColor1  bg-secondary-bg'
                             : 'border-grayColor1 bg-white'
                         }`}
                       >

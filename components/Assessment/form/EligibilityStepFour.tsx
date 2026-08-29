@@ -77,7 +77,7 @@ export default function EligibilityStepFour() {
     <div className="space-y-6">
       {/* Title & Subtitle */}
       <div>
-        <h2 className="text-[20px] font-semibold text-greenColor tracking-tight">
+        <h2 className="text-[20px] font-semibold text-titleText tracking-tight">
           Identity Verification
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5 leading-relaxed">
@@ -96,7 +96,7 @@ export default function EligibilityStepFour() {
               <div
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
-                className="bg-background border border-lightGreenColor rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
+                className="bg-background border border-greenColor1  rounded-2xl p-8 flex flex-col items-center justify-center gap-3 text-center transition-colors"
               >
                 <input
                   type="file"
@@ -111,15 +111,15 @@ export default function EligibilityStepFour() {
                   onClick={() => fileInputRef.current?.click()}
                   className="h-12 w-12 rounded-full bg-lightGreenColor flex items-center justify-center cursor-pointer hover:bg-borderColor transition-colors"
                 >
-                  <Upload className="h-5 w-5 text-greenColor" />
+                  <Upload className="h-5 w-5 text-titleText" />
                 </div>
                 <div>
-                  <p className="text-[15px] font-medium text-greenColor">
+                  <p className="text-[15px] font-medium text-titleText">
                     Drag & Drop or{' '}
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="text-greenColor underline font-semibold cursor-pointer"
+                      className="text-titleText underline font-semibold cursor-pointer"
                     >
                       Browse
                     </button>
@@ -138,14 +138,14 @@ export default function EligibilityStepFour() {
       {/* Attachments List */}
       {attachments.length > 0 && (
         <div className="border border-gray-200/80 rounded-2xl p-5 space-y-3">
-          <h3 className="text-[16px] font-medium text-greenColor">
+          <h3 className="text-[16px] font-medium text-titleText">
             Attachments
           </h3>
           <div className="space-y-2.5">
             {attachments.map((file: any, index: number) => (
               <div
                 key={file.id || index}
-                className="bg-background border border-lightGreenColor rounded-xl p-3.5 flex items-center justify-between"
+                className="bg-background border border-greenColor1  rounded-xl p-3.5 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
                   {/* File Type Icon Badge */}
@@ -158,7 +158,7 @@ export default function EligibilityStepFour() {
                     <span>{file.type}</span>
                   </div>
                   <div>
-                    <p className="text-[14px] font-medium text-greenColor leading-tight">
+                    <p className="text-[14px] font-medium text-titleText leading-tight">
                       {file.name}
                     </p>
                     <p className="text-[12px] text-grayColor1 mt-0.5">
