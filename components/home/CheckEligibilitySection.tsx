@@ -245,18 +245,7 @@ export default function CheckEligibilitySection() {
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
-                          {...register('weightLbs', {
-                            onChange: (event) => {
-                              const weightInPounds = Number(event.target.value);
-
-                              setValue(
-                                'weightKgs',
-                                Number.isFinite(weightInPounds)
-                                  ? weightInPounds
-                                  : undefined,
-                              );
-                            },
-                          })}
+                          {...register('weightLbs')}
                           className="bg-whiteColor h-12 text-[14px] text-blackColor rounded-full border-background [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 pointer-events-none text-[11px] text-grayColor1 font-medium">
@@ -295,20 +284,7 @@ export default function CheckEligibilitySection() {
                       <div className="relative flex items-center mt-1">
                         <Input
                           type="number"
-                          {...register('weightKgs', {
-                            onChange: (event) => {
-                              const weightInKilograms = Number(
-                                event.target.value,
-                              );
-
-                              setValue(
-                                'weightLbs',
-                                Number.isFinite(weightInKilograms)
-                                  ? weightInKilograms
-                                  : undefined,
-                              );
-                            },
-                          })}
+                          {...register('weightKgs')}
                           className="bg-whiteColor h-12 text-[14px] text-blackColor rounded-full border-background [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="absolute right-3 pointer-events-none text-[11px] text-grayColor1 font-medium">
