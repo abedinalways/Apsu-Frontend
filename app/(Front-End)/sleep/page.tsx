@@ -41,7 +41,7 @@ export default function SleepPage() {
     "Prescribed by U.S. board-certified physicians",
     "No insurance needed",
     "Pay only if prescribed",
-    "Physician consult cost $0",
+    // "Physician consult cost $0",
     "Shipping cost $0",
   ];
   return (
