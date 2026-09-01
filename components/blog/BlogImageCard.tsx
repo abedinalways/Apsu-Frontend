@@ -5,7 +5,7 @@ import BlogQuoteCard from './BlogQuoteCard';
 
 export default function BlogImageCard() {
   return (
-    <div className="relative overflow-hidden rounded-2xl aspect-[3/4]  overflow-x-hidden ">
+    <div className="relative overflow-hidden rounded-2xl aspect-5/5 overflow-x-hidden h-full w-full">
       <div className='flex items-start'>
         <Image
           src="/images/blog/banner.png"
