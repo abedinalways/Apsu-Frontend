@@ -3,8 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import type { FAQCategory } from '@/types/faq';
-import { ArrowRightIcon } from 'lucide-react';
-import ArrowIcon from '../icons/ArrowIcon';
 import ContactCard from './ContactCard';
 
 interface FAQSidebarProps {

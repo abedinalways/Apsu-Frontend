@@ -1,32 +1,13 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
 import ThumbnailIcon from '../icons/TumbnailIcon';
-import ReusableButton from '../reusable/button/ReusableButton';
 import PrimaryButton from '../reusable/button/PrimaryButton';
 
 export default function CTAWidget() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-
-  const openVideo = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsVideoOpen(true);
-  }, []);
-
-  const closeVideo = useCallback(() => {
-    setIsVideoOpen(false);
-  }, []);
-
-  
-  const onKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLDivElement>) => {
-      if (e.key === 'Escape') closeVideo();
-    },
-    [closeVideo],
-  );
 
   return (
     <div className="overflow-hidden rounded-[20px] border border-lightGreenColor bg-white shadow-[0_10px_30px_rgba(0,0,0,.04)]">

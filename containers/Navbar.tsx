@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { FaRegCircleXmark } from 'react-icons/fa6';
-import { CircleX, ChevronDown, LogOut, User } from 'lucide-react';
+import { CircleX } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { toast } from 'sonner';

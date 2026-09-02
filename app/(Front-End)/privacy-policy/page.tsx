@@ -1,3 +1,13 @@
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Privacy Policy | Apsu',
+  description:
+    'How Apsu collects, uses, and protects your personal and health information when you use our telehealth services.',
+  path: '/privacy-policy',
+});
+
+
 import { PrivacyHero } from '@/components/legal/PrivacyHero';
 import { PrivacySidebar } from '@/components/legal/PrivacySidebar';
 import { PrivacyList } from '@/components/legal/PrivacyList';

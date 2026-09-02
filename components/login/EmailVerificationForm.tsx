@@ -14,8 +14,8 @@ interface EmailVerificationFormProps {
 }
 
 export default function EmailVerificationForm({
-  onNext,
-  onExistingUser,
+  onNext: _onNext,
+  onExistingUser: _onExistingUser,
 }: EmailVerificationFormProps) {
   const [isChecking, setIsChecking] = useState(false);
   const form = useForm<EmailFormValues>({
@@ -23,7 +23,7 @@ export default function EmailVerificationForm({
     defaultValues: { email: '' },
   });
 
-  const onSubmit = async (values: EmailFormValues) => {
+  const onSubmit = async (_values: EmailFormValues) => {
     setIsChecking(true);
     try {
       // Email verification is not connected to a backend yet.

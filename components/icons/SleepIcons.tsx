@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SleepIcons(props: React.SVGProps<SVGSVGElement>) {
+export default function SleepIcons(_props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="62"

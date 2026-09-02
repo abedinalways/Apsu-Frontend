@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const SyringeIcon: React.FC<React.SVGProps<SVGElement>> = props => (
+const SyringeIcon: React.FC<React.SVGProps<SVGElement>> = _props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="28"

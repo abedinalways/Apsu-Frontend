@@ -32,7 +32,7 @@ export default function EditProfileModal({
     reValidateMode: 'onChange',
   });
   const [isLoading, setIsLoading] = useState(false);
-  const onSubmit = async (values: ProfileFormValues) => {
+  const onSubmit = async (_values: ProfileFormValues) => {
     try {
       setIsLoading(true);
 

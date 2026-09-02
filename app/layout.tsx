@@ -32,10 +32,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
   robots: {
     index: true,
     follow: true,
@@ -90,7 +86,7 @@ export default function RootLayout({
     '@type': 'MedicalOrganization',
     name: siteName,
     url: siteUrl,
-    logo: `${siteUrl}/images/logo.png`,
+    logo: `${siteUrl}/logo.png`,
     description: defaultDescription,
     sameAs: [
       appConfig.app.social?.facebook,

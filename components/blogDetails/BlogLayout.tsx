@@ -1,7 +1,6 @@
 import { BlogMeta } from '@/types/blogDetails';
 
 import BlogArticle from './BlogArticle';
-import BlogSidebar from './BlogSidebar';
 import Sources from './Sources';
 
 

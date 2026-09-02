@@ -9,7 +9,7 @@ type BlogContentCardProps = Blog;
 export default function BlogContentCard({
   image,
   category,
-  date,
+  date: _date,
   readTime,
   title,
   description,

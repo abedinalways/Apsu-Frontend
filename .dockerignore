@@ -1,2 +1,16 @@
 node_modules
 dist
+.next
+.git
+.github
+.vscode
+.idea
+coverage
+__tests__
+*.log
+Dockerfile
+docker-compose.yml
+README.md
+# Never bake local env files (secrets) into the image.
+# The API endpoint is provided as a build ARG instead.
+.env*

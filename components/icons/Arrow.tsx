@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Arrow: React.FC<React.SVGProps<SVGElement>> = props => (
+const Arrow: React.FC<React.SVGProps<SVGElement>> = _props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="22"

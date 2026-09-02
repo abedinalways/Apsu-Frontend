@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Check, AlertCircle } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 export interface QuickCheckItem {
   id: string;

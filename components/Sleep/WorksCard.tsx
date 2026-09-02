@@ -3,7 +3,6 @@
 import { cn } from '@/lib/utils';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import {
-  ArrowRight,
   ClipboardList,
   Stethoscope,
   UserCheck,
@@ -11,7 +10,6 @@ import {
 import Image from 'next/image';
 import { useState } from 'react';
 import { HeadphonesIcon, TruckIcon } from '../icons/Icons';
-import PrimaryButton from '../reusable/button/PrimaryButton';
 import WhiteCustomButton from '../reusable/button/WhiteCustomButton';
 
 const WORKS_STEPS = [

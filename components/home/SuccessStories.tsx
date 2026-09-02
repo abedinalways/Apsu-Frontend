@@ -99,7 +99,7 @@ const SuccessStories = () => {
     { dependencies: [swiperReady], scope: sectionRef, revertOnUpdate: true },
   );
   const swiperRef = useRef<any>(null);
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [, setCurrentIndex] = useState(1);
   const [activeCard, setActiveCard] = useState<number | null>(2);
   const goNext = () => swiperRef.current?.slideNext();
   const goPrev = () => swiperRef.current?.slidePrev();

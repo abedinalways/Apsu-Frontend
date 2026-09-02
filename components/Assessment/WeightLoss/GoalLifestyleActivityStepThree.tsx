@@ -9,7 +9,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 const METHOD_TAGS = ['Diet', 'Exercise', 'Prescribed medication', 'Surgery'];
 const MOTIVATION_TAGS = [

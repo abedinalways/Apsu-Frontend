@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
 import { X } from 'lucide-react';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 const SIDE_EFFECT_OPTIONS = [
   'Vomiting',

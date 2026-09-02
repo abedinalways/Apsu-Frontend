@@ -32,7 +32,6 @@ const Header: React.FC<HeaderProps> = ({
   sidebarOpen,
 }: HeaderProps) => {
   const [popoverOpen, setPopoverOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   return (

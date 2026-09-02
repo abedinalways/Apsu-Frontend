@@ -1,4 +1,3 @@
-import { List } from 'lucide-react';
 import * as React from 'react';
 
 function ListIcon(props: React.SVGProps<SVGSVGElement>) {

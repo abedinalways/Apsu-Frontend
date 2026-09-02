@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MsCardIcons(props: React.SVGProps<SVGSVGElement>) {
+export default function MsCardIcons(_props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="32"

@@ -10,9 +10,9 @@ interface EnterCodeFormProps {
 }
 
 export default function EnterCodeForm({
-  email,
-  onNext,
-  onResend,
+  email: _email,
+  onNext: _onNext,
+  onResend: _onResend,
 }: EnterCodeFormProps) {
   const [code, setCode] = useState<string[]>(new Array(6).fill(''));
   const [isSubmitting, setIsSubmitting] = useState(false);

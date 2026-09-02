@@ -1,3 +1,13 @@
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Frequently Asked Questions | Apsu",
+  description:
+    "Answers to common questions about Apsu's online healthcare: treatments, pricing, medications, delivery, languages, and how our physician consultations work.",
+  path: "/faq",
+});
+
+
 import { FAQHero } from "@/components/faq/FAQHero";
 import { FAQSidebar } from "@/components/faq/FAQSidebar";
 import { FAQList } from "@/components/faq/FAQList";

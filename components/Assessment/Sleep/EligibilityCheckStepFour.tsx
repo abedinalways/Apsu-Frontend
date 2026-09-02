@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/form';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { cn } from '@/lib/utils';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 const MEDICATION_OPTIONS = [
   { id: 'yes', label: 'Yes' },

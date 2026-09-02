@@ -1,3 +1,13 @@
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Terms of Service | Apsu',
+  description:
+    'The terms and conditions governing your use of Apsu telehealth services, including eligibility, payments, medical disclaimers, and account rules.',
+  path: '/terms',
+});
+
+
 import { TermsHero } from '@/components/legal/TermsHero';
 import { TermsSidebar } from '@/components/legal/TermsSidebar';
 import { TermsList } from '@/components/legal/TermsList';

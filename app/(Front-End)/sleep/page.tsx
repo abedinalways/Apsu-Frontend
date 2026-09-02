@@ -1,8 +1,20 @@
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Sleep Treatment Online | Personalized Sleep Care | Apsu",
+  description:
+    "Struggling with sleep? Get a personalized sleep treatment plan from US-licensed physicians, entirely online. Multilingual care with cash-pay pricing.",
+  path: "/sleep",
+  keywords:
+    "sleep treatment online, insomnia help, sleep doctor online, telehealth sleep care, sleep medication, Apsu sleep",
+});
+
+
 import React from "react";
 import { CapsulIcon } from "@/components/icons/Icons";
 import CommonHero from "@/components/weight-loss/CommonHero";
 import ProgramPricingSection from "@/components/weight-loss/PriceBenifite";
-import { Stethoscope, Truck } from "lucide-react";
+import { Stethoscope } from "lucide-react";
 import { IoEarthOutline } from "react-icons/io5";
 import SleepBreak from "@/components/Sleep/SleepBreak";
 import HowItWorks from "@/components/Sleep/HowItWorks";

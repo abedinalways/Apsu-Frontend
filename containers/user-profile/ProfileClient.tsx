@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
@@ -8,10 +8,10 @@ import { ProfileService, type Treatment } from '@/lib/services/profile.service';
 import EmptyTabState from '@/components/user-profile/EmptyTabState';
 import EditProfileModal from './EditProfileModal';
 import EditIcon from '@/components/icons/EditIcon';
+import ErrorStateWithRetry from '@/components/user-profile/ErrorStateWithRetry';
 import MessageIcon from '@/components/icons/MessageIcon';
 import CallIcon from '@/components/icons/CallIcon';
 import LocationIcon from '@/components/icons/LocationIcon';
-import VideoCallIcon from '@/components/icons/VideoCallIcon';
 import TreatmentCard from '@/components/user-profile/TreatmentCard';
 import NotApprovedTreatment from '@/components/user-profile/NotApprovedTreatment';
 import MessageTabContainer from '@/components/user-profile/MessageTabContainer';
@@ -29,13 +29,15 @@ const TABS = [
 type TabId = (typeof TABS)[number]['id'];
 
 export default function ProfileClient() {
-  const [treatmentState, setTreatmentState] = useState<
-    'approved' | 'not-approved' | 'empty' | 'loading' | 'error'
+    const [treatmentState, setTreatmentState] = useState<
+    'active' | 'not-approved' | 'empty' | 'loading' | 'error'
   >('loading');
   const [treatment, setTreatment] = useState<Treatment | null>(null);
   const [hasOrders, setHasOrders] = useState(false);
   const [hasPrescriptions, setHasPrescriptions] = useState(false);
-  const [profileError, setProfileError] = useState<string | null>(null);
+    const [profileError, setProfileError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
+  const [isRetrying, setIsRetrying] = useState(false);
 
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -67,34 +69,54 @@ export default function ProfileClient() {
     }
   }, [user, isAuthLoading, router]);
 
-  // Fetch profile data
+    // Fetch profile data with retry support
+  const loadProfile = useCallback(async () => {
+    if (retryCount > 0) {
+      // Exponential backoff: 1s, 2s, 4s
+      const delay = Math.pow(2, retryCount - 1) * 1000;
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+
+    setIsRetrying(true);
+    try {
+      const data = await ProfileService.getProfile();
+
+      setTreatment(data.treatment);
+      setHasOrders(data.orders.length > 0);
+      setHasPrescriptions(data.prescriptions.length > 0);
+      // Tag names now match what each branch renders:
+      //  - treatment exists (Active/Pending)      -> 'active' card
+      //  - treatment exists but was denied        -> 'not-approved' screen
+      //  - no treatment at all                    -> 'empty' state
+      setTreatmentState(
+        !data.treatment
+          ? 'empty'
+          : data.treatment.status === 'Not Approved'
+            ? 'not-approved'
+            : 'active',
+      );
+      setProfileError(null);
+    } catch (err) {
+      const message =
+        err instanceof Error ? err.message : 'Failed to load profile data.';
+      setProfileError(message);
+      setTreatmentState('error');
+    } finally {
+      setIsRetrying(false);
+    }
+  }, [retryCount]);
+
   useEffect(() => {
-    let mounted = true;
+    if (user || !isAuthLoading) {
+      loadProfile();
+    }
+  }, [user, isAuthLoading, loadProfile]);
 
-    const loadProfile = async () => {
-      try {
-        const data = await ProfileService.getProfile();
-
-        if (!mounted) return;
-
-        setTreatment(data.treatment);
-        setHasOrders(data.orders.length > 0);
-        setHasPrescriptions(data.prescriptions.length > 0);
-        setTreatmentState(data.treatment ? 'not-approved' : 'empty');
-        setProfileError(null);
-      } catch {
-        if (!mounted) return;
-        setTreatmentState('error');
-        setProfileError('Failed to load profile data.');
-      }
-    };
-
-    loadProfile();
-
-    return () => {
-      mounted = false;
-    };
-  }, []);
+  const handleRetry = () => {
+    if (retryCount < 3) {
+      setRetryCount(prev => prev + 1);
+    }
+  };
 
   if (isAuthLoading) {
     return (
@@ -118,14 +140,14 @@ export default function ProfileClient() {
 
   if (treatmentState === 'error') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
-        <p className="text-redColor">{profileError}</p>
-        <button
-          onClick={() => setTreatmentState('loading')}
-          className="px-4 py-2 bg-secondary-bg text-whiteColor rounded-full text-sm"
-        >
-          Retry
-        </button>
+      <div className="flex items-center justify-center min-h-[400px]">
+        <ErrorStateWithRetry
+          message={profileError || 'Failed to load profile data.'}
+          retryCount={retryCount}
+          maxRetries={3}
+          isRetrying={isRetrying}
+          onRetry={handleRetry}
+        />
       </div>
     );
   }
@@ -210,11 +232,11 @@ export default function ProfileClient() {
         <div className="p-3 md:p-8 min-h-[320px] flex flex-col items-center justify-center ">
           {activeTab === 'my-treatments' && (
             <>
-              {treatmentState === 'not-approved' && (
+              {treatmentState === 'active' && (
                 <TreatmentCard data={activeTreatment} />
               )}
 
-              {treatmentState === 'approved' && (
+              {treatmentState === 'not-approved' && (
                 <NotApprovedTreatment
                   onViewOrder={() => handleTabChange('order-details')}
                   onStartAssessment={() => router.push('/assessment')}

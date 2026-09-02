@@ -1,7 +1,6 @@
 import { BlogMeta } from '@/types/blogDetails';
 import Image from 'next/image';
 import BlogRenderer from './BlogRenderer';
-import Sources from './Sources';
 
 
 interface Props {

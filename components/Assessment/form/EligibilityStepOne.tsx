@@ -9,7 +9,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Check } from 'lucide-react';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 const REVIEW_ITEMS = [
   'Information provided is accurate.',

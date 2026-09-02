@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function WhyApsuSleepIcons(
-  props: React.SVGProps<SVGSVGElement>,
+  _props: React.SVGProps<SVGSVGElement>,
 ) {
   return (
     <svg

@@ -9,7 +9,7 @@ import {
   FormLabel,
 } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 export default function EligibilityCheckStepSeven() {
   const { control } = useFormContext<FormData>();

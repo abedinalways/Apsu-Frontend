@@ -1,4 +1,3 @@
-import { ArrowUpRight } from 'lucide-react';
 import Arrow from '../icons/Arrow';
 
 export default function BlogQuoteCard() {

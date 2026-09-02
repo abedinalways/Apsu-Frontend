@@ -16,7 +16,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ChevronLeft, ChevronRight, Globe, ChevronDown } from 'lucide-react';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 const TIME_SLOTS = [
   '08:30 AM',

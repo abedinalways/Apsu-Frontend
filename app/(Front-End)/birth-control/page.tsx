@@ -1,3 +1,15 @@
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Birth Control Online | Pills & Emergency Contraception | Apsu",
+  description:
+    "Birth control prescribed online by US-licensed physicians. Daily pills and emergency contraception delivered to your door. Multilingual, cash-pay, judgment-free.",
+  path: "/birth-control",
+  keywords:
+    "birth control online, birth control pills, emergency contraception, telehealth birth control, online prescription, Apsu birth control",
+});
+
+
 import BirthControlFAQsection from "@/components/birth-control/BirthControlFAQsection";
 import BirthControlQuestion from "@/components/birth-control/BirthControlQuestion";
 import PricingSection from "@/components/birth-control/PricingSection";

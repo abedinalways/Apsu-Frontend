@@ -1,3 +1,15 @@
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Weight Loss Treatment Online | GLP-1 Medications | Apsu",
+  description:
+    "Physician-guided weight loss with GLP-1 medications (semaglutide, tirzepatide). Online assessment, US-licensed physicians, cash-pay pricing. See if you qualify.",
+  path: "/weight-loss",
+  keywords:
+    "weight loss online, GLP-1, semaglutide, tirzepatide, telehealth weight loss, prescription weight loss, Apsu weight loss",
+});
+
+
 import FAQFooter from "@/components/faq/FAQFooter";
 import { CapsulIcon } from "@/components/icons/Icons";
 import HowItWorks from "@/components/Sleep/HowItWorks";

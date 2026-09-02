@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import type { TermsSection } from '@/lib/data/termsData';
 
 interface TermsSidebarProps {

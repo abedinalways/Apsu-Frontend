@@ -7,7 +7,6 @@ import BlogToolbar from './BlogToolbar';
 
 import { blogCategories } from '@/types/blogCategories';
 import type { Blog } from '@/types/blog';
-import ReusableButton from '../reusable/button/ReusableButton';
 import PrimaryButton from '../reusable/button/PrimaryButton';
 
 const INITIAL_VISIBLE = 4;

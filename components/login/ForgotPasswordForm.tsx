@@ -12,13 +12,13 @@ interface ForgotPasswordFormProps {
 }
 
 export default function ForgotPasswordForm({
-  onNext,
+  onNext: _onNext,
   onBack,
 }: ForgotPasswordFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm({ defaultValues: { email: '' } });
 
-  const onSubmit = async (values: { email: string }) => {
+  const onSubmit = async (_values: { email: string }) => {
     setIsSubmitting(true);
 
     try {

@@ -21,9 +21,13 @@ Set these in `.env.local` for local development.
 
 - Base URL: `${NEXT_PUBLIC_API_ENDPOINT}/api`
 - All requests use `credentials: "include"` (cookies).
+- Session model: the frontend stores the access token in a cookie
+  (`apsu_auth_token`, via `lib/session.ts`) and `lib/Fetch.ts` attaches it
+  automatically as an `Authorization: Bearer <token>` header. Services must
+  never read/write cookies (or headers) directly — route everything through
+  `lib/session.ts`.
 - Successful responses: `{ success: boolean, data?: any, error?: string }`
 - Error responses: HTTP 4xx/5xx with JSON body `{ message: string }`
-- Auth header is sent automatically via cookie; no manual `Authorization` header in services.
 
 ---
 
@@ -36,8 +40,10 @@ details are deliberately left to backend design and are not specified here.
 
 **Service file:** `lib/services/auth/index.ts`  
 **Switch:** `NEXT_PUBLIC_AUTH_MODE=api`  
-**Session:** issued and validated by the backend. The frontend never stores tokens
-itself; it relies on the session cookie described under Shared Conventions.
+**Session:** issued and validated by the backend. The access token is stored by
+the frontend in the session cookie through `lib/session.ts`, then attached to
+each request as a `Bearer` header by `lib/Fetch.ts`. All session reads and
+writes must go through `lib/session.ts`.
 
 ### 1. Sign in
 

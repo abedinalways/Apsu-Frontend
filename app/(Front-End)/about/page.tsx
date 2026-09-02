@@ -1,3 +1,13 @@
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "About Apsu | Healthcare in Your Language",
+  description:
+    "Learn about Apsu's mission to make US-licensed healthcare accessible in 40+ languages — weight loss, birth control, and sleep care with AI translation and cash-pay pricing.",
+  path: "/about",
+});
+
+
 import AboutApsu from "@/components/about/AboutApsu";
 import AboutCareWork from "@/components/about/AboutCareWork";
 import AboutExist from "@/components/about/AboutExist";

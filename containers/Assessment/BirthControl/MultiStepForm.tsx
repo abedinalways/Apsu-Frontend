@@ -5,7 +5,7 @@ import { Resolver, useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form } from '@/components/ui/form';
-import { FormData, formSchema } from '@/zod/AssessmentSchema';
+import { FormData, formSchema } from '@/lib/validations/AssessmentSchema';
 import GeneralInformation from '@/components/Assessment/form/GeneralInformation';
 import HealthHistoryStepOne from '@/components/Assessment/form/HealthHistoryStepOne';
 import HealthHistoryStepTwo from '@/components/Assessment/form/HealthHistoryStepTwo';
@@ -28,7 +28,6 @@ import EligibilityStepThree from '@/components/Assessment/form/EligibilityStepTh
 import EligibilityStepFour from '@/components/Assessment/form/EligibilityStepFour';
 import EligibilityStepFive from '@/components/Assessment/form/EligibilityStepFive';
 import TreatmentPlanStepOne from '@/components/Assessment/form/TreatmentPlanStepOne';
-import ScheduleConsultationStepOne from '@/components/Assessment/form/ScheduleConsultationStepOne';
 import CheckoutPaymentStepOne from '@/components/Assessment/form/CheckoutPaymentStepOne';
 
 const TOTAL_STEPS = 7;
@@ -268,8 +267,6 @@ export default function MultiStepForm() {
     setSubmitError(null);
 
     try {
-      const data = form.getValues();
-
       await new Promise(resolve => setTimeout(resolve, 1200));
 
       router.push('/assessment/payment-success');

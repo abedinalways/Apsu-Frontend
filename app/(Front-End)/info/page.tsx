@@ -1,3 +1,13 @@
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Important Safety Information | Apsu',
+  description:
+    'General summary of safety information for medications offered through Apsu, including warnings, precautions, and side effects. Please read carefully.',
+  path: '/info',
+});
+
+
 import { InfoSidebar } from '@/components/legal/InfoSidebar';
 import FAQFooter from '@/components/faq/FAQFooter';
 import { InfoHero } from '@/components/legal/InfoHero';

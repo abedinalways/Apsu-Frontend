@@ -1,7 +1,7 @@
 "use client";
 
 import { CircleHelp } from "lucide-react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Search() {
@@ -11,7 +11,6 @@ export default function Search() {
 
   const searchParams = useSearchParams();
   const router = useRouter();
-  const pathName = usePathname();
 
   // Fetch products once when the component mounts
   useEffect(() => {

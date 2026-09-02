@@ -8,7 +8,7 @@ import {
   FormMessage,
   FormLabel,
 } from '@/components/ui/form';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 import Image from 'next/image';
 // import { FormData } from "./schema";
 

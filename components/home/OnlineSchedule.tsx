@@ -25,7 +25,7 @@ interface SlideItem {
 
 const ScheduleSlider = () => {
   const swiperRef = useRef<SwiperType | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [, setCurrentIndex] = useState(1);
 
   const goNext = () => {
     swiperRef.current?.slideNext();

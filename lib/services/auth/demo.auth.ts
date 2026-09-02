@@ -23,13 +23,9 @@ import type {
   ResetPasswordPayload,
 } from './types';
 import { Session } from '@/lib/session';
+import { passwordPolicy } from '@/lib/validations/authSchema';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
-
-const STORAGE_KEYS = {
-  token: 'apsu_auth_token',
-  user: 'apsu_user',
-} as const;
 
 // ─── Demo Credentials ─────────────────────────────────────────────────────────
 // In demo mode, you can log in with any valid email.
@@ -53,7 +49,7 @@ class DemoAuthService implements IAuthService {
       return { success: false, error: 'Email and password are required.' };
     }
 
-    if (password.length < 8) {
+    if (!passwordPolicy.safeParse(password).success) {
       return { success: false, error: 'Password must be at least 8 characters.' };
     }
 
@@ -79,7 +75,7 @@ class DemoAuthService implements IAuthService {
       return { success: false, error: 'Email and password are required.' };
     }
 
-    if (password.length < 8) {
+    if (!passwordPolicy.safeParse(password).success) {
       return { success: false, error: 'Password must be at least 8 characters.' };
     }
 
@@ -107,7 +103,7 @@ class DemoAuthService implements IAuthService {
       return { success: false, error: 'Email and password are required.' };
     }
 
-    if (password.length < 8) {
+    if (!passwordPolicy.safeParse(password).success) {
       return { success: false, error: 'Password must be at least 8 characters.' };
     }
 

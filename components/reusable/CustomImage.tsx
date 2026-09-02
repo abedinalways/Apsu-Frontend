@@ -6,7 +6,7 @@ export default function CustomImage({
   alt = "",
   width = 100,
   height = 100,
-  loading = "lazy",
+  loading: _loading = "lazy",
   layout = "responsive",
   ...props
 }: {

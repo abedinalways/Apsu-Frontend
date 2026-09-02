@@ -1,4 +1,14 @@
 
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Contact Us | Apsu',
+  description:
+    'Get in touch with the Apsu team. Questions about treatments, orders, or your account — reach out and we will help you in your preferred language.',
+  path: '/contact',
+});
+
+
 import ContactContent from '@/components/contact/ContactContent';
 import ContactHero from '@/components/contact/ContactHero';
 import FAQFooter from '@/components/faq/FAQFooter';

@@ -1,6 +1,17 @@
-// server base url
-export const URL =
-  process.env.NEXT_PUBLIC_API_ENDPOINT || "http://127.0.0.1:4000";
+// server base url — single source of truth for the API endpoint.
+// Fail fast when the env var is missing instead of silently falling back,
+// so a misconfigured deployment is caught at build/runtime startup.
+const endpoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
+
+if (!endpoint) {
+  throw new Error(
+    "Missing required env var NEXT_PUBLIC_API_ENDPOINT. " +
+      "Set it in your .env.local (see env.example).",
+  );
+}
+
+export const URL = endpoint;
+
 // app config
 export const AppConfig = () => ({
   app: {

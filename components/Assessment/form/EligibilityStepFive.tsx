@@ -10,7 +10,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Upload, Trash2, CheckCircle2, FileVideo } from 'lucide-react';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 export default function EligibilityStepFive() {
   const { control, setValue, watch } = useFormContext<FormData>();
