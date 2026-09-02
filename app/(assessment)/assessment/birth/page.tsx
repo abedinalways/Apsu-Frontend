@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Birth Control Assessment',
-  robots: { index: false, follow: false },
-};
+  description: 'Complete your birth control assessment with US-licensed physicians.',
+  path: '/assessment/birth',
+  noIndex: true, // Don't index assessment pages
+});
 
 
 import MultiStepForm from "@/containers/Assessment/BirthControl/MultiStepForm";

@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Sleep Assessment',
-  robots: { index: false, follow: false },
-};
+  description: 'Complete your sleep assessment with US-licensed physicians.',
+  path: '/assessment/sleep',
+  noIndex: true, // Don't index assessment pages
+});
 
 
 import MultiStepForm from "@/containers/Assessment/Sleep/MultiStepForm";

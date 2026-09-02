@@ -25,6 +25,7 @@ import QuickCheckSection from "@/components/Sleep/QuickCheckSection";
 import SleepFAQsection from "@/components/Sleep/SleepFAQsection";
 import SleepQuestion from "@/components/Sleep/SleepQuestion";
 import tirzepatideImg from "@/public/images/banner/sleep-hero.png";
+import StructuredData from '@/components/seo/StructuredData';
 export interface FeatureItem {
   id: number;
   text: string;
@@ -56,23 +57,39 @@ export default function SleepPage() {
     // "Physician consult cost $0",
     "Shipping cost $0",
   ];
+
+  const sleepServiceData = {
+    name: 'Sleep Treatment Services',
+    description: 'Personalized sleep care and treatment with US-licensed physicians',
+    services: [
+      'Sleep Assessment',
+      'Sleep Medication',
+      'Insomnia Treatment',
+      'Online Sleep Consultations',
+      'Medication Delivery',
+    ],
+  };
+
   return (
-    <div>
-      <CommonHero
-        features={featuresData}
-        title="Find your way back to deep sleep."
-        subtitle=""
-        description="Non-habit-forming, non-controlled sleep treatment. Complete your visit in the language you think in."
-      />
-      <ProgramPricingSection img={tirzepatideImg} benefits={benefits} />
-      <SleepBreak />
-      <PricingSection />
-      <WhyApsuSleepSection />
-      <HowItWorks />
-      <SleepQuestion />
-      <QuickCheckSection />
-      <SleepFAQsection />
-      <FAQFooter />
-    </div>
+    <>
+      <StructuredData type="healthcare-service" data={sleepServiceData} />
+      <div>
+        <CommonHero
+          features={featuresData}
+          title="Find your way back to deep sleep."
+          subtitle=""
+          description="Non-habit-forming, non-controlled sleep treatment. Complete your visit in the language you think in."
+        />
+        <ProgramPricingSection img={tirzepatideImg} benefits={benefits} />
+        <SleepBreak />
+        <PricingSection />
+        <WhyApsuSleepSection />
+        <HowItWorks />
+        <SleepQuestion />
+        <QuickCheckSection />
+        <SleepFAQsection />
+        <FAQFooter />
+      </div>
+    </>
   );
 }

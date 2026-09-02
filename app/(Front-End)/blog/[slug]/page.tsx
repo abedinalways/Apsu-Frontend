@@ -1,14 +1,10 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-import { AppConfig } from '@/config/app.config';
+import { pageMetadata, siteUrl, siteName, defaultImage } from '@/lib/seo/metadata';
 import { BlogService } from '@/lib/services/blog.service';
 import BlogDetailsPage from '@/components/blogDetails/BlogDetailsPage';
-
-const appConfig = AppConfig();
-const siteUrl = appConfig.app.meta.url;
-const siteName = appConfig.app.meta.siteName;
-const defaultImage = appConfig.app.meta.image;
+import StructuredData from '@/components/seo/StructuredData';
 
 interface Props {
   params: Promise<{
@@ -25,7 +21,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       blog.summary?.[0]?.title ||
       blog.description ||
       'Health insights from the Apsu medical team.';
-    const url = `${siteUrl}/blog/${blog.slug}`;
     const image = blog.heroImage || defaultImage;
     const parsedDate = blog.date ? new Date(blog.date) : null;
     const publishedTime =
@@ -33,24 +28,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? parsedDate.toISOString()
         : undefined;
 
-    return {
+    const baseMetadata = pageMetadata({
       title: blog.title,
       description,
-      alternates: { canonical: url },
+      path: `/blog/${blog.slug}`,
+      image,
+    });
+
+    return {
+      ...baseMetadata,
       openGraph: {
-        type: 'article',
-        title: blog.title,
-        description,
-        url,
-        siteName,
+        ...baseMetadata.openGraph,
+        type: 'article' as const,
         ...(publishedTime ? { publishedTime } : {}),
-        images: [{ url: image, alt: blog.title }],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: blog.title,
-        description,
-        images: [image],
       },
     };
   } catch {
@@ -84,5 +74,18 @@ export default async function Page({ params }: Props) {
     notFound();
   }
 
-  return <BlogDetailsPage blog={blog} />;
+  const articleData = {
+    headline: blog.title,
+    description: blog.summary?.[0]?.title || blog.description,
+    image: blog.heroImage || defaultImage,
+    datePublished: blog.date,
+    url: `${siteUrl}/blog/${blog.slug}`,
+  };
+
+  return (
+    <>
+      <StructuredData type="article" data={articleData} />
+      <BlogDetailsPage blog={blog} />
+    </>
+  );
 }

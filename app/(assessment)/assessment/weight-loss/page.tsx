@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Weight Loss Assessment',
-  robots: { index: false, follow: false },
-};
+  description: 'Complete your weight loss assessment with US-licensed physicians.',
+  path: '/assessment/weight-loss',
+  noIndex: true, // Don't index assessment pages
+});
 
 
 import MultiStepForm from "@/containers/Assessment/WeightLoss/MultiStepForm";

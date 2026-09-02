@@ -1,11 +1,13 @@
 import { Suspense } from "react";
+import { pageMetadata } from '@/lib/seo';
 import ProfileClient from "@/containers/user-profile/ProfileClient";
 
-
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'My Profile | Apsu',
   description: 'Manage your treatments, consultations, and orders.',
-};
+  path: '/profile',
+  noIndex: true, // Don't index user profile pages
+});
 
 export default function ProfilePage() {
   return (
