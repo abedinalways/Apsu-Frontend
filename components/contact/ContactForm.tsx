@@ -30,7 +30,7 @@ export default function ContactForm() {
     },
   });
 
-  async function onSubmit(values: ContactFormValues) {
+  async function onSubmit(_values: ContactFormValues) {
     setIsSubmitting(true);
     setSubmitError(null);
     try {

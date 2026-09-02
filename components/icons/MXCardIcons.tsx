@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MXCardIcons(props: React.SVGProps<SVGSVGElement>) {
+export default function MXCardIcons(_props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="47"

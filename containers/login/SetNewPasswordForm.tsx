@@ -11,44 +11,31 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Eye, EyeOff } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'sonner';
-import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-
-const setPasswordSchema = z
-  .object({
-    password: z.string().min(8, 'Password must be at least 8 characters'),
-    confirmPassword: z.string(),
-  })
-  .refine(data => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ['confirmPassword'],
-  });
-
-type SetPasswordFormValues = z.infer<typeof setPasswordSchema>;
+import {
+  passwordSchema,
+  PasswordFormValues,
+} from '@/lib/validations/authSchema';
 
 interface SetNewPasswordFormProps {
   onSuccess: () => void;
 }
 
 export default function SetNewPasswordForm({
-  onSuccess,
+  onSuccess: _onSuccess,
 }: SetNewPasswordFormProps) {
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const router = useRouter();
-  const { login } = useAuth();
 
-  const form = useForm<SetPasswordFormValues>({
-    resolver: zodResolver(setPasswordSchema),
+  const form = useForm<PasswordFormValues>({
+    resolver: zodResolver(passwordSchema),
     defaultValues: { password: '', confirmPassword: '' },
   });
 
-  const onSubmit = async (values: SetPasswordFormValues) => {
+  const onSubmit = async (_values: PasswordFormValues) => {
     setIsSubmitting(true);
 
     try {

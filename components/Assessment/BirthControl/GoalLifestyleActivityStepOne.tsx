@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/form';
 import { Checkbox } from '@/components/ui/checkbox';
 import { cn } from '@/lib/utils';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 const GOAL_OPTIONS = [
   { id: 'prevent_pregnancy', label: 'Prevent pregnancy' },

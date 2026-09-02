@@ -12,7 +12,7 @@ interface CommonHeroProps {
 
 function CommonHero({
   features,
-  image,
+  image: _image,
   title,
   subtitle,
   description,

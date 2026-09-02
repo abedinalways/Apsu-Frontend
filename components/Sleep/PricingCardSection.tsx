@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ArrowRight, Stethoscope, UserCheck } from "lucide-react";
+import { Stethoscope, UserCheck } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { CapsulIcon, TruckIcon } from "../icons/Icons";
@@ -56,7 +56,7 @@ export default function PricingCardSection({
   priceAmount,
   pricePeriod = "/mo",
   buttonText = "See your price & check eligibility",
-  onButtonClick,
+  onButtonClick: _onButtonClick,
   featuresTitle = "What's included:",
   features = defaultFeatures,
   className,

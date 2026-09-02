@@ -1,0 +1,22 @@
+# robots.txt for Apsu Health Platform
+# Allow all crawlers to access the site
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /assessment/
+Disallow: /profile/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /login
+
+# Disallow dynamic routes that shouldn't be indexed
+Disallow: /*?*
+Disallow: /search
+
+# Sitemap location
+Sitemap: https://apsu.com/sitemap.xml
+
+# Crawl delay (optional, adjust based on server capacity)
+Crawl-delay: 1

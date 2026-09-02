@@ -1,4 +1,3 @@
-import { Blog } from '@/types/blog';
 
 export const blogsData = [
   {

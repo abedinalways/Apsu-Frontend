@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Search, X } from 'lucide-react';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 // Mock suggestion array list for clinical lookup demo
 const MEDICATION_SUGGESTIONS = [

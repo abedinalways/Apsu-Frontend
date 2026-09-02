@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
+import { pageMetadata, siteUrl, siteName, defaultImage } from '@/lib/seo/metadata';
 import { BlogService } from '@/lib/services/blog.service';
 import BlogDetailsPage from '@/components/blogDetails/BlogDetailsPage';
+import StructuredData from '@/components/seo/StructuredData';
 
 interface Props {
   params: Promise<{
@@ -15,19 +17,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   try {
     const blog = await BlogService.getBlogBySlug(slug);
+    const description =
+      blog.summary?.[0]?.title ||
+      blog.description ||
+      'Health insights from the Apsu medical team.';
+    const image = blog.heroImage || defaultImage;
+    const parsedDate = blog.date ? new Date(blog.date) : null;
+    const publishedTime =
+      parsedDate && !Number.isNaN(parsedDate.getTime())
+        ? parsedDate.toISOString()
+        : undefined;
+
+    const baseMetadata = pageMetadata({
+      title: blog.title,
+      description,
+      path: `/blog/${blog.slug}`,
+      image,
+    });
 
     return {
-      title: blog.title,
-      description: blog.summary?.[0]?.title || 'Blog post',
+      ...baseMetadata,
       openGraph: {
-        title: blog.title,
-        description: blog.summary?.[0]?.title || 'Blog post',
-        images: [blog.heroImage],
+        ...baseMetadata.openGraph,
+        type: 'article' as const,
+        ...(publishedTime ? { publishedTime } : {}),
       },
     };
   } catch {
     return {
       title: 'Blog Not Found',
+      robots: { index: false, follow: false },
     };
   }
 }
@@ -55,5 +74,18 @@ export default async function Page({ params }: Props) {
     notFound();
   }
 
-  return <BlogDetailsPage blog={blog} />;
+  const articleData = {
+    headline: blog.title,
+    description: blog.summary?.[0]?.title || blog.description,
+    image: blog.heroImage || defaultImage,
+    datePublished: blog.date,
+    url: `${siteUrl}/blog/${blog.slug}`,
+  };
+
+  return (
+    <>
+      <StructuredData type="article" data={articleData} />
+      <BlogDetailsPage blog={blog} />
+    </>
+  );
 }

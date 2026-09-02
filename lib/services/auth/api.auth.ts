@@ -11,7 +11,8 @@
  *
  * ─── ENV SETUP ───────────────────────────────────────────────────────────────
  * Add to your .env.local:
- *   NEXT_PUBLIC_API_URL=https://your-api-domain.com
+ *   NEXT_PUBLIC_API_ENDPOINT=https://your-api-domain.com
+ *   NEXT_PUBLIC_AUTH_MODE=api
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
@@ -24,8 +25,7 @@ import type {
   ForgotPasswordPayload,
   ResetPasswordPayload,
 } from './types';
-
-const SESSION_COOKIE = 'apsu_auth_token';
+import { Session } from '@/lib/session';
 
 class ApiAuthService implements IAuthService {
   async signIn(_payload: SignInPayload): Promise<AuthResponse> {
@@ -57,12 +57,12 @@ class ApiAuthService implements IAuthService {
 
   isAuthenticated(): boolean {
     if (typeof window === 'undefined') return false;
-    return !!document.cookie.split('; ').find((row) => row.startsWith(`${SESSION_COOKIE}=`));
+    return !!Session.getToken();
   }
 
   logout(): void {
     if (typeof window !== 'undefined') {
-      document.cookie = `${SESSION_COOKIE}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
+      Session.clearToken();
     }
   }
 }

@@ -2,7 +2,7 @@
 
 import { Input } from '@/components/ui/input';
 import image from '@/public/images/work/bgImage.png';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 import { ArrowRight } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { ShortIcon } from '../icons/Icons';

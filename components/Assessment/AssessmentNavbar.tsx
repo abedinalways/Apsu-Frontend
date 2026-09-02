@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Globe } from "lucide-react";
 import SelecteInputField from "@/components/reusable/InputFiled/SelecteInputField";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,9 +15,6 @@ const languages: LanguageOption[] = [
 
 export default function AssessmentNavbar() {
   const [language, setLanguage] = React.useState<string>("en");
-
-  const selectedLabel =
-    languages.find((l) => l.value === language)?.label ?? "Select Language";
 
   return (
     <header className="w-full bg-bgColor border-b border-gray-100 px-6 py-4 ">

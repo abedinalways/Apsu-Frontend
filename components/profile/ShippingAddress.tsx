@@ -1,6 +1,5 @@
 'use client';
 
-import { MapPin } from 'lucide-react';
 import { Control } from 'react-hook-form';
 
 import InputField from '../reusable/InputFiled/InputField';

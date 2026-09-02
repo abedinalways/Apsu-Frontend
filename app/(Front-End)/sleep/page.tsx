@@ -1,8 +1,20 @@
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Sleep Treatment Online | Personalized Sleep Care | Apsu",
+  description:
+    "Struggling with sleep? Get a personalized sleep treatment plan from US-licensed physicians, entirely online. Multilingual care with cash-pay pricing.",
+  path: "/sleep",
+  keywords:
+    "sleep treatment online, insomnia help, sleep doctor online, telehealth sleep care, sleep medication, Apsu sleep",
+});
+
+
 import React from "react";
 import { CapsulIcon } from "@/components/icons/Icons";
 import CommonHero from "@/components/weight-loss/CommonHero";
 import ProgramPricingSection from "@/components/weight-loss/PriceBenifite";
-import { Stethoscope, Truck } from "lucide-react";
+import { Stethoscope } from "lucide-react";
 import { IoEarthOutline } from "react-icons/io5";
 import SleepBreak from "@/components/Sleep/SleepBreak";
 import HowItWorks from "@/components/Sleep/HowItWorks";
@@ -13,6 +25,7 @@ import QuickCheckSection from "@/components/Sleep/QuickCheckSection";
 import SleepFAQsection from "@/components/Sleep/SleepFAQsection";
 import SleepQuestion from "@/components/Sleep/SleepQuestion";
 import tirzepatideImg from "@/public/images/banner/sleep-hero.png";
+import StructuredData from '@/components/seo/StructuredData';
 export interface FeatureItem {
   id: number;
   text: string;
@@ -44,23 +57,39 @@ export default function SleepPage() {
     // "Physician consult cost $0",
     "Shipping cost $0",
   ];
+
+  const sleepServiceData = {
+    name: 'Sleep Treatment Services',
+    description: 'Personalized sleep care and treatment with US-licensed physicians',
+    services: [
+      'Sleep Assessment',
+      'Sleep Medication',
+      'Insomnia Treatment',
+      'Online Sleep Consultations',
+      'Medication Delivery',
+    ],
+  };
+
   return (
-    <div>
-      <CommonHero
-        features={featuresData}
-        title="Find your way back to deep sleep."
-        subtitle=""
-        description="Non-habit-forming, non-controlled sleep treatment. Complete your visit in the language you think in."
-      />
-      <ProgramPricingSection img={tirzepatideImg} benefits={benefits} />
-      <SleepBreak />
-      <PricingSection />
-      <WhyApsuSleepSection />
-      <HowItWorks />
-      <SleepQuestion />
-      <QuickCheckSection />
-      <SleepFAQsection />
-      <FAQFooter />
-    </div>
+    <>
+      <StructuredData type="healthcare-service" data={sleepServiceData} />
+      <div>
+        <CommonHero
+          features={featuresData}
+          title="Find your way back to deep sleep."
+          subtitle=""
+          description="Non-habit-forming, non-controlled sleep treatment. Complete your visit in the language you think in."
+        />
+        <ProgramPricingSection img={tirzepatideImg} benefits={benefits} />
+        <SleepBreak />
+        <PricingSection />
+        <WhyApsuSleepSection />
+        <HowItWorks />
+        <SleepQuestion />
+        <QuickCheckSection />
+        <SleepFAQsection />
+        <FAQFooter />
+      </div>
+    </>
   );
 }

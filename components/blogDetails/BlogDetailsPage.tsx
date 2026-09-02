@@ -3,11 +3,9 @@ import BlogLayout from './BlogLayout';
 import { BlogMeta } from '@/types/blogDetails';
 import ReadingProgress from './ReadingProgress';
 import BlogSidebar from './BlogSidebar';
-import BlogBreadcrumb from './BlogBreadcrumb';
 import Image from 'next/image';
 import BlogFAQs from './BlogFAQs';
 import RecommendedCarousel from '../blog/RecommendedCarousel';
-import BlogCTA from './BlogCTA';
 
 interface Props {
   blog: BlogMeta;

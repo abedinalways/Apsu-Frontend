@@ -1,4 +1,3 @@
-import { BLOG_SIDEBAR_WIDTH } from '@/lib/blogLayout';
 import { BlogMeta } from '@/types/blogDetails';
 import BlogBreadcrumb from './BlogBreadcrumb';
 

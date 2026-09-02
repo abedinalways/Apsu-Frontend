@@ -58,7 +58,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const [isCollapsed, setIsCollapsed] = React.useState(false);
+  const [isCollapsed, _setIsCollapsed] = React.useState(false);
 
   const isActive = (href: string): boolean => {
     if (href === "/") {

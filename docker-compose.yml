@@ -3,12 +3,28 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        # Baked into the client bundle at build time (NEXT_PUBLIC_* vars are
+        # inlined during `yarn build`, runtime env cannot change them).
+        NEXT_PUBLIC_API_ENDPOINT: ${NEXT_PUBLIC_API_ENDPOINT:-http://localhost:4000}
     image: app-frontend
     container_name: app-frontend
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - NEXT_PUBLIC_API_URL=http://localhost:4000
     working_dir: /usr/src/app
+    restart: unless-stopped
+    healthcheck:
+      # Probe the Next.js server with node's built-in http client (no curl needed).
+      # Marks the container unhealthy when the app does not answer with < 500.
+      test:
+        - CMD
+        - node
+        - -e
+        - "require('http').get('http://127.0.0.1:3000/', (r) => process.exit(r.statusCode && r.statusCode < 500 ? 0 : 1)).on('error', () => process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
     command: yarn start

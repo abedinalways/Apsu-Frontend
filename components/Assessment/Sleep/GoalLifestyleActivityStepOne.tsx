@@ -8,7 +8,7 @@ import {
   FormMessage,
   FormLabel,
 } from '@/components/ui/form';
-import { FormData } from '@/zod/AssessmentSchema';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 
 const GOAL_OPTIONS = [
   { id: 'rarely', label: 'Rarely' },

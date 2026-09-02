@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Languages, X, Download } from 'lucide-react';
+import { X, Download } from 'lucide-react';
 import type { Message } from '@/types/messaging';
 import Image from 'next/image';
 

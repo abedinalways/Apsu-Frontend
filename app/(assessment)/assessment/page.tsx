@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Assessment',
+  robots: { index: false, follow: false },
+};
+
+
 import Assessment from "@/containers/Assessment/Assessment";
 import React from "react";
 

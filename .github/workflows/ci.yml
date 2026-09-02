@@ -10,6 +10,13 @@ jobs:
   lint-typecheck-test:
     runs-on: ubuntu-latest
 
+    env:
+      NEXT_PUBLIC_API_ENDPOINT: http://127.0.0.1:4000
+      NEXT_PUBLIC_AUTH_MODE: demo
+      NEXT_PUBLIC_BLOG_MODE: mock
+      NEXT_PUBLIC_PROFILE_MODE: mock
+      NEXT_PUBLIC_USER_MODE: mock
+
     steps:
       - uses: actions/checkout@v4
 
@@ -29,3 +36,6 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+      - name: Run build
+        run: yarn build

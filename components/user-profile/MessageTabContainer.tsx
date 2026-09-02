@@ -5,10 +5,8 @@ import {
   Search,
   ArrowLeft,
   Languages,
-  Menu,
   X,
   StepBackIcon,
-  StepForward,
   StepForwardIcon,
 } from 'lucide-react';
 import { useMessaging } from '@/contexts/MessagingContext';
@@ -26,11 +24,9 @@ export default function MessageTabContainer() {
     activeMessages,
     filteredConversations,
     searchQuery,
-    unreadCount,
     totalConversations,
     selectConversation,
     sendMessage,
-    updateDraft,
     updateSearch,
     startCareTeamConversation,
   } = useMessaging();

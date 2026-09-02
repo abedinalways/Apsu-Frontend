@@ -2,36 +2,20 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { Form } from '@/components/ui/form';
 import EmailVerificationForm from './EmailVerificationForm';
 import PasswordCreationForm from '@/containers/login/CreatePasswordForm';
 
-
-// Validation schemas
-export const emailVerificationSchema = z.object({
-  email: z.string().email('Please enter a valid email address'),
-});
-
-export const passwordCreationSchema = z
-  .object({
-    newPassword: z
-      .string()
-      .min(8, 'Password must be at least 8 characters')
-      .regex(/[A-Z]/, 'Password must contain at least one uppercase letter')
-      .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
-      .regex(/[0-9]/, 'Password must contain at least one number'),
-    confirmPassword: z.string(),
-  })
-  .refine(data => data.newPassword === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ['confirmPassword'],
-  });
-
-export type EmailVerificationValues = z.infer<typeof emailVerificationSchema>;
-export type PasswordCreationValues = z.infer<typeof passwordCreationSchema>;
+// Re-export the shared auth validation schemas (single source of truth lives in
+// lib/validations/authSchema). Kept for compatibility — this component is not
+// currently rendered anywhere.
+export {
+  emailSchema as emailVerificationSchema,
+  passwordSchema as passwordCreationSchema,
+} from '@/lib/validations/authSchema';
+export type {
+  EmailFormValues as EmailVerificationValues,
+  PasswordFormValues as PasswordCreationValues,
+} from '@/lib/validations/authSchema';
 
 type LoginStep = 'email' | 'password';
 

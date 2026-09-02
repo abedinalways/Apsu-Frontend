@@ -1,0 +1,80 @@
+import js from "@eslint/js";
+import tsParser from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import unusedImports from "eslint-plugin-unused-imports";
+
+export default [
+  {
+    ignores: [
+      "node_modules/**",
+      ".next/**",
+      "out/**",
+      "build/**",
+      "public/**",
+      ".yarn/**",
+      "next-env.d.ts",
+      "tsconfig.tsbuildinfo",
+    ],
+  },
+
+  js.configs.recommended,
+
+  {
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: {
+      parser: tsParser,
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        window: "readonly",
+        document: "readonly",
+        console: "readonly",
+        setTimeout: "readonly",
+        clearTimeout: "readonly",
+        setInterval: "readonly",
+        clearInterval: "readonly",
+        fetch: "readonly",
+        URL: "readonly",
+        URLSearchParams: "readonly",
+        IntersectionObserver: "readonly",
+        Notification: "readonly",
+        alert: "readonly",
+        Buffer: "readonly",
+        btoa: "readonly",
+        require: "readonly",
+        module: "readonly",
+        process: "readonly",
+        __dirname: "readonly",
+        __filename: "readonly",
+        globalThis: "readonly",
+      },
+    },
+    plugins: {
+      "@typescript-eslint": tsPlugin,
+      "unused-imports": unusedImports,
+    },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
+      // TS already reports undefined identifiers at compile time; ESLint's
+      // core no-undef false-positives on TS-only global type names
+      // (HTMLDivElement, KeyboardEvent, RequestInit, React namespace, etc.).
+      "no-undef": "off",
+      // Re-enabled: catch unused imports / variables across the codebase.
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      // Removes unused imports automatically with `eslint --fix`.
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "error",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+          caughtErrors: "none",
+        },
+      ],
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
+];

@@ -5,11 +5,18 @@ content, and user profile management.
 
 --
 
+## Prerequisites
+
+- **Node.js 20+**
+- **Yarn 4** — activated via corepack (version pinned in `package.json` → `packageManager`)
+
 ## Getting Started
 
 ```bash
-npm install
-npm run dev
+corepack enable              # activates the pinned yarn version
+yarn install
+cp .env.example .env.local   # then adjust values if needed
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -20,31 +27,34 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Script | Purpose |
 |--------|---------|
-| `npm run dev` | Start dev server with Turbopack |
-| `npm run build` | Production build |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run typecheck` | Run TypeScript compiler (noEmit) |
+| `yarn dev` | Start dev server with Turbopack |
+| `yarn build` | Production build |
+| `yarn start` | Start production server |
+| `yarn lint` | Run ESLint (flat config: `eslint.config.mjs`) |
+| `yarn typecheck` | Run TypeScript compiler (noEmit) |
+| `yarn test` | Run unit tests (vitest) |
 
 ---
 
 ## Environment Variables
 
-Create a `.env.local` file:
+Create a `.env.local` file (copy from `.env.example`):
 
 ```env
 NEXT_PUBLIC_API_ENDPOINT=http://127.0.0.1:4000
 NEXT_PUBLIC_AUTH_MODE=demo
 NEXT_PUBLIC_BLOG_MODE=mock
 NEXT_PUBLIC_PROFILE_MODE=mock
+NEXT_PUBLIC_USER_MODE=mock
 ```
 
 | Variable | Values | Default | Purpose |
 |----------|--------|---------|---------|
-| `NEXT_PUBLIC_API_ENDPOINT` | URL | `http://127.0.0.1:4000` | Backend base URL |
+| `NEXT_PUBLIC_API_ENDPOINT` | URL | *(required, no default)* | Backend base URL — throws at startup if missing |
 | `NEXT_PUBLIC_AUTH_MODE` | `demo` / `api` | `demo` | Switch auth between mock and real backend |
 | `NEXT_PUBLIC_BLOG_MODE` | `mock` / `api` | `mock` | Switch blog data between static and API |
 | `NEXT_PUBLIC_PROFILE_MODE` | `mock` / `api` | `mock` | Switch profile data between static and API |
+| `NEXT_PUBLIC_USER_MODE` | `mock` / `api` | `mock` | Switch admin user data between static and API |
 
 ---
 
@@ -172,7 +182,30 @@ All components, containers, pages, forms, and contexts remain untouched. They ca
 - All form inputs have associated `<label>` elements or `aria-label`.
 - Custom checkbox divs use `role="checkbox"` + `aria-checked` + `aria-labelledby`.
 - Loading and error states are announced via semantic HTML.
-- Run `npm run build` and `npm run typecheck` before shipping.
+- Run `yarn build` and `yarn typecheck` before shipping.
+
+---
+
+## Docker
+
+The `Dockerfile` builds a production image with yarn (lockfile-frozen via `yarn.lock`) and
+includes a `HEALTHCHECK` that probes `http://127.0.0.1:3000/` using node's built-in http
+client — no curl/wget dependency. `docker compose ps` then reports `(healthy)` / `(unhealthy)`.
+
+```bash
+# Build and run (API endpoint defaults to http://localhost:4000)
+docker compose up --build
+
+# Override the API endpoint baked into the client bundle at build time
+NEXT_PUBLIC_API_ENDPOINT=https://api.example.com docker compose up --build
+```
+
+Notes:
+
+- `NEXT_PUBLIC_*` variables are inlined into the client bundle during `yarn build`, so the
+  API endpoint is passed as a **build argument** — setting it as runtime env has no effect.
+- Local `.env*` files are excluded via `.dockerignore`, so secrets never enter the image.
+- The compose service restarts automatically (`restart: unless-stopped`).
 
 ---
 
@@ -180,5 +213,5 @@ All components, containers, pages, forms, and contexts remain untouched. They ca
 
 1. Set production env vars in your hosting platform (Vercel, etc.)
 2. Ensure `NEXT_PUBLIC_AUTH_MODE=api`, `NEXT_PUBLIC_BLOG_MODE=api`, `NEXT_PUBLIC_PROFILE_MODE=api` are set for production.
-3. Run `npm run build` to verify no build errors.
-4. Run `npm run start` or deploy to Vercel.
+3. Run `yarn build` to verify no build errors.
+4. Deploy with `yarn start`, to Vercel, or via `docker compose up --build` (see Docker section).

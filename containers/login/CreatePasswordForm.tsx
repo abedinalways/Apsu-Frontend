@@ -27,7 +27,7 @@ interface CreatePasswordFormProps {
 
 export default function CreatePasswordForm({
   email,
-  onBack,
+  onBack: _onBack,
 }: CreatePasswordFormProps) {
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);

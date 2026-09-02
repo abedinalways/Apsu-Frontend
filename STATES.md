@@ -30,7 +30,9 @@ This document catalogs all async and form states implemented in the frontend. Us
 | Auth Loading | Suspense fallback in `app/(user)/profile/page.tsx` |
 | Profile Loading | `treatmentState === 'loading'` renders spinner |
 | Error | `treatmentState === 'error'` renders error message + Retry button |
-| Empty — no treatment | `EmptyTabState` component with message |
+| Active treatment | `treatmentState === 'active'` renders `TreatmentCard` (derived from `data.treatment` existing with status `Active`/`Pending`) |
+| Treatment not approved | `treatmentState === 'not-approved'` renders `NotApprovedTreatment` (derived from `data.treatment.status === 'Not Approved'`) |
+| Empty — no treatment | `treatmentState === 'empty'` renders `EmptyTabState` component with message |
 | Empty — no orders | `EmptyTabState` component in Order Details tab |
 | Empty — no prescriptions | `EmptyTabState` component in Prescriptions tab |
 

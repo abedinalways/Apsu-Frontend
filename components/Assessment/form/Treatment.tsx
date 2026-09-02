@@ -8,9 +8,7 @@ import {
   FormMessage,
   FormLabel,
 } from '@/components/ui/form';
-import CustomImage from '@/components/reusable/CustomImage';
-import { FormData } from '@/zod/AssessmentSchema';
-import Image from 'next/image';
+import { FormData } from '@/lib/validations/AssessmentSchema';
 import BirthControlIcons from '@/components/icons/BirthControlIcons';
 import SleepIcons from '@/components/icons/SleepIcons';
 import WeightLossIcons from '@/components/icons/WeightLossIcons';
