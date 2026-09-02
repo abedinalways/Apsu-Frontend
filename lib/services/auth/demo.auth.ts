@@ -24,13 +24,6 @@ import type {
 } from './types';
 import { Session } from '@/lib/session';
 
-// ─── Constants ────────────────────────────────────────────────────────────────
-
-const STORAGE_KEYS = {
-  token: 'apsu_auth_token',
-  user: 'apsu_user',
-} as const;
-
 // ─── Demo Credentials ─────────────────────────────────────────────────────────
 // In demo mode, you can log in with any valid email.
 // Password just needs to be at least 8 characters.

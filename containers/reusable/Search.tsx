@@ -1,17 +1,12 @@
 "use client";
 
 import { CircleHelp } from "lucide-react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Search() {
   const [search, setSearch] = useState<string>("");
   const [product, setProduct] = useState<any>({ results: [] });
   const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
-
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathName = usePathname();
 
   // Fetch products once when the component mounts
   useEffect(() => {
@@ -81,20 +76,11 @@ export default function Search() {
   };
 
   const handleSearch = () => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("product", search);
-
-    router.push(`/products?${params.toString()}`);
-
-    // Clear the input field after navigating
+    // Clear the input field after searching
     setSearch("");
   };
-  const handleProductNameSearch = (path: string, name: string) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("product", name);
-    router.push(`/category/${path}?${params.toString()}`);
-
-    // Clear the input field after navigating
+  const handleProductNameSearch = (_path: string, _name: string) => {
+    // Clear the input field after selecting
     setSearch("");
   };
 
