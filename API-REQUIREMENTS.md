@@ -424,14 +424,13 @@ Response 200:
 
 ### POST /api/assessment/submit
 
-Request body: Full `FormData` from the multi-step form.
+Request body: structured JSON with the form fields (see `containers/Assessment/*/MultiStepForm.tsx` for the exact field names).
 
 Response 200:
 ```json
 {
   "success": true,
-  "orderId": "ORD-002",
-  "redirectUrl": "/assessment/payment-success"
+  "orderId": "ORD-002"
 }
 ```
 

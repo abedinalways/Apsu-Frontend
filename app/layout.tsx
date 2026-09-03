@@ -66,9 +66,6 @@ export const metadata: Metadata = {
     images: [defaultImage],
     creator: twitterHandle,
   },
-  alternates: {
-    canonical: siteUrl,
-  },
   other: {
     'geo.region': 'US',
     'geo.placename': 'United States',
@@ -118,7 +115,6 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="canonical" href={siteUrl} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

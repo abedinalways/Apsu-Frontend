@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { pageMetadata } from '@/lib/seo';
+import { pageMetadata } from '@/lib/seo/metadata';
 import ProfileClient from "@/containers/user-profile/ProfileClient";
 
 export const metadata = pageMetadata({

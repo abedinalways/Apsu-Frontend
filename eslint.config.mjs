@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import unusedImports from "eslint-plugin-unused-imports";
+import reactHooks from "eslint-plugin-react-hooks";
 
 export default [
   {
@@ -52,17 +53,13 @@ export default [
     plugins: {
       "@typescript-eslint": tsPlugin,
       "unused-imports": unusedImports,
+      "react-hooks": reactHooks,
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
-      // TS already reports undefined identifiers at compile time; ESLint's
-      // core no-undef false-positives on TS-only global type names
-      // (HTMLDivElement, KeyboardEvent, RequestInit, React namespace, etc.).
       "no-undef": "off",
-      // Re-enabled: catch unused imports / variables across the codebase.
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": "off",
-      // Removes unused imports automatically with `eslint --fix`.
       "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": [
         "error",
@@ -75,6 +72,7 @@ export default [
         },
       ],
       "@typescript-eslint/no-explicit-any": "off",
+      "react-hooks/exhaustive-deps": "warn",
     },
   },
 ];

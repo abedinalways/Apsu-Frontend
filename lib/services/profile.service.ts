@@ -41,11 +41,15 @@ export interface ProfileData {
 
 const USE_MOCK = (process.env.NEXT_PUBLIC_PROFILE_MODE || 'mock') === 'mock';
 
+// Mock status can be overridden via env to test different states.
+// Valid values: 'Active' | 'Not Approved' | 'Pending' | 'empty'
+const MOCK_STATUS = process.env.NEXT_PUBLIC_MOCK_TREATMENT_STATUS || 'Active';
+
 const MOCK_TREATMENT: Treatment = {
   id: '1',
   title: 'Weight Loss Program',
   planDuration: '12 months plan',
-  status: 'Active',
+  status: MOCK_STATUS as Treatment['status'],
   medication: 'Semaglutide 0.5mg',
   startDate: 'Jan 15, 2025',
   duration: '6 Months',
