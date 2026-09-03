@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-import { pageMetadata, siteUrl, siteName, defaultImage } from '@/lib/seo/metadata';
+import { pageMetadata, siteUrl, defaultImage } from '@/lib/seo/metadata';
 import { BlogService } from '@/lib/services/blog.service';
 import BlogDetailsPage from '@/components/blogDetails/BlogDetailsPage';
 import StructuredData from '@/components/seo/StructuredData';
