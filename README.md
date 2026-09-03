@@ -107,7 +107,7 @@ Set `NEXT_PUBLIC_BLOG_MODE=api` to use the real backend. Blog data is currently 
 Set `NEXT_PUBLIC_PROFILE_MODE=api` to use the real backend. Profile data is currently mocked in `lib/services/profile.service.ts`.
 
 ### HTTP Client
-All API calls go through `lib/Fetch.ts`, which wraps Axios with `credentials: "include"`. Do not pass `Authorization` headers in individual services; use cookie-based sessions.
+All API calls go through `lib/Fetch.ts`, which attaches the session token automatically as an `Authorization: Bearer <token>` header. Do not pass cookies or `Authorization` headers in individual services; use the bearer token flow through `lib/session.ts`.
 
 ### State Management
 - Auth state: `contexts/AuthContext.tsx`

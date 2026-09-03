@@ -173,7 +173,7 @@ Then set `NEXT_PUBLIC_AUTH_MODE=api` in `.env.local`.
 
 ### Step 2: Token Storage
 
-The demo service already uses cookie-based sessions via `lib/session.ts`. The real API should return a session cookie from the backend. Do not store tokens in localStorage.
+The demo service already uses bearer token sessions via `lib/session.ts`. The real API should return an access token from the backend, which the frontend stores and attaches as an `Authorization: Bearer <token>` header via `lib/Fetch.ts`. Do not store tokens in localStorage.
 
 ### Step 3: Middleware
 
@@ -184,7 +184,7 @@ The existing middleware already reads cookies for route protection. Add backend 
 Add to `.env.local`:
 
 ```env
-NEXT_PUBLIC_API_URL=https://your-api-domain.com
+NEXT_PUBLIC_API_ENDPOINT=https://your-api-domain.com
 ```
 
 ## Security Considerations

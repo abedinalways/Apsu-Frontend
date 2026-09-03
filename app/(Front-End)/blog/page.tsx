@@ -7,7 +7,7 @@ import RecommendedCarousel from '@/components/blog/RecommendedCarousel';
 import FAQFooter from '@/components/faq/FAQFooter'
 import React from 'react'
 
-import { pageMetadata } from '@/lib/seo';
+import { pageMetadata } from '@/lib/seo/metadata';
 
 export const metadata = pageMetadata({
   title: 'Health & Wellness Blog | Apsu',
