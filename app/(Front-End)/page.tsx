@@ -1,4 +1,4 @@
-import { pageMetadata } from '@/lib/seo';
+import { pageMetadata } from '@/lib/seo/metadata';
 import FAQFooter from "@/components/faq/FAQFooter";
 import Banner from "@/components/home/Banner";
 import HomeFAQ from "@/components/home/HomeFAQ";

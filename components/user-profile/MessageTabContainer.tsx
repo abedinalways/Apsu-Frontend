@@ -105,7 +105,7 @@ export default function MessageTabContainer() {
     }
 
     prevMessagesLengthRef.current = currentLength;
-  }, [activeMessages.length, isHydrated, activeConversation]);
+  }, [activeMessages.length, isHydrated, activeConversation, activeMessages]);
 
   const handleConversationSelect = (conversationId: string) => {
     selectConversation(conversationId);

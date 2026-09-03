@@ -18,7 +18,7 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Protected routes that require authentication
-  const isProtectedRoute = ['/profile', '/assessment'].some(route => 
+  const isProtectedRoute = ['/profile', '/assessment', '/dashboard'].some(route => 
     pathname.startsWith(route)
   );
 

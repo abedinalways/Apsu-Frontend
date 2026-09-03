@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-import { pageMetadata, siteUrl, siteName, defaultImage } from '@/lib/seo/metadata';
+import { pageMetadata, siteUrl, defaultImage } from '@/lib/seo/metadata';
 import { BlogService } from '@/lib/services/blog.service';
 import BlogDetailsPage from '@/components/blogDetails/BlogDetailsPage';
 import StructuredData from '@/components/seo/StructuredData';
@@ -58,16 +58,7 @@ export default async function Page({ params }: Props) {
   try {
     blog = await BlogService.getBlogBySlug(slug);
   } catch {
-    return (
-      <main className="pt-30 md:pt-50">
-        <div className="custom-container flex flex-col items-center justify-center min-h-[50vh] gap-4">
-          <div className="text-center space-y-2">
-            <h2 className="text-2xl font-semibold text-primary">Blog not found</h2>
-            <p className="text-grayColor1">The article you are looking for does not exist or has been removed.</p>
-          </div>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   if (!blog) {
