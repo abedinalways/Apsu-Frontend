@@ -1,4 +1,4 @@
-import { siteUrl, siteName, defaultTitle, defaultDescription } from '@/lib/seo/metadata';
+import { siteUrl, siteName, defaultDescription } from '@/lib/seo/metadata';
 
 interface StructuredDataProps {
   type: 'organization' | 'medical-organization' | 'healthcare-service' | 'article';
