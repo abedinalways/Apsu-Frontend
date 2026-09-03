@@ -1,20 +1,21 @@
-'use client';
+"use client";
 
-import { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import image1 from '@/public/images/schedule/Content.png';
-import image2 from '@/public/images/schedule/Sourced-from-licensed-US-V2.jpg';
-import image4 from '@/public/images/schedule/delivery-male-with-mask-packages.jpg';
-import image3 from '@/public/images/schedule/team_doctor_nurse_preparing_prescription_paper_patient_annual_checkup.png';
+import image1 from "@/public/images/schedule/Content.png";
+import image2 from "@/public/images/schedule/Sourced-from-licensed-US-V2.jpg";
+import image4 from "@/public/images/schedule/delivery-male-with-mask-packages.jpg";
+import image3 from "@/public/images/schedule/team_doctor_nurse_preparing_prescription_paper_patient_annual_checkup.png";
+import image5 from "@/public/images/schedule/ai.jpeg";
 
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import Image, { StaticImageData } from 'next/image';
-import { Autoplay, Pagination } from 'swiper/modules';
-import type { Swiper as SwiperType } from 'swiper';
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image, { StaticImageData } from "next/image";
+import { Autoplay, Pagination } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/pagination";
 
 interface SlideItem {
   id: number;
@@ -38,26 +39,32 @@ const ScheduleSlider = () => {
   const sliderData: SlideItem[] = [
     {
       id: 1,
-      title: '24/7 Provider Support',
+      title: "24/7 Provider Support",
       image: image1,
-      isDarkText: false,
+      isDarkText: true,
     },
     {
       id: 2,
-      title: 'Easy Manager Treatment',
+      title: "Easy Manager Treatment",
       image: image3,
       isDarkText: true,
     },
     {
       id: 3,
-      title: 'Sourced from licensed U.S. pharmacies',
+      title: "Sourced from licensed U.S. pharmacies",
       image: image2,
       isDarkText: true,
     },
     {
       id: 4,
-      title: 'Free Delivery & Shipping',
+      title: "Free Delivery & Shipping",
       image: image4,
+      isDarkText: true,
+    },
+    {
+      id: 5,
+      title: "Al-powered Language Translation",
+      image: image5,
       isDarkText: true,
     },
   ];
@@ -119,15 +126,15 @@ const ScheduleSlider = () => {
             pauseOnMouseEnter: true,
           }}
           modules={[Autoplay, Pagination]}
-          onSwiper={swiper => {
+          onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          onSlideChange={swiper => {
+          onSlideChange={(swiper) => {
             setCurrentIndex(swiper.realIndex + 1);
           }}
           className="schedule-swiper w-full"
         >
-          {sliderData.map(slide => (
+          {sliderData.map((slide) => (
             <SwiperSlide key={slide.id}>
               {/* EXACT SAME CARD DESIGN */}
               <div className="relative flex items-end h-127.5 md:h-155.5 bg-white shadow-[0_4px_12px_0_rgba(2,31,24,0.06)] rounded-2xl overflow-hidden w-full justify-start text-center">
@@ -143,8 +150,8 @@ const ScheduleSlider = () => {
                   <h3
                     className={`relative ${
                       slide.isDarkText
-                        ? 'bg-linear-to-b from-primaryColor to-transparent pb-8 text-white'
-                        : ''
+                        ? "bg-linear-to-b from-primaryColor to-transparent pb-8 text-white"
+                        : ""
                     } text-2xl md:text-2xl lg:text-3xl font-semibold tracking-tight p-4 lg:px-10 lg:p-6 leading-[116%] z-10`}
                   >
                     {slide.title}
