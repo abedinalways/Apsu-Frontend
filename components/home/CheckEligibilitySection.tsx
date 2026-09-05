@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import image from '@/public/images/work/bgImage.png';
 import { FormData } from '@/lib/validations/AssessmentSchema';
 import { ArrowRight } from 'lucide-react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { ShortIcon } from '../icons/Icons';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef, useState } from 'react';
@@ -13,14 +13,23 @@ import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
 
 export default function CheckEligibilitySection() {
-  const { register, watch, setValue, resetField, handleSubmit } = useForm<FormData>({
-    defaultValues: {
-      unitSystem: 'imperial',
-      gender: 'female',
-    },
-  });
-  const unitSystem = watch('unitSystem') || 'imperial';
-  const selectedGender = watch('gender') as string;
+  const { register, setValue, resetField, handleSubmit, control } =
+    useForm<FormData>({
+      defaultValues: {
+        unitSystem: 'imperial',
+        gender: 'female',
+      },
+    });
+  const unitSystem =
+    useWatch({
+      control,
+      name: 'unitSystem',
+    }) || 'imperial';
+
+  const selectedGender = useWatch({
+    control,
+    name: 'gender',
+  }) as string;
   const [bmiScore, setBmiScore] = useState<number | null>(null);
   const maxBmi = 100;
   const circumference = 2 * Math.PI * 50;
