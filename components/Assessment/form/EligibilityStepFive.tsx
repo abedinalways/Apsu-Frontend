@@ -79,7 +79,7 @@ export default function EligibilityStepFive() {
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5 leading-relaxed">
           Please record a short video of yourself and stand two full steps away
-          from your device or hold your camera at arm's length.
+          from your device or hold your camera at arm&apos;s length.
         </p>
       </div>
 

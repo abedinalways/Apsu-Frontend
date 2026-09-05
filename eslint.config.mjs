@@ -2,9 +2,25 @@ import js from "@eslint/js";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import unusedImports from "eslint-plugin-unused-imports";
-import reactHooks from "eslint-plugin-react-hooks";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 
-export default [
+// Next.js + React rules (@next/next/*, react/*, react-hooks/*, jsx-a11y...)
+const nextRules = [
+  ...nextCoreWebVitals,
+  {
+    rules: {
+      // react-hooks/set-state-in-effect is a new React Compiler–era rule
+      // (eslint-plugin-react-hooks v6, shipped via eslint-config-next 16).
+      // It flags long-standing patterns (e.g. hydrating state from sync
+      // sources in a mount effect) that are safe in this codebase. Downgraded
+      // to a warning so @next/next and core react rules still run as errors;
+      // migrating these hooks is tracked as tech debt.
+      "react-hooks/set-state-in-effect": "warn",
+    },
+  },
+];
+
+const eslintConfig = [
   {
     ignores: [
       "node_modules/**",
@@ -17,6 +33,9 @@ export default [
       "tsconfig.tsbuildinfo",
     ],
   },
+
+  // Next.js + React rules (@next/next/*, react/*, react-hooks/*, jsx-a11y...)
+  ...nextRules,
 
   js.configs.recommended,
 
@@ -53,7 +72,6 @@ export default [
     plugins: {
       "@typescript-eslint": tsPlugin,
       "unused-imports": unusedImports,
-      "react-hooks": reactHooks,
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
@@ -72,7 +90,8 @@ export default [
         },
       ],
       "@typescript-eslint/no-explicit-any": "off",
-      "react-hooks/exhaustive-deps": "warn",
     },
   },
 ];
+
+export default eslintConfig;

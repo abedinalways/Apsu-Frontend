@@ -10,7 +10,7 @@ function  AboutApsu() {
           <h4 className="text-base text-greenColor mb-3">THE NAME</h4>
           <p className="text-base md:text-lg max-w-218 mx-auto text-descriptionColor">
             Long before clinics, before pharmacies, before the word “medicine”
-            existed in any language we'd recognize, the Sumerians had a word for
+            existed in any language we&apos;d recognize, the Sumerians had a word for
             the source of all life.
           </p>
         </div>

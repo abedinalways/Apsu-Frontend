@@ -259,18 +259,21 @@ function StepperTrigger({
 
   // Register this trigger for keyboard navigation
   const btnRef = useRef<HTMLButtonElement>(null)
+  const [myIdx, setMyIdx] = useState(-1)
   useEffect(() => {
     if (btnRef.current) {
       registerTrigger(btnRef.current)
     }
   }, [registerTrigger])
 
-  // Find our index among triggers for navigation
-  const myIdx = useMemo(
-    () =>
-      triggerNodes.findIndex((n: HTMLButtonElement) => n === btnRef.current),
-    [triggerNodes]
-  )
+  // Index is computed inside an effect (not during render) because it
+  // compares against btnRef.current — accessing refs during render is
+  // flagged by react-hooks/refs. Re-syncs when siblings register/unregister.
+  useEffect(() => {
+    if (btnRef.current) {
+      setMyIdx(triggerNodes.findIndex((n: HTMLButtonElement) => n === btnRef.current))
+    }
+  }, [triggerNodes])
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     switch (e.key) {

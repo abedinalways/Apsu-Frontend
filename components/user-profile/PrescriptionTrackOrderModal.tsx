@@ -170,8 +170,8 @@ export default function PrescriptionTrackOrderModal({
             Prescription Shipped
           </h4>
           <p className="text-xs md:text-[14px] text-grayColor1 font-normal leading-[160%]">
-            Your prescription has been shipped and is on its way. You'll receive
-            a notification once it's delivered.
+            Your prescription has been shipped and is on its way. You&apos;ll receive
+            a notification once it&apos;s delivered.
           </p>
         </div>
       </div>

@@ -81,7 +81,7 @@ export default function EligibilityStepFour() {
           Identity Verification
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5 leading-relaxed">
-          To verify your identity, please upload a valid Driver's License or
+          To verify your identity, please upload a valid Driver&apos;s License or
           government-issued photo ID.
         </p>
       </div>

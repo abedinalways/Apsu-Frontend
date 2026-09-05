@@ -12,7 +12,7 @@ function AboutHero() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-[72px] leading-[110%] font-medium tracking-tight">
               Care{" "}
               <span className="text-greenColor font-semibold">
-                shouldn't get lost
+                shouldn&apos;t get lost
               </span>{" "}
               in translation.
             </h2>
@@ -21,7 +21,7 @@ function AboutHero() {
             <p className="text-descriptionColor text-base md:text-xl tracking-wide">
               APSU is American telehealth built for the tens of millions of
               people who live, work, and raise families here in a language other
-              than English. You describe what's wrong in the language you think
+              than English. You describe what&apos;s wrong in the language you think
               in. A US-licensed physician provides your care.
             </p>
             <PrimaryButton text="Get started" />

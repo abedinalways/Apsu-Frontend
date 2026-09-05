@@ -195,7 +195,7 @@ const SuccessStories = () => {
 
                         {/* Testimonial text */}
                         <p className="text-descriptionColor text-base lg:text-lg leading-relaxed ">
-                          "{item.testimonial}"
+                          &quot;{item.testimonial}&quot;
                         </p>
                       </div>
 

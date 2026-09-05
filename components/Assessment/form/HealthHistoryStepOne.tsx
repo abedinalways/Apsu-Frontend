@@ -21,7 +21,7 @@ export default function HealthHistoryStepOne() {
       {/* Title & Subtitle */}
       <div>
         <h2 className="text-[20px] font-semibold text-titleText tracking-tight">
-          We've got you! What's your starting point?
+          We&apos;ve got you! What&apos;s your starting point?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
           This will help to calculate your BMI to check your eligibility.

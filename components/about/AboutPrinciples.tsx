@@ -12,7 +12,7 @@ function AboutPrinciples() {
           <h2 className="text-3xl md:text-4xl mx-auto max-w-[500px] lg:text-[40px] font-medium text-primaryColor">
             Principles we{" "}
             <span className="text-greenColor font-semibold">
-              don't bend.
+              don&apos;t bend.
             </span>{" "}
           </h2>
         </div>
@@ -82,7 +82,7 @@ function AboutPrinciples() {
                     Translation, not advice
                   </h3>
                   <p className="text-descriptionColor text-sm md:text-base leading-[160%] mt-2 xl:mt-4  max-w-xs">
-                    AI translates, shares general information. It doesn't
+                    AI translates, shares general information. It doesn&apos;t
                     diagnose, prescribe, or replace your physician.
                   </p>
                 </div>

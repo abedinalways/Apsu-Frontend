@@ -23,7 +23,7 @@ export default function NotApprovedTreatment({
         Treatment not Approved
       </h3>
       <p className="text-sm text-grayColor1/80 font-light mt-3 leading-[160%] max-w-md italic">
-        Unfortunately, your recent treatment request wasn't approved. If you'd
+        Unfortunately, your recent treatment request wasn&apos;t approved. If you&apos;d
         like to explore another treatment option, you can start a new
         assessment.
       </p>
