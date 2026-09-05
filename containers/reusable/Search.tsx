@@ -1,74 +1,58 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import { CircleHelp } from "lucide-react";
-import { useEffect, useState } from "react";
 
 export default function Search() {
   const [search, setSearch] = useState<string>("");
   const [product, setProduct] = useState<any>({ results: [] });
-  const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
 
   // Fetch products once when the component mounts
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Demo data
-        const demoProducts = {
-          data: {
-            results: [
-              {
-                product: {
-                  name: "Maid Service Package A",
-                  category: { slug: "maid-services" },
-                },
-              },
-              {
-                product: {
-                  name: "Maid Service Package B",
-                  category: { slug: "maid-services" },
-                },
-              },
-              {
-                product: {
-                  name: "Cleaning Services",
-                  category: { slug: "cleaning" },
-                },
-              },
-              {
-                product: {
-                  name: "Household Management",
-                  category: { slug: "household" },
-                },
-              },
-              {
-                product: {
-                  name: "Care Services",
-                  category: { slug: "care-services" },
-                },
-              },
-            ],
+  useState(() => {
+    const demoProducts = {
+      data: {
+        results: [
+          {
+            product: {
+              name: "Maid Service Package A",
+              category: { slug: "maid-services" },
+            },
           },
-        };
-        setProduct(demoProducts?.data || { results: [] });
-      } catch {
-        setProduct({ results: [] });
-      }
+          {
+            product: {
+              name: "Maid Service Package B",
+              category: { slug: "maid-services" },
+            },
+          },
+          {
+            product: {
+              name: "Cleaning Services",
+              category: { slug: "cleaning" },
+            },
+          },
+          {
+            product: {
+              name: "Household Management",
+              category: { slug: "household" },
+            },
+          },
+          {
+            product: {
+              name: "Care Services",
+              category: { slug: "care-services" },
+            },
+          },
+        ],
+      },
     };
+    setProduct(demoProducts?.data || { results: [] });
+  });
 
-    fetchData();
-  }, []);
-
-  // Filter products when `search` or `product.results` changes
-  useEffect(() => {
-    if (search.trim() !== "" && product.results.length > 0) {
-      setFilteredProducts(
-        product?.results?.filter((item: any) =>
-          item?.product?.name?.toLowerCase().includes(search.toLowerCase()),
-        ) || [],
-      );
-    } else {
-      setFilteredProducts([]);
-    }
+  const filteredProducts = useMemo(() => {
+    if (!search.trim() || !product.results.length) return [];
+    return product.results.filter((item: any) =>
+      item?.product?.name?.toLowerCase().includes(search.toLowerCase())
+    );
   }, [search, product.results]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
