@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
+import Image from 'next/image';
 import { Camera, Paperclip, Send } from 'lucide-react';
 import type { MessageAttachment } from '@/types/messaging';
 
@@ -104,9 +105,11 @@ export default function MessageComposer({ onSend }: MessageComposerProps) {
       {attachment && (
         <div className="mb-2 flex items-center gap-2 rounded-lg border border-lightGreenColor bg-background p-2">
           {attachment.type === 'image' ? (
-            <img
+            <Image
               src={attachment.url}
               alt={attachment.name}
+              width={48}
+              height={48}
               className="h-12 w-12 rounded object-cover"
             />
           ) : (

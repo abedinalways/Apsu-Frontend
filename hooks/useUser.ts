@@ -1,22 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { authService } from "@/lib/services/auth";
 import type { User } from "@/lib/services/auth";
 
 export function useUser() {
-  const [user, setUser] = useState<User | null>(null);
-
-  const getUser = async () => {
-    try {
-      const userData = authService.getCurrentUser();
-      setUser(userData);
-    } catch {
-      setUser(null);
-    }
-  };
-
-  useEffect(() => {
-    getUser();
-  }, []);
+  const [user] = useState<User | null>(() => authService.getCurrentUser());
 
   return user;
 }

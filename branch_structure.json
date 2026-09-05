@@ -1,0 +1,30 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "abedin",
+    "abusaleh",
+    "barik",
+    "development",
+    "main",
+    "temp",
+    "utso-sarkar"
+  ],
+  "parent": {
+    "abedin": "main",
+    "abusaleh": "main",
+    "barik": "main",
+    "development": "main",
+    "main": null,
+    "temp": "main",
+    "utso-sarkar": "main"
+  },
+  "order": [
+    "main",
+    "abedin",
+    "abusaleh",
+    "barik",
+    "development",
+    "temp",
+    "utso-sarkar"
+  ]
+}

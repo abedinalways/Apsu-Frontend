@@ -106,11 +106,14 @@ export default function ProfileClient() {
     }
   }, [retryCount]);
 
+  const hasUser = user || !isAuthLoading;
+  
   useEffect(() => {
-    if (user || !isAuthLoading) {
+    if (hasUser) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       loadProfile();
     }
-  }, [user, isAuthLoading, loadProfile]);
+  }, [hasUser, loadProfile]);
 
   const handleRetry = () => {
     if (retryCount < 3) {
