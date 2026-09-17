@@ -1,7 +1,8 @@
 // server base url — single source of truth for the API endpoint.
 // Fail fast when the env var is missing instead of silently falling back,
 // so a misconfigured deployment is caught at build/runtime startup.
-const endpoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
+const endpoint =
+  process.env.NEXT_PUBLIC_API_ENDPOINT || "https://your-backend-domain.com ";
 
 if (!endpoint) {
   throw new Error(
@@ -20,7 +21,8 @@ export const AppConfig = () => ({
     name: "Apsu",
     slogan: "Apsu",
     meta: {
-      title: "Apsu — Healthcare in Your Language | Weight Loss, Birth Control & Sleep",
+      title:
+        "Apsu — Healthcare in Your Language | Weight Loss, Birth Control & Sleep",
       description:
         "US-licensed physicians provide weight loss, birth control, and sleep care online. 40+ languages, AI translation, cash-pay pricing. Get started today.",
       keywords:
