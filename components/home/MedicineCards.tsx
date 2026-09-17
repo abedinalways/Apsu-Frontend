@@ -7,12 +7,12 @@ const MedicineCard = ({ data, idx }: { data: MedicineData; idx: number }) => {
     <div
       className={` p-3 h-full md:p-4 lg:p-6 justify-between  pb-0! ${idx === 0 ? "bg-lightGreenColor2" : idx === 1 ? "pr-0! bg-purpleColor" : "bg-lightblueCOlor"} overflow-hidden  rounded-2xl`}
     >
-      <div className=" max-w-50 lg:max-w-55 flex flex-col justify-between pb-3 md:pb-4 lg:pb-6">
+      <div className=" max-w-53 lg:max-w-58 flex flex-col justify-between pb-3 md:pb-4 lg:pb-6">
         <div>
           <p className="text-sm  md:text-base lg:text-lg text-primary">
             {data.for}
           </p>
-          <h4 className="text-xl xl:text-2xl font-medium text-blackColor mt-4  ">
+          <h4 className="text-xl xl:text-2xl font-medium text-blackColor mt-4">
             {data.info}
           </h4>
         </div>
