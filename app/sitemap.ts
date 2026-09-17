@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { siteUrl } from '@/lib/seo/metadata';
+import { blogDetails } from '@/lib/data/blogDetails';
 
 // Static pages that should be included in sitemap
 const staticPages = [
@@ -71,16 +72,6 @@ const staticPages = [
   },
 ];
 
-// Blog slugs - these would typically come from your CMS or data source
-// For now, I'll include the common blog slugs from your data
-const blogSlugs = [
-  'semaglutide-vs-tirzepatide',
-  'birth-control-options-2024',
-  'sleep-tips-insomnia',
-  'weight-loss-journey',
-  'telehealth-benefits',
-];
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticUrls = staticPages.map((page) => ({
     url: `${siteUrl}${page.url}`,
@@ -89,9 +80,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.priority,
   }));
 
-  // Generate blog URLs
-  const blogUrls = blogSlugs.map((slug) => ({
-    url: `${siteUrl}/blog/${slug}`,
+  // Generate blog URLs dynamically from blogDetails.ts so the sitemap
+  // stays in sync with the actual blog posts.
+  const blogUrls = blogDetails.map((blog) => ({
+    url: `${siteUrl}/blog/${blog.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.7,

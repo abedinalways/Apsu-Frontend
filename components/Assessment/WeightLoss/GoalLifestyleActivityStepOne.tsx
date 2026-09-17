@@ -27,7 +27,7 @@ export default function GoalLifestyleActivityStepOne() {
       {/* Title block from Screenshot 2026-07-05 093153.png */}
       <div>
         <h2 className="text-[20px] font-semibold text-titleText">
-          What's your weight loss goal?
+          What&apos;s your weight loss goal?
         </h2>
         <p className="text-[14px] text-grayColor1 mt-1.5">
           This helps your physician personalize your plan.

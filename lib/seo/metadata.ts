@@ -18,20 +18,27 @@ export type PageMetaOptions = {
   noIndex?: boolean;
 };
 
+/**
+ * Builds a complete per-page Metadata object (title, description, canonical,
+ * OpenGraph and Twitter cards) on top of the root layout defaults.
+ *
+ * Note: do not append `| ${siteName}` to the title here — the root layout's
+ * `title.template` already handles that. Appending it again causes duplicate
+ * site names in the final title (e.g. "Page | Apsu | Apsu").
+ */
 export const pageMetadata = function({
   title,
   description = defaultDescription,
   keywords = appConfig.app.meta.keywords,
   image = defaultImage,
-  path = '',
+  path = '/',
   noIndex = false,
 }: PageMetaOptions = {}): Metadata {
-  const fullTitle = title ? `${title} | ${siteName}` : defaultTitle;
-  const url = `${siteUrl}${path}`;
+  const url = `${siteUrl}${path === '/' ? '' : path}`;
   const absoluteImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
   const base: Metadata = {
-    title: fullTitle,
+    title: title || defaultTitle,
     description,
     keywords,
     robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
@@ -41,7 +48,7 @@ export const pageMetadata = function({
       locale: 'en_US',
       url,
       siteName,
-      title: fullTitle,
+      title: title || defaultTitle,
       description,
       images: [
         {
@@ -54,7 +61,7 @@ export const pageMetadata = function({
     },
     twitter: {
       card: 'summary_large_image',
-      title: fullTitle,
+      title: title || defaultTitle,
       description,
       images: [absoluteImage],
       creator: twitterHandle,

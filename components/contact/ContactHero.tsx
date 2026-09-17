@@ -2,7 +2,7 @@ export default function ContactHero() {
   return (
     <section className="mx-auto mb-14 max-w-3xl text-center font-[work_sans] custom-container">
       <h1 className="text-4xl md:text-7xl font-medium leading-[110%] text-center text-primary ">
-        We'd love to hear
+        We&apos;d love to hear
         <br />
         from you.
       </h1>

@@ -24,11 +24,11 @@ function AboutExist() {
             <div className="max-w-3xl  mx-auto w-full">
               <h4 className="text-base text-greenColor mb-3">WHY WE EXIST</h4>
               <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-primaryColor">
-                The hardest part of American healthcare isn't always the
+                The hardest part of American healthcare isn&apos;t always the
                 medicine.
               </h2>
               <p className="text-lg md:text-xl  text-descriptionColor mt-3">
-                For millions of people, it's the language. When you can't fully
+                For millions of people, it&apos;s the language. When you can&apos;t fully
                 explain your symptoms — or fully understand the answer — care
                 gets slower, more frightening, and far too easy to put off.
               </p>
@@ -74,9 +74,9 @@ function AboutExist() {
             <div className="text-center  max-w-252.5 mx-auto px-4">
               <p className="text-base md:text-lg  text-descriptionColor mt-3">
                 We started APSU because the people most likely to skip care are
-                often the ones who simply couldn't navigate it in English. So we
+                often the ones who simply couldn&apos;t navigate it in English. So we
                 removed the barrier instead of asking people to climb it. Tell
-                us what's going on in your own language; our AI carries it, both
+                us what&apos;s going on in your own language; our AI carries it, both
                 ways, to a physician who treats you like any other patient.
               </p>
             </div>

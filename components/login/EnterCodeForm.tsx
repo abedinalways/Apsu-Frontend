@@ -112,7 +112,7 @@ export default function EnterCodeForm({
 
       <div className="text-center pt-2">
         <p className="text-xs text-grayColor1">
-          Didn't receive code?{' '}
+          Didn&apos;t receive code?{' '}
           <button
             onClick={handleResend}
             className="text-emerald-700 font-medium hover:underline"

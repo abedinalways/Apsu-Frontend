@@ -4,13 +4,12 @@ import {
   createContext,
   useContext,
   useState,
-  useEffect,
   ReactNode,
 } from 'react';
 import type { Conversation, Message, MessagingState } from '@/types/messaging';
 import { buildMessagingSeed } from '@/lib/messagingSeed';
 
-const initialState: MessagingState = {
+const _initialState: MessagingState = {
   initialized: false,
   activeConversationId: null,
   searchQuery: '',
@@ -79,7 +78,20 @@ const MessagingContext = createContext<MessagingContextType | undefined>(
 );
 
 export function MessagingProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState<MessagingState>(initialState);
+  const [state, setState] = useState<MessagingState>(() => {
+    const seed = buildMessagingSeed();
+    return {
+      initialized: true,
+      activeConversationId: seed.activeConversationId,
+      searchQuery: '',
+      conversationIds: seed.conversations.map(c => c.id),
+      conversationsById: Object.fromEntries(
+        seed.conversations.map(c => [c.id, c]),
+      ),
+      messagesByConversationId: seed.messagesByConversationId,
+      draftsByConversationId: seed.draftsByConversationId,
+    };
+  });
 
   const activeConversation = state.activeConversationId
     ? (state.conversationsById[state.activeConversationId] ?? null)
@@ -271,24 +283,6 @@ export function MessagingProvider({ children }: { children: ReactNode }) {
       return newState;
     });
   };
-
-  useEffect(() => {
-    if (state.initialized) return;
-    setState(prev => {
-      const seed = buildMessagingSeed();
-      return {
-        ...prev,
-        initialized: true,
-        activeConversationId: seed.activeConversationId,
-        conversationIds: seed.conversations.map(c => c.id),
-        conversationsById: Object.fromEntries(
-          seed.conversations.map(c => [c.id, c]),
-        ),
-        messagesByConversationId: seed.messagesByConversationId,
-        draftsByConversationId: seed.draftsByConversationId,
-      };
-    });
-  }, [state.initialized]);
 
   return (
     <MessagingContext.Provider

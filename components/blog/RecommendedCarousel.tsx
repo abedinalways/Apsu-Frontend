@@ -1,7 +1,7 @@
 'use client';
 
 import useEmblaCarousel from 'embla-carousel-react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -48,7 +48,10 @@ export default function RecommendedCarousel() {
   );
  
 
-  const autoplay = useRef(
+  // Create the autoplay plugin instance once (stable across renders).
+  // useState lazy initializer is used instead of useRef so the plugin is
+  // never accessed via .current during render (react-hooks/refs rule).
+  const [autoplayPlugin] = useState(() =>
     Autoplay({
       delay: 4000,
       stopOnInteraction: false,
@@ -63,7 +66,7 @@ export default function RecommendedCarousel() {
       dragFree: true,
       loop: true,
     },
-    [autoplay.current],
+    [autoplayPlugin],
   );
   
   const { scrollPrev, scrollNext, prevDisabled, nextDisabled } =

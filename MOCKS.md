@@ -11,15 +11,16 @@ This project uses a **mock-first** approach for data-fetching features. Each fea
 | Authentication | `NEXT_PUBLIC_AUTH_MODE` | `demo` | `lib/services/auth/index.ts` exports either `demoAuthService` or `apiAuthService` |
 | Blog | `NEXT_PUBLIC_BLOG_MODE` | `mock` | `lib/services/blog.service.ts` returns local data or throws `"not implemented"` |
 | Profile | `NEXT_PUBLIC_PROFILE_MODE` | `mock` | `lib/services/profile.service.ts` returns local data or throws `"not implemented"` |
+| User | `NEXT_PUBLIC_USER_MODE` | `mock` | `lib/services/user/demo.ts` returns local data or throws `"not implemented"` |
 
 ### How to switch
 
 ```bash
 # Use demo/mock data
-npm run dev
+yarn dev
 
 # Use real API (requires backend running)
-NEXT_PUBLIC_AUTH_MODE=api NEXT_PUBLIC_BLOG_MODE=api NEXT_PUBLIC_PROFILE_MODE=api npm run dev
+NEXT_PUBLIC_AUTH_MODE=api NEXT_PUBLIC_BLOG_MODE=api NEXT_PUBLIC_PROFILE_MODE=api NEXT_PUBLIC_USER_MODE=api yarn dev
 ```
 
 Or set them in `.env.local`:
@@ -28,6 +29,7 @@ NEXT_PUBLIC_API_ENDPOINT=http://localhost:4000
 NEXT_PUBLIC_AUTH_MODE=api
 NEXT_PUBLIC_BLOG_MODE=api
 NEXT_PUBLIC_PROFILE_MODE=api
+NEXT_PUBLIC_USER_MODE=api
 ```
 
 ---
@@ -37,21 +39,10 @@ NEXT_PUBLIC_PROFILE_MODE=api
 **File:** `lib/services/auth/demo.auth.ts`
 
 ### Current User
-```ts
-{
-  id: 'demo-user-1',
-  email: 'demo@apsu.com',
-  name: 'Demo User'
-}
-```
+The demo user object is generated dynamically from the email address. See `demo.auth.ts:57-61` for the exact shape.
 
 ### Behavior
-- `signIn` / `createPassword`: delays 800ms, returns `{ success: true, user, token: 'demo-token' }`
-- `forgotPassword`: delays 600ms, returns `{ success: true }`
-- `resetPassword`: delays 600ms, returns `{ success: true }`
-- `getCurrentUser`: reads from cookie `apsu_session` (base64-encoded JSON)
-- `isAuthenticated`: checks if cookie exists
-- `logout`: clears cookie
+For the current mock implementation details (delays, return shapes, token handling), refer directly to `demo.auth.ts`.
 
 ### Demo credentials
 - Any email + password (min 8 chars) works for sign-up/sign-in.
@@ -89,49 +80,14 @@ Replace `MOCK_BLOGS` construction in `blog.service.ts` with a real `fetch('/api/
 
 **File:** `lib/services/profile.service.ts`
 
-### Treatment
-```ts
-{
-  id: '1',
-  title: 'Weight Loss Program',
-  planDuration: '12 months plan',
-  status: 'Active',
-  medication: 'Semaglutide 0.5mg',
-  startDate: 'Jan 15, 2025',
-  duration: '6 Months',
-  renewalDate: 'Jul 15, 2025',
-  progressPercentage: 33
-}
-```
+### Mock Data
+For the current mock data shapes (treatment, orders, prescriptions), refer directly to `profile.service.ts`.
 
-### Orders
-```ts
-[
-  {
-    id: 'ORD-001',
-    status: 'Shipped',
-    trackingNumber: '9400 1111 2222',
-    estimatedDelivery: 'Jul 30, 2026',
-    items: [
-      { name: 'Semaglutide 0.5mg', quantity: 1, price: '$200' }
-    ]
-  }
-]
-```
-
-### Prescriptions
-```ts
-[
-  {
-    id: 'RX-001',
-    medication: 'Semaglutide 0.5mg',
-    dosage: '0.5mg weekly',
-    prescribedBy: 'Dr. Smith',
-    dateIssued: 'Jan 15, 2025',
-    status: 'Active'
-  }
-]
-```
+### Testing Different States
+To test different treatment statuses, set `NEXT_PUBLIC_MOCK_TREATMENT_STATUS` in `.env.local`:
+- `Active` (default)
+- `Not Approved`
+- `Pending`
 
 ### When to replace
 Replace each `MOCK_*` constant and the `USE_MOCK` guard with real `fetch('/api/profile/...')` calls. Keep the same return types.
@@ -156,6 +112,14 @@ Currently shows `toast.error('Contact form is not connected to a backend yet.')`
 3. Redirects to `/assessment/payment-success`
 
 Replace the simulated delay with `Fetch.post('/api/assessment/submit', form.getValues())` and redirect based on the response.
+
+---
+
+## Messaging Mocks
+
+**Files:** `messagingSeed.ts`, `lib/services/user/demo.ts`
+
+For the current mock implementation details, refer directly to the source files.
 
 ---
 

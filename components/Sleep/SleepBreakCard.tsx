@@ -53,7 +53,7 @@ export default function SleepBreakCard() {
                 </h3>
                 {/* Testimonial text */}
                 <p className="text-descriptionColor text-base lg:text-lg leading-relaxed ">
-                  "{item.description}"
+                  &quot;{item.description}&quot;
                 </p>
               </div>
 

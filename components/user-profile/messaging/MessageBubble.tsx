@@ -130,7 +130,7 @@ export default function MessageBubble({
                 Translated into {isUser ? 'English' : userLanguage}
               </p>
               <p className="text-sm text-blackColor leading-relaxed">
-                "{message.body}"
+                &quot;{message.body}&quot;
               </p>
             </div>
           </div>

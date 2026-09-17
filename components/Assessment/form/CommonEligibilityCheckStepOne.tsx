@@ -102,7 +102,7 @@ export default function CommonEligibilityCheckStepOne() {
       {/* Lab Reports Section Header */}
       <div className="space-y-1">
         <h3 className="text-[15px] font-medium text-titleText">
-          Do you have any lab reports you'd like to share with the physician?
+          Do you have any lab reports you&apos;d like to share with the physician?
         </h3>
         <p className="text-[13px] text-grayColor1 leading-relaxed">
           Any additional labs which you upload will not be reviewed. The doctor

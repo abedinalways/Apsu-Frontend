@@ -31,12 +31,11 @@ export default function MessageTabContainer() {
     startCareTeamConversation,
   } = useMessaging();
 
-  const [isHydrated, setIsHydrated] = useState(false);
-  const [newMessageIds, setNewMessageIds] = useState<Set<string>>(new Set());
   const [showChat, setShowChat] = useState(false);
   const [userLanguage, setUserLanguage] = useState('Spanish');
   const [showAllTranslations, setShowAllTranslations] = useState(false);
   const [showSidebar, setShowSidebar] = useState(true);
+  const [newMessageIds, setNewMessageIds] = useState<Set<string>>(new Set());
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const prevMessagesLengthRef = useRef(0);
@@ -71,13 +70,9 @@ export default function MessageTabContainer() {
     }
   }, [showSidebar]);
 
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
   // Auto-scroll and track new messages for animation
   useEffect(() => {
-    if (!isHydrated || !activeConversation) return;
+    if (!activeConversation) return;
 
     const currentLength = activeMessages.length;
     const prevLength = prevMessagesLengthRef.current;
@@ -105,7 +100,7 @@ export default function MessageTabContainer() {
     }
 
     prevMessagesLengthRef.current = currentLength;
-  }, [activeMessages.length, isHydrated, activeConversation]);
+  }, [activeMessages.length, activeConversation, activeMessages]);
 
   const handleConversationSelect = (conversationId: string) => {
     selectConversation(conversationId);
@@ -116,10 +111,10 @@ export default function MessageTabContainer() {
     setShowChat(false);
   };
 
-  if (!isHydrated) {
+  if (!activeConversation && totalConversations === 0) {
     return (
-      <div className="flex items-center justify-center h-[400px]">
-        <p className="text-grayColor1">Loading messages...</p>
+      <div className="flex flex-1 items-center justify-center p-4">
+        <MessageEmptyState onMessageCareTeam={startCareTeamConversation} />
       </div>
     );
   }
@@ -221,13 +216,13 @@ export default function MessageTabContainer() {
                   </button>
                   <div className="shrink-0 md:ml-10">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold bg-primaryColor">
-                      {activeConversation.initials}
+                      {activeConversation?.initials}
                     </div>
                   </div>
                   <div className="min-w-0 ">
                     <div className="flex items-center gap-2 min-w-0">
                       <h3 className="font-semibold text-secondary-text text-sm sm:text-base truncate">
-                        {activeConversation.participantName}
+                        {activeConversation?.participantName}
                       </h3>
                     </div>
                     <p className="text-xs text-grayColor1 truncate">

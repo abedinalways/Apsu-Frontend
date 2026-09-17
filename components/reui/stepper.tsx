@@ -111,15 +111,26 @@ function Stepper({
   const currentStep = value ?? activeStep
 
   // Keyboard navigation logic
-  const focusTrigger = (idx: number) => {
-    if (triggerNodes[idx]) triggerNodes[idx].focus()
-  }
-  const focusNext = (currentIdx: number) =>
-    focusTrigger((currentIdx + 1) % triggerNodes.length)
-  const focusPrev = (currentIdx: number) =>
-    focusTrigger((currentIdx - 1 + triggerNodes.length) % triggerNodes.length)
-  const focusFirst = () => focusTrigger(0)
-  const focusLast = () => focusTrigger(triggerNodes.length - 1)
+  const focusTrigger = useCallback(
+    (idx: number) => {
+      if (triggerNodes[idx]) triggerNodes[idx].focus()
+    },
+    [triggerNodes]
+  )
+  const focusNext = useCallback(
+    (currentIdx: number) => focusTrigger((currentIdx + 1) % triggerNodes.length),
+    [triggerNodes, focusTrigger]
+  )
+  const focusPrev = useCallback(
+    (currentIdx: number) =>
+      focusTrigger((currentIdx - 1 + triggerNodes.length) % triggerNodes.length),
+    [triggerNodes, focusTrigger]
+  )
+  const focusFirst = useCallback(() => focusTrigger(0), [focusTrigger])
+  const focusLast = useCallback(
+    () => focusTrigger(triggerNodes.length - 1),
+    [triggerNodes, focusTrigger]
+  )
 
   // Context value
   const contextValue = useMemo<StepperContextValue>(
@@ -147,6 +158,11 @@ function Stepper({
       orientation,
       registerTrigger,
       triggerNodes,
+      focusNext,
+      focusPrev,
+      focusFirst,
+      focusLast,
+      indicators,
     ]
   )
 
@@ -243,18 +259,21 @@ function StepperTrigger({
 
   // Register this trigger for keyboard navigation
   const btnRef = useRef<HTMLButtonElement>(null)
+  const [myIdx, setMyIdx] = useState(-1)
   useEffect(() => {
     if (btnRef.current) {
       registerTrigger(btnRef.current)
     }
-  }, [btnRef.current])
+  }, [registerTrigger])
 
-  // Find our index among triggers for navigation
-  const myIdx = useMemo(
-    () =>
-      triggerNodes.findIndex((n: HTMLButtonElement) => n === btnRef.current),
-    [triggerNodes, btnRef.current]
-  )
+  // Index is computed inside an effect (not during render) because it
+  // compares against btnRef.current — accessing refs during render is
+  // flagged by react-hooks/refs. Re-syncs when siblings register/unregister.
+  useEffect(() => {
+    if (btnRef.current) {
+      setMyIdx(triggerNodes.findIndex((n: HTMLButtonElement) => n === btnRef.current))
+    }
+  }, [triggerNodes])
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     switch (e.key) {
